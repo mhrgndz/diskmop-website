@@ -34,7 +34,7 @@ const downloadOptions: DownloadOption[] = [
     label: 'Windows',
     sublabel: '.exe',
     href: 'https://github.com/mhrgndz/diskmop-releases/releases/download/v1.0.7/DiskMop-Setup-1.0.7.exe',
-    size: '15 MB',
+    size: '~80 MB',
     icon: Monitor,
   },
   {
@@ -42,7 +42,7 @@ const downloadOptions: DownloadOption[] = [
     label: 'macOS',
     sublabel: 'Apple Silicon',
     href: '/downloads/diskmop-mac-arm64.dmg',
-    size: '18 MB',
+    size: '~80 MB',
     icon: Laptop,
   },
   {
@@ -50,7 +50,7 @@ const downloadOptions: DownloadOption[] = [
     label: 'macOS',
     sublabel: 'Intel',
     href: '/downloads/diskmop-mac-x64.dmg',
-    size: '18 MB',
+    size: '~80 MB',
     icon: Laptop,
   },
 ];

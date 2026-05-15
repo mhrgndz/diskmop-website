@@ -14,7 +14,7 @@
     "cta": "Hemen İndir",
     "watchVideo": "Nasıl Çalışır?",
     "users": "10,000+ kullanıcı güveniyor",
-    "platforms": "Windows 10/11 & macOS 12+ • Virüssüz • 15 MB"
+    "platforms": "Windows 10/11 & macOS 12+ • Virüssüz • ~80 MB"
   },
   "trustBar": {
     "downloads": "İndirme",
@@ -34,8 +34,8 @@
     "systemReqs": "Sistem Gereksinimleri",
     "windows": {
       "title": "Windows",
-      "version": "v1.0.0",
-      "size": "15 MB",
+      "version": "v1.0.7",
+      "size": "~80 MB",
       "format": ".exe",
       "reqs": "Windows 10/11 (64-bit)",
       "recommended": "Senin için önerilen",
@@ -43,8 +43,8 @@
     },
     "mac": {
       "title": "macOS",
-      "version": "v1.0.0",
-      "size": "18 MB",
+      "version": "v1.0.7",
+      "size": "~80 MB",
       "format": ".dmg",
       "reqs": "macOS 12+ (Apple Silicon & Intel)",
       "recommended": "Senin için önerilen",
@@ -107,7 +107,7 @@
     "steps": [
       {
         "title": "İndir & Kur",
-        "description": "15 MB'lık kurulum dosyasını indir, 30 saniyede kurulumu tamamla. Kayıt gerekmez."
+        "description": "Kurulum dosyasını indir, dakikalar içinde kurulumu tamamla. Kayıt gerekmez."
       },
       {
         "title": "Tara",

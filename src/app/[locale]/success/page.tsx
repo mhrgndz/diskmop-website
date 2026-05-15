@@ -172,7 +172,7 @@ export default function SuccessPage() {
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">Windows</p>
-                  <p className="text-xs text-muted-foreground">v1.0.0 • 15 MB</p>
+                  <p className="text-xs text-muted-foreground">v1.0.7 • ~80 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
@@ -183,7 +183,7 @@ export default function SuccessPage() {
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
-                  <p className="text-xs text-muted-foreground">v1.0.0 • 18 MB</p>
+                  <p className="text-xs text-muted-foreground">v1.0.7 • ~80 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>

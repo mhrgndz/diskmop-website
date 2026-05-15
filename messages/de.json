@@ -14,7 +14,7 @@
     "cta": "Jetzt herunterladen",
     "watchVideo": "Wie funktioniert es?",
     "users": "Über 10.000 zufriedene Nutzer",
-    "platforms": "Windows 10/11 & macOS 12+ • Virenfrei • 15 MB"
+    "platforms": "Windows 10/11 & macOS 12+ • Virenfrei • ~80 MB"
   },
   "trustBar": {
     "downloads": "Downloads",
@@ -34,8 +34,8 @@
     "systemReqs": "Systemanforderungen",
     "windows": {
       "title": "Windows",
-      "version": "v1.0.0",
-      "size": "15 MB",
+      "version": "v1.0.7",
+      "size": "~80 MB",
       "format": ".exe",
       "reqs": "Windows 10/11 (64-Bit)",
       "recommended": "Empfohlen für Sie",
@@ -43,8 +43,8 @@
     },
     "mac": {
       "title": "macOS",
-      "version": "v1.0.0",
-      "size": "18 MB",
+      "version": "v1.0.7",
+      "size": "~80 MB",
       "format": ".dmg",
       "reqs": "macOS 12+ (Apple Silicon & Intel)",
       "recommended": "Empfohlen für Sie",
@@ -107,7 +107,7 @@
     "steps": [
       {
         "title": "Herunterladen & Installieren",
-        "description": "Laden Sie das 15 MB große Installationsprogramm herunter, Installation in 30 Sekunden abgeschlossen. Keine Registrierung erforderlich."
+        "description": "Laden Sie das Installationsprogramm herunter, Installation in wenigen Minuten abgeschlossen. Keine Registrierung erforderlich."
       },
       {
         "title": "Scannen",
