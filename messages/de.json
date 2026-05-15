@@ -1,0 +1,311 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop für Windows & macOS",
+    "title": "Lassen Sie Ihren Computer",
+    "titleHighlight": "Durchatmen",
+    "subtitle": "Schaffen Sie Gigabytes an Speicherplatz frei mit Disk Mop und beschleunigen Sie Ihr System wie am ersten Tag. Ein Klick, in Minuten.",
+    "cta": "Jetzt herunterladen",
+    "watchVideo": "Wie funktioniert es?",
+    "users": "Über 10.000 zufriedene Nutzer",
+    "platforms": "Windows 10/11 & macOS 12+ • Virenfrei • 15 MB"
+  },
+  "trustBar": {
+    "downloads": "Downloads",
+    "downloadsLabel": "Downloads",
+    "rating": "Bewertung",
+    "ratingLabel": "Bewertung",
+    "safe": "Sicher",
+    "safeLabel": "Sicher",
+    "guarantee": "Lebenslange Lizenz",
+    "guaranteeLabel": "Lebenslang"
+  },
+  "platformSelector": {
+    "title": "Wählen Sie Ihre Plattform",
+    "subtitle": "Native App, optimiert für Windows und macOS",
+    "recommended": "Empfohlen",
+    "download": "Download",
+    "systemReqs": "Systemanforderungen",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.0.0",
+      "size": "15 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-Bit)",
+      "recommended": "Empfohlen für Sie",
+      "download": "Für Windows herunterladen"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.0.0",
+      "size": "18 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon & Intel)",
+      "recommended": "Empfohlen für Sie",
+      "download": "Für macOS herunterladen"
+    }
+  },
+  "features": {
+    "title": "Leistungsstarke Funktionen",
+    "subtitle": "Alles, was Sie brauchen, um Ihren Computer zu beschleunigen und Speicherplatz freizugeben – in einer App.",
+    "items": [
+      {
+        "title": "Festplattenanalyse",
+        "description": "Analysieren Sie die Festplattennutzung visuell. Sehen Sie sofort, welche Ordner den meisten Platz belegen."
+      },
+      {
+        "title": "Große-Dateien-Finder",
+        "description": "Erkennen Sie sofort Dateien über 500 MB. Werden Sie vergessene riesige Dateien los."
+      },
+      {
+        "title": "Duplikat-Erkennung",
+        "description": "Finden Sie identische Dateien mit SHA-256. Bereinigen Sie doppelte Fotos, Videos und Dokumente."
+      },
+      {
+        "title": "Downloads-Bereinigung",
+        "description": "Kategorisieren und bereinigen Sie alte und unnötige Dateien in Ihrem Downloads-Ordner intelligent."
+      },
+      {
+        "title": "Cache-Bereinigung",
+        "description": "Bereinigen Sie System- und App-Cache-Dateien sicher. Gewinnen Sie Gigabytes an Speicherplatz."
+      },
+      {
+        "title": "Autostart-Manager",
+        "description": "Verwalten Sie Programme, die mit Ihrem Computer starten. Verkürzen Sie die Startzeit."
+      },
+      {
+        "title": "Browser-Cache-Bereinigung",
+        "description": "Bereinigen Sie Chrome-, Firefox-, Edge- und Safari-Cache mit einem Klick."
+      },
+      {
+        "title": "System-Gesundheitsbewertung",
+        "description": "Bewerten Sie den Gesamtzustand Ihres Computers auf einer Skala von 100. Sehen Sie, was verbessert werden kann."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Wie funktioniert es?",
+    "subtitle": "Bereinigen Sie Ihren Computer in drei einfachen Schritten",
+    "steps": [
+      {
+        "title": "Herunterladen & Installieren",
+        "description": "Laden Sie das 15 MB große Installationsprogramm herunter, Installation in 30 Sekunden abgeschlossen. Keine Registrierung erforderlich."
+      },
+      {
+        "title": "Scannen",
+        "description": "Starten Sie die Festplattenanalyse mit einem Klick. Unnötige Dateien, Duplikate und Caches werden erkannt."
+      },
+      {
+        "title": "Bereinigen",
+        "description": "Wählen Sie aus, was gelöscht werden soll, und klicken Sie auf Bereinigen. Gigabytes an Speicherplatz werden sofort freigegeben."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Die App entdecken",
+    "subtitle": "Schauen Sie sich die leistungsstarken Funktionen von Disk Mop genauer an",
+    "tabs": [
+      {
+        "name": "Übersicht",
+        "description": "Sehen Sie Ihre gesamte Festplattennutzung auf einem Bildschirm. Identifizieren Sie sofort Bereiche, die bereinigt werden können."
+      },
+      {
+        "name": "Festplattenanalyse",
+        "description": "Entdecken Sie mit einer detaillierten Ordneranalyse, welche Dateien wie viel Speicherplatz belegen."
+      },
+      {
+        "name": "Große Dateien",
+        "description": "Listen Sie Dateien über 500 MB nach Größe sortiert auf. Bereinigen Sie unnötige Dateien mit einem Klick."
+      },
+      {
+        "name": "Duplikate",
+        "description": "Finden Sie identische Dateien mit SHA-256-Hash. Löschen Sie Kopien und behalten Sie das Original."
+      },
+      {
+        "name": "Downloads",
+        "description": "Kategorisieren Sie Ihren Downloads-Ordner intelligent. Bereinigen Sie alte Installationsprogramme und Archive."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "47", "suffix": " GB", "label": "Durchschnittlich freigegebener Speicher" },
+      { "value": "32", "suffix": "%", "label": "Geschwindigkeitssteigerung" },
+      { "value": "10000", "suffix": "+", "label": "Gesamtdownloads" },
+      { "value": "4.8", "suffix": "/5", "label": "Nutzerbewertung" }
+    ]
+  },
+  "testimonials": {
+    "title": "Das sagen unsere Nutzer",
+    "subtitle": "Tausende Nutzer haben ihren Computer mit Disk Mop beschleunigt",
+    "items": [
+      {
+        "quote": "Über 50 GB unnötige Dateien auf meinem Computer gefunden! Ich hatte keine Ahnung, wie viele Cache-Dateien sich über Jahre angesammelt hatten. Jetzt ist meine Festplatte aufgeräumt.",
+        "name": "Thomas Müller",
+        "role": "Softwareentwickler",
+        "city": "München"
+      },
+      {
+        "quote": "Der Duplikat-Finder ist ein Lebensretter. Er hat 4 Kopien derselben PSD-Datei gefunden. Meine Design-Ordner sind jetzt makellos.",
+        "name": "Lisa Schneider",
+        "role": "Grafikdesignerin",
+        "city": "Berlin"
+      },
+      {
+        "quote": "Mein altes Laptop ist jetzt wieder schnell wie am ersten Tag. Meine Startzeit hat sich mit dem Autostart-Manager halbiert. Sehr empfehlenswert für Studenten.",
+        "name": "Markus Weber",
+        "role": "Student",
+        "city": "Hamburg"
+      },
+      {
+        "quote": "Die Benutzeroberfläche ist so einfach, dass selbst jemand ohne Computerkenntnisse sie problemlos nutzen kann. Zu wissen, dass es sicher ist, ist ein großes Plus.",
+        "name": "Anna Fischer",
+        "role": "Buchhalterin",
+        "city": "Köln"
+      },
+      {
+        "quote": "Video-Renderdateien und Browser-Cache haben 40 % meiner Festplatte belegt. Disk Mop hat alles mit einem Klick bereinigt. Fantastisch!",
+        "name": "Jan Hoffmann",
+        "role": "YouTuber",
+        "city": "Frankfurt"
+      },
+      {
+        "quote": "Auf allen 15 Computern im Büro installiert. Die Verwaltung der Autostart-Programme ist jetzt so einfach. Die Arbeitslast des IT-Teams hat sich halbiert.",
+        "name": "Sabine Wagner",
+        "role": "Büroleiterin",
+        "city": "Stuttgart"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Einfache & transparente Preise",
+    "subtitle": "Kein Abo, keine versteckten Gebühren. Einmal zahlen, für immer nutzen.",
+    "badge": "Am beliebtesten",
+    "plan": {
+      "name": "Disk Mop Lebenslang",
+      "badge": "Am beliebtesten",
+      "price": "$19.90",
+      "period": "einmalig",
+      "cta": "Jetzt kaufen",
+      "secure": "Sichere Zahlung: Polar.sh",
+      "paymentTrust": "Sichere Zahlungsabwicklung über Polar.sh"
+    },
+    "features": [
+      "Alle Funktionen",
+      "Lebenslanger Zugang",
+      "Kostenlose Updates",
+      "Lizenz für 1 Computer",
+      "Windows & macOS",
+      "E-Mail-Support",
+      "Lebenslange Updates",
+      "Keine Werbung & keine Viren"
+    ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Hier finden Sie Antworten auf Ihre Fragen",
+    "items": [
+      {
+        "question": "Ist Disk Mop sicher?",
+        "answer": "Ja, Disk Mop ist 100 % sicher. Es enthält keine Viren, Malware oder Adware. Es greift nicht auf Systemdateien zu, sondern erkennt und bereinigt nur unnötige Dateien (Cache, temporäre Dateien, Duplikate). Es zeigt Ihnen jede Datei vor dem Löschen an und wartet auf Ihre Bestätigung."
+      },
+      {
+        "question": "Welche Betriebssysteme werden unterstützt?",
+        "answer": "Disk Mop unterstützt Windows 10/11 (64-Bit) und macOS 12+ (Apple Silicon und Intel). Es wurde als native Anwendung für beide Plattformen entwickelt."
+      },
+      {
+        "question": "Wie funktioniert die Lizenz?",
+        "answer": "Zahlen Sie einmalig $19.90 für lebenslangen Zugang. 1 Lizenz = 1 Computer. Kein Abonnement, keine zusätzlichen Kosten. Wenn Sie den Computer wechseln, können Sie Ihre Lizenz auf den neuen übertragen."
+      },
+      {
+        "question": "Wie bezahle ich?",
+        "answer": "Sie zahlen einmalig $19.90 über die sichere Zahlungsinfrastruktur von Polar.sh. Kreditkarten und weitere Zahlungsmethoden werden unterstützt."
+      },
+      {
+        "question": "Sind Updates kostenlos?",
+        "answer": "Ja, alle Updates und neuen Funktionen sind lebenslang kostenlos. Sie können automatische Updates direkt in der App erhalten."
+      },
+      {
+        "question": "Sind meine Daten sicher?",
+        "answer": "Disk Mop arbeitet vollständig lokal. Ihre Dateien werden niemals an einen Server gesendet. Die Internetverbindung wird nur für die Lizenzüberprüfung und Updates verwendet. Alle Scan- und Bereinigungsvorgänge finden auf Ihrem Computer statt."
+      },
+      {
+        "question": "Gibt es Konflikte mit Antivirensoftware?",
+        "answer": "Nein, Disk Mop ist vollständig kompatibel mit allen gängigen Antivirenprogrammen (Windows Defender, Avast, Kaspersky, Norton usw.). Es ist eine digital signierte, sichere Anwendung."
+      },
+      {
+        "question": "Wird Linux unterstützt?",
+        "answer": "Derzeit werden Windows und macOS unterstützt. Linux-Unterstützung steht auf unserer Roadmap. Abonnieren Sie unseren Newsletter, um auf dem Laufenden zu bleiben."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Bereinigen Sie Ihren Computer noch heute",
+    "subtitle": "Spüren Sie den Unterschied mit Disk Mop.",
+    "cta": "Jetzt herunterladen",
+    "trust": "🔒 Sicherer Download • ✓ Virenfrei • 💰 Lebenslange Lizenz"
+  },
+  "footer": {
+    "slogan": "Ein Mopp, saubere Festplatte.",
+    "product": {
+      "title": "Produkt",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "changelog": "Änderungsprotokoll"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "careers": "Karriere"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen",
+      "kvkk": "DSGVO"
+    },
+    "support": {
+      "title": "Support",
+      "help": "Hilfecenter",
+      "helpCenter": "Hilfecenter",
+      "email": "E-Mail-Support",
+      "status": "Statusseite"
+    },
+    "copyright": "© 2025 Disk Mop. Alle Rechte vorbehalten."
+  },
+  "cookie": {
+    "text": "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.",
+    "privacy": "Datenschutzerklärung",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen"
+  },
+  "success": {
+    "title": "Kauf erfolgreich! 🎉",
+    "subtitle": "Ihre Disk Mop Lebenslang-Lizenz ist bereit.",
+    "licenseLabel": "Ihr Lizenzschlüssel",
+    "licenseNote": "Bewahren Sie diesen Schlüssel sicher auf. Er wurde auch an Ihre E-Mail-Adresse gesendet.",
+    "downloadTitle": "Jetzt herunterladen",
+    "downloadSubtitle": "Wählen Sie Ihre Plattform und starten Sie die Installation.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "common": {
+    "download": "Download",
+    "learnMore": "Mehr erfahren",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Empfohlen",
+    "free": "Kostenlos",
+    "lifetime": "Lebenslang"
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "nav": {
+    "features": "Özellikler",
+    "pricing": "Fiyat",
+    "faq": "SSS",
+    "blog": "Blog",
+    "download": "İndir"
+  },
+  "hero": {
+    "badge": "✨ Windows & macOS için Disk Mop",
+    "title": "Bilgisayarın",
+    "titleHighlight": "Nefes Alsın",
+    "subtitle": "Disk Mop ile gigabaytlarca yer aç, sistemini ilk günkü gibi hızlandır. Tek tıkla, dakikalar içinde.",
+    "cta": "Hemen İndir",
+    "watchVideo": "Nasıl Çalışır?",
+    "users": "10,000+ kullanıcı güveniyor",
+    "platforms": "Windows 10/11 & macOS 12+ • Virüssüz • 15 MB"
+  },
+  "trustBar": {
+    "downloads": "İndirme",
+    "downloadsLabel": "İndirme",
+    "rating": "Puan",
+    "ratingLabel": "Puan",
+    "safe": "Güvenli",
+    "safeLabel": "Güvenli",
+    "guarantee": "Ömür Boyu Lisans",
+    "guaranteeLabel": "Ömür Boyu"
+  },
+  "platformSelector": {
+    "title": "Platformunu Seç",
+    "subtitle": "Windows ve macOS için optimize edilmiş native uygulama",
+    "recommended": "Önerilen",
+    "download": "İndir",
+    "systemReqs": "Sistem Gereksinimleri",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.0.0",
+      "size": "15 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bit)",
+      "recommended": "Senin için önerilen",
+      "download": "Windows İçin İndir"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.0.0",
+      "size": "18 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon & Intel)",
+      "recommended": "Senin için önerilen",
+      "download": "macOS İçin İndir"
+    }
+  },
+  "features": {
+    "title": "Güçlü Özellikler",
+    "subtitle": "Bilgisayarını hızlandırmak ve yer açmak için ihtiyacın olan her şey tek bir uygulamada.",
+    "items": [
+      {
+        "title": "Disk Analizi",
+        "description": "Diskindeki alan kullanımını görsel olarak analiz et. Hangi klasörler ne kadar yer kaplıyor, anında gör."
+      },
+      {
+        "title": "Büyük Dosya Bulucu",
+        "description": "500 MB üzeri büyük dosyaları anında tespit et. Unutulmuş devasa dosyalardan kurtul."
+      },
+      {
+        "title": "Yinelenen Dosya Tespiti",
+        "description": "SHA-256 ile birebir aynı dosyaları bul. Aynı fotoğraf, video ve belgeleri temizle."
+      },
+      {
+        "title": "İndirilenler Temizleyici",
+        "description": "İndirilenler klasöründeki eski ve gereksiz dosyaları akıllıca sınıflandır ve temizle."
+      },
+      {
+        "title": "Önbellek Temizleyici",
+        "description": "Sistem ve uygulama önbellek dosyalarını güvenle temizle. Gigabaytlarca yer kazan."
+      },
+      {
+        "title": "Başlangıç Yöneticisi",
+        "description": "Bilgisayarınla birlikte açılan programları yönet. Açılış süresini kısalt."
+      },
+      {
+        "title": "Tarayıcı Cache Temizleyici",
+        "description": "Chrome, Firefox, Edge ve Safari önbelleğini tek tıkla temizle."
+      },
+      {
+        "title": "Sistem Sağlığı Skoru",
+        "description": "Bilgisayarının genel sağlık durumunu 100 üzerinden puanla. Neleri iyileştirebileceğini gör."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Nasıl Çalışır?",
+    "subtitle": "Üç basit adımda bilgisayarını temizle",
+    "steps": [
+      {
+        "title": "İndir & Kur",
+        "description": "15 MB'lık kurulum dosyasını indir, 30 saniyede kurulumu tamamla. Kayıt gerekmez."
+      },
+      {
+        "title": "Tara",
+        "description": "Tek tıkla disk analizi başlat. Gereksiz dosyalar, yinelenenler ve önbellekler tespit edilir."
+      },
+      {
+        "title": "Temizle",
+        "description": "Neleri silmek istediğini seç ve temizle butonuna bas. Gigabaytlarca yer anında açılır."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Uygulamayı Keşfet",
+    "subtitle": "Disk Mop'un güçlü özelliklerini yakından incele",
+    "tabs": [
+      {
+        "name": "Genel Bakış",
+        "description": "Tüm disk kullanımınızı tek bir ekranda görün. Temizlenebilecek alanları anında tespit edin."
+      },
+      {
+        "name": "Disk Analizi",
+        "description": "Klasör bazlı detaylı analiz ile hangi dosyaların ne kadar yer kapladığını keşfedin."
+      },
+      {
+        "name": "Büyük Dosyalar",
+        "description": "500 MB üzeri dosyaları boyut sırasına göre listeleyin. Tek tıkla gereksiz olanları temizleyin."
+      },
+      {
+        "name": "Yinelenenler",
+        "description": "SHA-256 hash ile birebir aynı dosyaları bulun. Orijinali koruyarak kopyaları silin."
+      },
+      {
+        "name": "İndirilenler",
+        "description": "İndirilenler klasörünüzü akıllıca sınıflandırın. Eski kurulum dosyalarını ve arşivleri temizleyin."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "47", "suffix": " GB", "label": "Ortalama Kazanılan Alan" },
+      { "value": "32", "suffix": "%", "label": "Hız Artışı" },
+      { "value": "10000", "suffix": "+", "label": "Toplam İndirme" },
+      { "value": "4.8", "suffix": "/5", "label": "Kullanıcı Puanı" }
+    ]
+  },
+  "testimonials": {
+    "title": "Kullanıcılarımız Ne Diyor?",
+    "subtitle": "Binlerce kullanıcı Disk Mop ile bilgisayarını hızlandırdı",
+    "items": [
+      {
+        "quote": "Bilgisayarımda 50 GB'dan fazla gereksiz dosya buldu! Yıllardır biriken cache dosyalarından haberim bile yoktu. Şimdi diskimde huzur var.",
+        "name": "Ahmet Yılmaz",
+        "role": "Yazılım Mühendisi",
+        "city": "İstanbul"
+      },
+      {
+        "quote": "Yinelenen dosya bulucu hayat kurtarıcı. Aynı PSD dosyasının 4 kopyasını buldu. Tasarım klasörlerim artık tertemiz.",
+        "name": "Elif Demir",
+        "role": "Grafik Tasarımcı",
+        "city": "Ankara"
+      },
+      {
+        "quote": "Eski laptopum artık ilk günkü gibi hızlı. Başlangıç yöneticisi ile açılış sürem yarı yarıya azaldı. Öğrencilere şiddetle tavsiye ederim.",
+        "name": "Mehmet Kaya",
+        "role": "Üniversite Öğrencisi",
+        "city": "İzmir"
+      },
+      {
+        "quote": "Arayüzü o kadar basit ki, bilgisayardan anlamayan biri bile rahatlıkla kullanabilir. Güvenli olduğunu bilmek de büyük artı.",
+        "name": "Zeynep Arslan",
+        "role": "Muhasebeci",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Video render dosyaları ve tarayıcı cache'i diskimin %40'ını doldurmuş. Disk Mop tek tıkla hepsini temizledi. Muhteşem!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "Ofisteki 15 bilgisayarın hepsine kurdum. Başlangıç programlarını yönetmek artık çok kolay. IT ekibinin işi yarıya indi.",
+        "name": "Ayşe Çelik",
+        "role": "Ofis Yöneticisi",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Basit & Şeffaf Fiyatlandırma",
+    "subtitle": "Abonelik yok, gizli ücret yok. Bir kez öde, ömür boyu kullan.",
+    "badge": "En Popüler",
+    "plan": {
+      "name": "Disk Mop Lifetime",
+      "badge": "En Popüler",
+      "price": "$19.90",
+      "period": "tek seferlik",
+      "cta": "Hemen Satın Al",
+      "secure": "Güvenli ödeme: Polar.sh",
+      "paymentTrust": "Güvenli ödeme altyapısı: Polar.sh ile işlenir"
+    },
+    "features": [
+      "Tüm Özellikler",
+      "Ömür Boyu Erişim",
+      "Ücretsiz Güncellemeler",
+      "1 Bilgisayar Lisansı",
+      "Windows & macOS",
+      "E-posta Desteği",
+      "Ömür Boyu Güncelleme",
+      "Reklam & Virüs Yok"
+    ]
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Merak ettiklerinizin cevapları burada",
+    "items": [
+      {
+        "question": "Disk Mop güvenli mi?",
+        "answer": "Evet, Disk Mop %100 güvenlidir. Virüs, malware veya reklam yazılımı içermez. Sistem dosyalarına dokunmaz, sadece gereksiz dosyaları (cache, geçici dosyalar, yinelenenler) tespit edip temizler. Silmeden önce her dosyayı size gösterir ve onayınızı bekler."
+      },
+      {
+        "question": "Hangi işletim sistemlerini destekliyor?",
+        "answer": "Disk Mop, Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) işletim sistemlerini destekler. Her iki platform için de native uygulama olarak geliştirilmiştir."
+      },
+      {
+        "question": "Lisans nasıl çalışıyor?",
+        "answer": "Tek seferlik $19.90 ödemeyle ömür boyu erişim hakkı kazanırsınız. 1 lisans = 1 bilgisayar. Abonelik yoktur, ek ücret yoktur. Bilgisayar değiştirirseniz lisansınızı yeni bilgisayara taşıyabilirsiniz."
+      },
+      {
+        "question": "Ödeme nasıl yapılır?",
+        "answer": "Polar.sh üzerinden güvenli ödeme altyapısı ile tek seferlik ödeme yaparsınız. Kredi kartı ve diğer ödeme yöntemleri desteklenir."
+      },
+      {
+        "question": "Güncellemeler ücretsiz mi?",
+        "answer": "Evet, tüm güncellemeler ve yeni özellikler ömür boyu ücretsizdir. Uygulama içinden otomatik güncelleme alabilirsiniz."
+      },
+      {
+        "question": "Verilerim güvende mi?",
+        "answer": "Disk Mop tamamen yerel çalışır. Dosyalarınız hiçbir sunucuya gönderilmez. İnternet bağlantısı sadece lisans doğrulama ve güncellemeler için kullanılır. Tüm tarama ve temizleme işlemleri bilgisayarınızda gerçekleşir."
+      },
+      {
+        "question": "Antivirüs programlarıyla çakışır mı?",
+        "answer": "Hayır, Disk Mop tüm büyük antivirüs yazılımlarıyla (Windows Defender, Avast, Kaspersky, Norton vb.) tam uyumludur. Dijital olarak imzalanmış güvenli bir uygulamadır."
+      },
+      {
+        "question": "Linux desteği var mı?",
+        "answer": "Şu an Windows ve macOS desteklenmektedir. Linux desteği yol haritamızda yer almaktadır. Gelişmeleri takip etmek için bültenimize abone olabilirsiniz."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Bilgisayarını Bugün Temizle",
+    "subtitle": "Disk Mop ile farkı hisset.",
+    "cta": "Hemen İndir",
+    "trust": "🔒 Güvenli İndirme • ✓ Virüssüz • 💰 Ömür Boyu Lisans"
+  },
+  "footer": {
+    "slogan": "Tek paspas, temiz disk.",
+    "product": {
+      "title": "Ürün",
+      "features": "Özellikler",
+      "pricing": "Fiyat",
+      "faq": "SSS",
+      "blog": "Blog",
+      "changelog": "Değişiklik Günlüğü"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "careers": "Kariyer"
+    },
+    "legal": {
+      "title": "Yasal",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları",
+      "kvkk": "KVKK"
+    },
+    "support": {
+      "title": "Destek",
+      "help": "Yardım Merkezi",
+      "helpCenter": "Yardım Merkezi",
+      "email": "E-posta Desteği",
+      "status": "Durum Sayfası"
+    },
+    "copyright": "© 2025 Disk Mop. Tüm hakları saklıdır."
+  },
+  "cookie": {
+    "text": "Bu site deneyiminizi iyileştirmek için çerezler kullanır.",
+    "privacy": "Gizlilik Politikası",
+    "accept": "Kabul Et",
+    "reject": "Reddet"
+  },
+  "success": {
+    "title": "Satın Alma Başarılı! 🎉",
+    "subtitle": "Disk Mop Lifetime lisansınız hazır.",
+    "licenseLabel": "Lisans Anahtarınız",
+    "licenseNote": "Bu anahtarı güvenli bir yerde saklayın. E-posta adresinize de gönderilmiştir.",
+    "downloadTitle": "Şimdi İndir",
+    "downloadSubtitle": "Platformunuzu seçin ve kuruluma başlayın.",
+    "backHome": "Ana Sayfaya Dön"
+  },
+  "common": {
+    "download": "İndir",
+    "learnMore": "Daha Fazla",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Önerilen",
+    "free": "Ücretsiz",
+    "lifetime": "Ömür Boyu"
+  }
+}

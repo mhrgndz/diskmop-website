@@ -1,0 +1,311 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop for Windows & macOS",
+    "title": "Let Your Computer",
+    "titleHighlight": "Breathe",
+    "subtitle": "Free up gigabytes of space with Disk Mop and speed up your system like day one. One click, in minutes.",
+    "cta": "Download Now",
+    "watchVideo": "How It Works?",
+    "users": "Trusted by 10,000+ users",
+    "platforms": "Windows 10/11 & macOS 12+ • Virus-free • 15 MB"
+  },
+  "trustBar": {
+    "downloads": "Downloads",
+    "downloadsLabel": "Downloads",
+    "rating": "Rating",
+    "ratingLabel": "Rating",
+    "safe": "Safe",
+    "safeLabel": "Safe",
+    "guarantee": "Lifetime License",
+    "guaranteeLabel": "Lifetime"
+  },
+  "platformSelector": {
+    "title": "Choose Your Platform",
+    "subtitle": "Native app optimized for Windows and macOS",
+    "recommended": "Recommended",
+    "download": "Download",
+    "systemReqs": "System Requirements",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.0.0",
+      "size": "15 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bit)",
+      "recommended": "Recommended for you",
+      "download": "Download for Windows"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.0.0",
+      "size": "18 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon & Intel)",
+      "recommended": "Recommended for you",
+      "download": "Download for macOS"
+    }
+  },
+  "features": {
+    "title": "Powerful Features",
+    "subtitle": "Everything you need to speed up your computer and free up space, all in one app.",
+    "items": [
+      {
+        "title": "Disk Analysis",
+        "description": "Visually analyze disk usage. Instantly see which folders take up the most space."
+      },
+      {
+        "title": "Large File Finder",
+        "description": "Instantly detect files over 500 MB. Get rid of forgotten massive files."
+      },
+      {
+        "title": "Duplicate Detector",
+        "description": "Find identical files using SHA-256. Clean up duplicate photos, videos, and documents."
+      },
+      {
+        "title": "Downloads Cleaner",
+        "description": "Smartly categorize and clean old and unnecessary files in your Downloads folder."
+      },
+      {
+        "title": "Cache Cleaner",
+        "description": "Safely clean system and app cache files. Gain gigabytes of space."
+      },
+      {
+        "title": "Startup Manager",
+        "description": "Manage programs that launch with your computer. Reduce boot time."
+      },
+      {
+        "title": "Browser Cache Cleaner",
+        "description": "Clean Chrome, Firefox, Edge, and Safari cache with one click."
+      },
+      {
+        "title": "System Health Score",
+        "description": "Rate your computer's overall health out of 100. See what you can improve."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works?",
+    "subtitle": "Clean your computer in three simple steps",
+    "steps": [
+      {
+        "title": "Download & Install",
+        "description": "Download the 15 MB installer, complete setup in 30 seconds. No registration required."
+      },
+      {
+        "title": "Scan",
+        "description": "Start disk analysis with one click. Unnecessary files, duplicates, and caches are detected."
+      },
+      {
+        "title": "Clean",
+        "description": "Choose what to delete and hit the clean button. Gigabytes of space freed instantly."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Explore the App",
+    "subtitle": "Take a closer look at Disk Mop's powerful features",
+    "tabs": [
+      {
+        "name": "Overview",
+        "description": "See all your disk usage on a single screen. Instantly identify areas that can be cleaned."
+      },
+      {
+        "name": "Disk Analysis",
+        "description": "Discover which files take up how much space with detailed folder-level analysis."
+      },
+      {
+        "name": "Large Files",
+        "description": "List files over 500 MB sorted by size. Clean unnecessary ones with one click."
+      },
+      {
+        "name": "Duplicates",
+        "description": "Find identical files with SHA-256 hash. Delete copies while keeping the original."
+      },
+      {
+        "name": "Downloads",
+        "description": "Smartly categorize your Downloads folder. Clean old installers and archives."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "47", "suffix": " GB", "label": "Average Space Freed" },
+      { "value": "32", "suffix": "%", "label": "Speed Boost" },
+      { "value": "10000", "suffix": "+", "label": "Total Downloads" },
+      { "value": "4.8", "suffix": "/5", "label": "User Rating" }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "subtitle": "Thousands of users sped up their computers with Disk Mop",
+    "items": [
+      {
+        "quote": "Found over 50 GB of unnecessary files on my computer! I had no idea about years of accumulated cache files. Now my disk is at peace.",
+        "name": "Ahmet Yılmaz",
+        "role": "Software Engineer",
+        "city": "Istanbul"
+      },
+      {
+        "quote": "The duplicate finder is a lifesaver. It found 4 copies of the same PSD file. My design folders are now spotless.",
+        "name": "Elif Demir",
+        "role": "Graphic Designer",
+        "city": "Ankara"
+      },
+      {
+        "quote": "My old laptop is now fast like day one. My boot time was cut in half with the startup manager. Highly recommend for students.",
+        "name": "Mehmet Kaya",
+        "role": "University Student",
+        "city": "Izmir"
+      },
+      {
+        "quote": "The interface is so simple that even someone who doesn't understand computers can easily use it. Knowing it's safe is a big plus.",
+        "name": "Zeynep Arslan",
+        "role": "Accountant",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Video render files and browser cache filled up 40% of my disk. Disk Mop cleaned them all with one click. Amazing!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "Installed it on all 15 computers in the office. Managing startup programs is now so easy. IT team's workload was halved.",
+        "name": "Ayşe Çelik",
+        "role": "Office Manager",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simple & Transparent Pricing",
+    "subtitle": "No subscription, no hidden fees. Pay once, use forever.",
+    "badge": "Most Popular",
+    "plan": {
+      "name": "Disk Mop Lifetime",
+      "badge": "Most Popular",
+      "price": "$19.90",
+      "period": "one-time",
+      "cta": "Buy Now",
+      "secure": "Secure payment: Polar.sh",
+      "paymentTrust": "Secure payment processed via Polar.sh"
+    },
+    "features": [
+      "All Features",
+      "Lifetime Access",
+      "Free Updates",
+      "1 Computer License",
+      "Windows & macOS",
+      "Email Support",
+      "Lifetime Updates",
+      "No Ads & No Viruses"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to your questions here",
+    "items": [
+      {
+        "question": "Is Disk Mop safe?",
+        "answer": "Yes, Disk Mop is 100% safe. It contains no viruses, malware, or adware. It doesn't touch system files, only detects and cleans unnecessary files (cache, temp files, duplicates). It shows you every file before deletion and waits for your confirmation."
+      },
+      {
+        "question": "Which operating systems are supported?",
+        "answer": "Disk Mop supports Windows 10/11 (64-bit) and macOS 12+ (Apple Silicon and Intel). It's developed as a native application for both platforms."
+      },
+      {
+        "question": "How does the license work?",
+        "answer": "Pay $19.90 once for lifetime access. 1 license = 1 computer. No subscription, no extra charges. If you change computers, you can transfer your license to the new one."
+      },
+      {
+        "question": "How do I pay?",
+        "answer": "You make a one-time payment through Polar.sh's secure payment infrastructure. Credit cards and other payment methods are supported."
+      },
+      {
+        "question": "Are updates free?",
+        "answer": "Yes, all updates and new features are free for life. You can receive automatic updates from within the app."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Disk Mop works entirely locally. Your files are never sent to any server. Internet connection is only used for license verification and updates. All scanning and cleaning operations happen on your computer."
+      },
+      {
+        "question": "Does it conflict with antivirus software?",
+        "answer": "No, Disk Mop is fully compatible with all major antivirus software (Windows Defender, Avast, Kaspersky, Norton, etc.). It's a digitally signed secure application."
+      },
+      {
+        "question": "Is Linux supported?",
+        "answer": "Currently Windows and macOS are supported. Linux support is on our roadmap. Subscribe to our newsletter to follow developments."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Clean Your Computer Today",
+    "subtitle": "Feel the difference with Disk Mop.",
+    "cta": "Download Now",
+    "trust": "🔒 Safe Download • ✓ Virus-free • 💰 Lifetime License"
+  },
+  "footer": {
+    "slogan": "One mop, clean disk.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "changelog": "Changelog"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "contact": "Contact",
+      "careers": "Careers"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "kvkk": "GDPR"
+    },
+    "support": {
+      "title": "Support",
+      "help": "Help Center",
+      "helpCenter": "Help Center",
+      "email": "Email Support",
+      "status": "Status Page"
+    },
+    "copyright": "© 2025 Disk Mop. All rights reserved."
+  },
+  "cookie": {
+    "text": "This site uses cookies to improve your experience.",
+    "privacy": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
+  "success": {
+    "title": "Purchase Successful! 🎉",
+    "subtitle": "Your Disk Mop Lifetime license is ready.",
+    "licenseLabel": "Your License Key",
+    "licenseNote": "Keep this key in a safe place. It has also been sent to your email.",
+    "downloadTitle": "Download Now",
+    "downloadSubtitle": "Choose your platform and start the installation.",
+    "backHome": "Back to Home"
+  },
+  "common": {
+    "download": "Download",
+    "learnMore": "Learn More",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Recommended",
+    "free": "Free",
+    "lifetime": "Lifetime"
+  }
+}
