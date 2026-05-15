@@ -19,7 +19,7 @@ export function Pricing() {
   const t = useTranslations('pricing');
 
   const checkoutUrl =
-    process.env.NEXT_PUBLIC_POLAR_CHECKOUT_URL || '#';
+    'https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq';
 
   return (
     <section id="pricing" className="py-24">
