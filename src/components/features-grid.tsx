@@ -6,10 +6,13 @@ import {
   HardDrive,
   Search,
   Copy,
+  Zap,
   Download,
-  Database,
-  Rocket,
+  Trash2,
   Globe,
+  Recycle,
+  Wifi,
+  Rocket,
   Activity,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -26,11 +29,14 @@ const features: Feature[] = [
   { icon: HardDrive, titleKey: '0', descKey: '0' },
   { icon: Search, titleKey: '1', descKey: '1' },
   { icon: Copy, titleKey: '2', descKey: '2' },
-  { icon: Download, titleKey: '3', descKey: '3' },
-  { icon: Database, titleKey: '4', descKey: '4' },
-  { icon: Rocket, titleKey: '5', descKey: '5' },
+  { icon: Zap, titleKey: '3', descKey: '3' },
+  { icon: Download, titleKey: '4', descKey: '4' },
+  { icon: Trash2, titleKey: '5', descKey: '5' },
   { icon: Globe, titleKey: '6', descKey: '6' },
-  { icon: Activity, titleKey: '7', descKey: '7' },
+  { icon: Recycle, titleKey: '7', descKey: '7' },
+  { icon: Wifi, titleKey: '8', descKey: '8' },
+  { icon: Rocket, titleKey: '9', descKey: '9' },
+  { icon: Activity, titleKey: '10', descKey: '10' },
 ];
 
 export function FeaturesGrid() {

@@ -166,7 +166,7 @@ export default function SuccessPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
-                href="/downloads/diskmop-setup-windows.exe"
+                href="https://github.com/mhrgndz/diskmop-releases/releases/download/v1.0.7/DiskMop-Setup-1.0.7.exe"
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Monitor className="w-8 h-8 text-brand-500" />

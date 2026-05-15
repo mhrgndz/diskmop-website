@@ -68,6 +68,10 @@
         "description": "Finden Sie identische Dateien mit SHA-256. Bereinigen Sie doppelte Fotos, Videos und Dokumente."
       },
       {
+        "title": "Beschleuniger",
+        "description": "Bereinigen Sie alte Downloads, System-Cache, Browser-Cache und Papierkorb mit einem Klick. Führt alle Aufräumaufgaben automatisch aus."
+      },
+      {
         "title": "Downloads-Bereinigung",
         "description": "Kategorisieren und bereinigen Sie alte und unnötige Dateien in Ihrem Downloads-Ordner intelligent."
       },
@@ -76,12 +80,20 @@
         "description": "Bereinigen Sie System- und App-Cache-Dateien sicher. Gewinnen Sie Gigabytes an Speicherplatz."
       },
       {
-        "title": "Autostart-Manager",
-        "description": "Verwalten Sie Programme, die mit Ihrem Computer starten. Verkürzen Sie die Startzeit."
-      },
-      {
         "title": "Browser-Cache-Bereinigung",
         "description": "Bereinigen Sie Chrome-, Firefox-, Edge- und Safari-Cache mit einem Klick."
+      },
+      {
+        "title": "Papierkorb",
+        "description": "Leeren Sie den Papierkorb, um Dateien dauerhaft zu löschen und Speicherplatz freizugeben."
+      },
+      {
+        "title": "DNS-Cache-Bereinigung",
+        "description": "Leeren Sie den DNS-Cache, um Verbindungsprobleme zu beheben und das Surfen zu beschleunigen."
+      },
+      {
+        "title": "Autostart-Manager",
+        "description": "Verwalten Sie Programme, die mit Ihrem Computer starten. Verkürzen Sie die Startzeit."
       },
       {
         "title": "System-Gesundheitsbewertung",
@@ -128,8 +140,36 @@
         "description": "Finden Sie identische Dateien mit SHA-256-Hash. Löschen Sie Kopien und behalten Sie das Original."
       },
       {
+        "name": "Beschleuniger",
+        "description": "Führen Sie alle Aufräumaufgaben mit einem Klick aus. Alte Downloads, Cache, Browserdaten und Papierkorb werden automatisch bereinigt."
+      },
+      {
         "name": "Downloads",
         "description": "Kategorisieren Sie Ihren Downloads-Ordner intelligent. Bereinigen Sie alte Installationsprogramme und Archive."
+      },
+      {
+        "name": "Cache",
+        "description": "Bereinigen Sie System- und App-Cache-Dateien sicher. Gewinnen Sie Gigabytes an Speicherplatz."
+      },
+      {
+        "name": "Browser",
+        "description": "Bereinigen Sie Chrome-, Firefox-, Edge- und Safari-Cache mit einem Klick."
+      },
+      {
+        "name": "Papierkorb",
+        "description": "Leeren Sie den Papierkorb, um Speicherplatz auf Ihrer Festplatte freizugeben."
+      },
+      {
+        "name": "DNS-Cache",
+        "description": "Leeren Sie den DNS-Cache, um Verbindungsprobleme zu beheben und das Surfen zu beschleunigen."
+      },
+      {
+        "name": "Autostart",
+        "description": "Verwalten Sie Programme, die mit Ihrem Computer starten. Verkürzen Sie die Startzeit."
+      },
+      {
+        "name": "Einstellungen",
+        "description": "Passen Sie Ihre Sprach-, Design- und Lizenzeinstellungen an."
       }
     ]
   },

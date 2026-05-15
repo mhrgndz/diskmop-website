@@ -9,7 +9,14 @@ import {
   HardDrive,
   Search,
   Copy,
+  Zap,
   Download,
+  Trash2,
+  Globe,
+  Recycle,
+  Wifi,
+  Rocket,
+  Settings,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -24,41 +31,18 @@ interface ShowcaseTab {
 }
 
 const showcaseTabs: ShowcaseTab[] = [
-  {
-    id: 'overview',
-    icon: LayoutDashboard,
-    nameKey: '0',
-    descKey: '0',
-    screenshot: '/screenshots/01-overview.png',
-  },
-  {
-    id: 'disk-analysis',
-    icon: HardDrive,
-    nameKey: '1',
-    descKey: '1',
-    screenshot: '/screenshots/02-disk-analyzer.png',
-  },
-  {
-    id: 'large-files',
-    icon: Search,
-    nameKey: '2',
-    descKey: '2',
-    screenshot: '/screenshots/03-large-files.png',
-  },
-  {
-    id: 'duplicates',
-    icon: Copy,
-    nameKey: '3',
-    descKey: '3',
-    screenshot: '/screenshots/04-duplicates.png',
-  },
-  {
-    id: 'downloads',
-    icon: Download,
-    nameKey: '4',
-    descKey: '4',
-    screenshot: '/screenshots/05-downloads.png',
-  },
+  { id: 'overview', icon: LayoutDashboard, nameKey: '0', descKey: '0', screenshot: '/screenshots/01-overview.png' },
+  { id: 'disk-analysis', icon: HardDrive, nameKey: '1', descKey: '1', screenshot: '/screenshots/02-disk-analyzer.png' },
+  { id: 'large-files', icon: Search, nameKey: '2', descKey: '2', screenshot: '/screenshots/03-large-files.png' },
+  { id: 'duplicates', icon: Copy, nameKey: '3', descKey: '3', screenshot: '/screenshots/04-duplicates.png' },
+  { id: 'speed-up', icon: Zap, nameKey: '4', descKey: '4', screenshot: '/screenshots/05-speed-up.png' },
+  { id: 'downloads', icon: Download, nameKey: '5', descKey: '5', screenshot: '/screenshots/06-downloads.png' },
+  { id: 'cache', icon: Trash2, nameKey: '6', descKey: '6', screenshot: '/screenshots/07-cache.png' },
+  { id: 'browser', icon: Globe, nameKey: '7', descKey: '7', screenshot: '/screenshots/08-browser.png' },
+  { id: 'recycle-bin', icon: Recycle, nameKey: '8', descKey: '8', screenshot: '/screenshots/09-recycle-bin.png' },
+  { id: 'dns-cache', icon: Wifi, nameKey: '9', descKey: '9', screenshot: '/screenshots/10-dns-cache.png' },
+  { id: 'startup', icon: Rocket, nameKey: '10', descKey: '10', screenshot: '/screenshots/11-startup.png' },
+  { id: 'settings', icon: Settings, nameKey: '11', descKey: '11', screenshot: '/screenshots/12-settings.png' },
 ];
 
 export function ProductShowcase() {

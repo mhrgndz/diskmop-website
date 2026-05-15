@@ -68,6 +68,10 @@
         "description": "Find identical files using SHA-256. Clean up duplicate photos, videos, and documents."
       },
       {
+        "title": "Speed Up",
+        "description": "Clean old downloads, system cache, browser cache, and recycle bin with one click. Runs all cleanup tasks automatically."
+      },
+      {
         "title": "Downloads Cleaner",
         "description": "Smartly categorize and clean old and unnecessary files in your Downloads folder."
       },
@@ -76,12 +80,20 @@
         "description": "Safely clean system and app cache files. Gain gigabytes of space."
       },
       {
-        "title": "Startup Manager",
-        "description": "Manage programs that launch with your computer. Reduce boot time."
-      },
-      {
         "title": "Browser Cache Cleaner",
         "description": "Clean Chrome, Firefox, Edge, and Safari cache with one click."
+      },
+      {
+        "title": "Recycle Bin",
+        "description": "Empty your Recycle Bin to permanently delete files and free up disk space."
+      },
+      {
+        "title": "DNS Cache Cleaner",
+        "description": "Flush your DNS cache to fix connection issues and speed up browsing."
+      },
+      {
+        "title": "Startup Manager",
+        "description": "Manage programs that launch with your computer. Reduce boot time."
       },
       {
         "title": "System Health Score",
@@ -128,8 +140,36 @@
         "description": "Find identical files with SHA-256 hash. Delete copies while keeping the original."
       },
       {
+        "name": "Speed Up",
+        "description": "Run all cleanup tasks with one click. Old downloads, cache, browser data, and recycle bin are cleaned automatically."
+      },
+      {
         "name": "Downloads",
         "description": "Smartly categorize your Downloads folder. Clean old installers and archives."
+      },
+      {
+        "name": "Cache",
+        "description": "Safely clean system and app cache files. Gain gigabytes of space."
+      },
+      {
+        "name": "Browsers",
+        "description": "Clean Chrome, Firefox, Edge, and Safari cache with one click."
+      },
+      {
+        "name": "Recycle Bin",
+        "description": "Empty your Recycle Bin to permanently free up disk space."
+      },
+      {
+        "name": "DNS Cache",
+        "description": "Flush your DNS cache to fix connection issues and speed up browsing."
+      },
+      {
+        "name": "Startup",
+        "description": "Manage programs that launch with your computer. Reduce boot time."
+      },
+      {
+        "name": "Settings",
+        "description": "Customize your language, theme, and license preferences."
       }
     ]
   },

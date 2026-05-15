@@ -31,7 +31,7 @@ const platforms: PlatformCard[] = [
     size: '15 MB',
     ext: '.exe',
     systemReq: 'Windows 10/11 (64-bit)',
-    href: '/downloads/diskmop-setup-windows.exe',
+    href: 'https://github.com/mhrgndz/diskmop-releases/releases/download/v1.0.7/DiskMop-Setup-1.0.7.exe',
   },
   {
     key: 'mac',

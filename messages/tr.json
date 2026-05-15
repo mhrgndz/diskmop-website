@@ -68,6 +68,10 @@
         "description": "SHA-256 ile birebir aynı dosyaları bul. Aynı fotoğraf, video ve belgeleri temizle."
       },
       {
+        "title": "Hızlandırıcı",
+        "description": "Eski indirmeler, sistem önbelleği, tarayıcı cache ve geri dönüşüm kutusunu tek tıkla temizle. Tüm temizlik görevlerini otomatik çalıştır."
+      },
+      {
         "title": "İndirilenler Temizleyici",
         "description": "İndirilenler klasöründeki eski ve gereksiz dosyaları akıllıca sınıflandır ve temizle."
       },
@@ -76,12 +80,20 @@
         "description": "Sistem ve uygulama önbellek dosyalarını güvenle temizle. Gigabaytlarca yer kazan."
       },
       {
-        "title": "Başlangıç Yöneticisi",
-        "description": "Bilgisayarınla birlikte açılan programları yönet. Açılış süresini kısalt."
-      },
-      {
         "title": "Tarayıcı Cache Temizleyici",
         "description": "Chrome, Firefox, Edge ve Safari önbelleğini tek tıkla temizle."
+      },
+      {
+        "title": "Geri Dönüşüm Kutusu",
+        "description": "Geri dönüşüm kutusunu temizleyerek kalıcı olarak silinmiş dosyalardan yer aç."
+      },
+      {
+        "title": "DNS Önbellek Temizleyici",
+        "description": "DNS önbelleğini temizleyerek bağlantı sorunlarını çöz ve web gezintisini hızlandır."
+      },
+      {
+        "title": "Başlangıç Yöneticisi",
+        "description": "Bilgisayarınla birlikte açılan programları yönet. Açılış süresini kısalt."
       },
       {
         "title": "Sistem Sağlığı Skoru",
@@ -128,8 +140,36 @@
         "description": "SHA-256 hash ile birebir aynı dosyaları bulun. Orijinali koruyarak kopyaları silin."
       },
       {
+        "name": "Hızlandırıcı",
+        "description": "Tüm temizlik görevlerini tek tıkla çalıştırın. Eski indirmeler, önbellek, tarayıcı ve geri dönüşüm kutusu otomatik temizlenir."
+      },
+      {
         "name": "İndirilenler",
         "description": "İndirilenler klasörünüzü akıllıca sınıflandırın. Eski kurulum dosyalarını ve arşivleri temizleyin."
+      },
+      {
+        "name": "Önbellek",
+        "description": "Sistem ve uygulama önbellek dosyalarını güvenle temizleyin. Gigabaytlarca yer kazanın."
+      },
+      {
+        "name": "Tarayıcılar",
+        "description": "Chrome, Firefox, Edge ve Safari önbelleğini tek tıkla temizleyin."
+      },
+      {
+        "name": "Geri Dönüşüm",
+        "description": "Geri dönüşüm kutusunu boşaltarak diskinizdeki alanı geri kazanın."
+      },
+      {
+        "name": "DNS Önbellek",
+        "description": "DNS önbelleğini temizleyerek bağlantı sorunlarını çözün ve web gezintisini hızlandırın."
+      },
+      {
+        "name": "Başlangıç",
+        "description": "Bilgisayarınızla birlikte açılan programları yönetin. Açılış süresini kısaltın."
+      },
+      {
+        "name": "Ayarlar",
+        "description": "Dil, tema ve lisans ayarlarınızı özelleştirin."
       }
     ]
   },
