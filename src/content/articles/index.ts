@@ -9,6 +9,8 @@ import { iobit } from './iobit';
 import { treesize } from './treesize';
 import { windirstat } from './windirstat';
 import { daisydisk } from './daisydisk';
+import { avastCleanup } from './avast-cleanup';
+import { windowsDiskCleanup } from './windows-disk-cleanup';
 
 export const articles: Article[] = [
   ccleaner,
@@ -21,6 +23,8 @@ export const articles: Article[] = [
   treesize,
   windirstat,
   daisydisk,
+  avastCleanup,
+  windowsDiskCleanup,
 ];
 
 export function getArticle(slug: string): Article | undefined {

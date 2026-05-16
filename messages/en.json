@@ -98,6 +98,46 @@
       {
         "title": "System Health Score",
         "description": "Rate your computer's overall health out of 100. See what you can improve."
+      },
+      {
+        "title": "Empty Folder Finder",
+        "description": "Scan your drives for empty folders cluttering your file system. Clean them up in one click."
+      },
+      {
+        "title": "File Shredder",
+        "description": "Securely delete sensitive files with military-grade overwriting (DoD 5220.22-M). Unrecoverable."
+      },
+      {
+        "title": "Disk Treemap",
+        "description": "Visualize your entire disk as an interactive treemap. See exactly what's eating your space."
+      },
+      {
+        "title": "RAM Optimizer",
+        "description": "Free up memory by clearing inactive processes. Boost performance instantly."
+      },
+      {
+        "title": "Service Manager",
+        "description": "Control Windows services that slow down your system. Disable unnecessary background services."
+      },
+      {
+        "title": "Scheduled Cleanup",
+        "description": "Set automatic cleanup schedules. Keep your system clean without lifting a finger."
+      },
+      {
+        "title": "Privacy Report",
+        "description": "Get a comprehensive privacy score. See what traces browsers and apps leave behind."
+      },
+      {
+        "title": "Unused App Detector",
+        "description": "Find applications you haven't used in months. Uninstall them to free up space."
+      },
+      {
+        "title": "Visual Duplicate Finder",
+        "description": "Find similar photos and images using perceptual hashing. Even resized copies are detected."
+      },
+      {
+        "title": "Disk Health Monitor",
+        "description": "Check SSD/HDD health with SMART data. Monitor drive temperature and lifespan."
       }
     ]
   },
@@ -166,6 +206,46 @@
       {
         "name": "Startup",
         "description": "Manage programs that launch with your computer. Reduce boot time."
+      },
+      {
+        "name": "Empty Folders",
+        "description": "Find and remove empty folders that clutter your file system. Keep your directory structure clean."
+      },
+      {
+        "name": "File Shredder",
+        "description": "Permanently destroy sensitive files with military-grade overwriting. No recovery possible."
+      },
+      {
+        "name": "Disk Treemap",
+        "description": "Interactive visual map of your disk usage. Click into folders to explore what's taking space."
+      },
+      {
+        "name": "RAM Cleaner",
+        "description": "Optimize memory usage by freeing up RAM from inactive processes. Instant performance boost."
+      },
+      {
+        "name": "Service Manager",
+        "description": "View and control Windows services. Disable unnecessary background services to speed up your system."
+      },
+      {
+        "name": "Scheduled Cleanup",
+        "description": "Automate your cleaning routine. Set daily, weekly, or monthly cleanup schedules."
+      },
+      {
+        "name": "Privacy Report",
+        "description": "Comprehensive privacy analysis. See browser traces, cookies, and app data that expose your activity."
+      },
+      {
+        "name": "Unused Apps",
+        "description": "Detect applications you haven't opened in months. Uninstall them directly from Disk Mop."
+      },
+      {
+        "name": "Visual Duplicates",
+        "description": "Find visually similar photos using AI-powered perceptual hashing. Even crops and resizes are caught."
+      },
+      {
+        "name": "Disk Health",
+        "description": "Monitor SSD/HDD health with SMART diagnostics. Check temperature, lifespan, and TRIM status."
       },
       {
         "name": "Settings",

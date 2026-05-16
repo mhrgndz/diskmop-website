@@ -72,6 +72,54 @@ export const ccleaner: Article = {
       competitor: '✓ Health Check (Pro)',
       winner: 'diskmop',
     },
+    {
+      feature: { tr: 'Dosya Parçalayıcı', en: 'File Shredder', de: 'Datei-Schredder' },
+      diskmop: '✓ DoD 5220.22-M',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Disk Haritası (Treemap)', en: 'Disk Treemap', de: 'Festplatten-Treemap' },
+      diskmop: '✓ Interaktif',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'RAM Optimizasyonu', en: 'RAM Optimizer', de: 'RAM-Optimierer' },
+      diskmop: '✓',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Servis Yöneticisi', en: 'Service Manager', de: 'Dienste-Manager' },
+      diskmop: '✓',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Zamanlanmış Temizlik', en: 'Scheduled Cleanup', de: 'Geplante Bereinigung' },
+      diskmop: '✓',
+      competitor: '✓ (Pro)',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Disk Sağlığı (SMART)', en: 'Disk Health (SMART)', de: 'Festplatten-Gesundheit' },
+      diskmop: '✓',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Boş Klasör Bulucu', en: 'Empty Folder Finder', de: 'Leere-Ordner-Finder' },
+      diskmop: '✓',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Görsel Benzerlik', en: 'Visual Duplicates', de: 'Visuelle Duplikate' },
+      diskmop: '✓ Algısal hash',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
   ],
   content: {
     tr: {

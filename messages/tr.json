@@ -98,6 +98,46 @@
       {
         "title": "Sistem Sağlığı Skoru",
         "description": "Bilgisayarının genel sağlık durumunu 100 üzerinden puanla. Neleri iyileştirebileceğini gör."
+      },
+      {
+        "title": "Boş Klasör Bulucu",
+        "description": "Dosya sistemindeki boş klasörleri tara ve tek tıkla temizle. Dizin yapını düzenli tut."
+      },
+      {
+        "title": "Dosya Parçalayıcı",
+        "description": "Hassas dosyaları askeri standartlarda üzerine yazarak güvenle sil (DoD 5220.22-M). Kurtarılamaz."
+      },
+      {
+        "title": "Disk Haritası",
+        "description": "Disk alanini interaktif harita ile kesfet. Hangi klasor ve dosyalar ne kadar yer kapliyor aninda bul."
+      },
+      {
+        "title": "RAM Optimizasyonu",
+        "description": "Kullanılmayan işlemleri temizleyerek belleği boşalt. Performansı anında artır."
+      },
+      {
+        "title": "Servis Yöneticisi",
+        "description": "Sistemini yavaşlatan Windows servislerini kontrol et. Gereksiz arka plan servislerini devre dışı bırak."
+      },
+      {
+        "title": "Zamanlanmış Temizlik",
+        "description": "Otomatik temizlik zamanlamaları ayarla. Parmağını kıpırdatmadan sistemini temiz tut."
+      },
+      {
+        "title": "Gizlilik Raporu",
+        "description": "Kapsamlı bir gizlilik skoru al. Tarayıcıların ve uygulamaların bıraktığı izleri gör."
+      },
+      {
+        "title": "Kullanılmayan Uygulama Tespiti",
+        "description": "Aylardır açmadığın uygulamaları bul. Alan açmak için doğrudan kaldır."
+      },
+      {
+        "title": "Görsel Benzerlik Bulucu",
+        "description": "Algısal hash ile benzer fotoğrafları bul. Boyutu değiştirilmiş kopyalar bile tespit edilir."
+      },
+      {
+        "title": "Disk Sağlığı Monitörü",
+        "description": "SMART verileriyle SSD/HDD sağlığını kontrol et. Sürücü sıcaklığını ve ömrünü izle."
       }
     ]
   },
@@ -166,6 +206,46 @@
       {
         "name": "Başlangıç",
         "description": "Bilgisayarınızla birlikte açılan programları yönetin. Açılış süresini kısaltın."
+      },
+      {
+        "name": "Boş Klasörler",
+        "description": "Dosya sisteminizi karmaşıklaştıran boş klasörleri bulun ve temizleyin. Dizin yapınızı düzenli tutun."
+      },
+      {
+        "name": "Dosya Parçalayıcı",
+        "description": "Hassas dosyalarınızı askeri standartlarda üzerine yazarak kalıcı olarak yok edin. Kurtarma mümkün değil."
+      },
+      {
+        "name": "Disk Haritası",
+        "description": "Disk kullanımınızın interaktif görsel haritası. Klasörlere tıklayarak alanı neyin kapladığını keşfedin."
+      },
+      {
+        "name": "RAM Temizleyici",
+        "description": "Kullanılmayan işlemleri temizleyerek RAM'i optimize edin. Anında performans artışı."
+      },
+      {
+        "name": "Servis Yöneticisi",
+        "description": "Windows servislerini görüntüleyin ve kontrol edin. Gereksiz arka plan servislerini devre dışı bırakın."
+      },
+      {
+        "name": "Zamanlanmış Temizlik",
+        "description": "Temizlik rutininizi otomatikleştirin. Günlük, haftalık veya aylık temizlik zamanlamaları ayarlayın."
+      },
+      {
+        "name": "Gizlilik Raporu",
+        "description": "Kapsamlı gizlilik analizi. Tarayıcı izleri, çerezler ve aktivitenizi açığa çıkaran uygulama verilerini görün."
+      },
+      {
+        "name": "Kullanılmayan Uygulamalar",
+        "description": "Aylardır açmadığınız uygulamaları tespit edin. Doğrudan Disk Mop'tan kaldırın."
+      },
+      {
+        "name": "Görsel Benzerlik",
+        "description": "Yapay zeka destekli algısal hash ile görsel olarak benzer fotoğrafları bulun. Kırpılmış ve boyutu değiştirilmiş kopyalar bile yakalanır."
+      },
+      {
+        "name": "Disk Sağlığı",
+        "description": "SMART tanılama ile SSD/HDD sağlığını izleyin. Sıcaklık, ömür ve TRIM durumunu kontrol edin."
       },
       {
         "name": "Ayarlar",

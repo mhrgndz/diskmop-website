@@ -14,6 +14,16 @@ import {
   Wifi,
   Rocket,
   Activity,
+  FolderOpen,
+  ShieldX,
+  TreePine,
+  Cpu,
+  Settings2,
+  Clock,
+  FileCheck,
+  PackageX,
+  Images,
+  HeartPulse,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -37,6 +47,16 @@ const features: Feature[] = [
   { icon: Wifi, titleKey: '8', descKey: '8' },
   { icon: Rocket, titleKey: '9', descKey: '9' },
   { icon: Activity, titleKey: '10', descKey: '10' },
+  { icon: FolderOpen, titleKey: '11', descKey: '11' },
+  { icon: ShieldX, titleKey: '12', descKey: '12' },
+  { icon: TreePine, titleKey: '13', descKey: '13' },
+  { icon: Cpu, titleKey: '14', descKey: '14' },
+  { icon: Settings2, titleKey: '15', descKey: '15' },
+  { icon: Clock, titleKey: '16', descKey: '16' },
+  { icon: FileCheck, titleKey: '17', descKey: '17' },
+  { icon: PackageX, titleKey: '18', descKey: '18' },
+  { icon: Images, titleKey: '19', descKey: '19' },
+  { icon: HeartPulse, titleKey: '20', descKey: '20' },
 ];
 
 export function FeaturesGrid() {
@@ -71,7 +91,7 @@ export function FeaturesGrid() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className={cn(
                   'bg-card rounded-2xl p-6 border',
                   'hover:border-brand-500/50 hover:shadow-lg hover:shadow-brand-500/5 hover:-translate-y-1',

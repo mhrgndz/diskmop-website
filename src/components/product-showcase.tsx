@@ -17,6 +17,16 @@ import {
   Wifi,
   Rocket,
   Settings,
+  FolderOpen,
+  ShieldX,
+  TreePine,
+  Cpu,
+  Settings2,
+  Clock,
+  FileCheck,
+  PackageX,
+  Images,
+  Activity,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -42,7 +52,17 @@ const showcaseTabs: ShowcaseTab[] = [
   { id: 'recycle-bin', icon: Recycle, nameKey: '8', descKey: '8', screenshot: '/screenshots/09-recycle-bin.png' },
   { id: 'dns-cache', icon: Wifi, nameKey: '9', descKey: '9', screenshot: '/screenshots/10-dns-cache.png' },
   { id: 'startup', icon: Rocket, nameKey: '10', descKey: '10', screenshot: '/screenshots/11-startup.png' },
-  { id: 'settings', icon: Settings, nameKey: '11', descKey: '11', screenshot: '/screenshots/12-settings.png' },
+  { id: 'empty-folders', icon: FolderOpen, nameKey: '11', descKey: '11', screenshot: '/screenshots/12-empty-folders.png' },
+  { id: 'file-shredder', icon: ShieldX, nameKey: '12', descKey: '12', screenshot: '/screenshots/13-file-shredder.png' },
+  { id: 'disk-treemap', icon: TreePine, nameKey: '13', descKey: '13', screenshot: '/screenshots/14-disk-treemap.png' },
+  { id: 'ram-cleaner', icon: Cpu, nameKey: '14', descKey: '14', screenshot: '/screenshots/15-ram-cleaner.png' },
+  { id: 'service-manager', icon: Settings2, nameKey: '15', descKey: '15', screenshot: '/screenshots/16-service-manager.png' },
+  { id: 'scheduled-cleanup', icon: Clock, nameKey: '16', descKey: '16', screenshot: '/screenshots/17-scheduled-cleanup.png' },
+  { id: 'privacy-report', icon: FileCheck, nameKey: '17', descKey: '17', screenshot: '/screenshots/18-privacy-report.png' },
+  { id: 'unused-apps', icon: PackageX, nameKey: '18', descKey: '18', screenshot: '/screenshots/19-unused-apps.png' },
+  { id: 'visual-duplicates', icon: Images, nameKey: '19', descKey: '19', screenshot: '/screenshots/20-visual-duplicates.png' },
+  { id: 'disk-health', icon: Activity, nameKey: '20', descKey: '20', screenshot: '/screenshots/21-disk-health.png' },
+  { id: 'settings', icon: Settings, nameKey: '21', descKey: '21', screenshot: '/screenshots/22-settings.png' },
 ];
 
 export function ProductShowcase() {
@@ -83,10 +103,10 @@ export function ProductShowcase() {
                     <TabsTrigger
                       key={tab.id}
                       value={tab.id}
-                      className="gap-2 px-4 py-2"
+                      className="gap-2 px-3 py-2"
                     >
                       <Icon className="h-4 w-4" />
-                      <span className="hidden sm:inline">
+                      <span className="hidden sm:inline text-xs">
                         {t(`tabs.${tab.nameKey}.name`)}
                       </span>
                     </TabsTrigger>

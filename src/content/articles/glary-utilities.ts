@@ -66,6 +66,42 @@ export const glaryUtilities: Article = {
       competitor: '⚠ Toolbar/bundleware',
       winner: 'diskmop',
     },
+    {
+      feature: { tr: 'Dosya Parçalayıcı', en: 'File Shredder', de: 'Datei-Schredder' },
+      diskmop: '✓ DoD 5220.22-M',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Disk Haritası (Treemap)', en: 'Disk Treemap', de: 'Festplatten-Treemap' },
+      diskmop: '✓ Interaktif',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'RAM Optimizasyonu', en: 'RAM Optimizer', de: 'RAM-Optimierer' },
+      diskmop: '✓',
+      competitor: '✓',
+      winner: 'tie',
+    },
+    {
+      feature: { tr: 'Disk Sağlığı (SMART)', en: 'Disk Health (SMART)', de: 'Festplatten-Gesundheit' },
+      diskmop: '✓',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Görsel Benzerlik', en: 'Visual Duplicates', de: 'Visuelle Duplikate' },
+      diskmop: '✓ Algısal hash',
+      competitor: '✗',
+      winner: 'diskmop',
+    },
+    {
+      feature: { tr: 'Zamanlanmış Temizlik', en: 'Scheduled Cleanup', de: 'Geplante Bereinigung' },
+      diskmop: '✓',
+      competitor: '✓',
+      winner: 'tie',
+    },
   ],
   content: {
     tr: {

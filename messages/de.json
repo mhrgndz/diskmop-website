@@ -98,6 +98,46 @@
       {
         "title": "System-Gesundheitsbewertung",
         "description": "Bewerten Sie den Gesamtzustand Ihres Computers auf einer Skala von 100. Sehen Sie, was verbessert werden kann."
+      },
+      {
+        "title": "Leere-Ordner-Finder",
+        "description": "Scannen Sie Ihre Laufwerke nach leeren Ordnern. Bereinigen Sie sie mit einem Klick."
+      },
+      {
+        "title": "Datei-Schredder",
+        "description": "Löschen Sie sensible Dateien sicher mit militärischer Überschreibung (DoD 5220.22-M). Nicht wiederherstellbar."
+      },
+      {
+        "title": "Festplatten-Treemap",
+        "description": "Visualisieren Sie Ihre gesamte Festplatte als interaktive Treemap. Sehen Sie genau, was Ihren Speicher belegt."
+      },
+      {
+        "title": "RAM-Optimierer",
+        "description": "Geben Sie Arbeitsspeicher frei, indem Sie inaktive Prozesse bereinigen. Sofortige Leistungssteigerung."
+      },
+      {
+        "title": "Dienste-Manager",
+        "description": "Kontrollieren Sie Windows-Dienste, die Ihr System verlangsamen. Deaktivieren Sie unnötige Hintergrunddienste."
+      },
+      {
+        "title": "Geplante Bereinigung",
+        "description": "Richten Sie automatische Bereinigungszeitpläne ein. Halten Sie Ihr System sauber ohne Aufwand."
+      },
+      {
+        "title": "Datenschutzbericht",
+        "description": "Erhalten Sie eine umfassende Datenschutzbewertung. Sehen Sie, welche Spuren Browser und Apps hinterlassen."
+      },
+      {
+        "title": "Unbenutzte-Apps-Erkennung",
+        "description": "Finden Sie Anwendungen, die Sie seit Monaten nicht geöffnet haben. Deinstallieren Sie sie, um Speicherplatz freizugeben."
+      },
+      {
+        "title": "Visueller Duplikat-Finder",
+        "description": "Finden Sie ähnliche Fotos mit perzeptuellem Hashing. Selbst skalierte Kopien werden erkannt."
+      },
+      {
+        "title": "Festplatten-Gesundheitsmonitor",
+        "description": "Überprüfen Sie die SSD/HDD-Gesundheit mit SMART-Daten. Überwachen Sie Temperatur und Lebensdauer."
       }
     ]
   },
@@ -166,6 +206,46 @@
       {
         "name": "Autostart",
         "description": "Verwalten Sie Programme, die mit Ihrem Computer starten. Verkürzen Sie die Startzeit."
+      },
+      {
+        "name": "Leere Ordner",
+        "description": "Finden und entfernen Sie leere Ordner, die Ihr Dateisystem unübersichtlich machen."
+      },
+      {
+        "name": "Datei-Schredder",
+        "description": "Zerstören Sie sensible Dateien dauerhaft mit militärischer Überschreibung. Keine Wiederherstellung möglich."
+      },
+      {
+        "name": "Festplatten-Treemap",
+        "description": "Interaktive visuelle Karte Ihrer Festplattennutzung. Klicken Sie in Ordner, um zu erkunden, was Platz belegt."
+      },
+      {
+        "name": "RAM-Bereinigung",
+        "description": "Optimieren Sie die Speichernutzung durch Freigabe von RAM aus inaktiven Prozessen. Sofortige Leistungssteigerung."
+      },
+      {
+        "name": "Dienste-Manager",
+        "description": "Windows-Dienste anzeigen und steuern. Unnötige Hintergrunddienste deaktivieren."
+      },
+      {
+        "name": "Geplante Bereinigung",
+        "description": "Automatisieren Sie Ihre Bereinigungsroutine. Tägliche, wöchentliche oder monatliche Zeitpläne einrichten."
+      },
+      {
+        "name": "Datenschutzbericht",
+        "description": "Umfassende Datenschutzanalyse. Browser-Spuren, Cookies und App-Daten, die Ihre Aktivität offenlegen."
+      },
+      {
+        "name": "Unbenutzte Apps",
+        "description": "Erkennen Sie Anwendungen, die Sie seit Monaten nicht geöffnet haben. Direkt aus Disk Mop deinstallieren."
+      },
+      {
+        "name": "Visuelle Duplikate",
+        "description": "Finden Sie visuell ähnliche Fotos mit KI-gestütztem Hashing. Auch Zuschnitte und Größenänderungen werden erkannt."
+      },
+      {
+        "name": "Festplatten-Gesundheit",
+        "description": "SSD/HDD-Gesundheit mit SMART-Diagnose überwachen. Temperatur, Lebensdauer und TRIM-Status prüfen."
       },
       {
         "name": "Einstellungen",
