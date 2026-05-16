@@ -50,7 +50,7 @@ cp .env.example .env.local
 
 ## Polar.sh Setup
 
-1. Create a product on [Polar.sh](https://polar.sh) — "Disk Mop Lifetime" at $9.99
+1. Create a product on [Polar.sh](https://polar.sh) — "Disk Mop Lifetime" at $19.90
 2. Get your API access token from Polar dashboard
 3. Set up a webhook pointing to `https://yourdomain.com/api/webhooks/polar`
 4. Copy the webhook secret and product ID to `.env.local`
