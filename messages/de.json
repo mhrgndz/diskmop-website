@@ -337,6 +337,22 @@
     "downloadSubtitle": "Wählen Sie Ihre Plattform und starten Sie die Installation.",
     "backHome": "Zurück zur Startseite"
   },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Vergleichen Sie Disk Mop mit der Konkurrenz. Finden Sie heraus, welches Tool das richtige für Sie ist.",
+    "badge": "Vergleiche",
+    "readMore": "Weiterlesen",
+    "readingTime": "Min. Lesezeit",
+    "comparisonTable": "Vergleichstabelle",
+    "feature": "Funktion",
+    "pros": "Vorteile",
+    "cons": "Nachteile",
+    "verdict": "Fazit",
+    "downloadCta": "Disk Mop jetzt herunterladen",
+    "ctaSubtitle": "Einmalige Zahlung für lebenslangen Zugang zu allen Funktionen. Kein Abo, keine versteckten Kosten.",
+    "relatedArticles": "Ähnliche Artikel",
+    "backToBlog": "Zurück zum Blog"
+  },
   "common": {
     "download": "Download",
     "learnMore": "Mehr erfahren",

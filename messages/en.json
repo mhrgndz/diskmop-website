@@ -337,6 +337,22 @@
     "downloadSubtitle": "Choose your platform and start the installation.",
     "backHome": "Back to Home"
   },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Compare Disk Mop with its competitors. Find out which one is right for you.",
+    "badge": "Comparisons",
+    "readMore": "Read More",
+    "readingTime": "min read",
+    "comparisonTable": "Comparison Table",
+    "feature": "Feature",
+    "pros": "Pros",
+    "cons": "Cons",
+    "verdict": "Verdict",
+    "downloadCta": "Download Disk Mop Now",
+    "ctaSubtitle": "One-time payment for lifetime access to all features. No subscription, no hidden fees.",
+    "relatedArticles": "Related Articles",
+    "backToBlog": "Back to Blog"
+  },
   "common": {
     "download": "Download",
     "learnMore": "Learn More",

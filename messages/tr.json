@@ -337,6 +337,22 @@
     "downloadSubtitle": "Platformunuzu seçin ve kuruluma başlayın.",
     "backHome": "Ana Sayfaya Dön"
   },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Disk Mop'u rakipleriyle karşılaştırın. Hangisi sizin için en uygun?",
+    "badge": "Karşılaştırmalar",
+    "readMore": "Devamını Oku",
+    "readingTime": "dk okuma",
+    "comparisonTable": "Karşılaştırma Tablosu",
+    "feature": "Özellik",
+    "pros": "Avantajlar",
+    "cons": "Dezavantajlar",
+    "verdict": "Sonuç",
+    "downloadCta": "Disk Mop'u Hemen İndir",
+    "ctaSubtitle": "Tek seferlik ödeme ile ömür boyu tüm özelliklere erişin. Abonelik yok, gizli ücret yok.",
+    "relatedArticles": "İlgili Makaleler",
+    "backToBlog": "Blog'a Dön"
+  },
   "common": {
     "download": "İndir",
     "learnMore": "Daha Fazla",

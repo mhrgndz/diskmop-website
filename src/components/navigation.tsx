@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Menu, X } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -15,15 +15,16 @@ interface NavLink {
   href: string;
 }
 
-const navLinks: NavLink[] = [
-  { key: 'features', href: '#features' },
-  { key: 'pricing', href: '#pricing' },
-  { key: 'faq', href: '#faq' },
-  { key: 'blog', href: '#blog' },
-];
-
 export function Navigation() {
   const t = useTranslations('nav');
+  const locale = useLocale();
+
+  const navLinks: NavLink[] = [
+    { key: 'features', href: '#features' },
+    { key: 'pricing', href: '#pricing' },
+    { key: 'faq', href: '#faq' },
+    { key: 'blog', href: `/${locale}/blog` },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

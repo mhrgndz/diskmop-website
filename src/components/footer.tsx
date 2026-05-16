@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Twitter, Github, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -16,13 +16,15 @@ interface SocialLink {
   icon: LucideIcon;
 }
 
-const productLinks: FooterLink[] = [
-  { labelKey: 'product.features', href: '#features' },
-  { labelKey: 'product.pricing', href: '#pricing' },
-  { labelKey: 'product.faq', href: '#faq' },
-  { labelKey: 'product.blog', href: '#' },
-  { labelKey: 'product.changelog', href: '#' },
-];
+function getProductLinks(locale: string): FooterLink[] {
+  return [
+    { labelKey: 'product.features', href: '#features' },
+    { labelKey: 'product.pricing', href: '#pricing' },
+    { labelKey: 'product.faq', href: '#faq' },
+    { labelKey: 'product.blog', href: `/${locale}/blog` },
+    { labelKey: 'product.changelog', href: '#' },
+  ];
+}
 
 const companyLinks: FooterLink[] = [
   { labelKey: 'company.about', href: '#' },
@@ -78,6 +80,8 @@ function FooterColumn({
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
+  const productLinks = getProductLinks(locale);
 
   return (
     <footer className="bg-gray-950 dark:bg-black text-gray-400">
