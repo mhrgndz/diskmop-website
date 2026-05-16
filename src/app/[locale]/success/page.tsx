@@ -166,24 +166,24 @@ export default function SuccessPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
-                href="https://github.com/mhrgndz/diskmop-releases/releases/download/v1.0.7/DiskMop-Setup-1.0.7.exe"
+                href="https://github.com/mhrgndz/diskmop-releases/releases/download/v1.1.0/DiskMop-Setup-1.1.0.exe"
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">Windows</p>
-                  <p className="text-xs text-muted-foreground">v1.0.7 • ~80 MB</p>
+                  <p className="text-xs text-muted-foreground">v1.1.0 • ~80 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
               <a
-                href="/downloads/diskmop-mac-arm64.dmg"
+                href="https://github.com/mhrgndz/diskmop-releases/releases/download/v1.1.0/DiskMop-1.1.0.dmg"
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
-                  <p className="text-xs text-muted-foreground">v1.0.7 • ~80 MB</p>
+                  <p className="text-xs text-muted-foreground">v1.1.0 • ~175 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>

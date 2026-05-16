@@ -34,7 +34,7 @@
     "systemReqs": "Sistem Gereksinimleri",
     "windows": {
       "title": "Windows",
-      "version": "v1.0.7",
+      "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
       "reqs": "Windows 10/11 (64-bit)",
@@ -43,7 +43,7 @@
     },
     "mac": {
       "title": "macOS",
-      "version": "v1.0.7",
+      "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".dmg",
       "reqs": "macOS 12+ (Apple Silicon & Intel)",
