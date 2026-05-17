@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
 import { ThemeProvider } from '@/components/theme-provider';
+import { GoogleAnalytics } from '@/components/google-analytics';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -75,6 +76,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
