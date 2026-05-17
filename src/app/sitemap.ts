@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { articles } from '@/content/articles';
 
 const BASE_URL = 'https://diskmop.com';
-const locales = ['en', 'tr', 'de'] as const;
+const locales = ['en', 'tr', 'de', 'fr', 'es', 'it', 'pt', 'ja'] as const;
 
 function localeUrl(locale: string, path: string) {
   return locale === 'en' ? `${BASE_URL}${path}` : `${BASE_URL}/${locale}${path}`;

@@ -1,0 +1,448 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "pricing": "Preços",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "download": "Baixar"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop para Windows e macOS",
+    "title": "Deixe Seu Computador",
+    "titleHighlight": "Respirar",
+    "subtitle": "Libere gigabytes de espaço com o Disk Mop e acelere seu sistema como no primeiro dia. Um clique, em minutos.",
+    "cta": "Baixar Agora",
+    "watchVideo": "Como Funciona?",
+    "users": "Mais de 10.000 usuários confiam",
+    "platforms": "Windows 10/11 e macOS 12+ • Livre de vírus • ~80 MB"
+  },
+  "trustBar": {
+    "downloads": "Downloads",
+    "downloadsLabel": "Downloads",
+    "rating": "Avaliação",
+    "ratingLabel": "Avaliação",
+    "safe": "Seguro",
+    "safeLabel": "Seguro",
+    "guarantee": "Licença Vitalícia",
+    "guaranteeLabel": "Vitalícia"
+  },
+  "platformSelector": {
+    "title": "Escolha Sua Plataforma",
+    "subtitle": "Aplicativo nativo otimizado para Windows e macOS",
+    "recommended": "Recomendado",
+    "download": "Baixar",
+    "systemReqs": "Requisitos do Sistema",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bit)",
+      "recommended": "Recomendado para você",
+      "download": "Baixar para Windows"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon e Intel)",
+      "recommended": "Recomendado para você",
+      "download": "Baixar para macOS"
+    }
+  },
+  "features": {
+    "title": "Recursos Poderosos",
+    "subtitle": "Tudo o que você precisa para acelerar seu computador e liberar espaço, em um único aplicativo.",
+    "items": [
+      {
+        "title": "Análise de Disco",
+        "description": "Analise visualmente o uso do disco. Veja instantaneamente quais pastas ocupam mais espaço."
+      },
+      {
+        "title": "Localizador de Arquivos Grandes",
+        "description": "Detecte instantaneamente arquivos com mais de 500 MB. Livre-se de arquivos enormes esquecidos."
+      },
+      {
+        "title": "Detector de Duplicatas",
+        "description": "Encontre arquivos idênticos usando SHA-256. Limpe fotos, vídeos e documentos duplicados."
+      },
+      {
+        "title": "Acelerar",
+        "description": "Limpe downloads antigos, cache do sistema, cache do navegador e lixeira com um clique. Executa todas as tarefas de limpeza automaticamente."
+      },
+      {
+        "title": "Limpador de Downloads",
+        "description": "Categorize e limpe de forma inteligente arquivos antigos e desnecessários na sua pasta de Downloads."
+      },
+      {
+        "title": "Limpador de Cache",
+        "description": "Limpe com segurança os arquivos de cache do sistema e dos aplicativos. Ganhe gigabytes de espaço."
+      },
+      {
+        "title": "Limpador de Cache do Navegador",
+        "description": "Limpe o cache do Chrome, Firefox, Edge e Safari com um clique."
+      },
+      {
+        "title": "Lixeira",
+        "description": "Esvazie sua Lixeira para excluir permanentemente os arquivos e liberar espaço no disco."
+      },
+      {
+        "title": "Limpador de Cache DNS",
+        "description": "Limpe seu cache DNS para corrigir problemas de conexão e acelerar a navegação."
+      },
+      {
+        "title": "Gerenciador de Inicialização",
+        "description": "Gerencie os programas que iniciam com o computador. Reduza o tempo de inicialização."
+      },
+      {
+        "title": "Pontuação de Saúde do Sistema",
+        "description": "Avalie a saúde geral do seu computador em uma escala de 100. Veja o que pode ser melhorado."
+      },
+      {
+        "title": "Localizador de Pastas Vazias",
+        "description": "Escaneie suas unidades em busca de pastas vazias que poluem seu sistema de arquivos. Limpe-as com um clique."
+      },
+      {
+        "title": "Destruidor de Arquivos",
+        "description": "Exclua arquivos sensíveis com segurança usando sobrescrita de nível militar (DoD 5220.22-M). Irrecuperável."
+      },
+      {
+        "title": "Mapa de Disco",
+        "description": "Visualize todo o seu disco como um mapa interativo. Veja exatamente o que está consumindo seu espaço."
+      },
+      {
+        "title": "Otimizador de RAM",
+        "description": "Libere memória limpando processos inativos. Aumente o desempenho instantaneamente."
+      },
+      {
+        "title": "Gerenciador de Serviços",
+        "description": "Controle os serviços do Windows que deixam seu sistema lento. Desative serviços em segundo plano desnecessários."
+      },
+      {
+        "title": "Limpeza Agendada",
+        "description": "Configure agendamentos de limpeza automática. Mantenha seu sistema limpo sem mover um dedo."
+      },
+      {
+        "title": "Relatório de Privacidade",
+        "description": "Obtenha uma pontuação abrangente de privacidade. Veja quais rastros navegadores e aplicativos deixam para trás."
+      },
+      {
+        "title": "Detector de Apps Não Utilizados",
+        "description": "Encontre aplicativos que você não usa há meses. Desinstale-os para liberar espaço."
+      },
+      {
+        "title": "Localizador Visual de Duplicatas",
+        "description": "Encontre fotos e imagens semelhantes usando hashing perceptual. Até cópias redimensionadas são detectadas."
+      },
+      {
+        "title": "Monitor de Saúde do Disco",
+        "description": "Verifique a saúde do SSD/HDD com dados SMART. Monitore a temperatura e a vida útil da unidade."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Como Funciona?",
+    "subtitle": "Limpe seu computador em três passos simples",
+    "steps": [
+      {
+        "title": "Baixe e Instale",
+        "description": "Baixe o instalador e conclua a configuração em minutos. Nenhum cadastro necessário."
+      },
+      {
+        "title": "Escaneie",
+        "description": "Inicie a análise do disco com um clique. Arquivos desnecessários, duplicatas e caches são detectados."
+      },
+      {
+        "title": "Limpe",
+        "description": "Escolha o que excluir e clique no botão de limpeza. Gigabytes de espaço liberados instantaneamente."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Explore o Aplicativo",
+    "subtitle": "Veja de perto os recursos poderosos do Disk Mop",
+    "tabs": [
+      {
+        "name": "Visão Geral",
+        "description": "Veja todo o uso do disco em uma única tela. Identifique instantaneamente as áreas que podem ser limpas."
+      },
+      {
+        "name": "Análise de Disco",
+        "description": "Descubra quais arquivos ocupam mais espaço com análise detalhada por pastas."
+      },
+      {
+        "name": "Arquivos Grandes",
+        "description": "Liste arquivos com mais de 500 MB ordenados por tamanho. Limpe os desnecessários com um clique."
+      },
+      {
+        "name": "Duplicatas",
+        "description": "Encontre arquivos idênticos com hash SHA-256. Exclua cópias mantendo o original."
+      },
+      {
+        "name": "Acelerar",
+        "description": "Execute todas as tarefas de limpeza com um clique. Downloads antigos, cache, dados do navegador e lixeira são limpos automaticamente."
+      },
+      {
+        "name": "Downloads",
+        "description": "Categorize sua pasta de Downloads de forma inteligente. Limpe instaladores e arquivos antigos."
+      },
+      {
+        "name": "Cache",
+        "description": "Limpe com segurança os arquivos de cache do sistema e dos aplicativos. Ganhe gigabytes de espaço."
+      },
+      {
+        "name": "Navegadores",
+        "description": "Limpe o cache do Chrome, Firefox, Edge e Safari com um clique."
+      },
+      {
+        "name": "Lixeira",
+        "description": "Esvazie sua Lixeira para liberar espaço no disco permanentemente."
+      },
+      {
+        "name": "Cache DNS",
+        "description": "Limpe seu cache DNS para corrigir problemas de conexão e acelerar a navegação."
+      },
+      {
+        "name": "Inicialização",
+        "description": "Gerencie os programas que iniciam com o computador. Reduza o tempo de inicialização."
+      },
+      {
+        "name": "Pastas Vazias",
+        "description": "Encontre e remova pastas vazias que poluem seu sistema de arquivos. Mantenha sua estrutura de diretórios limpa."
+      },
+      {
+        "name": "Destruidor de Arquivos",
+        "description": "Destrua permanentemente arquivos sensíveis com sobrescrita de nível militar. Sem possibilidade de recuperação."
+      },
+      {
+        "name": "Mapa de Disco",
+        "description": "Mapa visual interativo do uso do seu disco. Clique nas pastas para explorar o que está ocupando espaço."
+      },
+      {
+        "name": "Limpador de RAM",
+        "description": "Otimize o uso de memória liberando RAM de processos inativos. Aumento instantâneo de desempenho."
+      },
+      {
+        "name": "Gerenciador de Serviços",
+        "description": "Visualize e controle os serviços do Windows. Desative serviços em segundo plano desnecessários para acelerar seu sistema."
+      },
+      {
+        "name": "Limpeza Agendada",
+        "description": "Automatize sua rotina de limpeza. Configure agendamentos diários, semanais ou mensais."
+      },
+      {
+        "name": "Relatório de Privacidade",
+        "description": "Análise abrangente de privacidade. Veja rastros do navegador, cookies e dados de aplicativos que expõem sua atividade."
+      },
+      {
+        "name": "Apps Não Utilizados",
+        "description": "Detecte aplicativos que você não abriu há meses. Desinstale-os diretamente pelo Disk Mop."
+      },
+      {
+        "name": "Duplicatas Visuais",
+        "description": "Encontre fotos visualmente semelhantes usando hashing perceptual com IA. Até cortes e redimensionamentos são detectados."
+      },
+      {
+        "name": "Saúde do Disco",
+        "description": "Monitore a saúde do SSD/HDD com diagnósticos SMART. Verifique temperatura, vida útil e status do TRIM."
+      },
+      {
+        "name": "Configurações",
+        "description": "Personalize seu idioma, tema e preferências de licença."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "47", "suffix": " GB", "label": "Espaço Médio Liberado" },
+      { "value": "32", "suffix": "%", "label": "Aumento de Velocidade" },
+      { "value": "10000", "suffix": "+", "label": "Total de Downloads" },
+      { "value": "4.8", "suffix": "/5", "label": "Avaliação dos Usuários" }
+    ]
+  },
+  "testimonials": {
+    "title": "O Que Nossos Usuários Dizem",
+    "subtitle": "Milhares de usuários aceleraram seus computadores com o Disk Mop",
+    "items": [
+      {
+        "quote": "Encontrei mais de 50 GB de arquivos desnecessários no meu computador! Eu nem sabia dos arquivos de cache acumulados durante anos. Agora meu disco está em paz.",
+        "name": "Ahmet Yılmaz",
+        "role": "Engenheiro de Software",
+        "city": "Istambul"
+      },
+      {
+        "quote": "O localizador de duplicatas é incrível. Encontrou 4 cópias do mesmo arquivo PSD. Minhas pastas de design agora estão impecáveis.",
+        "name": "Elif Demir",
+        "role": "Designer Gráfica",
+        "city": "Ancara"
+      },
+      {
+        "quote": "Meu notebook antigo agora está rápido como no primeiro dia. O tempo de inicialização foi reduzido pela metade com o gerenciador de inicialização. Recomendo muito para estudantes.",
+        "name": "Mehmet Kaya",
+        "role": "Estudante Universitário",
+        "city": "Esmirna"
+      },
+      {
+        "quote": "A interface é tão simples que até quem não entende de computador consegue usar facilmente. Saber que é seguro é um grande diferencial.",
+        "name": "Zeynep Arslan",
+        "role": "Contadora",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Arquivos de renderização de vídeo e cache do navegador ocupavam 40% do meu disco. O Disk Mop limpou tudo com um clique. Incrível!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antália"
+      },
+      {
+        "quote": "Instalei em todos os 15 computadores do escritório. Gerenciar programas de inicialização agora é muito fácil. O trabalho da equipe de TI foi reduzido pela metade.",
+        "name": "Ayşe Çelik",
+        "role": "Gerente de Escritório",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Preços Simples e Transparentes",
+    "subtitle": "Sem assinatura, sem taxas ocultas. Pague uma vez, use para sempre.",
+    "badge": "Mais Popular",
+    "plan": {
+      "name": "Disk Mop Vitalício",
+      "badge": "Mais Popular",
+      "price": "$19.90",
+      "period": "pagamento único",
+      "cta": "Comprar Agora",
+      "secure": "Pagamento seguro: Polar.sh",
+      "paymentTrust": "Pagamento seguro processado via Polar.sh"
+    },
+    "features": [
+      "Todos os Recursos",
+      "Acesso Vitalício",
+      "Atualizações Gratuitas",
+      "Licença para 1 Computador",
+      "Windows e macOS",
+      "Suporte por E-mail",
+      "Atualizações Vitalícias",
+      "Sem Anúncios e Sem Vírus"
+    ]
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Encontre as respostas para suas dúvidas aqui",
+    "items": [
+      {
+        "question": "O Disk Mop é seguro?",
+        "answer": "Sim, o Disk Mop é 100% seguro. Não contém vírus, malware ou adware. Ele não mexe nos arquivos do sistema, apenas detecta e limpa arquivos desnecessários (cache, arquivos temporários, duplicatas). Ele mostra cada arquivo antes da exclusão e aguarda sua confirmação."
+      },
+      {
+        "question": "Quais sistemas operacionais são suportados?",
+        "answer": "O Disk Mop suporta Windows 10/11 (64-bit) e macOS 12+ (Apple Silicon e Intel). É desenvolvido como um aplicativo nativo para ambas as plataformas."
+      },
+      {
+        "question": "Como funciona a licença?",
+        "answer": "Pague $19.90 uma única vez para acesso vitalício. 1 licença = 1 computador. Sem assinatura, sem cobranças extras. Se trocar de computador, você pode transferir sua licença para o novo."
+      },
+      {
+        "question": "Como faço o pagamento?",
+        "answer": "Você faz um pagamento único através da infraestrutura segura de pagamento do Polar.sh. Cartões de crédito e outros métodos de pagamento são aceitos."
+      },
+      {
+        "question": "As atualizações são gratuitas?",
+        "answer": "Sim, todas as atualizações e novos recursos são gratuitos para sempre. Você pode receber atualizações automáticas diretamente pelo aplicativo."
+      },
+      {
+        "question": "Meus dados estão seguros?",
+        "answer": "O Disk Mop funciona totalmente de forma local. Seus arquivos nunca são enviados para nenhum servidor. A conexão com a internet é usada apenas para verificação de licença e atualizações. Todas as operações de escaneamento e limpeza acontecem no seu computador."
+      },
+      {
+        "question": "Ele entra em conflito com antivírus?",
+        "answer": "Não, o Disk Mop é totalmente compatível com todos os principais antivírus (Windows Defender, Avast, Kaspersky, Norton, etc.). É um aplicativo seguro com assinatura digital."
+      },
+      {
+        "question": "O Linux é suportado?",
+        "answer": "Atualmente, Windows e macOS são suportados. O suporte ao Linux está em nosso roadmap. Inscreva-se em nossa newsletter para acompanhar as novidades."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Limpe Seu Computador Hoje",
+    "subtitle": "Sinta a diferença com o Disk Mop.",
+    "cta": "Baixar Agora",
+    "trust": "🔒 Download Seguro • ✓ Livre de vírus • 💰 Licença Vitalícia"
+  },
+  "footer": {
+    "slogan": "Um esfregão, disco limpo.",
+    "product": {
+      "title": "Produto",
+      "features": "Recursos",
+      "pricing": "Preços",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "changelog": "Changelog"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre Nós",
+      "contact": "Contato",
+      "careers": "Carreiras"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Serviço",
+      "kvkk": "LGPD"
+    },
+    "support": {
+      "title": "Suporte",
+      "help": "Central de Ajuda",
+      "helpCenter": "Central de Ajuda",
+      "email": "Suporte por E-mail",
+      "status": "Página de Status"
+    },
+    "copyright": "© 2025 Disk Mop. Todos os direitos reservados."
+  },
+  "cookie": {
+    "text": "Este site usa cookies para melhorar sua experiência.",
+    "privacy": "Política de Privacidade",
+    "accept": "Aceitar",
+    "reject": "Rejeitar"
+  },
+  "success": {
+    "title": "Compra Realizada com Sucesso! 🎉",
+    "subtitle": "Sua licença vitalícia do Disk Mop está pronta.",
+    "licenseLabel": "Sua Chave de Licença",
+    "licenseNote": "Guarde esta chave em um lugar seguro. Ela também foi enviada para o seu e-mail.",
+    "downloadTitle": "Baixar Agora",
+    "downloadSubtitle": "Escolha sua plataforma e inicie a instalação.",
+    "backHome": "Voltar para a Página Inicial"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Compare o Disk Mop com seus concorrentes. Descubra qual é o ideal para você.",
+    "badge": "Comparações",
+    "readMore": "Leia Mais",
+    "readingTime": "min de leitura",
+    "comparisonTable": "Tabela Comparativa",
+    "feature": "Recurso",
+    "pros": "Prós",
+    "cons": "Contras",
+    "verdict": "Veredito",
+    "downloadCta": "Baixe o Disk Mop Agora",
+    "ctaSubtitle": "Pagamento único para acesso vitalício a todos os recursos. Sem assinatura, sem taxas ocultas.",
+    "relatedArticles": "Artigos Relacionados",
+    "backToBlog": "Voltar ao Blog",
+    "guide": "Guia"
+  },
+  "common": {
+    "download": "Baixar",
+    "learnMore": "Saiba Mais",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Recomendado",
+    "free": "Grátis",
+    "lifetime": "Vitalício"
+  }
+}

@@ -127,7 +127,18 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">{t('copyright')}</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-gray-500">
+            <p>{t('copyright')}</p>
+            <span className="hidden sm:inline">·</span>
+            <a
+              href="https://lovasoftware.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Powered by Lova Software
+            </a>
+          </div>
 
           {/* Social Icons */}
           <div className="flex items-center gap-4">
