@@ -28,7 +28,7 @@ function getProductLinks(locale: string): FooterLink[] {
 
 const companyLinks: FooterLink[] = [
   { labelKey: 'company.about', href: '#' },
-  { labelKey: 'company.contact', href: '#' },
+  { labelKey: 'company.contact', href: 'mailto:info@lovasoftware.com' },
   { labelKey: 'company.careers', href: '#' },
 ];
 
