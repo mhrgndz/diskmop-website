@@ -157,7 +157,8 @@ export default async function ArticlePage({
           ))}
         </section>
 
-        {/* Comparison Table */}
+        {/* Comparison Table (only for comparison articles) */}
+        {article.comparison && article.comparison.length > 0 && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-6">
             {t('comparisonTable')}
@@ -212,8 +213,10 @@ export default async function ArticlePage({
             </table>
           </div>
         </section>
+        )}
 
-        {/* Pros & Cons */}
+        {/* Pros & Cons (only for comparison articles) */}
+        {'diskmopPros' in content && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
@@ -223,7 +226,7 @@ export default async function ArticlePage({
                   {t('pros')}
                 </h4>
                 <ul className="space-y-2">
-                  {content.diskmopPros.map((pro, i) => (
+                  {(content as import('@/content/types').ArticleContent).diskmopPros.map((pro, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-sm text-foreground"
@@ -239,7 +242,7 @@ export default async function ArticlePage({
                   {t('cons')}
                 </h4>
                 <ul className="space-y-2">
-                  {content.diskmopCons.map((con, i) => (
+                  {(content as import('@/content/types').ArticleContent).diskmopCons.map((con, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-sm text-foreground"
@@ -261,7 +264,7 @@ export default async function ArticlePage({
                   {t('pros')}
                 </h4>
                 <ul className="space-y-2">
-                  {content.competitorPros.map((pro, i) => (
+                  {(content as import('@/content/types').ArticleContent).competitorPros.map((pro, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-sm text-foreground"
@@ -277,7 +280,7 @@ export default async function ArticlePage({
                   {t('cons')}
                 </h4>
                 <ul className="space-y-2">
-                  {content.competitorCons.map((con, i) => (
+                  {(content as import('@/content/types').ArticleContent).competitorCons.map((con, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2 text-sm text-foreground"
@@ -291,6 +294,7 @@ export default async function ArticlePage({
             </div>
           </div>
         </section>
+        )}
 
         {/* Detailed Sections */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -364,7 +368,9 @@ export default async function ArticlePage({
                     className="group rounded-xl border border-border bg-card p-5 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition-all"
                   >
                     <div className="text-xs text-brand-600 dark:text-brand-400 font-medium mb-2">
-                      vs {rel.competitorName}
+                      {rel.type === 'guide'
+                        ? (rel.category || 'Guide')
+                        : `vs ${rel.competitorName}`}
                     </div>
                     <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                       {relContent.title}

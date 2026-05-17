@@ -24,11 +24,23 @@ export interface ArticleContent {
   ctaText: string;
 }
 
+export interface GuideContent {
+  title: string;
+  metaDescription: string;
+  subtitle: string;
+  intro: string[];
+  sections: ArticleSection[];
+  verdict: string[];
+  ctaText: string;
+}
+
 export interface Article {
   slug: string;
+  type?: 'comparison' | 'guide';
+  category?: string;
   date: string;
   readingTime: number;
-  competitorName: string;
-  content: Record<string, ArticleContent>;
-  comparison: ComparisonRow[];
+  competitorName?: string;
+  content: Record<string, ArticleContent | GuideContent>;
+  comparison?: ComparisonRow[];
 }

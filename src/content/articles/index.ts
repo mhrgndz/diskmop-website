@@ -11,6 +11,10 @@ import { windirstat } from './windirstat';
 import { daisydisk } from './daisydisk';
 import { avastCleanup } from './avast-cleanup';
 import { windowsDiskCleanup } from './windows-disk-cleanup';
+import { freeDiskSpace } from './free-disk-space';
+import { speedUpComputer } from './speed-up-computer';
+import { slowStartupFix } from './slow-startup-fix';
+import { bestDiskCleaners } from './best-disk-cleaners';
 
 export const articles: Article[] = [
   ccleaner,
@@ -25,6 +29,10 @@ export const articles: Article[] = [
   daisydisk,
   avastCleanup,
   windowsDiskCleanup,
+  freeDiskSpace,
+  speedUpComputer,
+  slowStartupFix,
+  bestDiskCleaners,
 ];
 
 export function getArticle(slug: string): Article | undefined {

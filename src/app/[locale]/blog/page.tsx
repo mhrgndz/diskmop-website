@@ -87,7 +87,9 @@ export default async function BlogPage({
                       </span>
                     </div>
                     <div className="inline-block px-2.5 py-1 rounded-md bg-brand-50 dark:bg-brand-900/20 text-brand-600 dark:text-brand-400 text-xs font-medium mb-3">
-                      vs {article.competitorName}
+                      {article.type === 'guide'
+                        ? (article.category || t('guide'))
+                        : `vs ${article.competitorName}`}
                     </div>
                     <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                       {content.title}
