@@ -14,7 +14,7 @@
     "cta": "今すぐダウンロード",
     "watchVideo": "使い方を見る",
     "users": "10,000人以上のユーザーに信頼されています",
-    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • 約80 MB"
+    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • Apple公証済み"
   },
   "trustBar": {
     "downloads": "ダウンロード",
@@ -48,7 +48,9 @@
       "format": ".dmg",
       "reqs": "macOS 12+ (Apple Silicon & Intel)",
       "recommended": "あなたにおすすめ",
-      "download": "macOS版をダウンロード"
+      "download": "macOS版をダウンロード",
+      "signed": "Apple公証済み＆署名済み",
+      "signedNote": "Gatekeeperの警告なし — 直接開きます"
     }
   },
   "features": {
@@ -434,6 +436,12 @@
     "backToBlog": "ブログに戻る",
     "guide": "ガイド"
   },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動された可能性があります。",
+    "home": "ホーム",
+    "back": "戻る"
+  },
   "common": {
     "download": "ダウンロード",
     "learnMore": "詳しく見る",
@@ -442,6 +450,7 @@
     "appleSilicon": "Apple Silicon",
     "intel": "Intel",
     "recommended": "おすすめ",
+    "signed": "署名済み",
     "free": "無料",
     "lifetime": "永久"
   }

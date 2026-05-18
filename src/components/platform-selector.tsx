@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Monitor, Laptop, Download } from 'lucide-react';
+import { Monitor, Laptop, Download, ShieldCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -19,6 +19,7 @@ interface PlatformCard {
   ext: string;
   systemReq: string;
   href: string;
+  signed?: boolean;
 }
 
 const platforms: PlatformCard[] = [
@@ -43,6 +44,7 @@ const platforms: PlatformCard[] = [
     ext: '.dmg',
     systemReq: 'macOS 12+ (Apple Silicon & Intel)',
     href: 'https://api.diskmop.com/download/mac',
+    signed: true,
   },
 ];
 
@@ -130,10 +132,26 @@ export function PlatformSelector() {
                   {platform.ext}
                 </p>
 
+                {/* Signed & Notarized Badge */}
+                {platform.signed && (
+                  <div className="flex items-center justify-center gap-1.5 mt-3 text-emerald-600 dark:text-emerald-400">
+                    <ShieldCheck className="h-4 w-4" />
+                    <span className="text-xs font-semibold">
+                      {t(`${platform.key}.signed`)}
+                    </span>
+                  </div>
+                )}
+
                 {/* System Requirements */}
                 <p className="text-xs text-muted-foreground text-center mt-3 bg-muted rounded-lg px-3 py-2">
                   {platform.systemReq}
                 </p>
+
+                {platform.signed && (
+                  <p className="text-[11px] text-muted-foreground text-center mt-2">
+                    {t(`${platform.key}.signedNote`)}
+                  </p>
+                )}
 
                 {/* Download Button */}
                 <div className="mt-6 flex justify-center">

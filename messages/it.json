@@ -14,7 +14,7 @@
     "cta": "Scarica ora",
     "watchVideo": "Come funziona?",
     "users": "Scelto da oltre 10.000 utenti",
-    "platforms": "Windows 10/11 e macOS 12+ • Privo di virus • ~80 MB"
+    "platforms": "Windows 10/11 e macOS 12+ • Privo di virus • Apple Notarized"
   },
   "trustBar": {
     "downloads": "Download",
@@ -48,7 +48,9 @@
       "format": ".dmg",
       "reqs": "macOS 12+ (Apple Silicon e Intel)",
       "recommended": "Consigliato per te",
-      "download": "Scarica per macOS"
+      "download": "Scarica per macOS",
+      "signed": "Apple Notarized e Firmato",
+      "signedNote": "Nessun avviso Gatekeeper — si apre direttamente"
     }
   },
   "features": {
@@ -434,6 +436,12 @@
     "backToBlog": "Torna al blog",
     "guide": "Guida"
   },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste o è stata spostata.",
+    "home": "Home",
+    "back": "Torna indietro"
+  },
   "common": {
     "download": "Scarica",
     "learnMore": "Scopri di più",
@@ -442,6 +450,7 @@
     "appleSilicon": "Apple Silicon",
     "intel": "Intel",
     "recommended": "Consigliato",
+    "signed": "Firmato",
     "free": "Gratuito",
     "lifetime": "A vita"
   }

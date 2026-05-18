@@ -1,6 +1,6 @@
 'use client';
 
-import { Monitor, Laptop, ChevronDown, Download } from 'lucide-react';
+import { Monitor, Laptop, ChevronDown, Download, ShieldCheck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { cn } from '@/lib/utils';
@@ -26,6 +26,7 @@ interface DownloadOption {
   href: string;
   size: string;
   icon: typeof Monitor;
+  signed?: boolean;
 }
 
 const downloadOptions: DownloadOption[] = [
@@ -44,6 +45,7 @@ const downloadOptions: DownloadOption[] = [
     href: 'https://api.diskmop.com/download/mac',
     size: '~175 MB',
     icon: Laptop,
+    signed: true,
   },
 ];
 
@@ -110,8 +112,14 @@ export function DownloadDropdown({
                         </Badge>
                       )}
                     </div>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                       {option.size}
+                      {option.signed && (
+                        <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                          <ShieldCheck className="h-3 w-3" />
+                          {t('signed')}
+                        </span>
+                      )}
                     </span>
                   </div>
                 </a>
