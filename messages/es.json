@@ -451,6 +451,48 @@
     "home": "Inicio",
     "back": "Volver"
   },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 24 de mayo de 2026",
+    "sections": {
+      "overview": {
+        "title": "1. Descripción general",
+        "content": "Disk Mop (\"nosotros\", \"nuestro\", \"la aplicación\") es una herramienta de limpieza y optimización de disco desarrollada por Lova Software. Nos comprometemos a proteger su privacidad. Esta Política de Privacidad explica qué datos recopilamos, cómo los usamos y sus derechos con respecto a su información."
+      },
+      "dataCollection": {
+        "title": "2. Datos que no recopilamos",
+        "content": "Disk Mop funciona completamente en su computadora local. No recopilamos, almacenamos ni transmitimos ninguno de los siguientes datos:\n\n• Archivos personales, documentos, fotos o videos\n• Nombres de archivos, nombres de carpetas o estructuras de directorios\n• Historial de navegación o datos del navegador\n• Contraseñas, credenciales o información financiera\n• Configuración del sistema o identificadores de hardware\n• Patrones de uso o análisis de comportamiento dentro de la aplicación\n\nTodas las operaciones de escaneo, análisis y limpieza se realizan localmente en su dispositivo. Ningún dato de archivo sale de su computadora."
+      },
+      "localStorage": {
+        "title": "3. Datos almacenados localmente",
+        "content": "Disk Mop almacena los siguientes datos localmente en su dispositivo:\n\n• Clave de licencia y estado de activación (cifrado)\n• Preferencias de la aplicación (idioma, tema, configuración)\n• Configuraciones de limpieza programada\n\nEstos datos se almacenan en el directorio de datos de la aplicación de su sistema y nunca se transmiten a servidores externos, excepto como se describe en la Sección 4."
+      },
+      "internetUsage": {
+        "title": "4. Conexión a Internet",
+        "content": "Disk Mop utiliza una conexión a Internet solo para los siguientes propósitos:\n\n• Validación de licencia: Su clave de licencia se verifica en nuestro servidor de licencias (api.diskmop.com). Solo se transmite la clave de licencia — no se envían datos personales, información de archivos ni detalles del sistema.\n• Actualizaciones automáticas: La aplicación busca nuevas versiones a través de GitHub Releases y descarga las actualizaciones disponibles.\n\nNo se produce ninguna otra comunicación de red durante el funcionamiento normal."
+      },
+      "thirdParty": {
+        "title": "5. Servicios de terceros",
+        "content": "• Polar.sh: Si compra una licencia, el pago se procesa a través de Polar.sh. Polar.sh gestiona todos los datos de pago de acuerdo con su propia política de privacidad. No almacenamos ni tenemos acceso a sus datos de pago.\n• GitHub: Las actualizaciones de la aplicación se alojan en GitHub Releases. La política de privacidad de GitHub se aplica a la descarga de archivos de actualización.\n• Google Analytics: Nuestro sitio web (diskmop.com) utiliza Google Analytics para comprender el tráfico web. Esto no se aplica a la aplicación de escritorio."
+      },
+      "analytics": {
+        "title": "6. Análisis del sitio web",
+        "content": "Nuestro sitio web diskmop.com utiliza Google Analytics para recopilar estadísticas de uso anónimas como vistas de página, región geográfica y fuentes de referencia. Estos datos nos ayudan a mejorar nuestro sitio web. Puede desactivar Google Analytics usando extensiones del navegador o la configuración de cookies. La aplicación de escritorio no incluye ningún análisis ni telemetría."
+      },
+      "children": {
+        "title": "7. Privacidad de los niños",
+        "content": "Disk Mop es una aplicación de utilidad de propósito general. No recopilamos intencionalmente información personal de niños menores de 13 años. Dado que la aplicación no recopila datos personales, no existen preocupaciones específicas relacionadas con la edad."
+      },
+      "changes": {
+        "title": "8. Cambios en esta política",
+        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará en esta página con una fecha de revisión actualizada. El uso continuado de la aplicación después de los cambios constituye la aceptación de la política actualizada."
+      },
+      "contact": {
+        "title": "9. Contáctenos",
+        "content": "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en:\n\nCorreo electrónico: info@lovasoftware.com\nSitio web: https://diskmop.com\nDesarrollador: Lova Software — https://lovasoftware.com"
+      }
+    }
+  },
   "common": {
     "download": "Descargar",
     "learnMore": "Más información",

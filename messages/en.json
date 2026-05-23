@@ -451,6 +451,48 @@
     "home": "Home",
     "back": "Go Back"
   },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 24, 2026",
+    "sections": {
+      "overview": {
+        "title": "1. Overview",
+        "content": "Disk Mop (\"we\", \"our\", \"the application\") is a desktop disk cleanup and optimization tool developed by Lova Software. We are committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and your rights regarding your information."
+      },
+      "dataCollection": {
+        "title": "2. Data We Do Not Collect",
+        "content": "Disk Mop operates entirely on your local computer. We do not collect, store, or transmit any of the following:\n\n• Personal files, documents, photos, or videos\n• File names, folder names, or directory structures\n• Browsing history or browser data\n• Passwords, credentials, or financial information\n• System configuration or hardware identifiers\n• Usage patterns or behavioral analytics within the app\n\nAll scanning, analysis, and cleaning operations are performed locally on your device. No file data ever leaves your computer."
+      },
+      "localStorage": {
+        "title": "3. Data Stored Locally",
+        "content": "Disk Mop stores the following data locally on your device:\n\n• License key and activation status (encrypted)\n• Application preferences (language, theme, settings)\n• Scheduled cleanup configurations\n\nThis data is stored in your system's application data directory and is never transmitted to external servers except as described in Section 4."
+      },
+      "internetUsage": {
+        "title": "4. Internet Connectivity",
+        "content": "Disk Mop uses an internet connection only for the following purposes:\n\n• License validation: Your license key is verified against our licensing server (api.diskmop.com) to confirm its validity. Only the license key is transmitted — no personal data, file information, or system details are sent.\n• Automatic updates: The application checks for new versions via GitHub Releases and downloads updates when available.\n\nNo other network communication occurs during normal operation."
+      },
+      "thirdParty": {
+        "title": "5. Third-Party Services",
+        "content": "• Polar.sh: If you purchase a license, payment is processed through Polar.sh. Polar.sh handles all payment data (credit card information, billing address) according to their own privacy policy. We do not store or have access to your payment details.\n• GitHub: Application updates are hosted on GitHub Releases. GitHub's privacy policy applies to the download of update files.\n• Google Analytics: Our website (diskmop.com) uses Google Analytics to understand website traffic. This does not apply to the desktop application itself."
+      },
+      "analytics": {
+        "title": "6. Website Analytics",
+        "content": "Our website at diskmop.com uses Google Analytics to collect anonymous usage statistics such as page views, geographic region, and referral sources. This data helps us improve our website. You can opt out of Google Analytics by using browser extensions or cookie settings. The desktop application does not include any analytics or telemetry."
+      },
+      "children": {
+        "title": "7. Children's Privacy",
+        "content": "Disk Mop is a general-purpose utility application. We do not knowingly collect personal information from children under 13. Since the application does not collect personal data, there are no age-specific data concerns."
+      },
+      "changes": {
+        "title": "8. Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the application after changes constitutes acceptance of the updated policy."
+      },
+      "contact": {
+        "title": "9. Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: info@lovasoftware.com\nWebsite: https://diskmop.com\nDeveloper: Lova Software — https://lovasoftware.com"
+      }
+    }
+  },
   "common": {
     "download": "Download",
     "learnMore": "Learn More",

@@ -451,6 +451,48 @@
     "home": "Startseite",
     "back": "Zurück"
   },
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "lastUpdated": "Zuletzt aktualisiert: 24. Mai 2026",
+    "sections": {
+      "overview": {
+        "title": "1. Überblick",
+        "content": "Disk Mop (\"wir\", \"unsere\", \"die Anwendung\") ist ein Desktop-Tool zur Datenträgerbereinigung und -optimierung, entwickelt von Lova Software. Wir verpflichten uns, Ihre Privatsphäre zu schützen. Diese Datenschutzrichtlinie erklärt, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie bezüglich Ihrer Daten haben."
+      },
+      "dataCollection": {
+        "title": "2. Daten, die wir nicht erheben",
+        "content": "Disk Mop arbeitet vollständig auf Ihrem lokalen Computer. Wir erheben, speichern oder übertragen keine der folgenden Daten:\n\n• Persönliche Dateien, Dokumente, Fotos oder Videos\n• Dateinamen, Ordnernamen oder Verzeichnisstrukturen\n• Browserverlauf oder Browserdaten\n• Passwörter, Anmeldedaten oder Finanzinformationen\n• Systemkonfiguration oder Hardware-Kennungen\n• Nutzungsmuster oder Verhaltensanalysen innerhalb der App\n\nAlle Scan-, Analyse- und Bereinigungsvorgänge werden lokal auf Ihrem Gerät durchgeführt. Keine Dateidaten verlassen jemals Ihren Computer."
+      },
+      "localStorage": {
+        "title": "3. Lokal gespeicherte Daten",
+        "content": "Disk Mop speichert folgende Daten lokal auf Ihrem Gerät:\n\n• Lizenzschlüssel und Aktivierungsstatus (verschlüsselt)\n• Anwendungseinstellungen (Sprache, Design, Einstellungen)\n• Geplante Bereinigungskonfigurationen\n\nDiese Daten werden im Anwendungsdatenverzeichnis Ihres Systems gespeichert und werden niemals an externe Server übertragen, außer wie in Abschnitt 4 beschrieben."
+      },
+      "internetUsage": {
+        "title": "4. Internetverbindung",
+        "content": "Disk Mop nutzt eine Internetverbindung ausschließlich für folgende Zwecke:\n\n• Lizenzvalidierung: Ihr Lizenzschlüssel wird auf unserem Lizenzserver (api.diskmop.com) verifiziert. Nur der Lizenzschlüssel wird übertragen — keine persönlichen Daten, Dateiinformationen oder Systemdetails.\n• Automatische Updates: Die Anwendung prüft über GitHub Releases auf neue Versionen und lädt verfügbare Updates herunter.\n\nWährend des normalen Betriebs findet keine weitere Netzwerkkommunikation statt."
+      },
+      "thirdParty": {
+        "title": "5. Drittanbieter-Dienste",
+        "content": "• Polar.sh: Beim Kauf einer Lizenz wird die Zahlung über Polar.sh abgewickelt. Polar.sh verwaltet alle Zahlungsdaten gemäß ihrer eigenen Datenschutzrichtlinie. Wir speichern Ihre Zahlungsdaten nicht und haben keinen Zugriff darauf.\n• GitHub: Anwendungsupdates werden auf GitHub Releases gehostet. Für den Download von Update-Dateien gilt die Datenschutzrichtlinie von GitHub.\n• Google Analytics: Unsere Website (diskmop.com) verwendet Google Analytics zur Analyse des Website-Traffics. Dies gilt nicht für die Desktop-Anwendung selbst."
+      },
+      "analytics": {
+        "title": "6. Website-Analysen",
+        "content": "Unsere Website unter diskmop.com verwendet Google Analytics, um anonyme Nutzungsstatistiken wie Seitenaufrufe, geografische Region und Verweisquellen zu sammeln. Diese Daten helfen uns, unsere Website zu verbessern. Sie können Google Analytics über Browser-Erweiterungen oder Cookie-Einstellungen deaktivieren. Die Desktop-Anwendung enthält keine Analysen oder Telemetrie."
+      },
+      "children": {
+        "title": "7. Datenschutz für Kinder",
+        "content": "Disk Mop ist eine allgemeine Dienstprogramm-Anwendung. Wir erheben wissentlich keine persönlichen Daten von Kindern unter 13 Jahren. Da die Anwendung keine persönlichen Daten erhebt, bestehen keine altersspezifischen Datenbedenken."
+      },
+      "changes": {
+        "title": "8. Änderungen dieser Richtlinie",
+        "content": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Revisionsdatum veröffentlicht. Die fortgesetzte Nutzung der Anwendung nach Änderungen gilt als Akzeptanz der aktualisierten Richtlinie."
+      },
+      "contact": {
+        "title": "9. Kontakt",
+        "content": "Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns bitte unter:\n\nE-Mail: info@lovasoftware.com\nWebsite: https://diskmop.com\nEntwickler: Lova Software — https://lovasoftware.com"
+      }
+    }
+  },
   "common": {
     "download": "Download",
     "learnMore": "Mehr erfahren",

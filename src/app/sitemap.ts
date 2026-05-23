@@ -26,6 +26,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Privacy policy
+  for (const locale of locales) {
+    entries.push({
+      url: localeUrl(locale, '/privacy'),
+      lastModified: new Date('2026-05-24'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, localeUrl(l, '/privacy')])
+        ),
+      },
+    });
+  }
+
   // Blog listing
   for (const locale of locales) {
     entries.push({

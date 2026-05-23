@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { Twitter, Github, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 interface FooterLink {
   labelKey: string;
@@ -33,7 +34,7 @@ const companyLinks: FooterLink[] = [
 ];
 
 const legalLinks: FooterLink[] = [
-  { labelKey: 'legal.privacy', href: '#' },
+  { labelKey: 'legal.privacy', href: '/privacy' },
   { labelKey: 'legal.terms', href: '#' },
   { labelKey: 'legal.kvkk', href: '#' },
 ];
@@ -63,16 +64,28 @@ function FooterColumn({
     <div>
       <h3 className="text-white font-semibold text-sm mb-4">{title}</h3>
       <ul className="space-y-3">
-        {links.map((link) => (
-          <li key={link.labelKey}>
-            <a
-              href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              {t(link.labelKey)}
-            </a>
-          </li>
-        ))}
+        {links.map((link) => {
+          const isInternal = link.href.startsWith('/') && !link.href.startsWith('/#');
+          return (
+            <li key={link.labelKey}>
+              {isInternal ? (
+                <Link
+                  href={link.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  {t(link.labelKey)}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  {t(link.labelKey)}
+                </a>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

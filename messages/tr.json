@@ -451,6 +451,48 @@
     "home": "Ana Sayfa",
     "back": "Geri Dön"
   },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme: 24 Mayıs 2026",
+    "sections": {
+      "overview": {
+        "title": "1. Genel Bakış",
+        "content": "Disk Mop (\"biz\", \"uygulama\"), Lova Software tarafından geliştirilen bir masaüstü disk temizleme ve optimizasyon aracıdır. Gizliliğinizi korumaya kararlıyız. Bu Gizlilik Politikası, hangi verileri topladığımızı, nasıl kullandığımızı ve bilgilerinizle ilgili haklarınızı açıklar."
+      },
+      "dataCollection": {
+        "title": "2. Toplamadığımız Veriler",
+        "content": "Disk Mop tamamen yerel bilgisayarınızda çalışır. Aşağıdaki verilerin hiçbirini toplamaz, saklamaz veya iletmeyiz:\n\n• Kişisel dosyalar, belgeler, fotoğraflar veya videolar\n• Dosya adları, klasör adları veya dizin yapıları\n• Tarama geçmişi veya tarayıcı verileri\n• Şifreler, kimlik bilgileri veya finansal bilgiler\n• Sistem yapılandırması veya donanım tanımlayıcıları\n• Uygulama içi kullanım kalıpları veya davranış analizleri\n\nTüm tarama, analiz ve temizleme işlemleri cihazınızda yerel olarak gerçekleştirilir. Hiçbir dosya verisi bilgisayarınızdan çıkmaz."
+      },
+      "localStorage": {
+        "title": "3. Yerel Olarak Saklanan Veriler",
+        "content": "Disk Mop, cihazınızda aşağıdaki verileri yerel olarak saklar:\n\n• Lisans anahtarı ve aktivasyon durumu (şifrelenmiş)\n• Uygulama tercihleri (dil, tema, ayarlar)\n• Zamanlanmış temizlik yapılandırmaları\n\nBu veriler sisteminizin uygulama veri dizininde saklanır ve Bölüm 4'te açıklananlar dışında harici sunuculara asla iletilmez."
+      },
+      "internetUsage": {
+        "title": "4. İnternet Bağlantısı",
+        "content": "Disk Mop internet bağlantısını yalnızca aşağıdaki amaçlarla kullanır:\n\n• Lisans doğrulama: Lisans anahtarınız, geçerliliğini onaylamak için lisans sunucumuzda (api.diskmop.com) doğrulanır. Yalnızca lisans anahtarı iletilir — kişisel veri, dosya bilgisi veya sistem detayı gönderilmez.\n• Otomatik güncellemeler: Uygulama, GitHub Releases üzerinden yeni sürümleri kontrol eder ve mevcut güncellemeleri indirir.\n\nNormal çalışma sırasında başka bir ağ iletişimi gerçekleşmez."
+      },
+      "thirdParty": {
+        "title": "5. Üçüncü Taraf Hizmetler",
+        "content": "• Polar.sh: Lisans satın alırsanız, ödeme Polar.sh üzerinden işlenir. Polar.sh tüm ödeme verilerini (kredi kartı bilgileri, fatura adresi) kendi gizlilik politikasına göre yönetir. Ödeme bilgilerinizi saklamaz veya bunlara erişimimiz yoktur.\n• GitHub: Uygulama güncellemeleri GitHub Releases üzerinde barındırılır. Güncelleme dosyalarının indirilmesi için GitHub'ın gizlilik politikası geçerlidir.\n• Google Analytics: Web sitemiz (diskmop.com) web trafiğini anlamak için Google Analytics kullanır. Bu, masaüstü uygulamasının kendisi için geçerli değildir."
+      },
+      "analytics": {
+        "title": "6. Web Sitesi Analizleri",
+        "content": "diskmop.com adresindeki web sitemiz, sayfa görüntülemeleri, coğrafi bölge ve yönlendirme kaynakları gibi anonim kullanım istatistiklerini toplamak için Google Analytics kullanır. Bu veriler web sitemizi iyileştirmemize yardımcı olur. Tarayıcı uzantıları veya çerez ayarları kullanarak Google Analytics'i devre dışı bırakabilirsiniz. Masaüstü uygulaması herhangi bir analiz veya telemetri içermez."
+      },
+      "children": {
+        "title": "7. Çocukların Gizliliği",
+        "content": "Disk Mop genel amaçlı bir yardımcı programdır. 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. Uygulama kişisel veri toplamadığından, yaşa özel veri endişesi bulunmamaktadır."
+      },
+      "changes": {
+        "title": "8. Bu Politikadaki Değişiklikler",
+        "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişiklik, güncellenmiş revizyon tarihiyle birlikte bu sayfada yayınlanacaktır. Değişikliklerden sonra uygulamayı kullanmaya devam etmeniz, güncellenen politikayı kabul ettiğiniz anlamına gelir."
+      },
+      "contact": {
+        "title": "9. İletişim",
+        "content": "Bu Gizlilik Politikası hakkında sorularınız varsa lütfen bizimle iletişime geçin:\n\nE-posta: info@lovasoftware.com\nWeb sitesi: https://diskmop.com\nGeliştirici: Lova Software — https://lovasoftware.com"
+      }
+    }
+  },
   "common": {
     "download": "İndir",
     "learnMore": "Daha Fazla",
