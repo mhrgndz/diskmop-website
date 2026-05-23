@@ -417,7 +417,16 @@
     "licenseNote": "Bewahren Sie diesen Schlüssel sicher auf. Er wurde auch an Ihre E-Mail-Adresse gesendet.",
     "downloadTitle": "Jetzt herunterladen",
     "downloadSubtitle": "Wählen Sie Ihre Plattform und starten Sie die Installation.",
-    "backHome": "Zurück zur Startseite"
+    "backHome": "Zurück zur Startseite",
+    "loading": "Ihre Lizenz wird geladen...",
+    "loadingSubtitle": "Bitte warten Sie, während wir Ihren Lizenzschlüssel abrufen.",
+    "error": "Etwas ist schiefgelaufen",
+    "errorDesc": "Wir konnten Ihren Lizenzschlüssel nicht laden. Bitte überprüfen Sie Ihre E-Mail oder kontaktieren Sie den Support.",
+    "retry": "Erneut versuchen",
+    "stepsTitle": "So aktivieren Sie",
+    "step1": "Kopieren Sie den obigen Lizenzschlüssel",
+    "step2": "Öffnen Sie Disk Mop und gehen Sie zu Einstellungen",
+    "step3": "Fügen Sie Ihren Schlüssel ein und klicken Sie auf Aktivieren"
   },
   "blog": {
     "title": "Blog",

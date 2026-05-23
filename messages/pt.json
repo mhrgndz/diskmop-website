@@ -417,7 +417,16 @@
     "licenseNote": "Guarde esta chave em um lugar seguro. Ela também foi enviada para o seu e-mail.",
     "downloadTitle": "Baixar Agora",
     "downloadSubtitle": "Escolha sua plataforma e inicie a instalação.",
-    "backHome": "Voltar para a Página Inicial"
+    "backHome": "Voltar para a Página Inicial",
+    "loading": "Carregando sua licença...",
+    "loadingSubtitle": "Aguarde enquanto recuperamos sua chave de licença.",
+    "error": "Algo deu errado",
+    "errorDesc": "Não foi possível carregar sua chave de licença. Verifique seu e-mail ou entre em contato com o suporte.",
+    "retry": "Tentar novamente",
+    "stepsTitle": "Como ativar",
+    "step1": "Copie a chave de licença acima",
+    "step2": "Abra o Disk Mop e vá para Configurações",
+    "step3": "Cole sua chave e clique em Ativar"
   },
   "blog": {
     "title": "Blog",

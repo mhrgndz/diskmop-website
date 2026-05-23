@@ -417,7 +417,16 @@
     "licenseNote": "Bu anahtarı güvenli bir yerde saklayın. E-posta adresinize de gönderilmiştir.",
     "downloadTitle": "Şimdi İndir",
     "downloadSubtitle": "Platformunuzu seçin ve kuruluma başlayın.",
-    "backHome": "Ana Sayfaya Dön"
+    "backHome": "Ana Sayfaya Dön",
+    "loading": "Lisansınız yükleniyor...",
+    "loadingSubtitle": "Lisans anahtarınız alınırken lütfen bekleyin.",
+    "error": "Bir sorun oluştu",
+    "errorDesc": "Lisans anahtarınız yüklenemedi. Lütfen e-postanızı kontrol edin veya destek ile iletişime geçin.",
+    "retry": "Tekrar Dene",
+    "stepsTitle": "Nasıl Aktive Edilir",
+    "step1": "Yukarıdaki lisans anahtarını kopyalayın",
+    "step2": "Disk Mop'u açın ve Ayarlar'a gidin",
+    "step3": "Anahtarınızı yapıştırın ve Etkinleştir'e tıklayın"
   },
   "blog": {
     "title": "Blog",

@@ -1,26 +1,22 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback, Suspense } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { CheckCircle, Copy, Download, ArrowLeft, Monitor, Laptop } from 'lucide-react';
+import {
+  CheckCircle,
+  Copy,
+  Download,
+  ArrowLeft,
+  Monitor,
+  Laptop,
+  Loader2,
+  AlertCircle,
+  RefreshCw,
+} from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-
-function generateMockLicenseKey(): string {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  const segments = 4;
-  const segmentLength = 5;
-  const parts: string[] = [];
-  for (let i = 0; i < segments; i++) {
-    let segment = '';
-    for (let j = 0; j < segmentLength; j++) {
-      segment += chars[Math.floor(Math.random() * chars.length)];
-    }
-    parts.push(segment);
-  }
-  return parts.join('-');
-}
 
 function Confetti() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -103,16 +99,117 @@ function Confetti() {
   );
 }
 
-export default function SuccessPage() {
+interface CheckoutData {
+  email: string | null;
+  licenseKey: string | null;
+  product: string;
+}
+
+function SuccessContent() {
   const t = useTranslations('success');
-  const [licenseKey] = useState(generateMockLicenseKey);
+  const searchParams = useSearchParams();
+  const checkoutId = searchParams.get('checkout_id');
+
+  const [data, setData] = useState<CheckoutData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [copied, setCopied] = useState(false);
+  const retryRef = useRef(0);
+
+  const fetchCheckout = useCallback(async () => {
+    if (!checkoutId) {
+      setLoading(false);
+      setError(true);
+      return;
+    }
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      const res = await fetch(`https://api.diskmop.com/api/checkout/${checkoutId}`);
+      if (!res.ok) throw new Error('fetch_failed');
+      const result: CheckoutData = await res.json();
+
+      if (!result.licenseKey && retryRef.current < 3) {
+        retryRef.current += 1;
+        setTimeout(() => fetchCheckout(), 2000);
+        return;
+      }
+
+      setData(result);
+      setLoading(false);
+    } catch {
+      setError(true);
+      setLoading(false);
+    }
+  }, [checkoutId]);
+
+  useEffect(() => {
+    fetchCheckout();
+  }, [fetchCheckout]);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(licenseKey);
+    if (!data?.licenseKey) return;
+    await navigator.clipboard.writeText(data.licenseKey);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const handleRetry = () => {
+    retryRef.current = 0;
+    fetchCheckout();
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background px-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center"
+        >
+          <Loader2 className="w-12 h-12 text-brand-500 mx-auto animate-spin" />
+          <h2 className="text-xl font-semibold mt-4">{t('loading')}</h2>
+          <p className="text-muted-foreground mt-2 text-sm">{t('loadingSubtitle')}</p>
+        </motion.div>
+      </div>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-md w-full text-center"
+        >
+          <AlertCircle className="w-16 h-16 text-amber-500 mx-auto" />
+          <h2 className="text-2xl font-bold mt-4">{t('error')}</h2>
+          <p className="text-muted-foreground mt-2">{t('errorDesc')}</p>
+          {checkoutId && (
+            <button
+              onClick={handleRetry}
+              className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-brand-500 text-white rounded-xl hover:bg-brand-600 transition-colors font-medium"
+            >
+              <RefreshCw className="w-4 h-4" />
+              {t('retry')}
+            </button>
+          )}
+          <div className="mt-6">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {t('backHome')}
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -135,28 +232,44 @@ export default function SuccessPage() {
           <h1 className="text-3xl sm:text-4xl font-bold mt-6">{t('title')}</h1>
           <p className="text-muted-foreground mt-2">{t('subtitle')}</p>
 
-          <div className="mt-8 bg-card rounded-2xl border p-6">
-            <p className="text-sm font-medium text-muted-foreground mb-2">
-              {t('licenseLabel')}
-            </p>
-            <div className="flex items-center gap-2 justify-center bg-muted rounded-xl p-4">
-              <code className="text-lg font-mono font-bold tracking-wider">
-                {licenseKey}
-              </code>
-              <button
-                onClick={handleCopy}
-                className="p-2 hover:bg-background rounded-lg transition-colors"
-              >
-                {copied ? (
-                  <CheckCircle className="w-5 h-5 text-emerald-500" />
-                ) : (
-                  <Copy className="w-5 h-5 text-muted-foreground" />
-                )}
-              </button>
+          {data.licenseKey && (
+            <div className="mt-8 bg-card rounded-2xl border p-6">
+              <p className="text-sm font-medium text-muted-foreground mb-2">
+                {t('licenseLabel')}
+              </p>
+              <div className="flex items-center gap-2 justify-center bg-muted rounded-xl p-4">
+                <code className="text-lg font-mono font-bold tracking-wider">
+                  {data.licenseKey}
+                </code>
+                <button
+                  onClick={handleCopy}
+                  className="p-2 hover:bg-background rounded-lg transition-colors"
+                >
+                  {copied ? (
+                    <CheckCircle className="w-5 h-5 text-emerald-500" />
+                  ) : (
+                    <Copy className="w-5 h-5 text-muted-foreground" />
+                  )}
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">
+                {t('licenseNote')}
+              </p>
             </div>
-            <p className="text-xs text-muted-foreground mt-3">
-              {t('licenseNote')}
-            </p>
+          )}
+
+          <div className="mt-8 bg-card rounded-2xl border p-6 text-left">
+            <h3 className="font-semibold text-sm mb-4">{t('stepsTitle')}</h3>
+            <div className="space-y-3">
+              {[t('step1'), t('step2'), t('step3')].map((step, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <p className="text-sm text-muted-foreground">{step}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-8">
@@ -172,7 +285,7 @@ export default function SuccessPage() {
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">Windows</p>
-                  <p className="text-xs text-muted-foreground">v1.0.0 • ~80 MB</p>
+                  <p className="text-xs text-muted-foreground">Setup • ~80 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
@@ -183,7 +296,7 @@ export default function SuccessPage() {
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
-                  <p className="text-xs text-muted-foreground">v1.0.0 • ~175 MB</p>
+                  <p className="text-xs text-muted-foreground">DMG • ~175 MB</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
@@ -212,5 +325,13 @@ export default function SuccessPage() {
         </motion.div>
       </div>
     </>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense>
+      <SuccessContent />
+    </Suspense>
   );
 }

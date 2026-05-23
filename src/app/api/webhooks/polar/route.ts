@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyWebhookSignature, generateLicenseKey } from '@/lib/polar';
+import { verifyWebhookSignature } from '@/lib/polar';
 
 interface PolarWebhookPayload {
   type: string;
@@ -36,17 +36,9 @@ export async function POST(request: NextRequest) {
 
   switch (payload.type) {
     case 'checkout.completed': {
-      const licenseKey = generateLicenseKey();
-      const customerEmail = payload.data.customer_email;
-
-      // TODO: Replace with actual implementation:
-      // 1. Store license key in database
-      // 2. Send confirmation email with license key
-      // 3. Activate license for the customer
       console.log(`[Polar Webhook] New purchase:`, {
         orderId: payload.data.id,
-        email: customerEmail,
-        licenseKey,
+        email: payload.data.customer_email,
         product: payload.data.product_id,
         amount: payload.data.amount,
         currency: payload.data.currency,
@@ -54,13 +46,11 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
-        licenseKey,
-        message: 'License generated successfully',
+        message: 'Purchase recorded',
       });
     }
 
     case 'checkout.refunded': {
-      // TODO: Deactivate license key
       console.log(`[Polar Webhook] Refund:`, {
         orderId: payload.data.id,
         email: payload.data.customer_email,

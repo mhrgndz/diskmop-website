@@ -417,7 +417,16 @@
     "licenseNote": "Keep this key in a safe place. It has also been sent to your email.",
     "downloadTitle": "Download Now",
     "downloadSubtitle": "Choose your platform and start the installation.",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "loading": "Loading your license...",
+    "loadingSubtitle": "Please wait while we retrieve your license key.",
+    "error": "Something went wrong",
+    "errorDesc": "We couldn't load your license key. Please check your email for the key or contact support.",
+    "retry": "Try Again",
+    "stepsTitle": "How to Activate",
+    "step1": "Copy the license key above",
+    "step2": "Open Disk Mop and go to Settings",
+    "step3": "Paste your key and click Activate"
   },
   "blog": {
     "title": "Blog",

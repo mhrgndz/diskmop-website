@@ -417,7 +417,16 @@
     "licenseNote": "Conservez cette clé en lieu sûr. Elle a également été envoyée à votre adresse e-mail.",
     "downloadTitle": "Télécharger maintenant",
     "downloadSubtitle": "Choisissez votre plateforme et lancez l'installation.",
-    "backHome": "Retour à l'accueil"
+    "backHome": "Retour à l'accueil",
+    "loading": "Chargement de votre licence...",
+    "loadingSubtitle": "Veuillez patienter pendant que nous récupérons votre clé de licence.",
+    "error": "Une erreur est survenue",
+    "errorDesc": "Nous n'avons pas pu charger votre clé de licence. Veuillez vérifier votre e-mail ou contacter le support.",
+    "retry": "Réessayer",
+    "stepsTitle": "Comment activer",
+    "step1": "Copiez la clé de licence ci-dessus",
+    "step2": "Ouvrez Disk Mop et allez dans Paramètres",
+    "step3": "Collez votre clé et cliquez sur Activer"
   },
   "blog": {
     "title": "Blog",

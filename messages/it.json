@@ -417,7 +417,16 @@
     "licenseNote": "Conserva questa chiave in un luogo sicuro. È stata inviata anche alla tua email.",
     "downloadTitle": "Scarica ora",
     "downloadSubtitle": "Scegli la tua piattaforma e avvia l'installazione.",
-    "backHome": "Torna alla home"
+    "backHome": "Torna alla home",
+    "loading": "Caricamento della licenza...",
+    "loadingSubtitle": "Attendere mentre recuperiamo la chiave di licenza.",
+    "error": "Qualcosa è andato storto",
+    "errorDesc": "Non siamo riusciti a caricare la chiave di licenza. Controlla la tua email o contatta il supporto.",
+    "retry": "Riprova",
+    "stepsTitle": "Come attivare",
+    "step1": "Copia la chiave di licenza qui sopra",
+    "step2": "Apri Disk Mop e vai alle Impostazioni",
+    "step3": "Incolla la chiave e clicca su Attiva"
   },
   "blog": {
     "title": "Blog",

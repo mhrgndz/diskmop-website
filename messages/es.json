@@ -417,7 +417,16 @@
     "licenseNote": "Guarda esta clave en un lugar seguro. También se ha enviado a tu correo electrónico.",
     "downloadTitle": "Descargar ahora",
     "downloadSubtitle": "Elige tu plataforma y comienza la instalación.",
-    "backHome": "Volver al inicio"
+    "backHome": "Volver al inicio",
+    "loading": "Cargando tu licencia...",
+    "loadingSubtitle": "Por favor espera mientras recuperamos tu clave de licencia.",
+    "error": "Algo salió mal",
+    "errorDesc": "No pudimos cargar tu clave de licencia. Por favor revisa tu correo electrónico o contacta al soporte.",
+    "retry": "Intentar de nuevo",
+    "stepsTitle": "Cómo activar",
+    "step1": "Copia la clave de licencia de arriba",
+    "step2": "Abre Disk Mop y ve a Configuración",
+    "step3": "Pega tu clave y haz clic en Activar"
   },
   "blog": {
     "title": "Blog",
