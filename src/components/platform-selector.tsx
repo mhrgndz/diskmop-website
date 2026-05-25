@@ -2,11 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Monitor, Laptop, Download, ShieldCheck } from 'lucide-react';
+import { Monitor, Laptop, Download, ShieldCheck, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { useOSDetection, type OSType } from '@/hooks/use-os-detection';
+import { useAppInfo } from '@/hooks/use-app-info';
 import { Button } from '@/components/ui/button';
 
 interface PlatformCard {
@@ -14,8 +15,6 @@ interface PlatformCard {
   matchOS: OSType;
   icon: LucideIcon;
   name: string;
-  version: string;
-  size: string;
   ext: string;
   systemReq: string;
   href: string;
@@ -28,8 +27,6 @@ const platforms: PlatformCard[] = [
     matchOS: 'windows',
     icon: Monitor,
     name: 'Windows',
-    version: 'v1.0.0',
-    size: '~80 MB',
     ext: '.exe',
     systemReq: 'Windows 10/11 (64-bit)',
     href: 'https://api.diskmop.com/download/windows',
@@ -39,8 +36,6 @@ const platforms: PlatformCard[] = [
     matchOS: 'mac',
     icon: Laptop,
     name: 'macOS',
-    version: 'v1.0.0',
-    size: '~175 MB',
     ext: '.dmg',
     systemReq: 'macOS 12+ (Apple Silicon & Intel)',
     href: 'https://api.diskmop.com/download/mac',
@@ -48,14 +43,22 @@ const platforms: PlatformCard[] = [
   },
 ];
 
+function formatCount(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
+  return n.toString();
+}
+
 export function PlatformSelector() {
   const t = useTranslations('platformSelector');
   const detectedOS = useOSDetection();
+  const { version, downloads, windowsSize, macSize } = useAppInfo();
+
+  const getSize = (key: string) => (key === 'windows' ? windowsSize : macSize) || '~80 MB';
+  const getCount = (key: string) => (key === 'windows' ? downloads.windows : downloads.mac);
 
   return (
     <section id="platforms" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,11 +74,11 @@ export function PlatformSelector() {
           </p>
         </motion.div>
 
-        {/* Platform Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isHighlighted = detectedOS === platform.matchOS;
+            const count = getCount(platform.key);
 
             return (
               <motion.div
@@ -91,7 +94,6 @@ export function PlatformSelector() {
                     : 'border-border hover:border-brand-500/50 hover:shadow-lg'
                 )}
               >
-                {/* Recommended Badge */}
                 {isHighlighted && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white shadow-sm">
@@ -100,7 +102,6 @@ export function PlatformSelector() {
                   </div>
                 )}
 
-                {/* Icon */}
                 <div className="flex justify-center mb-4">
                   <div
                     className={cn(
@@ -121,18 +122,24 @@ export function PlatformSelector() {
                   </div>
                 </div>
 
-                {/* Platform Name */}
                 <h3 className="text-xl font-semibold text-foreground text-center">
                   {platform.name}
                 </h3>
 
-                {/* Version Info */}
                 <p className="text-sm text-muted-foreground text-center mt-1">
-                  {platform.version} &bull; {platform.size} &bull;{' '}
+                  {version || 'v1.0.0'} &bull; {getSize(platform.key)} &bull;{' '}
                   {platform.ext}
                 </p>
 
-                {/* Signed & Notarized Badge */}
+                {count > 0 && (
+                  <div className="flex items-center justify-center gap-1.5 mt-2 text-muted-foreground">
+                    <Users className="h-3.5 w-3.5" />
+                    <span className="text-xs font-medium">
+                      {formatCount(count)} {t('downloads')}
+                    </span>
+                  </div>
+                )}
+
                 {platform.signed && (
                   <div className="flex items-center justify-center gap-1.5 mt-3 text-emerald-600 dark:text-emerald-400">
                     <ShieldCheck className="h-4 w-4" />
@@ -142,7 +149,6 @@ export function PlatformSelector() {
                   </div>
                 )}
 
-                {/* System Requirements */}
                 <p className="text-xs text-muted-foreground text-center mt-3 bg-muted rounded-lg px-3 py-2">
                   {platform.systemReq}
                 </p>
@@ -153,7 +159,6 @@ export function PlatformSelector() {
                   </p>
                 )}
 
-                {/* Download Button */}
                 <div className="mt-6 flex justify-center">
                   <Button
                     asChild
@@ -171,6 +176,18 @@ export function PlatformSelector() {
             );
           })}
         </div>
+
+        {downloads.total > 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center text-sm text-muted-foreground mt-8"
+          >
+            {formatCount(downloads.total)}+ {t('totalDownloads')}
+          </motion.p>
+        )}
       </div>
     </section>
   );

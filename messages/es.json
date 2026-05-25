@@ -51,7 +51,9 @@
       "download": "Descargar para macOS",
       "signed": "Apple Notarized y Firmado",
       "signedNote": "Sin advertencias de Gatekeeper — se abre directamente"
-    }
+    },
+    "downloads": "descargas",
+    "totalDownloads": "descargas en total"
   },
   "features": {
     "title": "Funciones potentes",

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { useAppInfo } from '@/hooks/use-app-info';
 
 function Confetti() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -109,6 +110,7 @@ function SuccessContent() {
   const t = useTranslations('success');
   const searchParams = useSearchParams();
   const checkoutId = searchParams.get('checkout_id');
+  const { windowsSize, macSize } = useAppInfo();
 
   const [data, setData] = useState<CheckoutData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -285,7 +287,7 @@ function SuccessContent() {
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">Windows</p>
-                  <p className="text-xs text-muted-foreground">Setup • ~80 MB</p>
+                  <p className="text-xs text-muted-foreground">Setup • {windowsSize || '~80 MB'}</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
@@ -296,7 +298,7 @@ function SuccessContent() {
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
-                  <p className="text-xs text-muted-foreground">DMG • ~175 MB</p>
+                  <p className="text-xs text-muted-foreground">DMG • {macSize || '~175 MB'}</p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>

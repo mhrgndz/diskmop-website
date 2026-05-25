@@ -51,7 +51,9 @@
       "download": "macOS İçin İndir",
       "signed": "Apple Notarized & İmzalı",
       "signedNote": "Gatekeeper uyarısı yok — doğrudan açılır"
-    }
+    },
+    "downloads": "indirme",
+    "totalDownloads": "toplam indirme"
   },
   "features": {
     "title": "Güçlü Özellikler",

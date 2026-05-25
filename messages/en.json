@@ -51,7 +51,9 @@
       "download": "Download for macOS",
       "signed": "Apple Notarized & Signed",
       "signedNote": "No Gatekeeper warnings — opens directly"
-    }
+    },
+    "downloads": "downloads",
+    "totalDownloads": "total downloads"
   },
   "features": {
     "title": "Powerful Features",

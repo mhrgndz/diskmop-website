@@ -51,7 +51,9 @@
       "download": "macOS版をダウンロード",
       "signed": "Apple公証済み＆署名済み",
       "signedNote": "Gatekeeperの警告なし — 直接開きます"
-    }
+    },
+    "downloads": "ダウンロード",
+    "totalDownloads": "ダウンロード合計"
   },
   "features": {
     "title": "強力な機能",

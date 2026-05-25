@@ -51,7 +51,9 @@
       "download": "Baixar para macOS",
       "signed": "Apple Notarized e Assinado",
       "signedNote": "Sem avisos do Gatekeeper — abre diretamente"
-    }
+    },
+    "downloads": "downloads",
+    "totalDownloads": "downloads no total"
   },
   "features": {
     "title": "Recursos Poderosos",

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { cn } from '@/lib/utils';
 import { useOSDetection } from '@/hooks/use-os-detection';
+import { useAppInfo } from '@/hooks/use-app-info';
 import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
@@ -24,7 +25,6 @@ interface DownloadOption {
   label: string;
   sublabel?: string;
   href: string;
-  size: string;
   icon: typeof Monitor;
   signed?: boolean;
 }
@@ -35,7 +35,6 @@ const downloadOptions: DownloadOption[] = [
     label: 'Windows',
     sublabel: '.exe',
     href: 'https://api.diskmop.com/download/windows',
-    size: '~80 MB',
     icon: Monitor,
   },
   {
@@ -43,7 +42,6 @@ const downloadOptions: DownloadOption[] = [
     label: 'macOS',
     sublabel: 'Universal (.dmg)',
     href: 'https://api.diskmop.com/download/mac',
-    size: '~175 MB',
     icon: Laptop,
     signed: true,
   },
@@ -55,6 +53,9 @@ export function DownloadDropdown({
 }: DownloadDropdownProps) {
   const t = useTranslations('common');
   const detectedOS = useOSDetection();
+  const { windowsSize, macSize } = useAppInfo();
+
+  const getSize = (os: string) => (os === 'windows' ? windowsSize : macSize) || '~80 MB';
 
   const isRecommended = (option: DownloadOption): boolean => {
     if (detectedOS === 'unknown') return false;
@@ -113,7 +114,7 @@ export function DownloadDropdown({
                       )}
                     </div>
                     <span className="text-xs text-muted-foreground flex items-center gap-1.5">
-                      {option.size}
+                      {getSize(option.os)}
                       {option.signed && (
                         <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 font-medium">
                           <ShieldCheck className="h-3 w-3" />
