@@ -29,7 +29,7 @@ function getProductLinks(locale: string): FooterLink[] {
 
 const companyLinks: FooterLink[] = [
   { labelKey: 'company.about', href: '#' },
-  { labelKey: 'company.contact', href: 'mailto:info@lovasoftware.com' },
+  { labelKey: 'company.contact', href: 'mailto:diskmopdev@gmail.com' },
   { labelKey: 'company.careers', href: '#' },
 ];
 
@@ -41,14 +41,14 @@ const legalLinks: FooterLink[] = [
 
 const supportLinks: FooterLink[] = [
   { labelKey: 'support.helpCenter', href: '#' },
-  { labelKey: 'support.email', href: 'mailto:info@lovasoftware.com' },
+  { labelKey: 'support.email', href: 'mailto:diskmopdev@gmail.com' },
   { labelKey: 'support.status', href: '#' },
 ];
 
 const socialLinks: SocialLink[] = [
   { label: 'Twitter', href: 'https://twitter.com/diskmop', icon: Twitter },
   { label: 'GitHub', href: 'https://github.com/diskmop', icon: Github },
-  { label: 'Email', href: 'mailto:info@lovasoftware.com', icon: Mail },
+  { label: 'Email', href: 'mailto:diskmopdev@gmail.com', icon: Mail },
 ];
 
 function FooterColumn({
