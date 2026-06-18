@@ -15,8 +15,10 @@ import { freeDiskSpace } from './free-disk-space';
 import { speedUpComputer } from './speed-up-computer';
 import { slowStartupFix } from './slow-startup-fix';
 import { bestDiskCleaners } from './best-disk-cleaners';
+import { uninstallLeftovers } from './uninstall-leftovers';
 
 export const articles: Article[] = [
+  uninstallLeftovers,
   ccleaner,
   cleanmymac,
   bleachbit,
