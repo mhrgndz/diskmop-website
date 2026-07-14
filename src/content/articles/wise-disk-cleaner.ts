@@ -8,7 +8,7 @@ export const wiseDiskCleaner: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz',
       winner: 'competitor',
     },
@@ -121,7 +121,7 @@ export const wiseDiskCleaner: Article = {
         'Sistem sağlığı skoru',
       ],
       diskmopCons: [
-        'Ücretli ($19.90 tek seferlik)',
+        'Ücretli ($9.90 tek seferlik)',
         'Zamanlanmış temizlik yok',
         'Disk birleştirme özelliği yok',
       ],
@@ -164,7 +164,7 @@ export const wiseDiskCleaner: Article = {
         },
       ],
       verdict: [
-        'Wise Disk Cleaner, sadece Windows kullanan ve ücretsiz bir çözüm arayan kullanıcılar için iyi bir seçenek. Ancak macOS desteği, duplicate tespiti, görsel disk analizi ve modern bir arayüz istiyorsanız, Disk Mop 19.90$\'lık yatırımıyla çok daha kapsamlı bir deneyim sunuyor.',
+        'Wise Disk Cleaner, sadece Windows kullanan ve ücretsiz bir çözüm arayan kullanıcılar için iyi bir seçenek. Ancak macOS desteği, duplicate tespiti, görsel disk analizi ve modern bir arayüz istiyorsanız, Disk Mop 9.90$\'lık yatırımıyla çok daha kapsamlı bir deneyim sunuyor.',
       ],
       ctaText: 'Disk Mop ile Daha Akıllı Temizlik',
     },
@@ -185,7 +185,7 @@ export const wiseDiskCleaner: Article = {
         'System health score',
       ],
       diskmopCons: [
-        'Paid ($19.90 one-time)',
+        'Paid ($9.90 one-time)',
         'No scheduled cleaning',
         'No disk defrag',
       ],
@@ -228,7 +228,7 @@ export const wiseDiskCleaner: Article = {
         },
       ],
       verdict: [
-        'Wise Disk Cleaner is a solid free option for Windows-only users. But for macOS support, duplicate detection, visual analysis, and a modern interface, Disk Mop\'s $19.90 offers a much more comprehensive experience.',
+        'Wise Disk Cleaner is a solid free option for Windows-only users. But for macOS support, duplicate detection, visual analysis, and a modern interface, Disk Mop\'s $9.90 offers a much more comprehensive experience.',
       ],
       ctaText: 'Smarter Cleaning with Disk Mop',
     },

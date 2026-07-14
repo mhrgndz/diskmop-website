@@ -8,7 +8,7 @@ export const ccleaner: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: '$29.95/yıl',
       winner: 'diskmop',
     },
@@ -131,7 +131,7 @@ export const ccleaner: Article = {
         'Disk Mop ise modern, gizlilik odaklı ve tek seferlik ödeme modeliyle dikkat çeken yeni nesil bir disk temizleyici. Peki bu iki yazılım arasındaki gerçek farklar neler? Hangi durumlarda hangisini tercih etmelisiniz?',
       ],
       diskmopPros: [
-        'Tek seferlik $19.90 ödeme, abonelik yok',
+        'Tek seferlik $9.90 ödeme, abonelik yok',
         'Tamamen yerel çalışır, veri toplamaz',
         'Görsel disk analizi ile alan kullanımını anında görme',
         'SHA-256 ile yinelenen dosya tespiti (ücretsiz)',
@@ -163,7 +163,7 @@ export const ccleaner: Article = {
           title: 'Fiyatlandırma: Abonelik vs Ömür Boyu Lisans',
           content: [
             'CCleaner Pro yıllık 29.95$ abonelik modeline geçiş yaptı. Bu, 3 yıl kullanımda neredeyse 90$ demek. Ücretsiz sürüm ise temel temizlik dışında çoğu özelliği kısıtlıyor ve giderek daha fazla reklam içeriyor.',
-            'Disk Mop ise tek seferlik 19.90$ ödemeyle ömür boyu tüm özelliklere erişim sunuyor. Güncelleler dahil, ek ücret yok. Uzun vadede Disk Mop\'un maliyet avantajı çok açık.',
+            'Disk Mop ise tek seferlik 9.90$ ödemeyle ömür boyu tüm özelliklere erişim sunuyor. Güncelleler dahil, ek ücret yok. Uzun vadede Disk Mop\'un maliyet avantajı çok açık.',
           ],
         },
         {
@@ -203,7 +203,7 @@ export const ccleaner: Article = {
         'Disk Mop is a modern, privacy-focused disk cleaner with a one-time payment model. So what are the real differences between these two? When should you choose one over the other?',
       ],
       diskmopPros: [
-        'One-time $19.90 payment, no subscription',
+        'One-time $9.90 payment, no subscription',
         'Fully local operation, no data collection',
         'Visual disk analysis to see space usage instantly',
         'SHA-256 duplicate file detection (included)',
@@ -235,7 +235,7 @@ export const ccleaner: Article = {
           title: 'Pricing: Subscription vs Lifetime License',
           content: [
             'CCleaner Pro switched to an annual $29.95 subscription model. Over 3 years, that\'s nearly $90. The free version restricts most features beyond basic cleaning and increasingly pushes ads.',
-            'Disk Mop offers lifetime access to all features for a one-time $19.90 payment. Updates included, no extra charges. The long-term cost advantage of Disk Mop is clear.',
+            'Disk Mop offers lifetime access to all features for a one-time $9.90 payment. Updates included, no extra charges. The long-term cost advantage of Disk Mop is clear.',
           ],
         },
         {
@@ -275,7 +275,7 @@ export const ccleaner: Article = {
         'Disk Mop ist ein moderner, datenschutzorientierter Festplattenreiniger mit einmaliger Zahlung. Was sind die echten Unterschiede?',
       ],
       diskmopPros: [
-        'Einmalige Zahlung von $19,90',
+        'Einmalige Zahlung von $9,90',
         'Vollständig lokale Verarbeitung',
         'Visuelle Festplattenanalyse',
         'SHA-256 Duplikatfinder inklusive',
@@ -303,7 +303,7 @@ export const ccleaner: Article = {
         {
           title: 'Preisgestaltung',
           content: [
-            'CCleaner Pro kostet 29,95$ pro Jahr. Über 3 Jahre sind das fast 90$. Disk Mop bietet lebenslangen Zugang für einmalig 19,90$.',
+            'CCleaner Pro kostet 29,95$ pro Jahr. Über 3 Jahre sind das fast 90$. Disk Mop bietet lebenslangen Zugang für einmalig 9,90$.',
           ],
         },
         {

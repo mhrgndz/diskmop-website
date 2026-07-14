@@ -8,7 +8,7 @@ export const avgTuneup: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: '$49.99/yıl',
       winner: 'diskmop',
     },
@@ -62,7 +62,7 @@ export const avgTuneup: Article = {
     },
     {
       feature: { tr: '3 Yıllık Maliyet', en: '3-Year Cost', de: '3-Jahres-Kosten' },
-      diskmop: '$19.90 (toplam)',
+      diskmop: '$9.90 (toplam)',
       competitor: '$149.97 (toplam)',
       winner: 'diskmop',
     },
@@ -106,14 +106,14 @@ export const avgTuneup: Article = {
   content: {
     tr: {
       title: 'Disk Mop vs AVG TuneUp: 2025 Karşılaştırması',
-      metaDescription: 'Disk Mop ve AVG TuneUp karşılaştırması. Yıllık $49.99 abonelik mi, tek seferlik $19.90 mı? Fiyat, gizlilik ve özellik analizi.',
-      subtitle: 'AVG TuneUp yıllık 49.99$ ile piyasanın en pahalı disk temizleyicilerinden biri. Disk Mop aynı temel özellikleri tek seferlik 19.90$ ile sunuyor.',
+      metaDescription: 'Disk Mop ve AVG TuneUp karşılaştırması. Yıllık $49.99 abonelik mi, tek seferlik $9.90 mı? Fiyat, gizlilik ve özellik analizi.',
+      subtitle: 'AVG TuneUp yıllık 49.99$ ile piyasanın en pahalı disk temizleyicilerinden biri. Disk Mop aynı temel özellikleri tek seferlik 9.90$ ile sunuyor.',
       intro: [
         'AVG TuneUp (eski adıyla AVG PC TuneUp), NortonLifeLock/Avast ailesinin sistem optimizasyon aracı. Cache temizleme, bloatware kaldırma, uyku modu ve otomatik bakım gibi özellikler sunuyor. Ancak yıllık 49.99$ fiyat etiketi birçok kullanıcı için aşırı.',
-        'Disk Mop, temel disk temizleme özelliklerini tek seferlik 19.90$ ile sunarak AVG TuneUp\'ın 3 yıllık maliyetinin yaklaşık 1/8\'ine denk geliyor. Peki bu fiyat farkı ne kadar mantıklı?',
+        'Disk Mop, temel disk temizleme özelliklerini tek seferlik 9.90$ ile sunarak AVG TuneUp\'ın 3 yıllık maliyetinin yaklaşık 1/15\'ine denk geliyor. Peki bu fiyat farkı ne kadar mantıklı?',
       ],
       diskmopPros: [
-        'Tek seferlik $19.90 — AVG\'nin 3 yıllık maliyetinin 1/8\'i',
+        'Tek seferlik $9.90 — AVG\'nin 3 yıllık maliyetinin 1/15\'i',
         'Tamamen yerel çalışır, veri toplamaz',
         'Görsel disk analizi',
         'Büyük dosya bulucu (500MB+)',
@@ -145,9 +145,9 @@ export const avgTuneup: Article = {
       ],
       sections: [
         {
-          title: 'Fiyat: 7.5 Kat Fark',
+          title: 'Fiyat: 15 Kat Fark',
           content: [
-            '3 yıllık kullanımda AVG TuneUp toplam 149.97$ maliyete ulaşır. Bu, Disk Mop\'un tek seferlik 19.90$\'lık fiyatının tam 7.5 katı.',
+            '3 yıllık kullanımda AVG TuneUp toplam 149.97$ maliyete ulaşır. Bu, Disk Mop\'un tek seferlik 9.90$\'lık fiyatının yaklaşık 15 katı.',
             'Disk Mop\'un ömür boyu lisansıyla kaç yıl kullanırsanız kullanın ek ödeme yapmazsınız. AVG\'de ise her yıl aboneliğinizi yenilemezseniz tüm özellikler kapanır.',
           ],
         },
@@ -168,20 +168,20 @@ export const avgTuneup: Article = {
       ],
       verdict: [
         'AVG TuneUp, çok cihazlı ortamlar için pratik olabilir ancak yıllık 49.99$\'lık fiyatı, gizlilik endişeleri ve eksik disk analiz özellikleri onu sorgulanır kılıyor.',
-        'Disk Mop, tek seferlik 19.90$ ile daha güçlü disk temizleme özellikleri, tam gizlilik ve modern arayüz sunuyor. Paranızın karşılığını en iyi şekilde almak istiyorsanız seçim açık.',
+        'Disk Mop, tek seferlik 9.90$ ile daha güçlü disk temizleme özellikleri, tam gizlilik ve modern arayüz sunuyor. Paranızın karşılığını en iyi şekilde almak istiyorsanız seçim açık.',
       ],
       ctaText: 'Yıllık Abonelikten Kurtulun: Disk Mop',
     },
     en: {
       title: 'Disk Mop vs AVG TuneUp: 2025 Comparison',
-      metaDescription: 'Compare Disk Mop and AVG TuneUp. Is a $49.99/year subscription worth it when Disk Mop offers core features for a one-time $19.90?',
-      subtitle: 'AVG TuneUp is one of the most expensive disk cleaners at $49.99/year. Disk Mop delivers the same core features for a one-time $19.90.',
+      metaDescription: 'Compare Disk Mop and AVG TuneUp. Is a $49.99/year subscription worth it when Disk Mop offers core features for a one-time $9.90?',
+      subtitle: 'AVG TuneUp is one of the most expensive disk cleaners at $49.99/year. Disk Mop delivers the same core features for a one-time $9.90.',
       intro: [
         'AVG TuneUp (formerly AVG PC TuneUp) is NortonLifeLock/Avast\'s system optimization tool. It offers cache cleaning, bloatware removal, sleep mode, and automatic maintenance at $49.99/year.',
-        'Disk Mop provides essential disk cleaning features for a one-time $19.90 — about 1/8th of AVG TuneUp\'s 3-year cost.',
+        'Disk Mop provides essential disk cleaning features for a one-time $9.90 — about 1/15th of AVG TuneUp\'s 3-year cost.',
       ],
       diskmopPros: [
-        'One-time $19.90 — 1/8th of AVG\'s 3-year cost',
+        'One-time $9.90 — 1/15th of AVG\'s 3-year cost',
         'Fully local, no data collection',
         'Visual disk analysis',
         'Large file finder (500MB+)',
@@ -213,9 +213,9 @@ export const avgTuneup: Article = {
       ],
       sections: [
         {
-          title: 'Price: 7.5x Difference',
+          title: 'Price: 15x Difference',
           content: [
-            'Over 3 years, AVG TuneUp costs $149.97. That\'s 7.5 times Disk Mop\'s one-time $19.90 price.',
+            'Over 3 years, AVG TuneUp costs $149.97. That\'s about 15 times Disk Mop\'s one-time $9.90 price.',
             'With Disk Mop\'s lifetime license, you pay once and never again. With AVG, missing a renewal means losing all features.',
           ],
         },
@@ -236,16 +236,16 @@ export const avgTuneup: Article = {
       ],
       verdict: [
         'AVG TuneUp can be practical for multi-device setups, but its $49.99/year price tag, privacy concerns, and missing disk analysis features make it questionable.',
-        'Disk Mop offers stronger disk cleaning features, full privacy, and a modern interface for a one-time $19.90. The value proposition is clear.',
+        'Disk Mop offers stronger disk cleaning features, full privacy, and a modern interface for a one-time $9.90. The value proposition is clear.',
       ],
       ctaText: 'Escape the Subscription: Try Disk Mop',
     },
     de: {
       title: 'Disk Mop vs AVG TuneUp: Vergleich 2025',
       metaDescription: 'Disk Mop und AVG TuneUp im Vergleich. Lohnt sich das $49,99/Jahr-Abo?',
-      subtitle: 'AVG TuneUp kostet $49,99/Jahr. Disk Mop bietet die Kernfunktionen für einmalig $19,90.',
+      subtitle: 'AVG TuneUp kostet $49,99/Jahr. Disk Mop bietet die Kernfunktionen für einmalig $9,90.',
       intro: ['AVG TuneUp ist einer der teuersten Festplattenreiniger. Disk Mop bietet vergleichbare Funktionen zum Bruchteil des Preises.'],
-      diskmopPros: ['Einmalig $19,90', 'Voller Datenschutz', 'Visuelle Analyse'],
+      diskmopPros: ['Einmalig $9,90', 'Voller Datenschutz', 'Visuelle Analyse'],
       diskmopCons: ['Kein Schlafmodus', 'Einzelgerät-Lizenz'],
       competitorPros: ['10-Geräte-Lizenz', 'Schlafmodus', 'Android-Support'],
       competitorCons: ['$49,99/Jahr', 'Datenschutzbedenken', 'Keine Festplattenanalyse'],

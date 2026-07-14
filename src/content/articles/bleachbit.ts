@@ -8,7 +8,7 @@ export const bleachbit: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz (açık kaynak)',
       winner: 'competitor',
     },
@@ -123,7 +123,7 @@ export const bleachbit: Article = {
         'Profesyonel destek',
       ],
       diskmopCons: [
-        'Ücretli ($19.90 tek seferlik)',
+        'Ücretli ($9.90 tek seferlik)',
         'Açık kaynak değil',
         'Linux desteği yok',
         'Güvenli silme (overwrite) özelliği yok',
@@ -150,7 +150,7 @@ export const bleachbit: Article = {
           title: 'Ücretsiz vs Ücretli: Hangisi Değer?',
           content: [
             'BleachBit\'in en büyük avantajı ücretsiz olması. Bütçe kısıtlı kullanıcılar veya açık kaynak felsefesine inananlar için doğal bir tercih. Ancak "ücretsiz" her zaman "en iyi" anlamına gelmiyor.',
-            'Disk Mop\'un 19.90$\'lık tek seferlik ücreti, sunduğu ek özellikler düşünüldüğünde hızla kendini amorti eder. Görsel disk analizi ile hangi dosyaların yer kapladığını görme, büyük dosyaları tek tıkla bulma ve duplicate\'leri temizleme — bunların hepsi BleachBit\'te yok.',
+            'Disk Mop\'un 9.90$\'lık tek seferlik ücreti, sunduğu ek özellikler düşünüldüğünde hızla kendini amorti eder. Görsel disk analizi ile hangi dosyaların yer kapladığını görme, büyük dosyaları tek tıkla bulma ve duplicate\'leri temizleme — bunların hepsi BleachBit\'te yok.',
           ],
         },
         {
@@ -169,7 +169,7 @@ export const bleachbit: Article = {
         },
       ],
       verdict: [
-        'BleachBit, ücretsiz ve açık kaynak bir çözüm arayan Linux kullanıcıları için hâlâ iyi bir seçenek. Ancak modern bir disk temizleme deneyimi, macOS desteği, görsel analiz ve akıllı dosya bulucu istiyorsanız, Disk Mop\'un sunduğu değer 19.90$\'lık yatırıma fazlasıyla değer.',
+        'BleachBit, ücretsiz ve açık kaynak bir çözüm arayan Linux kullanıcıları için hâlâ iyi bir seçenek. Ancak modern bir disk temizleme deneyimi, macOS desteği, görsel analiz ve akıllı dosya bulucu istiyorsanız, Disk Mop\'un sunduğu değer 9.90$\'lık yatırıma fazlasıyla değer.',
       ],
       ctaText: 'Modern Disk Temizliği: Disk Mop\'u Dene',
     },
@@ -192,7 +192,7 @@ export const bleachbit: Article = {
         'Professional support',
       ],
       diskmopCons: [
-        'Paid ($19.90 one-time)',
+        'Paid ($9.90 one-time)',
         'Not open-source',
         'No Linux support',
         'No secure deletion (overwrite)',
@@ -219,7 +219,7 @@ export const bleachbit: Article = {
           title: 'Free vs Paid: Which Offers More Value?',
           content: [
             'BleachBit\'s biggest advantage is being free. A natural choice for budget-conscious users or open-source advocates. But "free" doesn\'t always mean "best."',
-            'Disk Mop\'s one-time $19.90 fee quickly pays for itself with features BleachBit simply doesn\'t have: visual disk analysis, large file detection, and duplicate cleaning.',
+            'Disk Mop\'s one-time $9.90 fee quickly pays for itself with features BleachBit simply doesn\'t have: visual disk analysis, large file detection, and duplicate cleaning.',
           ],
         },
         {
@@ -238,7 +238,7 @@ export const bleachbit: Article = {
         },
       ],
       verdict: [
-        'BleachBit remains a solid choice for Linux users seeking a free, open-source solution. But if you want a modern cleaning experience, macOS support, visual analysis, and smart file finding, Disk Mop\'s $19.90 investment is well worth it.',
+        'BleachBit remains a solid choice for Linux users seeking a free, open-source solution. But if you want a modern cleaning experience, macOS support, visual analysis, and smart file finding, Disk Mop\'s $9.90 investment is well worth it.',
       ],
       ctaText: 'Modern Disk Cleaning: Try Disk Mop',
     },
@@ -251,7 +251,7 @@ export const bleachbit: Article = {
         'Disk Mop bietet eine moderne Alternative mit visueller Analyse und plattformübergreifender Unterstützung.',
       ],
       diskmopPros: ['Moderne Oberfläche', 'macOS-Support', 'Visuelle Analyse', 'Duplikatfinder'],
-      diskmopCons: ['Kostenpflichtig ($19,90)', 'Kein Linux-Support'],
+      diskmopCons: ['Kostenpflichtig ($9,90)', 'Kein Linux-Support'],
       competitorPros: ['Kostenlos', 'Open Source', 'Linux-Support'],
       competitorCons: ['Veraltete Oberfläche', 'Kein macOS', 'Begrenzte Funktionen'],
       sections: [],

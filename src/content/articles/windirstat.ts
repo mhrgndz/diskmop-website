@@ -8,7 +8,7 @@ export const windirstat: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz (açık kaynak)',
       winner: 'competitor',
     },
@@ -123,7 +123,7 @@ export const windirstat: Article = {
         'Modern arayüz',
       ],
       diskmopCons: [
-        'Ücretli ($19.90 tek seferlik)',
+        'Ücretli ($9.90 tek seferlik)',
         'Açık kaynak değil',
         'Cushion treemap yok',
       ],
@@ -191,7 +191,7 @@ export const windirstat: Article = {
         'Modern interface',
       ],
       diskmopCons: [
-        'Paid ($19.90 one-time)',
+        'Paid ($9.90 one-time)',
         'Not open-source',
         'No cushion treemap',
       ],

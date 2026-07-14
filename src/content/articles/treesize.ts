@@ -8,7 +8,7 @@ export const treesize: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Free / Pro €24.50+',
       winner: 'diskmop',
     },

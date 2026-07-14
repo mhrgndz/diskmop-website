@@ -8,7 +8,7 @@ export const avastCleanup: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: '$49.99/yıl',
       winner: 'diskmop',
     },
@@ -88,14 +88,14 @@ export const avastCleanup: Article = {
   content: {
     tr: {
       title: 'Disk Mop vs Avast Cleanup Premium: 2025 Detaylı Karşılaştırması',
-      metaDescription: 'Disk Mop ve Avast Cleanup Premium karşılaştırması. Gizlilik skandalları, yıllık abonelik ve özellik farkları. Tek seferlik $19.90 vs yıllık $49.99 analizi.',
-      subtitle: 'Avast Cleanup Premium yıllık $49.99 abonelik isterken, Disk Mop aynı ve daha fazla özelliği tek seferlik $19.90 ile sunuyor. Üstelik veri toplama skandalı olmadan.',
+      metaDescription: 'Disk Mop ve Avast Cleanup Premium karşılaştırması. Gizlilik skandalları, yıllık abonelik ve özellik farkları. Tek seferlik $9.90 vs yıllık $49.99 analizi.',
+      subtitle: 'Avast Cleanup Premium yıllık $49.99 abonelik isterken, Disk Mop aynı ve daha fazla özelliği tek seferlik $9.90 ile sunuyor. Üstelik veri toplama skandalı olmadan.',
       intro: [
         'Avast Cleanup Premium, Avast antivirüs paketinin bir parçası olarak pazarlanan sistem optimizasyon aracıdır. Cache temizleme, kayıt defteri düzeltme, uyku modu ve otomatik bakım gibi özellikler sunar. Ancak Avast\'in geçmişteki veri toplama skandalları ve yıllık $49.99\'lık fiyat etiketi birçok kullanıcıyı alternatif aramaya yöneltiyor.',
-        'Disk Mop, görsel disk analizi, SHA-256 yinelenen dosya tespiti, SMART disk sağlığı izleme ve daha fazlasını tek seferlik $19.90 ile sunarak hem özellik hem de fiyat açısından ciddi bir alternatif oluşturuyor.',
+        'Disk Mop, görsel disk analizi, SHA-256 yinelenen dosya tespiti, SMART disk sağlığı izleme ve daha fazlasını tek seferlik $9.90 ile sunarak hem özellik hem de fiyat açısından ciddi bir alternatif oluşturuyor.',
       ],
       diskmopPros: [
-        'Tek seferlik $19.90 — Avast\'in 3 yıllık maliyetinin 1/7.5\'i',
+        'Tek seferlik $9.90 — Avast\'in 3 yıllık maliyetinin 1/15\'i',
         'Tamamen yerel çalışır, hiçbir veri toplamaz',
         'Görsel treemap disk analizi',
         'SHA-256 ile yinelenen dosya tespiti',
@@ -135,7 +135,7 @@ export const avastCleanup: Article = {
           title: 'Fiyat: Ömür Boyu vs Yıllık Abonelik',
           content: [
             'Avast Cleanup Premium yıllık $49.99 talep ediyor. 3 yıllık kullanımda toplam maliyet $149.97\'ye ulaşıyor. Aboneliğinizi yenilemezseniz tüm temizleme özellikleri devre dışı kalır.',
-            'Disk Mop ise tek seferlik $19.90 ile ömür boyu lisans sunuyor. Güncellemeler dahil, ek ödeme yok. Bu, Avast\'in 3 yıllık maliyetinin yaklaşık 1/7.5\'i anlamına geliyor.',
+            'Disk Mop ise tek seferlik $9.90 ile ömür boyu lisans sunuyor. Güncellemeler dahil, ek ödeme yok. Bu, Avast\'in 3 yıllık maliyetinin yaklaşık 1/15\'i anlamına geliyor.',
             'Bir disk temizleme aracı için yıllık abonelik ödemek mantıklı mı? Özellikle daha zengin özellik seti sunan bir alternatif tek seferlik ödeme ile mevcutken bu soru kendini soruyor.',
           ],
         },
@@ -166,20 +166,20 @@ export const avastCleanup: Article = {
       ],
       verdict: [
         'Avast Cleanup Premium, antivirüs ekosisteminde kalmak isteyen ve gizlilik konusunda endişe duymayan kullanıcılar için bir seçenek olabilir. Ancak yıllık $49.99 fiyatı, veri toplama geçmişi ve eksik analiz özellikleri ciddi dezavantajlar.',
-        'Disk Mop, tek seferlik $19.90 ile daha fazla özellik, tam gizlilik ve temiz bir deneyim sunuyor. Veri toplama skandalı olmadan, abonelik stresi olmadan, diskinizi tam kontrol altında tutun.',
+        'Disk Mop, tek seferlik $9.90 ile daha fazla özellik, tam gizlilik ve temiz bir deneyim sunuyor. Veri toplama skandalı olmadan, abonelik stresi olmadan, diskinizi tam kontrol altında tutun.',
       ],
       ctaText: 'Gizliliğinizi Koruyun: Disk Mop\'u Deneyin',
     },
     en: {
       title: 'Disk Mop vs Avast Cleanup Premium: 2025 Comparison',
-      metaDescription: 'Disk Mop vs Avast Cleanup Premium comparison. Privacy concerns, annual subscription vs one-time payment, and feature analysis. $19.90 once vs $49.99/year.',
-      subtitle: 'Avast Cleanup Premium charges $49.99/year while Disk Mop delivers more features for a one-time $19.90 — without the data collection baggage.',
+      metaDescription: 'Disk Mop vs Avast Cleanup Premium comparison. Privacy concerns, annual subscription vs one-time payment, and feature analysis. $9.90 once vs $49.99/year.',
+      subtitle: 'Avast Cleanup Premium charges $49.99/year while Disk Mop delivers more features for a one-time $9.90 — without the data collection baggage.',
       intro: [
         'Avast Cleanup Premium is the system optimization tool marketed alongside Avast\'s antivirus suite. It offers cache cleaning, registry fixing, sleep mode for background apps, and a photo optimizer. However, Avast\'s history of user data monetization and the $49.99/year price tag raise serious questions.',
-        'Disk Mop provides visual disk analysis, SHA-256 duplicate detection, SMART disk health monitoring, and much more for a one-time $19.90 — with zero data collection and no subscription.',
+        'Disk Mop provides visual disk analysis, SHA-256 duplicate detection, SMART disk health monitoring, and much more for a one-time $9.90 — with zero data collection and no subscription.',
       ],
       diskmopPros: [
-        'One-time $19.90 — 1/7.5th of Avast\'s 3-year cost',
+        'One-time $9.90 — 1/15th of Avast\'s 3-year cost',
         'Fully local processing, zero data collection',
         'Visual treemap disk analysis',
         'SHA-256 duplicate file detection',
@@ -220,7 +220,7 @@ export const avastCleanup: Article = {
           title: 'Pricing: Lifetime License vs Annual Subscription',
           content: [
             'Avast Cleanup Premium costs $49.99 per year. Over 3 years, that\'s $149.97. If you forget to renew or decide to stop paying, every feature becomes unavailable instantly.',
-            'Disk Mop charges a one-time $19.90 for a lifetime license including updates. That\'s approximately 1/7.5th of Avast\'s 3-year cost. For a utility that performs local disk operations, a subscription model is hard to justify.',
+            'Disk Mop charges a one-time $9.90 for a lifetime license including updates. That\'s approximately 1/15th of Avast\'s 3-year cost. For a utility that performs local disk operations, a subscription model is hard to justify.',
           ],
         },
         {
@@ -250,20 +250,20 @@ export const avastCleanup: Article = {
       ],
       verdict: [
         'Avast Cleanup Premium may appeal to users deeply invested in the Avast ecosystem who aren\'t concerned about privacy history. But its $49.99/year price, data collection past, and missing analysis features are significant drawbacks.',
-        'Disk Mop delivers more features, complete privacy, and a cleaner experience for a one-time $19.90. No data scandals, no subscription pressure — just powerful disk management tools that respect your privacy.',
+        'Disk Mop delivers more features, complete privacy, and a cleaner experience for a one-time $9.90. No data scandals, no subscription pressure — just powerful disk management tools that respect your privacy.',
       ],
       ctaText: 'Protect Your Privacy: Try Disk Mop',
     },
     de: {
       title: 'Disk Mop vs Avast Cleanup Premium: Vergleich 2025',
-      metaDescription: 'Disk Mop und Avast Cleanup Premium im Vergleich. Datenschutzskandal, Jährliches Abo vs Einmalzahlung, Funktionsanalyse. $19,90 einmalig vs $49,99/Jahr.',
-      subtitle: 'Avast Cleanup Premium kostet $49,99/Jahr. Disk Mop bietet mehr Funktionen für einmalig $19,90 — ohne Datensammlungsprobleme.',
+      metaDescription: 'Disk Mop und Avast Cleanup Premium im Vergleich. Datenschutzskandal, Jährliches Abo vs Einmalzahlung, Funktionsanalyse. $9,90 einmalig vs $49,99/Jahr.',
+      subtitle: 'Avast Cleanup Premium kostet $49,99/Jahr. Disk Mop bietet mehr Funktionen für einmalig $9,90 — ohne Datensammlungsprobleme.',
       intro: [
         'Avast Cleanup Premium ist das Systemoptimierungstool aus dem Avast-Ökosystem. Es bietet Cache-Bereinigung, Registry-Reparatur, Schlafmodus und einen Fotooptimierer. Allerdings werfen Avasts Vergangenheit mit Datenverkauf und der jährliche Preis von $49,99 ernsthafte Fragen auf.',
-        'Disk Mop bietet visuelle Festplattenanalyse, SHA-256-Duplikaterkennung, SMART-Überwachung und mehr für eine einmalige Zahlung von $19,90 — komplett ohne Datenerfassung.',
+        'Disk Mop bietet visuelle Festplattenanalyse, SHA-256-Duplikaterkennung, SMART-Überwachung und mehr für eine einmalige Zahlung von $9,90 — komplett ohne Datenerfassung.',
       ],
       diskmopPros: [
-        'Einmalig $19,90 — 1/7,5 der 3-Jahres-Kosten von Avast',
+        'Einmalig $9,90 — 1/15 der 3-Jahres-Kosten von Avast',
         'Vollständig lokale Verarbeitung, keine Datenerfassung',
         'Visuelle Treemap-Festplattenanalyse',
         'SHA-256-Duplikaterkennung',
@@ -304,7 +304,7 @@ export const avastCleanup: Article = {
           title: 'Preis: Lebenslange Lizenz vs Jährliches Abo',
           content: [
             'Avast Cleanup Premium kostet $49,99 pro Jahr. Über 3 Jahre summiert sich das auf $149,97. Wird das Abo nicht verlängert, werden alle Funktionen sofort deaktiviert.',
-            'Disk Mop kostet einmalig $19,90 für eine lebenslange Lizenz inklusive Updates. Das entspricht etwa 1/7,5 der 3-Jahres-Kosten von Avast.',
+            'Disk Mop kostet einmalig $9,90 für eine lebenslange Lizenz inklusive Updates. Das entspricht etwa 1/15 der 3-Jahres-Kosten von Avast.',
           ],
         },
         {
@@ -331,7 +331,7 @@ export const avastCleanup: Article = {
       ],
       verdict: [
         'Avast Cleanup Premium kann für Nutzer im Avast-Ökosystem interessant sein. Aber der Preis von $49,99/Jahr, die Datenschutzvergangenheit und fehlende Analysefunktionen sind erhebliche Nachteile.',
-        'Disk Mop liefert mehr Funktionen, vollständigen Datenschutz und eine saubere Erfahrung für einmalig $19,90. Ohne Datenskandale, ohne Abo-Druck — einfach leistungsstarke Festplattenverwaltung.',
+        'Disk Mop liefert mehr Funktionen, vollständigen Datenschutz und eine saubere Erfahrung für einmalig $9,90. Ohne Datenskandale, ohne Abo-Druck — einfach leistungsstarke Festplattenverwaltung.',
       ],
       ctaText: 'Datenschutz zuerst: Disk Mop testen',
     },

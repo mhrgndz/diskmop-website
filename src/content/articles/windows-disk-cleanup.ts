@@ -8,7 +8,7 @@ export const windowsDiskCleanup: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz (Windows dahili)',
       winner: 'competitor',
     },
@@ -128,10 +128,10 @@ export const windowsDiskCleanup: Article = {
         'Disk sağlığı izleme (SMART)',
         'RAM optimizasyonu ve servis yöneticisi',
         'Tarayıcı gizlilik temizliği',
-        'Tek seferlik $19.90 — abonelik yok',
+        'Tek seferlik $9.90 — abonelik yok',
       ],
       diskmopCons: [
-        'Ücretli yazılım ($19.90)',
+        'Ücretli yazılım ($9.90)',
         'Ayrıca kurulum gerektirir',
         'Piyasada daha yeni',
       ],
@@ -189,7 +189,7 @@ export const windowsDiskCleanup: Article = {
       ],
       verdict: [
         'Windows Disk Cleanup ücretsiz ve dahili olması nedeniyle hızlı bir geçici dosya temizliği için kullanışlı olabilir. Ancak 2025\'te bir bilgisayarı gerçekten optimize etmek için sadece geçici dosyaları silmek yeterli değildir.',
-        'Disk Mop, 21+ özelliğiyle Windows Disk Cleanup\'ın yapamadığı her şeyi yapar: görsel disk analizi, yinelenen dosya tespiti, büyük dosya bulucu, güvenli silme, disk sağlığı izleme, RAM optimizasyonu ve çok daha fazlası. Tek seferlik $19.90 yatırım ile bilgisayarınızın tüm bakım ihtiyaçlarını karşılayabilirsiniz.',
+        'Disk Mop, 21+ özelliğiyle Windows Disk Cleanup\'ın yapamadığı her şeyi yapar: görsel disk analizi, yinelenen dosya tespiti, büyük dosya bulucu, güvenli silme, disk sağlığı izleme, RAM optimizasyonu ve çok daha fazlası. Tek seferlik $9.90 yatırım ile bilgisayarınızın tüm bakım ihtiyaçlarını karşılayabilirsiniz.',
       ],
       ctaText: 'Disk Mop\'u İndirin — Windows Dahili Araçtan Çok Daha Fazlası',
     },
@@ -211,10 +211,10 @@ export const windowsDiskCleanup: Article = {
         'Disk health monitoring (SMART)',
         'RAM optimizer and service manager',
         'Browser privacy cleaning',
-        'One-time $19.90 — no subscription',
+        'One-time $9.90 — no subscription',
       ],
       diskmopCons: [
-        'Paid software ($19.90)',
+        'Paid software ($9.90)',
         'Requires separate installation',
         'Newer on the market',
       ],
@@ -272,7 +272,7 @@ export const windowsDiskCleanup: Article = {
       ],
       verdict: [
         'Windows Disk Cleanup can be useful for a quick temp file cleanup since it\'s free and built-in. But in 2025, simply deleting temporary files isn\'t enough to truly optimize a computer.',
-        'Disk Mop does everything Windows Disk Cleanup can\'t: visual disk analysis, duplicate detection, large file finder, secure deletion, disk health monitoring, RAM optimization, and much more — 21+ features in total. For a one-time $19.90 investment, you get a complete system maintenance solution that the built-in tool will never provide.',
+        'Disk Mop does everything Windows Disk Cleanup can\'t: visual disk analysis, duplicate detection, large file finder, secure deletion, disk health monitoring, RAM optimization, and much more — 21+ features in total. For a one-time $9.90 investment, you get a complete system maintenance solution that the built-in tool will never provide.',
       ],
       ctaText: 'Download Disk Mop — Far More Than Windows Built-in Tool',
     },
@@ -294,10 +294,10 @@ export const windowsDiskCleanup: Article = {
         'Festplatten-Gesundheitsüberwachung (SMART)',
         'RAM-Optimierung und Dienst-Manager',
         'Browser-Datenschutzreinigung',
-        'Einmalig $19,90 — kein Abo',
+        'Einmalig $9,90 — kein Abo',
       ],
       diskmopCons: [
-        'Kostenpflichtige Software ($19,90)',
+        'Kostenpflichtige Software ($9,90)',
         'Separate Installation erforderlich',
         'Neuer auf dem Markt',
       ],
@@ -355,7 +355,7 @@ export const windowsDiskCleanup: Article = {
       ],
       verdict: [
         'Die Windows Datenträgerbereinigung kann für eine schnelle Temp-Datei-Bereinigung nützlich sein, da sie kostenlos und integriert ist. Aber 2025 reicht das einfache Löschen temporärer Dateien nicht aus, um einen Computer wirklich zu optimieren.',
-        'Disk Mop erledigt alles, was die Windows Datenträgerbereinigung nicht kann: visuelle Festplattenanalyse, Duplikaterkennung, Große-Dateien-Finder, sicheres Löschen, Festplatten-Gesundheitsüberwachung, RAM-Optimierung und vieles mehr — insgesamt über 21 Funktionen. Für eine einmalige Investition von $19,90 erhalten Sie eine komplette Systemwartungslösung.',
+        'Disk Mop erledigt alles, was die Windows Datenträgerbereinigung nicht kann: visuelle Festplattenanalyse, Duplikaterkennung, Große-Dateien-Finder, sicheres Löschen, Festplatten-Gesundheitsüberwachung, RAM-Optimierung und vieles mehr — insgesamt über 21 Funktionen. Für eine einmalige Investition von $9,90 erhalten Sie eine komplette Systemwartungslösung.',
       ],
       ctaText: 'Disk Mop herunterladen — Weit mehr als Windows-Bordmittel',
     },

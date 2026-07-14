@@ -314,7 +314,7 @@
     "plan": {
       "name": "Disk Mop à vie",
       "badge": "Le plus populaire",
-      "price": "$19.90",
+      "price": "$9.90",
       "period": "paiement unique",
       "cta": "Acheter maintenant",
       "secure": "Paiement sécurisé : Polar.sh",
@@ -345,7 +345,7 @@
       },
       {
         "question": "Comment fonctionne la licence ?",
-        "answer": "Payez $19.90 une seule fois pour un accès à vie. 1 licence = 1 ordinateur. Pas d'abonnement, pas de frais supplémentaires. Si vous changez d'ordinateur, vous pouvez transférer votre licence vers le nouveau."
+        "answer": "Payez $9.90 une seule fois pour un accès à vie. 1 licence = 1 ordinateur. Pas d'abonnement, pas de frais supplémentaires. Si vous changez d'ordinateur, vous pouvez transférer votre licence vers le nouveau."
       },
       {
         "question": "Comment effectuer le paiement ?",

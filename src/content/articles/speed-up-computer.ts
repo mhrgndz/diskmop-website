@@ -61,7 +61,7 @@ export const speedUpComputer: Article = {
           content: [
             'Yukarıdaki adımların her birini manuel olarak yapabilirsiniz ancak bu hem zaman alır hem de teknik bilgi gerektirir. Windows\'un dahili araçları temel seviyede kalır ve kapsamlı bir optimizasyon sunamaz. Farklı işlemler için farklı araçlar kullanmak, hem karmaşık hem de verimsizdir. Bilgisayar hızlandırma işini düzenli yapmazsanız birkaç hafta içinde aynı yavaşlık geri gelir.',
             'Disk Mop, tüm bu adımları ve çok daha fazlasını tek bir uygulama altında toplayan profesyonel bir sistem bakım aracıdır. 21\'den fazla özelliğiyle önbellek temizliği, başlangıç yönetimi, yinelenen dosya tespiti (SHA-256 ve perceptual hash), büyük dosya bulucu, görsel disk analizi, RAM optimizasyonu, güvenli dosya silme (DoD 5220.22-M), disk sağlığı izleme (SMART), tarayıcı gizlilik temizliği, kullanılmayan uygulama tespiti, boş klasör bulucu, servis yöneticisi ve zamanlanmış otomatik temizlik sunar.',
-            'Tek seferlik $19.90 ödemeyle (abonelik yok!) bilgisayarınızın tüm bakım ihtiyaçlarını karşılayabilirsiniz. Zamanlanmış temizlik özelliği sayesinde Disk Mop\'u bir kere kurun, ayarlarınızı yapın ve bilgisayarınızın her zaman en iyi performansta çalışmasını sağlayın. Manuel optimizasyonla saatler harcamak yerine birkaç tıkla bilgisayarınızı hızlandırın.',
+            'Tek seferlik $9.90 ödemeyle (abonelik yok!) bilgisayarınızın tüm bakım ihtiyaçlarını karşılayabilirsiniz. Zamanlanmış temizlik özelliği sayesinde Disk Mop\'u bir kere kurun, ayarlarınızı yapın ve bilgisayarınızın her zaman en iyi performansta çalışmasını sağlayın. Manuel optimizasyonla saatler harcamak yerine birkaç tıkla bilgisayarınızı hızlandırın.',
           ],
         },
       ],
@@ -125,7 +125,7 @@ export const speedUpComputer: Article = {
           content: [
             'You can perform each of the steps above manually, but it takes time and requires technical knowledge. Windows\' built-in tools remain basic and can\'t deliver comprehensive optimization. Using different tools for different tasks is both complex and inefficient. And if you don\'t perform these optimizations regularly, the same slowdown returns within weeks.',
             'Disk Mop is a professional system maintenance tool that brings all of these steps — and much more — under a single application. With over 21 features, it offers cache cleaning, startup management, duplicate file detection (SHA-256 and perceptual hash), large file finder, visual disk analysis, RAM optimization, secure file deletion (DoD 5220.22-M), disk health monitoring (SMART), browser privacy cleaning, unused app detection, empty folder finder, service manager, and scheduled automatic cleanup.',
-            'For a one-time payment of $19.90 (no subscription!), you can address all of your computer\'s maintenance needs. Set up scheduled cleanup once and let Disk Mop ensure your computer always runs at peak performance. Instead of spending hours on manual optimization, speed up your PC with just a few clicks.',
+            'For a one-time payment of $9.90 (no subscription!), you can address all of your computer\'s maintenance needs. Set up scheduled cleanup once and let Disk Mop ensure your computer always runs at peak performance. Instead of spending hours on manual optimization, speed up your PC with just a few clicks.',
           ],
         },
       ],
@@ -189,7 +189,7 @@ export const speedUpComputer: Article = {
           content: [
             'Sie können jeden der oben genannten Schritte manuell durchführen, aber das kostet Zeit und erfordert technisches Wissen. Die integrierten Windows-Tools bleiben grundlegend und können keine umfassende Optimierung liefern. Verschiedene Tools für verschiedene Aufgaben zu verwenden ist sowohl komplex als auch ineffizient. Und wenn Sie diese Optimierungen nicht regelmäßig durchführen, kehrt die gleiche Verlangsamung innerhalb von Wochen zurück.',
             'Disk Mop ist ein professionelles Systemwartungs-Tool, das all diese Schritte — und noch viel mehr — in einer einzigen Anwendung vereint. Mit über 21 Funktionen bietet es Cache-Reinigung, Autostart-Verwaltung, Duplikaterkennung (SHA-256 und Perceptual Hash), Große-Dateien-Finder, visuelle Festplattenanalyse, RAM-Optimierung, sicheres Löschen (DoD 5220.22-M), Festplatten-Gesundheitsüberwachung (SMART), Browser-Datenschutzreinigung, Erkennung ungenutzter Apps, Leere-Ordner-Finder, Dienst-Manager und geplante automatische Bereinigung.',
-            'Für eine einmalige Zahlung von $19,90 (kein Abonnement!) können Sie alle Wartungsbedürfnisse Ihres Computers abdecken. Richten Sie die geplante Bereinigung einmal ein und lassen Sie Disk Mop sicherstellen, dass Ihr Computer immer mit Höchstleistung läuft. Statt Stunden mit manueller Optimierung zu verbringen, beschleunigen Sie Ihren PC mit nur wenigen Klicks.',
+            'Für eine einmalige Zahlung von $9,90 (kein Abonnement!) können Sie alle Wartungsbedürfnisse Ihres Computers abdecken. Richten Sie die geplante Bereinigung einmal ein und lassen Sie Disk Mop sicherstellen, dass Ihr Computer immer mit Höchstleistung läuft. Statt Stunden mit manueller Optimierung zu verbringen, beschleunigen Sie Ihren PC mit nur wenigen Klicks.',
           ],
         },
       ],

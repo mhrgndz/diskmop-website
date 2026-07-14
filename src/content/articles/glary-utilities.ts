@@ -8,7 +8,7 @@ export const glaryUtilities: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz / Pro $19.97/yıl',
       winner: 'diskmop',
     },
@@ -116,7 +116,7 @@ export const glaryUtilities: Article = {
         'Disk temizliğine %100 odaklı',
         'Hem Windows hem macOS desteği',
         'Sade ve anlaşılır arayüz',
-        'Tek seferlik $19.90 — süresiz erişim',
+        'Tek seferlik $9.90 — süresiz erişim',
         'Büyük dosya bulucu (500MB+)',
         'Bundleware/toolbar riski yok',
         'Tam gizlilik — veri toplamaz',
@@ -154,7 +154,7 @@ export const glaryUtilities: Article = {
           title: 'Fiyatlandırma Tuzağı',
           content: [
             'Glary Utilities\'in ücretsiz sürümü temel özellikleri sunsa da, gelişmiş özellikler Pro\'da kilitli. Pro sürüm yıllık 19.97$ abonelik gerektiriyor. 3 yılda yaklaşık 60$ ediyor.',
-            'Disk Mop tek seferlik 19.90$ ile ömür boyu tüm özelliklere erişim sağlıyor. Abonelik takibi yok, yenileme şaşkınlığı yok.',
+            'Disk Mop tek seferlik 9.90$ ile ömür boyu tüm özelliklere erişim sağlıyor. Abonelik takibi yok, yenileme şaşkınlığı yok.',
           ],
         },
         {
@@ -183,7 +183,7 @@ export const glaryUtilities: Article = {
         '100% focused on disk cleaning',
         'Windows and macOS support',
         'Simple, clear interface',
-        'One-time $19.90 — lifetime access',
+        'One-time $9.90 — lifetime access',
         'Large file finder (500MB+)',
         'No bundleware/toolbar risk',
         'Full privacy — no data collection',
@@ -221,7 +221,7 @@ export const glaryUtilities: Article = {
           title: 'The Pricing Trap',
           content: [
             'Glary Utilities\' free version offers basics, but advanced features are locked behind Pro at $19.97/year. Over 3 years, that\'s about $60.',
-            'Disk Mop provides lifetime access to all features for one-time $19.90. No subscription tracking, no renewal surprises.',
+            'Disk Mop provides lifetime access to all features for one-time $9.90. No subscription tracking, no renewal surprises.',
           ],
         },
         {
@@ -243,7 +243,7 @@ export const glaryUtilities: Article = {
       metaDescription: 'Disk Mop und Glary Utilities im Vergleich. Fokussierter Reiniger oder All-in-One-Toolkit?',
       subtitle: 'Glary Utilities hat 20+ Tools, aber Disk Mop konzentriert sich auf Festplattenreinigung und liefert ein besseres Erlebnis.',
       intro: ['Glary Utilities bietet viele Tools, ist aber komplex. Disk Mop konzentriert sich auf das Wesentliche: Festplattenreinigung.'],
-      diskmopPros: ['Fokussiert', 'Windows & macOS', 'Einmalig $19,90'],
+      diskmopPros: ['Fokussiert', 'Windows & macOS', 'Einmalig $9,90'],
       diskmopCons: ['Keine Registry-Reinigung', 'Weniger Tools'],
       competitorPros: ['20+ Tools', 'Registry-Reinigung', 'Kostenlose Version'],
       competitorCons: ['Nur Windows', 'Komplex', 'Abo für Pro'],

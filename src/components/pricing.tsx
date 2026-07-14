@@ -62,7 +62,7 @@ export function Pricing() {
 
             {/* Price */}
             <div className="mt-6">
-              <span className="text-5xl font-bold text-foreground">$19.90</span>
+              <span className="text-5xl font-bold text-foreground">$9.90</span>
               <p className="mt-1 text-muted-foreground text-sm">
                 {t('plan.period')}
               </p>

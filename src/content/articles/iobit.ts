@@ -8,7 +8,7 @@ export const iobit: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$19.90 (tek seferlik)',
+      diskmop: '$9.90 (tek seferlik)',
       competitor: 'Ücretsiz / Pro $19.99/yıl',
       winner: 'diskmop',
     },
@@ -115,7 +115,7 @@ export const iobit: Article = {
       diskmopPros: [
         'Temiz kurulum, bundleware yok',
         'Hem Windows hem macOS desteği',
-        'Tek seferlik $19.90 — ömür boyu erişim',
+        'Tek seferlik $9.90 — ömür boyu erişim',
         'Görsel disk analizi',
         'Büyük dosya bulucu (500MB+)',
         'SHA-256 ile yinelenen dosya tespiti',
@@ -169,7 +169,7 @@ export const iobit: Article = {
       ],
       verdict: [
         'IObit Advanced SystemCare, teknik olarak kapsamlı bir araç olabilir ancak bundleware sorunları, agresif reklam politikası ve gizlilik endişeleri ciddi dezavantajlar.',
-        'Disk Mop, temiz kurulum, çapraz platform desteği ve odaklı disk temizleme özellikleriyle çok daha güvenilir bir seçenek. Tek seferlik 19.90$ ödeme ile IObit\'in yıllık aboneliğinden de kurtulmuş olursunuz.',
+        'Disk Mop, temiz kurulum, çapraz platform desteği ve odaklı disk temizleme özellikleriyle çok daha güvenilir bir seçenek. Tek seferlik 9.90$ ödeme ile IObit\'in yıllık aboneliğinden de kurtulmuş olursunuz.',
       ],
       ctaText: 'Temiz ve Güvenilir: Disk Mop\'u Dene',
     },
@@ -184,7 +184,7 @@ export const iobit: Article = {
       diskmopPros: [
         'Clean installation, no bundleware',
         'Windows and macOS support',
-        'One-time $19.90 — lifetime access',
+        'One-time $9.90 — lifetime access',
         'Visual disk analysis',
         'Large file finder (500MB+)',
         'SHA-256 duplicate detection',
@@ -238,7 +238,7 @@ export const iobit: Article = {
       ],
       verdict: [
         'IObit Advanced SystemCare may be feature-rich, but bundleware, aggressive advertising, and privacy concerns are serious drawbacks.',
-        'Disk Mop is a cleaner, more trustworthy option with cross-platform support and focused disk cleaning features. The one-time $19.90 also beats IObit\'s annual subscription.',
+        'Disk Mop is a cleaner, more trustworthy option with cross-platform support and focused disk cleaning features. The one-time $9.90 also beats IObit\'s annual subscription.',
       ],
       ctaText: 'Clean and Trustworthy: Try Disk Mop',
     },
@@ -247,7 +247,7 @@ export const iobit: Article = {
       metaDescription: 'Disk Mop und IObit im Vergleich. Bundleware-Probleme und Datenschutzbedenken.',
       subtitle: 'IObit ist umstritten wegen Bundleware und aggressiver Werbung. Disk Mop bietet eine saubere Alternative.',
       intro: ['IObit hat Millionen Nutzer, ist aber wegen Bundleware-Risiken und Datenschutz umstritten.'],
-      diskmopPros: ['Saubere Installation', 'Windows & macOS', 'Einmalig $19,90'],
+      diskmopPros: ['Saubere Installation', 'Windows & macOS', 'Einmalig $9,90'],
       diskmopCons: ['Keine RAM-Optimierung'],
       competitorPros: ['Kostenlose Version', 'Viele Tools'],
       competitorCons: ['Nur Windows', 'Bundleware-Risiko', 'Aggressive Werbung'],

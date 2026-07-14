@@ -314,7 +314,7 @@
     "plan": {
       "name": "Disk Mop Lebenslang",
       "badge": "Am beliebtesten",
-      "price": "$19.90",
+      "price": "$9.90",
       "period": "einmalig",
       "cta": "Jetzt kaufen",
       "secure": "Sichere Zahlung: Polar.sh",
@@ -345,11 +345,11 @@
       },
       {
         "question": "Wie funktioniert die Lizenz?",
-        "answer": "Zahlen Sie einmalig $19.90 für lebenslangen Zugang. 1 Lizenz = 1 Computer. Kein Abonnement, keine zusätzlichen Kosten. Wenn Sie den Computer wechseln, können Sie Ihre Lizenz auf den neuen übertragen."
+        "answer": "Zahlen Sie einmalig $9.90 für lebenslangen Zugang. 1 Lizenz = 1 Computer. Kein Abonnement, keine zusätzlichen Kosten. Wenn Sie den Computer wechseln, können Sie Ihre Lizenz auf den neuen übertragen."
       },
       {
         "question": "Wie bezahle ich?",
-        "answer": "Sie zahlen einmalig $19.90 über die sichere Zahlungsinfrastruktur von Polar.sh. Kreditkarten und weitere Zahlungsmethoden werden unterstützt."
+        "answer": "Sie zahlen einmalig $9.90 über die sichere Zahlungsinfrastruktur von Polar.sh. Kreditkarten und weitere Zahlungsmethoden werden unterstützt."
       },
       {
         "question": "Sind Updates kostenlos?",
