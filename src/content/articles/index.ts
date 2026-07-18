@@ -16,8 +16,28 @@ import { speedUpComputer } from './speed-up-computer';
 import { slowStartupFix } from './slow-startup-fix';
 import { bestDiskCleaners } from './best-disk-cleaners';
 import { uninstallLeftovers } from './uninstall-leftovers';
+import { cDriveFullForNoReason } from './c-drive-full-for-no-reason';
+import { fix100DiskUsageWindows } from './fix-100-disk-usage-windows';
+import { findDuplicateFilesWindows } from './find-duplicate-files-windows';
+import { wiztree } from './wiztree';
+import { deleteTemporaryFilesWindows } from './delete-temporary-files-windows';
+import { findLargeFilesWindows } from './find-large-files-windows';
+import { clearSystemDataMac } from './clear-system-data-mac';
+import { flushDnsCache } from './flush-dns-cache';
+import { storageSense } from './storage-sense';
+import { cleanUpDownloadsFolder } from './clean-up-downloads-folder';
 
 export const articles: Article[] = [
+  cleanUpDownloadsFolder,
+  storageSense,
+  flushDnsCache,
+  clearSystemDataMac,
+  findLargeFilesWindows,
+  deleteTemporaryFilesWindows,
+  wiztree,
+  findDuplicateFilesWindows,
+  fix100DiskUsageWindows,
+  cDriveFullForNoReason,
   uninstallLeftovers,
   ccleaner,
   cleanmymac,
