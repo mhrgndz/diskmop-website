@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { articles } from '@/content/articles';
+import { localeHref } from '@/lib/locale-path';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
 
 export async function generateMetadata({
@@ -77,7 +78,7 @@ export default async function BlogPage({
               return (
                 <Link
                   key={article.slug}
-                  href={`/${locale}/blog/${article.slug}`}
+                  href={localeHref(locale, `/blog/${article.slug}`)}
                   className="group block"
                 >
                   <article className="h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-300 dark:hover:border-brand-700">

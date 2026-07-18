@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Twitter, Github, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
+import { localeHref } from '@/lib/locale-path';
 
 interface FooterLink {
   labelKey: string;
@@ -19,10 +20,10 @@ interface SocialLink {
 
 function getProductLinks(locale: string): FooterLink[] {
   return [
-    { labelKey: 'product.features', href: '#features' },
-    { labelKey: 'product.pricing', href: '#pricing' },
-    { labelKey: 'product.faq', href: '#faq' },
-    { labelKey: 'product.blog', href: `/${locale}/blog` },
+    { labelKey: 'product.features', href: localeHref(locale, '/#features') },
+    { labelKey: 'product.pricing', href: localeHref(locale, '/#pricing') },
+    { labelKey: 'product.faq', href: localeHref(locale, '/#faq') },
+    { labelKey: 'product.blog', href: '/blog' },
     { labelKey: 'product.changelog', href: '#' },
   ];
 }
@@ -65,7 +66,7 @@ function FooterColumn({
       <h3 className="text-white font-semibold text-sm mb-4">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => {
-          const isInternal = link.href.startsWith('/') && !link.href.startsWith('/#');
+          const isInternal = link.href.startsWith('/') && !link.href.includes('#');
           return (
             <li key={link.labelKey}>
               {isInternal ? (

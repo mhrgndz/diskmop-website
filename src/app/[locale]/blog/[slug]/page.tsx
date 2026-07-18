@@ -7,6 +7,7 @@ import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { getArticle, getAllSlugs, articles } from '@/content/articles';
 import { routing } from '@/i18n/routing';
+import { localeHref } from '@/lib/locale-path';
 import {
   Check,
   X,
@@ -115,14 +116,14 @@ export default async function ArticlePage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link
-              href={`/${locale}`}
+              href={localeHref(locale, '/')}
               className="hover:text-foreground transition-colors"
             >
               Disk Mop
             </Link>
             <ChevronRight className="h-4 w-4" />
             <Link
-              href={`/${locale}/blog`}
+              href={localeHref(locale, '/blog')}
               className="hover:text-foreground transition-colors"
             >
               Blog
@@ -347,7 +348,7 @@ export default async function ArticlePage({
               {t('ctaSubtitle')}
             </p>
             <a
-              href={`/${locale}#pricing`}
+              href={localeHref(locale, '/#platforms')}
               className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors"
             >
               <Download className="h-5 w-5" />
@@ -369,7 +370,7 @@ export default async function ArticlePage({
                 return (
                   <Link
                     key={rel.slug}
-                    href={`/${locale}/blog/${rel.slug}`}
+                    href={localeHref(locale, `/blog/${rel.slug}`)}
                     className="group rounded-xl border border-border bg-card p-5 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition-all"
                   >
                     <div className="text-xs text-brand-600 dark:text-brand-400 font-medium mb-2">

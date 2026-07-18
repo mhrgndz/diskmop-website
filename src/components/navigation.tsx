@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Menu, X } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { localeHref } from '@/lib/locale-path';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { DownloadDropdown } from '@/components/download-dropdown';
@@ -20,10 +21,10 @@ export function Navigation() {
   const locale = useLocale();
 
   const navLinks: NavLink[] = [
-    { key: 'features', href: '#features' },
-    { key: 'pricing', href: '#pricing' },
-    { key: 'faq', href: '#faq' },
-    { key: 'blog', href: `/${locale}/blog` },
+    { key: 'features', href: localeHref(locale, '/#features') },
+    { key: 'pricing', href: localeHref(locale, '/#pricing') },
+    { key: 'faq', href: localeHref(locale, '/#faq') },
+    { key: 'blog', href: localeHref(locale, '/blog') },
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Left: Logo */}
-            <a href="/" className="flex items-center gap-2.5 shrink-0">
+            <a href={localeHref(locale, '/')} className="flex items-center gap-2.5 shrink-0">
               <Image
                 src="/brand/icon.svg"
                 alt="Disk Mop"
