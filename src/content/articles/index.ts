@@ -26,8 +26,28 @@ import { clearSystemDataMac } from './clear-system-data-mac';
 import { flushDnsCache } from './flush-dns-cache';
 import { storageSense } from './storage-sense';
 import { cleanUpDownloadsFolder } from './clean-up-downloads-folder';
+import { windowsOldFolder } from './windows-old-folder';
+import { winsxsCleanup } from './winsxs-cleanup';
+import { pagefileHiberfil } from './pagefile-hiberfil';
+import { appdataCleanup } from './appdata-cleanup';
+import { macStartupDiskFull } from './mac-startup-disk-full';
+import { clearCacheWindows11 } from './clear-cache-windows-11';
+import { diskSpaceForGaming } from './disk-space-for-gaming';
+import { autoEmptyRecycleBin } from './auto-empty-recycle-bin';
+import { cleanMyPc } from './cleanmypc';
+import { macKeeper } from './mackeeper';
 
 export const articles: Article[] = [
+  macKeeper,
+  cleanMyPc,
+  autoEmptyRecycleBin,
+  diskSpaceForGaming,
+  clearCacheWindows11,
+  macStartupDiskFull,
+  appdataCleanup,
+  pagefileHiberfil,
+  winsxsCleanup,
+  windowsOldFolder,
   cleanUpDownloadsFolder,
   storageSense,
   flushDnsCache,
