@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Monitor, Laptop, Download, ShieldCheck, Users } from 'lucide-react';
+import { Monitor, Laptop, Smartphone, Download, ShieldCheck, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -11,7 +11,7 @@ import { useAppInfo } from '@/hooks/use-app-info';
 import { Button } from '@/components/ui/button';
 
 interface PlatformCard {
-  key: 'windows' | 'mac';
+  key: 'windows' | 'mac' | 'android';
   matchOS: OSType;
   icon: LucideIcon;
   name: string;
@@ -19,6 +19,7 @@ interface PlatformCard {
   systemReq: string;
   href: string;
   signed?: boolean;
+  store?: boolean;
 }
 
 const platforms: PlatformCard[] = [
@@ -41,6 +42,16 @@ const platforms: PlatformCard[] = [
     href: 'https://api.diskmop.com/download/mac',
     signed: true,
   },
+  {
+    key: 'android',
+    matchOS: 'android',
+    icon: Smartphone,
+    name: 'Android',
+    ext: '',
+    systemReq: 'Android 8.0+',
+    href: 'https://play.google.com/store/apps/details?id=com.diskmop.android',
+    store: true,
+  },
 ];
 
 function formatCount(n: number): string {
@@ -54,7 +65,8 @@ export function PlatformSelector() {
   const { version, downloads, windowsSize, macSize } = useAppInfo();
 
   const getSize = (key: string) => (key === 'windows' ? windowsSize : macSize) || '~80 MB';
-  const getCount = (key: string) => (key === 'windows' ? downloads.windows : downloads.mac);
+  const getCount = (key: string) =>
+    key === 'windows' ? downloads.windows : key === 'mac' ? downloads.mac : 0;
 
   return (
     <section id="platforms" className="py-24">
@@ -74,7 +86,7 @@ export function PlatformSelector() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isHighlighted = detectedOS === platform.matchOS;
@@ -127,8 +139,14 @@ export function PlatformSelector() {
                 </h3>
 
                 <p className="text-sm text-muted-foreground text-center mt-1">
-                  {version || 'v1.0.0'} &bull; {getSize(platform.key)} &bull;{' '}
-                  {platform.ext}
+                  {platform.store ? (
+                    'Google Play'
+                  ) : (
+                    <>
+                      {version || 'v1.0.0'} &bull; {getSize(platform.key)} &bull;{' '}
+                      {platform.ext}
+                    </>
+                  )}
                 </p>
 
                 {count > 0 && (
@@ -166,7 +184,11 @@ export function PlatformSelector() {
                     size="lg"
                     className="w-full gap-2"
                   >
-                    <a href={platform.href}>
+                    <a
+                      href={platform.href}
+                      target={platform.store ? '_blank' : undefined}
+                      rel={platform.store ? 'noopener noreferrer' : undefined}
+                    >
                       <Download className="h-4 w-4" />
                       {t(`${platform.key}.download`)}
                     </a>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Monitor, Laptop, ChevronDown, Download, ShieldCheck } from 'lucide-react';
+import { Monitor, Laptop, Smartphone, ChevronDown, Download, ShieldCheck } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { cn } from '@/lib/utils';
@@ -21,7 +21,7 @@ interface DownloadDropdownProps {
 }
 
 interface DownloadOption {
-  os: 'windows' | 'mac';
+  os: 'windows' | 'mac' | 'android';
   label: string;
   sublabel?: string;
   href: string;
@@ -45,6 +45,12 @@ const downloadOptions: DownloadOption[] = [
     icon: Laptop,
     signed: true,
   },
+  {
+    os: 'android',
+    label: 'Android',
+    href: 'https://play.google.com/store/apps/details?id=com.diskmop.android',
+    icon: Smartphone,
+  },
 ];
 
 export function DownloadDropdown({
@@ -55,7 +61,10 @@ export function DownloadDropdown({
   const detectedOS = useOSDetection();
   const { windowsSize, macSize } = useAppInfo();
 
-  const getSize = (os: string) => (os === 'windows' ? windowsSize : macSize) || '~80 MB';
+  const getSize = (os: string) =>
+    os === 'android'
+      ? 'Google Play'
+      : (os === 'windows' ? windowsSize : macSize) || '~80 MB';
 
   const isRecommended = (option: DownloadOption): boolean => {
     if (detectedOS === 'unknown') return false;
@@ -87,10 +96,12 @@ export function DownloadDropdown({
 
           return (
             <div key={option.href}>
-              {index === 1 && <DropdownMenuSeparator />}
+              {index > 0 && <DropdownMenuSeparator />}
               <DropdownMenuItem asChild>
                 <a
                   href={option.href}
+                  target={option.os === 'android' ? '_blank' : undefined}
+                  rel={option.os === 'android' ? 'noopener noreferrer' : undefined}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2.5',
                     recommended && 'bg-brand-50 dark:bg-brand-950'

@@ -28,7 +28,7 @@
   },
   "platformSelector": {
     "title": "Choisissez votre plateforme",
-    "subtitle": "Application native optimisée pour Windows et macOS",
+    "subtitle": "Applications natives pour Windows, macOS et Android",
     "recommended": "Recommandé",
     "download": "Télécharger",
     "systemReqs": "Configuration requise",
@@ -40,6 +40,12 @@
       "reqs": "Windows 10/11 (64 bits)",
       "recommended": "Recommandé pour vous",
       "download": "Télécharger pour Windows"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Recommandé pour vous",
+      "download": "Disponible sur Google Play"
     },
     "mac": {
       "title": "macOS",

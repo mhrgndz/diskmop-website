@@ -28,7 +28,7 @@
   },
   "platformSelector": {
     "title": "プラットフォームを選択",
-    "subtitle": "WindowsとmacOSに最適化されたネイティブアプリ",
+    "subtitle": "Windows、macOS、Androidに対応したネイティブアプリ",
     "recommended": "おすすめ",
     "download": "ダウンロード",
     "systemReqs": "システム要件",
@@ -40,6 +40,12 @@
       "reqs": "Windows 10/11 (64-bit)",
       "recommended": "あなたにおすすめ",
       "download": "Windows版をダウンロード"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "あなたにおすすめ",
+      "download": "Google Play で手に入れよう"
     },
     "mac": {
       "title": "macOS",

@@ -59,7 +59,7 @@ export default async function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'SoftwareApplication',
               name: 'Disk Mop',
-              operatingSystem: 'Windows 10, Windows 11, macOS 12+',
+              operatingSystem: 'Windows 10, Windows 11, macOS 12+, Android 8.0+',
               applicationCategory: 'UtilitiesApplication',
               offers: {
                 '@type': 'Offer',

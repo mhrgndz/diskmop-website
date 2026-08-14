@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export type OSType = 'windows' | 'mac' | 'linux' | 'unknown';
+export type OSType = 'windows' | 'mac' | 'linux' | 'android' | 'unknown';
 
 export function useOSDetection(): OSType {
   const [os, setOS] = useState<OSType>('unknown');
@@ -11,7 +11,10 @@ export function useOSDetection(): OSType {
     const ua = navigator.userAgent.toLowerCase();
     const platform = navigator.platform?.toLowerCase() || '';
 
-    if (ua.includes('win') || platform.includes('win')) {
+    // Android UA also contains "linux", so it must be checked first
+    if (ua.includes('android')) {
+      setOS('android');
+    } else if (ua.includes('win') || platform.includes('win')) {
       setOS('windows');
     } else if (
       ua.includes('mac') ||

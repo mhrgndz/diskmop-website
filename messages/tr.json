@@ -28,7 +28,7 @@
   },
   "platformSelector": {
     "title": "Platformunu Seç",
-    "subtitle": "Windows ve macOS için optimize edilmiş native uygulama",
+    "subtitle": "Windows, macOS ve Android için native uygulamalar",
     "recommended": "Önerilen",
     "download": "İndir",
     "systemReqs": "Sistem Gereksinimleri",
@@ -40,6 +40,12 @@
       "reqs": "Windows 10/11 (64-bit)",
       "recommended": "Senin için önerilen",
       "download": "Windows İçin İndir"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Senin için önerilen",
+      "download": "Google Play'den Edinin"
     },
     "mac": {
       "title": "macOS",
