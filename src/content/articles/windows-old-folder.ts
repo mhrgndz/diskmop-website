@@ -77,7 +77,7 @@ export const windowsOldFolder: Article = {
       ],
       verdict: [
         'Windows.old klasörünü silmek, geri dönüş yapmayacağınızdan eminseniz güvenli ve mantıklıdır. Disk Temizleme veya Ayarlar\'daki depolama seçenekleri işin çoğunu halleder; inatçı kalıntılar için takeown, icacls ve rd komutlarıyla ilerleyen komut satırı yöntemi her zaman elinizin altındadır. Tek başına bu adım bile C: sürücünüzde onlarca gigabaytlık alan açabilir.',
-        'Yükseltmenin geride bıraktığı diğer dosyaları bulmak ve diskinizi uzun vadede temiz tutmak içinse Disk Mop pratik bir yardımcıdır. Disk analizi, büyük dosya bulucu, önbellek temizleyici ve zamanlanmış temizlik özelliklerinin tamamı, $9.90\'lık tek seferlik ömür boyu lisansla sunulur — abonelik yoktur.',
+        'Yükseltmenin geride bıraktığı diğer dosyaları bulmak ve diskinizi uzun vadede temiz tutmak içinse Disk Mop pratik bir yardımcıdır. Disk analizi, büyük dosya bulucu, önbellek temizleyici ve zamanlanmış temizlik özelliklerinin tamamı, $19.90\'lık tek seferlik ömür boyu lisansla sunulur — abonelik yoktur.',
       ],
       ctaText: 'Disk Mop ile C: sürücünüzde yer açın',
     },
@@ -151,7 +151,7 @@ export const windowsOldFolder: Article = {
       ],
       verdict: [
         'Deleting the Windows.old folder is safe and sensible once you\'re sure you won\'t roll back. Disk Cleanup or the storage options in Settings handle most of the work, and for stubborn remnants the command-line route with takeown, icacls, and rd is always available. That single step alone can free tens of gigabytes on your C: drive.',
-        'For finding everything else the upgrade left behind — and keeping your disk lean long term — Disk Mop is a practical companion. Disk Analysis, the Large File Finder, the Cache Cleaner, and Scheduled Cleanup are all included in a one-time $9.90 lifetime license, with no subscription attached.',
+        'For finding everything else the upgrade left behind — and keeping your disk lean long term — Disk Mop is a practical companion. Disk Analysis, the Large File Finder, the Cache Cleaner, and Scheduled Cleanup are all included in a one-time $19.90 lifetime license, with no subscription attached.',
       ],
       ctaText: 'Reclaim gigabytes on your C: drive with Disk Mop',
     },
@@ -225,7 +225,7 @@ export const windowsOldFolder: Article = {
       ],
       verdict: [
         'Den Windows.old Ordner zu löschen ist sicher und sinnvoll, sobald feststeht, dass Sie nicht zurückwechseln wollen. Datenträgerbereinigung oder die Speicheroptionen in den Einstellungen erledigen den Großteil, und für hartnäckige Reste steht der Kommandozeilenweg mit takeown, icacls und rd bereit. Allein dieser Schritt kann Dutzende Gigabytes auf dem C:-Laufwerk freigeben.',
-        'Um alles Übrige zu finden, was das Upgrade hinterlassen hat, und das Laufwerk langfristig schlank zu halten, ist Disk Mop ein praktischer Begleiter. Festplattenanalyse, Große-Dateien-Finder, Cache-Bereiniger und geplante Bereinigung sind in einer einmaligen Lifetime-Lizenz für $9.90 enthalten — ganz ohne Abo.',
+        'Um alles Übrige zu finden, was das Upgrade hinterlassen hat, und das Laufwerk langfristig schlank zu halten, ist Disk Mop ein praktischer Begleiter. Festplattenanalyse, Große-Dateien-Finder, Cache-Bereiniger und geplante Bereinigung sind in einer einmaligen Lifetime-Lizenz für $19.90 enthalten — ganz ohne Abo.',
       ],
       ctaText: 'Gewinnen Sie mit Disk Mop Gigabytes zurück',
     },

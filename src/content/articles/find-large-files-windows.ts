@@ -67,7 +67,7 @@ export const findLargeFilesWindows: Article = {
       ],
       verdict: [
         'Windows\'ta büyük dosyaları bulmak üç beceri katmanından oluşur: hızlı bir kontrol için Dosya Gezgini\'nde size:gigantic araması, diskin genel haritası için treemap analizi ve rutin denetim için 500 MB üzerini tarayan otomatik bir araç. Bu üçünü birlikte kullandığınızda, on beş dakikalık bir oturumda onlarca gigabayt alanı geri kazanmak çoğu bilgisayarda gerçekçi bir hedeftir.',
-        'Disk Mop bu iş akışının tamamını tek uygulamada toplar: disk analizi treemap\'i, 500 MB üzerini bulan büyük dosya bulucu, SHA-256 tabanlı yinelenen dosya dedektörü ve zamanlanmış temizlik. Ücretsiz sürümle deneyebilir, tüm özellikleri 9,90 dolarlık tek seferlik ömür boyu lisansla açabilirsiniz.',
+        'Disk Mop bu iş akışının tamamını tek uygulamada toplar: disk analizi treemap\'i, 500 MB üzerini bulan büyük dosya bulucu, SHA-256 tabanlı yinelenen dosya dedektörü ve zamanlanmış temizlik. Ücretsiz sürümle deneyebilir, tüm özellikleri 19,90 dolarlık tek seferlik ömür boyu lisansla açabilirsiniz.',
       ],
       ctaText: 'Disk Mop ile en büyük dosyalarınızı bulun',
     },
@@ -131,7 +131,7 @@ export const findLargeFilesWindows: Article = {
       ],
       verdict: [
         'Finding large files on Windows comes down to three layers of skill: a size:gigantic search in File Explorer for a quick check, a treemap analysis for the overall map of your drive, and an automatic scanner for files over 500 MB as your recurring audit. Use all three together and reclaiming tens of gigabytes in a fifteen-minute session is a realistic goal on most PCs.',
-        'Disk Mop packs this entire workflow into one app: the Disk Analysis treemap, the Large File Finder for files over 500 MB, the SHA-256 based Duplicate Detector, and Scheduled Cleanup for maintenance. You can try it free, and a one-time $9.90 lifetime license unlocks everything.',
+        'Disk Mop packs this entire workflow into one app: the Disk Analysis treemap, the Large File Finder for files over 500 MB, the SHA-256 based Duplicate Detector, and Scheduled Cleanup for maintenance. You can try it free, and a one-time $19.90 lifetime license unlocks everything.',
       ],
       ctaText: 'Find your largest files with Disk Mop',
     },
@@ -190,7 +190,7 @@ export const findLargeFilesWindows: Article = {
       ],
       verdict: [
         'Große Dateien unter Windows zu finden besteht aus drei Kompetenzstufen: eine size:gigantic-Suche im Datei-Explorer für den Schnellcheck, eine Treemap-Analyse für die Gesamtkarte des Laufwerks und ein automatischer Scanner für Dateien über 500 MB als wiederkehrende Kontrolle. Wer alle drei kombiniert, kann auf den meisten PCs in einer Viertelstunde Dutzende Gigabyte zurückgewinnen.',
-        'Disk Mop bündelt diesen gesamten Arbeitsablauf in einer App: Festplattenanalyse mit Treemap, Große-Dateien-Finder für alles über 500 MB, SHA-256-basierter Duplikatfinder und geplante Bereinigung. Sie können die App kostenlos testen; die einmalige Lifetime-Lizenz für 9,90 US-Dollar schaltet alle Funktionen frei.',
+        'Disk Mop bündelt diesen gesamten Arbeitsablauf in einer App: Festplattenanalyse mit Treemap, Große-Dateien-Finder für alles über 500 MB, SHA-256-basierter Duplikatfinder und geplante Bereinigung. Sie können die App kostenlos testen; die einmalige Lifetime-Lizenz für 19,90 US-Dollar schaltet alle Funktionen frei.',
       ],
       ctaText: 'Finden Sie Ihre größten Dateien mit Disk Mop',
     },

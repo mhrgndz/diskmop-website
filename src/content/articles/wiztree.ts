@@ -9,7 +9,7 @@ export const wiztree: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: 'Ev kullanımında ücretsiz',
       winner: 'competitor',
     },
@@ -88,7 +88,7 @@ export const wiztree: Article = {
       ],
       diskmopCons: [
         'Tarama hızı WizTree\'nin MFT okumasına yetişemez',
-        'Ev kullanımında ücretsiz olana karşı $9.90',
+        'Ev kullanımında ücretsiz olana karşı $19.90',
         'WizTree\'nin minik indirmesine göre büyük kurulum (~80 MB)',
       ],
       competitorPros: [
@@ -134,11 +134,11 @@ export const wiztree: Article = {
           ],
         },
         {
-          title: 'Platform ve Fiyat: Ev Kullanımında Ücretsiz vs $9.90 Ömür Boyu',
+          title: 'Platform ve Fiyat: Ev Kullanımında Ücretsiz vs $19.90 Ömür Boyu',
           content: [
             'WizTree\'nin fiyatlandırması gerçekten cömert: kişisel ve ev kullanımı için ücretsiz; yalnızca ticari veya kurumsal ortamlarda ücretli lisans gerekiyor. Sadece diski neyin doldurduğunu görmek isteyen bir ev kullanıcısı için ücretsizle tartışmak zor.',
             'Platform hikayesi daha kısa: WizTree yalnızca Windows\'ta çalışır. WizTree Mac diye arattıysanız bilin ki böyle bir sürüm yok ve temel numarası da taşınamaz — macOS, Ana Dosya Tablosu olmayan APFS dosya sistemini kullanır. Mac kullanıcılarına bambaşka bir araç gerekir. Disk Mop, Windows 10/11\'in yanı sıra macOS 12 ve üzerinde (Apple Silicon ve Intel, Apple onaylı) yerel olarak çalışır.',
-            'Disk Mop freemium modelde: indirmesi ücretsiz ve sınırlı özellikli; tek seferlik $9.90 ödeme her şeyi iki platformda ömür boyu açar — abonelik yok, yenileme yok. WizTree\'nin zaten ücretsiz verdiği analize değil; üzerine gelen temizlik motoruna, yinelenen dosya tespitine ve otomasyona ödeme yapıyorsunuz.',
+            'Disk Mop freemium modelde: indirmesi ücretsiz ve sınırlı özellikli; tek seferlik $19.90 ödeme her şeyi iki platformda ömür boyu açar — abonelik yok, yenileme yok. WizTree\'nin zaten ücretsiz verdiği analize değil; üzerine gelen temizlik motoruna, yinelenen dosya tespitine ve otomasyona ödeme yapıyorsunuz.',
           ],
         },
         {
@@ -151,7 +151,7 @@ export const wiztree: Article = {
       ],
       verdict: [
         'WizTree ününü hak ediyor: Windows\'ta saf bir disk alanı analiz aracı olarak piyasadaki en hızlısı ve ev kullanımında ücretsiz. Ama bilinçli bir tasarım tercihiyle sorunu göstermekle yetiniyor.',
-        'Disk Mop, WizTree\'nin durduğu yerden başlıyor. Tek seferlik $9.90 ile disk analizinin yanına tek tık temizlik, SHA-256 yinelenen dosya tespiti, zamanlanmış temizlik ve macOS desteği geliyor. Hedefiniz dolu bir diskin haritası değil temiz bir diskse, Disk Mop daha eksiksiz araç.',
+        'Disk Mop, WizTree\'nin durduğu yerden başlıyor. Tek seferlik $19.90 ile disk analizinin yanına tek tık temizlik, SHA-256 yinelenen dosya tespiti, zamanlanmış temizlik ve macOS desteği geliyor. Hedefiniz dolu bir diskin haritası değil temiz bir diskse, Disk Mop daha eksiksiz araç.',
       ],
       ctaText: 'Sadece Tarama Değil, Temizlik: Disk Mop',
     },
@@ -174,7 +174,7 @@ export const wiztree: Article = {
       ],
       diskmopCons: [
         'Scan speed can\'t match WizTree\'s MFT reading',
-        '$9.90 vs free for home use',
+        '$19.90 vs free for home use',
         'Larger installer (~80 MB) than WizTree\'s tiny download',
       ],
       competitorPros: [
@@ -220,11 +220,11 @@ export const wiztree: Article = {
           ],
         },
         {
-          title: 'Platforms and Pricing: Free for Home Use vs $9.90 Lifetime',
+          title: 'Platforms and Pricing: Free for Home Use vs $19.90 Lifetime',
           content: [
             'WizTree\'s pricing is genuinely generous: it is free for personal and home use, with a paid license required only for commercial or business environments. For a home Windows user who just wants to see what fills the drive, free is hard to argue with.',
             'The platform story is shorter: WizTree is Windows-only, and there is no WizTree for Mac. If you searched for WizTree Mac, note that its core trick cannot be ported — macOS uses the APFS file system, which has no Master File Table to read. Mac users need a different tool entirely. Disk Mop runs natively on macOS 12 and later (Apple Silicon and Intel, notarized by Apple) as well as Windows 10/11.',
-            'Disk Mop is freemium: the download is free with limited features, and a single $9.90 payment unlocks everything for life on both platforms — no subscription, no renewal. You are not paying for the analysis, which WizTree gives away; you are paying for the cleanup engine, the duplicate detection and the automation on top of it.',
+            'Disk Mop is freemium: the download is free with limited features, and a single $19.90 payment unlocks everything for life on both platforms — no subscription, no renewal. You are not paying for the analysis, which WizTree gives away; you are paying for the cleanup engine, the duplicate detection and the automation on top of it.',
           ],
         },
         {
@@ -237,7 +237,7 @@ export const wiztree: Article = {
       ],
       verdict: [
         'WizTree earns its reputation: as a pure disk space analyzer on Windows, it is the fastest tool available and free for home use. But by design, it stops at showing you the problem.',
-        'Disk Mop starts where WizTree stops. For $9.90 once, you get disk analysis plus one-click cleanup, SHA-256 duplicate detection, scheduled cleanups and macOS support. If your goal is a clean disk rather than a map of a full one, Disk Mop is the more complete tool.',
+        'Disk Mop starts where WizTree stops. For $19.90 once, you get disk analysis plus one-click cleanup, SHA-256 duplicate detection, scheduled cleanups and macOS support. If your goal is a clean disk rather than a map of a full one, Disk Mop is the more complete tool.',
       ],
       ctaText: 'Clean, Don\'t Just Scan: Try Disk Mop',
     },
@@ -260,7 +260,7 @@ export const wiztree: Article = {
       ],
       diskmopCons: [
         'Scan-Tempo erreicht WizTrees MFT-Lesen nicht',
-        '$9.90 gegenüber kostenlos für Privatnutzer',
+        '$19.90 gegenüber kostenlos für Privatnutzer',
         'Größerer Installer (~80 MB)',
       ],
       competitorPros: [
@@ -304,10 +304,10 @@ export const wiztree: Article = {
           ],
         },
         {
-          title: 'Plattformen und Preise: Privat kostenlos vs. $9.90 einmalig',
+          title: 'Plattformen und Preise: Privat kostenlos vs. $19.90 einmalig',
           content: [
             'WizTree ist für den privaten Gebrauch kostenlos; nur kommerzielle Nutzung erfordert eine Lizenz. Aber es läuft ausschließlich unter Windows — ein WizTree für Mac existiert nicht und kann technisch kaum existieren, da das Dateisystem APFS keine Master File Table hat.',
-            'Disk Mop läuft nativ auf Windows 10/11 und macOS 12+ (Apple Silicon und Intel, von Apple notarisiert). Der Download ist kostenlos mit eingeschränkten Funktionen; einmalig $9.90 schalten alles dauerhaft frei — kein Abo. Sie zahlen nicht für die Analyse, sondern für Reinigung, Duplikaterkennung und Automatisierung obendrauf.',
+            'Disk Mop läuft nativ auf Windows 10/11 und macOS 12+ (Apple Silicon und Intel, von Apple notarisiert). Der Download ist kostenlos mit eingeschränkten Funktionen; einmalig $19.90 schalten alles dauerhaft frei — kein Abo. Sie zahlen nicht für die Analyse, sondern für Reinigung, Duplikaterkennung und Automatisierung obendrauf.',
           ],
         },
         {
@@ -320,7 +320,7 @@ export const wiztree: Article = {
       ],
       verdict: [
         'WizTree verdient seinen Ruf: der schnellste reine Analyzer unter Windows, privat kostenlos — aber er hört bewusst beim Anzeigen des Problems auf.',
-        'Disk Mop beginnt dort, wo WizTree endet: Für einmalig $9.90 gibt es Analyse plus Ein-Klick-Reinigung, SHA-256-Duplikaterkennung, geplante Reinigung und macOS-Support. Wer eine saubere Festplatte will statt einer Karte der vollen, fährt mit Disk Mop besser.',
+        'Disk Mop beginnt dort, wo WizTree endet: Für einmalig $19.90 gibt es Analyse plus Ein-Klick-Reinigung, SHA-256-Duplikaterkennung, geplante Reinigung und macOS-Support. Wer eine saubere Festplatte will statt einer Karte der vollen, fährt mit Disk Mop besser.',
       ],
       ctaText: 'Nicht nur scannen — Disk Mop testen',
     },

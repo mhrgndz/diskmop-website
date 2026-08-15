@@ -69,7 +69,7 @@ export const winsxsCleanup: Article = {
       ],
       verdict: [
         'WinSxS klasörünün korkutucu boyutu büyük ölçüde bir yanılsamadır: sabit bağlantılar Dosya Gezgini\'nin rakamını şişirir ve klasörü elle silmek Windows\'u kullanılamaz hale getirebilir. Gerçek boyutu Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore ile ölçüp, temizliği StartComponentCleanup komutuna ve Disk Temizleme\'deki Windows Update Temizleme seçeneğine bırakmak hem güvenli hem de yeterlidir.',
-        'Bileşen deposu dışında kalan her şey için Disk Mop devreye girer: disk analizi alanı neyin yediğini görselleştirir, önbellek ve indirme temizleyicileri birikintileri kaldırır, zamanlanmış temizlik ise bakımı otomatiğe bağlar. 9,90 dolarlık tek seferlik lisansla Windows ve macOS\'te ömür boyu kullanabilirsiniz; ücretsiz sürümle denemeye hemen başlayabilirsiniz.',
+        'Bileşen deposu dışında kalan her şey için Disk Mop devreye girer: disk analizi alanı neyin yediğini görselleştirir, önbellek ve indirme temizleyicileri birikintileri kaldırır, zamanlanmış temizlik ise bakımı otomatiğe bağlar. 19,90 dolarlık tek seferlik lisansla Windows ve macOS\'te ömür boyu kullanabilirsiniz; ücretsiz sürümle denemeye hemen başlayabilirsiniz.',
       ],
       ctaText: 'Diskinizin geri kalanını Disk Mop ile temizleyin',
     },
@@ -135,7 +135,7 @@ export const winsxsCleanup: Article = {
       ],
       verdict: [
         'The scary size of the WinSxS folder is largely an illusion: hard links inflate the number File Explorer shows, and deleting the folder by hand can leave Windows unbootable. Measuring the real size with Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore and leaving the cleanup to StartComponentCleanup and Windows Update Cleanup is both safe and sufficient.',
-        'For everything outside the component store, Disk Mop takes over: Disk Analysis visualizes what\'s eating your space, the cache and downloads cleaners remove the buildup, and Scheduled Cleanup puts maintenance on autopilot. A one-time $9.90 license covers Windows and macOS for life, and the free version lets you start right away.',
+        'For everything outside the component store, Disk Mop takes over: Disk Analysis visualizes what\'s eating your space, the cache and downloads cleaners remove the buildup, and Scheduled Cleanup puts maintenance on autopilot. A one-time $19.90 license covers Windows and macOS for life, and the free version lets you start right away.',
       ],
       ctaText: 'Clean up the rest of your drive with Disk Mop',
     },
@@ -201,7 +201,7 @@ export const winsxsCleanup: Article = {
       ],
       verdict: [
         'Die erschreckende Größe des WinSxS-Ordners ist größtenteils eine Illusion: Harte Links blähen den Explorer-Wert auf, und manuelles Löschen kann Windows startunfähig machen. Die tatsächliche Größe mit Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore messen und die Bereinigung StartComponentCleanup und der Windows Update-Bereinigung überlassen — das ist sicher und völlig ausreichend.',
-        'Für alles außerhalb des Komponentenspeichers übernimmt Disk Mop: Die Festplattenanalyse zeigt, was Ihren Platz frisst, Cache- und Download-Bereiniger entfernen den Ballast, und die geplante Bereinigung automatisiert die Wartung. Die einmalige Lizenz für 9,90 US-Dollar gilt lebenslang für Windows und macOS — die kostenlose Version können Sie sofort ausprobieren.',
+        'Für alles außerhalb des Komponentenspeichers übernimmt Disk Mop: Die Festplattenanalyse zeigt, was Ihren Platz frisst, Cache- und Download-Bereiniger entfernen den Ballast, und die geplante Bereinigung automatisiert die Wartung. Die einmalige Lizenz für 19,90 US-Dollar gilt lebenslang für Windows und macOS — die kostenlose Version können Sie sofort ausprobieren.',
       ],
       ctaText: 'Bereinigen Sie den Rest Ihres Laufwerks mit Disk Mop',
     },

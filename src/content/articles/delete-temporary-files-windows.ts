@@ -69,7 +69,7 @@ export const deleteTemporaryFilesWindows: Article = {
       ],
       verdict: [
         'Geçici dosyaları silme konusundaki korku çoğunlukla yersizdir: Windows kullanımdaki dosyaları zaten kilitler ve ihtiyaç duyduğu her şeyi yeniden oluşturur. Ayarlar üzerinden geçici dosyaları kaldırmak, %temp% ve C:\\Windows\\Temp klasörlerini boşaltmak, Disk Temizleme\'yi çalıştırmak, tarayıcı önbelleğini ve geri dönüşüm kutusunu temizlemek — bunların hepsi herkesin uygulayabileceği güvenli bakım işlemleridir.',
-        'Bu kontrol listesini her ay elle tekrarlamak istemeyenler için Disk Mop, önbellek temizleyici, tarayıcı önbelleği temizleyici, geri dönüşüm kutusu boşaltma, tek tık Speed Up ve zamanlanmış temizlik özelliklerini tek uygulamada birleştirir. Tek seferlik $9.90 ödemeyle ömür boyu lisans sunar ve hem Windows 10/11 hem macOS üzerinde çalışır.',
+        'Bu kontrol listesini her ay elle tekrarlamak istemeyenler için Disk Mop, önbellek temizleyici, tarayıcı önbelleği temizleyici, geri dönüşüm kutusu boşaltma, tek tık Speed Up ve zamanlanmış temizlik özelliklerini tek uygulamada birleştirir. Tek seferlik $19.90 ödemeyle ömür boyu lisans sunar ve hem Windows 10/11 hem macOS üzerinde çalışır.',
       ],
       ctaText: 'Disk Mop ile geçici dosyaları tek tıkla temizleyin',
     },
@@ -135,7 +135,7 @@ export const deleteTemporaryFilesWindows: Article = {
       ],
       verdict: [
         'The fear around deleting temporary files is mostly unfounded: Windows locks anything that is in use and rebuilds whatever it still needs. Removing temporary files through Settings, emptying %temp% and C:\\Windows\\Temp, running Disk Cleanup, and clearing browser caches and the Recycle Bin are all safe, routine maintenance tasks anyone can do.',
-        'If you would rather not repeat that checklist by hand every month, Disk Mop bundles the Cache Cleaner, Browser Cache Cleaner, Recycle Bin emptying, one-click Speed Up, and Scheduled Cleanup into a single app for a one-time $9.90 lifetime license, on both Windows 10/11 and macOS.',
+        'If you would rather not repeat that checklist by hand every month, Disk Mop bundles the Cache Cleaner, Browser Cache Cleaner, Recycle Bin emptying, one-click Speed Up, and Scheduled Cleanup into a single app for a one-time $19.90 lifetime license, on both Windows 10/11 and macOS.',
       ],
       ctaText: 'Clean up temporary files in one click with Disk Mop',
     },
@@ -201,7 +201,7 @@ export const deleteTemporaryFilesWindows: Article = {
       ],
       verdict: [
         'Die Angst vor dem Löschen temporärer Dateien ist meist unbegründet: Windows sperrt verwendete Dateien und erstellt alles Benötigte neu. Temporäre Dateien über die Einstellungen entfernen, %temp% und C:\\Windows\\Temp leeren, die Datenträgerbereinigung ausführen, Browser-Cache und Papierkorb bereinigen — all das sind sichere Routineaufgaben.',
-        'Wer diese Arbeit nicht jeden Monat von Hand wiederholen möchte, bekommt mit Disk Mop Cache-Bereiniger, Browser-Cache-Bereiniger, Papierkorb-Leerung, Ein-Klick-Speed-Up und geplante Bereinigung in einer einzigen Anwendung — für einmalig $9.90 mit lebenslanger Lizenz, für Windows 10/11 und macOS.',
+        'Wer diese Arbeit nicht jeden Monat von Hand wiederholen möchte, bekommt mit Disk Mop Cache-Bereiniger, Browser-Cache-Bereiniger, Papierkorb-Leerung, Ein-Klick-Speed-Up und geplante Bereinigung in einer einzigen Anwendung — für einmalig $19.90 mit lebenslanger Lizenz, für Windows 10/11 und macOS.',
       ],
       ctaText: 'Bereinigen Sie temporäre Dateien mit Disk Mop',
     },

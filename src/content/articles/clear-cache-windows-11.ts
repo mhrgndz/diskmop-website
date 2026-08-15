@@ -62,7 +62,7 @@ export const clearCacheWindows11: Article = {
           content: [
             'Yukarıdaki yöntemlerin hepsi işe yarar; ancak dikkat ederseniz dört önbellek türü için dört farklı yere gitmeniz gerekiyor ve hiçbiri size düzenli temizlik yapmayı hatırlatmıyor. Çoğu kullanıcı bu adımları ancak disk dolduğunda veya bir şeyler bozulduğunda hatırlar — oysa temizliğin en az işe yaradığı an tam da budur.',
             'Disk Mop bu rutini tek tıka indirir. Hızlandır (Speed Up) özelliği sistem önbelleğini, tarayıcı önbelleklerini, eski indirmeleri ve geri dönüşüm kutusunu tek seferde temizler; daha ince kontrol istediğinizde önbellek temizleyici, tarayıcı önbelleği temizleyici ve DNS önbelleği temizleyici her türü ayrı ayrı kapsar. Zamanlanmış temizlik özelliği tüm işlemi haftalık veya aylık olarak otomatik çalıştırır, sistem sağlık puanı ise bilgisayarınızın ne zaman ilgiye ihtiyaç duyduğunu tek bakışta gösterir.',
-            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm tek seferlik $9.90 ödemeyle ömür boyu lisans sunar, abonelik yoktur. Uygulama Windows 10 ve 11\'in yanı sıra macOS\'te de çalışır.',
+            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm tek seferlik $19.90 ödemeyle ömür boyu lisans sunar, abonelik yoktur. Uygulama Windows 10 ve 11\'in yanı sıra macOS\'te de çalışır.',
           ],
         },
       ],
@@ -127,7 +127,7 @@ export const clearCacheWindows11: Article = {
           content: [
             'Every method above works, but notice the pattern: four cache types, four different places, and none of them remind you to come back. Most people only clear caches when the disk is already full or something has broken — which is precisely the moment cleanup helps the least.',
             'Disk Mop condenses the whole routine into one click. Its Speed Up feature cleans the system cache, browser caches, old downloads and the recycle bin in a single pass, while the dedicated Cache Cleaner, Browser Cache Cleaner and DNS Cache Cleaner cover each type individually when you want finer control. Scheduled Cleanup runs everything weekly or monthly automatically, and the System Health Score shows at a glance when your PC needs attention.',
-            'Disk Mop is free to download with limited features, and the Pro version is a one-time $9.90 payment with a lifetime license — no subscription. The app runs on Windows 10 and 11 as well as macOS.',
+            'Disk Mop is free to download with limited features, and the Pro version is a one-time $19.90 payment with a lifetime license — no subscription. The app runs on Windows 10 and 11 as well as macOS.',
           ],
         },
       ],
@@ -192,7 +192,7 @@ export const clearCacheWindows11: Article = {
           content: [
             'Alle genannten Methoden funktionieren — aber vier Cache-Typen bedeuten vier verschiedene Orte, und keiner davon erinnert Sie daran, wiederzukommen. Die meisten leeren Caches erst, wenn die Festplatte voll ist oder etwas nicht mehr funktioniert — also genau dann, wenn die Bereinigung am wenigsten hilft.',
             'Disk Mop verdichtet die gesamte Routine auf einen Klick. Die Speed-Up-Funktion bereinigt System-Cache, Browser-Caches, alte Downloads und den Papierkorb in einem Durchgang; Cache-Bereiniger, Browser-Cache-Bereiniger und DNS-Cache-Bereiniger decken jeden Typ einzeln ab, wenn Sie feinere Kontrolle wünschen. Die geplante Bereinigung läuft wöchentlich oder monatlich automatisch, und der System-Gesundheitswert zeigt auf einen Blick, wann Ihr PC Aufmerksamkeit braucht.',
-            'Disk Mop ist als kostenloser Download mit eingeschränkten Funktionen erhältlich; die Pro-Version kostet einmalig $9.90 mit lebenslanger Lizenz — kein Abo. Die App läuft unter Windows 10 und 11 sowie macOS.',
+            'Disk Mop ist als kostenloser Download mit eingeschränkten Funktionen erhältlich; die Pro-Version kostet einmalig $19.90 mit lebenslanger Lizenz — kein Abo. Die App läuft unter Windows 10 und 11 sowie macOS.',
           ],
         },
       ],

@@ -76,7 +76,7 @@ export const macStartupDiskFull: Article = {
       ],
       verdict: [
         'Başlangıç diski neredeyse dolu uyarısı, aslında Macintosh HD\'nin nefes alacak alana ihtiyacı olduğu anlamına gelir. Çöp Sepeti\'ni boşaltmak, İndirilenler klasörünü temizlemek, büyük ve yinelenen dosyaları silmek, önbellekleri temizlemek ve az kullanılan verileri iCloud\'a veya harici diske taşımak alanı geri kazandırır — bu adımların tamamı macOS\'in yerleşik araçlarıyla ve biraz sabırla yapılabilir.',
-        'Disk Mop, tüm bu kontrol listesini macOS 12 ve üzeri için tek uygulamada toplar: Disk Analizi, Büyük Dosya Bulucu, Yinelenen Dosya Dedektörü, İndirilenler Temizleyicisi, önbellek temizliği ve Zamanlanmış Temizlik birlikte çalışarak başlangıç diskinizi elle uğraşmadan temiz tutar. Uygulamayı sınırlı özelliklerle ücretsiz indirebilir, $9.90 tutarında tek seferlik ödemeyle ömür boyu lisansa ve tüm özelliklere sahip olabilirsiniz.',
+        'Disk Mop, tüm bu kontrol listesini macOS 12 ve üzeri için tek uygulamada toplar: Disk Analizi, Büyük Dosya Bulucu, Yinelenen Dosya Dedektörü, İndirilenler Temizleyicisi, önbellek temizliği ve Zamanlanmış Temizlik birlikte çalışarak başlangıç diskinizi elle uğraşmadan temiz tutar. Uygulamayı sınırlı özelliklerle ücretsiz indirebilir, $19.90 tutarında tek seferlik ödemeyle ömür boyu lisansa ve tüm özelliklere sahip olabilirsiniz.',
       ],
       ctaText: 'Disk Mop ile Mac\'inizde disk alanı boşaltın',
     },
@@ -149,7 +149,7 @@ export const macStartupDiskFull: Article = {
       ],
       verdict: [
         'The startup disk almost full warning simply means Macintosh HD needs breathing room. Emptying the Trash, cleaning the Downloads folder, deleting large and duplicate files, clearing caches, and offloading rarely used data to iCloud or an external drive will recover the space — every one of these steps can be done with macOS\'s built-in tools and a bit of patience.',
-        'Disk Mop packs the whole checklist into a single app for macOS 12 and later: Disk Analysis, Large File Finder, Duplicate Detector, Downloads Cleaner, cache cleaning, and Scheduled Cleanup work together so your startup disk stays lean without manual digging. You can download it for free with limited features, and a one-time payment of $9.90 unlocks the full toolkit with a lifetime license.',
+        'Disk Mop packs the whole checklist into a single app for macOS 12 and later: Disk Analysis, Large File Finder, Duplicate Detector, Downloads Cleaner, cache cleaning, and Scheduled Cleanup work together so your startup disk stays lean without manual digging. You can download it for free with limited features, and a one-time payment of $19.90 unlocks the full toolkit with a lifetime license.',
       ],
       ctaText: 'Free up your Mac\'s startup disk with Disk Mop',
     },
@@ -222,7 +222,7 @@ export const macStartupDiskFull: Article = {
       ],
       verdict: [
         'Die Warnung vor dem fast vollen Startvolume heißt schlicht: Macintosh HD braucht Luft. Papierkorb entleeren, Downloads aufräumen, große Dateien und Duplikate löschen, Caches leeren und selten Genutztes auslagern — all das gelingt mit macOS-Bordmitteln und etwas Geduld.',
-        'Disk Mop bündelt die komplette Checkliste ab macOS 12 in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Downloads Cleaner, Cache-Bereinigung und geplante Bereinigung halten das Startvolume dauerhaft schlank. Der Download ist mit eingeschränkten Funktionen kostenlos; die einmalige Zahlung von $9.90 schaltet mit lebenslanger Lizenz alle Funktionen frei.',
+        'Disk Mop bündelt die komplette Checkliste ab macOS 12 in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Downloads Cleaner, Cache-Bereinigung und geplante Bereinigung halten das Startvolume dauerhaft schlank. Der Download ist mit eingeschränkten Funktionen kostenlos; die einmalige Zahlung von $19.90 schaltet mit lebenslanger Lizenz alle Funktionen frei.',
       ],
       ctaText: 'Schaffen Sie mit Disk Mop Platz auf Ihrem Mac',
     },

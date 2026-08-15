@@ -9,7 +9,7 @@ export const cleanMyPc: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: 'Artık satılmıyor',
       winner: 'diskmop',
     },
@@ -71,16 +71,16 @@ export const cleanMyPc: Article = {
   content: {
     tr: {
       title: 'En İyi CleanMyPC Alternatifi (2026): Disk Mop',
-      metaDescription: 'MacPaw, CleanMyPC\'yi Nisan 2025\'te sonlandırdı. 2026\'nın en iyi CleanMyPC alternatifi Disk Mop\'u keşfedin, her özelliği eşleştirin ve $9.90\'a tek seferde geçin.',
+      metaDescription: 'MacPaw, CleanMyPC\'yi Nisan 2025\'te sonlandırdı. 2026\'nın en iyi CleanMyPC alternatifi Disk Mop\'u keşfedin, her özelliği eşleştirin ve $19.90\'a tek seferde geçin.',
       subtitle: 'CleanMyPC artık geliştirilmiyor. Her özelliğini Disk Mop\'ta veya Windows\'un kendi araçlarında nasıl karşılayacağınızı adım adım gösteriyoruz.',
       intro: [
-        '2026\'da en iyi CleanMyPC alternatifi Disk Mop: Windows 10/11 ve macOS 12+ üzerinde çalışan, aktif olarak geliştirilen ve $9.90 tek seferlik ömür boyu lisansla satılan bir disk temizleme uygulaması. MacPaw, CleanMyPC\'yi Nisan 2025\'te resmen sonlandırdı; uygulama artık güvenlik güncellemesi, hata düzeltmesi ve destek almıyor. Yani geçiş bir tercih değil, zaman meselesi.',
+        '2026\'da en iyi CleanMyPC alternatifi Disk Mop: Windows 10/11 ve macOS 12+ üzerinde çalışan, aktif olarak geliştirilen ve $19.90 tek seferlik ömür boyu lisansla satılan bir disk temizleme uygulaması. MacPaw, CleanMyPC\'yi Nisan 2025\'te resmen sonlandırdı; uygulama artık güvenlik güncellemesi, hata düzeltmesi ve destek almıyor. Yani geçiş bir tercih değil, zaman meselesi.',
         'CleanMyPC gerçekten iyi bir üründü. Önemsiz dosya tarayıcısı, Autorun başlangıç yöneticisi ve Privacy tarayıcı temizleyicisi ile Windows\'ta sadık bir kullanıcı kitlesi edinmişti. Kapanışın can sıkması da bundan: MacPaw tüm gücünü CleanMyMac\'e verdi ve Windows kullanıcılarına bir geçiş yolu sunulmadı.',
         'Bu karşılaştırmada sonlandırmanın pratikte ne anlama geldiğini, Windows\'un yerleşik araçlarının hangi temel ihtiyaçları ücretsiz karşıladığını ve her CleanMyPC özelliğinin Disk Mop\'taki karşılığını tek tek inceliyoruz.',
       ],
       diskmopPros: [
         'Aktif geliştirme ve düzenli güncellemeler',
-        '$9.90 tek seferlik ömür boyu lisans',
+        '$19.90 tek seferlik ömür boyu lisans',
         'Windows 10/11 ve macOS 12+ desteği',
         'SHA-256 yinelenen dosya tespiti',
         'Görsel disk analizi ve 500 MB+ büyük dosya bulucu',
@@ -135,10 +135,10 @@ export const cleanMyPc: Article = {
           ],
         },
         {
-          title: 'Fiyat: $9.90 Ömür Boyu vs Terk Edilmiş Bir Abonelik',
+          title: 'Fiyat: $19.90 Ömür Boyu vs Terk Edilmiş Bir Abonelik',
           content: [
             'CleanMyPC yıllık abonelik modeliyle satılıyordu; bugün ise hiçbir fiyata satın alınamıyor veya yenilenemiyor. Terk edilmiş yazılımın asıl maliyeti para değil risktir: güncelleme almayan, sorumlusu olmayan bir aracı yönetici yetkisiyle çalıştırmaya devam edersiniz.',
-            'Disk Mop\'un modeli basit: sınırlı özelliklerle ücretsiz indirip deneyebilirsiniz, Pro sürüm ise $9.90 tek seferlik ödemeyle ömür boyu lisans sunar. Kurulum dosyası yaklaşık 80 MB; Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) destekleniyor. Abonelik yok, yenileme yok, bir daha ödeme yok.',
+            'Disk Mop\'un modeli basit: sınırlı özelliklerle ücretsiz indirip deneyebilirsiniz, Pro sürüm ise $19.90 tek seferlik ödemeyle ömür boyu lisans sunar. Kurulum dosyası yaklaşık 80 MB; Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) destekleniyor. Abonelik yok, yenileme yok, bir daha ödeme yok.',
           ],
         },
         {
@@ -152,22 +152,22 @@ export const cleanMyPc: Article = {
       ],
       verdict: [
         'CleanMyPC hak edilmiş bir üne sahipti ve onu kullanmış olmak yanlış bir tercih değildi. Ama bakımsız kalan temizlik yazılımı, bozulmasını beklememeniz gereken tek yazılım kategorisidir: Nisan 2025\'ten beri güvenlik güncellemesi yok ve risk her Windows güncellemesiyle büyüyor.',
-        'Disk Mop, günlük CleanMyPC akışını — önemsiz dosya temizliği, tarayıcı verisi, başlangıç kontrolü — aynen karşılıyor; üzerine disk analizi, yinelenen dosya tespiti ve zamanlanmış temizlik ekliyor. $9.90 tek seferlik ödemeyle hem Windows hem macOS\'ta çalışıyor. Eski CleanMyPC kullanıcıları için 2026\'daki en doğrudan geçiş yolu bu.',
+        'Disk Mop, günlük CleanMyPC akışını — önemsiz dosya temizliği, tarayıcı verisi, başlangıç kontrolü — aynen karşılıyor; üzerine disk analizi, yinelenen dosya tespiti ve zamanlanmış temizlik ekliyor. $19.90 tek seferlik ödemeyle hem Windows hem macOS\'ta çalışıyor. Eski CleanMyPC kullanıcıları için 2026\'daki en doğrudan geçiş yolu bu.',
       ],
       ctaText: 'CleanMyPC Yerine Disk Mop\'u Deneyin',
     },
     en: {
       title: 'Best CleanMyPC Alternative in 2026: Disk Mop',
-      metaDescription: 'CleanMyPC was discontinued in April 2025. See the best CleanMyPC alternative for 2026, map every feature to Disk Mop, and switch for $9.90 — one time.',
+      metaDescription: 'CleanMyPC was discontinued in April 2025. See the best CleanMyPC alternative for 2026, map every feature to Disk Mop, and switch for $19.90 — one time.',
       subtitle: 'CleanMyPC is no longer developed. Here is how to replace every one of its features with Disk Mop or with Windows built-in tools, step by step.',
       intro: [
-        'The best CleanMyPC alternative in 2026 is Disk Mop: an actively maintained disk cleanup app for Windows 10/11 and macOS 12+ with a one-time $9.90 lifetime license. MacPaw officially discontinued CleanMyPC in April 2025, which means no more security updates, bug fixes, or support — so switching is not a preference, it is a matter of time.',
+        'The best CleanMyPC alternative in 2026 is Disk Mop: an actively maintained disk cleanup app for Windows 10/11 and macOS 12+ with a one-time $19.90 lifetime license. MacPaw officially discontinued CleanMyPC in April 2025, which means no more security updates, bug fixes, or support — so switching is not a preference, it is a matter of time.',
         'CleanMyPC was a genuinely decent product. Its junk file scanner, Autorun startup manager, and Privacy browser cleaner earned it a loyal following on Windows. That is exactly why the shutdown stings: MacPaw chose to focus entirely on CleanMyMac, and its Windows users were left without an upgrade path.',
         'In this comparison we look at what the discontinuation means in practice, which built-in Windows tools cover the basics for free, and how each CleanMyPC feature maps to an equivalent in Disk Mop.',
       ],
       diskmopPros: [
         'Actively developed with regular updates',
-        '$9.90 one-time lifetime license',
+        '$19.90 one-time lifetime license',
         'Windows 10/11 and macOS 12+ support',
         'SHA-256 duplicate file detection',
         'Visual disk analysis and 500 MB+ large file finder',
@@ -222,10 +222,10 @@ export const cleanMyPc: Article = {
           ],
         },
         {
-          title: 'Pricing: $9.90 Lifetime vs an Abandoned Subscription',
+          title: 'Pricing: $19.90 Lifetime vs an Abandoned Subscription',
           content: [
             'CleanMyPC was sold as a yearly subscription; today it cannot be bought or renewed at any price. The real cost of abandoned software is not money but risk: you keep running a tool with administrator rights that receives no updates and has no one responsible for it.',
-            'Disk Mop keeps it simple: you can download it free with limited features to try it out, and the Pro version is a $9.90 one-time payment for a lifetime license. The installer is about 80 MB, and it supports Windows 10/11 (64-bit) and macOS 12+ (Apple Silicon and Intel). No subscription, no renewal, no second payment.',
+            'Disk Mop keeps it simple: you can download it free with limited features to try it out, and the Pro version is a $19.90 one-time payment for a lifetime license. The installer is about 80 MB, and it supports Windows 10/11 (64-bit) and macOS 12+ (Apple Silicon and Intel). No subscription, no renewal, no second payment.',
           ],
         },
         {
@@ -239,22 +239,22 @@ export const cleanMyPc: Article = {
       ],
       verdict: [
         'CleanMyPC earned its reputation, and having used it was not a wrong choice. But unmaintained cleanup software is the one category where you should not wait for it to fail: there have been no security updates since April 2025, and the risk grows with every Windows update.',
-        'Disk Mop covers the everyday CleanMyPC workflow — junk cleaning, browser data, startup control — and adds disk analysis, duplicate detection, and scheduled cleanup on top, for a one-time $9.90 on both Windows and macOS. For ex-CleanMyPC users, it is the most direct replacement available in 2026.',
+        'Disk Mop covers the everyday CleanMyPC workflow — junk cleaning, browser data, startup control — and adds disk analysis, duplicate detection, and scheduled cleanup on top, for a one-time $19.90 on both Windows and macOS. For ex-CleanMyPC users, it is the most direct replacement available in 2026.',
       ],
       ctaText: 'Replace CleanMyPC with Disk Mop',
     },
     de: {
       title: 'Beste CleanMyPC Alternative 2026: Disk Mop',
-      metaDescription: 'CleanMyPC wurde im April 2025 eingestellt. Hier ist die beste CleanMyPC Alternative 2026: Disk Mop ersetzt jede Funktion für einmalig $9.90. Jetzt wechseln.',
+      metaDescription: 'CleanMyPC wurde im April 2025 eingestellt. Hier ist die beste CleanMyPC Alternative 2026: Disk Mop ersetzt jede Funktion für einmalig $19.90. Jetzt wechseln.',
       subtitle: 'CleanMyPC wird nicht mehr entwickelt. So ersetzen Sie jede Funktion durch Disk Mop oder durch Windows-Bordmittel — Schritt für Schritt.',
       intro: [
-        'Die beste CleanMyPC Alternative 2026 ist Disk Mop: eine aktiv gepflegte Datenträger-Reinigungs-App für Windows 10/11 und macOS 12+ mit einer einmaligen Lifetime-Lizenz für $9.90. MacPaw hat CleanMyPC im April 2025 offiziell eingestellt — keine Sicherheitsupdates, keine Fehlerbehebungen, kein Support mehr. Der Wechsel ist damit keine Geschmacksfrage, sondern nur eine Frage der Zeit.',
+        'Die beste CleanMyPC Alternative 2026 ist Disk Mop: eine aktiv gepflegte Datenträger-Reinigungs-App für Windows 10/11 und macOS 12+ mit einer einmaligen Lifetime-Lizenz für $19.90. MacPaw hat CleanMyPC im April 2025 offiziell eingestellt — keine Sicherheitsupdates, keine Fehlerbehebungen, kein Support mehr. Der Wechsel ist damit keine Geschmacksfrage, sondern nur eine Frage der Zeit.',
         'CleanMyPC war ein wirklich solides Produkt mit treuen Nutzern unter Windows. Genau deshalb schmerzt das Aus: MacPaw konzentriert sich ganz auf CleanMyMac, und Windows-Nutzer blieben ohne Nachfolger zurück.',
         'Dieser Vergleich zeigt, was die Einstellung praktisch bedeutet, welche Windows-Bordmittel die Grundlagen kostenlos abdecken und wie jede CleanMyPC-Funktion in Disk Mop ihre Entsprechung findet.',
       ],
       diskmopPros: [
         'Aktive Entwicklung mit regelmäßigen Updates',
-        '$9.90 einmalig, Lifetime-Lizenz',
+        '$19.90 einmalig, Lifetime-Lizenz',
         'Windows 10/11 und macOS 12+',
         'SHA-256-Duplikaterkennung',
         'Visuelle Datenträgeranalyse und 500-MB+-Dateifinder',
@@ -309,10 +309,10 @@ export const cleanMyPc: Article = {
           ],
         },
         {
-          title: 'Preis: $9.90 einmalig vs ein verwaistes Abo',
+          title: 'Preis: $19.90 einmalig vs ein verwaistes Abo',
           content: [
             'CleanMyPC wurde als Jahresabo verkauft; heute ist es zu keinem Preis mehr erhältlich. Die wahren Kosten verwaister Software sind nicht Geld, sondern Risiko: ein Tool mit Adminrechten ohne Updates und ohne Verantwortlichen.',
-            'Disk Mop bleibt einfach: kostenloser Download mit eingeschränkten Funktionen zum Testen, die Pro-Version kostet einmalig $9.90 als Lifetime-Lizenz. Der Installer ist rund 80 MB groß und unterstützt Windows 10/11 (64-Bit) sowie macOS 12+ (Apple Silicon und Intel). Kein Abo, keine Verlängerung.',
+            'Disk Mop bleibt einfach: kostenloser Download mit eingeschränkten Funktionen zum Testen, die Pro-Version kostet einmalig $19.90 als Lifetime-Lizenz. Der Installer ist rund 80 MB groß und unterstützt Windows 10/11 (64-Bit) sowie macOS 12+ (Apple Silicon und Intel). Kein Abo, keine Verlängerung.',
           ],
         },
         {
@@ -326,7 +326,7 @@ export const cleanMyPc: Article = {
       ],
       verdict: [
         'CleanMyPC hatte seinen guten Ruf verdient. Aber ungepflegte Reinigungssoftware ist die eine Kategorie, bei der man nicht warten sollte, bis etwas schiefgeht: Seit April 2025 gibt es keine Sicherheitsupdates mehr, und das Risiko wächst mit jedem Windows-Update.',
-        'Disk Mop deckt den CleanMyPC-Alltag ab — Datenmüll, Browserdaten, Autostart — und ergänzt Datenträgeranalyse, Duplikaterkennung und geplante Reinigung, für einmalig $9.90 auf Windows und macOS. Für Ex-CleanMyPC-Nutzer ist es 2026 der direkteste Ersatz.',
+        'Disk Mop deckt den CleanMyPC-Alltag ab — Datenmüll, Browserdaten, Autostart — und ergänzt Datenträgeranalyse, Duplikaterkennung und geplante Reinigung, für einmalig $19.90 auf Windows und macOS. Für Ex-CleanMyPC-Nutzer ist es 2026 der direkteste Ersatz.',
       ],
       ctaText: 'CleanMyPC durch Disk Mop ersetzen',
     },

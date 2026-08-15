@@ -69,7 +69,7 @@ export const appdataCleanup: Article = {
       ],
       verdict: [
         'AppData\'nın büyümesi bir hata değil, modern uygulamaların önbellek alışkanlıklarının doğal sonucudur; ama kontrolsüz büyümesi kabul etmek zorunda olduğunuz bir şey değildir. Local, LocalLow ve Roaming haritasını öğrenmek, Temp ve önbellekleri temizlemek, kaldırılmış programların artıklarını silmek ve klasörün tamamına asla dokunmamak — bu dört ilkeyi uyguladığınızda AppData\'yı güvenle gigabaytlarca küçültebilirsiniz.',
-        'Disk Mop, bu rehberdeki tüm adımları tek uygulamada birleştirir: disk analizi şişen klasörleri gösterir, önbellek temizleyici sistem ve uygulama önbelleklerini güvenle siler, zamanlanmış temizlik ise AppData\'nın yeniden birikmesini engeller. Tek seferlik $9.90 lisansla ömür boyu kullanabilir, Windows 10, Windows 11 ve macOS üzerinde çalıştırabilirsiniz.',
+        'Disk Mop, bu rehberdeki tüm adımları tek uygulamada birleştirir: disk analizi şişen klasörleri gösterir, önbellek temizleyici sistem ve uygulama önbelleklerini güvenle siler, zamanlanmış temizlik ise AppData\'nın yeniden birikmesini engeller. Tek seferlik $19.90 lisansla ömür boyu kullanabilir, Windows 10, Windows 11 ve macOS üzerinde çalıştırabilirsiniz.',
       ],
       ctaText: 'Disk Mop ile AppData klasörünüzü temizleyin',
     },
@@ -135,7 +135,7 @@ export const appdataCleanup: Article = {
       ],
       verdict: [
         'An oversized AppData folder is not a malfunction — it is the natural result of how aggressively modern apps cache — but unlimited growth is not something you have to accept. Learn the map of Local, LocalLow and Roaming, clear Temp and the caches, remove the leftovers of uninstalled programs, and never delete the folder as a whole: apply those four principles and you can safely reclaim gigabytes.',
-        'Disk Mop brings every step of this guide into one app: Disk Analysis shows you which folders have ballooned, Cache Cleaner safely clears system and application caches, and Scheduled Cleanup stops AppData from piling up again. A one-time $9.90 license covers lifetime use on Windows 10, Windows 11 and macOS.',
+        'Disk Mop brings every step of this guide into one app: Disk Analysis shows you which folders have ballooned, Cache Cleaner safely clears system and application caches, and Scheduled Cleanup stops AppData from piling up again. A one-time $19.90 license covers lifetime use on Windows 10, Windows 11 and macOS.',
       ],
       ctaText: 'Clean up your AppData folder with Disk Mop',
     },
@@ -199,7 +199,7 @@ export const appdataCleanup: Article = {
       ],
       verdict: [
         'Ein großer AppData-Ordner ist keine Fehlfunktion, sondern die natürliche Folge aggressiven App-Cachings — unkontrolliertes Wachstum müssen Sie deshalb aber nicht hinnehmen. Die Karte von Local, LocalLow und Roaming kennen, Temp und Caches leeren, Reste deinstallierter Programme entfernen und den Ordner niemals als Ganzes löschen: Mit diesen vier Prinzipien gewinnen Sie sicher Gigabytes zurück.',
-        'Disk Mop vereint alle Schritte dieses Leitfadens in einer App: Die Festplattenanalyse zeigt aufgeblähte Ordner, der Cache-Bereiniger entfernt System- und App-Caches sicher, und die geplante Bereinigung verhindert, dass sich AppData erneut füllt. Die einmalige Lizenz für $9.90 gilt lebenslang unter Windows 10, Windows 11 und macOS.',
+        'Disk Mop vereint alle Schritte dieses Leitfadens in einer App: Die Festplattenanalyse zeigt aufgeblähte Ordner, der Cache-Bereiniger entfernt System- und App-Caches sicher, und die geplante Bereinigung verhindert, dass sich AppData erneut füllt. Die einmalige Lizenz für $19.90 gilt lebenslang unter Windows 10, Windows 11 und macOS.',
       ],
       ctaText: 'Bereinigen Sie Ihren AppData-Ordner mit Disk Mop',
     },

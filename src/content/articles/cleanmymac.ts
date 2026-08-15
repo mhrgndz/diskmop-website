@@ -8,7 +8,7 @@ export const cleanmymac: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: '$39.95/yıl veya $89.95',
       winner: 'diskmop',
     },
@@ -116,10 +116,10 @@ export const cleanmymac: Article = {
       subtitle: 'CleanMyMac X macOS dünyasının en popüler temizlik aracı. Ancak sadece Mac\'te çalışıyor ve fiyatı oldukça yüksek. Disk Mop hem daha uygun hem de çapraz platform desteği sunuyor.',
       intro: [
         'CleanMyMac X, MacPaw tarafından geliştirilen ve macOS kullanıcıları arasında çok popüler olan bir disk temizleme ve optimizasyon aracı. Şık arayüzü ve kapsamlı özellikleriyle bilinir. Ancak yıllık 39.95$ veya tek seferlik 89.95$ fiyat etiketi birçok kullanıcı için yüksek.',
-        'Disk Mop ise hem Windows hem macOS\'ta çalışan, tek seferlik 9.90$ ile tüm özelliklere erişim sunan modern bir alternatif. CleanMyMac X\'in sunduğu birçok özelliği çok daha uygun fiyata sunuyor.',
+        'Disk Mop ise hem Windows hem macOS\'ta çalışan, tek seferlik 19.90$ ile tüm özelliklere erişim sunan modern bir alternatif. CleanMyMac X\'in sunduğu birçok özelliği çok daha uygun fiyata sunuyor.',
       ],
       diskmopPros: [
-        'Tek seferlik $9.90 — CleanMyMac\'in yaklaşık 1/9\'u fiyatına',
+        'Tek seferlik $19.90 — CleanMyMac\'in yaklaşık 1/4\'ü fiyatına',
         'Hem Windows hem macOS desteği',
         'Görsel disk analizi',
         'SHA-256 ile yinelenen dosya tespiti',
@@ -149,8 +149,8 @@ export const cleanmymac: Article = {
         {
           title: 'Fiyat Farkı: 9 Kat',
           content: [
-            'CleanMyMac X\'in tek seferlik fiyatı 89.95$ — Disk Mop\'un yaklaşık 9 katı. Yıllık abonelik tercih edilirse 39.95$/yıl ödenir ve 3 yıl sonunda yaklaşık 120$ harcanmış olur.',
-            'Disk Mop tek seferlik 9.90$ ile ömür boyu erişim sunuyor. İki yazılımın da temel temizlik, duplicate tespiti ve disk analizi gibi ortak özellikleri düşünüldüğünde, fiyat/performans oranında Disk Mop çok önde.',
+            'CleanMyMac X\'in tek seferlik fiyatı 89.95$ — Disk Mop\'un yaklaşık 4,5 katı. Yıllık abonelik tercih edilirse 39.95$/yıl ödenir ve 3 yıl sonunda yaklaşık 120$ harcanmış olur.',
+            'Disk Mop tek seferlik 19.90$ ile ömür boyu erişim sunuyor. İki yazılımın da temel temizlik, duplicate tespiti ve disk analizi gibi ortak özellikleri düşünüldüğünde, fiyat/performans oranında Disk Mop çok önde.',
           ],
         },
         {
@@ -180,10 +180,10 @@ export const cleanmymac: Article = {
       subtitle: 'CleanMyMac X is the most popular cleaning tool for macOS. But it only works on Mac and costs significantly more. Disk Mop offers cross-platform support at a fraction of the price.',
       intro: [
         'CleanMyMac X by MacPaw is a highly popular disk cleaning and optimization tool for macOS users. Known for its polished interface and comprehensive features, it commands a premium price — $39.95/year or $89.95 one-time.',
-        'Disk Mop works on both Windows and macOS, offering a one-time $9.90 payment for all features. It delivers many of CleanMyMac X\'s core capabilities at a much more affordable price.',
+        'Disk Mop works on both Windows and macOS, offering a one-time $19.90 payment for all features. It delivers many of CleanMyMac X\'s core capabilities at a much more affordable price.',
       ],
       diskmopPros: [
-        'One-time $9.90 — about 1/9 the price of CleanMyMac',
+        'One-time $19.90 — about 1/4 the price of CleanMyMac',
         'Both Windows and macOS support',
         'Visual disk analysis',
         'SHA-256 duplicate detection',
@@ -214,7 +214,7 @@ export const cleanmymac: Article = {
           title: 'Price Difference: 9x',
           content: [
             'CleanMyMac X\'s one-time price is $89.95 — about 9 times more than Disk Mop. The annual subscription at $39.95/year adds up to about $120 over 3 years.',
-            'Disk Mop provides lifetime access for a one-time $9.90. Considering both share core features like cleaning, duplicate detection, and disk analysis, Disk Mop offers far better value.',
+            'Disk Mop provides lifetime access for a one-time $19.90. Considering both share core features like cleaning, duplicate detection, and disk analysis, Disk Mop offers far better value.',
           ],
         },
         {
@@ -244,9 +244,9 @@ export const cleanmymac: Article = {
       subtitle: 'CleanMyMac X ist nur für macOS verfügbar und kostet deutlich mehr. Disk Mop bietet plattformübergreifende Unterstützung zu einem Bruchteil des Preises.',
       intro: [
         'CleanMyMac X von MacPaw ist ein beliebtes Optimierungstool für macOS. Mit $39,95/Jahr oder $89,95 einmalig ist es jedoch deutlich teurer als Disk Mop.',
-        'Disk Mop funktioniert auf Windows und macOS für einmalig $9,90 und bietet viele der gleichen Kernfunktionen.',
+        'Disk Mop funktioniert auf Windows und macOS für einmalig $19,90 und bietet viele der gleichen Kernfunktionen.',
       ],
-      diskmopPros: ['Einmalig $9,90', 'Windows & macOS', 'Visuelle Analyse', 'Duplikatfinder'],
+      diskmopPros: ['Einmalig $19,90', 'Windows & macOS', 'Visuelle Analyse', 'Duplikatfinder'],
       diskmopCons: ['Kein Malware-Scan', 'Kein App-Deinstaller'],
       competitorPros: ['Umfassende macOS-Tools', 'Malware-Schutz', 'Premium-Interface'],
       competitorCons: ['Nur macOS', 'Sehr teuer', 'Begrenzte Gratisversion'],

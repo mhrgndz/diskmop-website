@@ -8,9 +8,9 @@ export const daisydisk: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: '$9.99 (tek seferlik)',
-      winner: 'diskmop',
+      winner: 'competitor',
     },
     {
       feature: { tr: 'Platform Desteği', en: 'Platform Support', de: 'Plattform' },
@@ -126,14 +126,14 @@ export const daisydisk: Article = {
         {
           title: 'Fiyat vs Değer',
           content: [
-            'DaisyDisk $9.99, Disk Mop ise $9.90 — fiyatlar artık neredeyse aynı, hatta Disk Mop bir tık daha ucuz. Ancak DaisyDisk\'in sunduğu özellik seti çok daha sınırlı. Temelde bir disk görüntüleyici satın alıyorsunuz.',
-            'Disk Mop\'un $9.90\'ı ile disk analizi, cache temizleme, tarayıcı temizleme, duplicate tespiti, büyük dosya bulucu, başlangıç yöneticisi ve sistem sağlığı skoru — yani tam bir temizlik paketi alıyorsunuz. Fiyat/özellik oranında Disk Mop çok daha avantajlı.',
+            'DaisyDisk $9.99, Disk Mop ise $19.90 — etiket fiyatında DaisyDisk daha ucuz. Ancak aldığınız şey farklı: DaisyDisk temelde bir disk görüntüleyici, özellik seti çok daha sınırlı.',
+            'Disk Mop\'un $19.90\'ı ile disk analizi, cache temizleme, tarayıcı temizleme, duplicate tespiti, büyük dosya bulucu, başlangıç yöneticisi ve sistem sağlığı skoru — yani tam bir temizlik paketi alıyorsunuz. Üstelik aynı lisans Windows\'ta da geçerli. Aradaki 10 dolarlık farkı yalnızca görselleştirme değil, bir araç setinin tamamı karşılıyor.',
           ],
         },
       ],
       verdict: [
         'DaisyDisk, macOS\'ta disk görselleştirmesi için en güzel araç. Eğer sadece "diskte ne var" sorusuna estetik bir cevap arıyorsanız harika bir seçenek.',
-        'Ancak gerçek bir disk temizliği, duplicate tespiti, cache temizleme ve çapraz platform desteği istiyorsanız, Disk Mop neredeyse aynı fiyata çok daha kapsamlı bir çözüm sunuyor.',
+        'Ancak gerçek bir disk temizliği, duplicate tespiti, cache temizleme ve çapraz platform desteği istiyorsanız, Disk Mop iki katı fiyata çok daha kapsamlı bir çözüm sunuyor — üstelik tek lisansla hem Mac hem Windows.',
       ],
       ctaText: 'Tam Kapsamlı Temizlik: Disk Mop',
     },
@@ -195,14 +195,14 @@ export const daisydisk: Article = {
         {
           title: 'Price vs Value',
           content: [
-            'DaisyDisk costs $9.99 and Disk Mop $9.90 — the prices are virtually identical, with Disk Mop actually a touch cheaper. But DaisyDisk\'s feature set is much more limited — you\'re essentially buying a disk viewer.',
-            'Disk Mop\'s $9.90 gets you disk analysis, cache cleaning, browser cleaning, duplicate detection, large file finder, startup manager, and system health score — a complete cleaning package.',
+            'DaisyDisk costs $9.99 and Disk Mop $19.90 — DaisyDisk is cheaper on sticker price. But you\'re buying different things: DaisyDisk is essentially a disk viewer with a much more limited feature set.',
+            'Disk Mop\'s $19.90 gets you disk analysis, cache cleaning, browser cleaning, duplicate detection, large file finder, startup manager, and system health score — a complete cleaning package, and the same license also covers Windows. The $10 difference buys an entire toolset, not just visualization.',
           ],
         },
       ],
       verdict: [
         'DaisyDisk is the most beautiful disk visualization tool on macOS. If you only want an aesthetic answer to "what\'s on my disk," it\'s great.',
-        'But for real disk cleaning, duplicate detection, cache clearing, and cross-platform support, Disk Mop offers a far more comprehensive solution at practically the same price.',
+        'But for real disk cleaning, duplicate detection, cache clearing, and cross-platform support, Disk Mop offers a far more comprehensive solution for twice the price — with one license covering both Mac and Windows.',
       ],
       ctaText: 'Full Cleaning Power: Try Disk Mop',
     },

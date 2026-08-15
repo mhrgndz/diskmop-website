@@ -67,7 +67,7 @@ export const cDriveFullForNoReason: Article = {
       ],
       verdict: [
         'Sebepsiz doluyor gibi görünen bir C diski aslında görünmez dosyalarla dolu bir disktir: hiberfil.sys, sayfa dosyası, geri yükleme noktaları, geçici dosyalar ve AppData önbellekleri. Sekiz çözümü sırayla uygulayın — gizli dosyaları gösterin, alanı görsel olarak haritalayın, hazırda bekletme dosyasını küçültün, sayfa dosyasını Windows\'a bırakın, geri yükleme noktalarını sınırlayın, geçici dosyaları ve önbellekleri temizleyin, AppData ile İndirilenler\'i düzenleyin ve rutini otomatikleştirin — gizem, dağınıklıkla birlikte ortadan kalkacaktır.',
-        'Disk Mop tüm bu iş akışını tek uygulamada toplar: disk analizi alanın nereye gittiğini gösterir, önbellek temizleyici ve Speed Up alanı geri kazanır, indirilenler temizleyici ve yinelenen dosya dedektörü unuttuğunuz klasörlerle ilgilenir, zamanlanmış temizlik de diski o günden sonra temiz tutar. $9.90 karşılığında tek seferlik ödemeyle ömür boyu lisans sunar; ücretsiz sürümle yükseltmeden önce deneyebilirsiniz.',
+        'Disk Mop tüm bu iş akışını tek uygulamada toplar: disk analizi alanın nereye gittiğini gösterir, önbellek temizleyici ve Speed Up alanı geri kazanır, indirilenler temizleyici ve yinelenen dosya dedektörü unuttuğunuz klasörlerle ilgilenir, zamanlanmış temizlik de diski o günden sonra temiz tutar. $19.90 karşılığında tek seferlik ödemeyle ömür boyu lisans sunar; ücretsiz sürümle yükseltmeden önce deneyebilirsiniz.',
       ],
       ctaText: 'Disk Mop ile C diskinizde yer açın',
     },
@@ -131,7 +131,7 @@ export const cDriveFullForNoReason: Article = {
       ],
       verdict: [
         'A C drive that seems full for no reason is really a drive full of invisible files: hiberfil.sys, the page file, restore points, temporary files and AppData caches. Work through the eight fixes in order — reveal hidden files, map the space visually, shrink the hibernation file, leave the page file to Windows, cap restore points, clear temporary files and caches, tidy AppData and Downloads, and automate the routine — and the mystery disappears along with the clutter.',
-        'Disk Mop packs the whole workflow into one app: Disk Analysis shows where the space went, the Cache Cleaner and Speed Up reclaim it, the Downloads Cleaner and Duplicate Detector handle the folders you forget about, and Scheduled Cleanup keeps the drive clean from then on. It is a one-time purchase of $9.90 with a lifetime license, and the free version lets you try it before upgrading.',
+        'Disk Mop packs the whole workflow into one app: Disk Analysis shows where the space went, the Cache Cleaner and Speed Up reclaim it, the Downloads Cleaner and Duplicate Detector handle the folders you forget about, and Scheduled Cleanup keeps the drive clean from then on. It is a one-time purchase of $19.90 with a lifetime license, and the free version lets you try it before upgrading.',
       ],
       ctaText: 'Free up your C drive with Disk Mop',
     },
@@ -195,7 +195,7 @@ export const cDriveFullForNoReason: Article = {
       ],
       verdict: [
         'Ein scheinbar grundlos volles Laufwerk C ist in Wahrheit voller unsichtbarer Dateien: hiberfil.sys, Auslagerungsdatei, Wiederherstellungspunkte, temporäre Dateien und AppData-Caches. Arbeiten Sie die acht Lösungen der Reihe nach durch — versteckte Dateien einblenden, Belegung kartieren, Ruhezustandsdatei verkleinern, Auslagerungsdatei Windows überlassen, Wiederherstellungspunkte begrenzen, Caches bereinigen, AppData und Downloads aufräumen, Routine automatisieren — und das Rätsel verschwindet zusammen mit dem Ballast.',
-        'Disk Mop bündelt den gesamten Ablauf in einer App: Die Festplattenanalyse zeigt, wohin der Platz verschwunden ist, Cache-Bereiniger und Speed Up holen ihn zurück, Downloads-Bereiniger und Duplikatfinder kümmern sich um die vergessenen Ordner, und die geplante Bereinigung hält das Laufwerk dauerhaft sauber. Einmalig $9.90, lebenslange Lizenz — die kostenlose Version können Sie vorab testen.',
+        'Disk Mop bündelt den gesamten Ablauf in einer App: Die Festplattenanalyse zeigt, wohin der Platz verschwunden ist, Cache-Bereiniger und Speed Up holen ihn zurück, Downloads-Bereiniger und Duplikatfinder kümmern sich um die vergessenen Ordner, und die geplante Bereinigung hält das Laufwerk dauerhaft sauber. Einmalig $19.90, lebenslange Lizenz — die kostenlose Version können Sie vorab testen.',
       ],
       ctaText: 'Schaffen Sie mit Disk Mop Platz auf Laufwerk C',
     },

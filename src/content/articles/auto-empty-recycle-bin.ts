@@ -62,13 +62,13 @@ export const autoEmptyRecycleBin: Article = {
           content: [
             'Geri dönüşüm kutusu, dolan bir diskin yalnızca bir kalemidir. Sistem önbelleği, tarayıcı önbellekleri, aylardır açılmayan indirmeler ve geçici dosyalar çoğu zaman kutudan daha fazla yer kaplar. Yerleşik araçlar bu alanların her biri için ayrı ayrı uğraşmanızı gerektirir.',
             'Disk Mop\'un zamanlanmış temizliği (Scheduled Cleanup) bu yüzden gerçek kur ve unut çözümüdür: haftalık veya aylık görev oluşturursunuz ve uygulama tek seferde geri dönüşüm kutusunu boşaltır, sistem önbelleğini, Chrome, Firefox ve Edge tarayıcı önbelleklerini temizler ve İndirilenler klasöründeki eski dosyaları kategorilere ayırarak toplar. Hızlandır (Speed Up) özelliği aynı temizliği istediğiniz an tek tıkla yapar, sistem sağlık puanı da genel durumu tek bakışta gösterir.',
-            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 9,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Windows 10 ve 11 (64-bit) ile macOS 12 ve üzerinde çalışır.',
+            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 19,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Windows 10 ve 11 (64-bit) ile macOS 12 ve üzerinde çalışır.',
           ],
         },
       ],
       verdict: [
         'Windows 11\'de geri dönüşüm kutusunu otomatik boşaltmanın üç sağlam yolu var. Depolama Alanı Algılayıcısı en kolayıdır ve yaş temelli çalışır; Görev Zamanlayıcısı tam takvim kontrolü verir ama kutuyu her seferinde komple boşaltır; boyut sınırı ise kutunun hiçbir zaman taşmamasını sağlar. Kutuyu tamamen atlamak ise kazandırdığı alana değmeyecek kadar risklidir.',
-        'Sorununuz yalnızca kutu değil de genel olarak dolan bir diskse, Disk Mop üç yöntemin ötesine geçer: zamanlanmış temizlik, kutuyla birlikte önbellekleri ve eski indirmeleri de her hafta otomatik temizler. Tek seferlik 9,90 dolara, diskinizi kendi kendine bakım yapan bir sisteme dönüştürürsünüz.',
+        'Sorununuz yalnızca kutu değil de genel olarak dolan bir diskse, Disk Mop üç yöntemin ötesine geçer: zamanlanmış temizlik, kutuyla birlikte önbellekleri ve eski indirmeleri de her hafta otomatik temizler. Tek seferlik 19,90 dolara, diskinizi kendi kendine bakım yapan bir sisteme dönüştürürsünüz.',
       ],
       ctaText: 'Disk Mop ile temizliği otomatiğe bağlayın',
     },
@@ -127,13 +127,13 @@ export const autoEmptyRecycleBin: Article = {
           content: [
             'The Recycle Bin is only one line item on a filling disk. System cache, browser caches, downloads you have not opened in months, and temporary files often take up more space than the bin itself. The built-in tools make you handle each of these areas separately.',
             'That is why Disk Mop\'s Scheduled Cleanup is the true set-and-forget answer: you create a weekly or monthly task, and the app empties the Recycle Bin, clears the system cache, cleans the browser caches of Chrome, Firefox, and Edge, and sorts out old files in your Downloads folder — all in one pass. The Speed Up feature runs the same cleanup on demand with a single click, and the System Health Score shows your overall condition at a glance.',
-            'You can download Disk Mop for free and try it with limited features; the Pro version is a one-time payment of $9.90 for a lifetime license. It runs on Windows 10 and 11 (64-bit) as well as macOS 12 and later.',
+            'You can download Disk Mop for free and try it with limited features; the Pro version is a one-time payment of $19.90 for a lifetime license. It runs on Windows 10 and 11 (64-bit) as well as macOS 12 and later.',
           ],
         },
       ],
       verdict: [
         'There are three solid ways to automatically empty the Recycle Bin in Windows 11. Storage Sense is the easiest and works by age; Task Scheduler gives you exact calendar control but wipes the bin completely each run; a size cap guarantees the bin never overflows. Bypassing the bin entirely saves too little to justify the risk.',
-        'If your real problem is a filling disk rather than just the bin, Disk Mop goes beyond all three: its Scheduled Cleanup automatically empties the bin and clears caches and old downloads every week. For a one-time $9.90, your disk becomes a system that maintains itself.',
+        'If your real problem is a filling disk rather than just the bin, Disk Mop goes beyond all three: its Scheduled Cleanup automatically empties the bin and clears caches and old downloads every week. For a one-time $19.90, your disk becomes a system that maintains itself.',
       ],
       ctaText: 'Automate your cleanup with Disk Mop',
     },
@@ -192,13 +192,13 @@ export const autoEmptyRecycleBin: Article = {
           content: [
             'Der Papierkorb ist nur ein Posten auf einer vollen Festplatte. System-Cache, Browser-Caches, monatealte Downloads und temporäre Dateien belegen oft mehr Platz als der Papierkorb selbst — und die Bordmittel zwingen Sie, jeden Bereich einzeln zu pflegen.',
             'Genau deshalb ist Disk Mops geplante Bereinigung (Scheduled Cleanup) die echte Rundum-Lösung: Sie legen eine wöchentliche oder monatliche Aufgabe an, und die App leert den Papierkorb, bereinigt den System-Cache und die Browser-Caches von Chrome, Firefox und Edge und räumt alte Dateien im Downloads-Ordner auf — alles in einem Durchgang. Die Speed-Up-Funktion erledigt dieselbe Bereinigung jederzeit mit einem Klick, der System Health Score zeigt den Gesamtzustand auf einen Blick.',
-            'Disk Mop lässt sich kostenlos mit eingeschränkten Funktionen testen; die Pro-Version kostet einmalig 9,90 US-Dollar als Lifetime-Lizenz und läuft auf Windows 10 und 11 (64-Bit) sowie macOS 12 und neuer.',
+            'Disk Mop lässt sich kostenlos mit eingeschränkten Funktionen testen; die Pro-Version kostet einmalig 19,90 US-Dollar als Lifetime-Lizenz und läuft auf Windows 10 und 11 (64-Bit) sowie macOS 12 und neuer.',
           ],
         },
       ],
       verdict: [
         'Es gibt drei solide Wege, den Papierkorb in Windows 11 automatisch zu leeren. Die Speicheroptimierung ist am einfachsten und arbeitet altersbasiert; die Aufgabenplanung bietet exakte Terminkontrolle, leert aber jedes Mal alles; ein Größenlimit garantiert, dass der Papierkorb nie überläuft. Ihn ganz zu umgehen spart zu wenig, um das Risiko zu rechtfertigen.',
-        'Wenn das eigentliche Problem eine volle Festplatte ist, geht Disk Mop über alle drei Wege hinaus: Die geplante Bereinigung leert den Papierkorb und räumt Caches sowie alte Downloads jede Woche automatisch auf. Für einmalig 9,90 US-Dollar wird Ihre Festplatte zu einem System, das sich selbst wartet.',
+        'Wenn das eigentliche Problem eine volle Festplatte ist, geht Disk Mop über alle drei Wege hinaus: Die geplante Bereinigung leert den Papierkorb und räumt Caches sowie alte Downloads jede Woche automatisch auf. Für einmalig 19,90 US-Dollar wird Ihre Festplatte zu einem System, das sich selbst wartet.',
       ],
       ctaText: 'Automatisieren Sie Ihre Bereinigung mit Disk Mop',
     },

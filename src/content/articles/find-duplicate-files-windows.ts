@@ -46,7 +46,7 @@ export const findDuplicateFilesWindows: Article = {
           content: [
             'Disk Mop\'un yinelenen dosya dedektörü, seçtiğiniz klasörü ya da sürücüyü tarar, her dosyanın SHA-256 karmasını hesaplar ve fotoğraf, video ve belgelerdeki birebir aynı kopyaları gruplar halinde listeler. Yalnızca içeriği aynı olan dosyalar eşleştirildiği için, ekranda gördüğünüz her grup gerçek bir kopya kümesidir; tahmine yer yoktur.',
             'Kullanımı basittir: Disk Mop\'u indirin (Windows 10/11 64-bit ve macOS 12+ desteklenir), yinelenen dosya dedektörünü açın ve taramak istediğiniz konumu seçin. Tarama bittiğinde her kopya grubunu dosya yollarıyla birlikte görürsünüz; hangi kopyanın kalacağına siz karar verirsiniz, onayınız olmadan hiçbir şey silinmez.',
-            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm tüm özellikleri tek seferlik $9.90 ödemeyle, ömür boyu lisansla açar. Abonelik yoktur.',
+            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm tüm özellikleri tek seferlik $19.90 ödemeyle, ömür boyu lisansla açar. Abonelik yoktur.',
           ],
         },
         {
@@ -68,7 +68,7 @@ export const findDuplicateFilesWindows: Article = {
       ],
       verdict: [
         'Windows\'ta yinelenen dosyaları bulma ve silme işinde Dosya Gezgini yalnızca bariz kopyaları yakalar: aynı ad, aynı klasör, (1) ekleri. Gerçek temizlik için içerik karşılaştırması şarttır ve bunun güvenilir yolu SHA-256 karma eşleştirmesidir; yalnızca bayt bayt aynı dosyalar kopya sayılmalıdır.',
-        'Disk Mop bu işi tek uygulamada toplar: SHA-256 tabanlı yinelenen dosya dedektörü gerçek kopyaları bulur, disk analizi ve büyük dosya bulucu alanın nereye gittiğini gösterir, indirilenler temizleyicisi ve zamanlanmış temizlik ise kopyaların geri dönmesini engeller. Tek seferlik $9.90 karşılığında ömür boyu lisansla diskiniz temiz kalır.',
+        'Disk Mop bu işi tek uygulamada toplar: SHA-256 tabanlı yinelenen dosya dedektörü gerçek kopyaları bulur, disk analizi ve büyük dosya bulucu alanın nereye gittiğini gösterir, indirilenler temizleyicisi ve zamanlanmış temizlik ise kopyaların geri dönmesini engeller. Tek seferlik $19.90 karşılığında ömür boyu lisansla diskiniz temiz kalır.',
       ],
       ctaText: 'Disk Mop ile yinelenen dosyaları bulun ve temizleyin',
     },
@@ -111,7 +111,7 @@ export const findDuplicateFilesWindows: Article = {
           content: [
             'Disk Mop\'s Duplicate Detector scans the folder or drive you choose, computes the SHA-256 hash of every file, and lists byte-identical copies of photos, videos and documents in groups. Because only files with matching content are paired, every group you see on screen is a genuine set of duplicates — there\'s no guesswork involved.',
             'The workflow is simple: download Disk Mop (it supports Windows 10/11 64-bit and macOS 12+), open the Duplicate Detector, and pick the location you want to scan. When the scan finishes you see each duplicate group with full file paths, and you decide which copy stays — nothing is deleted without your confirmation.',
-            'You can download Disk Mop for free and try it with limited features; Pro unlocks everything with a one-time $9.90 lifetime license. There\'s no subscription.',
+            'You can download Disk Mop for free and try it with limited features; Pro unlocks everything with a one-time $19.90 lifetime license. There\'s no subscription.',
           ],
         },
         {
@@ -133,7 +133,7 @@ export const findDuplicateFilesWindows: Article = {
       ],
       verdict: [
         'When it comes to finding duplicate files on Windows, File Explorer only catches the obvious ones: same name, same folder, a (1) suffix. A real cleanup requires comparing file contents, and the reliable way to do that is SHA-256 hash matching — only byte-identical files should ever count as duplicates.',
-        'Disk Mop brings the whole job into one app: the SHA-256-based Duplicate Detector finds true copies, Disk Analysis and the Large File Finder show where your space is going, and the Downloads Cleaner plus Scheduled Cleanup keep duplicates from returning. All of it comes with a one-time $9.90 lifetime license.',
+        'Disk Mop brings the whole job into one app: the SHA-256-based Duplicate Detector finds true copies, Disk Analysis and the Large File Finder show where your space is going, and the Downloads Cleaner plus Scheduled Cleanup keep duplicates from returning. All of it comes with a one-time $19.90 lifetime license.',
       ],
       ctaText: 'Find and remove duplicate files with Disk Mop',
     },
@@ -176,7 +176,7 @@ export const findDuplicateFilesWindows: Article = {
           content: [
             'Disk Mops Duplikatfinder scannt den gewählten Ordner oder das Laufwerk, berechnet für jede Datei den SHA-256-Hash und listet Byte-identische Kopien von Fotos, Videos und Dokumenten in Gruppen auf. Da nur inhaltsgleiche Dateien gepaart werden, ist jede angezeigte Gruppe ein echtes Duplikat-Set — ohne Rätselraten.',
             'Der Ablauf ist einfach: Disk Mop herunterladen (unterstützt Windows 10/11 64-Bit und macOS 12+), den Duplikatfinder öffnen und den gewünschten Ort auswählen. Nach dem Scan sehen Sie jede Duplikatgruppe mit vollständigen Dateipfaden und entscheiden selbst, welche Kopie bleibt — ohne Ihre Bestätigung wird nichts gelöscht.',
-            'Der Download ist kostenlos mit eingeschränkten Funktionen; Pro schaltet alles für einmalig $9.90 mit lebenslanger Lizenz frei. Ein Abo gibt es nicht.',
+            'Der Download ist kostenlos mit eingeschränkten Funktionen; Pro schaltet alles für einmalig $19.90 mit lebenslanger Lizenz frei. Ein Abo gibt es nicht.',
           ],
         },
         {
@@ -198,7 +198,7 @@ export const findDuplicateFilesWindows: Article = {
       ],
       verdict: [
         'Beim Finden doppelter Dateien unter Windows erkennt der Datei-Explorer nur die offensichtlichen Fälle: gleicher Name, gleicher Ordner, ein (1)-Zusatz. Für ein echtes Aufräumen braucht es einen Inhaltsvergleich — und der zuverlässige Weg dafür ist der SHA-256-Hash-Abgleich, bei dem nur Byte-identische Dateien als Duplikate gelten.',
-        'Disk Mop vereint die gesamte Aufgabe in einer App: Der SHA-256-basierte Duplikatfinder findet echte Kopien, Festplattenanalyse und Große-Dateien-Finder zeigen, wohin der Speicherplatz verschwindet, und Downloads-Bereiniger plus geplante Bereinigung verhindern neue Duplikate. Das alles mit einer einmaligen Lifetime-Lizenz für $9.90.',
+        'Disk Mop vereint die gesamte Aufgabe in einer App: Der SHA-256-basierte Duplikatfinder findet echte Kopien, Festplattenanalyse und Große-Dateien-Finder zeigen, wohin der Speicherplatz verschwindet, und Downloads-Bereiniger plus geplante Bereinigung verhindern neue Duplikate. Das alles mit einer einmaligen Lifetime-Lizenz für $19.90.',
       ],
       ctaText: 'Finden und entfernen Sie doppelte Dateien mit Disk Mop',
     },

@@ -70,7 +70,7 @@ export const clearSystemDataMac: Article = {
       ],
       verdict: [
         'Mac\'te Sistem Verisi korkutucu görünse de aslında yönetilebilir bir kategoridir. Depolama dağılımını kontrol etmek, önbellekleri ve günlükleri güvenle temizlemek, eski indirmeleri ve yedekleri kaldırmak, çöp sepetini boşaltmak, yinelenenleri silmek ve diski bir treemap ile görselleştirmek — bu altı adım, riskli Library silme tavsiyelerine hiç bulaşmadan gigabaytlarca alan kazandırır.',
-        'Disk Mop tüm bu adımları tek uygulamada birleştirir: Disk Analizi, Büyük Dosya Bulucu, Yinelenen Dosya Dedektörü, Önbellek Temizleyici ve Zamanlanmış Temizlik macOS üzerinde bir arada çalışır. Uygulamayı ücretsiz indirip deneyebilir, tüm özellikler için 9,90 dolarlık tek seferlik ödemeyle ömür boyu lisansa geçebilirsiniz.',
+        'Disk Mop tüm bu adımları tek uygulamada birleştirir: Disk Analizi, Büyük Dosya Bulucu, Yinelenen Dosya Dedektörü, Önbellek Temizleyici ve Zamanlanmış Temizlik macOS üzerinde bir arada çalışır. Uygulamayı ücretsiz indirip deneyebilir, tüm özellikler için 19,90 dolarlık tek seferlik ödemeyle ömür boyu lisansa geçebilirsiniz.',
       ],
       ctaText: 'Disk Mop ile Mac\'inizde yer açın',
     },
@@ -137,7 +137,7 @@ export const clearSystemDataMac: Article = {
       ],
       verdict: [
         'System Data on a Mac looks intimidating, but it is a manageable category once you know what feeds it. Checking your storage breakdown, clearing caches and logs safely, removing old downloads and device backups, emptying the Trash, deleting duplicates and visualizing the disk with a treemap — these six steps can recover gigabytes of space without ever touching the risky Library-deletion advice found in forums.',
-        'Disk Mop combines all six steps in one app: Disk Analysis, the Large File Finder, the Duplicate Detector, the Cache Cleaner and Scheduled Cleanup all work together on macOS. You can download it for free to try the essentials, and a one-time payment of $9.90 unlocks every feature with a lifetime license.',
+        'Disk Mop combines all six steps in one app: Disk Analysis, the Large File Finder, the Duplicate Detector, the Cache Cleaner and Scheduled Cleanup all work together on macOS. You can download it for free to try the essentials, and a one-time payment of $19.90 unlocks every feature with a lifetime license.',
       ],
       ctaText: 'Free up space on your Mac with Disk Mop',
     },
@@ -204,7 +204,7 @@ export const clearSystemDataMac: Article = {
       ],
       verdict: [
         'Systemdaten wirken auf dem Mac einschüchternd, sind aber gut beherrschbar, sobald man weiß, was sie speist. Speicherübersicht prüfen, Caches und Protokolle sicher bereinigen, alte Downloads und Geräte-Backups entfernen, Papierkorb leeren, Duplikate löschen und die Festplatte per Treemap sichtbar machen — diese sechs Schritte gewinnen etliche Gigabyte zurück, ganz ohne die riskanten Library-Löschtipps aus Foren.',
-        'Disk Mop vereint alle sechs Schritte in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Cache-Bereiniger und geplante Bereinigung arbeiten unter macOS zusammen. Der Download ist kostenlos, und eine einmalige Zahlung von 9,90 US-Dollar schaltet mit lebenslanger Lizenz alle Funktionen frei.',
+        'Disk Mop vereint alle sechs Schritte in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Cache-Bereiniger und geplante Bereinigung arbeiten unter macOS zusammen. Der Download ist kostenlos, und eine einmalige Zahlung von 19,90 US-Dollar schaltet mit lebenslanger Lizenz alle Funktionen frei.',
       ],
       ctaText: 'Schaffen Sie mit Disk Mop Platz auf Ihrem Mac',
     },

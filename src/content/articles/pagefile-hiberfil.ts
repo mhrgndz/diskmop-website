@@ -62,7 +62,7 @@ export const pagefileHiberfil: Article = {
           content: [
             'Pagefile.sys ve hiberfil.sys gözle görülür iki büyük dosya olduğu için ilk hedef haline gelir, ancak çoğu diskte asıl alanı unutulmuş videolar, eski kurulum dosyaları, ISO kalıpları ve yinelenen fotoğraflar yer. Bunları Dosya Gezgini\'nde klasör klasör dolaşarak bulmak saatler alabilir.',
             'Disk Mop\'un disk analizi, sürücünüzü görsel bir treemap ile tarayarak en çok yer kaplayan klasörleri tek bakışta gösterir. Büyük dosya bulucu 500 MB\'ın üzerindeki tüm dosyaları listeler; yinelenen dosya dedektörü ise SHA-256 karma karşılaştırmasıyla birebir aynı fotoğraf, video ve belgeleri güvenle tespit eder, böylece yanlışlıkla farklı bir dosyayı silme riski ortadan kalkar.',
-            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 9,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Hazırda bekletmeyi kapatmak size bir kez birkaç gigabayt kazandırır; diskinizi gerçekten neyin doldurduğunu görmek ise her ay yeniden alan kazandırır.',
+            'Disk Mop\'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 19,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Hazırda bekletmeyi kapatmak size bir kez birkaç gigabayt kazandırır; diskinizi gerçekten neyin doldurduğunu görmek ise her ay yeniden alan kazandırır.',
           ],
         },
       ],
@@ -127,7 +127,7 @@ export const pagefileHiberfil: Article = {
           content: [
             'Pagefile.sys and hiberfil.sys become targets because they are two big, visible files, but on most drives the real space is lost to forgotten videos, old installers, ISO images and duplicate photos. Hunting those down folder by folder in File Explorer can take hours.',
             'Disk Mop\'s Disk Analysis scans your drive into a visual treemap that shows the largest folders at a glance. The Large File Finder lists every file over 500 MB, and the Duplicate Detector compares files with SHA-256 hashes, so identical photos, videos and documents are identified with certainty rather than guesswork — no risk of deleting a file that merely looks similar.',
-            'You can download Disk Mop for free with limited features; the Pro version is a one-time $9.90 payment for a lifetime license. Disabling hibernation saves you a few gigabytes exactly once — seeing what really fills your drive keeps paying off month after month.',
+            'You can download Disk Mop for free with limited features; the Pro version is a one-time $19.90 payment for a lifetime license. Disabling hibernation saves you a few gigabytes exactly once — seeing what really fills your drive keeps paying off month after month.',
           ],
         },
       ],
@@ -192,7 +192,7 @@ export const pagefileHiberfil: Article = {
           content: [
             'Pagefile.sys und hiberfil.sys geraten ins Visier, weil sie zwei große, sichtbare Dateien sind — auf den meisten Laufwerken geht der Platz jedoch an vergessene Videos, alte Installationsdateien, ISO-Abbilder und doppelte Fotos verloren. Diese im Datei-Explorer Ordner für Ordner aufzuspüren kostet Stunden.',
             'Disk Mops Festplattenanalyse stellt Ihr Laufwerk als visuelle Treemap dar und zeigt die größten Ordner auf einen Blick. Der Große-Dateien-Finder listet alle Dateien über 500 MB auf, und der Duplikatfinder vergleicht Dateien per SHA-256-Hash — identische Fotos, Videos und Dokumente werden zweifelsfrei erkannt, ohne das Risiko, eine nur ähnlich aussehende Datei zu löschen.',
-            'Disk Mop ist als kostenloser Download mit eingeschränkten Funktionen erhältlich; die Pro-Version kostet einmalig 9,90 Dollar mit lebenslanger Lizenz. Das Deaktivieren des Ruhezustands spart einmalig ein paar Gigabytes — zu wissen, was das Laufwerk wirklich füllt, zahlt sich Monat für Monat aus.',
+            'Disk Mop ist als kostenloser Download mit eingeschränkten Funktionen erhältlich; die Pro-Version kostet einmalig 19,90 Dollar mit lebenslanger Lizenz. Das Deaktivieren des Ruhezustands spart einmalig ein paar Gigabytes — zu wissen, was das Laufwerk wirklich füllt, zahlt sich Monat für Monat aus.',
           ],
         },
       ],

@@ -9,7 +9,7 @@ export const macKeeper: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: 'Abonelik (aylık/yıllık)',
       winner: 'diskmop',
     },
@@ -71,15 +71,15 @@ export const macKeeper: Article = {
   content: {
     tr: {
       title: 'MacKeeper Alternatifi: Disk Mop vs MacKeeper (2026)',
-      metaDescription: 'MacKeeper alternatifi mi arıyorsunuz? Disk Mop ile MacKeeper\'ı güvenlik, özellik ve fiyat açısından karşılaştırdık — $9.90 tek seferlik. Doğru aracı seçin.',
+      metaDescription: 'MacKeeper alternatifi mi arıyorsunuz? Disk Mop ile MacKeeper\'ı güvenlik, özellik ve fiyat açısından karşılaştırdık — $19.90 tek seferlik. Doğru aracı seçin.',
       subtitle: 'MacKeeper artık eskisi kadar tartışmalı değil, ama hala abonelikle satılan büyük bir güvenlik paketi. Sadece disk temizliği istiyorsanız daha hafif bir yol var.',
       intro: [
-        'MacKeeper 2026\'da güvenli mi ve bir alternatif aramalı mısınız? Kısa cevap: bugünkü MacKeeper meşru bir uygulama — Apple tarafından noterize edilmiş durumda ve mevcut sahibi Clario, geçmişteki agresif pazarlamayı büyük ölçüde geride bıraktı. Ancak MacKeeper hala abonelikle satılan kapsamlı bir güvenlik paketi; tek istediğiniz disk temizliğiyse Disk Mop aynı işi $9.90 tek seferlik ödemeyle, ekstra yük olmadan yapıyor.',
+        'MacKeeper 2026\'da güvenli mi ve bir alternatif aramalı mısınız? Kısa cevap: bugünkü MacKeeper meşru bir uygulama — Apple tarafından noterize edilmiş durumda ve mevcut sahibi Clario, geçmişteki agresif pazarlamayı büyük ölçüde geride bıraktı. Ancak MacKeeper hala abonelikle satılan kapsamlı bir güvenlik paketi; tek istediğiniz disk temizliğiyse Disk Mop aynı işi $19.90 tek seferlik ödemeyle, ekstra yük olmadan yapıyor.',
         'MacKeeper, Mac dünyasının en çok arama yapılan uygulamalarından biri — ama aramaların önemli bir kısmı mackeeper scam ve is mackeeper safe gibi güven sorgularından geliyor. Bu yazıda bu geçmişe dürüstçe bakacağız, MacKeeper\'ın bugün gerçekten iyi yaptığı şeyleri teslim edeceğiz ve iki aracı özellik özellik karşılaştıracağız.',
         'Sonunda, MacKeeper\'ı tamamen kaldırmak isteyenler için adım adım bir rehber de bulacaksınız. Amaç kimseyi kötülemek değil; hangi aracın sizin ihtiyacınıza uyduğunu netleştirmek.',
       ],
       diskmopPros: [
-        '$9.90 tek seferlik ödeme, ömür boyu lisans',
+        '$19.90 tek seferlik ödeme, ömür boyu lisans',
         'Hem Windows 10/11 hem macOS 12+ desteği',
         'Hafif ve odaklı: sadece disk temizliği, paket zorlaması yok',
         'Görsel disk analizi ile neyin yer kapladığını gösterir',
@@ -135,11 +135,11 @@ export const macKeeper: Article = {
           ],
         },
         {
-          title: 'Fiyat: $9.90 Ömür Boyu vs Yinelenen Abonelik',
+          title: 'Fiyat: $19.90 Ömür Boyu vs Yinelenen Abonelik',
           content: [
             'MacKeeper yalnızca abonelikle satılıyor: aylık veya yıllık faturalandırılan planlar, iptal edene kadar otomatik yenileniyor. Kampanyalar sık değiştiği için burada belirli bir rakam vermek yanıltıcı olur; önemli olan yapı — ödeme hiç bitmiyor.',
-            'Disk Mop\'un modeli tam tersi: $9.90 tek seferlik ödeme, ömür boyu lisans. Üstelik freemium — uygulamayı sınırlı özelliklerle ücretsiz indirip deneyebilir, beğenirseniz Pro\'ya geçebilirsiniz. Yenileme yok, yükseltme baskısı yok.',
-            'Matematik basit: neredeyse her temizleyici aboneliği daha ilk aylarında $9.90\'ı geçer. Birkaç yıla yayıldığında fark ciddi bir tutara ulaşır. Derdiniz disk alanıysa, tek seferlik satın alma hem daha ucuz hem daha huzurlu bir seçenek.',
+            'Disk Mop\'un modeli tam tersi: $19.90 tek seferlik ödeme, ömür boyu lisans. Üstelik freemium — uygulamayı sınırlı özelliklerle ücretsiz indirip deneyebilir, beğenirseniz Pro\'ya geçebilirsiniz. Yenileme yok, yükseltme baskısı yok.',
+            'Matematik basit: neredeyse her temizleyici aboneliği daha ilk aylarında $19.90\'ı geçer. Birkaç yıla yayıldığında fark ciddi bir tutara ulaşır. Derdiniz disk alanıysa, tek seferlik satın alma hem daha ucuz hem daha huzurlu bir seçenek.',
           ],
         },
         {
@@ -161,21 +161,21 @@ export const macKeeper: Article = {
       ],
       verdict: [
         'MacKeeper 2026\'da artık bir dolandırıcılık değil; noterize edilmiş, sertifikalı ve Clario yönetiminde toparlanmış bir güvenlik paketi. Antivirüs, VPN ve canlı destek arayan, tek uygulamada her şeyi isteyen kullanıcılar için savunulabilir bir seçenek.',
-        'Ama aramanızın nedeni dolan bir disk ise, bir güvenlik paketine abone olmanıza gerek yok. Disk Mop görsel disk analizi, yinelenen dosya tespiti, büyük dosya bulucu ve tek tıkla temizliği $9.90 tek seferlik fiyatla sunuyor — üstelik hem Mac hem Windows\'ta. Hafif, dürüst ve abonelik derdi olmayan MacKeeper alternatifi tam olarak bu.',
+        'Ama aramanızın nedeni dolan bir disk ise, bir güvenlik paketine abone olmanıza gerek yok. Disk Mop görsel disk analizi, yinelenen dosya tespiti, büyük dosya bulucu ve tek tıkla temizliği $19.90 tek seferlik fiyatla sunuyor — üstelik hem Mac hem Windows\'ta. Hafif, dürüst ve abonelik derdi olmayan MacKeeper alternatifi tam olarak bu.',
       ],
       ctaText: 'Disk Mop\'u Ücretsiz Deneyin',
     },
     en: {
       title: 'MacKeeper Alternative: Disk Mop vs MacKeeper (2026)',
-      metaDescription: 'Looking for a MacKeeper alternative? See how Disk Mop compares on safety, features and price — $9.90 lifetime vs subscription. Find the right Mac cleaner.',
+      metaDescription: 'Looking for a MacKeeper alternative? See how Disk Mop compares on safety, features and price — $19.90 lifetime vs subscription. Find the right Mac cleaner.',
       subtitle: 'MacKeeper is no longer the villain it once was, but it is still a heavyweight subscription suite. If you just want disk cleanup, there is a lighter way.',
       intro: [
-        'Is MacKeeper safe, and do you need an alternative? The short answer: today\'s MacKeeper is a legitimate app — it is notarized by Apple, and its current owner Clario has largely left the aggressive marketing of the past behind. But it remains a subscription-based security suite; if all you want is disk cleanup, Disk Mop does that one job for a one-time $9.90, with none of the extra weight.',
+        'Is MacKeeper safe, and do you need an alternative? The short answer: today\'s MacKeeper is a legitimate app — it is notarized by Apple, and its current owner Clario has largely left the aggressive marketing of the past behind. But it remains a subscription-based security suite; if all you want is disk cleanup, Disk Mop does that one job for a one-time $19.90, with none of the extra weight.',
         'MacKeeper is one of the most searched Mac apps in existence — and a large share of those searches are trust questions like is mackeeper safe and mackeeper scam. In this MacKeeper review and comparison, we look at that history honestly, give MacKeeper credit for what it genuinely does well today, and then compare both tools feature by feature.',
         'At the end you will also find a step-by-step guide to uninstalling MacKeeper completely. The goal is not to trash anyone — it is to make clear which tool fits your actual needs.',
       ],
       diskmopPros: [
-        '$9.90 one-time payment, lifetime license',
+        '$19.90 one-time payment, lifetime license',
         'Works on both Windows 10/11 and macOS 12+',
         'Lightweight and focused: disk cleanup only, no bundle',
         'Visual disk analysis shows what fills your drive',
@@ -231,11 +231,11 @@ export const macKeeper: Article = {
           ],
         },
         {
-          title: 'Pricing: $9.90 Lifetime vs a Recurring Subscription',
+          title: 'Pricing: $19.90 Lifetime vs a Recurring Subscription',
           content: [
             'MacKeeper is sold only as a subscription: plans billed monthly or annually that renew automatically until you cancel. Promotions change often, so quoting an exact number here would be misleading; what matters is the structure — the payments never end.',
-            'Disk Mop\'s model is the opposite: $9.90 once, lifetime license. It is also freemium — you can download it for free with limited features and unlock everything with Pro if you like it. No renewals, no upgrade pressure.',
-            'The math is simple: almost any cleaner subscription passes $9.90 within its first months. Stretched over a few years, the gap becomes substantial. If your problem is disk space, a one-time purchase is both the cheaper and the calmer option.',
+            'Disk Mop\'s model is the opposite: $19.90 once, lifetime license. It is also freemium — you can download it for free with limited features and unlock everything with Pro if you like it. No renewals, no upgrade pressure.',
+            'The math is simple: almost any cleaner subscription passes $19.90 within its first months. Stretched over a few years, the gap becomes substantial. If your problem is disk space, a one-time purchase is both the cheaper and the calmer option.',
           ],
         },
         {
@@ -257,20 +257,20 @@ export const macKeeper: Article = {
       ],
       verdict: [
         'MacKeeper in 2026 is no scam; it is a notarized, certified security suite that has genuinely recovered under Clario. For users who want antivirus, a VPN and live support all in one app, it is a defensible option.',
-        'But if you are searching because your disk is full, you do not need to subscribe to a security suite. Disk Mop delivers visual disk analysis, duplicate detection, a large file finder and one-click cleanup for a one-time $9.90 — on both Mac and Windows. As a lightweight, honest, subscription-free MacKeeper alternative, that is exactly the point.',
+        'But if you are searching because your disk is full, you do not need to subscribe to a security suite. Disk Mop delivers visual disk analysis, duplicate detection, a large file finder and one-click cleanup for a one-time $19.90 — on both Mac and Windows. As a lightweight, honest, subscription-free MacKeeper alternative, that is exactly the point.',
       ],
       ctaText: 'Try Disk Mop Free',
     },
     de: {
       title: 'MacKeeper-Alternative: Disk Mop im Vergleich (2026)',
-      metaDescription: 'Auf der Suche nach einer MacKeeper-Alternative? Disk Mop vs MacKeeper: Sicherheit, Funktionen und Preis im Vergleich — $9.90 einmalig. Jetzt vergleichen.',
+      metaDescription: 'Auf der Suche nach einer MacKeeper-Alternative? Disk Mop vs MacKeeper: Sicherheit, Funktionen und Preis im Vergleich — $19.90 einmalig. Jetzt vergleichen.',
       subtitle: 'MacKeeper ist nicht mehr der Bösewicht von früher, aber weiterhin eine schwere Abo-Suite. Für reine Festplattenreinigung gibt es einen leichteren Weg.',
       intro: [
-        'Ist MacKeeper sicher, und brauchen Sie eine Alternative? Kurz gesagt: Das heutige MacKeeper ist eine legitime, von Apple notarisierte App, und der aktuelle Eigentümer Clario hat das aggressive Marketing der Vergangenheit weitgehend abgelegt. Es bleibt jedoch eine abonnementbasierte Sicherheits-Suite; wer nur Festplattenreinigung will, bekommt mit Disk Mop genau das — für einmalig $9.90.',
+        'Ist MacKeeper sicher, und brauchen Sie eine Alternative? Kurz gesagt: Das heutige MacKeeper ist eine legitime, von Apple notarisierte App, und der aktuelle Eigentümer Clario hat das aggressive Marketing der Vergangenheit weitgehend abgelegt. Es bleibt jedoch eine abonnementbasierte Sicherheits-Suite; wer nur Festplattenreinigung will, bekommt mit Disk Mop genau das — für einmalig $19.90.',
         'Ein großer Teil der MacKeeper-Suchanfragen sind Vertrauensfragen. In diesem Vergleich schauen wir ehrlich auf die Geschichte, erkennen an, was MacKeeper heute gut macht, und stellen beide Tools Funktion für Funktion gegenüber — inklusive Anleitung zur vollständigen Deinstallation.',
       ],
       diskmopPros: [
-        '$9.90 einmalig, lebenslange Lizenz',
+        '$19.90 einmalig, lebenslange Lizenz',
         'Windows 10/11 und macOS 12+',
         'Leicht und fokussiert: nur Festplattenreinigung',
         'Visuelle Disk-Analyse',
@@ -324,10 +324,10 @@ export const macKeeper: Article = {
           ],
         },
         {
-          title: 'Preis: $9.90 einmalig vs laufendes Abo',
+          title: 'Preis: $19.90 einmalig vs laufendes Abo',
           content: [
             'MacKeeper gibt es nur im Abo, monatlich oder jährlich, mit automatischer Verlängerung bis zur Kündigung. Da sich Aktionen häufig ändern, nennen wir keine Zahl — entscheidend ist die Struktur: Die Zahlungen enden nie.',
-            'Disk Mop kostet einmalig $9.90 mit lebenslanger Lizenz und ist als Freemium kostenlos testbar. Fast jedes Cleaner-Abo überschreitet $9.90 schon in den ersten Monaten; über Jahre wird der Unterschied erheblich.',
+            'Disk Mop kostet einmalig $19.90 mit lebenslanger Lizenz und ist als Freemium kostenlos testbar. Fast jedes Cleaner-Abo überschreitet $19.90 schon in den ersten Monaten; über Jahre wird der Unterschied erheblich.',
           ],
         },
         {
@@ -348,7 +348,7 @@ export const macKeeper: Article = {
       ],
       verdict: [
         'MacKeeper ist 2026 kein Betrug, sondern eine notarisierte, zertifizierte Suite, die sich unter Clario erholt hat — eine vertretbare Wahl für alle, die Antivirus, VPN und Live-Support in einer App wollen.',
-        'Wenn aber die volle Festplatte das Problem ist, braucht es kein Sicherheits-Abo. Disk Mop liefert Disk-Analyse, Duplikaterkennung, Große-Dateien-Finder und Ein-Klick-Reinigung für einmalig $9.90 — auf Mac und Windows. Genau das macht es zur leichten, ehrlichen MacKeeper-Alternative.',
+        'Wenn aber die volle Festplatte das Problem ist, braucht es kein Sicherheits-Abo. Disk Mop liefert Disk-Analyse, Duplikaterkennung, Große-Dateien-Finder und Ein-Klick-Reinigung für einmalig $19.90 — auf Mac und Windows. Genau das macht es zur leichten, ehrlichen MacKeeper-Alternative.',
       ],
       ctaText: 'Disk Mop kostenlos testen',
     },

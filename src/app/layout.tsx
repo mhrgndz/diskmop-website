@@ -63,7 +63,7 @@ export default async function RootLayout({
               applicationCategory: 'UtilitiesApplication',
               offers: {
                 '@type': 'Offer',
-                price: '9.90',
+                price: '19.90',
                 priceCurrency: 'USD',
               },
               aggregateRating: {

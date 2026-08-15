@@ -68,7 +68,7 @@ export const cleanUpDownloadsFolder: Article = {
       ],
       verdict: [
         'İndirilenler klasörünü temizlemenin en etkili yolu düzenli bir akış izlemektir: dosyaları tarihe ve boyuta göre sıralayın, türlerine göre kategorilere ayırıp eski olanları toplu silin, yinelenen kopyaları yakalayın, ardından alanı gerçekten kazanmak için Geri Dönüşüm Kutusu\'nu boşaltın. Son olarak bir zamanlama kurarak aynı yığının bir daha oluşmasını engelleyin.',
-        'Disk Mop bu akışın her adımını tek uygulamada toplar: neredeyse hiçbir rakipte bulunmayan İndirilenler Temizleyicisi dosyaları kategorilere ayırır, SHA-256 tabanlı Yinelenen Dosya Dedektörü kopyaları bulur, Zamanlanmış Temizlik ise düzeni kalıcı hale getirir. Uygulamayı ücretsiz indirip deneyebilir, tüm özellikleri tek seferlik $9.90 ödemeyle ömür boyu açabilirsiniz.',
+        'Disk Mop bu akışın her adımını tek uygulamada toplar: neredeyse hiçbir rakipte bulunmayan İndirilenler Temizleyicisi dosyaları kategorilere ayırır, SHA-256 tabanlı Yinelenen Dosya Dedektörü kopyaları bulur, Zamanlanmış Temizlik ise düzeni kalıcı hale getirir. Uygulamayı ücretsiz indirip deneyebilir, tüm özellikleri tek seferlik $19.90 ödemeyle ömür boyu açabilirsiniz.',
       ],
       ctaText: 'Disk Mop ile İndirilenler klasörünüzü temizleyin',
     },
@@ -133,7 +133,7 @@ export const cleanUpDownloadsFolder: Article = {
       ],
       verdict: [
         'The most effective way to clean up your Downloads folder is to follow a repeatable flow: sort by age and size, group files into categories and bulk-delete the old ones, catch duplicate copies, then empty the Recycle Bin or Trash so the space is actually reclaimed. Finish by setting up a schedule so the same pile never builds up again.',
-        'Disk Mop covers every step of that flow in one app: its Downloads Cleaner — a dedicated tool almost no competitor has — categorizes your downloads for you, the SHA-256 based Duplicate Detector finds redundant copies, and Scheduled Cleanup keeps the folder tidy permanently. You can download it for free and unlock every feature with a one-time $9.90 lifetime license.',
+        'Disk Mop covers every step of that flow in one app: its Downloads Cleaner — a dedicated tool almost no competitor has — categorizes your downloads for you, the SHA-256 based Duplicate Detector finds redundant copies, and Scheduled Cleanup keeps the folder tidy permanently. You can download it for free and unlock every feature with a one-time $19.90 lifetime license.',
       ],
       ctaText: 'Clean up your Downloads folder with Disk Mop',
     },
@@ -198,7 +198,7 @@ export const cleanUpDownloadsFolder: Article = {
       ],
       verdict: [
         'Der effektivste Weg, den Downloads-Ordner aufzuräumen, ist ein wiederholbarer Ablauf: nach Alter und Größe sortieren, Dateien in Kategorien gruppieren und alte gebündelt löschen, Duplikate aufspüren und anschließend den Papierkorb leeren, damit der Platz wirklich frei wird. Zum Schluss sorgt ein Zeitplan dafür, dass sich derselbe Berg nie wieder auftürmt.',
-        'Disk Mop deckt jeden Schritt dieses Ablaufs in einer App ab: Der Downloads-Bereiniger — ein Werkzeug, das kaum ein Konkurrent bietet — kategorisiert Ihre Downloads, der SHA-256-basierte Duplikatfinder entdeckt überflüssige Kopien, und die geplante Bereinigung hält den Ordner dauerhaft sauber. Der Download ist kostenlos; alle Funktionen schalten Sie mit einer einmaligen Lifetime-Lizenz für $9.90 frei.',
+        'Disk Mop deckt jeden Schritt dieses Ablaufs in einer App ab: Der Downloads-Bereiniger — ein Werkzeug, das kaum ein Konkurrent bietet — kategorisiert Ihre Downloads, der SHA-256-basierte Duplikatfinder entdeckt überflüssige Kopien, und die geplante Bereinigung hält den Ordner dauerhaft sauber. Der Download ist kostenlos; alle Funktionen schalten Sie mit einer einmaligen Lifetime-Lizenz für $19.90 frei.',
       ],
       ctaText: 'Räumen Sie Ihren Downloads-Ordner mit Disk Mop auf',
     },

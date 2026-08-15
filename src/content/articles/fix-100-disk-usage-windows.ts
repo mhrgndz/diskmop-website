@@ -75,7 +75,7 @@ export const fix100DiskUsageWindows: Article = {
       ],
       verdict: [
         'Windows 10 ve 11\'de %100 disk kullanımı neredeyse her zaman çözülebilir bir sorundur. Önce Görev Yöneticisi ve Kaynak İzleyicisi ile suçlu işlemi bulun; ardından SysMain ve Windows Search dizinlemeyi devre dışı bırakın, başlangıç programlarını azaltın, önbellekleri temizleyip disk alanı açın ve son olarak kötü amaçlı yazılım ile donanım arızası ihtimallerini eleyin. Bu adımların tamamı Windows\'un yerleşik araçlarıyla ücretsiz yapılabilir.',
-        'Disk Mop, aynı düzeltmeleri services.msc ve komut satırıyla uğraşmadan uygulamak isteyenler için tasarlandı. Servis yöneticisi, başlangıç yöneticisi, tek tıklamalı hızlandırma, disk analizi ve zamanlanmış temizlik özellikleri tek uygulamada birleşir. Windows ve macOS\'ta çalışır, tek seferlik $9.90 ödemeyle ömür boyu lisans sunar; ücretsiz sürümüyle indirip denedikten sonra karar verebilirsiniz.',
+        'Disk Mop, aynı düzeltmeleri services.msc ve komut satırıyla uğraşmadan uygulamak isteyenler için tasarlandı. Servis yöneticisi, başlangıç yöneticisi, tek tıklamalı hızlandırma, disk analizi ve zamanlanmış temizlik özellikleri tek uygulamada birleşir. Windows ve macOS\'ta çalışır, tek seferlik $19.90 ödemeyle ömür boyu lisans sunar; ücretsiz sürümüyle indirip denedikten sonra karar verebilirsiniz.',
       ],
       ctaText: 'Disk Mop ile yüksek disk kullanımını çözün',
     },
@@ -147,7 +147,7 @@ export const fix100DiskUsageWindows: Article = {
       ],
       verdict: [
         '100% disk usage in Windows 10 and 11 is almost always fixable. Start by finding the guilty process in Task Manager and Resource Monitor, then disable SysMain and Windows Search indexing, trim your startup programs, clear caches and free up drive space, and finally rule out malware and failing hardware. Every one of these steps can be done for free with Windows\' built-in tools.',
-        'Disk Mop is built for people who want the same fixes without digging through services.msc and command prompts. Its Service Manager, Startup Manager, one-click Speed Up, Disk Analysis, and Scheduled Cleanup all live in a single app. It runs on Windows and macOS with a one-time $9.90 lifetime license, and the free version lets you try it before deciding.',
+        'Disk Mop is built for people who want the same fixes without digging through services.msc and command prompts. Its Service Manager, Startup Manager, one-click Speed Up, Disk Analysis, and Scheduled Cleanup all live in a single app. It runs on Windows and macOS with a one-time $19.90 lifetime license, and the free version lets you try it before deciding.',
       ],
       ctaText: 'Fix high disk usage with Disk Mop',
     },
@@ -219,7 +219,7 @@ export const fix100DiskUsageWindows: Article = {
       ],
       verdict: [
         '100% Datenträgerauslastung in Windows 10 und 11 lässt sich fast immer beheben. Finden Sie zuerst den verantwortlichen Prozess im Task-Manager und Ressourcenmonitor, deaktivieren Sie dann SysMain und die Windows-Suchindizierung, reduzieren Sie die Autostart-Programme, leeren Sie Caches, geben Sie Speicherplatz frei und schließen Sie zuletzt Malware und Hardwaredefekte aus. Jeder dieser Schritte funktioniert kostenlos mit Windows-Bordmitteln.',
-        'Disk Mop richtet sich an alle, die dieselben Korrekturen ohne services.msc und Eingabeaufforderung anwenden möchten. Dienst-Manager, Autostart-Manager, Ein-Klick-Bereinigung, Festplattenanalyse und geplante Bereinigung stecken in einer einzigen App. Sie läuft unter Windows und macOS, kostet einmalig $9.90 als Lifetime-Lizenz, und die kostenlose Version lässt sich vor dem Kauf ausprobieren.',
+        'Disk Mop richtet sich an alle, die dieselben Korrekturen ohne services.msc und Eingabeaufforderung anwenden möchten. Dienst-Manager, Autostart-Manager, Ein-Klick-Bereinigung, Festplattenanalyse und geplante Bereinigung stecken in einer einzigen App. Sie läuft unter Windows und macOS, kostet einmalig $19.90 als Lifetime-Lizenz, und die kostenlose Version lässt sich vor dem Kauf ausprobieren.',
       ],
       ctaText: 'Hohe Datenträgerauslastung mit Disk Mop beheben',
     },

@@ -77,7 +77,7 @@ export const diskSpaceForGaming: Article = {
       ],
       verdict: [
         'Steam\'in disk alanı uyarısı, çoğu zaman tek bir büyük dosyanın değil birikmiş küçük kalıntıların sonucudur. Önce diski analiz edip gerçek tüketicileri görmek, ardından indirme önbelleğini, shader ve Workshop dosyalarını temizlemek, kalıntı klasörleri silmek, yinelenen kurulum dosyalarından kurtulmak ve büyük oyunları ikinci sürücüye taşımak — bu adımların tamamı uygulandığında, oynadığınız oyunlara dokunmadan onlarca gigabayt kazanırsınız.',
-        'Disk Mop bu sürecin her adımında yanınızda: treemap disk analizi ve büyük dosya bulucu keşif aşamasını, yinelenen dosya dedektörü ile indirilenler temizleyicisi ayıklama aşamasını, hızlandırma ve zamanlanmış temizlik ise düzenli bakımı üstlenir. Ücretsiz sürümü indirip diskinizi hemen analiz edebilir, tüm özellikler için 9,90 dolarlık tek seferlik ömür boyu lisansa geçebilirsiniz.',
+        'Disk Mop bu sürecin her adımında yanınızda: treemap disk analizi ve büyük dosya bulucu keşif aşamasını, yinelenen dosya dedektörü ile indirilenler temizleyicisi ayıklama aşamasını, hızlandırma ve zamanlanmış temizlik ise düzenli bakımı üstlenir. Ücretsiz sürümü indirip diskinizi hemen analiz edebilir, tüm özellikler için 19,90 dolarlık tek seferlik ömür boyu lisansa geçebilirsiniz.',
       ],
       ctaText: 'Disk Mop ile bir sonraki oyununuz için yer açın',
     },
@@ -151,7 +151,7 @@ export const diskSpaceForGaming: Article = {
       ],
       verdict: [
         'Steam\'s disk space warning is usually the result of accumulated debris rather than one huge file. Analyze the drive first to see the real consumers, then clear the download cache, prune shader and Workshop files, remove leftover folders, eliminate duplicate installers and move big titles to a second drive — apply all of these steps and you can recover tens of gigabytes without touching the games you play.',
-        'Disk Mop supports every stage of that process: the treemap Disk Analysis and Large File Finder cover reconnaissance, the Duplicate Detector and Downloads Cleaner handle the cleanup, and Speed Up with Scheduled Cleanup takes care of ongoing maintenance. You can download the free version and analyze your drive right away, and unlock everything with a one-time $9.90 lifetime license.',
+        'Disk Mop supports every stage of that process: the treemap Disk Analysis and Large File Finder cover reconnaissance, the Duplicate Detector and Downloads Cleaner handle the cleanup, and Speed Up with Scheduled Cleanup takes care of ongoing maintenance. You can download the free version and analyze your drive right away, and unlock everything with a one-time $19.90 lifetime license.',
       ],
       ctaText: 'Reclaim gigabytes for your next game with Disk Mop',
     },
@@ -225,7 +225,7 @@ export const diskSpaceForGaming: Article = {
       ],
       verdict: [
         'Die Steam-Warnung über zu wenig Speicherplatz entsteht meist durch angesammelten Ballast, nicht durch eine einzelne riesige Datei. Erst das Laufwerk analysieren, dann Download-Cache, Shader- und Workshop-Dateien bereinigen, Restordner entfernen, doppelte Installer löschen und große Titel auf ein zweites Laufwerk verschieben — wer alle Schritte umsetzt, gewinnt Dutzende Gigabyte zurück, ohne die eigenen Spiele anzutasten.',
-        'Disk Mop begleitet jeden dieser Schritte: Die Treemap-Festplattenanalyse und der Große-Dateien-Finder übernehmen die Bestandsaufnahme, Duplikatfinder und Downloads-Bereiniger das Aufräumen, Speed Up und die geplante Bereinigung die laufende Pflege. Die kostenlose Version analysiert Ihr Laufwerk sofort; alle Funktionen schaltet die einmalige Lifetime-Lizenz für 9,90 US-Dollar frei.',
+        'Disk Mop begleitet jeden dieser Schritte: Die Treemap-Festplattenanalyse und der Große-Dateien-Finder übernehmen die Bestandsaufnahme, Duplikatfinder und Downloads-Bereiniger das Aufräumen, Speed Up und die geplante Bereinigung die laufende Pflege. Die kostenlose Version analysiert Ihr Laufwerk sofort; alle Funktionen schaltet die einmalige Lifetime-Lizenz für 19,90 US-Dollar frei.',
       ],
       ctaText: 'Schaffen Sie mit Disk Mop Platz für Ihr nächstes Spiel',
     },

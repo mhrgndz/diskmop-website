@@ -46,7 +46,7 @@ export const flushDnsCache: Article = {
           content: [
             'Yukarıdaki komutlar ücretsizdir, hızlıdır ve her iki işletim sistemine yerleşiktir — komut satırıyla aranız iyiyse gerçekten başka bir şeye ihtiyacınız yok. Ancak birçok kullanıcı için durum böyle değil; rutin bir bakım işleminin komut sözdizimi ezberlemeyi veya hiçbir geri bildirim vermeyen bir pencereye sudo yazmayı gerektirmesi için bir neden yok.',
             'Disk Mop\'un DNS önbellek temizleyicisi (DNS Cache Cleaner), aynı işi hem Windows 10/11\'de hem de macOS 12 ve sonrasında tek tıkla yapar. Uygulamayı açın, DNS Cache Cleaner\'ı seçin, bir kez tıklayın — ezberlenecek komut yok, yanlış yazma riski yok ve sonuç terminal yöntemiyle birebir aynı.',
-            'Bu kolaylık katlanarak artar, çünkü DNS temizliği nadiren tek başına yapılır. Sorun giderirken genellikle tarayıcı önbelleklerini de temizlemek istersiniz ve Disk Mop iki aracı aynı arayüzde yan yana sunar. Sınırlı özelliklere sahip ücretsiz bir sürümü vardır; Pro lisansı ise abonelik olmadan tek seferlik $9.90\'dır.',
+            'Bu kolaylık katlanarak artar, çünkü DNS temizliği nadiren tek başına yapılır. Sorun giderirken genellikle tarayıcı önbelleklerini de temizlemek istersiniz ve Disk Mop iki aracı aynı arayüzde yan yana sunar. Sınırlı özelliklere sahip ücretsiz bir sürümü vardır; Pro lisansı ise abonelik olmadan tek seferlik $19.90\'dır.',
           ],
         },
         {
@@ -68,7 +68,7 @@ export const flushDnsCache: Article = {
       ],
       verdict: [
         'DNS önbelleğini temizleme tek bir komuttan ibarettir: Windows\'ta ipconfig /flushdns, Mac\'te sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Güvenli ve anlıktır; bir site yanlış çözümlendiğinde, DNS hataları göründüğünde veya yalnızca tek bir makinede açılmadığında atılacak ilk doğru adımdır.',
-        'Terminali hiç açmak istemiyorsanız, Disk Mop aynı işlemi tek tıklamaya indirir ve yanına Chrome, Firefox, Edge ve Safari için tarayıcı önbellek temizleyicisini ekler — genellikle birlikte ihtiyaç duyduğunuz iki araç. Windows 10/11 ve macOS 12+ üzerinde çalışır; ömür boyu Pro lisansı abonelik olmadan tek seferlik $9.90\'dır.',
+        'Terminali hiç açmak istemiyorsanız, Disk Mop aynı işlemi tek tıklamaya indirir ve yanına Chrome, Firefox, Edge ve Safari için tarayıcı önbellek temizleyicisini ekler — genellikle birlikte ihtiyaç duyduğunuz iki araç. Windows 10/11 ve macOS 12+ üzerinde çalışır; ömür boyu Pro lisansı abonelik olmadan tek seferlik $19.90\'dır.',
       ],
       ctaText: 'Disk Mop ile DNS önbelleğinizi tek tıkla temizleyin',
     },
@@ -111,7 +111,7 @@ export const flushDnsCache: Article = {
           content: [
             'The commands above are free, fast, and built into both operating systems — if you are comfortable with a command line, you genuinely do not need anything else. But plenty of people are not, and there is no reason a routine maintenance task should require memorizing syntax or typing sudo into a window that gives no feedback.',
             'Disk Mop includes a DNS Cache Cleaner that does the same job with a single click, on both Windows 10/11 and macOS 12 and later. Open the app, choose DNS Cache Cleaner, click once — no commands to remember, nothing to mistype, and the exact same result as the terminal method.',
-            'The convenience compounds because a DNS flush rarely happens in isolation. When you are troubleshooting, you usually want to clear browser caches too, and Disk Mop keeps both tools side by side in the same interface. There is a free version with limited features, and the Pro license is a one-time $9.90 payment with no subscription.',
+            'The convenience compounds because a DNS flush rarely happens in isolation. When you are troubleshooting, you usually want to clear browser caches too, and Disk Mop keeps both tools side by side in the same interface. There is a free version with limited features, and the Pro license is a one-time $19.90 payment with no subscription.',
           ],
         },
         {
@@ -133,7 +133,7 @@ export const flushDnsCache: Article = {
       ],
       verdict: [
         'Flushing your DNS cache takes one command: ipconfig /flushdns on Windows, or sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder on a Mac. It is safe, instant, and the right first move when a website resolves incorrectly, shows DNS errors, or refuses to load on one machine only.',
-        'If you would rather never open a terminal, Disk Mop wraps the same operation in a single click and pairs it with a Browser Cache Cleaner for Chrome, Firefox, Edge, and Safari — the two tools you usually need together. It runs on Windows 10/11 and macOS 12+, and a lifetime Pro license is a one-time $9.90 with no subscription.',
+        'If you would rather never open a terminal, Disk Mop wraps the same operation in a single click and pairs it with a Browser Cache Cleaner for Chrome, Firefox, Edge, and Safari — the two tools you usually need together. It runs on Windows 10/11 and macOS 12+, and a lifetime Pro license is a one-time $19.90 with no subscription.',
       ],
       ctaText: 'Flush your DNS cache in one click with Disk Mop',
     },
@@ -176,7 +176,7 @@ export const flushDnsCache: Article = {
           content: [
             'Die obigen Befehle sind kostenlos, schnell und in beiden Systemen eingebaut — wer mit der Kommandozeile vertraut ist, braucht nichts weiter. Viele Nutzer sind es aber nicht, und eine Routineaufgabe sollte weder auswendig gelernte Syntax noch ein sudo in einem Fenster ohne Rückmeldung erfordern.',
             'Disk Mops DNS-Cache-Bereiniger (DNS Cache Cleaner) erledigt dieselbe Aufgabe mit einem einzigen Klick — unter Windows 10/11 und auf macOS 12 und neuer. App öffnen, DNS Cache Cleaner wählen, einmal klicken: kein Befehl zum Merken, nichts zu vertippen, exakt dasselbe Ergebnis wie im Terminal.',
-            'Der Komfort zahlt sich doppelt aus, weil ein DNS-Flush selten allein kommt: Bei der Fehlersuche will man meist auch die Browser-Caches leeren, und Disk Mop bietet beide Werkzeuge in einer Oberfläche. Es gibt eine kostenlose Version mit eingeschränkten Funktionen; die Pro-Lizenz kostet einmalig $9.90 — ohne Abo.',
+            'Der Komfort zahlt sich doppelt aus, weil ein DNS-Flush selten allein kommt: Bei der Fehlersuche will man meist auch die Browser-Caches leeren, und Disk Mop bietet beide Werkzeuge in einer Oberfläche. Es gibt eine kostenlose Version mit eingeschränkten Funktionen; die Pro-Lizenz kostet einmalig $19.90 — ohne Abo.',
           ],
         },
         {
@@ -198,7 +198,7 @@ export const flushDnsCache: Article = {
       ],
       verdict: [
         'Den DNS-Cache zu leeren ist ein einziger Befehl: ipconfig /flushdns unter Windows oder sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder am Mac. Sicher, sofort erledigt und der richtige erste Schritt, wenn eine Website falsch aufgelöst wird, DNS-Fehler zeigt oder nur auf einem Rechner nicht lädt.',
-        'Wer nie ein Terminal öffnen möchte, bekommt mit Disk Mop dieselbe Operation als einen einzigen Klick — ergänzt um einen Browser-Cache-Bereiniger für Chrome, Firefox, Edge und Safari, die beiden Werkzeuge, die man meist zusammen braucht. Läuft unter Windows 10/11 und macOS 12+; die Pro-Lizenz kostet einmalig $9.90, ohne Abo.',
+        'Wer nie ein Terminal öffnen möchte, bekommt mit Disk Mop dieselbe Operation als einen einzigen Klick — ergänzt um einen Browser-Cache-Bereiniger für Chrome, Firefox, Edge und Safari, die beiden Werkzeuge, die man meist zusammen braucht. Läuft unter Windows 10/11 und macOS 12+; die Pro-Lizenz kostet einmalig $19.90, ohne Abo.',
       ],
       ctaText: 'DNS-Cache mit einem Klick leeren — mit Disk Mop',
     },

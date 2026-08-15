@@ -9,7 +9,7 @@ export const storageSense: Article = {
   comparison: [
     {
       feature: { tr: 'Fiyat', en: 'Price', de: 'Preis' },
-      diskmop: '$9.90 (tek seferlik)',
+      diskmop: '$19.90 (tek seferlik)',
       competitor: 'Ücretsiz (Windows dahili)',
       winner: 'competitor',
     },
@@ -72,9 +72,9 @@ export const storageSense: Article = {
     tr: {
       title: 'Disk Mop vs Depolama Algılayıcısı: Hangisi Daha İyi?',
       metaDescription: 'Depolama Algılayıcısı geçici dosyaları ücretsiz ve otomatik temizler ama yinelenen ve büyük dosyaları asla görmez. Disk Mop\'un eklediklerini keşfedin.',
-      subtitle: 'Windows\'un ücretsiz temizlik otomatiği temel işleri iyi yapıyor — peki neye hiç dokunmuyor ve $9.90\'lık yükseltme ne zaman mantıklı?',
+      subtitle: 'Windows\'un ücretsiz temizlik otomatiği temel işleri iyi yapıyor — peki neye hiç dokunmuyor ve $19.90\'lık yükseltme ne zaman mantıklı?',
       intro: [
-        'Depolama Algılayıcısı, Windows 10 ve 11\'e yerleşik ücretsiz bir temizlik otomatiğidir: geçici dosyaları siler, eski geri dönüşüm kutusu öğelerini boşaltır ve isterseniz uzun süredir açılmamış indirmeleri zamanlanmış olarak temizler. Açmaya kesinlikle değer — ama diskinizi neyin doldurduğunu asla göstermez; yinelenen dosyaları, büyük dosyaları, tarayıcı önbelleklerini ve başlangıç programlarını hiç görmez. Disk Mop tam da bu boşlukları görsel disk analizi, SHA-256 yinelenen dosya tespiti ve başlangıç yöneticisiyle tek seferlik $9.90\'a dolduruyor.',
+        'Depolama Algılayıcısı, Windows 10 ve 11\'e yerleşik ücretsiz bir temizlik otomatiğidir: geçici dosyaları siler, eski geri dönüşüm kutusu öğelerini boşaltır ve isterseniz uzun süredir açılmamış indirmeleri zamanlanmış olarak temizler. Açmaya kesinlikle değer — ama diskinizi neyin doldurduğunu asla göstermez; yinelenen dosyaları, büyük dosyaları, tarayıcı önbelleklerini ve başlangıç programlarını hiç görmez. Disk Mop tam da bu boşlukları görsel disk analizi, SHA-256 yinelenen dosya tespiti ve başlangıç yöneticisiyle tek seferlik $19.90\'a dolduruyor.',
         'Bu karşılaştırmada önce Depolama Algılayıcısı\'nın gerçekte ne yaptığını ve nasıl doğru ayarlanacağını adım adım anlatacağız; ücretsiz araç, karardan önce adil bir kurulumu hak ediyor. Ardından yetersiz kaldığı noktaları dürüstçe ortaya koyup Disk Mop\'un nerede devreye girdiğini göstereceğiz.',
       ],
       diskmopPros: [
@@ -88,7 +88,7 @@ export const storageSense: Article = {
         'Sistem sağlığı skoru',
       ],
       diskmopCons: [
-        'Depolama Algılayıcısı ücretsizken $9.90 (tek seferlik)',
+        'Depolama Algılayıcısı ücretsizken $19.90 (tek seferlik)',
         'Ayrı kurulum (~80 MB), Windows\'a yerleşik değil',
         'Depolama Algılayıcısı\'ndaki OneDrive buluta aktarma özelliği yok',
       ],
@@ -138,7 +138,7 @@ export const storageSense: Article = {
           content: [
             'Disk Mop, Depolama Algılayıcısı\'nın durduğu yerden başlar: görünürlükten. Disk Analizi sürücünüzü görsel bir haritaya dönüştürür; yüzlerce gigabaytı yutan klasörler tek bakışta öne çıkar. Büyük Dosya Bulucu 500 MB üzerindeki her dosyayı listeler; Yinelenen Dosya Dedektörü ise dosyaları SHA-256 karmasıyla karşılaştırır, böylece aynı fotoğraflar, videolar ve belgeler dosya adı tahminiyle değil güvenilir biçimde bulunur.',
             'Temizlik tarafında tek tıklık Hızlandır özelliği eski indirmeleri, sistem önbelleğini, tarayıcı önbelleğini ve geri dönüşüm kutusunu tek seferde temizler. Tarayıcı temizleyici Chrome, Firefox, Edge ve Safari\'yi kapsar; eski dosyaları kategorilere ayıran özel bir İndirilenler temizleyicisi ve yerleşik DNS önbelleği temizleme de vardır. Zamanlanmış Temizlik haftalık veya aylık çalışabilir; yani Depolama Algılayıcısı\'ndaki otomatik pilot rahatlığından vazgeçmezsiniz.',
-            'Disk alanının ötesinde Başlangıç Yöneticisi otomatik başlayan programları tek anahtarla kapatmanızı sağlar, Servis Yöneticisi Windows servislerini kategorilere göre düzenler ve Sistem Sağlığı Skoru makinenin genel durumunu özetler. Tek seferlik $9.90 ömür boyu lisans hem Windows 10/11 hem macOS 12 ve üzerini kapsar; yükleyici yalnızca yaklaşık 80 MB\'tır.',
+            'Disk alanının ötesinde Başlangıç Yöneticisi otomatik başlayan programları tek anahtarla kapatmanızı sağlar, Servis Yöneticisi Windows servislerini kategorilere göre düzenler ve Sistem Sağlığı Skoru makinenin genel durumunu özetler. Tek seferlik $19.90 ömür boyu lisans hem Windows 10/11 hem macOS 12 ve üzerini kapsar; yükleyici yalnızca yaklaşık 80 MB\'tır.',
           ],
         },
         {
@@ -152,22 +152,22 @@ export const storageSense: Article = {
           title: 'Karar: Birlikte mi Kullanmalı, Yükseltmeli mi?',
           content: [
             'Bu bir ya o ya bu kararı değil. Depolama Algılayıcısı hiçbir şeye mal olmaz ve geçici dosya birikimini sessizce önler; başka ne kurarsanız kurun açık kalsın. Dosyaları çoğunlukla bulutta yaşayan hafif bir kullanıcıysanız tek başına yeterli bile olabilir.',
-            '$9.90\'lık yükseltme, alanınızın gerçekte nereye gittiğini sorduğunuz anda kendini amorti eder. Diskiniz dolmak üzereyse, yinelenen fotoğraf klasörlerinden şüpheleniyorsanız, açılış yavaş geliyorsa veya bir de Mac kullanıyorsanız Disk Mop, Depolama Algılayıcısı\'nın göremediği soruları yanıtlar. İkisini birlikte çalıştırın: günlük otomatik pilot olarak Depolama Algılayıcısı, analiz ve derin temizlik aracı olarak Disk Mop.',
+            '$19.90\'lık yükseltme, alanınızın gerçekte nereye gittiğini sorduğunuz anda kendini amorti eder. Diskiniz dolmak üzereyse, yinelenen fotoğraf klasörlerinden şüpheleniyorsanız, açılış yavaş geliyorsa veya bir de Mac kullanıyorsanız Disk Mop, Depolama Algılayıcısı\'nın göremediği soruları yanıtlar. İkisini birlikte çalıştırın: günlük otomatik pilot olarak Depolama Algılayıcısı, analiz ve derin temizlik aracı olarak Disk Mop.',
           ],
         },
       ],
       verdict: [
         'Depolama Algılayıcısı, Windows\'un sunduğu en iyi ücretsiz bakım özelliğidir; açmak iki dakika sürer ve pişman olmazsınız. Ama bu bakımdır, teşhis değil: çöpün birikmesini önler, asıl yer kaplayanlar ise görünmez kalır.',
-        'Disk Mop eksik katmanı tam olarak ekler — görsel disk analizi, SHA-256 yinelenen tespiti, büyük dosya keşfi, tarayıcı temizliği ve başlangıç kontrolü — hem Windows hem macOS\'ta geçerli tek seferlik $9.90 ömür boyu lisansla. Depolama Algılayıcısı açık kalsın; onun kaçırdıklarını görmek ve geri kazanmak istediğinizde Disk Mop\'a uzanın.',
+        'Disk Mop eksik katmanı tam olarak ekler — görsel disk analizi, SHA-256 yinelenen tespiti, büyük dosya keşfi, tarayıcı temizliği ve başlangıç kontrolü — hem Windows hem macOS\'ta geçerli tek seferlik $19.90 ömür boyu lisansla. Depolama Algılayıcısı açık kalsın; onun kaçırdıklarını görmek ve geri kazanmak istediğinizde Disk Mop\'a uzanın.',
       ],
       ctaText: 'Algılayıcının Kaçırdıklarını Görün: Disk Mop\'u Deneyin',
     },
     en: {
       title: 'Disk Mop vs Windows Storage Sense: Which Cleans More?',
-      metaDescription: 'Windows Storage Sense automates temp file cleanup for free, but it never touches duplicates, large files or startup apps. See what Disk Mop adds for $9.90.',
-      subtitle: 'Windows\' free cleanup autopilot handles the basics well — here is exactly what it never touches, and when the $9.90 upgrade pays off.',
+      metaDescription: 'Windows Storage Sense automates temp file cleanup for free, but it never touches duplicates, large files or startup apps. See what Disk Mop adds for $19.90.',
+      subtitle: 'Windows\' free cleanup autopilot handles the basics well — here is exactly what it never touches, and when the $19.90 upgrade pays off.',
       intro: [
-        'Windows Storage Sense is a free cleanup autopilot built into Windows 10 and 11: it automatically deletes temporary files, empties old Recycle Bin items and can clear long-unopened downloads on a schedule. It is absolutely worth turning on — but it never shows you what fills your drive, and it cannot find duplicate files, large files, browser caches or startup bloat. Disk Mop covers exactly those gaps with visual disk analysis, a SHA-256 duplicate detector and a startup manager for a one-time $9.90.',
+        'Windows Storage Sense is a free cleanup autopilot built into Windows 10 and 11: it automatically deletes temporary files, empties old Recycle Bin items and can clear long-unopened downloads on a schedule. It is absolutely worth turning on — but it never shows you what fills your drive, and it cannot find duplicate files, large files, browser caches or startup bloat. Disk Mop covers exactly those gaps with visual disk analysis, a SHA-256 duplicate detector and a startup manager for a one-time $19.90.',
         'In this comparison we first walk through what Storage Sense actually does and how to configure it step by step, because the free tool deserves a fair setup before any verdict. Then we look honestly at its blind spots and show where Disk Mop picks up.',
       ],
       diskmopPros: [
@@ -181,7 +181,7 @@ export const storageSense: Article = {
         'System health score',
       ],
       diskmopCons: [
-        'Costs $9.90 one-time while Storage Sense is free',
+        'Costs $19.90 one-time while Storage Sense is free',
         'Separate ~80 MB install, not built into Windows',
         'No OneDrive online-only offloading like Storage Sense',
       ],
@@ -231,7 +231,7 @@ export const storageSense: Article = {
           content: [
             'Disk Mop starts where Storage Sense stops: with visibility. Its Disk Analysis turns your drive into a visual map, so the folders swallowing hundreds of gigabytes stand out at a glance. The Large File Finder lists every file over 500 MB, and the Duplicate Detector compares files by SHA-256 hash, so identical photos, videos and documents are found reliably instead of by filename guessing.',
             'On the cleaning side, the one-click Speed Up clears old downloads, system cache, browser cache and the recycle bin in a single pass. The browser cleaner covers Chrome, Firefox, Edge and Safari, a dedicated Downloads cleaner categorizes old files, and a DNS cache flush is built in. Scheduled Cleanup can run weekly or monthly, so you keep the autopilot convenience you had with Storage Sense.',
-            'Beyond disk space, the Startup Manager lets you toggle autostart programs off with a switch, the Service Manager organizes Windows services by category, and a System Health Score summarizes the overall state of the machine. One $9.90 lifetime license covers both Windows 10/11 and macOS 12 or newer, and the installer is only about 80 MB.',
+            'Beyond disk space, the Startup Manager lets you toggle autostart programs off with a switch, the Service Manager organizes Windows services by category, and a System Health Score summarizes the overall state of the machine. One $19.90 lifetime license covers both Windows 10/11 and macOS 12 or newer, and the installer is only about 80 MB.',
           ],
         },
         {
@@ -245,13 +245,13 @@ export const storageSense: Article = {
           title: 'Verdict: Use Both, or Upgrade?',
           content: [
             'This is not an either-or decision. Storage Sense costs nothing and quietly prevents temp file buildup, so leave it on regardless of what else you install. If you are a light user whose files mostly live in the cloud, Storage Sense alone may genuinely be enough.',
-            'The $9.90 upgrade pays off the moment you ask where your space actually went. If your drive is nearly full, if you suspect duplicate photo folders, if startup feels slow, or if you also use a Mac, Disk Mop answers questions Storage Sense cannot even see. Run both: Storage Sense as the daily autopilot, Disk Mop as the analysis and deep-clean tool.',
+            'The $19.90 upgrade pays off the moment you ask where your space actually went. If your drive is nearly full, if you suspect duplicate photo folders, if startup feels slow, or if you also use a Mac, Disk Mop answers questions Storage Sense cannot even see. Run both: Storage Sense as the daily autopilot, Disk Mop as the analysis and deep-clean tool.',
           ],
         },
       ],
       verdict: [
         'Storage Sense is the best free maintenance feature Windows ships with, and turning it on takes two minutes you will not regret. But it is maintenance, not diagnosis: it keeps trash from piling up while the real space consumers stay invisible.',
-        'Disk Mop adds exactly the missing layer — visual disk analysis, SHA-256 duplicate detection, large file discovery, browser cleaning and startup control — for a one-time $9.90 lifetime license on both Windows and macOS. Keep Storage Sense on, and reach for Disk Mop when you want to see and reclaim what it misses.',
+        'Disk Mop adds exactly the missing layer — visual disk analysis, SHA-256 duplicate detection, large file discovery, browser cleaning and startup control — for a one-time $19.90 lifetime license on both Windows and macOS. Keep Storage Sense on, and reach for Disk Mop when you want to see and reclaim what it misses.',
       ],
       ctaText: 'See What Storage Sense Misses: Try Disk Mop',
     },
@@ -260,7 +260,7 @@ export const storageSense: Article = {
       metaDescription: 'Die Windows Speicheroptimierung löscht temporäre Dateien gratis und automatisch, findet aber keine Duplikate oder großen Dateien. Das ergänzt Disk Mop.',
       subtitle: 'Der kostenlose Aufräum-Autopilot von Windows erledigt die Basics zuverlässig — aber vieles auf Ihrer Festplatte bleibt für ihn unsichtbar.',
       intro: [
-        'Die Speicheroptimierung (Storage Sense) ist der kostenlose Aufräum-Autopilot von Windows 10 und 11: Sie löscht temporäre Dateien, leert alte Papierkorb-Einträge und räumt auf Wunsch den Downloads-Ordner nach Zeitplan auf. Einschalten lohnt sich — aber sie zeigt nie, was die Festplatte füllt, und findet weder Duplikate noch große Dateien, Browser-Caches oder Autostart-Programme. Genau diese Lücken schließt Disk Mop für einmalig $9.90.',
+        'Die Speicheroptimierung (Storage Sense) ist der kostenlose Aufräum-Autopilot von Windows 10 und 11: Sie löscht temporäre Dateien, leert alte Papierkorb-Einträge und räumt auf Wunsch den Downloads-Ordner nach Zeitplan auf. Einschalten lohnt sich — aber sie zeigt nie, was die Festplatte füllt, und findet weder Duplikate noch große Dateien, Browser-Caches oder Autostart-Programme. Genau diese Lücken schließt Disk Mop für einmalig $19.90.',
         'Dieser Vergleich zeigt zuerst, was die Speicheroptimierung gut macht und wie Sie sie richtig einrichten. Danach geht es ehrlich um ihre Grenzen und darum, wann sich das Upgrade wirklich auszahlt.',
       ],
       diskmopPros: [
@@ -274,7 +274,7 @@ export const storageSense: Article = {
         'Systemgesundheits-Score',
       ],
       diskmopCons: [
-        'Kostet $9.90 (einmalig), die Speicheroptimierung ist gratis',
+        'Kostet $19.90 (einmalig), die Speicheroptimierung ist gratis',
         'Separate Installation (~80 MB), nicht in Windows integriert',
         'Keine OneDrive-Auslagerung wie bei der Speicheroptimierung',
       ],
@@ -323,7 +323,7 @@ export const storageSense: Article = {
           content: [
             'Disk Mop beginnt mit Sichtbarkeit: Die Festplattenanalyse zeigt das Laufwerk als visuelle Karte, der Große-Dateien-Finder listet alles über 500 MB, und der Duplikatfinder vergleicht Dateien per SHA-256-Hash — zuverlässig statt nach Dateinamen geraten.',
             'Die Ein-Klick-Beschleunigung räumt alte Downloads, System-Cache, Browser-Cache und Papierkorb in einem Durchgang auf. Der Browser-Reiniger deckt Chrome, Firefox, Edge und Safari ab; dazu kommen ein Downloads-Reiniger, DNS-Cache-Bereinigung und geplante wöchentliche oder monatliche Läufe.',
-            'Darüber hinaus schaltet der Autostart-Manager Programme per Schalter ab, der Dienst-Manager ordnet Windows-Dienste nach Kategorien, und ein Systemgesundheits-Score fasst den Zustand des Rechners zusammen. Eine Lizenz für einmalig $9.90 gilt lebenslang für Windows 10/11 und macOS 12+.',
+            'Darüber hinaus schaltet der Autostart-Manager Programme per Schalter ab, der Dienst-Manager ordnet Windows-Dienste nach Kategorien, und ein Systemgesundheits-Score fasst den Zustand des Rechners zusammen. Eine Lizenz für einmalig $19.90 gilt lebenslang für Windows 10/11 und macOS 12+.',
           ],
         },
         {
@@ -337,13 +337,13 @@ export const storageSense: Article = {
           title: 'Fazit: Beide nutzen oder upgraden?',
           content: [
             'Das ist keine Entweder-oder-Frage. Die Speicheroptimierung kostet nichts und verhindert still die Ansammlung temporärer Dateien — lassen Sie sie in jedem Fall aktiviert. Für leichte Nutzer mit Dateien vor allem in der Cloud reicht sie unter Umständen sogar aus.',
-            'Das Upgrade für $9.90 lohnt sich, sobald Sie wissen wollen, wohin Ihr Speicherplatz wirklich verschwunden ist. Bei fast voller Festplatte, doppelten Fotoordnern, langsamem Systemstart oder einem zusätzlichen Mac beantwortet Disk Mop Fragen, die die Speicheroptimierung nicht einmal sehen kann. Nutzen Sie beide zusammen: die Speicheroptimierung als täglichen Autopiloten, Disk Mop als Analyse- und Tiefenreinigungswerkzeug.',
+            'Das Upgrade für $19.90 lohnt sich, sobald Sie wissen wollen, wohin Ihr Speicherplatz wirklich verschwunden ist. Bei fast voller Festplatte, doppelten Fotoordnern, langsamem Systemstart oder einem zusätzlichen Mac beantwortet Disk Mop Fragen, die die Speicheroptimierung nicht einmal sehen kann. Nutzen Sie beide zusammen: die Speicheroptimierung als täglichen Autopiloten, Disk Mop als Analyse- und Tiefenreinigungswerkzeug.',
           ],
         },
       ],
       verdict: [
         'Die Speicheroptimierung ist die beste kostenlose Wartungsfunktion von Windows — das Einschalten dauert zwei Minuten und lohnt sich immer. Aber sie wartet nur, sie diagnostiziert nicht: Die echten Platzfresser bleiben unsichtbar.',
-        'Disk Mop ergänzt genau die fehlende Ebene — visuelle Analyse, SHA-256-Duplikaterkennung, große Dateien, Browser-Reinigung und Autostart-Kontrolle — für einmalig $9.90 mit lebenslanger Lizenz auf Windows und macOS. Lassen Sie die Speicheroptimierung an und greifen Sie zu Disk Mop, wenn Sie sehen wollen, was sie übersieht.',
+        'Disk Mop ergänzt genau die fehlende Ebene — visuelle Analyse, SHA-256-Duplikaterkennung, große Dateien, Browser-Reinigung und Autostart-Kontrolle — für einmalig $19.90 mit lebenslanger Lizenz auf Windows und macOS. Lassen Sie die Speicheroptimierung an und greifen Sie zu Disk Mop, wenn Sie sehen wollen, was sie übersieht.',
       ],
       ctaText: 'Sehen, was die Speicheroptimierung übersieht: Disk Mop testen',
     },
