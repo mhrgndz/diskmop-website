@@ -1,7 +1,15 @@
+/**
+ * Karsilastirma tablosu hucresi.
+ * Duz string  = dile bagimsiz deger ('✓', '✗', 'SHA-256' gibi) — cevrilmez.
+ * Record      = dil basina metin ('$19.90 (tek seferlik)' gibi ceviri isteyenler).
+ * Cozumleme: value[locale] || value['en'] (blog detay sayfasindaki localizedCell).
+ */
+export type LocalizedText = string | Record<string, string>;
+
 export interface ComparisonRow {
   feature: Record<string, string>;
-  diskmop: string;
-  competitor: string;
+  diskmop: LocalizedText;
+  competitor: LocalizedText;
   winner: 'diskmop' | 'competitor' | 'tie';
 }
 

@@ -20,6 +20,16 @@ import {
   HelpCircle,
 } from 'lucide-react';
 
+// Karsilastirma tablosu hucresi: duz string dile bagimsizdir ('✓', '✗'),
+// Record ise dil basina metindir. Eksik dilde EN'e duser.
+function localizedCell(
+  value: import('@/content/types').LocalizedText,
+  locale: string
+): string {
+  if (typeof value === 'string') return value;
+  return value[locale] || value['en'] || '';
+}
+
 export function generateStaticParams() {
   const slugs = getAllSlugs();
   return routing.locales.flatMap((locale) =>
@@ -287,7 +297,7 @@ export default async function ArticlePage({
                           : 'text-muted-foreground'
                       }`}
                     >
-                      {row.diskmop}
+                      {localizedCell(row.diskmop, locale)}
                     </td>
                     <td
                       className={`p-4 text-center ${
@@ -296,7 +306,7 @@ export default async function ArticlePage({
                           : 'text-muted-foreground'
                       }`}
                     >
-                      {row.competitor}
+                      {localizedCell(row.competitor, locale)}
                     </td>
                   </tr>
                 ))}
