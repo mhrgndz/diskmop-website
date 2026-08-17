@@ -36,8 +36,20 @@ import { diskSpaceForGaming } from './disk-space-for-gaming';
 import { autoEmptyRecycleBin } from './auto-empty-recycle-bin';
 import { cleanMyPc } from './cleanmypc';
 import { macKeeper } from './mackeeper';
+import { isItSafeToDeleteWindowsFiles } from './is-it-safe-to-delete-windows-files';
+import { howMuchFreeDiskSpaceDoINeed } from './how-much-free-disk-space-do-i-need';
+import { onedriveTakingUpSpace } from './onedrive-taking-up-space';
+import { windowsUpdateNotEnoughSpace } from './windows-update-not-enough-space';
+import { ssdHealthCheckWindows } from './ssd-health-check-windows';
+import { macPurgeableSpaceLocalSnapshots } from './mac-purgeable-space-local-snapshots';
 
 export const articles: Article[] = [
+  isItSafeToDeleteWindowsFiles,
+  howMuchFreeDiskSpaceDoINeed,
+  windowsUpdateNotEnoughSpace,
+  ssdHealthCheckWindows,
+  onedriveTakingUpSpace,
+  macPurgeableSpaceLocalSnapshots,
   macKeeper,
   cleanMyPc,
   autoEmptyRecycleBin,

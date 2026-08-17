@@ -451,7 +451,9 @@
     "ctaSubtitle": "一回のお支払いですべての機能に永久アクセス。サブスクリプションや隠れた料金はありません。",
     "relatedArticles": "関連記事",
     "backToBlog": "ブログに戻る",
-    "guide": "ガイド"
+    "guide": "ガイド",
+    "keyTakeaways": "要点",
+    "faq": "よくある質問"
   },
   "notFound": {
     "title": "ページが見つかりません",

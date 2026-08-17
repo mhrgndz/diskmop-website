@@ -16,6 +16,8 @@ import {
   ChevronRight,
   ArrowRight,
   Download,
+  ListChecks,
+  HelpCircle,
 } from 'lucide-react';
 
 export function generateStaticParams() {
@@ -86,23 +88,78 @@ export default async function ArticlePage({
 
   const related = articles.filter((a) => a.slug !== slug).slice(0, 3);
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: content.title,
-    description: content.metaDescription,
-    datePublished: article.date,
-    author: { '@type': 'Organization', name: 'Disk Mop' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Disk Mop',
-      logo: { '@type': 'ImageObject', url: 'https://diskmop.com/brand/icon.png' },
+  const baseUrl = 'https://diskmop.com';
+  const articleUrl = `${baseUrl}${locale === 'en' ? '' : `/${locale}`}/blog/${slug}`;
+
+  // AI arama motorlari (AI Overviews, ChatGPT, Perplexity) sayfayi parca parca
+  // alintilar; her parcayi ayri bir schema.org dugumu olarak yayinliyoruz.
+  const graph: Record<string, unknown>[] = [
+    {
+      '@type': 'Article',
+      '@id': `${articleUrl}#article`,
+      headline: content.title,
+      description: content.metaDescription,
+      datePublished: article.date,
+      dateModified: article.updated || article.date,
+      inLanguage: locale,
+      image: `${baseUrl}/brand/icon.png`,
+      author: { '@type': 'Organization', name: 'Disk Mop', url: baseUrl },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Disk Mop',
+        logo: { '@type': 'ImageObject', url: `${baseUrl}/brand/icon.png` },
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
     },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://diskmop.com${locale === 'en' ? '' : `/${locale}`}/blog/${slug}`,
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${articleUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Disk Mop',
+          item: `${baseUrl}${locale === 'en' ? '/' : `/${locale}`}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: `${baseUrl}${locale === 'en' ? '' : `/${locale}`}/blog`,
+        },
+        { '@type': 'ListItem', position: 3, name: content.title, item: articleUrl },
+      ],
     },
-  };
+  ];
+
+  if (content.faq && content.faq.length > 0) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${articleUrl}#faq`,
+      mainEntity: content.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    });
+  }
+
+  if (content.howTo && content.howTo.steps.length > 0) {
+    graph.push({
+      '@type': 'HowTo',
+      '@id': `${articleUrl}#howto`,
+      name: content.howTo.name,
+      ...(content.howTo.totalTime ? { totalTime: content.howTo.totalTime } : {}),
+      step: content.howTo.steps.map((step, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    });
+  }
+
+  const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
 
   return (
     <>
@@ -162,6 +219,29 @@ export default async function ArticlePage({
             </p>
           ))}
         </section>
+
+        {/* Key takeaways — kendi kendine yeten, alintilanabilir cevap cumleleri */}
+        {content.keyTakeaways && content.keyTakeaways.length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h2 className="flex items-center gap-2 text-lg font-bold text-foreground mb-4">
+                <ListChecks className="h-5 w-5 text-brand-600 dark:text-brand-400" />
+                {t('keyTakeaways')}
+              </h2>
+              <ul className="space-y-3">
+                {content.keyTakeaways.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 text-foreground/80 leading-relaxed"
+                  >
+                    <Check className="h-4 w-4 text-brand-600 dark:text-brand-400 mt-1 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* Comparison Table (only for comparison articles) */}
         {article.comparison && article.comparison.length > 0 && (
@@ -320,6 +400,32 @@ export default async function ArticlePage({
             </div>
           ))}
         </section>
+
+        {/* FAQ — FAQPage JSON-LD ile ayni icerik, AI motorlari icin dogrudan
+            alintilanabilir soru-cevap ciftleri */}
+        {content.faq && content.faq.length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground mb-6">
+              <HelpCircle className="h-6 w-6 text-brand-600 dark:text-brand-400" />
+              {t('faq')}
+            </h2>
+            <div className="space-y-4">
+              {content.faq.map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-border bg-card p-5"
+                >
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {item.question}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Verdict */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">

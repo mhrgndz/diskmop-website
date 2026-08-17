@@ -451,7 +451,9 @@
     "ctaSubtitle": "Paiement unique pour un accès à vie à toutes les fonctionnalités. Pas d'abonnement, pas de frais cachés.",
     "relatedArticles": "Articles connexes",
     "backToBlog": "Retour au blog",
-    "guide": "Guide"
+    "guide": "Guide",
+    "keyTakeaways": "À retenir",
+    "faq": "Questions fréquentes"
   },
   "notFound": {
     "title": "Page introuvable",
