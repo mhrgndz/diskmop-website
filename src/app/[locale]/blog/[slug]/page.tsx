@@ -91,6 +91,11 @@ export default async function ArticlePage({
   const baseUrl = 'https://diskmop.com';
   const articleUrl = `${baseUrl}${locale === 'en' ? '' : `/${locale}`}/blog/${slug}`;
 
+  // Cogu makale yalnizca tr/en/de icerir; kalan diller EN'e duser. O sayfalarda
+  // govde Ingilizce oldugu icin inLanguage'i URL diliyle degil, GERCEKTEN
+  // basilan icerigin diliyle bildiriyoruz.
+  const contentLanguage = article.content[locale] ? locale : 'en';
+
   // AI arama motorlari (AI Overviews, ChatGPT, Perplexity) sayfayi parca parca
   // alintilar; her parcayi ayri bir schema.org dugumu olarak yayinliyoruz.
   const graph: Record<string, unknown>[] = [
@@ -101,7 +106,7 @@ export default async function ArticlePage({
       description: content.metaDescription,
       datePublished: article.date,
       dateModified: article.updated || article.date,
-      inLanguage: locale,
+      inLanguage: contentLanguage,
       image: `${baseUrl}/brand/icon.png`,
       author: { '@type': 'Organization', name: 'Disk Mop', url: baseUrl },
       publisher: {
