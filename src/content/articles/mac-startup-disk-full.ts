@@ -167,8 +167,8 @@ export const macStartupDiskFull: Article = {
         {
           title: 'Was die Meldung \'Dein Startvolume ist fast voll\' wirklich bedeutet',
           content: [
-            'Das Startvolume ist das Laufwerk, auf dem macOS läuft — auf den meisten Macs das interne Volume Macintosh HD. Die Warnung erscheint, wenn der freie Speicherplatz dort kritisch niedrig wird. Das System signalisiert damit, dass es kaum noch Spielraum zum Arbeiten hat.',
-            'macOS lagert bei vollem Arbeitsspeicher Daten auf die Festplatte aus, schreibt temporäre Dateien und lädt große Updates herunter. Ist Macintosh HD voll, werden Apps langsam, Dateien lassen sich nicht speichern und Updates scheitern.',
+            'Das Startvolume ist das Laufwerk, auf dem macOS läuft — auf den meisten Macs das interne Volume Macintosh HD. Die Warnung erscheint, wenn der freie Speicherplatz dort kritisch niedrig wird. Das ist kein bloßer Hinweis: macOS signalisiert damit, dass es mit dem verbliebenen Platz kaum noch arbeiten kann.',
+            'macOS benötigt im laufenden Betrieb durchgehend freien Speicherplatz. Es lagert bei vollem Arbeitsspeicher Daten auf die Festplatte aus, schreibt temporäre Dateien für Apps und lädt große Systemupdates herunter. Ist Macintosh HD voll, werden Apps langsam oder hängen sich auf, Dateien lassen sich nicht mehr speichern und Updates scheitern.',
             'Als Faustregel sollten mindestens 10-15 % des Startvolumes frei bleiben. Ein Teil des belegten Speichers wird als \'löschbar\' angezeigt — Daten wie lokale Kopien von iCloud-Dateien, die das System bei Bedarf selbst entfernt. Ziel dieser Anleitung ist, Sie deutlich über diese Sicherheitsmarge zu bringen.',
           ],
         },
@@ -176,14 +176,14 @@ export const macStartupDiskFull: Article = {
           title: 'Speicherbelegung in den macOS-Einstellungen prüfen',
           content: [
             'Bevor Sie etwas löschen, prüfen Sie, was den Platz belegt. Unter macOS Ventura und neuer öffnen Sie das Apple-Menü, wählen Systemeinstellungen, dann Allgemein und Speicher. Unter macOS Monterey wählen Sie im Apple-Menü Über diesen Mac, klicken auf Speicher und dann auf Verwalten.',
-            'Ein farbiger Balken teilt die Belegung in Kategorien wie Apps, Dokumente, Fotos und Systemdaten auf. Darunter bietet macOS eigene Empfehlungen an: Dateien in iCloud speichern, den Speicher durch Entfernen gesehener Filme und Sendungen optimieren und den Papierkorb automatisch leeren — schnell aktiviert und oft schon spürbar wirksam.',
+            'Ein farbiger Balken teilt die Belegung in Kategorien wie Apps, Dokumente, Fotos und Systemdaten auf. Darunter bietet macOS eigene Empfehlungen an: Dateien in iCloud speichern, den Speicher durch Entfernen gesehener Filme und Sendungen optimieren und den Papierkorb automatisch leeren. Das ist in Sekunden aktiviert und kann Platz zurückholen, ohne dass etwas gelöscht wird, das Ihnen wichtig ist.',
             'Die Übersicht hat jedoch Grenzen: Kategorien wie Systemdaten können Dutzende Gigabyte umfassen, ohne zu verraten, was darin steckt, und ein Blick in einzelne Ordner ist nicht möglich. Genau hier setzen die manuellen Schritte der nächsten Abschnitte — oder ein spezialisiertes Analysewerkzeug — an.',
           ],
         },
         {
           title: 'Papierkorb entleeren und den Downloads-Ordner aufräumen',
           content: [
-            'Gelöschte Dateien belegen weiter Platz auf dem Startvolume, bis der Papierkorb geleert wird. Klicken Sie mit gedrückter Ctrl-Taste auf das Papierkorb-Symbol im Dock und wählen Sie die Option zum Entleeren. In den Finder-Einstellungen unter Erweitert können Sie zudem festlegen, dass Objekte nach 30 Tagen automatisch entfernt werden.',
+            'Gelöschte Dateien belegen weiter Platz auf dem Startvolume, bis der Papierkorb geleert wird. Klicken Sie mit gedrückter Ctrl-Taste auf das Papierkorb-Symbol im Dock und wählen Sie die Option zum Entleeren, oder öffnen Sie den Papierkorb im Finder und klicken Sie auf Entleeren. Soll macOS das für Sie übernehmen, können Sie in den Finder-Einstellungen unter Erweitert festlegen, dass Objekte nach 30 Tagen automatisch entfernt werden.',
             'Der Downloads-Ordner ist der andere Klassiker. Öffnen Sie ihn im Finder über das Menü Gehe zu und Downloads (Option-Command-L), sortieren Sie in der Listendarstellung nach Größe und löschen Sie alte .dmg-Images, Installer und .zip-Archive — die installierten Apps bleiben davon unberührt.',
             'Disk Mop automatisiert beides ab macOS 12: Der Downloads Cleaner kategorisiert alte Dateien im Downloads-Ordner für die Massenbereinigung, und die Ein-Klick-Funktion Speed Up leert alte Downloads, Caches und den Papierkorb in einem Durchgang.',
           ],
@@ -193,28 +193,28 @@ export const macStartupDiskFull: Article = {
           content: [
             'Wenige vergessene Riesendateien belegen oft mehr Platz als tausende kleine. Öffnen Sie ein Finder-Fenster, drücken Sie Command-F, stellen Sie die Suche auf Diesen Mac und filtern Sie über das Kriterium Dateigröße (falls nicht sichtbar, über Andere hinzufügen) nach Dateien über 500 MB. Alte Videoexporte, virtuelle Maschinen und Backup-Archive sind typische Kandidaten.',
             'Duplikate sind von Hand schwer zu finden, weil Kopien oft andere Namen tragen und in verschiedenen Ordnern liegen. Ein doppelt exportiertes Foto oder ein \'sicherheitshalber\' kopierter Projektordner verschwendet auf einem vollen Macintosh HD schnell etliche Gigabyte.',
-            'Hier zeigt Disk Mop seine Stärken: Die Festplattenanalyse (Disk Analysis) stellt das Startvolume als visuelle Treemap dar, sodass die größten Ordner sofort ins Auge springen. Der Große-Dateien-Finder listet alles über 500 MB auf, und der Duplikat-Detektor vergleicht Dateiinhalte per SHA-256-Hash — so löschen Sie echte Kopien statt bloß ähnlich benannter Dateien.',
+            'Hier zeigt Disk Mop seine Stärken: Die Festplattenanalyse (Disk Analysis) stellt das Startvolume als visuelle Treemap dar, sodass die größten Ordner sofort ins Auge springen. Der Große-Dateien-Finder listet alles über 500 MB auf, und der Duplikat-Detektor vergleicht Dateiinhalte per SHA-256-Hash und findet identische Fotos, Videos und Dokumente — so löschen Sie echte Kopien statt bloß ähnlich benannter Dateien.',
           ],
         },
         {
           title: 'App- und Browser-Caches sicher leeren',
           content: [
             'Apps und Browser legen Caches an, die still auf viele Gigabyte anwachsen können. Öffnen Sie im Finder das Menü Gehe zu, dann Gehe zum Ordner (Shift-Command-G), und geben Sie ~/Library/Caches ein. Den Inhalt von Cache-Ordnern bekannter Apps können Sie gefahrlos löschen — die Apps bauen ihn neu auf. Lassen Sie unbekannte Ordner jedoch unangetastet.',
-            'In Safari entfernen Sie gespeicherte Website-Daten unter Einstellungen im Bereich Datenschutz über die Verwaltung der Website-Daten; Chrome und Firefox bieten Ähnliches in ihren Einstellungen zum Löschen von Browserdaten. Beachten Sie, dass Sie sich danach bei manchen Websites neu anmelden müssen.',
-            'Wer nicht im Library-Ordner wühlen möchte: Disk Mops Cache Cleaner scannt System- und App-Caches und zeigt, was sicher entfernt werden kann; der Browser Cache Cleaner deckt Safari, Chrome, Firefox und Edge an einer Stelle ab.',
+            'Browser verwalten ihren Speicher selbst. In Safari entfernen Sie gespeicherte Website-Daten unter Einstellungen im Bereich Datenschutz über die Verwaltung der Website-Daten; Chrome und Firefox bieten Ähnliches in ihren Einstellungen zum Löschen von Browserdaten. Beachten Sie, dass Sie sich danach bei manchen Websites neu anmelden müssen.',
+            'Wer nicht im Library-Ordner wühlen möchte: Disk Mops Cache Cleaner scannt System- und App-Caches und zeigt, was sicher entfernt werden kann; der Browser Cache Cleaner deckt Safari, Chrome, Firefox und Edge an einer Stelle ab, sodass Sie den Cache auf dem Mac leeren können, ohne sich durch die Menüs jedes einzelnen Browsers zu klicken.',
           ],
         },
         {
           title: 'Dateien in iCloud oder auf eine externe Festplatte auslagern',
           content: [
             'Manche Dateien sind es wert, behalten zu werden, müssen aber nicht auf dem Startvolume liegen. Aktivieren Sie in den Speichereinstellungen die iCloud-Option, damit ältere Dateien und Fotos in voller Auflösung in der Cloud liegen und auf dem Mac nur Platzhalter bleiben. Der kostenlose iCloud-Speicher ist klein; größere Bibliotheken erfordern einen bezahlten iCloud+-Tarif.',
-            'Eine externe SSD oder Festplatte ist die Alternative mit Einmalkosten. Verschieben Sie speicherhungrige Ordner wie Videoprojekte oder alte Fotoarchive, prüfen Sie die Kopien, löschen Sie dann die Originale und leeren Sie den Papierkorb. Für unersetzliche Daten empfiehlt sich zusätzlich ein Time-Machine-Backup auf einem separaten Laufwerk.',
+            'Eine externe SSD oder Festplatte ist die Alternative mit Einmalkosten. Verschieben Sie speicherhungrige Ordner wie Videoprojekte oder alte Fotoarchive, prüfen Sie die Kopien, löschen Sie dann die Originale und leeren Sie den Papierkorb. Von unersetzlichen Daten sollten Sie stets eine zweite Kopie behalten — ein Time-Machine-Backup auf einem separaten Laufwerk ist dafür die einfachste Absicherung.',
           ],
         },
         {
           title: 'Das Startvolume automatisch schlank halten',
           content: [
-            'Einmal Platz zu schaffen ist gut — ihn frei zu halten ist besser. Aktivieren Sie das automatische Leeren des Papierkorbs, sehen Sie den Downloads-Ordner monatlich durch und werfen Sie regelmäßig einen Blick auf die Speicherübersicht.',
+            'Einmal Platz zu schaffen ist gut — ihn frei zu halten ist besser. Aktivieren Sie das automatische Leeren des Papierkorbs, sehen Sie den Downloads-Ordner monatlich durch und werfen Sie einen Blick auf die Speicherübersicht, sobald der freie Platz knapp wird. Diese kleinen Gewohnheiten verhindern den Schreckmoment, in dem die Warnung mitten in einem Projekt plötzlich auftaucht.',
             'Disk Mop ist genau für diese Pflege gebaut: Die geplante Bereinigung (Scheduled Cleanup) räumt wöchentlich oder monatlich automatisch Caches, alte Downloads und den Papierkorb auf, und der System Health Score zeigt den Zustand Ihres Macs auf einen Blick.',
             'Mit einer festen Routine gehört die Warnung der Vergangenheit an: Ihr Mac behält stets genug freien Platz für Speicherauslagerung und Updates, und Sie müssen nie wieder in Eile Dutzende Gigabyte freiräumen.',
           ],
@@ -222,9 +222,374 @@ export const macStartupDiskFull: Article = {
       ],
       verdict: [
         'Die Warnung vor dem fast vollen Startvolume heißt schlicht: Macintosh HD braucht Luft. Papierkorb entleeren, Downloads aufräumen, große Dateien und Duplikate löschen, Caches leeren und selten Genutztes auslagern — all das gelingt mit macOS-Bordmitteln und etwas Geduld.',
-        'Disk Mop bündelt die komplette Checkliste ab macOS 12 in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Downloads Cleaner, Cache-Bereinigung und geplante Bereinigung halten das Startvolume dauerhaft schlank. Der Download ist mit eingeschränkten Funktionen kostenlos; die einmalige Zahlung von $19.90 schaltet mit lebenslanger Lizenz alle Funktionen frei.',
+        'Disk Mop bündelt die komplette Checkliste ab macOS 12 in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Downloads Cleaner, Cache-Bereinigung und geplante Bereinigung halten das Startvolume dauerhaft schlank. Der Download ist mit eingeschränkten Funktionen kostenlos; die einmalige Zahlung von 19,90 $ schaltet mit lebenslanger Lizenz alle Funktionen frei.',
       ],
       ctaText: 'Schaffen Sie mit Disk Mop Platz auf Ihrem Mac',
+    },
+    fr: {
+      title: "Disque de démarrage presque plein sur Mac : comment y remédier",
+      metaDescription:
+        "Votre Mac affiche « Votre disque de démarrage est presque plein » ? Comprenez l'alerte et libérez de l'espace avec les outils macOS et Disk Mop, pas à pas.",
+      subtitle: "Le guide pas à pas pour libérer de l'espace disque sur votre Mac",
+      intro: [
+        "L'alerte « Votre disque de démarrage est presque plein » signifie que le disque sur lequel votre Mac démarre — en général le volume interne nommé Macintosh HD — n'a presque plus d'espace libre. Pour y remédier : videz la Corbeille, faites le ménage dans le dossier Téléchargements, supprimez les fichiers volumineux et les doublons, effacez les caches et déplacez vers iCloud ou un disque externe les fichiers dont vous vous servez rarement. Récupérer ne serait-ce que 10 à 20 Go suffit généralement à faire disparaître le message.",
+        "macOS a besoin en permanence d'espace libre pour fonctionner correctement : il transfère la mémoire sur le disque lorsque la RAM sature, écrit des fichiers temporaires pour les applications et télécharge des mises à jour système qui pèsent plusieurs gigaoctets. Quand le disque est plein, les apps ralentissent, les fichiers refusent de s'enregistrer et les mises à jour s'interrompent en cours de route.",
+        "Dans ce guide, nous allons d'abord libérer de l'espace étape par étape avec les outils de stockage intégrés à macOS, puis voir comment Disk Mop réunit le même travail dans une seule application, sous macOS 12 et versions ultérieures.",
+      ],
+      sections: [
+        {
+          title: "Ce que signifie vraiment l'alerte « disque de démarrage presque plein »",
+          content: [
+            "Votre disque de démarrage est le volume depuis lequel votre Mac exécute macOS : sur la plupart des machines, il s'agit du volume interne nommé Macintosh HD. L'alerte apparaît dès que l'espace libre de ce volume passe sous un seuil critique. Ce n'est pas une simple suggestion : macOS vous prévient qu'il parvient à peine à travailler avec ce qu'il lui reste.",
+            "macOS a besoin d'espace libre en continu pendant qu'il tourne. Il transfère les données de la mémoire sur le disque quand la RAM est saturée, écrit des fichiers temporaires pour les applications et télécharge de volumineuses mises à jour système. Lorsque Macintosh HD est plein, vous constatez des applications qui ralentissent ou se figent, des fichiers impossibles à enregistrer et des mises à jour qui refusent de s'installer.",
+            "En règle générale, visez au moins 10 à 15 % d'espace libre sur votre disque de démarrage. Il est par ailleurs normal que macOS annonce une partie de l'espace comme purgeable : ce sont des données, comme les copies locales de fichiers iCloud, que le système peut supprimer de lui-même en cas de besoin. L'objectif de ce guide est de vous faire repasser confortablement au-dessus de cette marge de sécurité.",
+          ],
+        },
+        {
+          title: "Vérifiez ce qui occupe le stockage dans les réglages de macOS",
+          content: [
+            "Avant de supprimer quoi que ce soit, identifiez ce qui prend réellement de la place. Sous macOS Ventura et versions ultérieures, ouvrez le menu Pomme, choisissez Réglages Système, allez dans Général et cliquez sur Stockage. Sous macOS Monterey, ouvrez le menu Pomme, choisissez « À propos de ce Mac », passez à l'onglet Stockage et appuyez sur Gérer.",
+            "Une barre colorée répartit alors votre utilisation en catégories : Applications, Documents, Photos, Données système, etc. En dessous, macOS propose ses propres recommandations : stocker les fichiers dans iCloud, optimiser le stockage en supprimant les films et séries déjà regardés, et vider automatiquement la Corbeille. Activer ces options prend quelques secondes et peut récupérer de l'espace sans effacer quoi que ce soit qui compte pour vous.",
+            "Cette vue d'ensemble est un bon point de départ, mais elle a ses limites. Des catégories comme Données système peuvent représenter des dizaines de gigaoctets sans jamais expliquer ce qu'elles contiennent, et rien ne permet de descendre dans les dossiers pour voir où l'espace est vraiment passé. C'est là qu'interviennent les manipulations manuelles des sections suivantes — ou un analyseur de disque dédié.",
+          ],
+        },
+        {
+          title: "Videz la Corbeille et faites le ménage dans le dossier Téléchargements",
+          content: [
+            "Les fichiers que vous supprimez ne disparaissent pas tant que la Corbeille n'est pas vidée : entre-temps, ils continuent d'occuper votre disque de démarrage. Cliquez sur l'icône de la Corbeille dans le Dock en maintenant la touche Contrôle et choisissez de la vider, ou ouvrez la Corbeille dans le Finder et cliquez sur Vider. Si vous préférez que macOS s'en charge, ouvrez les réglages du Finder, allez dans l'onglet Avancé et activez l'option qui supprime les éléments de la Corbeille au bout de 30 jours.",
+            "Le dossier Téléchargements est l'autre grand dévoreur d'espace. Dans le Finder, ouvrez le menu Aller puis Téléchargements (ou appuyez sur Option-Command-L), passez en présentation par liste et triez par taille. Les anciennes images disque (.dmg), les programmes d'installation (.pkg) et les archives .zip dont vous vous êtes servi il y a longtemps peuvent en général partir immédiatement : les applications qu'ils ont installées ne sont pas affectées.",
+            "Disk Mop automatise ces deux tâches sous macOS 12 et versions ultérieures. Son nettoyeur de téléchargements (Downloads Cleaner) classe par catégorie les vieux fichiers qui traînent dans le dossier Téléchargements pour que vous les effaciez en bloc, et sa fonction Accélérer (Speed Up) nettoie en un clic les anciens téléchargements, les caches et la Corbeille en une seule passe.",
+          ],
+        },
+        {
+          title: "Trouvez et supprimez les fichiers volumineux et les doublons",
+          content: [
+            "Une poignée de gros fichiers oubliés occupe souvent plus de place que des milliers de petits. Pour les débusquer à la main, ouvrez une fenêtre du Finder, appuyez sur Command-F, réglez la recherche sur Ce Mac et ajoutez un critère de taille de fichier (choisissez Autre dans la liste des critères s'il n'apparaît pas) afin de chercher les fichiers de plus de 500 Mo. Anciens exports vidéo, disques de machines virtuelles et archives de sauvegarde sont les suspects habituels.",
+            "Les doublons sont plus difficiles à repérer manuellement, car les copies portent souvent des noms différents et se cachent dans des dossiers séparés. La même photo exportée deux fois, ou un dossier de projet copié « au cas où », peut gaspiller discrètement plusieurs gigaoctets sur un Macintosh HD déjà saturé.",
+            "C'est ici que Disk Mop se rend le plus utile. L'analyse de disque (Disk Analysis) parcourt votre disque de démarrage et l'affiche sous forme de treemap : les dossiers les plus gourmands sautent immédiatement aux yeux. Le détecteur de gros fichiers (Large File Finder) rassemble dans une seule liste tout ce qui dépasse 500 Mo, et le détecteur de doublons (Duplicate Detector) compare le contenu des fichiers par empreinte SHA-256 pour repérer photos, vidéos et documents strictement identiques — vous supprimez ainsi de vraies copies, et non des fichiers qui partagent simplement un nom.",
+          ],
+        },
+        {
+          title: "Videz sans risque les caches des applications et des navigateurs",
+          content: [
+            "Applications et navigateurs mettent des données en cache pour gagner du temps, et ces caches peuvent atteindre plusieurs gigaoctets sans bruit. Pour les inspecter manuellement, ouvrez le Finder, choisissez le menu Aller puis Aller au dossier (Shift-Command-G) et saisissez ~/Library/Caches. Vous pouvez supprimer sans crainte le contenu des dossiers de cache appartenant à des applications que vous reconnaissez — elles les reconstruiront — mais laissez tranquilles ceux dont vous ignorez l'origine.",
+            "Les navigateurs gèrent leur propre stockage. Dans Safari, ouvrez les Réglages, allez dans Confidentialité et servez-vous de l'écran de gestion des données de sites web pour effacer les données enregistrées ; Chrome et Firefox proposent des options équivalentes dans leurs réglages d'effacement des données de navigation. Gardez à l'esprit que ce nettoyage peut vous déconnecter des sites où vous étiez identifié.",
+            "Si fouiller dans les dossiers Bibliothèque vous met mal à l'aise, le nettoyeur de cache (Cache Cleaner) de Disk Mop analyse les caches système et applicatifs et montre exactement ce qui peut être supprimé sans danger. Son nettoyeur de cache navigateur (Browser Cache Cleaner) couvre Safari, Chrome, Firefox et Edge au même endroit : vous videz le cache de votre Mac sans parcourir les menus de chaque navigateur.",
+          ],
+        },
+        {
+          title: "Déplacez vos fichiers vers iCloud ou un disque externe",
+          content: [
+            "Certains fichiers méritent d'être conservés sans avoir besoin de rester sur le disque de démarrage. macOS peut les déporter vers iCloud : activez l'option de stockage dans iCloud dans les réglages de stockage, et les fichiers anciens ainsi que les photos en pleine résolution restent dans le nuage, tandis que seuls de légers substituts demeurent sur votre Mac. Attention, l'offre gratuite d'iCloud est limitée : les grandes photothèques exigent un abonnement iCloud+ payant.",
+            "Un SSD ou un disque dur externe constitue une alternative à coût unique. Déplacez-y les dossiers les plus gourmands, comme les projets vidéo et les vieilles archives photo, vérifiez que les copies s'ouvrent correctement, puis supprimez les originaux et videz la Corbeille. Pour les données irremplaçables, conservez toujours une seconde copie : une sauvegarde Time Machine sur un disque distinct reste l'assurance la plus simple.",
+          ],
+        },
+        {
+          title: "Gardez automatiquement votre disque de démarrage au régime",
+          content: [
+            "Libérer de l'espace une fois, c'est bien ; le garder libre, c'est mieux. Activez le vidage automatique de la Corbeille, passez en revue votre dossier Téléchargements une fois par mois et jetez un œil à la vue d'ensemble du stockage dès que l'espace libre commence à fondre. Ces petites habitudes évitent le moment de panique où l'alerte surgit en plein milieu d'un projet.",
+            "Disk Mop est justement conçu pour ce type d'entretien. Le nettoyage planifié (Scheduled Cleanup) exécute automatiquement des tâches hebdomadaires ou mensuelles qui vident les caches, les anciens téléchargements et la Corbeille avant qu'ils ne s'accumulent, tandis que l'indice de santé du système (System Health Score) vous donne d'un coup d'œil l'état de votre Mac.",
+            "Une fois la routine en place, l'alerte « disque de démarrage presque plein » appartient au passé. Votre Mac conserve en permanence une réserve d'espace confortable pour la mémoire virtuelle et les mises à jour, et vous n'aurez plus jamais à libérer des dizaines de gigaoctets dans l'urgence.",
+          ],
+        },
+      ],
+      verdict: [
+        "L'alerte de disque de démarrage presque plein signifie simplement que Macintosh HD a besoin de respirer. Vider la Corbeille, nettoyer le dossier Téléchargements, supprimer les fichiers volumineux et les doublons, effacer les caches et déporter les données rarement utilisées vers iCloud ou un disque externe suffit à récupérer l'espace perdu — et chacune de ces étapes se réalise avec les outils intégrés de macOS et un peu de patience.",
+        "Disk Mop rassemble toute cette liste de contrôle dans une seule application, sous macOS 12 et versions ultérieures : analyse de disque, détecteur de gros fichiers, détecteur de doublons, nettoyeur de téléchargements, nettoyage des caches et nettoyage planifié travaillent de concert pour garder votre disque de démarrage au régime sans fouille manuelle. Le téléchargement est gratuit avec des fonctions limitées, et un paiement unique de 19,90 $ débloque toute la boîte à outils avec une licence à vie.",
+      ],
+      ctaText: "Libérez le disque de démarrage de votre Mac avec Disk Mop",
+    },
+    es: {
+      title: "¿Disco de arranque casi lleno en tu Mac? Así se soluciona",
+      metaDescription:
+        "¿Tu Mac avisa de que el disco de arranque está casi lleno? Descubre qué significa y libera espacio paso a paso con las herramientas de macOS y Disk Mop.",
+      subtitle: "Guía paso a paso para liberar espacio en el disco de tu Mac",
+      intro: [
+        "El aviso « El disco de arranque está casi lleno » significa que al disco desde el que arranca tu Mac — normalmente el volumen interno llamado Macintosh HD — apenas le queda espacio libre. Para solucionarlo: vacía la Papelera, limpia la carpeta Descargas, borra archivos grandes y duplicados, elimina cachés y mueve a iCloud o a un disco externo los archivos que casi nunca usas. Recuperar tan solo 10-20 GB suele bastar para que el aviso desaparezca.",
+        "macOS necesita espacio libre de forma constante para funcionar con soltura: intercambia memoria al disco cuando la RAM se llena, escribe archivos temporales para las apps y descarga actualizaciones del sistema que pesan varios gigabytes. Cuando el disco se llena, las aplicaciones se ralentizan, los archivos no se guardan y las actualizaciones fallan a medio camino.",
+        "En esta guía liberaremos espacio primero paso a paso con las herramientas de almacenamiento integradas en macOS y después veremos cómo Disk Mop reúne ese mismo trabajo en una sola aplicación para macOS 12 y posteriores.",
+      ],
+      sections: [
+        {
+          title: "Qué significa realmente el aviso de disco de arranque casi lleno",
+          content: [
+            "El disco de arranque es la unidad desde la que tu Mac ejecuta macOS: en la mayoría de los equipos es el volumen interno llamado Macintosh HD. El aviso aparece cuando el espacio libre de ese volumen baja de un nivel crítico. No es una simple sugerencia: macOS te está diciendo que apenas puede trabajar con lo que le queda.",
+            "macOS necesita espacio libre de manera continua mientras funciona. Intercambia datos de memoria al disco cuando la RAM está llena, escribe archivos temporales para las aplicaciones y descarga actualizaciones del sistema de gran tamaño. Cuando Macintosh HD está lleno, notarás apps que se ralentizan o se quedan bloqueadas, archivos que no se guardan y actualizaciones que se niegan a instalarse.",
+            "Como regla general, intenta mantener libre al menos el 10-15 % del disco de arranque. También es normal que macOS presente una parte del espacio como purgable: datos como las copias locales de archivos de iCloud que el sistema puede eliminar por su cuenta cuando hace falta. El objetivo de esta guía es dejarte holgadamente por encima de ese margen de seguridad.",
+          ],
+        },
+        {
+          title: "Comprueba qué ocupa el almacenamiento en los ajustes de macOS",
+          content: [
+            "Antes de borrar nada, averigua qué está ocupando el espacio de verdad. En macOS Ventura y posteriores, abre el menú Apple, entra en Ajustes del Sistema, ve a General y haz clic en Almacenamiento. En macOS Monterey, abre el menú Apple, elige « Acerca de este Mac », cambia a la pestaña Almacenamiento y pulsa Gestionar.",
+            "Verás una barra de colores que reparte el uso en categorías como Aplicaciones, Documentos, Fotos y Datos del Sistema. Debajo, macOS ofrece sus propias recomendaciones: guardar archivos en iCloud, optimizar el almacenamiento eliminando las películas y series que ya has visto y vaciar la Papelera automáticamente. Activarlas lleva segundos y puede recuperar espacio sin borrar nada que te importe.",
+            "El resumen de almacenamiento es un buen punto de partida, pero tiene límites. Categorías como Datos del Sistema pueden acumular decenas de gigabytes sin explicar qué hay dentro, y no existe forma de entrar en las carpetas para ver adónde ha ido a parar el espacio exactamente. Ahí es donde entran los pasos manuales de las secciones siguientes, o un analizador de disco específico.",
+          ],
+        },
+        {
+          title: "Vacía la Papelera y limpia la carpeta Descargas",
+          content: [
+            "Los archivos que borras no desaparecen de verdad hasta que vacías la Papelera y, mientras tanto, siguen ocupando el disco de arranque. Haz clic en el icono de la Papelera del Dock con la tecla Control pulsada y elige la opción de vaciarla, o abre la Papelera en el Finder y pulsa Vaciar. Si prefieres que macOS se encargue por ti, abre los ajustes del Finder, ve a la pestaña Avanzado y activa la opción que borra los ítems de la Papelera al cabo de 30 días.",
+            "La carpeta Descargas es el otro gran devorador de espacio. En el Finder, abre el menú Ir y elige Descargas (o pulsa Option-Command-L), cambia a la vista de lista y ordena por tamaño. Las imágenes de disco antiguas (.dmg), los instaladores (.pkg) y los archivos .zip que usaste hace mucho suelen poder borrarse de inmediato: las apps que instalaron siguen intactas.",
+            "Disk Mop automatiza ambas tareas en macOS 12 y posteriores. Su limpiador de descargas (Downloads Cleaner) clasifica por categorías los archivos viejos que se acumulan en la carpeta Descargas para que los elimines en bloque, y la función Acelerar (Speed Up) limpia de una pasada y con un solo clic las descargas antiguas, las cachés y la Papelera.",
+          ],
+        },
+        {
+          title: "Encuentra y elimina archivos grandes y duplicados",
+          content: [
+            "Un puñado de archivos grandes olvidados suele ocupar más que miles de archivos pequeños. Para dar con ellos a mano, abre una ventana del Finder, pulsa Command-F, ajusta la búsqueda a Este Mac y añade un filtro de tamaño de archivo (elige Otros en la lista de criterios si no aparece) para buscar archivos de más de 500 MB. Las exportaciones de vídeo antiguas, los discos de máquinas virtuales y los archivos de copia de seguridad son los sospechosos habituales.",
+            "Los duplicados cuestan más de detectar a mano, porque las copias suelen llevar nombres distintos y vivir en carpetas diferentes. La misma foto exportada dos veces, o una carpeta de proyecto copiada « por si acaso », puede desperdiciar gigabytes en silencio en un Macintosh HD que ya va justo.",
+            "Aquí es donde Disk Mop hace su trabajo más visible. El análisis de disco (Disk Analysis) escanea el disco de arranque y lo muestra como un treemap visual, así que las carpetas que más ocupan saltan a la vista al instante. El buscador de archivos grandes (Large File Finder) reúne en una sola lista todo lo que supera los 500 MB, y el detector de duplicados (Duplicate Detector) compara el contenido de los archivos mediante hashes SHA-256 para localizar fotos, vídeos y documentos idénticos: así borras copias reales, no archivos que solo comparten nombre.",
+          ],
+        },
+        {
+          title: "Limpia sin riesgo las cachés de apps y navegadores",
+          content: [
+            "Las aplicaciones y los navegadores guardan datos en caché para ir más rápido, y esas cachés pueden crecer en silencio hasta varios gigabytes. Para revisarlas a mano, abre el Finder, elige el menú Ir, después Ir a la carpeta (Shift-Command-G) y escribe ~/Library/Caches. Puedes borrar sin miedo el contenido de las carpetas de caché de las apps que reconozcas — las aplicaciones las reconstruyen solas —, pero deja en paz las carpetas cuyo origen no tengas claro.",
+            "Los navegadores gestionan su propio almacenamiento. En Safari, abre Ajustes, ve a Privacidad y utiliza la pantalla de gestión de datos de sitios web para eliminar los datos guardados; Chrome y Firefox ofrecen opciones parecidas en sus ajustes de borrado de datos de navegación. Ten en cuenta que borrar los datos del navegador puede cerrar tus sesiones en las webs.",
+            "Si rebuscar en las carpetas Biblioteca te da respeto, el limpiador de caché (Cache Cleaner) de Disk Mop analiza las cachés del sistema y de las aplicaciones y muestra exactamente qué se puede quitar sin riesgo. Su limpiador de caché del navegador (Browser Cache Cleaner) cubre Safari, Chrome, Firefox y Edge en un mismo sitio, así que puedes vaciar la caché del Mac sin recorrer los menús de cada navegador.",
+          ],
+        },
+        {
+          title: "Mueve archivos a iCloud o a un disco externo",
+          content: [
+            "Hay archivos que merece la pena conservar pero que no necesitan vivir en el disco de arranque. macOS puede descargarlos a iCloud: activa la opción de guardar en iCloud dentro de los ajustes de almacenamiento y los archivos antiguos y las fotos a resolución completa se quedarán en la nube, mientras en tu Mac solo permanecen marcadores ligeros. Ten presente que el plan gratuito de iCloud es pequeño, así que las bibliotecas grandes requieren un plan iCloud+ de pago.",
+            "Un SSD o disco duro externo es la alternativa con un coste único. Mueve al disco externo las carpetas que más ocupan, como proyectos de vídeo y archivos fotográficos antiguos, comprueba que las copias se abren bien y borra después los originales y vacía la Papelera. Para los datos irremplazables, guarda siempre una segunda copia: una copia de seguridad de Time Machine en otra unidad es el seguro más sencillo.",
+          ],
+        },
+        {
+          title: "Mantén tu disco de arranque despejado de forma automática",
+          content: [
+            "Liberar espacio una vez está bien; mantenerlo libre está mejor. Activa el vaciado automático de la Papelera, revisa la carpeta Descargas una vez al mes y consulta el resumen de almacenamiento en cuanto el espacio libre empiece a bajar. Esos pequeños hábitos evitan el momento de pánico en el que el aviso aparece de golpe en mitad de un proyecto.",
+            "Disk Mop está pensado justo para este tipo de mantenimiento. La limpieza programada (Scheduled Cleanup) ejecuta automáticamente tareas semanales o mensuales que vacían cachés, descargas antiguas y la Papelera antes de que se acumulen, y la puntuación de salud del sistema (System Health Score) te da de un vistazo el estado de tu Mac.",
+            "Con la rutina en marcha, el aviso de « disco de arranque casi lleno » pasa a la historia. Tu Mac conserva siempre un colchón sano de espacio libre para el intercambio de memoria y las actualizaciones, y no volverás a tener que borrar decenas de gigabytes con prisas.",
+          ],
+        },
+      ],
+      verdict: [
+        "El aviso de disco de arranque casi lleno significa, sencillamente, que Macintosh HD necesita respirar. Vaciar la Papelera, limpiar la carpeta Descargas, borrar archivos grandes y duplicados, eliminar cachés y llevar los datos que apenas usas a iCloud o a un disco externo recupera ese espacio, y todos esos pasos se pueden dar con las herramientas integradas de macOS y algo de paciencia.",
+        "Disk Mop concentra toda esa lista en una sola aplicación para macOS 12 y posteriores: el análisis de disco, el buscador de archivos grandes, el detector de duplicados, el limpiador de descargas, la limpieza de cachés y la limpieza programada trabajan juntos para que tu disco de arranque siga despejado sin rebuscar a mano. Puedes descargarlo gratis con funciones limitadas, y un pago único de 19,90 $ desbloquea todas las herramientas con licencia de por vida.",
+      ],
+      ctaText: "Libera espacio en el disco de arranque de tu Mac con Disk Mop",
+    },
+    it: {
+      title: "Disco di avvio quasi pieno sul Mac? Come liberare spazio",
+      metaDescription:
+        "Il Mac segnala che il disco di avvio è quasi pieno? Scoprite che cosa significa l'avviso e come liberare spazio passo dopo passo con macOS e Disk Mop.",
+      subtitle: "La guida passo dopo passo per liberare spazio sul disco del Mac",
+      intro: [
+        "L'avviso « Il disco di avvio è quasi pieno » indica che sul disco da cui il Mac si avvia — di solito il volume interno chiamato Macintosh HD — non è rimasto quasi più spazio libero. Per risolvere: svuotate il Cestino, ripulite la cartella Download, eliminate i file di grandi dimensioni e i duplicati, cancellate le cache e spostate su iCloud o su un disco esterno i file che usate di rado. Recuperare anche solo 10-20 GB di solito basta a far sparire l'avviso.",
+        "macOS ha bisogno di spazio libero in continuazione per funzionare senza intoppi: sposta la memoria sul disco quando la RAM si riempie, scrive file temporanei per le app e scarica aggiornamenti di sistema che pesano diversi gigabyte. Quando il disco si riempie, le app rallentano, i file non si salvano e gli aggiornamenti si bloccano a metà.",
+        "In questa guida libereremo spazio prima passo dopo passo con gli strumenti di archiviazione integrati in macOS, poi vedremo come Disk Mop riunisca lo stesso lavoro in un'unica app per macOS 12 e versioni successive.",
+      ],
+      sections: [
+        {
+          title: "Che cosa significa davvero l'avviso « disco di avvio quasi pieno »",
+          content: [
+            "Il disco di avvio è l'unità da cui il Mac esegue macOS: sulla maggior parte delle macchine è il volume interno chiamato Macintosh HD. L'avviso compare quando lo spazio libero su quel volume scende sotto una soglia critica. Non è un semplice suggerimento: macOS vi sta comunicando che riesce a malapena a lavorare con quello che gli resta.",
+            "macOS ha bisogno di spazio libero in modo continuo mentre lavora. Sposta i dati della memoria sul disco quando la RAM è satura, scrive file temporanei per le applicazioni e scarica aggiornamenti di sistema di grandi dimensioni. Quando Macintosh HD è pieno, noterete app che rallentano o si bloccano, file che non si salvano e aggiornamenti che si rifiutano di installarsi.",
+            "Come regola pratica, puntate a tenere libero almeno il 10-15 % del disco di avvio. È inoltre normale che macOS indichi una parte dello spazio come eliminabile: dati come le copie locali dei file iCloud, che il sistema può rimuovere da solo quando serve. L'obiettivo di questa guida è portarvi comodamente oltre quel margine di sicurezza.",
+          ],
+        },
+        {
+          title: "Controllate che cosa occupa lo spazio nelle impostazioni di macOS",
+          content: [
+            "Prima di cancellare qualsiasi cosa, scoprite che cosa sta davvero occupando spazio. Su macOS Ventura e versioni successive aprite il menu Apple, scegliete Impostazioni di Sistema, andate in Generali e fate clic su Spazio. Su macOS Monterey aprite il menu Apple, scegliete « Informazioni su questo Mac », passate al pannello Archiviazione e premete Gestisci.",
+            "Comparirà una barra colorata che suddivide l'utilizzo in categorie come Applicazioni, Documenti, Foto e Dati di sistema. Sotto, macOS propone i propri suggerimenti: archiviare i file su iCloud, ottimizzare lo spazio rimuovendo film e serie già viste e svuotare automaticamente il Cestino. Attivarli richiede pochi secondi e può recuperare spazio senza cancellare nulla a cui tenete.",
+            "La panoramica è un buon punto di partenza, ma ha dei limiti. Categorie come Dati di sistema possono contenere decine di gigabyte senza spiegare che cosa ci sia dentro, e non c'è modo di entrare nelle singole cartelle per capire dove sia finito lo spazio. È qui che entrano in gioco i passaggi manuali delle sezioni successive — oppure uno strumento di analisi del disco dedicato.",
+          ],
+        },
+        {
+          title: "Svuotate il Cestino e ripulite la cartella Download",
+          content: [
+            "I file che eliminate non spariscono davvero finché non svuotate il Cestino e, nel frattempo, continuano a occupare il disco di avvio. Fate clic sull'icona del Cestino nel Dock tenendo premuto il tasto Ctrl e scegliete l'opzione per svuotarlo, oppure aprite il Cestino nel Finder e fate clic su Svuota. Se preferite che se ne occupi macOS, aprite le impostazioni del Finder, andate nel pannello Avanzate e attivate l'opzione che rimuove gli elementi dal Cestino dopo 30 giorni.",
+            "La cartella Download è l'altro classico divoratore di spazio. Nel Finder aprite il menu Vai e scegliete Download (oppure premete Option-Command-L), passate alla vista a elenco e ordinate per dimensione. Vecchie immagini disco (.dmg), installer (.pkg) e archivi .zip usati tempo fa si possono quasi sempre eliminare subito: le app che hanno installato restano al loro posto.",
+            "Disk Mop automatizza entrambe le operazioni su macOS 12 e versioni successive. Il pulitore dei download (Downloads Cleaner) suddivide per categoria i vecchi file rimasti nella cartella Download così da eliminarli in blocco, mentre la funzione Accelera (Speed Up) ripulisce con un clic download datati, cache e Cestino in un'unica passata.",
+          ],
+        },
+        {
+          title: "Trovate ed eliminate i file di grandi dimensioni e i duplicati",
+          content: [
+            "Pochi file enormi dimenticati occupano spesso più spazio di migliaia di file piccoli. Per scovarli a mano aprite una finestra del Finder, premete Command-F, impostate la ricerca su Questo Mac e aggiungete un criterio di dimensione del file (scegliete Altro nell'elenco dei criteri se non è visibile) per cercare i file superiori a 500 MB. Vecchie esportazioni video, dischi di macchine virtuali e archivi di backup sono i soliti indiziati.",
+            "I duplicati sono più difficili da individuare a mano, perché le copie spesso hanno nomi diversi e si trovano in cartelle diverse. La stessa foto esportata due volte, o una cartella di progetto copiata « per sicurezza », può sprecare silenziosamente gigabyte su un Macintosh HD già pieno.",
+            "È qui che Disk Mop dà il meglio di sé. L'analisi del disco (Disk Analysis) scansiona il disco di avvio e lo mostra come una treemap visiva, così le cartelle che occupano più spazio saltano subito all'occhio. Il ricercatore di file di grandi dimensioni (Large File Finder) raccoglie in un unico elenco tutto ciò che supera i 500 MB, e il rilevatore di duplicati (Duplicate Detector) confronta il contenuto dei file tramite hash SHA-256 per trovare foto, video e documenti identici: eliminate copie reali, non file che condividono soltanto il nome.",
+          ],
+        },
+        {
+          title: "Svuotate in sicurezza le cache di app e browser",
+          content: [
+            "App e browser mettono in cache i dati per velocizzare il lavoro, e quelle cache possono crescere in silenzio fino a molti gigabyte. Per esaminarle a mano aprite il Finder, scegliete il menu Vai, poi Vai alla cartella (Shift-Command-G) e digitate ~/Library/Caches. Potete eliminare senza problemi il contenuto delle cartelle di cache appartenenti ad app che riconoscete — le applicazioni le ricostruiscono da sole — ma lasciate stare le cartelle di cui non conoscete l'origine.",
+            "I browser gestiscono il proprio spazio in autonomia. In Safari aprite Impostazioni, andate su Privacy e usate la schermata di gestione dei dati dei siti web per rimuovere i dati salvati; Chrome e Firefox offrono opzioni analoghe nelle impostazioni di cancellazione dei dati di navigazione. Tenete presente che cancellare i dati del browser può disconnettervi dai siti su cui avete effettuato l'accesso.",
+            "Se frugare nelle cartelle Libreria vi mette a disagio, il pulitore della cache (Cache Cleaner) di Disk Mop analizza le cache di sistema e delle applicazioni e mostra esattamente che cosa si può rimuovere in sicurezza. Il pulitore della cache del browser (Browser Cache Cleaner) copre Safari, Chrome, Firefox ed Edge in un unico punto, così svuotate la cache del Mac senza passare per i menu di ogni singolo browser.",
+          ],
+        },
+        {
+          title: "Spostate i file su iCloud o su un disco esterno",
+          content: [
+            "Alcuni file vale la pena conservarli, ma non devono per forza restare sul disco di avvio. macOS può spostarli su iCloud: attivate l'opzione di archiviazione su iCloud nelle impostazioni dello spazio e i file più datati e le foto a piena risoluzione resteranno nel cloud, mentre sul Mac rimarranno solo leggeri segnaposto. Tenete presente che il piano gratuito di iCloud è ridotto: le librerie più grandi richiedono un piano iCloud+ a pagamento.",
+            "Un SSD o un disco rigido esterno è l'alternativa a costo unico. Spostate sul disco esterno le cartelle più ingombranti, come progetti video e vecchi archivi fotografici, verificate che le copie si aprano correttamente, poi eliminate gli originali e svuotate il Cestino. Per i dati insostituibili conservate sempre una seconda copia: un backup Time Machine su un disco separato è l'assicurazione più semplice.",
+          ],
+        },
+        {
+          title: "Mantenete automaticamente snello il disco di avvio",
+          content: [
+            "Liberare spazio una volta va bene; mantenerlo libero è meglio. Attivate lo svuotamento automatico del Cestino, rivedete la cartella Download una volta al mese e date un'occhiata alla panoramica dello spazio non appena quello libero inizia a calare. Sono piccole abitudini che evitano il momento di panico in cui l'avviso compare all'improvviso nel bel mezzo di un progetto.",
+            "Disk Mop è pensato esattamente per questo tipo di manutenzione. La pulizia pianificata (Scheduled Cleanup) esegue automaticamente attività settimanali o mensili che svuotano cache, download datati e Cestino prima che si accumulino, mentre il punteggio di salute del sistema (System Health Score) mostra a colpo d'occhio come sta il vostro Mac.",
+            "Con una routine avviata, l'avviso « disco di avvio quasi pieno » diventa un ricordo. Il Mac mantiene sempre un margine sano di spazio libero per lo scambio di memoria e per gli aggiornamenti, e non dovrete più liberare decine di gigabyte di corsa.",
+          ],
+        },
+      ],
+      verdict: [
+        "L'avviso di disco di avvio quasi pieno significa semplicemente che Macintosh HD ha bisogno di respirare. Svuotare il Cestino, ripulire la cartella Download, eliminare file di grandi dimensioni e duplicati, cancellare le cache e spostare su iCloud o su un disco esterno i dati usati di rado permette di recuperare lo spazio: ognuno di questi passaggi si può eseguire con gli strumenti integrati di macOS e un po' di pazienza.",
+        "Disk Mop raccoglie l'intera lista in un'unica app per macOS 12 e versioni successive: analisi del disco, ricercatore di file di grandi dimensioni, rilevatore di duplicati, pulitore dei download, pulizia della cache e pulizia pianificata lavorano insieme per mantenere snello il disco di avvio senza ricerche manuali. Potete scaricarlo gratuitamente con funzioni limitate, mentre un pagamento una tantum di 19,90 $ sblocca l'intero set di strumenti con una licenza a vita.",
+      ],
+      ctaText: "Liberate spazio sul disco di avvio del Mac con Disk Mop",
+    },
+    pt: {
+      title: "Disco de inicialização quase cheio no Mac? Veja como resolver",
+      metaDescription:
+        "O seu Mac avisa que o disco de inicialização está quase cheio? Entenda o alerta e libere espaço passo a passo com as ferramentas do macOS e o Disk Mop.",
+      subtitle: "O guia passo a passo para liberar espaço em disco no seu Mac",
+      intro: [
+        "O alerta “O disco de inicialização está quase cheio” significa que o disco de onde o seu Mac inicia — normalmente o volume interno chamado Macintosh HD — está praticamente sem espaço livre. Para resolver: esvazie o Lixo, limpe a pasta Downloads, apague arquivos grandes e duplicados, remova caches e mova para o iCloud ou para um disco externo os arquivos que você quase não usa. Recuperar apenas 10 a 20 GB costuma bastar para o alerta sumir.",
+        "O macOS precisa de espaço livre o tempo todo para funcionar bem: ele passa memória para o disco quando a RAM enche, grava arquivos temporários para os apps e baixa atualizações de sistema de vários gigabytes. Quando o disco lota, os apps ficam lentos, os arquivos não salvam e as atualizações falham no meio do caminho.",
+        "Neste guia vamos primeiro liberar espaço passo a passo com as ferramentas de armazenamento embutidas no macOS e depois ver como o Disk Mop reúne o mesmo trabalho em um único app para macOS 12 e versões mais recentes.",
+      ],
+      sections: [
+        {
+          title: "O que o alerta de disco de inicialização quase cheio realmente significa",
+          content: [
+            "O disco de inicialização é a unidade de onde o seu Mac roda o macOS: na maioria das máquinas, é o volume interno chamado Macintosh HD. O alerta aparece quando o espaço livre desse volume cai abaixo de um nível crítico. Não é uma simples sugestão: o macOS está avisando que mal consegue operar com o que sobrou.",
+            "O macOS precisa de espaço livre continuamente enquanto trabalha. Ele passa dados da memória para o disco quando a RAM está cheia, grava arquivos temporários para os aplicativos e baixa atualizações grandes do sistema. Com o Macintosh HD lotado, você vai notar apps lentos ou travando, arquivos que não salvam e atualizações que se recusam a instalar.",
+            "Como regra geral, procure manter livre pelo menos 10% a 15% do disco de inicialização. Também é normal o macOS mostrar parte do espaço como purgável: dados como as cópias locais de arquivos do iCloud, que o sistema pode remover sozinho quando precisa. O objetivo deste guia é deixar você com folga acima dessa margem de segurança.",
+          ],
+        },
+        {
+          title: "Veja o que está ocupando espaço nos ajustes do macOS",
+          content: [
+            "Antes de apagar qualquer coisa, descubra o que realmente está ocupando espaço. No macOS Ventura e versões mais recentes, abra o menu Apple, escolha Ajustes do Sistema, vá em Geral e clique em Armazenamento. No macOS Monterey, abra o menu Apple, escolha “Sobre Este Mac”, mude para a aba Armazenamento e clique em Gerenciar.",
+            "Você verá uma barra colorida que divide o uso em categorias como Aplicativos, Documentos, Fotos e Dados do Sistema. Abaixo dela, o macOS oferece as próprias recomendações: guardar arquivos no iCloud, otimizar o armazenamento removendo filmes e séries já assistidos e esvaziar o Lixo automaticamente. Ativar essas opções leva segundos e pode recuperar espaço sem apagar nada que importe para você.",
+            "O resumo de armazenamento é um bom ponto de partida, mas tem limites. Categorias como Dados do Sistema podem guardar dezenas de gigabytes sem explicar o que há lá dentro, e não dá para entrar nas pastas e ver exatamente para onde o espaço foi. É aí que entram os passos manuais das próximas seções — ou um analisador de disco dedicado.",
+          ],
+        },
+        {
+          title: "Esvazie o Lixo e limpe a pasta Downloads",
+          content: [
+            "Os arquivos que você apaga não somem de verdade até o Lixo ser esvaziado e, até lá, continuam ocupando o disco de inicialização. Clique no ícone do Lixo no Dock segurando a tecla Control e escolha a opção de esvaziar, ou abra o Lixo no Finder e clique em Esvaziar. Se preferir que o macOS cuide disso, abra os ajustes do Finder, vá na aba Avançado e ative a opção que remove itens do Lixo depois de 30 dias.",
+            "A pasta Downloads é o outro devorador de espaço clássico. No Finder, abra o menu Ir e escolha Downloads (ou pressione Option-Command-L), mude para a visualização em lista e ordene por tamanho. Imagens de disco antigas (.dmg), instaladores (.pkg) e arquivos .zip que você usou há muito tempo quase sempre podem ir embora na hora: os apps que eles instalaram continuam intactos.",
+            "O Disk Mop automatiza as duas tarefas no macOS 12 e versões mais recentes. O limpador de downloads (Downloads Cleaner) organiza por categoria os arquivos antigos parados na pasta Downloads para você apagá-los em lote, e a função Acelerar (Speed Up) limpa downloads antigos, caches e o Lixo de uma vez só, com um clique.",
+          ],
+        },
+        {
+          title: "Encontre e remova arquivos grandes e duplicados",
+          content: [
+            "Alguns poucos arquivos grandes esquecidos costumam ocupar mais espaço que milhares de arquivos pequenos. Para caçá-los manualmente, abra uma janela do Finder, pressione Command-F, ajuste a busca para Este Mac e acrescente um filtro de tamanho de arquivo (escolha Outros na lista de critérios se ele não aparecer) para procurar arquivos com mais de 500 MB. Exportações de vídeo antigas, discos de máquinas virtuais e arquivos de backup são os suspeitos de sempre.",
+            "Duplicados são mais difíceis de pegar no olho, porque as cópias costumam ter nomes diferentes e ficar em pastas separadas. A mesma foto exportada duas vezes, ou uma pasta de projeto copiada “por via das dúvidas”, desperdiça gigabytes em silêncio em um Macintosh HD que já está no limite.",
+            "É aqui que o Disk Mop faz o trabalho mais visível. A análise de disco (Disk Analysis) escaneia o disco de inicialização e mostra tudo como um treemap visual, então as pastas que mais ocupam saltam aos olhos na hora. O localizador de arquivos grandes (Large File Finder) reúne em uma lista só tudo acima de 500 MB, e o detector de duplicados (Duplicate Detector) compara o conteúdo dos arquivos por hash SHA-256 para achar fotos, vídeos e documentos idênticos: assim você apaga cópias de verdade, não arquivos que apenas têm o mesmo nome.",
+          ],
+        },
+        {
+          title: "Limpe com segurança os caches de apps e navegadores",
+          content: [
+            "Apps e navegadores guardam dados em cache para acelerar as coisas, e esses caches podem crescer em silêncio até vários gigabytes. Para inspecionar manualmente, abra o Finder, escolha o menu Ir, depois Ir para Pasta (Shift-Command-G), e digite ~/Library/Caches. Dá para apagar sem medo o conteúdo das pastas de cache de apps que você reconhece — os aplicativos reconstroem tudo sozinhos —, mas deixe em paz as pastas cuja origem você não conhece.",
+            "Os navegadores cuidam do próprio armazenamento. No Safari, abra os Ajustes, vá em Privacidade e use a tela de gerenciamento de dados de sites para remover os dados guardados; Chrome e Firefox oferecem opções parecidas nos ajustes de limpeza de dados de navegação. Lembre-se de que limpar os dados do navegador pode desconectar você dos sites.",
+            "Se mexer nas pastas Biblioteca parece arriscado, o limpador de cache (Cache Cleaner) do Disk Mop analisa os caches do sistema e dos aplicativos e mostra exatamente o que dá para remover com segurança. O limpador de cache do navegador (Browser Cache Cleaner) cobre Safari, Chrome, Firefox e Edge em um lugar só, então você limpa o cache do Mac sem percorrer o menu de cada navegador.",
+          ],
+        },
+        {
+          title: "Mova arquivos para o iCloud ou para um disco externo",
+          content: [
+            "Alguns arquivos valem a pena guardar, mas não precisam morar no disco de inicialização. O macOS consegue transferi-los para o iCloud: ative a opção de guardar no iCloud nos ajustes de armazenamento e os arquivos mais antigos e as fotos em resolução total ficam na nuvem, enquanto no Mac permanecem apenas marcadores leves. Vale lembrar que o plano gratuito do iCloud é pequeno, então bibliotecas maiores exigem um plano iCloud+ pago.",
+            "Um SSD ou HD externo é a alternativa de custo único. Mova para o disco externo as pastas que mais ocupam espaço, como projetos de vídeo e acervos de fotos antigos, confirme que as cópias abrem direito e só então apague os originais e esvazie o Lixo. Para dados insubstituíveis, mantenha sempre uma segunda cópia: um backup do Time Machine em outro disco é o seguro mais simples.",
+          ],
+        },
+        {
+          title: "Mantenha o disco de inicialização enxuto automaticamente",
+          content: [
+            "Liberar espaço uma vez é bom; manter esse espaço livre é melhor. Ative o esvaziamento automático do Lixo, revise a pasta Downloads uma vez por mês e confira o resumo de armazenamento sempre que o espaço livre começar a cair. Esses pequenos hábitos evitam o momento de pânico em que o alerta aparece bem no meio de um projeto.",
+            "O Disk Mop foi feito exatamente para esse tipo de manutenção. A limpeza agendada (Scheduled Cleanup) executa tarefas semanais ou mensais automaticamente, limpando caches, downloads antigos e o Lixo antes que tudo se acumule, enquanto a pontuação de saúde do sistema (System Health Score) dá um indicador rápido de como o seu Mac está.",
+            "Com a rotina em pé, o alerta de “disco de inicialização quase cheio” vira coisa do passado. O seu Mac mantém sempre uma reserva saudável de espaço livre para a troca de memória e para as atualizações, e você nunca mais precisa apagar dezenas de gigabytes na correria.",
+          ],
+        },
+      ],
+      verdict: [
+        "O alerta de disco de inicialização quase cheio significa apenas que o Macintosh HD precisa de espaço para respirar. Esvaziar o Lixo, limpar a pasta Downloads, apagar arquivos grandes e duplicados, remover caches e mandar os dados pouco usados para o iCloud ou para um disco externo recupera esse espaço — e cada um desses passos pode ser feito com as ferramentas embutidas do macOS e um pouco de paciência.",
+        "O Disk Mop reúne a lista inteira em um app só para macOS 12 e versões mais recentes: análise de disco, localizador de arquivos grandes, detector de duplicados, limpador de downloads, limpeza de cache e limpeza agendada trabalham juntos para o seu disco de inicialização continuar enxuto sem garimpo manual. Dá para baixar de graça com recursos limitados, e um pagamento único de 19,90 $ libera o kit completo com licença vitalícia.",
+      ],
+      ctaText: "Libere espaço no disco de inicialização do seu Mac com o Disk Mop",
+    },
+    ja: {
+      title: "Macの起動ディスクがほぼ一杯？空き容量を取り戻す方法",
+      metaDescription:
+        "Macで「起動ディスクの空き容量がほとんどありません」と表示されていませんか。この警告が意味することと、macOS標準のストレージ機能やDisk Mopを使って空き容量を取り戻す具体的な手順を、順を追って解説します。",
+      subtitle: "Macの空き容量を増やすためのステップバイステップガイド",
+      intro: [
+        "「起動ディスクの空き容量がほとんどありません」という警告は、Macが起動しているディスク — 多くの場合は「Macintosh HD」という名前の内蔵ボリューム — の空き容量がほとんど残っていないことを意味します。対処法は、「ゴミ箱」を空にする、「ダウンロード」フォルダを整理する、大きなファイルと重複ファイルを削除する、キャッシュを消去する、めったに使わないファイルをiCloudや外付けドライブに移す、の5つです。10〜20 GBほど空けるだけで、たいていは警告が消えます。",
+        "macOSが快適に動作するには、常に空き容量が必要です。RAMが逼迫すればメモリの内容をディスクにスワップし、アプリのために一時ファイルを書き込み、数ギガバイト規模のシステムアップデートをダウンロードします。ディスクが一杯になると、アプリの動作が遅くなり、ファイルが保存できなくなり、アップデートも途中で失敗します。",
+        "この記事では、まずmacOSに標準で備わっているストレージ機能を使って順番に空き容量を増やし、そのあとで、同じ作業をmacOS 12以降の1つのアプリにまとめたDisk Mopを見ていきます。",
+      ],
+      sections: [
+        {
+          title: "「起動ディスクの空き容量がほとんどありません」が本当に意味すること",
+          content: [
+            "起動ディスクとは、MacがmacOSを実行しているドライブのことです。ほとんどの機種では「Macintosh HD」という名前の内蔵ボリュームがこれにあたります。警告が表示されるのは、このボリュームの空き容量が危険な水準まで落ち込んだときです。単なる提案ではありません。macOSは、残された容量ではもう動作がぎりぎりだと伝えているのです。",
+            "macOSは動作している間、常に空き容量を必要とします。RAMが一杯になればメモリのデータをディスクにスワップし、アプリケーションのために一時ファイルを書き込み、大きなシステムアップデートをダウンロードします。Macintosh HDが一杯になると、アプリが遅くなったり固まったり、ファイルが保存できなくなったり、アップデートがインストールできなくなったりします。",
+            "目安として、起動ディスクの空き容量は少なくとも10〜15%を保つようにしてください。macOSが容量の一部を「パージ可能」と表示するのは正常な動作です。これはiCloudファイルのローカルコピーのように、必要になればシステムが自分で削除できるデータを指します。この記事の目的は、その安全マージンを余裕をもって上回る状態にすることです。",
+          ],
+        },
+        {
+          title: "macOSの設定でストレージの内訳を確認する",
+          content: [
+            "何かを削除する前に、実際に何が容量を占めているのかを把握しましょう。macOS Ventura以降では、アップルメニューから「システム設定」を開き、「一般」に進んで「ストレージ」をクリックします。macOS Montereyでは、アップルメニューから「このMacについて」を選び、「ストレージ」タブに切り替えて「管理」をクリックします。",
+            "色分けされたバーが表示され、使用状況が「アプリケーション」「書類」「写真」「システムデータ」などの分類に分けられます。その下には、macOS自身の推奨項目が並びます。ファイルをiCloudに保存する設定、視聴済みの映画やテレビ番組を削除して容量を最適化する設定、そして「ゴミ箱」を自動的に空にする設定です。どれも数秒で有効にでき、大切なものを何ひとつ削除せずに容量を取り戻せる場合があります。",
+            "ストレージの概要は出発点としては優秀ですが、限界もあります。「システムデータ」のような分類は、中身の説明がないまま数十ギガバイトを占めることがあり、フォルダ単位で掘り下げて容量の行き先を正確に確認する方法は用意されていません。次章以降の手動の手順、あるいは専用のディスク分析ツールが必要になるのは、まさにこの点です。",
+          ],
+        },
+        {
+          title: "「ゴミ箱」を空にして「ダウンロード」フォルダを整理する",
+          content: [
+            "削除したファイルは、「ゴミ箱」を空にするまで実際には消えず、その間も起動ディスクの容量を占め続けます。Dockのゴミ箱アイコンをControlキーを押しながらクリックして空にする項目を選ぶか、Finderで「ゴミ箱」を開いて「空にする」をクリックしてください。macOSに任せたい場合は、Finder設定の「詳細」タブを開き、30日経過した項目を「ゴミ箱」から削除するオプションを有効にします。",
+            "「ダウンロード」フォルダも、定番の容量食いです。Finderの「移動」メニューから「ダウンロード」を選び（Option-Command-Lでも開けます）、リスト表示に切り替えてサイズ順に並べ替えます。ずいぶん前に使った .dmg のディスクイメージ、.pkg のインストーラー、.zip のアーカイブは、たいていすぐ削除してかまいません。それらがインストールしたアプリには何の影響もありません。",
+            "Disk MopはmacOS 12以降で、この2つの作業をどちらも自動化します。ダウンロード クリーナー（Downloads Cleaner）は「ダウンロード」フォルダに残った古いファイルを種類ごとに分類し、まとめて削除できるようにします。ワンクリックの高速化機能（Speed Up）は、古いダウンロード、キャッシュ、「ゴミ箱」を一度の処理でまとめて片付けます。",
+          ],
+        },
+        {
+          title: "大きなファイルと重複ファイルを見つけて削除する",
+          content: [
+            "忘れられた数個の巨大ファイルは、何千個もの小さなファイルより多くの容量を占めていることがよくあります。手作業で探すには、Finderのウインドウを開いてCommand-Fを押し、検索対象を「このMac」に設定します。そのうえで検索条件にファイルサイズを追加し（一覧に見当たらない場合は「その他」から追加できます）、500 MBを超えるファイルを探します。古い書き出し済みの動画、仮想マシンのディスク、バックアップのアーカイブが定番の容疑者です。",
+            "重複ファイルは手作業ではさらに見つけにくい相手です。コピーは名前が違うことが多く、別々のフォルダに散らばっているからです。2回書き出した同じ写真や、「念のため」とコピーしたプロジェクトフォルダが、ただでさえ一杯のMacintosh HDで静かに数ギガバイトを浪費します。",
+            "ここがDisk Mopの最も分かりやすい活躍どころです。ディスク分析（Disk Analysis）は起動ディスクをスキャンし、視覚的なツリーマップとして表示します。容量を食っているフォルダがひと目で浮かび上がります。大容量ファイル検索（Large File Finder）は500 MBを超えるものをすべて1つのリストにまとめ、重複ファイル検出（Duplicate Detector）はSHA-256のハッシュでファイルの中身を比較して、まったく同じ写真、動画、書類を洗い出します。名前が似ているだけのファイルではなく、本物のコピーだけを削除できます。",
+          ],
+        },
+        {
+          title: "アプリとブラウザーのキャッシュを安全に削除する",
+          content: [
+            "アプリやブラウザーは動作を速くするためにデータをキャッシュしますが、そのキャッシュは気づかないうちに何ギガバイトにも膨らみます。手動で確認するには、Finderの「移動」メニューから「フォルダへ移動」（Shift-Command-G）を選び、~/Library/Caches と入力します。見覚えのあるアプリのキャッシュフォルダの中身は安全に削除できます。アプリが自動的に作り直すからです。ただし、何のフォルダか分からないものには手を出さないでください。",
+            "ブラウザーは自分のデータを自分で管理します。Safariでは設定を開き、「プライバシー」からWebサイトデータの管理画面に進んで、保存されたサイトデータを削除します。ChromeとFirefoxも、閲覧データの削除設定に同様の項目を用意しています。ブラウザーのデータを削除すると、Webサイトからログアウトする場合がある点には注意してください。",
+            "「ライブラリ」フォルダを掘り進めるのが不安なら、Disk Mopのキャッシュ クリーナー（Cache Cleaner）がシステムとアプリケーションのキャッシュをスキャンし、安全に削除できるものを正確に示してくれます。ブラウザーキャッシュ クリーナー（Browser Cache Cleaner）はSafari、Chrome、Firefox、Edgeを1か所でまとめて扱うので、ブラウザーごとにメニューをたどらなくてもMacのキャッシュを削除できます。",
+          ],
+        },
+        {
+          title: "ファイルをiCloudや外付けドライブに移す",
+          content: [
+            "手元に残しておきたいけれど、起動ディスク上にある必要はないファイルもあります。macOSはそうしたファイルをiCloudに移せます。ストレージ設定でiCloudに保存するオプションを有効にすると、古いファイルやフル解像度の写真はクラウドに置かれ、Mac上には軽量なプレースホルダだけが残ります。ただし、iCloudの無料容量はわずかです。大きなライブラリを預けるには有料のiCloud+プランが必要になります。",
+            "外付けSSDやハードディスクは、初期費用だけで済む選択肢です。動画プロジェクトや古い写真アーカイブのような容量を食うフォルダを外付けドライブに移し、コピーが正しく開けることを確認してから、元のファイルを削除して「ゴミ箱」を空にします。替えのきかないデータについては、必ず2つ目のコピーを用意してください。別のドライブに取るTime Machineのバックアップが、いちばん手軽な保険になります。",
+          ],
+        },
+        {
+          title: "起動ディスクを自動でスリムに保つ",
+          content: [
+            "一度空き容量を作るのは良いことですが、空いた状態を保てればもっと良いはずです。「ゴミ箱」の自動削除を有効にし、「ダウンロード」フォルダを月に一度見直し、空き容量が減り始めたらストレージの概要を確認してください。こうした小さな習慣が、プロジェクトの真っ最中に突然警告が出るという慌ただしい瞬間を防いでくれます。",
+            "Disk Mopは、まさにこの種のメンテナンスのために作られています。スケジュール クリーンアップ（Scheduled Cleanup）は週次または月次の清掃タスクを自動で実行し、キャッシュ、古いダウンロード、「ゴミ箱」がたまる前に片付けます。システムの健全性スコア（System Health Score）は、Macの状態をひと目で示す指標になります。",
+            "習慣として定着すれば、「起動ディスクの空き容量がほとんどありません」という警告は過去のものになります。Macはメモリのスワップやアップデートのために十分な空き容量を常に確保し、何十ギガバイトも慌てて削除する必要は二度となくなります。",
+          ],
+        },
+      ],
+      verdict: [
+        "起動ディスクの空き容量がほとんどないという警告は、要するにMacintosh HDに余裕が必要だということです。「ゴミ箱」を空にする、「ダウンロード」フォルダを整理する、大きなファイルと重複ファイルを削除する、キャッシュを消去する、めったに使わないデータをiCloudや外付けドライブに移す。これだけで容量は取り戻せますし、どの手順もmacOS標準の機能と少しの手間だけで実行できます。",
+        "Disk Mopは、このチェックリスト全体をmacOS 12以降の1つのアプリにまとめています。ディスク分析、大容量ファイル検索、重複ファイル検出、ダウンロード クリーナー、キャッシュの削除、スケジュール クリーンアップが連携して働き、手作業で掘り進めなくても起動ディスクをスリムに保ちます。基本機能は無料でダウンロードでき、19.90ドルの買い切りで永続ライセンスとしてすべての機能が使えるようになります。",
+      ],
+      ctaText: "Disk MopでMacの起動ディスクの空き容量を増やす",
     },
   },
 };
