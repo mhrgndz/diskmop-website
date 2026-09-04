@@ -71,8 +71,9 @@ export function PlatformSelector() {
   /**
    * Sürüm SUNUCUDA basılır. Eskiden burada sabit "v1.0.0" yedeği vardı ve
    * JavaScript çalıştırmayan okuyucular (arama motoru ilk taraması, ChatGPT,
-   * Perplexity) ürünü ilk sürümünde sanıyordu. Canlı API yanıtı geldiğinde
-   * yalnızca Windows sürümü güncellenir — macOS ayrı bir sürümde ilerliyor.
+   * Perplexity) ürünü ilk sürümünde sanıyordu. Canlı API yanıtı `latest.yml`'den
+   * geldiği için yalnızca Windows sürümünü günceller; macOS ve Android sabitten
+   * okunur. (2026-09-04'ten beri üçü de aynı sürümde değil — Android geride.)
    */
   const getVersion = (key: string) => {
     if (key === 'windows') return version || `v${APP_VERSIONS.windows}`;
