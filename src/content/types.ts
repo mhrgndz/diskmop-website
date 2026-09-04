@@ -45,6 +45,18 @@ export interface HowTo {
   steps: HowToStep[];
 }
 
+/**
+ * Rehber makalelerde veri tablosu. Karsilastirma tablosundan AYRIDIR:
+ * o tablo "Disk Mop vs rakip" icin sabit basliklidir, bu ise serbest sutunlu.
+ * AI motorlari tabloyu yuksek alintilanabilirlik sinyali sayar; sayisal
+ * karsilastirmalari duz paragraf yerine buraya koy.
+ */
+export interface DataTable {
+  caption?: string;
+  columns: string[];
+  rows: string[][];
+}
+
 interface BaseContent {
   title: string;
   metaDescription: string;
@@ -56,6 +68,7 @@ interface BaseContent {
   keyTakeaways?: string[];
   faq?: FaqItem[];
   howTo?: HowTo;
+  dataTable?: DataTable;
 }
 
 export interface ArticleContent extends BaseContent {

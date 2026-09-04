@@ -42,6 +42,11 @@ import { androidStorageFull } from './android-storage-full';
 import { icloudTakingUpMacStorage } from './icloud-taking-up-mac-storage';
 import { driveCapacityLessThanAdvertised } from './drive-capacity-less-than-advertised';
 import { ssdSlowsDownWhenFull } from './ssd-slows-down-when-full';
+import { windowsInstallerFolderCleanup } from './windows-installer-folder-cleanup';
+import { deleteOldUserProfilesWindows } from './delete-old-user-profiles-windows';
+import { windowsSearchIndexSlow } from './windows-search-index-slow';
+import { systemRestorePointsTakingSpace } from './system-restore-points-taking-space';
+import { windowsSlowAfterUpdate } from './windows-slow-after-update';
 import { howMuchFreeDiskSpaceDoINeed } from './how-much-free-disk-space-do-i-need';
 import { onedriveTakingUpSpace } from './onedrive-taking-up-space';
 import { windowsUpdateNotEnoughSpace } from './windows-update-not-enough-space';
@@ -50,6 +55,14 @@ import { macPurgeableSpaceLocalSnapshots } from './mac-purgeable-space-local-sna
 
 export const articles: Article[] = [
   // 2026-09-04 eklenenler — listede en üstte, en yeni içerik önce görünsün.
+  // Windows'a özel beş rehber: hepsi "PC yavaşladı / gereksiz dosya" niyetini
+  // karşılar ama mevcut speed-up-computer ve free-disk-space makaleleriyle
+  // ÇAKIŞMAZ; her biri o başlıkların cevaplamadığı belirli bir soruyu alır.
+  windowsInstallerFolderCleanup,
+  deleteOldUserProfilesWindows,
+  windowsSearchIndexSlow,
+  systemRestorePointsTakingSpace,
+  windowsSlowAfterUpdate,
   wslDockerDiskSpace,
   androidStorageFull,
   icloudTakingUpMacStorage,

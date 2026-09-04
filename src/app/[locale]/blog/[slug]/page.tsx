@@ -397,6 +397,55 @@ export default async function ArticlePage({
         </section>
         )}
 
+        {/* Veri tablosu — rehberler icin. Sayfanin ust kismina yakin durur:
+            AI alintilarinin yaklasik %44'u sayfanin ilk %30'undan gelir ve
+            tablolar en guclu alintilanabilirlik sinyallerinden biridir. */}
+        {content.dataTable && content.dataTable.rows.length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            {content.dataTable.caption && (
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                {content.dataTable.caption}
+              </h2>
+            )}
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-muted/50">
+                    {content.dataTable.columns.map((col, i) => (
+                      <th
+                        key={i}
+                        className={`p-4 font-semibold text-foreground ${
+                          i === 0 ? 'text-left' : 'text-center'
+                        }`}
+                      >
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.dataTable.rows.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-background' : 'bg-muted/30'}>
+                      {row.map((cell, j) => (
+                        <td
+                          key={j}
+                          className={`p-4 ${
+                            j === 0
+                              ? 'font-medium text-foreground'
+                              : 'text-center text-muted-foreground'
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
         {/* Detailed Sections */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           {content.sections.map((section, i) => (
