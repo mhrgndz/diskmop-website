@@ -10,7 +10,7 @@
  * günceller. Yeni sürüm çıktığında BURASI da güncellenmeli.
  */
 export const APP_VERSIONS = {
-  windows: '1.0.17',
+  windows: '1.0.19',
   mac: '1.0.19',
   android: '1.0.7',
 } as const;
