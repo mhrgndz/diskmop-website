@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-import { Twitter, Github, Mail } from 'lucide-react';
+import { Twitter, Instagram, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { localeHref } from '@/lib/locale-path';
@@ -18,37 +18,37 @@ interface SocialLink {
   icon: LucideIcon;
 }
 
+// Karşılığı olmayan `href: '#'` bağlantılar KALDIRILDI (changelog, hakkımızda,
+// kariyer, şartlar, KVKK, yardım merkezi, durum sayfası). Hiçbir yere gitmeyen
+// bağlantı hem kullanıcıyı hem tarayıcıyı yanıltır; sayfalar yazıldığında geri
+// eklenir. Ayrıca /blog ve /privacy artık localeHref'ten geçiyor — Türkçe
+// kullanıcı Blog'a bastığında İngilizce sürüme düşüyordu.
 function getProductLinks(locale: string): FooterLink[] {
   return [
     { labelKey: 'product.features', href: localeHref(locale, '/#features') },
     { labelKey: 'product.pricing', href: localeHref(locale, '/#pricing') },
     { labelKey: 'product.faq', href: localeHref(locale, '/#faq') },
-    { labelKey: 'product.blog', href: '/blog' },
-    { labelKey: 'product.changelog', href: '#' },
+    { labelKey: 'product.blog', href: localeHref(locale, '/blog') },
   ];
 }
 
 const companyLinks: FooterLink[] = [
-  { labelKey: 'company.about', href: '#' },
   { labelKey: 'company.contact', href: 'mailto:diskmopdev@gmail.com' },
-  { labelKey: 'company.careers', href: '#' },
 ];
 
-const legalLinks: FooterLink[] = [
-  { labelKey: 'legal.privacy', href: '/privacy' },
-  { labelKey: 'legal.terms', href: '#' },
-  { labelKey: 'legal.kvkk', href: '#' },
-];
+function getLegalLinks(locale: string): FooterLink[] {
+  return [{ labelKey: 'legal.privacy', href: localeHref(locale, '/privacy') }];
+}
 
 const supportLinks: FooterLink[] = [
-  { labelKey: 'support.helpCenter', href: '#' },
   { labelKey: 'support.email', href: 'mailto:diskmopdev@gmail.com' },
-  { labelKey: 'support.status', href: '#' },
 ];
 
+// github.com/diskmop 404 veriyor (2026-09-04 doğrulandı) — kaldırıldı.
+// Gerçek hesap açılırsa geri konur.
 const socialLinks: SocialLink[] = [
+  { label: 'Instagram', href: 'https://www.instagram.com/diskmop/', icon: Instagram },
   { label: 'Twitter', href: 'https://twitter.com/diskmop', icon: Twitter },
-  { label: 'GitHub', href: 'https://github.com/diskmop', icon: Github },
   { label: 'Email', href: 'mailto:diskmopdev@gmail.com', icon: Mail },
 ];
 
@@ -129,7 +129,7 @@ export function Footer() {
           />
           <FooterColumn
             title={t('legal.title')}
-            links={legalLinks}
+            links={getLegalLinks(locale)}
             t={t}
           />
           <FooterColumn

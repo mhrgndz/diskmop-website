@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { DownloadDropdown } from '@/components/download-dropdown';
+import { PlatterManifest } from '@/components/hero-visuals/platter-manifest';
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -104,20 +104,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:w-1/2 flex items-center justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-r from-brand-500/20 via-purple-500/15 to-cyan-500/20 blur-3xl rounded-full" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <Image
-                  src="/screenshots/01-overview.png"
-                  alt="Disk Mop Overview"
-                  width={1280}
-                  height={800}
-                  className="relative z-10 w-full h-auto"
-                  priority
-                />
-              </div>
-            </div>
+            <PlatterManifest />
           </motion.div>
         </div>
       </div>

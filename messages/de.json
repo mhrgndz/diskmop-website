@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "title": "Disk Mop — Festplatten-Reiniger für Windows und Mac",
+    "description": "Geben Sie in Minuten Gigabyte frei. Disk Mop findet große Dateien, Duplikate und Cache-Ballast unter Windows, macOS und Android. Einmalig 19,90 $.",
+    "ogDescription": "Gigabyte freigeben und den Rechner wieder flott machen. Ein Klick, wenige Minuten.",
+    "keywords": ["Festplatte bereinigen","Speicherplatz freigeben","Duplikate finden","große Dateien finden","Cache leeren","Windows Datenträgerbereinigung","Mac Speicher bereinigen"]
+  },
   "nav": {
     "features": "Funktionen",
     "pricing": "Preise",
@@ -14,7 +20,12 @@
     "cta": "Jetzt herunterladen",
     "watchVideo": "Wie funktioniert es?",
     "users": "Über 10.000 zufriedene Nutzer",
-    "platforms": "Windows 10/11 & macOS 12+ • Virenfrei • Apple Notarized"
+    "platforms": "Windows 10/11 & macOS 12+ • Virenfrei • Signiert & notarisiert"
+  },
+  "heroVisual": {
+    "aria": "Animation: Disk Mop gibt {gb} GB Speicherplatz frei",
+    "freed": "freigegeben",
+    "cleaned": "Bereinigt"
   },
   "trustBar": {
     "downloads": "Downloads",
@@ -39,7 +50,9 @@
       "format": ".exe",
       "reqs": "Windows 10/11 (64-Bit)",
       "recommended": "Empfohlen für Sie",
-      "download": "Für Windows herunterladen"
+      "download": "Für Windows herunterladen",
+      "signed": "Signiert & verifizierter Herausgeber",
+      "signedNote": "Windows zeigt einen verifizierten Herausgeber statt „Unbekannter Herausgeber“"
     },
     "android": {
       "title": "Android",
@@ -57,9 +70,7 @@
       "download": "Für macOS herunterladen",
       "signed": "Apple Notarized & Signiert",
       "signedNote": "Keine Gatekeeper-Warnungen — öffnet direkt"
-    },
-    "downloads": "Downloads",
-    "totalDownloads": "Downloads insgesamt"
+    }
   },
   "features": {
     "title": "Leistungsstarke Funktionen",
@@ -238,8 +249,8 @@
         "description": "Windows-Dienste anzeigen und steuern. Unnötige Hintergrunddienste deaktivieren."
       },
       {
-        "name": "Geplante Bereinigung",
-        "description": "Automatisieren Sie Ihre Bereinigungsroutine. Tägliche, wöchentliche oder monatliche Zeitpläne einrichten."
+        "name": "Deinstallations-Reste",
+        "description": "Finden Sie Dateien und Registry-Einträge, die deinstallierte Programme zurücklassen, und entfernen Sie sie sicher."
       },
       {
         "name": "Datenschutzbericht",
@@ -256,10 +267,6 @@
       {
         "name": "Festplatten-Gesundheit",
         "description": "SSD/HDD-Gesundheit mit SMART-Diagnose überwachen. Temperatur, Lebensdauer und TRIM-Status prüfen."
-      },
-      {
-        "name": "Einstellungen",
-        "description": "Passen Sie Ihre Sprach-, Design- und Lizenzeinstellungen an."
       }
     ]
   },

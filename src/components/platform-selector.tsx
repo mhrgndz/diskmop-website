@@ -2,12 +2,13 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Monitor, Laptop, Smartphone, Download, ShieldCheck, Users } from 'lucide-react';
+import { Monitor, Laptop, Smartphone, Download, ShieldCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { useOSDetection, type OSType } from '@/hooks/use-os-detection';
 import { useAppInfo } from '@/hooks/use-app-info';
+import { APP_VERSIONS } from '@/lib/app-version';
 import { Button } from '@/components/ui/button';
 
 interface PlatformCard {
@@ -31,6 +32,7 @@ const platforms: PlatformCard[] = [
     ext: '.exe',
     systemReq: 'Windows 10/11 (64-bit)',
     href: 'https://api.diskmop.com/download/windows',
+    signed: true,
   },
   {
     key: 'mac',
@@ -54,19 +56,26 @@ const platforms: PlatformCard[] = [
   },
 ];
 
-function formatCount(n: number): string {
-  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`;
-  return n.toString();
-}
-
+// Canlı indirme sayaçları KAPALI (kullanıcı kararı, 2026-09-04). API'den gelen
+// downloadCounts artık gösterilmiyor; useAppInfo yalnız sürüm ve dosya boyutu için.
 export function PlatformSelector() {
   const t = useTranslations('platformSelector');
   const detectedOS = useOSDetection();
-  const { version, downloads, windowsSize, macSize } = useAppInfo();
+  const { version, windowsSize, macSize } = useAppInfo();
 
   const getSize = (key: string) => (key === 'windows' ? windowsSize : macSize) || '~80 MB';
-  const getCount = (key: string) =>
-    key === 'windows' ? downloads.windows : key === 'mac' ? downloads.mac : 0;
+
+  /**
+   * Sürüm SUNUCUDA basılır. Eskiden burada sabit "v1.0.0" yedeği vardı ve
+   * JavaScript çalıştırmayan okuyucular (arama motoru ilk taraması, ChatGPT,
+   * Perplexity) ürünü ilk sürümünde sanıyordu. Canlı API yanıtı geldiğinde
+   * yalnızca Windows sürümü güncellenir — macOS ayrı bir sürümde ilerliyor.
+   */
+  const getVersion = (key: string) => {
+    if (key === 'windows') return version || `v${APP_VERSIONS.windows}`;
+    if (key === 'mac') return `v${APP_VERSIONS.mac}`;
+    return `v${APP_VERSIONS.android}`;
+  };
 
   return (
     <section id="platforms" className="py-24">
@@ -90,7 +99,6 @@ export function PlatformSelector() {
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isHighlighted = detectedOS === platform.matchOS;
-            const count = getCount(platform.key);
 
             return (
               <motion.div
@@ -140,23 +148,14 @@ export function PlatformSelector() {
 
                 <p className="text-sm text-muted-foreground text-center mt-1">
                   {platform.store ? (
-                    'Google Play'
+                    `Google Play · v${APP_VERSIONS.android}`
                   ) : (
                     <>
-                      {version || 'v1.0.0'} &bull; {getSize(platform.key)} &bull;{' '}
+                      {getVersion(platform.key)} &bull; {getSize(platform.key)} &bull;{' '}
                       {platform.ext}
                     </>
                   )}
                 </p>
-
-                {count > 0 && (
-                  <div className="flex items-center justify-center gap-1.5 mt-2 text-muted-foreground">
-                    <Users className="h-3.5 w-3.5" />
-                    <span className="text-xs font-medium">
-                      {formatCount(count)} {t('downloads')}
-                    </span>
-                  </div>
-                )}
 
                 {platform.signed && (
                   <div className="flex items-center justify-center gap-1.5 mt-3 text-emerald-600 dark:text-emerald-400">
@@ -199,17 +198,6 @@ export function PlatformSelector() {
           })}
         </div>
 
-        {downloads.total > 0 && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center text-sm text-muted-foreground mt-8"
-          >
-            {formatCount(downloads.total)}+ {t('totalDownloads')}
-          </motion.p>
-        )}
       </div>
     </section>
   );

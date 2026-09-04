@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "title": "Disk Mop — Windows・Mac対応のディスククリーナー",
+    "description": "数分でギガバイト単位の空き容量を確保。Disk Mop は Windows・macOS・Android の大きなファイル、重複ファイル、キャッシュを見つけて安全に削除します。買い切り 19.90ドル。",
+    "ogDescription": "ギガバイト単位で空き容量を確保し、パソコンを買った日の速さに。ワンクリック、数分。",
+    "keywords": ["ディスククリーナー","空き容量を増やす","重複ファイル 検索","大きいファイル 検索","キャッシュ 削除","Windows ディスク クリーンアップ","Mac ストレージ 整理"]
+  },
   "nav": {
     "features": "機能",
     "pricing": "料金",
@@ -14,7 +20,12 @@
     "cta": "今すぐダウンロード",
     "watchVideo": "使い方を見る",
     "users": "10,000人以上のユーザーに信頼されています",
-    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • Apple公証済み"
+    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • コード署名済み・Apple公証済み"
+  },
+  "heroVisual": {
+    "aria": "アニメーション: Disk Mop が {gb} GB のディスク領域を解放",
+    "freed": "解放",
+    "cleaned": "クリーン済み"
   },
   "trustBar": {
     "downloads": "ダウンロード",
@@ -39,7 +50,9 @@
       "format": ".exe",
       "reqs": "Windows 10/11 (64-bit)",
       "recommended": "あなたにおすすめ",
-      "download": "Windows版をダウンロード"
+      "download": "Windows版をダウンロード",
+      "signed": "コード署名済み・発行元を検証",
+      "signedNote": "Windows に「不明な発行元」ではなく検証済みの発行元が表示されます"
     },
     "android": {
       "title": "Android",
@@ -57,9 +70,7 @@
       "download": "macOS版をダウンロード",
       "signed": "Apple公証済み＆署名済み",
       "signedNote": "Gatekeeperの警告なし — 直接開きます"
-    },
-    "downloads": "ダウンロード",
-    "totalDownloads": "ダウンロード合計"
+    }
   },
   "features": {
     "title": "強力な機能",
@@ -238,8 +249,8 @@
         "description": "Windowsサービスを表示・管理します。不要なバックグラウンドサービスを無効にしてシステムを高速化します。"
       },
       {
-        "name": "スケジュールクリーンアップ",
-        "description": "クリーニングルーティンを自動化します。毎日、毎週、または毎月のクリーンアップスケジュールを設定できます。"
+        "name": "アンインストールの残骸",
+        "description": "アンインストール済みアプリが残したファイルやレジストリ項目を見つけ、安全に削除します。"
       },
       {
         "name": "プライバシーレポート",
@@ -256,10 +267,6 @@
       {
         "name": "ディスクヘルス",
         "description": "SMART診断でSSD/HDDの健康状態を監視します。温度、寿命、TRIMステータスを確認できます。"
-      },
-      {
-        "name": "設定",
-        "description": "言語、テーマ、ライセンス設定をカスタマイズできます。"
       }
     ]
   },

@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "title": "Disk Mop — Smart Disk Cleaner for Windows & Mac",
+    "description": "Free up gigabytes in minutes. Disk Mop finds large files, duplicates and cache clutter on Windows, macOS and Android. One-time $19.90, no subscription.",
+    "ogDescription": "Free up gigabytes and make your computer feel new again. One click, minutes.",
+    "keywords": ["disk cleaner","free up disk space","duplicate file finder","large file finder","cache cleaner","Windows disk cleanup","Mac storage cleaner"]
+  },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -14,7 +20,12 @@
     "cta": "Download Now",
     "watchVideo": "How It Works?",
     "users": "Trusted by 10,000+ users",
-    "platforms": "Windows 10/11 & macOS 12+ • Virus-free • Apple Notarized"
+    "platforms": "Windows 10/11 & macOS 12+ • Virus-free • Signed & Notarized"
+  },
+  "heroVisual": {
+    "aria": "Animation: Disk Mop reclaiming {gb} GB of disk space",
+    "freed": "reclaimed",
+    "cleaned": "Cleaned"
   },
   "trustBar": {
     "downloads": "Downloads",
@@ -39,7 +50,9 @@
       "format": ".exe",
       "reqs": "Windows 10/11 (64-bit)",
       "recommended": "Recommended for you",
-      "download": "Download for Windows"
+      "download": "Download for Windows",
+      "signed": "Code Signed & Verified Publisher",
+      "signedNote": "Windows shows a verified publisher, not “Unknown publisher”"
     },
     "android": {
       "title": "Android",
@@ -57,9 +70,7 @@
       "download": "Download for macOS",
       "signed": "Apple Notarized & Signed",
       "signedNote": "No Gatekeeper warnings — opens directly"
-    },
-    "downloads": "downloads",
-    "totalDownloads": "total downloads"
+    }
   },
   "features": {
     "title": "Powerful Features",
@@ -238,8 +249,8 @@
         "description": "View and control Windows services. Disable unnecessary background services to speed up your system."
       },
       {
-        "name": "Scheduled Cleanup",
-        "description": "Automate your cleaning routine. Set daily, weekly, or monthly cleanup schedules."
+        "name": "Uninstall Leftovers",
+        "description": "Find files and registry entries that uninstalled apps left behind, and remove them safely."
       },
       {
         "name": "Privacy Report",
@@ -256,10 +267,6 @@
       {
         "name": "Disk Health",
         "description": "Monitor SSD/HDD health with SMART diagnostics. Check temperature, lifespan, and TRIM status."
-      },
-      {
-        "name": "Settings",
-        "description": "Customize your language, theme, and license preferences."
       }
     ]
   },

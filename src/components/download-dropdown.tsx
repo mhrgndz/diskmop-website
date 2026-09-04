@@ -36,6 +36,7 @@ const downloadOptions: DownloadOption[] = [
     sublabel: '.exe',
     href: 'https://api.diskmop.com/download/windows',
     icon: Monitor,
+    signed: true,
   },
   {
     os: 'mac',
