@@ -27,6 +27,8 @@ interface DownloadOption {
   href: string;
   icon: typeof Monitor;
   signed?: boolean;
+  /** Aynı platformun ikinci mimarisi: "önerilen" rozeti almaz, ayırıcı da yemez. */
+  altArch?: boolean;
 }
 
 const downloadOptions: DownloadOption[] = [
@@ -38,13 +40,24 @@ const downloadOptions: DownloadOption[] = [
     icon: Monitor,
     signed: true,
   },
+  // Burada "Universal (.dmg)" yazıyordu ama dosya universal DEĞİL: yayınlanan dmg
+  // arm64-only (lipo -archs → arm64). Intel kullanıcısı indirdiğini açamıyordu.
   {
     os: 'mac',
     label: 'macOS',
-    sublabel: 'Universal (.dmg)',
+    sublabel: 'Apple Silicon',
     href: 'https://api.diskmop.com/download/mac',
     icon: Laptop,
     signed: true,
+  },
+  {
+    os: 'mac',
+    label: 'macOS',
+    sublabel: 'Intel',
+    href: 'https://api.diskmop.com/download/mac-intel',
+    icon: Laptop,
+    signed: true,
+    altArch: true,
   },
   {
     os: 'android',
@@ -69,6 +82,9 @@ export function DownloadDropdown({
 
   const isRecommended = (option: DownloadOption): boolean => {
     if (detectedOS === 'unknown') return false;
+    // İki macOS satırından yalnızca ilki (Apple Silicon) rozet alır; User-Agent
+    // Apple Silicon ile Intel'i ayırt edemediği için Intel'i biz seçemeyiz.
+    if (option.altArch) return false;
     return option.os === detectedOS;
   };
 
@@ -97,7 +113,7 @@ export function DownloadDropdown({
 
           return (
             <div key={option.href}>
-              {index > 0 && <DropdownMenuSeparator />}
+              {index > 0 && !option.altArch && <DropdownMenuSeparator />}
               <DropdownMenuItem asChild>
                 <a
                   href={option.href}

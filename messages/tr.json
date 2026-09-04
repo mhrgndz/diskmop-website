@@ -3,7 +3,15 @@
     "title": "Disk Mop — Windows ve Mac için Akıllı Disk Temizleyici",
     "description": "Dakikalar içinde gigabaytlarca yer açın. Büyük dosyalar, yinelenenler ve önbellek birikintisi tek taramada. Windows, macOS ve Android. Tek seferlik 19,90 $.",
     "ogDescription": "Gigabaytlarca yer aç, bilgisayarını ilk günkü gibi hızlandır. Tek tıkla, dakikalar içinde.",
-    "keywords": ["disk temizleme","yer açma","yinelenen dosya bulucu","büyük dosya bulucu","önbellek temizleme","Windows disk temizleyici","Mac disk temizleyici"]
+    "keywords": [
+      "disk temizleme",
+      "yer açma",
+      "yinelenen dosya bulucu",
+      "büyük dosya bulucu",
+      "önbellek temizleme",
+      "Windows disk temizleyici",
+      "Mac disk temizleyici"
+    ]
   },
   "nav": {
     "features": "Özellikler",
@@ -69,7 +77,8 @@
       "recommended": "Senin için önerilen",
       "download": "macOS İçin İndir",
       "signed": "Apple Notarized & İmzalı",
-      "signedNote": "Gatekeeper uyarısı yok — doğrudan açılır"
+      "signedNote": "Gatekeeper uyarısı yok — doğrudan açılır",
+      "intelLink": "Intel işlemcili Mac mi? Intel sürümünü indir"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "Ortalama Kazanılan Alan" },
-      { "value": "32", "suffix": "%", "label": "Hız Artışı" },
-      { "value": "10000", "suffix": "+", "label": "Toplam İndirme" },
-      { "value": "4.8", "suffix": "/5", "label": "Kullanıcı Puanı" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Ortalama Kazanılan Alan"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Hız Artışı"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Toplam İndirme"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "Kullanıcı Puanı"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "Nasıl Aktive Edilir",
     "step1": "Yukarıdaki lisans anahtarını kopyalayın",
     "step2": "Disk Mop'u açın ve Ayarlar'a gidin",
-    "step3": "Anahtarınızı yapıştırın ve Etkinleştir'e tıklayın"
+    "step3": "Anahtarınızı yapıştırın ve Etkinleştir'e tıklayın",
+    "macIntel": "Intel Mac mi? Intel sürümünü indir"
   },
   "blog": {
     "title": "Blog",

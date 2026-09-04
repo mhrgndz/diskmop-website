@@ -3,7 +3,15 @@
     "title": "Disk Mop — Windows・Mac対応のディスククリーナー",
     "description": "数分でギガバイト単位の空き容量を確保。Disk Mop は Windows・macOS・Android の大きなファイル、重複ファイル、キャッシュを見つけて安全に削除します。買い切り 19.90ドル。",
     "ogDescription": "ギガバイト単位で空き容量を確保し、パソコンを買った日の速さに。ワンクリック、数分。",
-    "keywords": ["ディスククリーナー","空き容量を増やす","重複ファイル 検索","大きいファイル 検索","キャッシュ 削除","Windows ディスク クリーンアップ","Mac ストレージ 整理"]
+    "keywords": [
+      "ディスククリーナー",
+      "空き容量を増やす",
+      "重複ファイル 検索",
+      "大きいファイル 検索",
+      "キャッシュ 削除",
+      "Windows ディスク クリーンアップ",
+      "Mac ストレージ 整理"
+    ]
   },
   "nav": {
     "features": "機能",
@@ -69,7 +77,8 @@
       "recommended": "あなたにおすすめ",
       "download": "macOS版をダウンロード",
       "signed": "Apple公証済み＆署名済み",
-      "signedNote": "Gatekeeperの警告なし — 直接開きます"
+      "signedNote": "Gatekeeperの警告なし — 直接開きます",
+      "intelLink": "IntelプロセッサのMacをお使いですか？Intel版をダウンロード"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "平均空き容量確保" },
-      { "value": "32", "suffix": "%", "label": "速度向上" },
-      { "value": "10000", "suffix": "+", "label": "総ダウンロード数" },
-      { "value": "4.8", "suffix": "/5", "label": "ユーザー評価" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "平均空き容量確保"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "速度向上"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "総ダウンロード数"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "ユーザー評価"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "アクティベーション方法",
     "step1": "上記のライセンスキーをコピー",
     "step2": "Disk Mopを開き、設定に移動",
-    "step3": "キーを貼り付けて「アクティベート」をクリック"
+    "step3": "キーを貼り付けて「アクティベート」をクリック",
+    "macIntel": "Intel Macの方はIntel版をダウンロード"
   },
   "blog": {
     "title": "ブログ",

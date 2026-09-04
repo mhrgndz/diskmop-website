@@ -19,6 +19,8 @@ interface PlatformCard {
   ext: string;
   systemReq: string;
   href: string;
+  /** Aynı platformun ikinci mimarisi. macOS'ta ana buton Apple Silicon indirir. */
+  altArchHref?: string;
   signed?: boolean;
   store?: boolean;
 }
@@ -42,6 +44,7 @@ const platforms: PlatformCard[] = [
     ext: '.dmg',
     systemReq: 'macOS 12+ (Apple Silicon & Intel)',
     href: 'https://api.diskmop.com/download/mac',
+    altArchHref: 'https://api.diskmop.com/download/mac-intel',
     signed: true,
   },
   {
@@ -193,6 +196,23 @@ export function PlatformSelector() {
                     </a>
                   </Button>
                 </div>
+
+                {/*
+                  Intel yapısı AÇIK SEÇİM olarak duruyor, otomatik tespitle değil:
+                  tarayıcı User-Agent'ı Apple Silicon ile Intel'i güvenilir şekilde
+                  ayırt etmiyor (Safari her ikisinde de "Intel Mac OS X" diyor).
+                  Yanlış tahmin, çalışmayan bir indirme demek.
+                */}
+                {platform.altArchHref && (
+                  <p className="mt-3 text-center">
+                    <a
+                      href={platform.altArchHref}
+                      className="text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+                    >
+                      {t(`${platform.key}.intelLink`)}
+                    </a>
+                  </p>
+                )}
               </motion.div>
             );
           })}

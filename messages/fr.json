@@ -3,7 +3,15 @@
     "title": "Disk Mop — Nettoyeur de disque pour Windows et Mac",
     "description": "Libérez des gigaoctets en quelques minutes. Disk Mop trouve les gros fichiers, les doublons et le cache sur Windows, macOS et Android. 19,90 $ une seule fois.",
     "ogDescription": "Libérez des gigaoctets et retrouvez un ordinateur rapide. Un clic, quelques minutes.",
-    "keywords": ["nettoyer disque dur","libérer espace disque","trouver doublons","gros fichiers","vider le cache","nettoyage disque Windows","nettoyeur Mac"]
+    "keywords": [
+      "nettoyer disque dur",
+      "libérer espace disque",
+      "trouver doublons",
+      "gros fichiers",
+      "vider le cache",
+      "nettoyage disque Windows",
+      "nettoyeur Mac"
+    ]
   },
   "nav": {
     "features": "Fonctionnalités",
@@ -69,7 +77,8 @@
       "recommended": "Recommandé pour vous",
       "download": "Télécharger pour macOS",
       "signed": "Apple Notarized & Signé",
-      "signedNote": "Aucun avertissement Gatekeeper — s'ouvre directement"
+      "signedNote": "Aucun avertissement Gatekeeper — s'ouvre directement",
+      "intelLink": "Mac avec processeur Intel ? Télécharger la version Intel"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " Go", "label": "Espace libéré en moyenne" },
-      { "value": "32", "suffix": "%", "label": "Gain de vitesse" },
-      { "value": "10000", "suffix": "+", "label": "Téléchargements totaux" },
-      { "value": "4.8", "suffix": "/5", "label": "Note des utilisateurs" }
+      {
+        "value": "47",
+        "suffix": " Go",
+        "label": "Espace libéré en moyenne"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Gain de vitesse"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Téléchargements totaux"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "Note des utilisateurs"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "Comment activer",
     "step1": "Copiez la clé de licence ci-dessus",
     "step2": "Ouvrez Disk Mop et allez dans Paramètres",
-    "step3": "Collez votre clé et cliquez sur Activer"
+    "step3": "Collez votre clé et cliquez sur Activer",
+    "macIntel": "Mac Intel ? Télécharger la version Intel"
   },
   "blog": {
     "title": "Blog",

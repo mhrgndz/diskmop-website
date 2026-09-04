@@ -298,11 +298,22 @@ function SuccessContent() {
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
-                  <p className="text-xs text-muted-foreground">DMG • {macSize || '~175 MB'}</p>
+                  <p className="text-xs text-muted-foreground">
+                    Apple Silicon • {macSize || '~175 MB'}
+                  </p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
             </div>
+            {/* Ödeme yapmış kullanıcı Intel Mac'teyse elleri boş kalmasın. */}
+            <p className="mt-3 text-center sm:text-right">
+              <a
+                href="https://api.diskmop.com/download/mac-intel"
+                className="text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                {t('macIntel')}
+              </a>
+            </p>
           </div>
 
           <div className="mt-8">

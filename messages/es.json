@@ -3,7 +3,15 @@
     "title": "Disk Mop — Limpiador de disco para Windows y Mac",
     "description": "Libera gigabytes en minutos. Disk Mop encuentra archivos grandes, duplicados y caché en Windows, macOS y Android. Pago único de 19,90 $, sin suscripción.",
     "ogDescription": "Libera gigabytes y haz que tu equipo vuelva a ir rápido. Un clic, unos minutos.",
-    "keywords": ["limpiar disco duro","liberar espacio","buscar duplicados","archivos grandes","limpiar caché","limpieza de disco Windows","limpiador Mac"]
+    "keywords": [
+      "limpiar disco duro",
+      "liberar espacio",
+      "buscar duplicados",
+      "archivos grandes",
+      "limpiar caché",
+      "limpieza de disco Windows",
+      "limpiador Mac"
+    ]
   },
   "nav": {
     "features": "Funciones",
@@ -69,7 +77,8 @@
       "recommended": "Recomendado para ti",
       "download": "Descargar para macOS",
       "signed": "Apple Notarized y Firmado",
-      "signedNote": "Sin advertencias de Gatekeeper — se abre directamente"
+      "signedNote": "Sin advertencias de Gatekeeper — se abre directamente",
+      "intelLink": "¿Mac con procesador Intel? Descarga la versión Intel"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "Espacio promedio liberado" },
-      { "value": "32", "suffix": "%", "label": "Mejora de velocidad" },
-      { "value": "10000", "suffix": "+", "label": "Descargas totales" },
-      { "value": "4.8", "suffix": "/5", "label": "Valoración de usuarios" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Espacio promedio liberado"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Mejora de velocidad"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Descargas totales"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "Valoración de usuarios"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "Cómo activar",
     "step1": "Copia la clave de licencia de arriba",
     "step2": "Abre Disk Mop y ve a Configuración",
-    "step3": "Pega tu clave y haz clic en Activar"
+    "step3": "Pega tu clave y haz clic en Activar",
+    "macIntel": "¿Mac Intel? Descarga la versión Intel"
   },
   "blog": {
     "title": "Blog",

@@ -3,7 +3,15 @@
     "title": "Disk Mop — Smart Disk Cleaner for Windows & Mac",
     "description": "Free up gigabytes in minutes. Disk Mop finds large files, duplicates and cache clutter on Windows, macOS and Android. One-time $19.90, no subscription.",
     "ogDescription": "Free up gigabytes and make your computer feel new again. One click, minutes.",
-    "keywords": ["disk cleaner","free up disk space","duplicate file finder","large file finder","cache cleaner","Windows disk cleanup","Mac storage cleaner"]
+    "keywords": [
+      "disk cleaner",
+      "free up disk space",
+      "duplicate file finder",
+      "large file finder",
+      "cache cleaner",
+      "Windows disk cleanup",
+      "Mac storage cleaner"
+    ]
   },
   "nav": {
     "features": "Features",
@@ -69,7 +77,8 @@
       "recommended": "Recommended for you",
       "download": "Download for macOS",
       "signed": "Apple Notarized & Signed",
-      "signedNote": "No Gatekeeper warnings — opens directly"
+      "signedNote": "No Gatekeeper warnings — opens directly",
+      "intelLink": "Using an Intel Mac? Get the Intel build"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "Average Space Freed" },
-      { "value": "32", "suffix": "%", "label": "Speed Boost" },
-      { "value": "10000", "suffix": "+", "label": "Total Downloads" },
-      { "value": "4.8", "suffix": "/5", "label": "User Rating" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Average Space Freed"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Speed Boost"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Total Downloads"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "User Rating"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "How to Activate",
     "step1": "Copy the license key above",
     "step2": "Open Disk Mop and go to Settings",
-    "step3": "Paste your key and click Activate"
+    "step3": "Paste your key and click Activate",
+    "macIntel": "Intel Mac? Download the Intel build"
   },
   "blog": {
     "title": "Blog",

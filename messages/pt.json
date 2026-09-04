@@ -3,7 +3,15 @@
     "title": "Disk Mop — Limpador de disco para Windows e Mac",
     "description": "Libere gigabytes em minutos. O Disk Mop encontra arquivos grandes, duplicados e cache no Windows, macOS e Android. Pagamento único de 19,90 $.",
     "ogDescription": "Libere gigabytes e deixe o computador rápido de novo. Um clique, poucos minutos.",
-    "keywords": ["limpar disco","liberar espaço","encontrar duplicados","arquivos grandes","limpar cache","limpeza de disco Windows","limpador Mac"]
+    "keywords": [
+      "limpar disco",
+      "liberar espaço",
+      "encontrar duplicados",
+      "arquivos grandes",
+      "limpar cache",
+      "limpeza de disco Windows",
+      "limpador Mac"
+    ]
   },
   "nav": {
     "features": "Recursos",
@@ -69,7 +77,8 @@
       "recommended": "Recomendado para você",
       "download": "Baixar para macOS",
       "signed": "Apple Notarized e Assinado",
-      "signedNote": "Sem avisos do Gatekeeper — abre diretamente"
+      "signedNote": "Sem avisos do Gatekeeper — abre diretamente",
+      "intelLink": "Mac com processador Intel? Baixe a versão Intel"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "Espaço Médio Liberado" },
-      { "value": "32", "suffix": "%", "label": "Aumento de Velocidade" },
-      { "value": "10000", "suffix": "+", "label": "Total de Downloads" },
-      { "value": "4.8", "suffix": "/5", "label": "Avaliação dos Usuários" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Espaço Médio Liberado"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Aumento de Velocidade"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Total de Downloads"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "Avaliação dos Usuários"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "Como ativar",
     "step1": "Copie a chave de licença acima",
     "step2": "Abra o Disk Mop e vá para Configurações",
-    "step3": "Cole sua chave e clique em Ativar"
+    "step3": "Cole sua chave e clique em Ativar",
+    "macIntel": "Mac Intel? Baixe a versão Intel"
   },
   "blog": {
     "title": "Blog",

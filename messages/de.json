@@ -3,7 +3,15 @@
     "title": "Disk Mop — Festplatten-Reiniger für Windows und Mac",
     "description": "Geben Sie in Minuten Gigabyte frei. Disk Mop findet große Dateien, Duplikate und Cache-Ballast unter Windows, macOS und Android. Einmalig 19,90 $.",
     "ogDescription": "Gigabyte freigeben und den Rechner wieder flott machen. Ein Klick, wenige Minuten.",
-    "keywords": ["Festplatte bereinigen","Speicherplatz freigeben","Duplikate finden","große Dateien finden","Cache leeren","Windows Datenträgerbereinigung","Mac Speicher bereinigen"]
+    "keywords": [
+      "Festplatte bereinigen",
+      "Speicherplatz freigeben",
+      "Duplikate finden",
+      "große Dateien finden",
+      "Cache leeren",
+      "Windows Datenträgerbereinigung",
+      "Mac Speicher bereinigen"
+    ]
   },
   "nav": {
     "features": "Funktionen",
@@ -69,7 +77,8 @@
       "recommended": "Empfohlen für Sie",
       "download": "Für macOS herunterladen",
       "signed": "Apple Notarized & Signiert",
-      "signedNote": "Keine Gatekeeper-Warnungen — öffnet direkt"
+      "signedNote": "Keine Gatekeeper-Warnungen — öffnet direkt",
+      "intelLink": "Mac mit Intel-Prozessor? Intel-Version herunterladen"
     }
   },
   "features": {
@@ -272,10 +281,26 @@
   },
   "stats": {
     "items": [
-      { "value": "47", "suffix": " GB", "label": "Durchschnittlich freigegebener Speicher" },
-      { "value": "32", "suffix": "%", "label": "Geschwindigkeitssteigerung" },
-      { "value": "10000", "suffix": "+", "label": "Gesamtdownloads" },
-      { "value": "4.8", "suffix": "/5", "label": "Nutzerbewertung" }
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Durchschnittlich freigegebener Speicher"
+      },
+      {
+        "value": "32",
+        "suffix": "%",
+        "label": "Geschwindigkeitssteigerung"
+      },
+      {
+        "value": "10000",
+        "suffix": "+",
+        "label": "Gesamtdownloads"
+      },
+      {
+        "value": "4.8",
+        "suffix": "/5",
+        "label": "Nutzerbewertung"
+      }
     ]
   },
   "testimonials": {
@@ -441,7 +466,8 @@
     "stepsTitle": "So aktivieren Sie",
     "step1": "Kopieren Sie den obigen Lizenzschlüssel",
     "step2": "Öffnen Sie Disk Mop und gehen Sie zu Einstellungen",
-    "step3": "Fügen Sie Ihren Schlüssel ein und klicken Sie auf Aktivieren"
+    "step3": "Fügen Sie Ihren Schlüssel ein und klicken Sie auf Aktivieren",
+    "macIntel": "Intel-Mac? Intel-Version herunterladen"
   },
   "blog": {
     "title": "Blog",
