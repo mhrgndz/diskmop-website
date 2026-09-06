@@ -10,8 +10,8 @@
  * günceller. Yeni sürüm çıktığında BURASI da güncellenmeli.
  */
 export const APP_VERSIONS = {
-  windows: '1.0.20',
-  mac: '1.0.20',
+  windows: '1.0.21',
+  mac: '1.0.21',
   android: '1.0.7',
 } as const;
 
@@ -22,7 +22,7 @@ export const LATEST_VERSION = APP_VERSIONS.windows;
 export const FIRST_RELEASE_DATE = '2026-05-15';
 
 /** Güncel sürümün yayın tarihi. */
-export const LATEST_RELEASE_DATE = '2026-09-05';
+export const LATEST_RELEASE_DATE = '2026-09-06';
 
 export const RELEASE_NOTES_URL = 'https://github.com/mhrgndz/diskmop-releases/releases';
 
