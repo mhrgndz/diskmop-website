@@ -496,11 +496,11 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: May 24, 2026",
+    "lastUpdated": "Last updated: September 13, 2026",
     "sections": {
       "overview": {
         "title": "1. Overview",
-        "content": "Disk Mop (\"we\", \"our\", \"the application\") is a desktop disk cleanup and optimization tool developed by Lova Software. We are committed to protecting your privacy. This Privacy Policy explains what data we collect, how we use it, and your rights regarding your information."
+        "content": "Disk Mop (\"we\", \"our\", \"the application\") is developed by Lova Software. This Privacy Policy covers the Disk Mop desktop application for Windows and macOS, the Disk Mop app for Android, and DiskMop for iPhone — a photo and video cleaner on the App Store. Sections 2 to 6 describe the desktop and Android applications; section 7 covers the iPhone app. We are committed to protecting your privacy."
       },
       "dataCollection": {
         "title": "2. Data We Do Not Collect",
@@ -523,16 +523,20 @@
         "content": "Our website at diskmop.com uses Google Analytics to collect anonymous usage statistics such as page views, geographic region, and referral sources. This data helps us improve our website. You can opt out of Google Analytics by using browser extensions or cookie settings. The desktop application does not include any analytics or telemetry."
       },
       "children": {
-        "title": "7. Children's Privacy",
+        "title": "8. Children's Privacy",
         "content": "Disk Mop is a general-purpose utility application. We do not knowingly collect personal information from children under 13. Since the application does not collect personal data, there are no age-specific data concerns."
       },
       "changes": {
-        "title": "8. Changes to This Policy",
+        "title": "9. Changes to This Policy",
         "content": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the application after changes constitutes acceptance of the updated policy."
       },
       "contact": {
-        "title": "9. Contact Us",
+        "title": "10. Contact Us",
         "content": "If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: diskmopdev@gmail.com\nWebsite: https://diskmop.com\nDeveloper: Lova Software — https://lovasoftware.com"
+      },
+      "ios": {
+        "title": "7. DiskMop for iPhone (iOS)",
+        "content": "DiskMop for iPhone asks for access to your photo library so that it can find similar and duplicate photos, screenshots, blurry shots, screen recordings, Live Photos and large videos. The analysis runs entirely on your iPhone using Apple's Vision framework. Your photos and videos are never uploaded, copied off the device, or sent to us or to anyone else.\n\n• No account and no sign-in. The app has no registration and no user account.\n• No server. It does not contact any Disk Mop server. The licensing server used by the desktop application (api.diskmop.com) is not used by the iPhone app.\n• No tracking. There is no analytics SDK, no advertising SDK and no crash reporting service. Our App Store privacy label states Data Not Collected.\n\nStored on your device: a local cache of the scan results (image fingerprints and file sizes), your preferences, and whether the one-time purchase has been made. This data stays in the app's own container on your iPhone, is removed when you delete the app, and is never transmitted anywhere.\n\nPurchases: the one-time purchase is processed by Apple through the App Store. The app only asks StoreKit whether the purchase exists; we do not receive or store your name, payment details or Apple Account. Apple's privacy policy applies to the transaction. Polar.sh, which handles desktop licence payments, is not involved.\n\nDeleting photos: when you delete photos, the app asks iOS to do it and iOS shows its own confirmation. Deleted items go to the Recently Deleted album for 30 days, so storage is not freed immediately. The app cannot access or remove anything you did not select."
       }
     }
   },

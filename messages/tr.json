@@ -496,11 +496,11 @@
   },
   "privacy": {
     "title": "Gizlilik Politikası",
-    "lastUpdated": "Son güncelleme: 24 Mayıs 2026",
+    "lastUpdated": "Son güncelleme: 13 Eylül 2026",
     "sections": {
       "overview": {
         "title": "1. Genel Bakış",
-        "content": "Disk Mop (\"biz\", \"uygulama\"), Lova Software tarafından geliştirilen bir masaüstü disk temizleme ve optimizasyon aracıdır. Gizliliğinizi korumaya kararlıyız. Bu Gizlilik Politikası, hangi verileri topladığımızı, nasıl kullandığımızı ve bilgilerinizle ilgili haklarınızı açıklar."
+        "content": "Disk Mop (\"biz\", \"uygulama\"), Lova Software tarafından geliştirilir. Bu Gizlilik Politikası; Windows ve macOS için Disk Mop masaüstü uygulamasını, Android için Disk Mop uygulamasını ve App Store'daki DiskMop for iPhone fotoğraf ve video temizleyicisini kapsar. 2-6. bölümler masaüstü ve Android uygulamalarını, 7. bölüm iPhone uygulamasını anlatır. Gizliliğinizi korumaya kararlıyız."
       },
       "dataCollection": {
         "title": "2. Toplamadığımız Veriler",
@@ -523,16 +523,20 @@
         "content": "diskmop.com adresindeki web sitemiz, sayfa görüntülemeleri, coğrafi bölge ve yönlendirme kaynakları gibi anonim kullanım istatistiklerini toplamak için Google Analytics kullanır. Bu veriler web sitemizi iyileştirmemize yardımcı olur. Tarayıcı uzantıları veya çerez ayarları kullanarak Google Analytics'i devre dışı bırakabilirsiniz. Masaüstü uygulaması herhangi bir analiz veya telemetri içermez."
       },
       "children": {
-        "title": "7. Çocukların Gizliliği",
+        "title": "8. Çocukların Gizliliği",
         "content": "Disk Mop genel amaçlı bir yardımcı programdır. 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. Uygulama kişisel veri toplamadığından, yaşa özel veri endişesi bulunmamaktadır."
       },
       "changes": {
-        "title": "8. Bu Politikadaki Değişiklikler",
+        "title": "9. Bu Politikadaki Değişiklikler",
         "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişiklik, güncellenmiş revizyon tarihiyle birlikte bu sayfada yayınlanacaktır. Değişikliklerden sonra uygulamayı kullanmaya devam etmeniz, güncellenen politikayı kabul ettiğiniz anlamına gelir."
       },
       "contact": {
-        "title": "9. İletişim",
+        "title": "10. İletişim",
         "content": "Bu Gizlilik Politikası hakkında sorularınız varsa lütfen bizimle iletişime geçin:\n\nE-posta: diskmopdev@gmail.com\nWeb sitesi: https://diskmop.com\nGeliştirici: Lova Software — https://lovasoftware.com"
+      },
+      "ios": {
+        "title": "7. iPhone için DiskMop (iOS)",
+        "content": "iPhone için DiskMop, benzer ve kopya fotoğrafları, ekran görüntülerini, bulanık kareleri, ekran kayıtlarını, Live Photo'ları ve büyük videoları bulabilmek için fotoğraf kitaplığınıza erişim ister. Analiz tamamen iPhone'unuzda, Apple'ın Vision çatısı kullanılarak yapılır. Fotoğraflarınız ve videolarınız hiçbir zaman yüklenmez, cihazdan dışarı kopyalanmaz, bize ya da başka birine gönderilmez.\n\n• Hesap ve giriş yok. Uygulamada kayıt ya da kullanıcı hesabı bulunmaz.\n• Sunucu yok. Herhangi bir Disk Mop sunucusuna bağlanmaz. Masaüstü uygulamasının kullandığı lisans sunucusu (api.diskmop.com) iPhone uygulamasında kullanılmaz.\n• İzleme yok. Analitik SDK'sı, reklam SDK'sı ya da çökme raporlama servisi yoktur. App Store gizlilik etiketimiz \"Veri Toplanmıyor\" der.\n\nCihazınızda saklananlar: tarama sonuçlarının yerel önbelleği (görüntü parmak izleri ve dosya boyutları), tercihleriniz ve tek seferlik satın almanın yapılıp yapılmadığı. Bu veriler iPhone'unuzda uygulamanın kendi alanında kalır, uygulamayı sildiğinizde kaybolur ve hiçbir yere gönderilmez.\n\nSatın alma: tek seferlik satın alma, App Store üzerinden Apple tarafından işlenir. Uygulama yalnızca StoreKit'e satın almanın var olup olmadığını sorar; adınızı, ödeme bilgilerinizi veya Apple Hesabınızı almaz ve saklamayız. İşleme Apple'ın gizlilik politikası uygulanır. Masaüstü lisans ödemelerini yürüten Polar.sh bu akışta yer almaz.\n\nFotoğraf silme: fotoğrafları sildiğinizde uygulama bunu iOS'tan ister ve onay ekranını iOS gösterir. Silinenler 30 gün boyunca Son Silinenler albümünde durur, bu yüzden alan hemen boşalmaz. Uygulama sizin seçmediğiniz hiçbir şeye erişemez ve onu silemez."
       }
     }
   },

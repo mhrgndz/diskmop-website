@@ -19,6 +19,7 @@ function PrivacyContent() {
     { title: t('sections.internetUsage.title'), content: t('sections.internetUsage.content') },
     { title: t('sections.thirdParty.title'), content: t('sections.thirdParty.content') },
     { title: t('sections.analytics.title'), content: t('sections.analytics.content') },
+    { title: t('sections.ios.title'), content: t('sections.ios.content') },
     { title: t('sections.children.title'), content: t('sections.children.content') },
     { title: t('sections.changes.title'), content: t('sections.changes.content') },
     { title: t('sections.contact.title'), content: t('sections.contact.content') },

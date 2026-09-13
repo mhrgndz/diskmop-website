@@ -496,11 +496,11 @@
   },
   "privacy": {
     "title": "Datenschutzrichtlinie",
-    "lastUpdated": "Zuletzt aktualisiert: 24. Mai 2026",
+    "lastUpdated": "Zuletzt aktualisiert: 13. September 2026",
     "sections": {
       "overview": {
         "title": "1. Überblick",
-        "content": "Disk Mop (\"wir\", \"unsere\", \"die Anwendung\") ist ein Desktop-Tool zur Datenträgerbereinigung und -optimierung, entwickelt von Lova Software. Wir verpflichten uns, Ihre Privatsphäre zu schützen. Diese Datenschutzrichtlinie erklärt, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie bezüglich Ihrer Daten haben."
+        "content": "Disk Mop („wir\", „unsere\", „die Anwendung\") wird von Lova Software entwickelt. Diese Datenschutzerklärung gilt für die Disk Mop Desktop-Anwendung für Windows und macOS, die Disk Mop App für Android sowie DiskMop für iPhone – einen Foto- und Video-Reiniger im App Store. Die Abschnitte 2 bis 6 beschreiben die Desktop- und Android-Anwendungen; Abschnitt 7 behandelt die iPhone-App. Wir verpflichten uns, Ihre Privatsphäre zu schützen."
       },
       "dataCollection": {
         "title": "2. Daten, die wir nicht erheben",
@@ -523,16 +523,20 @@
         "content": "Unsere Website unter diskmop.com verwendet Google Analytics, um anonyme Nutzungsstatistiken wie Seitenaufrufe, geografische Region und Verweisquellen zu sammeln. Diese Daten helfen uns, unsere Website zu verbessern. Sie können Google Analytics über Browser-Erweiterungen oder Cookie-Einstellungen deaktivieren. Die Desktop-Anwendung enthält keine Analysen oder Telemetrie."
       },
       "children": {
-        "title": "7. Datenschutz für Kinder",
+        "title": "8. Datenschutz für Kinder",
         "content": "Disk Mop ist eine allgemeine Dienstprogramm-Anwendung. Wir erheben wissentlich keine persönlichen Daten von Kindern unter 13 Jahren. Da die Anwendung keine persönlichen Daten erhebt, bestehen keine altersspezifischen Datenbedenken."
       },
       "changes": {
-        "title": "8. Änderungen dieser Richtlinie",
+        "title": "9. Änderungen dieser Richtlinie",
         "content": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Revisionsdatum veröffentlicht. Die fortgesetzte Nutzung der Anwendung nach Änderungen gilt als Akzeptanz der aktualisierten Richtlinie."
       },
       "contact": {
-        "title": "9. Kontakt",
+        "title": "10. Kontakt",
         "content": "Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns bitte unter:\n\nE-Mail: diskmopdev@gmail.com\nWebsite: https://diskmop.com\nEntwickler: Lova Software — https://lovasoftware.com"
+      },
+      "ios": {
+        "title": "7. DiskMop für iPhone (iOS)",
+        "content": "DiskMop für iPhone bittet um Zugriff auf Ihre Fotomediathek, um ähnliche und doppelte Fotos, Screenshots, unscharfe Aufnahmen, Bildschirmaufnahmen, Live Photos und große Videos zu finden. Die Analyse läuft vollständig auf Ihrem iPhone mit Apples Vision-Framework. Ihre Fotos und Videos werden niemals hochgeladen, vom Gerät kopiert oder an uns oder Dritte gesendet.\n\n• Kein Konto und keine Anmeldung. Die App hat keine Registrierung und kein Benutzerkonto.\n• Kein Server. Sie kontaktiert keinen Disk-Mop-Server. Der Lizenzserver der Desktop-Anwendung (api.diskmop.com) wird von der iPhone-App nicht verwendet.\n• Kein Tracking. Es gibt kein Analyse-SDK, kein Werbe-SDK und keinen Absturzberichtsdienst. Unser App-Store-Datenschutzlabel lautet „Keine Daten erfasst\".\n\nAuf Ihrem Gerät gespeichert: ein lokaler Cache der Scan-Ergebnisse (Bild-Fingerabdrücke und Dateigrößen), Ihre Einstellungen und ob der einmalige Kauf getätigt wurde. Diese Daten verbleiben im eigenen Container der App auf Ihrem iPhone, werden beim Löschen der App entfernt und niemals übertragen.\n\nKäufe: Der einmalige Kauf wird von Apple über den App Store abgewickelt. Die App fragt StoreKit lediglich, ob der Kauf vorliegt; wir erhalten und speichern weder Ihren Namen noch Zahlungsdaten oder Ihr Apple-Konto. Für die Transaktion gilt die Datenschutzerklärung von Apple. Polar.sh, das die Desktop-Lizenzzahlungen abwickelt, ist nicht beteiligt.\n\nFotos löschen: Wenn Sie Fotos löschen, beauftragt die App iOS damit, und iOS zeigt seine eigene Bestätigung an. Gelöschte Objekte bleiben 30 Tage im Album „Zuletzt gelöscht\", der Speicher wird also nicht sofort frei. Die App kann auf nichts zugreifen und nichts entfernen, was Sie nicht ausgewählt haben."
       }
     }
   },

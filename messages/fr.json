@@ -496,11 +496,11 @@
   },
   "privacy": {
     "title": "Politique de confidentialité",
-    "lastUpdated": "Dernière mise à jour : 24 mai 2026",
+    "lastUpdated": "Dernière mise à jour : 13 septembre 2026",
     "sections": {
       "overview": {
         "title": "1. Aperçu",
-        "content": "Disk Mop (« nous », « notre », « l'application ») est un outil de nettoyage et d'optimisation de disque développé par Lova Software. Nous nous engageons à protéger votre vie privée. Cette politique de confidentialité explique quelles données nous collectons, comment nous les utilisons et vos droits concernant vos informations."
+        "content": "Disk Mop (« nous », « notre », « l'application ») est développé par Lova Software. La présente politique de confidentialité couvre l'application de bureau Disk Mop pour Windows et macOS, l'application Disk Mop pour Android et DiskMop pour iPhone — un nettoyeur de photos et de vidéos disponible sur l'App Store. Les sections 2 à 6 décrivent les applications de bureau et Android ; la section 7 concerne l'application iPhone. Nous nous engageons à protéger votre vie privée."
       },
       "dataCollection": {
         "title": "2. Données que nous ne collectons pas",
@@ -523,16 +523,20 @@
         "content": "Notre site web diskmop.com utilise Google Analytics pour collecter des statistiques d'utilisation anonymes telles que les pages vues, la région géographique et les sources de référence. Ces données nous aident à améliorer notre site web. Vous pouvez désactiver Google Analytics en utilisant des extensions de navigateur ou les paramètres de cookies. L'application de bureau n'inclut aucune analyse ni télémétrie."
       },
       "children": {
-        "title": "7. Confidentialité des enfants",
+        "title": "8. Confidentialité des enfants",
         "content": "Disk Mop est une application utilitaire à usage général. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de moins de 13 ans. Étant donné que l'application ne collecte pas de données personnelles, il n'y a pas de préoccupations spécifiques à l'âge."
       },
       "changes": {
-        "title": "8. Modifications de cette politique",
+        "title": "9. Modifications de cette politique",
         "content": "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera publiée sur cette page avec une date de révision mise à jour. L'utilisation continue de l'application après les modifications constitue l'acceptation de la politique mise à jour."
       },
       "contact": {
-        "title": "9. Nous contacter",
+        "title": "10. Nous contacter",
         "content": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à :\n\nE-mail : diskmopdev@gmail.com\nSite web : https://diskmop.com\nDéveloppeur : Lova Software — https://lovasoftware.com"
+      },
+      "ios": {
+        "title": "7. DiskMop pour iPhone (iOS)",
+        "content": "DiskMop pour iPhone demande l'accès à votre photothèque afin de trouver les photos similaires et en double, les captures d'écran, les prises floues, les enregistrements d'écran, les Live Photos et les vidéos volumineuses. L'analyse s'exécute entièrement sur votre iPhone à l'aide du framework Vision d'Apple. Vos photos et vidéos ne sont jamais téléversées, copiées hors de l'appareil, ni envoyées à nous ou à qui que ce soit.\n\n• Aucun compte, aucune connexion. L'application ne comporte ni inscription ni compte utilisateur.\n• Aucun serveur. Elle ne contacte aucun serveur Disk Mop. Le serveur de licences utilisé par l'application de bureau (api.diskmop.com) n'est pas utilisé par l'application iPhone.\n• Aucun suivi. Il n'y a ni SDK d'analyse, ni SDK publicitaire, ni service de rapport de plantage. Notre étiquette de confidentialité sur l'App Store indique « Aucune donnée collectée ».\n\nStocké sur votre appareil : un cache local des résultats d'analyse (empreintes d'images et tailles de fichiers), vos préférences et l'état de l'achat unique. Ces données restent dans le conteneur propre à l'application sur votre iPhone, sont supprimées lorsque vous désinstallez l'application et ne sont jamais transmises.\n\nAchats : l'achat unique est traité par Apple via l'App Store. L'application demande uniquement à StoreKit si l'achat existe ; nous ne recevons ni ne conservons votre nom, vos informations de paiement ou votre compte Apple. La politique de confidentialité d'Apple s'applique à la transaction. Polar.sh, qui gère les paiements de licence pour le bureau, n'intervient pas.\n\nSuppression de photos : lorsque vous supprimez des photos, l'application le demande à iOS, qui affiche sa propre confirmation. Les éléments supprimés restent 30 jours dans l'album « Supprimés récemment » ; l'espace n'est donc pas libéré immédiatement. L'application ne peut accéder ni supprimer quoi que ce soit que vous n'avez pas sélectionné."
       }
     }
   },
