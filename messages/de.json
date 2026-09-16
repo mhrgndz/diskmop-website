@@ -47,7 +47,7 @@
   },
   "platformSelector": {
     "title": "Wählen Sie Ihre Plattform",
-    "subtitle": "Native Apps für Windows, macOS und Android",
+    "subtitle": "Native Apps für Windows, macOS, Android und iPhone",
     "recommended": "Empfohlen",
     "download": "Download",
     "systemReqs": "Systemanforderungen",
@@ -66,7 +66,15 @@
       "title": "Android",
       "reqs": "Android 8.0+",
       "recommended": "Empfohlen für Sie",
-      "download": "Jetzt bei Google Play"
+      "download": "Jetzt bei Google Play",
+      "note": "Speicher-Cleaner: große Dateien, Downloads, Messenger-Medien und ungenutzte Apps"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Empfohlen für Sie",
+      "download": "Laden im App Store",
+      "note": "Foto- & Video-Cleaner: Duplikate, ähnliche Aufnahmen, Screenshots und große Videos"
     },
     "mac": {
       "title": "macOS",
@@ -379,7 +387,7 @@
       },
       {
         "question": "Welche Betriebssysteme werden unterstützt?",
-        "answer": "Disk Mop unterstützt Windows 10/11 (64-Bit) und macOS 12+ (Apple Silicon und Intel). Es wurde als native Anwendung für beide Plattformen entwickelt."
+        "answer": "Disk Mop läuft als native Anwendung unter Windows 10/11 (64-Bit) und macOS 12+ (Apple Silicon und Intel). Auch für Mobilgeräte gibt es native Apps: Disk Mop für Android 8.0+ bei Google Play und DiskMop: Photo & Video Cleaner für iPhone (iOS 18+) im App Store."
       },
       {
         "question": "Wie funktioniert die Lizenz?",
@@ -403,7 +411,7 @@
       },
       {
         "question": "Wird Linux unterstützt?",
-        "answer": "Derzeit werden Windows und macOS unterstützt. Linux-Unterstützung steht auf unserer Roadmap. Abonnieren Sie unseren Newsletter, um auf dem Laufenden zu bleiben."
+        "answer": "Noch nicht. Disk Mop gibt es für Windows, macOS, Android und iPhone; Linux-Unterstützung steht auf unserer Roadmap."
       }
     ]
   },

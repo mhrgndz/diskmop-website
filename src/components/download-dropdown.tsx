@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { useOSDetection } from '@/hooks/use-os-detection';
 import { useAppInfo } from '@/hooks/use-app-info';
+import { STORE_URLS } from '@/lib/app-version';
 import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
@@ -21,12 +22,14 @@ interface DownloadDropdownProps {
 }
 
 interface DownloadOption {
-  os: 'windows' | 'mac' | 'android';
+  os: 'windows' | 'mac' | 'android' | 'ios';
   label: string;
   sublabel?: string;
   href: string;
   icon: typeof Monitor;
   signed?: boolean;
+  /** Mağaza adı: dosya boyutunun yerine basılır, bağlantı yeni sekmede açılır. */
+  store?: 'Google Play' | 'App Store';
   /** Aynı platformun ikinci mimarisi: "önerilen" rozeti almaz, ayırıcı da yemez. */
   altArch?: boolean;
 }
@@ -62,8 +65,16 @@ const downloadOptions: DownloadOption[] = [
   {
     os: 'android',
     label: 'Android',
-    href: 'https://play.google.com/store/apps/details?id=com.diskmop.android',
+    href: STORE_URLS.android,
     icon: Smartphone,
+    store: 'Google Play',
+  },
+  {
+    os: 'ios',
+    label: 'iPhone',
+    href: STORE_URLS.ios,
+    icon: Smartphone,
+    store: 'App Store',
   },
 ];
 
@@ -75,10 +86,8 @@ export function DownloadDropdown({
   const detectedOS = useOSDetection();
   const { windowsSize, macSize } = useAppInfo();
 
-  const getSize = (os: string) =>
-    os === 'android'
-      ? 'Google Play'
-      : (os === 'windows' ? windowsSize : macSize) || '~80 MB';
+  const getSize = (option: DownloadOption) =>
+    option.store ?? ((option.os === 'windows' ? windowsSize : macSize) || '~80 MB');
 
   const isRecommended = (option: DownloadOption): boolean => {
     if (detectedOS === 'unknown') return false;
@@ -117,8 +126,8 @@ export function DownloadDropdown({
               <DropdownMenuItem asChild>
                 <a
                   href={option.href}
-                  target={option.os === 'android' ? '_blank' : undefined}
-                  rel={option.os === 'android' ? 'noopener noreferrer' : undefined}
+                  target={option.store ? '_blank' : undefined}
+                  rel={option.store ? 'noopener noreferrer' : undefined}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2.5',
                     recommended && 'bg-brand-50 dark:bg-brand-950'
@@ -142,7 +151,7 @@ export function DownloadDropdown({
                       )}
                     </div>
                     <span className="text-xs text-muted-foreground flex items-center gap-1.5">
-                      {getSize(option.os)}
+                      {getSize(option)}
                       {option.signed && (
                         <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 font-medium">
                           <ShieldCheck className="h-3 w-3" />

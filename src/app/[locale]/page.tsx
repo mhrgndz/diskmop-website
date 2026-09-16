@@ -22,6 +22,7 @@ import {
   LATEST_RELEASE_DATE,
   LATEST_VERSION,
   RELEASE_NOTES_URL,
+  STORE_URLS,
 } from '@/lib/app-version';
 
 export async function generateMetadata({
@@ -82,7 +83,8 @@ async function buildJsonLd(locale: string) {
         sameAs: [
           'https://www.instagram.com/diskmop/',
           'https://twitter.com/diskmop',
-          'https://play.google.com/store/apps/details?id=com.diskmop.android',
+          STORE_URLS.android,
+          STORE_URLS.ios,
         ],
         parentOrganization: {
           '@type': 'Organization',
@@ -112,6 +114,9 @@ async function buildJsonLd(locale: string) {
         description: tMeta('description'),
         applicationCategory: 'UtilitiesApplication',
         applicationSubCategory: 'Disk Cleaner',
+        // iPhone uygulaması BİLEREK burada yok: ayrı bir ürün (fotoğraf/video
+        // temizleyici) ve ayrı fiyat (4,99 $ uygulama içi); bu düğümdeki teklif
+        // 19,90 $'lık masaüstü lisansıdır. App Store bağlantısı Organization.sameAs'te.
         operatingSystem: 'Windows 10, Windows 11, macOS 12+, Android 8.0+',
         // Olgunluk sinyalleri: ilk sürüm tarihi, güncel sürüm ve sürüm notları.
         // Bunlar olmadan LLM'ler ürünü "yeni çıkmış / ilk sürüm" sanıyordu.

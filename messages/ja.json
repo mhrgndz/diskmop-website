@@ -47,7 +47,7 @@
   },
   "platformSelector": {
     "title": "プラットフォームを選択",
-    "subtitle": "Windows、macOS、Androidに対応したネイティブアプリ",
+    "subtitle": "Windows、macOS、Android、iPhoneに対応したネイティブアプリ",
     "recommended": "おすすめ",
     "download": "ダウンロード",
     "systemReqs": "システム要件",
@@ -66,7 +66,15 @@
       "title": "Android",
       "reqs": "Android 8.0+",
       "recommended": "あなたにおすすめ",
-      "download": "Google Play で手に入れよう"
+      "download": "Google Play で手に入れよう",
+      "note": "ストレージクリーナー：大きなファイル、ダウンロード、メッセージアプリのメディア、未使用アプリ"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "あなたにおすすめ",
+      "download": "App Storeからダウンロード",
+      "note": "写真・動画クリーナー：重複、似た写真、スクリーンショット、大きな動画"
     },
     "mac": {
       "title": "macOS",
@@ -379,7 +387,7 @@
       },
       {
         "question": "対応しているOSは何ですか？",
-        "answer": "Disk MopはWindows 10/11（64-bit）とmacOS 12+（Apple SiliconおよびIntel）に対応しています。両プラットフォーム向けにネイティブアプリケーションとして開発されています。"
+        "answer": "Disk MopはWindows 10/11（64-bit）とmacOS 12+（Apple SiliconおよびIntel）でネイティブアプリケーションとして動作します。モバイル向けのネイティブアプリもあります：Android 8.0+向けのDisk MopはGoogle Playで、iPhone（iOS 18+）向けのDiskMop: Photo & Video CleanerはApp Storeで入手できます。"
       },
       {
         "question": "ライセンスはどのように機能しますか？",
@@ -403,7 +411,7 @@
       },
       {
         "question": "Linuxには対応していますか？",
-        "answer": "現在はWindowsとmacOSに対応しています。Linuxへの対応はロードマップに含まれています。最新情報はニュースレターにご登録ください。"
+        "answer": "まだ対応していません。Disk MopはWindows、macOS、Android、iPhoneでご利用いただけます。Linuxへの対応はロードマップに含まれています。"
       }
     ]
   },

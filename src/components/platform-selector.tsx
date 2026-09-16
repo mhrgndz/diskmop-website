@@ -8,11 +8,11 @@ import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useOSDetection, type OSType } from '@/hooks/use-os-detection';
 import { useAppInfo } from '@/hooks/use-app-info';
-import { APP_VERSIONS } from '@/lib/app-version';
+import { APP_VERSIONS, STORE_URLS } from '@/lib/app-version';
 import { Button } from '@/components/ui/button';
 
 interface PlatformCard {
-  key: 'windows' | 'mac' | 'android';
+  key: 'windows' | 'mac' | 'android' | 'ios';
   matchOS: OSType;
   icon: LucideIcon;
   name: string;
@@ -22,7 +22,8 @@ interface PlatformCard {
   /** Aynı platformun ikinci mimarisi. macOS'ta ana buton Apple Silicon indirir. */
   altArchHref?: string;
   signed?: boolean;
-  store?: boolean;
+  /** Mağazadan dağıtılan platform: kart mağaza adı + sürümü basar, düğme yeni sekmede açılır. */
+  store?: 'Google Play' | 'App Store';
 }
 
 const platforms: PlatformCard[] = [
@@ -54,8 +55,18 @@ const platforms: PlatformCard[] = [
     name: 'Android',
     ext: '',
     systemReq: 'Android 8.0+',
-    href: 'https://play.google.com/store/apps/details?id=com.diskmop.android',
-    store: true,
+    href: STORE_URLS.android,
+    store: 'Google Play',
+  },
+  {
+    key: 'ios',
+    matchOS: 'ios',
+    icon: Smartphone,
+    name: 'iPhone',
+    ext: '',
+    systemReq: 'iOS 18.0+',
+    href: STORE_URLS.ios,
+    store: 'App Store',
   },
 ];
 
@@ -72,13 +83,12 @@ export function PlatformSelector() {
    * Sürüm SUNUCUDA basılır. Eskiden burada sabit "v1.0.0" yedeği vardı ve
    * JavaScript çalıştırmayan okuyucular (arama motoru ilk taraması, ChatGPT,
    * Perplexity) ürünü ilk sürümünde sanıyordu. Canlı API yanıtı `latest.yml`'den
-   * geldiği için yalnızca Windows sürümünü günceller; macOS ve Android sabitten
-   * okunur. (2026-09-04'ten beri üçü de aynı sürümde değil — Android geride.)
+   * geldiği için yalnızca Windows sürümünü günceller; macOS ve mağaza
+   * platformları (Android, iPhone) sabitten okunur.
    */
-  const getVersion = (key: string) => {
+  const getVersion = (key: PlatformCard['key']) => {
     if (key === 'windows') return version || `v${APP_VERSIONS.windows}`;
-    if (key === 'mac') return `v${APP_VERSIONS.mac}`;
-    return `v${APP_VERSIONS.android}`;
+    return `v${APP_VERSIONS[key]}`;
   };
 
   return (
@@ -99,7 +109,7 @@ export function PlatformSelector() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl xl:max-w-none mx-auto">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isHighlighted = detectedOS === platform.matchOS;
@@ -112,7 +122,7 @@ export function PlatformSelector() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={cn(
-                  'relative bg-card rounded-2xl p-8 border-2 transition-all duration-300',
+                  'relative bg-card rounded-2xl p-8 xl:p-5 border-2 transition-all duration-300',
                   isHighlighted
                     ? 'border-brand-500 shadow-lg shadow-brand-500/10'
                     : 'border-border hover:border-brand-500/50 hover:shadow-lg'
@@ -120,7 +130,7 @@ export function PlatformSelector() {
               >
                 {isHighlighted && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white shadow-sm">
+                    <span className="inline-flex items-center whitespace-nowrap rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white shadow-sm">
                       {t(`${platform.key}.recommended`)}
                     </span>
                   </div>
@@ -152,7 +162,7 @@ export function PlatformSelector() {
 
                 <p className="text-sm text-muted-foreground text-center mt-1">
                   {platform.store ? (
-                    `Google Play · v${APP_VERSIONS.android}`
+                    `${platform.store} · ${getVersion(platform.key)}`
                   ) : (
                     <>
                       {getVersion(platform.key)} &bull; {getSize(platform.key)} &bull;{' '}
@@ -180,19 +190,30 @@ export function PlatformSelector() {
                   </p>
                 )}
 
+                {/* Mağaza kartlarında imza satırının yerini "bu uygulama ne yapar" satırı alır:
+                    iPhone uygulaması masaüstünden farklı bir ürün (fotoğraf/video temizleyici). */}
+                {platform.store && (
+                  <p className="text-[11px] text-muted-foreground text-center mt-2">
+                    {t(`${platform.key}.note`)}
+                  </p>
+                )}
+
                 <div className="mt-6 flex justify-center">
+                  {/* Dört sütunda etiketler (FR/DE ve "Download on the App Store") sarmayan,
+                      sabit yükseklikli düğmeye sığmıyordu: ikon eziliyor, metin taşıyordu.
+                      Sarmaya izin ver, dolguyu daralt, ikonu ezilmez yap. */}
                   <Button
                     asChild
                     variant={isHighlighted ? 'default' : 'outline'}
                     size="lg"
-                    className="w-full gap-2"
+                    className="w-full gap-2 h-auto min-h-12 whitespace-normal px-3 py-3 xl:text-sm"
                   >
                     <a
                       href={platform.href}
                       target={platform.store ? '_blank' : undefined}
                       rel={platform.store ? 'noopener noreferrer' : undefined}
                     >
-                      <Download className="h-4 w-4" />
+                      <Download className="h-4 w-4 shrink-0" />
                       {t(`${platform.key}.download`)}
                     </a>
                   </Button>

@@ -47,7 +47,7 @@
   },
   "platformSelector": {
     "title": "Choisissez votre plateforme",
-    "subtitle": "Applications natives pour Windows, macOS et Android",
+    "subtitle": "Applications natives pour Windows, macOS, Android et iPhone",
     "recommended": "Recommandé",
     "download": "Télécharger",
     "systemReqs": "Configuration requise",
@@ -66,7 +66,15 @@
       "title": "Android",
       "reqs": "Android 8.0+",
       "recommended": "Recommandé pour vous",
-      "download": "Disponible sur Google Play"
+      "download": "Disponible sur Google Play",
+      "note": "Nettoyeur de stockage : gros fichiers, téléchargements, médias de messagerie et apps inutilisées"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Recommandé pour vous",
+      "download": "Télécharger dans l'App Store",
+      "note": "Nettoyeur de photos et vidéos : doublons, clichés similaires, captures d'écran et grosses vidéos"
     },
     "mac": {
       "title": "macOS",
@@ -379,7 +387,7 @@
       },
       {
         "question": "Quels systèmes d'exploitation sont pris en charge ?",
-        "answer": "Disk Mop prend en charge Windows 10/11 (64 bits) et macOS 12+ (Apple Silicon et Intel). Il est développé en tant qu'application native pour les deux plateformes."
+        "answer": "Disk Mop fonctionne sous Windows 10/11 (64 bits) et macOS 12+ (Apple Silicon et Intel) en tant qu'application native. Il existe aussi des applications mobiles natives : Disk Mop pour Android 8.0+ sur Google Play et DiskMop: Photo & Video Cleaner pour iPhone (iOS 18+) sur l'App Store."
       },
       {
         "question": "Comment fonctionne la licence ?",
@@ -403,7 +411,7 @@
       },
       {
         "question": "Linux est-il pris en charge ?",
-        "answer": "Actuellement, Windows et macOS sont pris en charge. Le support Linux est prévu dans notre feuille de route. Inscrivez-vous à notre newsletter pour suivre les évolutions."
+        "answer": "Pas encore. Disk Mop est disponible pour Windows, macOS, Android et iPhone ; le support de Linux est prévu dans notre feuille de route."
       }
     ]
   },

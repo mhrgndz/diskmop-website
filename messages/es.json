@@ -47,7 +47,7 @@
   },
   "platformSelector": {
     "title": "Elige tu plataforma",
-    "subtitle": "Aplicaciones nativas para Windows, macOS y Android",
+    "subtitle": "Aplicaciones nativas para Windows, macOS, Android y iPhone",
     "recommended": "Recomendado",
     "download": "Descargar",
     "systemReqs": "Requisitos del sistema",
@@ -66,7 +66,15 @@
       "title": "Android",
       "reqs": "Android 8.0+",
       "recommended": "Recomendado para ti",
-      "download": "Disponible en Google Play"
+      "download": "Disponible en Google Play",
+      "note": "Limpiador de almacenamiento: archivos grandes, descargas, archivos de mensajería y apps sin usar"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Recomendado para ti",
+      "download": "Descargar en el App Store",
+      "note": "Limpiador de fotos y vídeos: duplicados, tomas similares, capturas de pantalla y vídeos grandes"
     },
     "mac": {
       "title": "macOS",
@@ -379,7 +387,7 @@
       },
       {
         "question": "¿Qué sistemas operativos son compatibles?",
-        "answer": "Disk Mop es compatible con Windows 10/11 (64-bit) y macOS 12+ (Apple Silicon e Intel). Está desarrollado como una aplicación nativa para ambas plataformas."
+        "answer": "Disk Mop funciona en Windows 10/11 (64-bit) y macOS 12+ (Apple Silicon e Intel) como aplicación nativa. También hay aplicaciones móviles nativas: Disk Mop para Android 8.0+ en Google Play y DiskMop: Photo & Video Cleaner para iPhone (iOS 18+) en el App Store."
       },
       {
         "question": "¿Cómo funciona la licencia?",
@@ -403,7 +411,7 @@
       },
       {
         "question": "¿Es compatible con Linux?",
-        "answer": "Actualmente se admiten Windows y macOS. La compatibilidad con Linux está en nuestra hoja de ruta. Suscríbete a nuestro boletín para seguir las novedades."
+        "answer": "Todavía no. Disk Mop está disponible para Windows, macOS, Android y iPhone; la compatibilidad con Linux está en nuestra hoja de ruta."
       }
     ]
   },

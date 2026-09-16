@@ -47,7 +47,7 @@
   },
   "platformSelector": {
     "title": "Platformunu Seç",
-    "subtitle": "Windows, macOS ve Android için native uygulamalar",
+    "subtitle": "Windows, macOS, Android ve iPhone için native uygulamalar",
     "recommended": "Önerilen",
     "download": "İndir",
     "systemReqs": "Sistem Gereksinimleri",
@@ -66,7 +66,15 @@
       "title": "Android",
       "reqs": "Android 8.0+",
       "recommended": "Senin için önerilen",
-      "download": "Google Play'den Edinin"
+      "download": "Google Play'den Edinin",
+      "note": "Depolama temizleyici: büyük dosyalar, indirmeler, mesajlaşma medyası ve kullanılmayan uygulamalar"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Senin için önerilen",
+      "download": "App Store'dan İndirin",
+      "note": "Fotoğraf ve video temizleyici: kopyalar, benzer kareler, ekran görüntüleri ve büyük videolar"
     },
     "mac": {
       "title": "macOS",
@@ -379,7 +387,7 @@
       },
       {
         "question": "Hangi işletim sistemlerini destekliyor?",
-        "answer": "Disk Mop, Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) işletim sistemlerini destekler. Her iki platform için de native uygulama olarak geliştirilmiştir."
+        "answer": "Disk Mop, Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) üzerinde native uygulama olarak çalışır. Mobil için de native uygulamalar var: Android 8.0+ için Disk Mop Google Play'de, iPhone (iOS 18+) için DiskMop: Photo & Video Cleaner App Store'da."
       },
       {
         "question": "Lisans nasıl çalışıyor?",
@@ -403,7 +411,7 @@
       },
       {
         "question": "Linux desteği var mı?",
-        "answer": "Şu an Windows ve macOS desteklenmektedir. Linux desteği yol haritamızda yer almaktadır. Gelişmeleri takip etmek için bültenimize abone olabilirsiniz."
+        "answer": "Henüz değil. Disk Mop Windows, macOS, Android ve iPhone için mevcut; Linux desteği yol haritamızda yer alıyor."
       }
     ]
   },
