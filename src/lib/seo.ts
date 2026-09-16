@@ -46,7 +46,7 @@ const OG_GORSEL = {
   url: '/og.png',
   width: 1200,
   height: 630,
-  alt: 'Disk Mop - free up gigabytes in minutes. Disk cleaner for Windows, macOS and Android.',
+  alt: 'Disk Mop - free up gigabytes in minutes. Disk cleaner for Windows, macOS and Android, photo cleaner for iPhone.',
 };
 
 /** Her sayfanın OG/Twitter bloğu aynı iskeleti paylaşsın diye. */
