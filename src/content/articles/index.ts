@@ -52,8 +52,24 @@ import { onedriveTakingUpSpace } from './onedrive-taking-up-space';
 import { windowsUpdateNotEnoughSpace } from './windows-update-not-enough-space';
 import { ssdHealthCheckWindows } from './ssd-health-check-windows';
 import { macPurgeableSpaceLocalSnapshots } from './mac-purgeable-space-local-snapshots';
+import { iphoneStorageFull } from './iphone-storage-full';
+import { findDuplicateSimilarPhotosIphone } from './find-duplicate-similar-photos-iphone';
+import { reduceVideoSizeIphone } from './reduce-video-size-iphone';
+import { whatsappStorageFullAndroid } from './whatsapp-storage-full-android';
+import { clearCacheAndroid } from './clear-cache-android';
+import { deleteDuplicatePhotosAndroid } from './delete-duplicate-photos-android';
 
 export const articles: Article[] = [
+  // 2026-09-17 eklenenler — iPhone (DiskMop: Photo & Video Cleaner) ve Android (Disk Mop) için
+  // altı mobil rehber. Konular mevcut android-storage-full ile ÇAKIŞMAZ: her biri o makalenin
+  // bir bölümünü değil, ayrı bir arama niyetini (Son Silinenler, kopya/benzer, video boyutu,
+  // WhatsApp medyası, önbellek, Android kopya) karşılar. 8 dil, keyTakeaways + FAQ + HowTo + tablo.
+  iphoneStorageFull,
+  findDuplicateSimilarPhotosIphone,
+  reduceVideoSizeIphone,
+  whatsappStorageFullAndroid,
+  clearCacheAndroid,
+  deleteDuplicatePhotosAndroid,
   // 2026-09-04 eklenenler — listede en üstte, en yeni içerik önce görünsün.
   // Windows'a özel beş rehber: hepsi "PC yavaşladı / gereksiz dosya" niyetini
   // karşılar ama mevcut speed-up-computer ve free-disk-space makaleleriyle
