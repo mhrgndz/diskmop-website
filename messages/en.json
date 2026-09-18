@@ -176,8 +176,13 @@
       {
         "title": "Disk Health Monitor",
         "description": "See the health status of your SSDs and HDDs and run TRIM on SSDs."
+      },
+      {
+        "title": "Faster Boot",
+        "description": "Measure your real startup time with Windows' own records, turn off the apps that slow it down, and follow picture guides for the rest."
       }
-    ]
+    ],
+    "new": "New"
   },
   "howItWorks": {
     "title": "How It Works?",

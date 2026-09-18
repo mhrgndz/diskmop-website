@@ -176,8 +176,13 @@
       {
         "title": "Surveillance de la santé du disque",
         "description": "Consultez l'état de santé de vos SSD et HDD et lancez TRIM sur les SSD."
+      },
+      {
+        "title": "Démarrer plus vite",
+        "description": "Mesurez votre vrai temps de démarrage avec les relevés de Windows, désactivez les applications qui le ralentissent et suivez un guide illustré pour le reste."
       }
-    ]
+    ],
+    "new": "Nouveau"
   },
   "howItWorks": {
     "title": "Comment ça marche ?",

@@ -176,8 +176,13 @@
       {
         "title": "Festplatten-Gesundheitsmonitor",
         "description": "Den Zustand Ihrer SSDs und HDDs sehen und TRIM auf SSDs ausführen."
+      },
+      {
+        "title": "Start beschleunigen",
+        "description": "Messen Sie Ihre echte Startzeit mit den eigenen Aufzeichnungen von Windows, deaktivieren Sie bremsende Apps und folgen Sie für den Rest einer bebilderten Anleitung."
       }
-    ]
+    ],
+    "new": "Neu"
   },
   "howItWorks": {
     "title": "Wie funktioniert es?",

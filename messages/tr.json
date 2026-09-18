@@ -176,8 +176,13 @@
       {
         "title": "Disk Sağlığı Monitörü",
         "description": "SSD ve HDD'lerinizin sağlık durumunu görün, SSD'lerde TRIM çalıştırın."
+      },
+      {
+        "title": "Açılışı Hızlandır",
+        "description": "Gerçek açılış sürenizi Windows'un kendi kayıtlarıyla ölçün, açılışı yavaşlatan uygulamaları kapatın, gerisini görselli rehberle yapın."
       }
-    ]
+    ],
+    "new": "Yeni"
   },
   "howItWorks": {
     "title": "Nasıl Çalışır?",

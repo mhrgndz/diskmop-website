@@ -176,8 +176,13 @@
       {
         "title": "Monitoraggio salute disco",
         "description": "Controlla lo stato di salute di SSD e HDD ed esegui TRIM sugli SSD."
+      },
+      {
+        "title": "Avvio più veloce",
+        "description": "Misura il tuo vero tempo di avvio con i dati di Windows, disattiva le app che lo rallentano e segui una guida illustrata per il resto."
       }
-    ]
+    ],
+    "new": "Nuovo"
   },
   "howItWorks": {
     "title": "Come funziona?",

@@ -176,8 +176,13 @@
       {
         "title": "Monitor de salud del disco",
         "description": "Vea el estado de salud de sus SSD y HDD y ejecute TRIM en los SSD."
+      },
+      {
+        "title": "Arrancar más rápido",
+        "description": "Mida su tiempo de arranque real con los registros de Windows, desactive las aplicaciones que lo ralentizan y siga una guía con imágenes para el resto."
       }
-    ]
+    ],
+    "new": "Nuevo"
   },
   "howItWorks": {
     "title": "¿Cómo funciona?",

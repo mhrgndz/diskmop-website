@@ -30,7 +30,13 @@ import {
 import type { LucideIcon } from 'lucide-react';
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { ShowcaseVideo } from '@/components/showcase-video';
+import {
+  ShowcaseVideo,
+  SHOWCASE_VIDEO_W as VIDEO_W,
+  SHOWCASE_VIDEO_H as VIDEO_H,
+  showcaseVideoSrc as videoSrc,
+  showcasePosterSrc as posterSrc,
+} from '@/components/showcase-video';
 
 interface ShowcaseTab {
   /** public/videos/<id>/<dil>.mp4 + <dil>.webp kapak */
@@ -40,15 +46,8 @@ interface ShowcaseTab {
   descKey: string;
 }
 
-// Tanıtım videoları uygulamadan demo veriyle, 8 dilde kaydedildi (1280×688).
 // Eskiden burada ekran görüntüleri vardı; onlarda gerçek bir bilgisayarın
-// dosya adları görünüyordu. Demo modu: diskmop-app src/main/demo
-// (DISKMOP_DEMO=1 npm run dev).
-const VIDEO_W = 1280;
-const VIDEO_H = 688;
-
-const videoSrc = (id: string, locale: string) => `/videos/${id}/${locale}.mp4`;
-const posterSrc = (id: string, locale: string) => `/videos/${id}/${locale}.webp`;
+// dosya adları görünüyordu. Artık her sekme bir video (bkz. showcase-video.tsx).
 
 const showcaseTabs: ShowcaseTab[] = [
   { id: 'boot-speed', icon: Gauge, nameKey: '21', descKey: '21' },
