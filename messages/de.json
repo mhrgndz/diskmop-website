@@ -567,6 +567,8 @@
     "recommended": "Empfohlen",
     "signed": "Signiert",
     "free": "Kostenlos",
-    "lifetime": "Lebenslang"
+    "lifetime": "Lebenslang",
+    "enlarge": "Vergrößern",
+    "close": "Schließen"
   }
 }

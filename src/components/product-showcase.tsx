@@ -25,13 +25,12 @@ import {
   PackageX,
   Images,
   Activity,
-  Gauge,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { ExpandableVideo } from '@/components/expandable-video';
 import {
-  ShowcaseVideo,
   SHOWCASE_VIDEO_W as VIDEO_W,
   SHOWCASE_VIDEO_H as VIDEO_H,
   showcaseVideoSrc as videoSrc,
@@ -50,7 +49,8 @@ interface ShowcaseTab {
 // dosya adları görünüyordu. Artık her sekme bir video (bkz. showcase-video.tsx).
 
 const showcaseTabs: ShowcaseTab[] = [
-  { id: 'boot-speed', icon: Gauge, nameKey: '21', descKey: '21' },
+  // Açılışı Hızlandır (sekme 21) burada yok: Özellikler bölümünün en başında
+  // büyük kart olarak duruyor, aynı videoyu iki kez göstermeyelim.
   { id: 'overview', icon: LayoutDashboard, nameKey: '0', descKey: '0' },
   { id: 'disk-analysis', icon: HardDrive, nameKey: '1', descKey: '1' },
   { id: 'large-files', icon: Search, nameKey: '2', descKey: '2' },
@@ -178,10 +178,10 @@ export function ProductShowcase() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="rounded-2xl border overflow-hidden shadow-2xl max-w-5xl mx-auto">
-                      <ShowcaseVideo
+                      <ExpandableVideo
                         src={videoSrc(tab.id, locale)}
                         poster={posterSrc(tab.id, locale)}
-                        label={t(`tabs.${tab.nameKey}.name`)}
+                        title={t(`tabs.${tab.nameKey}.name`)}
                         width={VIDEO_W}
                         height={VIDEO_H}
                       />

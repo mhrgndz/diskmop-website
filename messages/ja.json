@@ -567,6 +567,8 @@
     "recommended": "おすすめ",
     "signed": "署名済み",
     "free": "無料",
-    "lifetime": "永久"
+    "lifetime": "永久",
+    "enlarge": "拡大",
+    "close": "閉じる"
   }
 }

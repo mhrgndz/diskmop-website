@@ -567,6 +567,8 @@
     "recommended": "Recommended",
     "signed": "Signed",
     "free": "Free",
-    "lifetime": "Lifetime"
+    "lifetime": "Lifetime",
+    "enlarge": "Enlarge",
+    "close": "Close"
   }
 }

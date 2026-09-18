@@ -28,8 +28,8 @@ import {
 import type { LucideIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { ExpandableVideo } from '@/components/expandable-video';
 import {
-  ShowcaseVideo,
   SHOWCASE_VIDEO_W,
   SHOWCASE_VIDEO_H,
   showcaseVideoSrc,
@@ -119,11 +119,11 @@ export function FeaturesGrid() {
                 )}
               >
                 <div className={cn('border-b', featured && 'lg:w-[62%] lg:shrink-0 lg:border-b-0 lg:border-r')}>
-                  <ShowcaseVideo
+                  <ExpandableVideo
                     lazy
                     src={showcaseVideoSrc(feature.video, locale)}
                     poster={showcasePosterSrc(feature.video, locale)}
-                    label={title}
+                    title={title}
                     width={SHOWCASE_VIDEO_W}
                     height={SHOWCASE_VIDEO_H}
                   />
