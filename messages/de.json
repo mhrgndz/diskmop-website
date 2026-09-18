@@ -167,15 +167,15 @@
       },
       {
         "title": "Unbenutzte-Apps-Erkennung",
-        "description": "Finden Sie Anwendungen, die Sie seit Monaten nicht geöffnet haben. Deinstallieren Sie sie, um Speicherplatz freizugeben."
+        "description": "Alle installierten Apps nach Größe auflisten und nicht mehr benötigte deinstallieren, um Platz zu schaffen."
       },
       {
         "title": "Visueller Duplikat-Finder",
-        "description": "Finden Sie ähnliche Fotos mit perzeptuellem Hashing. Selbst skalierte Kopien werden erkannt."
+        "description": "Doppelte Fotos und Bilder in jedem Ordner finden, gruppiert nach Dateisignatur."
       },
       {
         "title": "Festplatten-Gesundheitsmonitor",
-        "description": "Überprüfen Sie die SSD/HDD-Gesundheit mit SMART-Daten. Überwachen Sie Temperatur und Lebensdauer."
+        "description": "Den Zustand Ihrer SSDs und HDDs sehen und TRIM auf SSDs ausführen."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Unbenutzte Apps",
-        "description": "Erkennen Sie Anwendungen, die Sie seit Monaten nicht geöffnet haben. Direkt aus Disk Mop deinstallieren."
+        "description": "Sehen Sie alle installierten Apps mit ihrer Größe, die größten zuerst, und deinstallieren Sie nicht mehr genutzte direkt in Disk Mop."
       },
       {
         "name": "Visuelle Duplikate",
-        "description": "Finden Sie visuell ähnliche Fotos mit KI-gestütztem Hashing. Auch Zuschnitte und Größenänderungen werden erkannt."
+        "description": "Durchsuchen Sie einen Ordner nach doppelten Fotos und Bildern. Kopien werden nach Dateisignatur gruppiert, samt dem Platz, den jede Gruppe verschwendet."
       },
       {
         "name": "Festplatten-Gesundheit",
-        "description": "SSD/HDD-Gesundheit mit SMART-Diagnose überwachen. Temperatur, Lebensdauer und TRIM-Status prüfen."
+        "description": "Prüfen Sie den Zustand aller SSDs und HDDs auf einen Blick und führen Sie TRIM auf Ihrer SSD mit einem Klick aus."
       },
       {
         "name": "Start beschleunigen",

@@ -167,15 +167,15 @@
       },
       {
         "title": "Rilevatore app inutilizzate",
-        "description": "Trova le applicazioni che non usi da mesi. Disinstallale per liberare spazio."
+        "description": "Elenca tutte le app installate per dimensione e disinstalla quelle che non ti servono più per liberare spazio."
       },
       {
         "title": "Trova duplicati visivi",
-        "description": "Trova foto e immagini simili usando l'hashing percettivo. Anche le copie ridimensionate vengono rilevate."
+        "description": "Trova foto e immagini duplicate in qualsiasi cartella, raggruppate per firma del file."
       },
       {
         "title": "Monitoraggio salute disco",
-        "description": "Controlla la salute di SSD/HDD con i dati SMART. Monitora temperatura e durata dell'unità."
+        "description": "Controlla lo stato di salute di SSD e HDD ed esegui TRIM sugli SSD."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "App inutilizzate",
-        "description": "Rileva le applicazioni che non apri da mesi. Disinstallale direttamente da Disk Mop."
+        "description": "Visualizza tutte le app installate con la loro dimensione, dalla più grande, e disinstalla quelle che non usi più senza uscire da Disk Mop."
       },
       {
         "name": "Duplicati visivi",
-        "description": "Trova foto visivamente simili usando l'hashing percettivo basato su IA. Anche ritagli e ridimensionamenti vengono rilevati."
+        "description": "Cerca foto e immagini duplicate in una cartella. Le copie vengono raggruppate per firma del file, con lo spazio sprecato da ogni gruppo."
       },
       {
         "name": "Salute disco",
-        "description": "Monitora la salute di SSD/HDD con la diagnostica SMART. Controlla temperatura, durata e stato TRIM."
+        "description": "Controlla a colpo d'occhio lo stato di salute di ogni SSD e HDD ed esegui TRIM sul tuo SSD con un clic."
       },
       {
         "name": "Avvio più veloce",

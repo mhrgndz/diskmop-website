@@ -167,15 +167,15 @@
       },
       {
         "title": "Kullanılmayan Uygulama Tespiti",
-        "description": "Aylardır açmadığın uygulamaları bul. Alan açmak için doğrudan kaldır."
+        "description": "Yüklü tüm uygulamaları boyuta göre listeleyin, artık gerekmeyenleri kaldırıp yer açın."
       },
       {
-        "title": "Görsel Benzerlik Bulucu",
-        "description": "Algısal hash ile benzer fotoğrafları bul. Boyutu değiştirilmiş kopyalar bile tespit edilir."
+        "title": "Görsel Kopya Bulucu",
+        "description": "Herhangi bir klasördeki kopya fotoğraf ve görselleri dosya imzasına göre gruplanmış olarak bulun."
       },
       {
         "title": "Disk Sağlığı Monitörü",
-        "description": "SMART verileriyle SSD/HDD sağlığını kontrol et. Sürücü sıcaklığını ve ömrünü izle."
+        "description": "SSD ve HDD'lerinizin sağlık durumunu görün, SSD'lerde TRIM çalıştırın."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Kullanılmayan Uygulamalar",
-        "description": "Aylardır açmadığınız uygulamaları tespit edin. Doğrudan Disk Mop'tan kaldırın."
+        "description": "Yüklü tüm uygulamaları boyutlarıyla, en büyükten başlayarak görün; artık kullanmadıklarınızı Disk Mop'tan çıkmadan kaldırın."
       },
       {
-        "name": "Görsel Benzerlik",
-        "description": "Yapay zeka destekli algısal hash ile görsel olarak benzer fotoğrafları bulun. Kırpılmış ve boyutu değiştirilmiş kopyalar bile yakalanır."
+        "name": "Görsel Kopyalar",
+        "description": "Bir klasördeki kopya fotoğraf ve görselleri bulun. Kopyalar dosya imzasına göre gruplanır, her grubun boşa harcadığı alan gösterilir."
       },
       {
         "name": "Disk Sağlığı",
-        "description": "SMART tanılama ile SSD/HDD sağlığını izleyin. Sıcaklık, ömür ve TRIM durumunu kontrol edin."
+        "description": "Tüm SSD ve HDD'lerin sağlık durumunu tek bakışta görün, SSD'nizde tek tıkla TRIM çalıştırın."
       },
       {
         "name": "Açılışı Hızlandır",

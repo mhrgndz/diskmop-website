@@ -167,15 +167,15 @@
       },
       {
         "title": "Détecteur d'applications inutilisées",
-        "description": "Trouvez les applications que vous n'avez pas utilisées depuis des mois. Désinstallez-les pour libérer de l'espace."
+        "description": "Listez toutes les applications installées par taille et désinstallez celles dont vous n'avez plus besoin pour libérer de l'espace."
       },
       {
         "title": "Recherche de doublons visuels",
-        "description": "Trouvez les photos et images similaires grâce au hachage perceptuel. Même les copies redimensionnées sont détectées."
+        "description": "Trouvez les photos et images en double dans n'importe quel dossier, regroupées par signature de fichier."
       },
       {
         "title": "Surveillance de la santé du disque",
-        "description": "Vérifiez la santé de votre SSD/HDD avec les données SMART. Surveillez la température et la durée de vie du disque."
+        "description": "Consultez l'état de santé de vos SSD et HDD et lancez TRIM sur les SSD."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Applications inutilisées",
-        "description": "Détectez les applications que vous n'avez pas ouvertes depuis des mois. Désinstallez-les directement depuis Disk Mop."
+        "description": "Voyez toutes les applications installées avec leur taille, des plus lourdes aux plus légères, et désinstallez celles dont vous n'avez plus besoin sans quitter Disk Mop."
       },
       {
         "name": "Doublons visuels",
-        "description": "Trouvez les photos visuellement similaires grâce au hachage perceptuel assisté par IA. Même les recadrages et redimensionnements sont détectés."
+        "description": "Recherchez les photos et images en double dans un dossier. Les copies sont regroupées par signature de fichier, avec l'espace gaspillé par chaque groupe."
       },
       {
         "name": "Santé du disque",
-        "description": "Surveillez la santé de votre SSD/HDD avec les diagnostics SMART. Vérifiez la température, la durée de vie et le statut TRIM."
+        "description": "Vérifiez d'un coup d'œil l'état de santé de chaque SSD et HDD, et lancez TRIM sur votre SSD en un clic."
       },
       {
         "name": "Démarrer plus vite",

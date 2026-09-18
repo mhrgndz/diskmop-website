@@ -125,7 +125,7 @@ async function buildJsonLd(locale: string) {
         dateModified: LATEST_RELEASE_DATE,
         releaseNotes: RELEASE_NOTES_URL,
         image: `${SITE_URL}/brand/icon.png`,
-        screenshot: `${SITE_URL}/screenshots/01-overview.webp`,
+        screenshot: `${SITE_URL}/videos/overview/${locale}.webp`,
         downloadUrl: 'https://api.diskmop.com/download/windows',
         installUrl: `${localeUrl(locale)}#platforms`,
         publisher: { '@id': kurulusId },

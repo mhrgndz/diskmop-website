@@ -167,15 +167,15 @@
       },
       {
         "title": "Unused App Detector",
-        "description": "Find applications you haven't used in months. Uninstall them to free up space."
+        "description": "List every installed app by size and uninstall the ones you no longer need to free up space."
       },
       {
         "title": "Visual Duplicate Finder",
-        "description": "Find similar photos and images using perceptual hashing. Even resized copies are detected."
+        "description": "Find duplicate photos and images in any folder, grouped by file signature."
       },
       {
         "title": "Disk Health Monitor",
-        "description": "Check SSD/HDD health with SMART data. Monitor drive temperature and lifespan."
+        "description": "See the health status of your SSDs and HDDs and run TRIM on SSDs."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Unused Apps",
-        "description": "Detect applications you haven't opened in months. Uninstall them directly from Disk Mop."
+        "description": "See every installed app with its size, largest first, and uninstall the ones you no longer use without leaving Disk Mop."
       },
       {
         "name": "Visual Duplicates",
-        "description": "Find visually similar photos using AI-powered perceptual hashing. Even crops and resizes are caught."
+        "description": "Scan a folder for duplicate photos and images. Copies are grouped by file signature, with the space each group wastes."
       },
       {
         "name": "Disk Health",
-        "description": "Monitor SSD/HDD health with SMART diagnostics. Check temperature, lifespan, and TRIM status."
+        "description": "Check the health status of every SSD and HDD at a glance, and run TRIM on your SSD with one click."
       },
       {
         "name": "Faster Boot",

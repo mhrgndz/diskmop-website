@@ -167,15 +167,15 @@
       },
       {
         "title": "Detector de apps sin usar",
-        "description": "Encuentra aplicaciones que no has usado en meses. Desinstálalas para liberar espacio."
+        "description": "Enumere todas las aplicaciones instaladas por tamaño y desinstale las que ya no necesita para liberar espacio."
       },
       {
         "title": "Buscador visual de duplicados",
-        "description": "Encuentra fotos e imágenes similares usando hashing perceptual. Incluso las copias redimensionadas son detectadas."
+        "description": "Encuentre fotos e imágenes duplicadas en cualquier carpeta, agrupadas por firma de archivo."
       },
       {
         "title": "Monitor de salud del disco",
-        "description": "Verifica la salud del SSD/HDD con datos SMART. Monitorea la temperatura y vida útil del disco."
+        "description": "Vea el estado de salud de sus SSD y HDD y ejecute TRIM en los SSD."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Apps sin usar",
-        "description": "Detecta aplicaciones que no has abierto en meses. Desinstálalas directamente desde Disk Mop."
+        "description": "Vea todas las aplicaciones instaladas con su tamaño, de mayor a menor, y desinstale las que ya no usa sin salir de Disk Mop."
       },
       {
         "name": "Duplicados visuales",
-        "description": "Encuentra fotos visualmente similares usando hashing perceptual potenciado por IA. Incluso recortes y redimensionados son detectados."
+        "description": "Busque fotos e imágenes duplicadas en una carpeta. Las copias se agrupan por firma de archivo, con el espacio que desperdicia cada grupo."
       },
       {
         "name": "Salud del disco",
-        "description": "Monitorea la salud del SSD/HDD con diagnósticos SMART. Verifica la temperatura, vida útil y estado TRIM."
+        "description": "Compruebe de un vistazo el estado de salud de cada SSD y HDD, y ejecute TRIM en su SSD con un clic."
       },
       {
         "name": "Arrancar más rápido",

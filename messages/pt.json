@@ -167,15 +167,15 @@
       },
       {
         "title": "Detector de Apps Não Utilizados",
-        "description": "Encontre aplicativos que você não usa há meses. Desinstale-os para liberar espaço."
+        "description": "Liste todos os aplicativos instalados por tamanho e desinstale os que você não precisa mais para liberar espaço."
       },
       {
         "title": "Localizador Visual de Duplicatas",
-        "description": "Encontre fotos e imagens semelhantes usando hashing perceptual. Até cópias redimensionadas são detectadas."
+        "description": "Encontre fotos e imagens duplicadas em qualquer pasta, agrupadas pela assinatura do arquivo."
       },
       {
         "title": "Monitor de Saúde do Disco",
-        "description": "Verifique a saúde do SSD/HDD com dados SMART. Monitore a temperatura e a vida útil da unidade."
+        "description": "Veja o estado de saúde dos seus SSDs e HDDs e execute o TRIM nos SSDs."
       }
     ]
   },
@@ -275,15 +275,15 @@
       },
       {
         "name": "Apps Não Utilizados",
-        "description": "Detecte aplicativos que você não abriu há meses. Desinstale-os diretamente pelo Disk Mop."
+        "description": "Veja todos os aplicativos instalados com o tamanho de cada um, do maior para o menor, e desinstale os que você não usa mais sem sair do Disk Mop."
       },
       {
         "name": "Duplicatas Visuais",
-        "description": "Encontre fotos visualmente semelhantes usando hashing perceptual com IA. Até cortes e redimensionamentos são detectados."
+        "description": "Procure fotos e imagens duplicadas em uma pasta. As cópias são agrupadas pela assinatura do arquivo, com o espaço desperdiçado por cada grupo."
       },
       {
         "name": "Saúde do Disco",
-        "description": "Monitore a saúde do SSD/HDD com diagnósticos SMART. Verifique temperatura, vida útil e status do TRIM."
+        "description": "Verifique rapidamente o estado de saúde de cada SSD e HDD e execute o TRIM no seu SSD com um clique."
       },
       {
         "name": "Iniciar mais rápido",
