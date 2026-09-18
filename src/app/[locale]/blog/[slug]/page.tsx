@@ -1,13 +1,14 @@
-import { setRequestLocale } from 'next-intl/server';
-import { getTranslations } from 'next-intl/server';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
-import { getArticle, getAllSlugs, articles } from '@/content/articles';
-import { routing } from '@/i18n/routing';
-import { localeHref } from '@/lib/locale-path';
+import { setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { getArticle, getAllSlugs, articles } from "@/content/articles";
+import { routing } from "@/i18n/routing";
+import { localeHref } from "@/lib/locale-path";
+import { BlogCtaCard } from "@/components/blog-cta-card";
 import {
   Check,
   X,
@@ -18,22 +19,22 @@ import {
   Download,
   ListChecks,
   HelpCircle,
-} from 'lucide-react';
+} from "lucide-react";
 
 // Karsilastirma tablosu hucresi: duz string dile bagimsizdir ('✓', '✗'),
 // Record ise dil basina metindir. Eksik dilde EN'e duser.
 function localizedCell(
-  value: import('@/content/types').LocalizedText,
-  locale: string
+  value: import("@/content/types").LocalizedText,
+  locale: string,
 ): string {
-  if (typeof value === 'string') return value;
-  return value[locale] || value['en'] || '';
+  if (typeof value === "string") return value;
+  return value[locale] || value["en"] || "";
 }
 
 export function generateStaticParams() {
   const slugs = getAllSlugs();
   return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug }))
+    slugs.map((slug) => ({ locale, slug })),
   );
 }
 
@@ -44,11 +45,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: 'Not Found' };
+  if (!article) return { title: "Not Found" };
 
-  const content = article.content[locale] || article.content['en'];
-  const baseUrl = 'https://diskmop.com';
-  const canonicalPath = locale === 'en' ? `/blog/${slug}` : `/${locale}/blog/${slug}`;
+  const content = article.content[locale] || article.content["en"];
+  const baseUrl = "https://diskmop.com";
+  const canonicalPath =
+    locale === "en" ? `/blog/${slug}` : `/${locale}/blog/${slug}`;
 
   return {
     title: `${content.title} | Disk Mop Blog`,
@@ -70,12 +72,12 @@ export async function generateMetadata({
       title: content.title,
       description: content.metaDescription,
       url: `${baseUrl}${canonicalPath}`,
-      siteName: 'Disk Mop',
-      type: 'article',
+      siteName: "Disk Mop",
+      type: "article",
       publishedTime: article.date,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: content.title,
       description: content.metaDescription,
     },
@@ -93,80 +95,87 @@ export default async function ArticlePage({
   const article = getArticle(slug);
   if (!article) notFound();
 
-  const content = article.content[locale] || article.content['en'];
-  const t = await getTranslations({ locale, namespace: 'blog' });
+  const content = article.content[locale] || article.content["en"];
+  const t = await getTranslations({ locale, namespace: "blog" });
 
   const related = articles.filter((a) => a.slug !== slug).slice(0, 3);
 
-  const baseUrl = 'https://diskmop.com';
-  const articleUrl = `${baseUrl}${locale === 'en' ? '' : `/${locale}`}/blog/${slug}`;
+  const baseUrl = "https://diskmop.com";
+  const articleUrl = `${baseUrl}${locale === "en" ? "" : `/${locale}`}/blog/${slug}`;
 
   // Cogu makale yalnizca tr/en/de icerir; kalan diller EN'e duser. O sayfalarda
   // govde Ingilizce oldugu icin inLanguage'i URL diliyle degil, GERCEKTEN
   // basilan icerigin diliyle bildiriyoruz.
-  const contentLanguage = article.content[locale] ? locale : 'en';
+  const contentLanguage = article.content[locale] ? locale : "en";
 
   // AI arama motorlari (AI Overviews, ChatGPT, Perplexity) sayfayi parca parca
   // alintilar; her parcayi ayri bir schema.org dugumu olarak yayinliyoruz.
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'Article',
-      '@id': `${articleUrl}#article`,
+      "@type": "Article",
+      "@id": `${articleUrl}#article`,
       headline: content.title,
       description: content.metaDescription,
       datePublished: article.date,
       dateModified: article.updated || article.date,
       inLanguage: contentLanguage,
       image: `${baseUrl}/brand/icon.png`,
-      author: { '@type': 'Organization', name: 'Disk Mop', url: baseUrl },
+      author: { "@type": "Organization", name: "Disk Mop", url: baseUrl },
       publisher: {
-        '@type': 'Organization',
-        name: 'Disk Mop',
-        logo: { '@type': 'ImageObject', url: `${baseUrl}/brand/icon.png` },
+        "@type": "Organization",
+        name: "Disk Mop",
+        logo: { "@type": "ImageObject", url: `${baseUrl}/brand/icon.png` },
       },
-      mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+      mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
     },
     {
-      '@type': 'BreadcrumbList',
-      '@id': `${articleUrl}#breadcrumb`,
+      "@type": "BreadcrumbList",
+      "@id": `${articleUrl}#breadcrumb`,
       itemListElement: [
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           position: 1,
-          name: 'Disk Mop',
-          item: `${baseUrl}${locale === 'en' ? '/' : `/${locale}`}`,
+          name: "Disk Mop",
+          item: `${baseUrl}${locale === "en" ? "/" : `/${locale}`}`,
         },
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           position: 2,
-          name: 'Blog',
-          item: `${baseUrl}${locale === 'en' ? '' : `/${locale}`}/blog`,
+          name: "Blog",
+          item: `${baseUrl}${locale === "en" ? "" : `/${locale}`}/blog`,
         },
-        { '@type': 'ListItem', position: 3, name: content.title, item: articleUrl },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: content.title,
+          item: articleUrl,
+        },
       ],
     },
   ];
 
   if (content.faq && content.faq.length > 0) {
     graph.push({
-      '@type': 'FAQPage',
-      '@id': `${articleUrl}#faq`,
+      "@type": "FAQPage",
+      "@id": `${articleUrl}#faq`,
       mainEntity: content.faq.map((item) => ({
-        '@type': 'Question',
+        "@type": "Question",
         name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
       })),
     });
   }
 
   if (content.howTo && content.howTo.steps.length > 0) {
     graph.push({
-      '@type': 'HowTo',
-      '@id': `${articleUrl}#howto`,
+      "@type": "HowTo",
+      "@id": `${articleUrl}#howto`,
       name: content.howTo.name,
-      ...(content.howTo.totalTime ? { totalTime: content.howTo.totalTime } : {}),
+      ...(content.howTo.totalTime
+        ? { totalTime: content.howTo.totalTime }
+        : {}),
       step: content.howTo.steps.map((step, i) => ({
-        '@type': 'HowToStep',
+        "@type": "HowToStep",
         position: i + 1,
         name: step.name,
         text: step.text,
@@ -174,7 +183,7 @@ export default async function ArticlePage({
     });
   }
 
-  const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
+  const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
   return (
     <>
@@ -188,14 +197,14 @@ export default async function ArticlePage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link
-              href={localeHref(locale, '/')}
+              href={localeHref(locale, "/")}
               className="hover:text-foreground transition-colors"
             >
               Disk Mop
             </Link>
             <ChevronRight className="h-4 w-4" />
             <Link
-              href={localeHref(locale, '/blog')}
+              href={localeHref(locale, "/blog")}
               className="hover:text-foreground transition-colors"
             >
               Blog
@@ -214,7 +223,7 @@ export default async function ArticlePage({
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4" />
-              {article.readingTime} {t('readingTime')}
+              {article.readingTime} {t("readingTime")}
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
@@ -241,7 +250,7 @@ export default async function ArticlePage({
             <div className="rounded-xl border border-border bg-card p-6">
               <h2 className="flex items-center gap-2 text-lg font-bold text-foreground mb-4">
                 <ListChecks className="h-5 w-5 text-brand-600 dark:text-brand-400" />
-                {t('keyTakeaways')}
+                {t("keyTakeaways")}
               </h2>
               <ul className="space-y-3">
                 {content.keyTakeaways.map((item, i) => (
@@ -258,143 +267,152 @@ export default async function ArticlePage({
           </section>
         )}
 
+        {/* Inline Smart CTA (Erken Dönüşüm) */}
+        <BlogCtaCard variant="inline" />
+
         {/* Comparison Table (only for comparison articles) */}
         {article.comparison && article.comparison.length > 0 && (
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            {t('comparisonTable')}
-          </h2>
-          <div className="overflow-x-auto rounded-xl border border-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-muted/50">
-                  <th className="text-left p-4 font-semibold text-foreground">
-                    {t('feature')}
-                  </th>
-                  <th className="text-center p-4 font-semibold text-brand-600 dark:text-brand-400">
-                    Disk Mop
-                  </th>
-                  <th className="text-center p-4 font-semibold text-foreground">
-                    {article.competitorName}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {article.comparison.map((row, i) => (
-                  <tr
-                    key={i}
-                    className={
-                      i % 2 === 0 ? 'bg-background' : 'bg-muted/30'
-                    }
-                  >
-                    <td className="p-4 font-medium text-foreground">
-                      {row.feature[locale] || row.feature['en']}
-                    </td>
-                    <td
-                      className={`p-4 text-center ${
-                        row.winner === 'diskmop'
-                          ? 'text-green-600 dark:text-green-400 font-semibold'
-                          : 'text-muted-foreground'
-                      }`}
-                    >
-                      {localizedCell(row.diskmop, locale)}
-                    </td>
-                    <td
-                      className={`p-4 text-center ${
-                        row.winner === 'competitor'
-                          ? 'text-green-600 dark:text-green-400 font-semibold'
-                          : 'text-muted-foreground'
-                      }`}
-                    >
-                      {localizedCell(row.competitor, locale)}
-                    </td>
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              {t("comparisonTable")}
+            </h2>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-muted/50">
+                    <th className="text-left p-4 font-semibold text-foreground">
+                      {t("feature")}
+                    </th>
+                    <th className="text-center p-4 font-semibold text-brand-600 dark:text-brand-400">
+                      Disk Mop
+                    </th>
+                    <th className="text-center p-4 font-semibold text-foreground">
+                      {article.competitorName}
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+                </thead>
+                <tbody>
+                  {article.comparison.map((row, i) => (
+                    <tr
+                      key={i}
+                      className={i % 2 === 0 ? "bg-background" : "bg-muted/30"}
+                    >
+                      <td className="p-4 font-medium text-foreground">
+                        {row.feature[locale] || row.feature["en"]}
+                      </td>
+                      <td
+                        className={`p-4 text-center ${
+                          row.winner === "diskmop"
+                            ? "text-green-600 dark:text-green-400 font-semibold"
+                            : "text-muted-foreground"
+                        }`}
+                      >
+                        {localizedCell(row.diskmop, locale)}
+                      </td>
+                      <td
+                        className={`p-4 text-center ${
+                          row.winner === "competitor"
+                            ? "text-green-600 dark:text-green-400 font-semibold"
+                            : "text-muted-foreground"
+                        }`}
+                      >
+                        {localizedCell(row.competitor, locale)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
         )}
 
         {/* Pros & Cons (only for comparison articles) */}
-        {'diskmopPros' in content && (
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold text-foreground">Disk Mop</h3>
-              <div className="rounded-xl border border-green-200 dark:border-green-900 bg-green-50/50 dark:bg-green-950/20 p-5">
-                <h4 className="text-sm font-semibold text-green-700 dark:text-green-400 mb-3">
-                  {t('pros')}
-                </h4>
-                <ul className="space-y-2">
-                  {(content as import('@/content/types').ArticleContent).diskmopPros.map((pro, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-foreground"
-                    >
-                      <Check className="h-4 w-4 text-green-600 dark:text-green-400 mt-0.5 shrink-0" />
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
+        {"diskmopPros" in content && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-foreground">Disk Mop</h3>
+                <div className="rounded-xl border border-green-200 dark:border-green-900 bg-green-50/50 dark:bg-green-950/20 p-5">
+                  <h4 className="text-sm font-semibold text-green-700 dark:text-green-400 mb-3">
+                    {t("pros")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {(
+                      content as import("@/content/types").ArticleContent
+                    ).diskmopPros.map((pro, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <Check className="h-4 w-4 text-green-600 dark:text-green-400 mt-0.5 shrink-0" />
+                        {pro}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-xl border border-red-200 dark:border-red-900 bg-red-50/50 dark:bg-red-950/20 p-5">
+                  <h4 className="text-sm font-semibold text-red-700 dark:text-red-400 mb-3">
+                    {t("cons")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {(
+                      content as import("@/content/types").ArticleContent
+                    ).diskmopCons.map((con, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <X className="h-4 w-4 text-red-500 dark:text-red-400 mt-0.5 shrink-0" />
+                        {con}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="rounded-xl border border-red-200 dark:border-red-900 bg-red-50/50 dark:bg-red-950/20 p-5">
-                <h4 className="text-sm font-semibold text-red-700 dark:text-red-400 mb-3">
-                  {t('cons')}
-                </h4>
-                <ul className="space-y-2">
-                  {(content as import('@/content/types').ArticleContent).diskmopCons.map((con, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-foreground"
-                    >
-                      <X className="h-4 w-4 text-red-500 dark:text-red-400 mt-0.5 shrink-0" />
-                      {con}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
 
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold text-foreground">
-                {article.competitorName}
-              </h3>
-              <div className="rounded-xl border border-green-200 dark:border-green-900 bg-green-50/50 dark:bg-green-950/20 p-5">
-                <h4 className="text-sm font-semibold text-green-700 dark:text-green-400 mb-3">
-                  {t('pros')}
-                </h4>
-                <ul className="space-y-2">
-                  {(content as import('@/content/types').ArticleContent).competitorPros.map((pro, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-foreground"
-                    >
-                      <Check className="h-4 w-4 text-green-600 dark:text-green-400 mt-0.5 shrink-0" />
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl border border-red-200 dark:border-red-900 bg-red-50/50 dark:bg-red-950/20 p-5">
-                <h4 className="text-sm font-semibold text-red-700 dark:text-red-400 mb-3">
-                  {t('cons')}
-                </h4>
-                <ul className="space-y-2">
-                  {(content as import('@/content/types').ArticleContent).competitorCons.map((con, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-sm text-foreground"
-                    >
-                      <X className="h-4 w-4 text-red-500 dark:text-red-400 mt-0.5 shrink-0" />
-                      {con}
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-foreground">
+                  {article.competitorName}
+                </h3>
+                <div className="rounded-xl border border-green-200 dark:border-green-900 bg-green-50/50 dark:bg-green-950/20 p-5">
+                  <h4 className="text-sm font-semibold text-green-700 dark:text-green-400 mb-3">
+                    {t("pros")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {(
+                      content as import("@/content/types").ArticleContent
+                    ).competitorPros.map((pro, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <Check className="h-4 w-4 text-green-600 dark:text-green-400 mt-0.5 shrink-0" />
+                        {pro}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-xl border border-red-200 dark:border-red-900 bg-red-50/50 dark:bg-red-950/20 p-5">
+                  <h4 className="text-sm font-semibold text-red-700 dark:text-red-400 mb-3">
+                    {t("cons")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {(
+                      content as import("@/content/types").ArticleContent
+                    ).competitorCons.map((con, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-foreground"
+                      >
+                        <X className="h-4 w-4 text-red-500 dark:text-red-400 mt-0.5 shrink-0" />
+                        {con}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
         {/* Veri tablosu — rehberler icin. Sayfanin ust kismina yakin durur:
@@ -415,7 +433,7 @@ export default async function ArticlePage({
                       <th
                         key={i}
                         className={`p-4 font-semibold text-foreground ${
-                          i === 0 ? 'text-left' : 'text-center'
+                          i === 0 ? "text-left" : "text-center"
                         }`}
                       >
                         {col}
@@ -425,14 +443,17 @@ export default async function ArticlePage({
                 </thead>
                 <tbody>
                   {content.dataTable.rows.map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-background' : 'bg-muted/30'}>
+                    <tr
+                      key={i}
+                      className={i % 2 === 0 ? "bg-background" : "bg-muted/30"}
+                    >
                       {row.map((cell, j) => (
                         <td
                           key={j}
                           className={`p-4 ${
                             j === 0
-                              ? 'font-medium text-foreground'
-                              : 'text-center text-muted-foreground'
+                              ? "font-medium text-foreground"
+                              : "text-center text-muted-foreground"
                           }`}
                         >
                           {cell}
@@ -471,7 +492,7 @@ export default async function ArticlePage({
           <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
             <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground mb-6">
               <HelpCircle className="h-6 w-6 text-brand-600 dark:text-brand-400" />
-              {t('faq')}
+              {t("faq")}
             </h2>
             <div className="space-y-4">
               {content.faq.map((item, i) => (
@@ -495,7 +516,7 @@ export default async function ArticlePage({
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-950/30 dark:to-brand-900/20 border border-brand-200 dark:border-brand-800 p-8">
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              {t('verdict')}
+              {t("verdict")}
             </h2>
             {content.verdict.map((p, i) => (
               <p
@@ -508,35 +529,22 @@ export default async function ArticlePage({
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="text-center rounded-2xl bg-gray-950 dark:bg-gray-900 p-8 sm:p-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              {content.ctaText}
-            </h2>
-            <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-              {t('ctaSubtitle')}
-            </p>
-            <a
-              href={localeHref(locale, '/#platforms')}
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors"
-            >
-              <Download className="h-5 w-5" />
-              {t('downloadCta')}
-            </a>
-          </div>
-        </section>
+        {/* Bottom CTA (Güçlendirilmiş Doğrudan İndirme) */}
+        <BlogCtaCard
+          variant="bottom"
+          customTitle={content.ctaText}
+          customSubtitle={t("ctaSubtitle")}
+        />
 
         {/* Related Articles */}
         {related.length > 0 && (
           <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              {t('relatedArticles')}
+              {t("relatedArticles")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {related.map((rel) => {
-                const relContent =
-                  rel.content[locale] || rel.content['en'];
+                const relContent = rel.content[locale] || rel.content["en"];
                 return (
                   <Link
                     key={rel.slug}
@@ -544,15 +552,15 @@ export default async function ArticlePage({
                     className="group rounded-xl border border-border bg-card p-5 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition-all"
                   >
                     <div className="text-xs text-brand-600 dark:text-brand-400 font-medium mb-2">
-                      {rel.type === 'guide'
-                        ? (rel.category || 'Guide')
+                      {rel.type === "guide"
+                        ? rel.category || "Guide"
                         : `vs ${rel.competitorName}`}
                     </div>
                     <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                       {relContent.title}
                     </h3>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      {t('readMore')} <ArrowRight className="h-3 w-3" />
+                      {t("readMore")} <ArrowRight className="h-3 w-3" />
                     </span>
                   </Link>
                 );

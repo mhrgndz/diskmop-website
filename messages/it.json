@@ -503,7 +503,15 @@
     "backToBlog": "Torna al blog",
     "guide": "Guida",
     "keyTakeaways": "In sintesi",
-    "faq": "Domande frequenti"
+    "faq": "Domande frequenti",
+    "inlineCtaBadge": "Soluzione automatica in 1 clic",
+    "inlineCtaTitle": "Vuoi risolvere in 1 clic invece di farlo manualmente?",
+    "inlineCtaSubtitle": "DiskMop scansiona, individua e pulisce in sicurezza cache nascoste, residui di app e file spazzatura di sistema.",
+    "downloadFor": "Scarica gratis per {os}",
+    "downloadFree": "Scarica gratis",
+    "trustFreeDeletions": "3 eliminazioni gratuite incluse",
+    "trustNoCard": "Nessuna carta richiesta",
+    "trustSafe": "100% Sicuro e firmato"
   },
   "notFound": {
     "title": "Pagina non trovata",

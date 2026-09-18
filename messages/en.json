@@ -503,7 +503,15 @@
     "backToBlog": "Back to Blog",
     "guide": "Guide",
     "keyTakeaways": "Key Takeaways",
-    "faq": "Frequently Asked Questions"
+    "faq": "Frequently Asked Questions",
+    "inlineCtaBadge": "Automated 1-Click Solution",
+    "inlineCtaTitle": "Want to fix this in 1 click instead of doing it manually?",
+    "inlineCtaSubtitle": "DiskMop automatically scans, identifies, and safely cleans hidden caches, app leftovers, and system junk.",
+    "downloadFor": "Download Free for {os}",
+    "downloadFree": "Download Free",
+    "trustFreeDeletions": "3 free deletions included",
+    "trustNoCard": "No credit card required",
+    "trustSafe": "100% Safe & Signed"
   },
   "notFound": {
     "title": "Page Not Found",

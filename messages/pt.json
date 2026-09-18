@@ -503,7 +503,15 @@
     "backToBlog": "Voltar ao Blog",
     "guide": "Guia",
     "keyTakeaways": "Pontos principais",
-    "faq": "Perguntas frequentes"
+    "faq": "Perguntas frequentes",
+    "inlineCtaBadge": "Solução automática em 1 clique",
+    "inlineCtaTitle": "Quer resolver isso em 1 clique em vez de fazer manualmente?",
+    "inlineCtaSubtitle": "O DiskMop analisa, identifica e limpa com segurança caches ocultos, sobras de aplicativos e lixo do sistema.",
+    "downloadFor": "Baixar grátis para {os}",
+    "downloadFree": "Baixar grátis",
+    "trustFreeDeletions": "3 exclusões gratuitas incluídas",
+    "trustNoCard": "Não requer cartão de crédito",
+    "trustSafe": "100% Seguro e assinado"
   },
   "notFound": {
     "title": "Página não encontrada",

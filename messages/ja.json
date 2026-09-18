@@ -503,7 +503,15 @@
     "backToBlog": "ブログに戻る",
     "guide": "ガイド",
     "keyTakeaways": "要点",
-    "faq": "よくある質問"
+    "faq": "よくある質問",
+    "inlineCtaBadge": "1クリック自動解決",
+    "inlineCtaTitle": "手動で作業する代わりに、1クリックで解決しませんか？",
+    "inlineCtaSubtitle": "DiskMopが隠れたキャッシュ、アンインストール後の残りファイル、不要なシステムファイルを自動検出して安全に削除します。",
+    "downloadFor": "{os}版を無料ダウンロード",
+    "downloadFree": "無料ダウンロード",
+    "trustFreeDeletions": "3回分の無料削除付き",
+    "trustNoCard": "クレジットカード不要",
+    "trustSafe": "100% 安全・署名済み"
   },
   "notFound": {
     "title": "ページが見つかりません",

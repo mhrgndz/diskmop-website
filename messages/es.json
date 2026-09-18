@@ -503,7 +503,15 @@
     "backToBlog": "Volver al Blog",
     "guide": "Guía",
     "keyTakeaways": "Puntos clave",
-    "faq": "Preguntas frecuentes"
+    "faq": "Preguntas frecuentes",
+    "inlineCtaBadge": "Solución automática en 1 clic",
+    "inlineCtaTitle": "¿Prefieres solucionar esto en 1 clic en lugar de hacerlo manualmente?",
+    "inlineCtaSubtitle": "DiskMop analiza, identifica y elimina de forma segura cachés ocultas, restos de apps y archivos basura del sistema.",
+    "downloadFor": "Descarga gratis para {os}",
+    "downloadFree": "Descargar gratis",
+    "trustFreeDeletions": "3 eliminaciones gratuitas incluidas",
+    "trustNoCard": "Sin tarjeta de crédito",
+    "trustSafe": "100% Seguro y firmado"
   },
   "notFound": {
     "title": "Página no encontrada",

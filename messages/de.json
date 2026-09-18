@@ -503,7 +503,15 @@
     "backToBlog": "Zurück zum Blog",
     "guide": "Ratgeber",
     "keyTakeaways": "Das Wichtigste in Kürze",
-    "faq": "Häufig gestellte Fragen"
+    "faq": "Häufig gestellte Fragen",
+    "inlineCtaBadge": "Automatische 1-Klick-Lösung",
+    "inlineCtaTitle": "Möchten Sie dies mit 1 Klick lösen, statt es manuell zu tun?",
+    "inlineCtaSubtitle": "DiskMop scannt, identifiziert und bereinigt versteckte Caches, App-Reste und Systemmüll automatisch und sicher.",
+    "downloadFor": "Kostenlos für {os} herunterladen",
+    "downloadFree": "Kostenlos herunterladen",
+    "trustFreeDeletions": "3 kostenlose Löschungen inklusive",
+    "trustNoCard": "Keine Kreditkarte erforderlich",
+    "trustSafe": "100% Sicher & Signiert"
   },
   "notFound": {
     "title": "Seite nicht gefunden",

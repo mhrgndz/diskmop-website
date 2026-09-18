@@ -503,7 +503,15 @@
     "backToBlog": "Blog'a Dön",
     "guide": "Rehber",
     "keyTakeaways": "Özetle",
-    "faq": "Sık Sorulan Sorular"
+    "faq": "Sık Sorulan Sorular",
+    "inlineCtaBadge": "Otomatik Tek Tık Çözüm",
+    "inlineCtaTitle": "Manuel adımlarla uğraşmak yerine tek tıkla çözmek ister misiniz?",
+    "inlineCtaSubtitle": "DiskMop; gizli önbellekleri, kaldırılan uygulama artıklarını ve sistem çöplerini otomatik bulur ve güvenle temizler.",
+    "downloadFor": "{os} için Ücretsiz İndir",
+    "downloadFree": "Ücretsiz İndir",
+    "trustFreeDeletions": "3 ücretsiz silme hakkı dahil",
+    "trustNoCard": "Kredi kartı gerekmez",
+    "trustSafe": "%100 Güvenli & İmzalı"
   },
   "notFound": {
     "title": "Sayfa Bulunamadı",

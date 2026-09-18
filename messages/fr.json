@@ -503,7 +503,15 @@
     "backToBlog": "Retour au blog",
     "guide": "Guide",
     "keyTakeaways": "À retenir",
-    "faq": "Questions fréquentes"
+    "faq": "Questions fréquentes",
+    "inlineCtaBadge": "Solution automatique en 1 clic",
+    "inlineCtaTitle": "Vous préférez régler cela en 1 clic plutôt que manuellement ?",
+    "inlineCtaSubtitle": "DiskMop analyse, identifie et nettoie en toute sécurité les caches cachés, restes d'applications et fichiers inutiles.",
+    "downloadFor": "Télécharger gratuitement pour {os}",
+    "downloadFree": "Télécharger gratuitement",
+    "trustFreeDeletions": "3 suppressions gratuites incluses",
+    "trustNoCard": "Aucune carte bancaire requise",
+    "trustSafe": "100% Sûr et signé"
   },
   "notFound": {
     "title": "Page introuvable",
