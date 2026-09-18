@@ -11,5 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default function MyAdminLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      {/* Panel koyu; sayfanın dışında kalan alan (esneme, taşma) beyaz görünmesin. */}
+      <style>{'body{background-color:#09090b}'}</style>
+      {children}
+    </>
+  );
 }
