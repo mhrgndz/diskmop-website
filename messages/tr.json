@@ -511,7 +511,10 @@
     "downloadFree": "Ücretsiz İndir",
     "trustFreeDeletions": "3 ücretsiz silme hakkı dahil",
     "trustNoCard": "Kredi kartı gerekmez",
-    "trustSafe": "%100 Güvenli & İmzalı"
+    "trustSafe": "%100 Güvenli & İmzalı",
+    "stickyBarTitle": "DiskMop ile sisteminizi otomatik temizleyin ve hızlandırın",
+    "stickyBarSubtitle": "Ücretsiz indirin · Gereksiz dosyaları saniyeler içinde temizleyin",
+    "stickyBarButton": "{os} için Ücretsiz İndir"
   },
   "notFound": {
     "title": "Sayfa Bulunamadı",

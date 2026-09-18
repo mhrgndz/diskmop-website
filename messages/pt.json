@@ -511,7 +511,10 @@
     "downloadFree": "Baixar grátis",
     "trustFreeDeletions": "3 exclusões gratuitas incluídas",
     "trustNoCard": "Não requer cartão de crédito",
-    "trustSafe": "100% Seguro e assinado"
+    "trustSafe": "100% Seguro e assinado",
+    "stickyBarTitle": "Limpe e acelere seu computador automaticamente com o DiskMop",
+    "stickyBarSubtitle": "Download gratuito · Encontre e remova arquivos inúteis em segundos",
+    "stickyBarButton": "Baixar grátis para {os}"
   },
   "notFound": {
     "title": "Página não encontrada",

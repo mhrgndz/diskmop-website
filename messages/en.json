@@ -511,7 +511,10 @@
     "downloadFree": "Download Free",
     "trustFreeDeletions": "3 free deletions included",
     "trustNoCard": "No credit card required",
-    "trustSafe": "100% Safe & Signed"
+    "trustSafe": "100% Safe & Signed",
+    "stickyBarTitle": "Clean and speed up your PC automatically with DiskMop",
+    "stickyBarSubtitle": "Free download · Find and clean junk files in seconds",
+    "stickyBarButton": "Download Free for {os}"
   },
   "notFound": {
     "title": "Page Not Found",

@@ -511,7 +511,10 @@
     "downloadFree": "Scarica gratis",
     "trustFreeDeletions": "3 eliminazioni gratuite incluse",
     "trustNoCard": "Nessuna carta richiesta",
-    "trustSafe": "100% Sicuro e firmato"
+    "trustSafe": "100% Sicuro e firmato",
+    "stickyBarTitle": "Pulisci e velocizza il tuo sistema automaticamente con DiskMop",
+    "stickyBarSubtitle": "Download gratuito · Trova e rimuovi i file spazzatura in pochi secondi",
+    "stickyBarButton": "Scarica gratis per {os}"
   },
   "notFound": {
     "title": "Pagina non trovata",

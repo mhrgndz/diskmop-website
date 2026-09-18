@@ -9,6 +9,7 @@ import { getArticle, getAllSlugs, articles } from "@/content/articles";
 import { routing } from "@/i18n/routing";
 import { localeHref } from "@/lib/locale-path";
 import { BlogCtaCard } from "@/components/blog-cta-card";
+import { BlogStickyBar } from "@/components/blog-sticky-bar";
 import {
   Check,
   X,
@@ -569,6 +570,7 @@ export default async function ArticlePage({
           </section>
         )}
       </main>
+      <BlogStickyBar />
       <Footer />
     </>
   );

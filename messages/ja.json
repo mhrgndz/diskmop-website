@@ -511,7 +511,10 @@
     "downloadFree": "無料ダウンロード",
     "trustFreeDeletions": "3回分の無料削除付き",
     "trustNoCard": "クレジットカード不要",
-    "trustSafe": "100% 安全・署名済み"
+    "trustSafe": "100% 安全・署名済み",
+    "stickyBarTitle": "DiskMop でシステムを自動的にクリーンアップして高速化",
+    "stickyBarSubtitle": "無料ダウンロード · 不要なファイルを数秒で検出・削除",
+    "stickyBarButton": "{os} 向けに無料ダウンロード"
   },
   "notFound": {
     "title": "ページが見つかりません",

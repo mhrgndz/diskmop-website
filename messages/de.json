@@ -511,7 +511,10 @@
     "downloadFree": "Kostenlos herunterladen",
     "trustFreeDeletions": "3 kostenlose Löschungen inklusive",
     "trustNoCard": "Keine Kreditkarte erforderlich",
-    "trustSafe": "100% Sicher & Signiert"
+    "trustSafe": "100% Sicher & Signiert",
+    "stickyBarTitle": "Bereinigen und beschleunigen Sie Ihr System automatisch mit DiskMop",
+    "stickyBarSubtitle": "Kostenloser Download · Müll in Sekunden finden und entfernen",
+    "stickyBarButton": "Kostenlos für {os} herunterladen"
   },
   "notFound": {
     "title": "Seite nicht gefunden",
