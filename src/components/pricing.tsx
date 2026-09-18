@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 
 const features = [
-  'features.0',
-  'features.1',
-  'features.2',
-  'features.3',
-  'features.4',
-  'features.5',
-  'features.6',
-  'features.7',
+  "features.0",
+  "features.1",
+  "features.2",
+  "features.3",
+  "features.4",
+  "features.5",
+  "features.6",
+  "features.7",
 ] as const;
 
 export function Pricing() {
-  const t = useTranslations('pricing');
+  const t = useTranslations("pricing");
 
   const checkoutUrl =
-    'https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq';
+    "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq?discount_code=WELCOME25";
 
   return (
     <section id="pricing" className="py-24">
@@ -33,11 +33,9 @@ export function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            {t('subtitle')}
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
         </motion.div>
 
         {/* Card Container */}
@@ -52,19 +50,29 @@ export function Pricing() {
           >
             {/* Popular Badge */}
             <div className="absolute -right-8 top-6 rotate-45 bg-brand-600 text-white text-xs px-8 py-1 font-medium">
-              {t('plan.badge')}
+              {t("plan.badge")}
             </div>
 
             {/* Title */}
             <h3 className="text-xl font-bold text-foreground">
-              {t('plan.name')}
+              {t("plan.name")}
             </h3>
 
             {/* Price */}
             <div className="mt-6">
-              <span className="text-5xl font-bold text-foreground">$19.90</span>
-              <p className="mt-1 text-muted-foreground text-sm">
-                {t('plan.period')}
+              <div className="flex items-baseline gap-3">
+                <span className="text-5xl font-black text-foreground">
+                  $14.90
+                </span>
+                <span className="text-xl text-muted-foreground line-through font-semibold">
+                  $19.90
+                </span>
+                <span className="text-xs font-bold bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 px-2.5 py-1 rounded-full">
+                  25% OFF
+                </span>
+              </div>
+              <p className="mt-2 text-muted-foreground text-sm">
+                {t("plan.period")}
               </p>
             </div>
 
@@ -83,12 +91,12 @@ export function Pricing() {
               href={checkoutUrl}
               className="mt-8 block w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl py-4 text-lg font-semibold shadow-lg shadow-brand-600/25 text-center transition-colors"
             >
-              {t('plan.cta')}
+              {t("plan.cta")}
             </a>
 
             {/* Payment Trust */}
             <p className="mt-4 text-center text-xs text-muted-foreground">
-              {t('plan.paymentTrust')}
+              {t("plan.paymentTrust")}
             </p>
           </motion.div>
         </div>
