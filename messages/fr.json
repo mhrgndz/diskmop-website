@@ -284,6 +284,10 @@
       {
         "name": "Santé du disque",
         "description": "Surveillez la santé de votre SSD/HDD avec les diagnostics SMART. Vérifiez la température, la durée de vie et le statut TRIM."
+      },
+      {
+        "name": "Démarrer plus vite",
+        "description": "Mesurez votre vrai temps de démarrage avec les relevés de Windows, désactivez les applications qui le ralentissent et suivez un guide illustré pour le reste."
       }
     ]
   },

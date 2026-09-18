@@ -284,6 +284,10 @@
       {
         "name": "Salute disco",
         "description": "Monitora la salute di SSD/HDD con la diagnostica SMART. Controlla temperatura, durata e stato TRIM."
+      },
+      {
+        "name": "Avvio più veloce",
+        "description": "Misura il tuo vero tempo di avvio con i dati di Windows, disattiva le app che lo rallentano e segui una guida illustrata per il resto."
       }
     ]
   },

@@ -284,6 +284,10 @@
       {
         "name": "Disk Health",
         "description": "Monitor SSD/HDD health with SMART diagnostics. Check temperature, lifespan, and TRIM status."
+      },
+      {
+        "name": "Faster Boot",
+        "description": "Measure your real startup time with Windows' own records, turn off the apps that slow it down, and follow picture guides for the rest."
       }
     ]
   },

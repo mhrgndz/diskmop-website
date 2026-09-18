@@ -284,6 +284,10 @@
       {
         "name": "Festplatten-Gesundheit",
         "description": "SSD/HDD-Gesundheit mit SMART-Diagnose überwachen. Temperatur, Lebensdauer und TRIM-Status prüfen."
+      },
+      {
+        "name": "Start beschleunigen",
+        "description": "Messen Sie Ihre echte Startzeit mit den eigenen Aufzeichnungen von Windows, deaktivieren Sie bremsende Apps und folgen Sie für den Rest einer bebilderten Anleitung."
       }
     ]
   },

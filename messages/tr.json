@@ -284,6 +284,10 @@
       {
         "name": "Disk Sağlığı",
         "description": "SMART tanılama ile SSD/HDD sağlığını izleyin. Sıcaklık, ömür ve TRIM durumunu kontrol edin."
+      },
+      {
+        "name": "Açılışı Hızlandır",
+        "description": "Gerçek açılış sürenizi Windows'un kendi kayıtlarıyla ölçün, açılışı yavaşlatan uygulamaları kapatın, gerisini görselli rehberle yapın."
       }
     ]
   },

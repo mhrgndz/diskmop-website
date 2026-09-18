@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard,
@@ -25,10 +25,12 @@ import {
   PackageX,
   Images,
   Activity,
+  Gauge,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { ShowcaseVideo } from '@/components/showcase-video';
 
 interface ShowcaseTab {
   id: string;
@@ -36,6 +38,8 @@ interface ShowcaseTab {
   nameKey: string;
   descKey: string;
   screenshot: string;
+  /** public/videos/<video>/<dil>.mp4 + .webp kapak. Yoksa ekran görüntüsü gösterilir. */
+  video?: string;
 }
 
 // Ekran görüntüleri 1600 px genişlikte WebP (kaynak 1920 px PNG'lerden üretildi,
@@ -44,7 +48,17 @@ interface ShowcaseTab {
 const IMG_W = 1600;
 const IMG_H = 860;
 
+// Tanıtım videoları uygulamadan demo veriyle, 8 dilde kaydedildi (1280×688,
+// ekran görüntüleriyle aynı en-boy oranı). Demo modu: diskmop-app
+// src/main/demo (DISKMOP_DEMO=1 npm run dev).
+const VIDEO_W = 1280;
+const VIDEO_H = 688;
+
+const videoSrc = (id: string, locale: string) => `/videos/${id}/${locale}.mp4`;
+const posterSrc = (id: string, locale: string) => `/videos/${id}/${locale}.webp`;
+
 const showcaseTabs: ShowcaseTab[] = [
+  { id: 'boot-speed', icon: Gauge, nameKey: '21', descKey: '21', screenshot: '/videos/boot-speed/en.webp', video: 'boot-speed' },
   { id: 'overview', icon: LayoutDashboard, nameKey: '0', descKey: '0', screenshot: '/screenshots/01-overview.webp' },
   { id: 'disk-analysis', icon: HardDrive, nameKey: '1', descKey: '1', screenshot: '/screenshots/02-disk-analyzer.webp' },
   { id: 'large-files', icon: Search, nameKey: '2', descKey: '2', screenshot: '/screenshots/03-large-files.webp' },
@@ -72,6 +86,7 @@ const showcaseTabs: ShowcaseTab[] = [
 
 export function ProductShowcase() {
   const t = useTranslations('showcase');
+  const locale = useLocale();
   const [activeTab, setActiveTab] = useState(showcaseTabs[0].id);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -90,7 +105,11 @@ export function ProductShowcase() {
         if (!girisler.some((g) => g.isIntersecting)) return;
         gozlemci.disconnect();
 
-        const kuyruk = showcaseTabs.slice(1).map((tab) => tab.screenshot);
+        // Video sekmelerinde yalnız kapak önden indirilir; video ancak sekme açılıp
+        // ekrana gelince yüklenir (ShowcaseVideo, preload="none").
+        const kuyruk = showcaseTabs
+          .slice(1)
+          .map((tab) => (tab.video ? posterSrc(tab.video, locale) : tab.screenshot));
         const sirala = (fn: () => void) => {
           const ric = (window as { requestIdleCallback?: (cb: () => void, o?: object) => void })
             .requestIdleCallback;
@@ -111,7 +130,7 @@ export function ProductShowcase() {
 
     gozlemci.observe(el);
     return () => gozlemci.disconnect();
-  }, []);
+  }, [locale]);
 
   return (
     <section className="py-24" ref={sectionRef}>
@@ -170,17 +189,29 @@ export function ProductShowcase() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="rounded-2xl border overflow-hidden shadow-2xl max-w-5xl mx-auto">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={tab.screenshot}
-                        alt={t(`tabs.${tab.nameKey}.name`)}
-                        width={IMG_W}
-                        height={IMG_H}
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                        decoding="async"
-                        fetchPriority={index === 0 ? 'high' : 'auto'}
-                        className="w-full h-auto"
-                      />
+                      {tab.video ? (
+                        <ShowcaseVideo
+                          src={videoSrc(tab.video, locale)}
+                          poster={posterSrc(tab.video, locale)}
+                          label={t(`tabs.${tab.nameKey}.name`)}
+                          width={VIDEO_W}
+                          height={VIDEO_H}
+                        />
+                      ) : (
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={tab.screenshot}
+                            alt={t(`tabs.${tab.nameKey}.name`)}
+                            width={IMG_W}
+                            height={IMG_H}
+                            loading={index === 0 ? 'eager' : 'lazy'}
+                            decoding="async"
+                            fetchPriority={index === 0 ? 'high' : 'auto'}
+                            className="w-full h-auto"
+                          />
+                        </>
+                      )}
                     </div>
                     <p className="mt-4 text-center text-muted-foreground max-w-lg mx-auto">
                       {t(`tabs.${tab.descKey}.description`)}

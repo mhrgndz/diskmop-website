@@ -284,6 +284,10 @@
       {
         "name": "Saúde do Disco",
         "description": "Monitore a saúde do SSD/HDD com diagnósticos SMART. Verifique temperatura, vida útil e status do TRIM."
+      },
+      {
+        "name": "Iniciar mais rápido",
+        "description": "Meça seu tempo real de inicialização com os registros do Windows, desative os aplicativos que a deixam lenta e siga um guia ilustrado para o resto."
       }
     ]
   },
