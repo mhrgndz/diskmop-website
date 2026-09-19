@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getArticle, getAllSlugs, articles } from "@/content/articles";
+import { getRelatedArticles } from "@/lib/related-articles";
+import { FormattedText } from "@/components/formatted-text";
 import { routing } from "@/i18n/routing";
 import { localeHref } from "@/lib/locale-path";
 import { BlogCtaCard } from "@/components/blog-cta-card";
@@ -99,7 +101,7 @@ export default async function ArticlePage({
   const content = article.content[locale] || article.content["en"];
   const t = await getTranslations({ locale, namespace: "blog" });
 
-  const related = articles.filter((a) => a.slug !== slug).slice(0, 3);
+  const related = getRelatedArticles(article, articles, 3);
 
   const baseUrl = "https://diskmop.com";
   const articleUrl = `${baseUrl}${locale === "en" ? "" : `/${locale}`}/blog/${slug}`;
@@ -240,7 +242,7 @@ export default async function ArticlePage({
               key={i}
               className="text-muted-foreground leading-relaxed mb-4 text-lg"
             >
-              {p}
+              <FormattedText text={p} locale={locale} />
             </p>
           ))}
         </section>
@@ -480,7 +482,7 @@ export default async function ArticlePage({
                   key={j}
                   className="text-muted-foreground leading-relaxed mb-4"
                 >
-                  {p}
+                  <FormattedText text={p} locale={locale} />
                 </p>
               ))}
             </div>
@@ -505,7 +507,7 @@ export default async function ArticlePage({
                     {item.question}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {item.answer}
+                    <FormattedText text={item.answer} locale={locale} />
                   </p>
                 </div>
               ))}
@@ -524,7 +526,7 @@ export default async function ArticlePage({
                 key={i}
                 className="text-foreground/80 leading-relaxed mb-3 last:mb-0"
               >
-                {p}
+                <FormattedText text={p} locale={locale} />
               </p>
             ))}
           </div>

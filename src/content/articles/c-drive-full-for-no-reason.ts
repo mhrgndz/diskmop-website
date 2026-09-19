@@ -1,209 +1,217 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const cDriveFullForNoReason: Article = {
-  slug: 'c-drive-full-for-no-reason',
-  type: 'guide',
-  category: 'Disk Management',
-  date: '2026-06-05',
+  slug: "c-drive-full-for-no-reason",
+  type: "guide",
+  category: "Disk Management",
+  date: "2026-06-05",
   readingTime: 8,
   content: {
     tr: {
-      title: 'C Diski Sebepsiz Doluyor mu? Windows 10/11 için 8 Çözüm',
+      title: "C Diski Sebepsiz Doluyor mu? Windows 10/11 için 8 Çözüm",
       metaDescription:
-        'C diski sebepsiz doluyor mu? hiberfil.sys, sayfa dosyası, geri yükleme noktaları ve AppData önbelleklerinin kapladığı alanı görün, adım adım yer açın.',
-      subtitle: 'Sistem diskinizi yiyen gizli dosyaları önce teşhis edip sonra güvenle temizleme rehberi',
+        "C diski sebepsiz doluyor mu? hiberfil.sys, sayfa dosyası, geri yükleme noktaları ve AppData önbelleklerinin kapladığı alanı görün, adım adım yer açın.",
+      subtitle:
+        "Sistem diskinizi yiyen gizli dosyaları önce teşhis edip sonra güvenle temizleme rehberi",
       intro: [
-        'C diski sebepsiz doluyor gibi görünüyorsa, alanı neredeyse her zaman Windows\'un sizden gizlediği dosyalar kaplıyordur: hazırda bekletme dosyası hiberfil.sys, sayfa dosyası pagefile.sys, sistem geri yükleme noktaları ve AppData klasöründeki gigabaytlarca uygulama önbelleği. Dosya Gezgini bu korumalı sistem dosyalarını varsayılan olarak göstermez; bu yüzden görünen klasörlerin toplamı, Windows\'un dolu gösterdiği alandan çok daha az çıkar. Çözüm, önce teşhis koymak — diski gerçekte neyin kapladığını görmek — ve ancak ondan sonra silmeye başlamaktır.',
-        'C diskinin sürekli dolması sinir bozucudur çünkü suçlular sessizce büyür: Windows güncellemeleri artık dosyalar bırakır, uygulamalar önbelleklerini şişirir ve tek başına hazırda bekletme dosyası, takılı RAM\'inizin önemli bir bölümü kadar yer kaplayabilir. Bu rehberde sekiz pratik çözüm bulacaksınız: gizli dosyaları görünür yapmak, disk kullanımını görsel olarak haritalamak, hiberfil.sys\'i küçültmek veya kaldırmak, sayfa dosyasını doğru boyutlandırmak, geri yükleme noktalarını sınırlamak, geçici dosyaları ve önbellekleri temizlemek, AppData ile İndirilenler klasörlerini düzenlemek ve son olarak tüm rutini otomatikleştirmek.',
+        "C diski sebepsiz doluyor gibi görünüyorsa, alanı neredeyse her zaman Windows'un sizden gizlediği dosyalar kaplıyordur: hazırda bekletme dosyası hiberfil.sys, sayfa dosyası pagefile.sys, sistem geri yükleme noktaları ve AppData klasöründeki gigabaytlarca uygulama önbelleği. Dosya Gezgini bu korumalı sistem dosyalarını varsayılan olarak göstermez; bu yüzden görünen klasörlerin toplamı, Windows'un dolu gösterdiği alandan çok daha az çıkar. Çözüm, önce teşhis koymak — diski gerçekte neyin kapladığını görmek — ve ancak ondan sonra silmeye başlamaktır.",
+        "C diskinin sürekli dolması sinir bozucudur çünkü suçlular sessizce büyür: Windows güncellemeleri artık dosyalar bırakır, uygulamalar önbelleklerini şişirir ve tek başına hazırda bekletme dosyası, takılı RAM'inizin önemli bir bölümü kadar yer kaplayabilir. Bu rehberde sekiz pratik çözüm bulacaksınız: gizli dosyaları görünür yapmak, disk kullanımını görsel olarak haritalamak, hiberfil.sys'i küçültmek veya kaldırmak, sayfa dosyasını doğru boyutlandırmak, geri yükleme noktalarını sınırlamak, geçici dosyaları ve önbellekleri temizlemek, AppData ile İndirilenler klasörlerini düzenlemek ve son olarak tüm rutini otomatikleştirmek.",
       ],
       sections: [
         {
-          title: 'C Diski Neden Sebepsiz Doluyor?',
+          title: "C Diski Neden Sebepsiz Doluyor?",
           content: [
-            'C diskim neden dolu diye soranlara dürüst cevap şudur: disk asla sebepsiz dolmaz, sebepler yalnızca görünmezdir. Windows, hiberfil.sys ve pagefile.sys gibi çekirdek dosyaları korumalı işletim sistemi dosyası olarak işaretler ve Dosya Gezgini bunları varsayılan olarak gizler. Geri yükleme noktaları gizli System Volume Information klasöründe, uygulama önbellekleri ise yine gizli olan AppData içinde durur. Görünen tüm klasörleri seçip toplam boyutlarına bakarsanız, çoğu zaman onlarca gigabaytın hesapta olmadığını görürsünüz.',
-            'Resmin gizli tarafını görmek için Dosya Gezgini\'nde gizli öğeleri açın: Windows 11\'de Görünüm menüsünden Göster ve ardından Gizli öğeler seçeneğini işaretleyin; Windows 10\'da Görünüm sekmesindeki Gizli öğeler kutusunu işaretleyin. Korumalı sistem dosyalarını da görmek için Klasör Seçenekleri\'ni açın, Görünüm sekmesine geçin ve korumalı işletim sistemi dosyalarını gizleyen seçeneğin işaretini kaldırın. Şimdilik sadece bakın, silmeyin — bu dosyaların bir kısmı hayati önemdedir ve her birini güvenle küçültmenin yolu aşağıdaki bölümlerde anlatılıyor.',
-            'Diskin zamanla neden dolmaya devam ettiğini anlamak da faydalıdır. Windows güncellemeleri gigabaytlarca veri indirir ve bir süre geri alma verisi saklar, tarayıcılar ve uygulamalar önbelleklerini sürekli büyütür, silinen her dosya da önce yine C diskinde duran Geri Dönüşüm Kutusu\'na gider. Bunların hiçbiri arıza değildir — düzenli bakım gerektiren normal bir davranıştır.',
+            "C diskim neden dolu diye soranlara dürüst cevap şudur: disk asla sebepsiz dolmaz, sebepler yalnızca görünmezdir. Windows, hiberfil.sys ve pagefile.sys gibi çekirdek dosyaları korumalı işletim sistemi dosyası olarak işaretler ve Dosya Gezgini bunları varsayılan olarak gizler. Geri yükleme noktaları gizli System Volume Information klasöründe, uygulama önbellekleri ise yine gizli olan AppData içinde durur. Görünen tüm klasörleri seçip toplam boyutlarına bakarsanız, çoğu zaman onlarca gigabaytın hesapta olmadığını görürsünüz.",
+            "Resmin gizli tarafını görmek için Dosya Gezgini'nde gizli öğeleri açın: Windows 11'de Görünüm menüsünden Göster ve ardından Gizli öğeler seçeneğini işaretleyin; Windows 10'da Görünüm sekmesindeki Gizli öğeler kutusunu işaretleyin. Korumalı sistem dosyalarını da görmek için Klasör Seçenekleri'ni açın, Görünüm sekmesine geçin ve korumalı işletim sistemi dosyalarını gizleyen seçeneğin işaretini kaldırın. Şimdilik sadece bakın, silmeyin — bu dosyaların bir kısmı hayati önemdedir ve her birini güvenle küçültmenin yolu aşağıdaki bölümlerde anlatılıyor.",
+            "Diskin zamanla neden dolmaya devam ettiğini anlamak da faydalıdır. Windows güncellemeleri gigabaytlarca veri indirir ve bir süre geri alma verisi saklar, tarayıcılar ve uygulamalar önbelleklerini sürekli büyütür, silinen her dosya da önce yine C diskinde duran Geri Dönüşüm Kutusu'na gider. Bunların hiçbiri arıza değildir — düzenli bakım gerektiren normal bir davranıştır.",
           ],
         },
         {
-          title: 'Alanı Gerçekte Neyin Kapladığını Görün',
+          title: "Alanı Gerçekte Neyin Kapladığını Görün",
           content: [
-            'Herhangi bir şeyi silmeden önce bir harita çıkarın. Windows\'un yerleşik özeti Ayarlar, Sistem, Depolama altındadır: C diskini Uygulamalar ve özellikler, Geçici dosyalar, Sistem ve ayrılmış gibi kategorilere böler ve bir kategoriye tıklayınca daha fazla ayrıntı gösterir. İyi bir ilk duraktır ancak kategoriler geniştir — Diğer veya Sistem, tam da bulmanız gereken klasörleri gizleyebilir ve görünüm tek tek dosyalara inemez.',
-            'Görsel bir treemap bu soruyu çok daha hızlı yanıtlar. Disk Mop\'un disk analizi (Disk Analysis), sürücüyü tarayıp her klasörü kapladığı alanla orantılı bir blok olarak çizer; böylece şişmiş bir önbellek klasörü veya unutulmuş bir video arşivi bir kategorinin içinde saklanmak yerine anında göze çarpar. Büyük dosya bulucu (Large File Finder) da 500 MB\'ın üzerindeki tüm dosyaları listeleyerek en hızlı kazanımların adresini gösterir.',
-            'Hangi aracı kullanırsanız kullanın tek bir kurala uyun: ne olduğunu bilmediğiniz bir dosyayı asla silmeyin. Büyük bir dosya C:\\Windows veya System Volume Information içindeyse önce ne işe yaradığını öğrenin — aşağıdaki bölümler, büyük sistem dosyalarını elle silmek yerine güvenle küçültmenin yolunu anlatıyor.',
+            "Herhangi bir şeyi silmeden önce bir harita çıkarın. Windows'un yerleşik özeti Ayarlar, Sistem, Depolama altındadır: C diskini Uygulamalar ve özellikler, Geçici dosyalar, Sistem ve ayrılmış gibi kategorilere böler ve bir kategoriye tıklayınca daha fazla ayrıntı gösterir. İyi bir ilk duraktır ancak kategoriler geniştir — Diğer veya Sistem, tam da bulmanız gereken klasörleri gizleyebilir ve görünüm tek tek dosyalara inemez.",
+            "Görsel bir treemap bu soruyu çok daha hızlı yanıtlar. Disk Mop'un disk analizi (Disk Analysis), sürücüyü tarayıp her klasörü kapladığı alanla orantılı bir blok olarak çizer; böylece şişmiş bir önbellek klasörü veya unutulmuş bir video arşivi bir kategorinin içinde saklanmak yerine anında göze çarpar. Windows'ta [yer kaplayan büyük dosyaları bulma](/blog/find-large-files-windows) rehberimizde belirttiğimiz gibi, Büyük dosya bulucu (Large File Finder) da 500 MB'ın üzerindeki tüm dosyaları listeleyerek en hızlı kazanımların adresini gösterir.",
+            "Hangi aracı kullanırsanız kullanın tek bir kurala uyun: ne olduğunu bilmediğiniz bir dosyayı asla silmeyin. Büyük bir dosya C:\\Windows veya System Volume Information içindeyse önce ne işe yaradığını öğrenin — aşağıdaki bölümler, büyük sistem dosyalarını elle silmek yerine güvenle küçültmenin yolunu anlatıyor.",
           ],
         },
         {
-          title: 'Gizli Alan Yiyiciler: hiberfil.sys, Sayfa Dosyası ve Geri Yükleme Noktaları',
+          title:
+            "Gizli Alan Yiyiciler: hiberfil.sys, Sayfa Dosyası ve Geri Yükleme Noktaları",
           content: [
-            'Çoğu sistemdeki en büyük sürpriz, Windows\'un hazırda bekletme ve hızlı başlangıç için kullandığı hiberfil.sys dosyasıdır. hiberfil.sys boyutu takılı RAM ile orantılıdır; 16 veya 32 GB bellekli bir makinede sessizce gigabaytlarca alan kaplayabilir. Hazırda bekletmeyi hiç kullanmıyorsanız dosyayı kaldırabilirsiniz: Komut İstemi\'ni yönetici olarak açın ve powercfg /h off komutunu çalıştırın — dosya anında silinir. Bunun hızlı başlangıcı da kapattığını unutmayın; hızlı başlangıç kalsın istiyorsanız dosyayı silmek yerine küçültmek için powercfg /h /type reduced komutunu kullanın.',
-            'Sayfa dosyası pagefile.sys, Windows\'un RAM\'i diske doğru genişlettiği alandır ve o da birkaç gigabayt tutabilir. Bu dosyayı silmeyin veya devre dışı bırakmayın — Windows kararlılık için ona ihtiyaç duyar. Boyutunu gözden geçirmek isterseniz Win+R tuşlarına basın, sysdm.cpl yazın, Gelişmiş sekmesini açın, Performans altındaki Ayarlar\'a tıklayın, tekrar Gelişmiş\'e geçin ve Sanal bellek altındaki Değiştir\'i seçin. Çoğu kullanıcı için en iyi ayar, boyutu Windows\'un otomatik yönetmesine izin vermektir.',
-            'Sistem geri yükleme noktaları faydalı bir sigortadır ancak varsayılan olarak diskin hatırı sayılır bir dilimini ayırabilir. Aynı sysdm.cpl penceresinde Sistem Koruması sekmesine geçin, C diskini seçin ve kullanabilecekleri en fazla disk alanını düşürmek için Yapılandır\'a tıklayın. Eski noktaları tek seferde silmek için Disk Temizleme\'yi yönetici olarak çalıştırın, Sistem dosyalarını temizle\'ye tıklayın, Diğer Seçenekler sekmesini açın ve Sistem Geri Yükleme ve Gölge Kopyalar altındaki temizleme düğmesini kullanın — en son nokta hariç tüm geri yükleme noktaları silinir.',
+            "Çoğu sistemdeki en büyük sürpriz, detaylarını [hiberfil.sys ve pagefile.sys silme](/blog/delete-pagefile-sys-hiberfil-sys) rehberimizde incelediğimiz, Windows'un hazırda bekletme ve hızlı başlangıç için kullandığı hiberfil.sys dosyasıdır. hiberfil.sys boyutu takılı RAM ile orantılıdır; 16 veya 32 GB bellekli bir makinede sessizce gigabaytlarca alan kaplayabilir. Hazırda bekletmeyi hiç kullanmıyorsanız dosyayı kaldırabilirsiniz: Komut İstemi'ni yönetici olarak açın ve powercfg /h off komutunu çalıştırın — dosya anında silinir. Bunun hızlı başlangıcı da kapattığını unutmayın; hızlı başlangıç kalsın istiyorsanız dosyayı silmek yerine küçültmek için powercfg /h /type reduced komutunu kullanın.",
+            "Sayfa dosyası pagefile.sys, Windows'un RAM'i diske doğru genişlettiği alandır ve o da birkaç gigabayt tutabilir. Bu dosyayı silmeyin veya devre dışı bırakmayın — Windows kararlılık için ona ihtiyaç duyar. Boyutunu gözden geçirmek isterseniz Win+R tuşlarına basın, sysdm.cpl yazın, Gelişmiş sekmesini açın, Performans altındaki Ayarlar'a tıklayın, tekrar Gelişmiş'e geçin ve Sanal bellek altındaki Değiştir'i seçin. Çoğu kullanıcı için en iyi ayar, boyutu Windows'un otomatik yönetmesine izin vermektir.",
+            "Sistem geri yükleme noktaları faydalı bir sigortadır ancak varsayılan olarak diskin hatırı sayılır bir dilimini ayırabilir. Aynı sysdm.cpl penceresinde Sistem Koruması sekmesine geçin, C diskini seçin ve kullanabilecekleri en fazla disk alanını düşürmek için Yapılandır'a tıklayın. Eski noktaları tek seferde silmek için Disk Temizleme'yi yönetici olarak çalıştırın, Sistem dosyalarını temizle'ye tıklayın, Diğer Seçenekler sekmesini açın ve Sistem Geri Yükleme ve Gölge Kopyalar altındaki temizleme düğmesini kullanın — en son nokta hariç tüm geri yükleme noktaları silinir.",
           ],
         },
         {
-          title: 'Geçici Dosyaları ve Uygulama Önbelleklerini Temizleyin',
+          title: "Geçici Dosyaları ve Uygulama Önbelleklerini Temizleyin",
           content: [
-            'C diskinde yer açmanın klasik cevabı geçici dosyalardır ve Windows bunları temizlemek için iki yerleşik yol sunar. Ayarlar, Sistem, Depolama altında Geçici dosyalar bölümünü açın, onay kutularını gözden geçirin ve ihtiyacınız olmayanları kaldırın — Windows Update temizleme ve Teslim İyileştirme dosyaları genellikle en büyük kalemlerdir. Daha eski Disk Temizleme aracı (cleanmgr) aynı işi yapar ve Sistem dosyalarını temizle düğmesi ek kategorilerin kilidini açar.',
-            'Geçici klasörleri doğrudan da boşaltabilirsiniz: Win+R tuşlarına basın, %temp% yazın ve açılan klasörün içeriğini silin; ardından aynısını C:\\Windows\\Temp için tekrarlayın. O anda kullanımda olan dosyalar silinmeyi reddeder — onları atlamanız yeterli. Ayrıca her tarayıcı yüzlerce megabaytı bulan kendi önbelleğini tutar ve normalde her tarayıcının içinden ayrı ayrı temizlenmesi gerekir.',
-            'Disk Mop tüm bunları tek adıma indirir. Önbellek temizleyici (Cache Cleaner) sistem ve uygulama önbelleklerini birlikte tarar, tarayıcı önbelleği temizleyici Chrome, Firefox ve Edge\'i tek geçişte kapsar, Speed Up düğmesi ise eski indirmeleri, sistem önbelleğini, tarayıcı önbelleğini ve Geri Dönüşüm Kutusu\'nu tek tıkla temizler — yukarıdaki manuel turun sonucunu beş ayrı yere uğramadan verir.',
+            "[Windows'ta disk alanı açmanın](/blog/how-to-free-disk-space) klasik cevabı [geçici dosyaları silmektir](/blog/delete-temporary-files-windows) ve Windows bunları temizlemek için iki yerleşik yol sunar. Ayarlar, Sistem, Depolama altında Geçici dosyalar bölümünü açın, onay kutularını gözden geçirin ve ihtiyacınız olmayanları kaldırın — Windows Update temizleme ve Teslim İyileştirme dosyaları genellikle en büyük kalemlerdir. Daha eski Disk Temizleme aracı (cleanmgr) aynı işi yapar ve Sistem dosyalarını temizle düğmesi ek kategorilerin kilidini açar.",
+            "Geçici klasörleri doğrudan da boşaltabilirsiniz: Win+R tuşlarına basın, %temp% yazın ve açılan klasörün içeriğini silin; ardından aynısını C:\\Windows\\Temp için tekrarlayın. O anda kullanımda olan dosyalar silinmeyi reddeder — onları atlamanız yeterli. Ayrıca her tarayıcı yüzlerce megabaytı bulan kendi önbelleğini tutar ve normalde her tarayıcının içinden ayrı ayrı temizlenmesi gerekir.",
+            "Disk Mop tüm bunları tek adıma indirir. Önbellek temizleyici (Cache Cleaner) sistem ve uygulama önbelleklerini birlikte tarar, tarayıcı önbelleği temizleyici Chrome, Firefox ve Edge'i tek geçişte kapsar, Speed Up düğmesi ise eski indirmeleri, sistem önbelleğini, tarayıcı önbelleğini ve Geri Dönüşüm Kutusu'nu tek tıkla temizler — yukarıdaki manuel turun sonucunu beş ayrı yere uğramadan verir.",
           ],
         },
         {
-          title: 'AppData ve İndirilenler Klasörlerini Kontrol Edin',
+          title: "AppData ve İndirilenler Klasörlerini Kontrol Edin",
           content: [
-            'Sistem dosyalarını eledikten sonra alan kaplayan AppData ile karşılaştıysanız yalnız değilsiniz: neredeyse her uygulama verilerini ve önbelleklerini bu gizli klasörde saklar. En büyük bölümünü açmak için Win+R tuşlarına basıp %localappdata% yazın. Sohbet, müzik ve video uygulamaları sık rastlanan suçlulardır — her birinin önbellek alt klasörü birkaç gigabayta şişebilir. Bir uygulamanın klasörü içindeki Cache klasörünü boşaltmak güvenlidir; ancak uygulama kuruluyken tüm klasörünü silmeyin, artık kullanmıyorsanız Ayarlar, Uygulamalar üzerinden düzgün şekilde kaldırın.',
-            'İndirilenler klasörü ise diğer sessiz biriktiricidir. Kurulum dosyaları, ZIP arşivleri ve disk kalıpları genellikle tam bir kez kullanılır ve sonra unutulur; İndirilenler C diskinde durduğu için hepsi sistem alanınızdan düşer. Klasörü boyuta göre sıralayın, gerçekten gerekenleri tutup kalanını silin — ve dosyaların Geri Dönüşüm Kutusu boşaltılana kadar tam olarak gitmediğini unutmayın.',
-            'Disk Mop\'un indirilenler temizleyicisi (Downloads Cleaner), İndirilenler klasöründeki eski dosyaları kategorilere ayırarak grup halinde temizlemenizi sağlar; yinelenen dosya dedektörü (Duplicate Detector) ise SHA-256 karmaları kullanarak diske dağılmış özdeş fotoğraf, video ve belge kopyalarını bulur — kopyalar saf alan israfıdır ve tek kopyaya indirmek her zaman güvenlidir.',
+            "Sistem dosyalarını eledikten sonra alan kaplayan AppData ile karşılaştıysanız yalnız değilsiniz: [AppData klasörünü temizleme](/blog/appdata-folder-cleanup) rehberimizde açıkladığımız gibi neredeyse her uygulama verilerini ve önbelleklerini bu gizli klasörde saklar. En büyük bölümünü açmak için Win+R tuşlarına basıp %localappdata% yazın. Sohbet, müzik ve video uygulamaları sık rastlanan suçlulardır — her birinin önbellek alt klasörü birkaç gigabayta şişebilir. Bir uygulamanın klasörü içindeki Cache klasörünü boşaltmak güvenlidir; ancak uygulama kuruluyken tüm klasörünü silmeyin, artık kullanmıyorsanız Ayarlar, Uygulamalar üzerinden düzgün şekilde kaldırın.",
+            "İndirilenler klasörü ise diğer sessiz biriktiricidir. Kurulum dosyaları, ZIP arşivleri ve disk kalıpları genellikle tam bir kez kullanılır ve sonra unutulur; İndirilenler C diskinde durduğu için hepsi sistem alanınızdan düşer. Klasörü boyuta göre sıralayın, gerçekten gerekenleri tutup kalanını silin — ve dosyaların Geri Dönüşüm Kutusu boşaltılana kadar tam olarak gitmediğini unutmayın.",
+            "Disk Mop'un [indirilenler temizleyicisi](/blog/clean-up-downloads-folder), İndirilenler klasöründeki eski dosyaları kategorilere ayırarak grup halinde temizlemenizi sağlar; [yinelenen dosya bulucu](/blog/find-duplicate-files-windows) ise SHA-256 karmaları kullanarak diske dağılmış özdeş fotoğraf, video ve belge kopyalarını bulur — kopyalar saf alan israfıdır ve tek kopyaya indirmek her zaman güvenlidir.",
           ],
         },
         {
-          title: 'C Diskini Otomatik Olarak Temiz Tutun',
+          title: "C Diskini Otomatik Olarak Temiz Tutun",
           content: [
-            'Diskin yeniden dolmasını engelleyen bir şey yoksa yukarıdaki her çözüm geçicidir. Windows bunun için Depolama Alanı Algılayıcısı\'nı (Storage Sense) sunar: Ayarlar, Sistem, Depolama altında etkinleştirdiğinizde geçici dosyaları otomatik siler, Geri Dönüşüm Kutusu\'nu belirli aralıklarla boşaltır ve isteğe bağlı olarak İndirilenler\'deki eski dosyaları da temizleyebilir. Açmaya değer; ancak uygulama ve tarayıcı önbelleklerine dokunmaz.',
-            'Disk Mop\'un zamanlanmış temizliği (Scheduled Cleanup) bir adım öteye gider: haftalık veya aylık bir görev kurduğunuzda önbellekleri, geçici dosyaları ve Geri Dönüşüm Kutusu\'nu otomatik temizler; sistem sağlığı puanı (System Health Score) da diskin ne zaman ilgi istediğini tek bakışta gösterir. C diskinin yaklaşık %15-20\'sini boş tutmayı hedefleyin — güncellemeler ve sanal bellek için yeterli alan kaldığında Windows akıcı kalır ve disk bir daha sebepsiz doluyormuş gibi görünmez.',
+            "Diskin yeniden dolmasını engelleyen bir şey yoksa yukarıdaki her çözüm geçicidir. Windows bunun için [Depolama Alanı Algılayıcısı'nı (Storage Sense)](/blog/disk-mop-vs-storage-sense) sunar: Ayarlar, Sistem, Depolama altında etkinleştirdiğinizde geçici dosyaları otomatik siler, Geri Dönüşüm Kutusu'nu belirli aralıklarla boşaltır ve isteğe bağlı olarak İndirilenler'deki eski dosyaları da temizleyebilir. Açmaya değer; ancak uygulama ve tarayıcı önbelleklerine dokunmaz.",
+            "Disk Mop'un zamanlanmış temizliği (Scheduled Cleanup) bir adım öteye gider: haftalık veya aylık bir görev kurduğunuzda önbellekleri, geçici dosyaları ve Geri Dönüşüm Kutusu'nu otomatik temizler; sistem sağlığı puanı (System Health Score) da diskin ne zaman ilgi istediğini tek bakışta gösterir. C diskinin yaklaşık %15-20'sini boş tutmayı hedefleyin — güncellemeler ve sanal bellek için yeterli alan kaldığında Windows akıcı kalır ve disk bir daha sebepsiz doluyormuş gibi görünmez.",
           ],
         },
       ],
       verdict: [
-        'Sebepsiz doluyor gibi görünen bir C diski aslında görünmez dosyalarla dolu bir disktir: hiberfil.sys, sayfa dosyası, geri yükleme noktaları, geçici dosyalar ve AppData önbellekleri. Sekiz çözümü sırayla uygulayın — gizli dosyaları gösterin, alanı görsel olarak haritalayın, hazırda bekletme dosyasını küçültün, sayfa dosyasını Windows\'a bırakın, geri yükleme noktalarını sınırlayın, geçici dosyaları ve önbellekleri temizleyin, AppData ile İndirilenler\'i düzenleyin ve rutini otomatikleştirin — gizem, dağınıklıkla birlikte ortadan kalkacaktır.',
-        'Disk Mop tüm bu iş akışını tek uygulamada toplar: disk analizi alanın nereye gittiğini gösterir, önbellek temizleyici ve Speed Up alanı geri kazanır, indirilenler temizleyici ve yinelenen dosya dedektörü unuttuğunuz klasörlerle ilgilenir, zamanlanmış temizlik de diski o günden sonra temiz tutar. $19.90 karşılığında tek seferlik ödemeyle ömür boyu lisans sunar; ücretsiz sürümle yükseltmeden önce deneyebilirsiniz.',
+        "Sebepsiz doluyor gibi görünen bir C diski aslında görünmez dosyalarla dolu bir disktir: hiberfil.sys, sayfa dosyası, geri yükleme noktaları, geçici dosyalar ve AppData önbellekleri. Sekiz çözümü sırayla uygulayın — gizli dosyaları gösterin, alanı görsel olarak haritalayın, hazırda bekletme dosyasını küçültün, sayfa dosyasını Windows'a bırakın, geri yükleme noktalarını sınırlayın, geçici dosyaları ve önbellekleri temizleyin, AppData ile İndirilenler'i düzenleyin ve rutini otomatikleştirin — gizem, dağınıklıkla birlikte ortadan kalkacaktır.",
+        "Disk Mop tüm bu iş akışını tek uygulamada toplar: disk analizi alanın nereye gittiğini gösterir, önbellek temizleyici ve Speed Up alanı geri kazanır, indirilenler temizleyici ve yinelenen dosya dedektörü unuttuğunuz klasörlerle ilgilenir, zamanlanmış temizlik de diski o günden sonra temiz tutar. $19.90 karşılığında tek seferlik ödemeyle ömür boyu lisans sunar; ücretsiz sürümle yükseltmeden önce deneyebilirsiniz.",
       ],
-      ctaText: 'Disk Mop ile C diskinizde yer açın',
+      ctaText: "Disk Mop ile C diskinizde yer açın",
     },
     en: {
-      title: 'C Drive Full for No Reason? 8 Fixes for Windows 10/11',
+      title: "C Drive Full for No Reason? 8 Fixes for Windows 10/11",
       metaDescription:
-        'C drive full for no reason? Learn what hiberfil.sys, the page file, restore points and AppData really consume, and free up space on Windows 10/11 today.',
-      subtitle: 'A diagnose-first guide to finding and removing the hidden files that eat your system drive',
+        "C drive full for no reason? Learn what hiberfil.sys, the page file, restore points and AppData really consume, and free up space on Windows 10/11 today.",
+      subtitle:
+        "A diagnose-first guide to finding and removing the hidden files that eat your system drive",
       intro: [
-        'If your C drive is full for no reason, the space is almost always being used by files Windows hides from you: the hibernation file hiberfil.sys, the page file pagefile.sys, System Restore points and gigabytes of application caches inside the AppData folder. File Explorer does not show these protected system files by default, so your visible folders add up to far less than what Windows reports as used. The solution is to diagnose first — see exactly what occupies the drive — and only then start deleting.',
-        'A C drive that keeps filling up is frustrating because the culprits grow silently: Windows updates leave leftovers behind, apps expand their caches and the hibernation file alone can consume a sizeable share of your installed RAM. In this guide you will find eight practical fixes: reveal hidden files, map your disk usage visually, shrink or remove hiberfil.sys, right-size the page file, limit restore points, clear temporary files and caches, tidy up AppData and Downloads, and finally automate the whole routine so the problem never comes back.',
+        "If your C drive is full for no reason, the space is almost always being used by files Windows hides from you: the hibernation file hiberfil.sys, the page file pagefile.sys, System Restore points and gigabytes of application caches inside the AppData folder. File Explorer does not show these protected system files by default, so your visible folders add up to far less than what Windows reports as used. The solution is to diagnose first — see exactly what occupies the drive — and only then start deleting.",
+        "A C drive that keeps filling up is frustrating because the culprits grow silently: Windows updates leave leftovers behind, apps expand their caches and the hibernation file alone can consume a sizeable share of your installed RAM. In this guide you will find eight practical fixes: reveal hidden files, map your disk usage visually, shrink or remove hiberfil.sys, right-size the page file, limit restore points, clear temporary files and caches, tidy up AppData and Downloads, and finally automate the whole routine so the problem never comes back.",
       ],
       sections: [
         {
-          title: 'Why Your C Drive Fills Up for No Reason',
+          title: "Why Your C Drive Fills Up for No Reason",
           content: [
-            'When people ask why is my C drive full, the honest answer is that it is never full for no reason — the reasons are just invisible. Windows marks core files such as hiberfil.sys and pagefile.sys as protected operating system files, and File Explorer hides them by default. Restore points live in a hidden System Volume Information folder, and application caches sit in AppData, which is also hidden. Select all your visible folders, check their combined size, and you will often find tens of gigabytes unaccounted for.',
-            'To see the hidden part of the picture, open File Explorer and enable hidden items: on Windows 11 use the View menu, choose Show and tick Hidden items; on Windows 10 tick Hidden items on the View tab. To reveal protected system files as well, open Folder Options, switch to the View tab and untick the option that hides protected operating system files. Look but do not delete yet — some of these files are essential, and the safe way to handle each one is covered in the sections below.',
-            'It also helps to understand why the drive keeps filling up over time. Windows updates download several gigabytes and keep rollback data for a while, browsers and apps grow their caches continuously, and every deleted file first lands in the Recycle Bin, which still lives on the C drive. None of this is a malfunction — it is normal behavior that simply needs regular housekeeping.',
+            "When people ask why is my C drive full, the honest answer is that it is never full for no reason — the reasons are just invisible. Windows marks core files such as hiberfil.sys and pagefile.sys as protected operating system files, and File Explorer hides them by default. Restore points live in a hidden System Volume Information folder, and application caches sit in AppData, which is also hidden. Select all your visible folders, check their combined size, and you will often find tens of gigabytes unaccounted for.",
+            "To see the hidden part of the picture, open File Explorer and enable hidden items: on Windows 11 use the View menu, choose Show and tick Hidden items; on Windows 10 tick Hidden items on the View tab. To reveal protected system files as well, open Folder Options, switch to the View tab and untick the option that hides protected operating system files. Look but do not delete yet — some of these files are essential, and the safe way to handle each one is covered in the sections below.",
+            "It also helps to understand why the drive keeps filling up over time. Windows updates download several gigabytes and keep rollback data for a while, browsers and apps grow their caches continuously, and every deleted file first lands in the Recycle Bin, which still lives on the C drive. None of this is a malfunction — it is normal behavior that simply needs regular housekeeping.",
           ],
         },
         {
-          title: 'See What Is Actually Taking Up Space',
+          title: "See What Is Actually Taking Up Space",
           content: [
-            'Before deleting anything, get a map. Windows has a built-in overview under Settings, System, Storage: it breaks the C drive down into categories such as Apps and features, Temporary files and System and reserved, and clicking a category shows more detail. It is a good first stop, but the categories are broad — Other or System can hide exactly the folders you need to find, and the view cannot drill down to individual files.',
-            'A visual treemap answers the question much faster. Disk Mop\'s Disk Analysis scans the drive and draws every folder as a block sized by how much space it takes, so a bloated cache folder or a forgotten video archive jumps out immediately instead of hiding inside a category. The Large File Finder complements this by listing every file over 500 MB, which is usually where the fastest wins are.',
-            'Whichever tool you use, follow one rule: never delete a file you cannot identify. If a large file sits inside C:\\Windows or System Volume Information, look up what it does first — the sections below explain how to shrink the big system files safely instead of deleting them by hand.',
+            "Before deleting anything, get a map. Windows has a built-in overview under Settings, System, Storage: it breaks the C drive down into categories such as Apps and features, Temporary files and System and reserved, and clicking a category shows more detail. It is a good first stop, but the categories are broad — Other or System can hide exactly the folders you need to find, and the view cannot drill down to individual files.",
+            "A visual treemap answers the question much faster. Disk Mop's Disk Analysis scans the drive and draws every folder as a block sized by how much space it takes, so a bloated cache folder or a forgotten video archive jumps out immediately instead of hiding inside a category. As covered in our guide on [finding large files on Windows](/blog/find-large-files-windows), the Large File Finder complements this by listing every file over 500 MB, which is usually where the fastest wins are.",
+            "Whichever tool you use, follow one rule: never delete a file you cannot identify. If a large file sits inside C:\\Windows or System Volume Information, look up what it does first — the sections below explain how to shrink the big system files safely instead of deleting them by hand.",
           ],
         },
         {
-          title: 'Hidden Space Hogs: hiberfil.sys, Page File and Restore Points',
+          title:
+            "Hidden Space Hogs: hiberfil.sys, Page File and Restore Points",
           content: [
-            'The single biggest surprise on most systems is hiberfil.sys, the file Windows uses for hibernation and Fast Startup. The hiberfil.sys size is proportional to your installed RAM, so on a machine with 16 or 32 GB of memory it can quietly consume many gigabytes of the C drive. If you never use hibernation, you can remove it: open Command Prompt as administrator and run powercfg /h off — the file disappears immediately. Keep in mind this also turns off Fast Startup; if you want to keep that, run powercfg /h /type reduced instead to shrink the file rather than delete it.',
-            'The page file, pagefile.sys, is where Windows extends your RAM onto disk, and it can also occupy several gigabytes. Do not delete or disable it — Windows needs it for stability. If you want to review its size, press Win+R, type sysdm.cpl, open the Advanced tab, click Settings under Performance, open Advanced again and choose Change under Virtual memory. For most users the best setting is to let Windows manage the size automatically.',
-            'System Restore points are useful insurance, but by default they can reserve a noticeable slice of the drive. In the same sysdm.cpl window, switch to the System Protection tab, select the C drive and click Configure to lower the maximum disk space they may use. To remove old points in one go, run Disk Cleanup as administrator, click Clean up system files, open the More Options tab and use the clean-up button under System Restore and Shadow Copies — it deletes every restore point except the most recent one.',
+            "The single biggest surprise on most systems is [hiberfil.sys and pagefile.sys](/blog/delete-pagefile-sys-hiberfil-sys), the files Windows uses for hibernation and Fast Startup. The hiberfil.sys size is proportional to your installed RAM, so on a machine with 16 or 32 GB of memory it can quietly consume many gigabytes of the C drive. If you never use hibernation, you can remove it: open Command Prompt as administrator and run powercfg /h off — the file disappears immediately. Keep in mind this also turns off Fast Startup; if you want to keep that, run powercfg /h /type reduced instead to shrink the file rather than delete it.",
+            "The page file, pagefile.sys, is where Windows extends your RAM onto disk, and it can also occupy several gigabytes. Do not delete or disable it — Windows needs it for stability. If you want to review its size, press Win+R, type sysdm.cpl, open the Advanced tab, click Settings under Performance, open Advanced again and choose Change under Virtual memory. For most users the best setting is to let Windows manage the size automatically.",
+            "System Restore points are useful insurance, but by default they can reserve a noticeable slice of the drive. In the same sysdm.cpl window, switch to the System Protection tab, select the C drive and click Configure to lower the maximum disk space they may use. To remove old points in one go, run Disk Cleanup as administrator, click Clean up system files, open the More Options tab and use the clean-up button under System Restore and Shadow Copies — it deletes every restore point except the most recent one.",
           ],
         },
         {
-          title: 'Clean Temporary Files and App Caches',
+          title: "Clean Temporary Files and App Caches",
           content: [
-            'Temporary files are the classic answer when you need to free up space on C drive, and Windows gives you two built-in ways to clear them. Under Settings, System, Storage, open Temporary files, review the checkboxes and remove what you do not need — Windows Update Cleanup and Delivery Optimization files are usually the largest entries. The older Disk Cleanup tool (run cleanmgr) does the same job, and its Clean up system files button unlocks additional categories.',
-            'You can also empty the temp folders directly: press Win+R, type %temp% and delete the contents of the folder that opens, then repeat with C:\\Windows\\Temp. Files that are currently in use will refuse to delete — just skip them. Each browser additionally keeps its own cache of hundreds of megabytes or more, which normally has to be cleared from inside every browser separately.',
-            'Disk Mop condenses all of this into one step. The Cache Cleaner scans system and application caches together, the Browser Cache Cleaner covers Chrome, Firefox and Edge in a single pass, and the Speed Up button clears old downloads, system cache, browser cache and the Recycle Bin with one click — the same result as the manual round above, without visiting five different places.',
+            "As explained in our guide to [free up disk space on Windows](/blog/how-to-free-disk-space), [clearing temporary files](/blog/delete-temporary-files-windows) is the classic answer when you need to reclaim storage on your C drive, and Windows gives you two built-in ways to clear them. Under Settings, System, Storage, open Temporary files, review the checkboxes and remove what you do not need — Windows Update Cleanup and Delivery Optimization files are usually the largest entries. The older Disk Cleanup tool (run cleanmgr) does the same job, and its Clean up system files button unlocks additional categories.",
+            "You can also empty the temp folders directly: press Win+R, type %temp% and delete the contents of the folder that opens, then repeat with C:\\Windows\\Temp. Files that are currently in use will refuse to delete — just skip them. Each browser additionally keeps its own cache of hundreds of megabytes or more, which normally has to be cleared from inside every browser separately.",
+            "Disk Mop condenses all of this into one step. The Cache Cleaner scans system and application caches together, the Browser Cache Cleaner covers Chrome, Firefox and Edge in a single pass, and the Speed Up button clears old downloads, system cache, browser cache and the Recycle Bin with one click — the same result as the manual round above, without visiting five different places.",
           ],
         },
         {
-          title: 'Check the AppData and Downloads Folders',
+          title: "Check the AppData and Downloads Folders",
           content: [
-            'If you have ruled out system files and found AppData taking up space, you are in good company: nearly every application stores its data and caches in this hidden folder. Press Win+R and type %localappdata% to open the largest part of it. Chat, music and video apps are frequent offenders — their cache subfolders can swell to several gigabytes each. It is safe to empty a Cache folder inside an app\'s directory, but do not delete an application\'s whole folder while it is installed; if you no longer use the app, uninstall it properly under Settings, Apps.',
-            'The Downloads folder is the other quiet accumulator. Installers, ZIP archives and disc images are usually needed exactly once and then forgotten, and because Downloads lives on the C drive, they all count against your system space. Sort the folder by size, keep what you genuinely need and delete the rest — then remember the files are not truly gone until the Recycle Bin is emptied.',
-            'Disk Mop\'s Downloads Cleaner automates this review by categorizing old files in the Downloads folder so you can clear them in groups, and the Duplicate Detector uses SHA-256 hashes to find identical copies of photos, videos and documents scattered across the drive — duplicates are pure wasted space and are always safe to reduce to a single copy.',
+            "If you have ruled out system files and found [AppData taking up space](/blog/appdata-folder-cleanup), you are in good company: nearly every application stores its data and caches in this hidden folder. Press Win+R and type %localappdata% to open the largest part of it. Chat, music and video apps are frequent offenders — their cache subfolders can swell to several gigabytes each. It is safe to empty a Cache folder inside an app's directory, but do not delete an application's whole folder while it is installed; if you no longer use the app, uninstall it properly under Settings, Apps.",
+            "The Downloads folder is the other quiet accumulator. Installers, ZIP archives and disc images are usually needed exactly once and then forgotten, and because Downloads lives on the C drive, they all count against your system space. Sort the folder by size, keep what you genuinely need and delete the rest — then remember the files are not truly gone until the Recycle Bin is emptied.",
+            "Disk Mop's [Downloads Cleaner](/blog/clean-up-downloads-folder) automates this review by categorizing old files in the Downloads folder so you can clear them in groups, and the [Duplicate Detector](/blog/find-duplicate-files-windows) uses SHA-256 hashes to find identical copies of photos, videos and documents scattered across the drive — duplicates are pure wasted space and are always safe to reduce to a single copy.",
           ],
         },
         {
-          title: 'Keep the C Drive Clean Automatically',
+          title: "Keep the C Drive Clean Automatically",
           content: [
-            'Every fix above is temporary if nothing prevents the drive from filling up again. Windows offers Storage Sense for this: under Settings, System, Storage you can enable it to delete temporary files automatically, empty the Recycle Bin on a schedule and optionally clean up old files in Downloads. It is worth switching on, though it does not touch application or browser caches.',
-            'Disk Mop\'s Scheduled Cleanup goes further: set up a weekly or monthly task and it clears caches, temporary files and the Recycle Bin automatically, while the System Health Score shows at a glance when the drive needs attention. Aim to keep roughly 15-20% of the C drive free — with enough headroom for updates and virtual memory, Windows stays responsive and the drive stops feeling like it fills up for no reason.',
+            "Every fix above is temporary if nothing prevents the drive from filling up again. Windows offers [Storage Sense](/blog/disk-mop-vs-storage-sense) for this: under Settings, System, Storage you can enable it to delete temporary files automatically, empty the Recycle Bin on a schedule and optionally clean up old files in Downloads. It is worth switching on, though it does not touch application or browser caches.",
+            "Disk Mop's Scheduled Cleanup goes further: set up a weekly or monthly task and it clears caches, temporary files and the Recycle Bin automatically, while the System Health Score shows at a glance when the drive needs attention. Aim to keep roughly 15-20% of the C drive free — with enough headroom for updates and virtual memory, Windows stays responsive and the drive stops feeling like it fills up for no reason.",
           ],
         },
       ],
       verdict: [
-        'A C drive that seems full for no reason is really a drive full of invisible files: hiberfil.sys, the page file, restore points, temporary files and AppData caches. Work through the eight fixes in order — reveal hidden files, map the space visually, shrink the hibernation file, leave the page file to Windows, cap restore points, clear temporary files and caches, tidy AppData and Downloads, and automate the routine — and the mystery disappears along with the clutter.',
-        'Disk Mop packs the whole workflow into one app: Disk Analysis shows where the space went, the Cache Cleaner and Speed Up reclaim it, the Downloads Cleaner and Duplicate Detector handle the folders you forget about, and Scheduled Cleanup keeps the drive clean from then on. It is a one-time purchase of $19.90 with a lifetime license, and the free version lets you try it before upgrading.',
+        "A C drive that seems full for no reason is really a drive full of invisible files: hiberfil.sys, the page file, restore points, temporary files and AppData caches. Work through the eight fixes in order — reveal hidden files, map the space visually, shrink the hibernation file, leave the page file to Windows, cap restore points, clear temporary files and caches, tidy AppData and Downloads, and automate the routine — and the mystery disappears along with the clutter.",
+        "Disk Mop packs the whole workflow into one app: Disk Analysis shows where the space went, the Cache Cleaner and Speed Up reclaim it, the Downloads Cleaner and Duplicate Detector handle the folders you forget about, and Scheduled Cleanup keeps the drive clean from then on. It is a one-time purchase of $19.90 with a lifetime license, and the free version lets you try it before upgrading.",
       ],
-      ctaText: 'Free up your C drive with Disk Mop',
+      ctaText: "Free up your C drive with Disk Mop",
     },
     de: {
-      title: 'Laufwerk C ohne Grund voll? 8 Lösungen für Windows 10/11',
+      title: "Laufwerk C ohne Grund voll? 8 Lösungen für Windows 10/11",
       metaDescription:
-        'Laufwerk C ohne Grund voll? Erfahren Sie, wie viel Platz hiberfil.sys, Auslagerungsdatei und AppData belegen, und schaffen Sie Schritt für Schritt Platz.',
-      subtitle: 'Erst diagnostizieren, dann löschen: die versteckten Dateien finden, die Ihr Systemlaufwerk füllen',
+        "Laufwerk C ohne Grund voll? Erfahren Sie, wie viel Platz hiberfil.sys, Auslagerungsdatei und AppData belegen, und schaffen Sie Schritt für Schritt Platz.",
+      subtitle:
+        "Erst diagnostizieren, dann löschen: die versteckten Dateien finden, die Ihr Systemlaufwerk füllen",
       intro: [
-        'Wenn Laufwerk C scheinbar ohne Grund voll ist, belegen fast immer versteckte Dateien den Platz: die Ruhezustandsdatei hiberfil.sys, die Auslagerungsdatei pagefile.sys, Systemwiederherstellungspunkte und gigabyteweise App-Caches im AppData-Ordner. Der Datei-Explorer blendet diese geschützten Systemdateien standardmäßig aus, weshalb Ihre sichtbaren Ordner deutlich weniger ergeben, als Windows als belegt anzeigt. Die Lösung: erst diagnostizieren, was den Platz wirklich belegt — und erst dann löschen.',
-        'In diesem Leitfaden finden Sie acht praktische Lösungen: versteckte Dateien einblenden, die Belegung visuell kartieren, hiberfil.sys verkleinern oder entfernen, die Auslagerungsdatei richtig dimensionieren, Wiederherstellungspunkte begrenzen, temporäre Dateien und Caches bereinigen, AppData und Downloads aufräumen und die Routine schließlich automatisieren, damit das Problem nicht zurückkehrt.',
+        "Wenn Laufwerk C scheinbar ohne Grund voll ist, belegen fast immer versteckte Dateien den Platz: die Ruhezustandsdatei hiberfil.sys, die Auslagerungsdatei pagefile.sys, Systemwiederherstellungspunkte und gigabyteweise App-Caches im AppData-Ordner. Der Datei-Explorer blendet diese geschützten Systemdateien standardmäßig aus, weshalb Ihre sichtbaren Ordner deutlich weniger ergeben, als Windows als belegt anzeigt. Die Lösung: erst diagnostizieren, was den Platz wirklich belegt — und erst dann löschen.",
+        "In diesem Leitfaden finden Sie acht praktische Lösungen: versteckte Dateien einblenden, die Belegung visuell kartieren, hiberfil.sys verkleinern oder entfernen, die Auslagerungsdatei richtig dimensionieren, Wiederherstellungspunkte begrenzen, temporäre Dateien und Caches bereinigen, AppData und Downloads aufräumen und die Routine schließlich automatisieren, damit das Problem nicht zurückkehrt.",
       ],
       sections: [
         {
-          title: 'Warum sich Laufwerk C scheinbar ohne Grund füllt',
+          title: "Warum sich Laufwerk C scheinbar ohne Grund füllt",
           content: [
-            'Ein Laufwerk füllt sich nie ohne Grund — die Gründe sind nur unsichtbar. Windows markiert Kerndateien wie hiberfil.sys und pagefile.sys als geschützte Systemdateien, Wiederherstellungspunkte liegen im versteckten Ordner System Volume Information, und App-Caches stecken im ebenfalls versteckten AppData-Ordner. Zählt man alle sichtbaren Ordner zusammen, fehlen deshalb oft Dutzende Gigabytes in der Rechnung.',
-            'Um das vollständige Bild zu sehen, aktivieren Sie im Datei-Explorer die Anzeige ausgeblendeter Elemente: unter Windows 11 über das Menü Anzeigen und dann Einblenden, unter Windows 10 auf der Registerkarte Ansicht. In den Ordneroptionen können Sie zusätzlich das Ausblenden geschützter Systemdateien deaktivieren. Schauen Sie zunächst nur — einige dieser Dateien sind unverzichtbar, und die folgenden Abschnitte zeigen, wie Sie jede davon sicher verkleinern.',
-            'Dass sich das Laufwerk immer wieder füllt, ist zudem normal: Windows-Updates hinterlassen Rückstände, Browser und Apps vergrößern ihre Caches laufend, und jede gelöschte Datei landet zunächst im Papierkorb, der ebenfalls auf Laufwerk C liegt. Das ist kein Defekt, sondern Alltag, der regelmäßige Pflege braucht.',
+            "Ein Laufwerk füllt sich nie ohne Grund — die Gründe sind nur unsichtbar. Windows markiert Kerndateien wie hiberfil.sys und pagefile.sys als geschützte Systemdateien, Wiederherstellungspunkte liegen im versteckten Ordner System Volume Information, und App-Caches stecken im ebenfalls versteckten AppData-Ordner. Zählt man alle sichtbaren Ordner zusammen, fehlen deshalb oft Dutzende Gigabytes in der Rechnung.",
+            "Um das vollständige Bild zu sehen, aktivieren Sie im Datei-Explorer die Anzeige ausgeblendeter Elemente: unter Windows 11 über das Menü Anzeigen und dann Einblenden, unter Windows 10 auf der Registerkarte Ansicht. In den Ordneroptionen können Sie zusätzlich das Ausblenden geschützter Systemdateien deaktivieren. Schauen Sie zunächst nur — einige dieser Dateien sind unverzichtbar, und die folgenden Abschnitte zeigen, wie Sie jede davon sicher verkleinern.",
+            "Dass sich das Laufwerk immer wieder füllt, ist zudem normal: Windows-Updates hinterlassen Rückstände, Browser und Apps vergrößern ihre Caches laufend, und jede gelöschte Datei landet zunächst im Papierkorb, der ebenfalls auf Laufwerk C liegt. Das ist kein Defekt, sondern Alltag, der regelmäßige Pflege braucht.",
           ],
         },
         {
-          title: 'Sehen Sie, was den Speicherplatz wirklich belegt',
+          title: "Sehen Sie, was den Speicherplatz wirklich belegt",
           content: [
-            'Verschaffen Sie sich vor dem Löschen eine Karte. Die integrierte Übersicht unter Einstellungen, System, Speicher teilt Laufwerk C in Kategorien wie Apps und Features, Temporäre Dateien sowie System auf. Das ist ein guter Anfang, doch die Kategorien sind grob — gerade die Ordner, die Sie suchen, verstecken sich oft hinter Sonstiges oder System, und bis zu einzelnen Dateien kommt die Ansicht nicht.',
-            'Eine visuelle Treemap beantwortet die Frage schneller. Disk Mops Festplattenanalyse (Disk Analysis) zeichnet jeden Ordner als Block proportional zu seiner Größe, sodass ein aufgeblähter Cache-Ordner oder ein vergessenes Videoarchiv sofort ins Auge springt. Der Große-Dateien-Finder listet ergänzend alle Dateien über 500 MB auf — dort liegen meist die schnellsten Erfolge.',
-            'Egal welches Werkzeug Sie nutzen: Löschen Sie nie eine Datei, die Sie nicht identifizieren können. Liegt eine große Datei in C:\\Windows oder System Volume Information, klären Sie zuerst ihre Funktion — die folgenden Abschnitte zeigen den sicheren Weg.',
+            "Verschaffen Sie sich vor dem Löschen eine Karte. Die integrierte Übersicht unter Einstellungen, System, Speicher teilt Laufwerk C in Kategorien wie Apps und Features, Temporäre Dateien sowie System auf. Das ist ein guter Anfang, doch die Kategorien sind grob — gerade die Ordner, die Sie suchen, verstecken sich oft hinter Sonstiges oder System, und bis zu einzelnen Dateien kommt die Ansicht nicht.",
+            "Eine visuelle Treemap beantwortet die Frage schneller. Disk Mops Festplattenanalyse (Disk Analysis) zeichnet jeden Ordner als Block proportional zu seiner Größe, sodass ein aufgeblähter Cache-Ordner oder ein vergessenes Videoarchiv sofort ins Auge springt. Der Große-Dateien-Finder listet ergänzend alle Dateien über 500 MB auf — dort liegen meist die schnellsten Erfolge.",
+            "Egal welches Werkzeug Sie nutzen: Löschen Sie nie eine Datei, die Sie nicht identifizieren können. Liegt eine große Datei in C:\\Windows oder System Volume Information, klären Sie zuerst ihre Funktion — die folgenden Abschnitte zeigen den sicheren Weg.",
           ],
         },
         {
-          title: 'Versteckte Platzfresser: hiberfil.sys, Auslagerungsdatei und Wiederherstellungspunkte',
+          title:
+            "Versteckte Platzfresser: hiberfil.sys, Auslagerungsdatei und Wiederherstellungspunkte",
           content: [
-            'Die größte Überraschung ist auf den meisten Systemen hiberfil.sys, die Datei für Ruhezustand und Schnellstart. Ihre Größe ist proportional zum eingebauten RAM und kann bei 16 oder 32 GB Arbeitsspeicher viele Gigabytes belegen. Wer den Ruhezustand nie nutzt, kann die Datei entfernen: die Eingabeaufforderung als Administrator öffnen und powercfg /h off ausführen. Beachten Sie, dass damit auch der Schnellstart deaktiviert wird; alternativ verkleinert powercfg /h /type reduced die Datei, statt sie zu löschen.',
-            'Die Auslagerungsdatei pagefile.sys erweitert den RAM auf die Festplatte und belegt ebenfalls mehrere Gigabytes. Löschen oder deaktivieren Sie sie nicht — Windows braucht sie für die Stabilität. Zum Überprüfen drücken Sie Win+R, tippen sysdm.cpl, öffnen die Registerkarte Erweitert, klicken unter Leistung auf Einstellungen und wählen unter Virtueller Arbeitsspeicher die Option Ändern. Für die meisten Nutzer ist die automatische Verwaltung durch Windows die beste Wahl.',
-            'Wiederherstellungspunkte sind eine nützliche Versicherung, reservieren aber standardmäßig einen spürbaren Teil des Laufwerks. Wechseln Sie im selben Fenster zur Registerkarte Computerschutz, wählen Sie Laufwerk C und klicken Sie auf Konfigurieren, um die maximale Belegung zu senken. Alte Punkte entfernen Sie gesammelt über die Datenträgerbereinigung: Systemdateien bereinigen, Registerkarte Weitere Optionen, dann die Bereinigung unter Systemwiederherstellung und Schattenkopien — alle Punkte außer dem neuesten werden gelöscht.',
+            "Die größte Überraschung ist auf den meisten Systemen hiberfil.sys, die Datei für Ruhezustand und Schnellstart. Ihre Größe ist proportional zum eingebauten RAM und kann bei 16 oder 32 GB Arbeitsspeicher viele Gigabytes belegen. Wer den Ruhezustand nie nutzt, kann die Datei entfernen: die Eingabeaufforderung als Administrator öffnen und powercfg /h off ausführen. Beachten Sie, dass damit auch der Schnellstart deaktiviert wird; alternativ verkleinert powercfg /h /type reduced die Datei, statt sie zu löschen.",
+            "Die Auslagerungsdatei pagefile.sys erweitert den RAM auf die Festplatte und belegt ebenfalls mehrere Gigabytes. Löschen oder deaktivieren Sie sie nicht — Windows braucht sie für die Stabilität. Zum Überprüfen drücken Sie Win+R, tippen sysdm.cpl, öffnen die Registerkarte Erweitert, klicken unter Leistung auf Einstellungen und wählen unter Virtueller Arbeitsspeicher die Option Ändern. Für die meisten Nutzer ist die automatische Verwaltung durch Windows die beste Wahl.",
+            "Wiederherstellungspunkte sind eine nützliche Versicherung, reservieren aber standardmäßig einen spürbaren Teil des Laufwerks. Wechseln Sie im selben Fenster zur Registerkarte Computerschutz, wählen Sie Laufwerk C und klicken Sie auf Konfigurieren, um die maximale Belegung zu senken. Alte Punkte entfernen Sie gesammelt über die Datenträgerbereinigung: Systemdateien bereinigen, Registerkarte Weitere Optionen, dann die Bereinigung unter Systemwiederherstellung und Schattenkopien — alle Punkte außer dem neuesten werden gelöscht.",
           ],
         },
         {
-          title: 'Temporäre Dateien und App-Caches bereinigen',
+          title: "Temporäre Dateien und App-Caches bereinigen",
           content: [
-            'Temporäre Dateien sind der Klassiker, wenn Sie auf Laufwerk C Platz schaffen wollen. Öffnen Sie unter Einstellungen, System, Speicher den Bereich Temporäre Dateien und entfernen Sie, was Sie nicht brauchen — die Windows Update-Bereinigung und Übermittlungsoptimierungsdateien sind meist die größten Posten. Die ältere Datenträgerbereinigung (cleanmgr) erledigt dasselbe; die Schaltfläche Systemdateien bereinigen schaltet weitere Kategorien frei.',
-            'Die Temp-Ordner lassen sich auch direkt leeren: Win+R drücken, %temp% eingeben und den Inhalt des Ordners löschen, danach dasselbe für C:\\Windows\\Temp. Gerade genutzte Dateien lassen sich nicht löschen — überspringen Sie sie einfach. Zusätzlich führt jeder Browser einen eigenen Cache, der normalerweise in jedem Browser separat geleert werden muss.',
-            'Disk Mop verdichtet all das auf einen Schritt: Der Cache-Bereiniger scannt System- und Anwendungs-Caches gemeinsam, der Browser-Cache-Bereiniger deckt Chrome, Firefox und Edge in einem Durchgang ab, und die Speed-Up-Funktion leert alte Downloads, Systemcache, Browsercache und Papierkorb mit einem Klick.',
+            "Temporäre Dateien sind der Klassiker, wenn Sie auf Laufwerk C Platz schaffen wollen. Öffnen Sie unter Einstellungen, System, Speicher den Bereich Temporäre Dateien und entfernen Sie, was Sie nicht brauchen — die Windows Update-Bereinigung und Übermittlungsoptimierungsdateien sind meist die größten Posten. Die ältere Datenträgerbereinigung (cleanmgr) erledigt dasselbe; die Schaltfläche Systemdateien bereinigen schaltet weitere Kategorien frei.",
+            "Die Temp-Ordner lassen sich auch direkt leeren: Win+R drücken, %temp% eingeben und den Inhalt des Ordners löschen, danach dasselbe für C:\\Windows\\Temp. Gerade genutzte Dateien lassen sich nicht löschen — überspringen Sie sie einfach. Zusätzlich führt jeder Browser einen eigenen Cache, der normalerweise in jedem Browser separat geleert werden muss.",
+            "Disk Mop verdichtet all das auf einen Schritt: Der Cache-Bereiniger scannt System- und Anwendungs-Caches gemeinsam, der Browser-Cache-Bereiniger deckt Chrome, Firefox und Edge in einem Durchgang ab, und die Speed-Up-Funktion leert alte Downloads, Systemcache, Browsercache und Papierkorb mit einem Klick.",
           ],
         },
         {
-          title: 'AppData- und Downloads-Ordner überprüfen',
+          title: "AppData- und Downloads-Ordner überprüfen",
           content: [
-            'Fast jede Anwendung speichert Daten und Caches im versteckten AppData-Ordner. Drücken Sie Win+R und tippen Sie %localappdata%, um den größten Teil zu öffnen. Chat-, Musik- und Video-Apps sind häufige Platzfresser — ihre Cache-Unterordner wachsen auf mehrere Gigabytes an. Den Cache-Ordner einer App zu leeren ist sicher; löschen Sie aber nie den gesamten Ordner einer installierten Anwendung. Nicht mehr genutzte Programme deinstallieren Sie sauber unter Einstellungen, Apps.',
-            'Der Downloads-Ordner ist der zweite stille Sammler: Installationsdateien, ZIP-Archive und Datenträgerabbilder werden meist genau einmal gebraucht und dann vergessen. Sortieren Sie den Ordner nach Größe, behalten Sie nur das Nötige — und denken Sie daran, dass der Platz erst nach dem Leeren des Papierkorbs wirklich frei wird.',
-            'Disk Mops Downloads-Bereiniger kategorisiert alte Dateien im Downloads-Ordner für die gruppenweise Bereinigung, und der Duplikatfinder findet per SHA-256-Hash identische Kopien von Fotos, Videos und Dokumenten — Duplikate sind reine Platzverschwendung und lassen sich immer gefahrlos auf eine Kopie reduzieren.',
+            "Fast jede Anwendung speichert Daten und Caches im versteckten AppData-Ordner. Drücken Sie Win+R und tippen Sie %localappdata%, um den größten Teil zu öffnen. Chat-, Musik- und Video-Apps sind häufige Platzfresser — ihre Cache-Unterordner wachsen auf mehrere Gigabytes an. Den Cache-Ordner einer App zu leeren ist sicher; löschen Sie aber nie den gesamten Ordner einer installierten Anwendung. Nicht mehr genutzte Programme deinstallieren Sie sauber unter Einstellungen, Apps.",
+            "Der Downloads-Ordner ist der zweite stille Sammler: Installationsdateien, ZIP-Archive und Datenträgerabbilder werden meist genau einmal gebraucht und dann vergessen. Sortieren Sie den Ordner nach Größe, behalten Sie nur das Nötige — und denken Sie daran, dass der Platz erst nach dem Leeren des Papierkorbs wirklich frei wird.",
+            "Disk Mops Downloads-Bereiniger kategorisiert alte Dateien im Downloads-Ordner für die gruppenweise Bereinigung, und der Duplikatfinder findet per SHA-256-Hash identische Kopien von Fotos, Videos und Dokumenten — Duplikate sind reine Platzverschwendung und lassen sich immer gefahrlos auf eine Kopie reduzieren.",
           ],
         },
         {
-          title: 'Laufwerk C automatisch sauber halten',
+          title: "Laufwerk C automatisch sauber halten",
           content: [
-            'Jede Lösung bleibt vorübergehend, wenn nichts das erneute Volllaufen verhindert. Windows bietet dafür die Speicheroptimierung (Storage Sense): Unter Einstellungen, System, Speicher aktiviert, löscht sie temporäre Dateien automatisch, leert den Papierkorb nach Zeitplan und kann optional alte Downloads aufräumen. Anwendungs- und Browser-Caches deckt sie jedoch nicht ab.',
-            'Disk Mops geplante Bereinigung (Scheduled Cleanup) geht weiter: Ein wöchentlicher oder monatlicher Task bereinigt Caches, temporäre Dateien und Papierkorb automatisch, und der System Health Score zeigt auf einen Blick, wann das Laufwerk Pflege braucht. Halten Sie etwa 15-20 % von Laufwerk C frei — dann bleibt Windows reaktionsschnell, und das Laufwerk wirkt nie wieder grundlos voll.',
+            "Jede Lösung bleibt vorübergehend, wenn nichts das erneute Volllaufen verhindert. Windows bietet dafür die Speicheroptimierung (Storage Sense): Unter Einstellungen, System, Speicher aktiviert, löscht sie temporäre Dateien automatisch, leert den Papierkorb nach Zeitplan und kann optional alte Downloads aufräumen. Anwendungs- und Browser-Caches deckt sie jedoch nicht ab.",
+            "Disk Mops geplante Bereinigung (Scheduled Cleanup) geht weiter: Ein wöchentlicher oder monatlicher Task bereinigt Caches, temporäre Dateien und Papierkorb automatisch, und der System Health Score zeigt auf einen Blick, wann das Laufwerk Pflege braucht. Halten Sie etwa 15-20 % von Laufwerk C frei — dann bleibt Windows reaktionsschnell, und das Laufwerk wirkt nie wieder grundlos voll.",
           ],
         },
       ],
       verdict: [
-        'Ein scheinbar grundlos volles Laufwerk C ist in Wahrheit voller unsichtbarer Dateien: hiberfil.sys, Auslagerungsdatei, Wiederherstellungspunkte, temporäre Dateien und AppData-Caches. Arbeiten Sie die acht Lösungen der Reihe nach durch — versteckte Dateien einblenden, Belegung kartieren, Ruhezustandsdatei verkleinern, Auslagerungsdatei Windows überlassen, Wiederherstellungspunkte begrenzen, Caches bereinigen, AppData und Downloads aufräumen, Routine automatisieren — und das Rätsel verschwindet zusammen mit dem Ballast.',
-        'Disk Mop bündelt den gesamten Ablauf in einer App: Die Festplattenanalyse zeigt, wohin der Platz verschwunden ist, Cache-Bereiniger und Speed Up holen ihn zurück, Downloads-Bereiniger und Duplikatfinder kümmern sich um die vergessenen Ordner, und die geplante Bereinigung hält das Laufwerk dauerhaft sauber. Einmalig 19,90 $, lebenslange Lizenz — die kostenlose Version können Sie vorab testen.',
+        "Ein scheinbar grundlos volles Laufwerk C ist in Wahrheit voller unsichtbarer Dateien: hiberfil.sys, Auslagerungsdatei, Wiederherstellungspunkte, temporäre Dateien und AppData-Caches. Arbeiten Sie die acht Lösungen der Reihe nach durch — versteckte Dateien einblenden, Belegung kartieren, Ruhezustandsdatei verkleinern, Auslagerungsdatei Windows überlassen, Wiederherstellungspunkte begrenzen, Caches bereinigen, AppData und Downloads aufräumen, Routine automatisieren — und das Rätsel verschwindet zusammen mit dem Ballast.",
+        "Disk Mop bündelt den gesamten Ablauf in einer App: Die Festplattenanalyse zeigt, wohin der Platz verschwunden ist, Cache-Bereiniger und Speed Up holen ihn zurück, Downloads-Bereiniger und Duplikatfinder kümmern sich um die vergessenen Ordner, und die geplante Bereinigung hält das Laufwerk dauerhaft sauber. Einmalig 19,90 $, lebenslange Lizenz — die kostenlose Version können Sie vorab testen.",
       ],
-      ctaText: 'Schaffen Sie mit Disk Mop Platz auf Laufwerk C',
+      ctaText: "Schaffen Sie mit Disk Mop Platz auf Laufwerk C",
     },
     fr: {
-      title: "Le disque C se remplit sans raison ? 8 solutions pour Windows 10/11",
+      title:
+        "Le disque C se remplit sans raison ? 8 solutions pour Windows 10/11",
       metaDescription:
         "Disque C plein sans raison ? Voyez ce que consomment hiberfil.sys, le fichier d'échange, les points de restauration et AppData, et libérez de la place.",
-      subtitle: "Un guide qui commence par le diagnostic pour trouver et supprimer les fichiers cachés qui saturent votre disque système",
+      subtitle:
+        "Un guide qui commence par le diagnostic pour trouver et supprimer les fichiers cachés qui saturent votre disque système",
       intro: [
         "Si votre disque C est plein sans raison apparente, l'espace est presque toujours occupé par des fichiers que Windows vous cache : le fichier de mise en veille prolongée hiberfil.sys, le fichier d'échange pagefile.sys, les points de restauration système et plusieurs gigaoctets de caches applicatifs dans le dossier AppData. L'Explorateur de fichiers n'affiche pas ces fichiers système protégés par défaut : la somme de vos dossiers visibles est donc bien inférieure à ce que Windows annonce comme occupé. La bonne méthode consiste à diagnostiquer d'abord — voir exactement ce qui remplit le disque — et à ne supprimer qu'ensuite.",
         "Un disque C qui se remplit sans cesse est agaçant parce que les coupables grossissent en silence : les mises à jour de Windows laissent des résidus, les applications gonflent leurs caches et le seul fichier de mise en veille prolongée peut occuper une part non négligeable de votre mémoire vive installée. Ce guide rassemble huit solutions concrètes : afficher les fichiers cachés, cartographier visuellement l'occupation du disque, réduire ou supprimer hiberfil.sys, dimensionner correctement le fichier d'échange, limiter les points de restauration, vider les fichiers temporaires et les caches, faire le tri dans AppData et Téléchargements, et enfin automatiser toute la routine pour que le problème ne revienne pas.",
@@ -226,7 +234,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "Les dévoreurs d'espace cachés : hiberfil.sys, fichier d'échange et points de restauration",
+          title:
+            "Les dévoreurs d'espace cachés : hiberfil.sys, fichier d'échange et points de restauration",
           content: [
             "La plus grosse surprise, sur la plupart des systèmes, s'appelle hiberfil.sys : le fichier que Windows utilise pour la mise en veille prolongée et le démarrage rapide. La taille de hiberfil.sys est proportionnelle à la mémoire vive installée, si bien que sur une machine dotée de 16 ou 32 Go, il peut consommer discrètement plusieurs gigaoctets du disque C. Si vous n'utilisez jamais la mise en veille prolongée, vous pouvez le supprimer : ouvrez l'Invite de commandes en tant qu'administrateur et exécutez powercfg /h off — le fichier disparaît aussitôt. Attention, cela désactive aussi le démarrage rapide ; pour le conserver, exécutez plutôt powercfg /h /type reduced, qui réduit le fichier au lieu de l'effacer.",
             "Le fichier d'échange pagefile.sys est l'endroit où Windows prolonge la mémoire vive sur le disque, et il peut lui aussi occuper plusieurs gigaoctets. Ne le supprimez pas et ne le désactivez pas : Windows en a besoin pour rester stable. Pour vérifier sa taille, appuyez sur Win+R, tapez sysdm.cpl, ouvrez l'onglet Paramètres système avancés, cliquez sur Paramètres sous Performances, retournez dans l'onglet Avancé et choisissez Modifier sous Mémoire virtuelle. Pour la grande majorité des utilisateurs, le meilleur réglage reste la gestion automatique de la taille par Windows.",
@@ -267,7 +276,8 @@ export const cDriveFullForNoReason: Article = {
       title: "¿El disco C se llena sin motivo? 8 soluciones para Windows 10/11",
       metaDescription:
         "¿El disco C se llena sin motivo? Descubre cuánto ocupan hiberfil.sys, el archivo de paginación, los puntos de restauración y AppData, y libera espacio.",
-      subtitle: "Una guía que empieza por el diagnóstico para encontrar y borrar los archivos ocultos que llenan tu disco del sistema",
+      subtitle:
+        "Una guía que empieza por el diagnóstico para encontrar y borrar los archivos ocultos que llenan tu disco del sistema",
       intro: [
         "Si tu disco C está lleno sin motivo aparente, el espacio casi siempre lo ocupan archivos que Windows te oculta: el archivo de hibernación hiberfil.sys, el archivo de paginación pagefile.sys, los puntos de restauración del sistema y varios gigabytes de cachés de aplicaciones dentro de la carpeta AppData. El Explorador de archivos no muestra estos archivos protegidos del sistema operativo de forma predeterminada, así que la suma de tus carpetas visibles queda muy por debajo de lo que Windows marca como ocupado. La solución pasa por diagnosticar primero — ver exactamente qué llena la unidad — y borrar solo después.",
         "Un disco C que se llena una y otra vez resulta exasperante porque los culpables crecen en silencio: las actualizaciones de Windows dejan restos, las aplicaciones engordan sus cachés y el archivo de hibernación por sí solo puede ocupar una parte considerable de la memoria RAM instalada. En esta guía encontrarás ocho soluciones prácticas: mostrar los archivos ocultos, cartografiar visualmente el uso del disco, reducir o eliminar hiberfil.sys, ajustar el tamaño del archivo de paginación, limitar los puntos de restauración, borrar archivos temporales y cachés, ordenar AppData y Descargas y, por último, automatizar toda la rutina para que el problema no vuelva.",
@@ -290,7 +300,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "Devoradores de espacio ocultos: hiberfil.sys, archivo de paginación y puntos de restauración",
+          title:
+            "Devoradores de espacio ocultos: hiberfil.sys, archivo de paginación y puntos de restauración",
           content: [
             "La mayor sorpresa en casi cualquier equipo es hiberfil.sys, el archivo que Windows usa para la hibernación y el Inicio rápido. El tamaño de hiberfil.sys es proporcional a la memoria RAM instalada, así que en un equipo con 16 o 32 GB puede consumir en silencio muchos gigabytes del disco C. Si nunca usas la hibernación, puedes eliminarlo: abre el Símbolo del sistema como administrador y ejecuta powercfg /h off — el archivo desaparece al momento. Ten en cuenta que eso desactiva también el Inicio rápido; si quieres conservarlo, ejecuta powercfg /h /type reduced para reducir el archivo en vez de borrarlo.",
             "El archivo de paginación, pagefile.sys, es donde Windows extiende la memoria RAM al disco, y también puede ocupar varios gigabytes. No lo borres ni lo desactives: Windows lo necesita para mantener la estabilidad. Si quieres revisar su tamaño, pulsa Win+R, escribe sysdm.cpl, abre la pestaña Opciones avanzadas, haz clic en Configuración dentro de Rendimiento, vuelve a Opciones avanzadas y elige Cambiar en Memoria virtual. Para la mayoría de los usuarios, lo mejor es dejar que Windows administre el tamaño automáticamente.",
@@ -298,7 +309,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "Borra los archivos temporales y las cachés de las aplicaciones",
+          title:
+            "Borra los archivos temporales y las cachés de las aplicaciones",
           content: [
             "Los archivos temporales son la respuesta clásica cuando necesitas liberar espacio en el disco C, y Windows ofrece dos formas integradas de borrarlos. En Configuración, Sistema, Almacenamiento, abre Archivos temporales, repasa las casillas y elimina lo que no necesites: la Limpieza de Windows Update y los archivos de Optimización de distribución suelen ser las entradas más grandes. La vieja herramienta Liberador de espacio en disco (comando cleanmgr) hace lo mismo, y su botón Limpiar archivos de sistema desbloquea categorías adicionales.",
             "También puedes vaciar las carpetas temporales directamente: pulsa Win+R, escribe %temp% y borra el contenido de la carpeta que se abre; después repite con C:\\Windows\\Temp. Los archivos que estén en uso se negarán a borrarse, así que sáltatelos sin más. Además, cada navegador guarda su propia caché de cientos de megabytes o más, que normalmente hay que vaciar desde dentro de cada navegador por separado.",
@@ -328,10 +340,12 @@ export const cDriveFullForNoReason: Article = {
       ctaText: "Libera espacio en tu disco C con Disk Mop",
     },
     it: {
-      title: "Il disco C si riempie senza motivo? 8 soluzioni per Windows 10/11",
+      title:
+        "Il disco C si riempie senza motivo? 8 soluzioni per Windows 10/11",
       metaDescription:
         "Il disco C si riempie senza motivo? Scopri quanto occupano davvero hiberfil.sys, il file di paging, i punti di ripristino e AppData e libera spazio.",
-      subtitle: "Una guida che parte dalla diagnosi per individuare e rimuovere i file nascosti che saturano il disco di sistema",
+      subtitle:
+        "Una guida che parte dalla diagnosi per individuare e rimuovere i file nascosti che saturano il disco di sistema",
       intro: [
         "Se il disco C è pieno senza motivo apparente, lo spazio è quasi sempre occupato da file che Windows tiene nascosti: il file di ibernazione hiberfil.sys, il file di paging pagefile.sys, i punti di ripristino del sistema e diversi gigabyte di cache delle applicazioni dentro la cartella AppData. Esplora file non mostra questi file di sistema protetti per impostazione predefinita, quindi la somma delle cartelle visibili è molto inferiore a quanto Windows indica come occupato. La strada giusta è diagnosticare prima — vedere esattamente che cosa riempie il disco — e solo dopo iniziare a cancellare.",
         "Un disco C che continua a riempirsi è frustrante perché i responsabili crescono in silenzio: gli aggiornamenti di Windows lasciano residui, le applicazioni gonfiano le proprie cache e il solo file di ibernazione può occupare una fetta consistente della RAM installata. In questa guida trovi otto soluzioni concrete: mostrare i file nascosti, mappare visivamente l'occupazione del disco, ridurre o rimuovere hiberfil.sys, dimensionare correttamente il file di paging, limitare i punti di ripristino, svuotare file temporanei e cache, mettere ordine in AppData e Download e, infine, automatizzare tutta la routine perché il problema non si ripresenti.",
@@ -354,7 +368,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "Divoratori di spazio nascosti: hiberfil.sys, file di paging e punti di ripristino",
+          title:
+            "Divoratori di spazio nascosti: hiberfil.sys, file di paging e punti di ripristino",
           content: [
             "La sorpresa più grande, sulla maggior parte dei sistemi, è hiberfil.sys, il file che Windows usa per l'ibernazione e per l'Avvio rapido. La dimensione di hiberfil.sys è proporzionale alla RAM installata, quindi su una macchina con 16 o 32 GB di memoria può occupare in silenzio parecchi gigabyte del disco C. Se non usi mai l'ibernazione puoi rimuoverlo: apri il Prompt dei comandi come amministratore ed esegui powercfg /h off — il file sparisce immediatamente. Tieni presente che così disattivi anche l'Avvio rapido; se vuoi mantenerlo, esegui invece powercfg /h /type reduced, che riduce il file anziché eliminarlo.",
             "Il file di paging, pagefile.sys, è il punto in cui Windows estende la RAM sul disco e può occupare anch'esso diversi gigabyte. Non eliminarlo e non disattivarlo: Windows ne ha bisogno per la stabilità. Se vuoi controllarne la dimensione, premi Win+R, digita sysdm.cpl, apri la scheda Avanzate, fai clic su Impostazioni sotto Prestazioni, passa di nuovo ad Avanzate e scegli Cambia sotto Memoria virtuale. Per la maggior parte degli utenti l'impostazione migliore resta la gestione automatica da parte di Windows.",
@@ -395,7 +410,8 @@ export const cDriveFullForNoReason: Article = {
       title: "Disco C enchendo sem motivo? 8 soluções para Windows 10/11",
       metaDescription:
         "Disco C enchendo sem motivo? Veja quanto espaço hiberfil.sys, arquivo de paginação, pontos de restauração e AppData consomem e libere espaço no Windows.",
-      subtitle: "Um guia que começa pelo diagnóstico para encontrar e remover os arquivos ocultos que lotam o disco do sistema",
+      subtitle:
+        "Um guia que começa pelo diagnóstico para encontrar e remover os arquivos ocultos que lotam o disco do sistema",
       intro: [
         "Se o seu disco C está cheio sem motivo aparente, o espaço quase sempre está sendo usado por arquivos que o Windows esconde de você: o arquivo de hibernação hiberfil.sys, o arquivo de paginação pagefile.sys, os pontos de restauração do sistema e vários gigabytes de caches de aplicativos dentro da pasta AppData. O Explorador de Arquivos não mostra esses arquivos protegidos do sistema operacional por padrão, então a soma das suas pastas visíveis fica bem abaixo do que o Windows aponta como ocupado. O caminho certo é diagnosticar primeiro — ver exatamente o que ocupa a unidade — e só depois começar a apagar.",
         "Um disco C que vive enchendo é irritante porque os culpados crescem em silêncio: as atualizações do Windows deixam resíduos, os aplicativos engordam seus caches e só o arquivo de hibernação já consome uma fatia considerável da memória RAM instalada. Neste guia você encontra oito soluções práticas: exibir os arquivos ocultos, mapear visualmente o uso do disco, reduzir ou remover o hiberfil.sys, dimensionar corretamente o arquivo de paginação, limitar os pontos de restauração, apagar arquivos temporários e caches, organizar AppData e Downloads e, por fim, automatizar toda a rotina para que o problema não volte.",
@@ -418,7 +434,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "Vilões escondidos: hiberfil.sys, arquivo de paginação e pontos de restauração",
+          title:
+            "Vilões escondidos: hiberfil.sys, arquivo de paginação e pontos de restauração",
           content: [
             "A maior surpresa na maioria dos sistemas é o hiberfil.sys, o arquivo que o Windows usa para a hibernação e para a Inicialização Rápida. O tamanho do hiberfil.sys é proporcional à memória RAM instalada, então em uma máquina com 16 ou 32 GB ele pode consumir silenciosamente muitos gigabytes do disco C. Se você nunca usa a hibernação, dá para removê-lo: abra o Prompt de Comando como administrador e execute powercfg /h off — o arquivo some na hora. Lembre-se de que isso também desliga a Inicialização Rápida; se quiser mantê-la, execute powercfg /h /type reduced para encolher o arquivo em vez de apagá-lo.",
             "O arquivo de paginação, pagefile.sys, é onde o Windows estende a memória RAM para o disco, e ele também pode ocupar vários gigabytes. Não apague nem desative esse arquivo — o Windows precisa dele para manter a estabilidade. Se quiser conferir o tamanho, pressione Win+R, digite sysdm.cpl, abra a guia Avançado, clique em Configurações dentro de Desempenho, volte para Avançado e escolha Alterar em Memória Virtual. Para a maioria dos usuários, o melhor ajuste é deixar o Windows gerenciar o tamanho automaticamente.",
@@ -459,7 +476,8 @@ export const cDriveFullForNoReason: Article = {
       title: "Cドライブが勝手にいっぱいになる原因と8つの対処法｜Windows 10/11",
       metaDescription:
         "Cドライブが理由もなくいっぱいになるのはなぜでしょうか。hiberfil.sys、ページ ファイル、復元ポイント、AppDataのキャッシュが占める容量を確認し、安全に空き容量を増やす8つの手順を解説します。",
-      subtitle: "システムドライブを圧迫する隠しファイルを、まず診断してから安全に削除するためのガイド",
+      subtitle:
+        "システムドライブを圧迫する隠しファイルを、まず診断してから安全に削除するためのガイド",
       intro: [
         "Cドライブが理由もなくいっぱいになっているように見えるとき、その容量はほとんどの場合、Windowsが利用者から隠しているファイルが使っています。休止状態ファイルの hiberfil.sys、ページ ファイルの pagefile.sys、システムの復元ポイント、そしてAppDataフォルダーの中に積み上がった数ギガバイト規模のアプリのキャッシュです。エクスプローラーはこれらの保護されたシステム ファイルを既定では表示しないため、目に見えるフォルダーを合計しても、Windowsが使用済みとして示す容量にはまるで届きません。正しい進め方は、まず診断すること、つまり何が容量を使っているのかを正確に把握してから、削除に取りかかることです。",
         "Cドライブが何度も満杯になるのが厄介なのは、原因が静かに大きくなっていくからです。Windows Updateは残骸を残し、アプリはキャッシュを膨らませ、休止状態ファイルだけでも搭載メモリのかなりの割合に相当する容量を占めることがあります。この記事では、実践的な8つの対処法を紹介します。隠しファイルを表示する、ディスクの使用状況を視覚的に把握する、hiberfil.sysを縮小または削除する、ページ ファイルを適切なサイズにする、復元ポイントの上限を下げる、一時ファイルとキャッシュを削除する、AppDataとダウンロード フォルダーを整理する、そして最後に一連の作業を自動化して同じ問題が再発しないようにする、という流れです。",
@@ -482,7 +500,8 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
         {
-          title: "見えない容量食い：hiberfil.sys、ページ ファイル、復元ポイント",
+          title:
+            "見えない容量食い：hiberfil.sys、ページ ファイル、復元ポイント",
           content: [
             "多くの環境で最も大きな驚きになるのが、Windowsが休止状態と高速スタートアップのために使う hiberfil.sys です。hiberfil.sys のサイズは搭載メモリに比例するため、16 GBや32 GBのメモリを積んだパソコンでは、Cドライブの数ギガバイトを静かに使い続けます。休止状態をまったく使っていないなら削除できます。コマンド プロンプトを管理者として実行し、powercfg /h off と入力すれば、ファイルはすぐに消えます。ただしこの操作は高速スタートアップも無効にします。高速スタートアップを残したい場合は、削除ではなく powercfg /h /type reduced でファイルを縮小してください。",
             "ページ ファイルの pagefile.sys は、Windowsがメモリをディスク上に拡張するための領域で、こちらも数ギガバイトを占めることがあります。安定した動作に必要なので、削除も無効化もしないでください。サイズを確認したい場合は、Win+Rキーを押して sysdm.cpl と入力し、「詳細設定」タブを開いて「パフォーマンス」の「設定」をクリックし、もう一度「詳細設定」タブに移動して「仮想メモリ」の「変更」を選びます。ほとんどの利用者にとっては、サイズをWindowsに自動管理させる設定が最適です。",
