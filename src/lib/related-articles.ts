@@ -26,6 +26,7 @@ const MAC_SLUGS = new Set([
 ]);
 
 const WINDOWS_SPEED_SLUGS = new Set([
+  "windows-11-24h2-cache-bug",
   "how-to-speed-up-computer",
   "fix-slow-startup-windows",
   "fix-100-disk-usage-windows",
@@ -140,7 +141,13 @@ const HANDPICKED_RELATED: Record<string, string[]> = {
   ],
 
   // Windows Temizlik Hub'ları
+  "windows-11-24h2-cache-bug": [
+    "c-drive-full-for-no-reason",
+    "clear-cache-windows-11",
+    "winsxs-folder-cleanup",
+  ],
   "c-drive-full-for-no-reason": [
+    "windows-11-24h2-cache-bug",
     "how-to-free-disk-space",
     "delete-temporary-files-windows",
     "find-large-files-windows",

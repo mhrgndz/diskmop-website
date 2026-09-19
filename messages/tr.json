@@ -438,6 +438,7 @@
       "pricing": "Fiyat",
       "faq": "SSS",
       "blog": "Blog",
+      "calculator": "Disk Alanı Hesaplayıcı",
       "changelog": "Değişiklik Günlüğü"
     },
     "company": {
@@ -514,7 +515,26 @@
     "trustSafe": "%100 Güvenli & İmzalı",
     "stickyBarTitle": "DiskMop ile sisteminizi otomatik temizleyin ve hızlandırın",
     "stickyBarSubtitle": "Ücretsiz indirin · Gereksiz dosyaları saniyeler içinde temizleyin",
-    "stickyBarButton": "{os} için Ücretsiz İndir"
+    "stickyBarButton": "{os} için Ücretsiz İndir",
+    "tableOfContents": "İçindekiler",
+    "testedOn": "Test Edildi",
+    "verifiedSafe": "Disk Mop Sistem Mühendisliği Ekibi tarafından doğrulandı",
+    "lastUpdated": "Son güncelleme",
+    "share": "Paylaş",
+    "copyLink": "Bağlantıyı Kopyala",
+    "linkCopied": "Kopyalandı!",
+    "allPlatforms": "Tümü",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Karşılaştırmalar",
+    "searchArticles": "Makalelerde ara...",
+    "noArticlesFound": "Aramanızla eşleşen makale bulunamadı.",
+    "clearSearch": "Aramayı Temizle",
+    "toolsBadge": "Ücretsiz Web Araçları",
+    "toolsTitle": "Ücretsiz Disk & Depolama Hesaplayıcıları",
+    "toolsSubtitle": "Depolama ihtiyacınızı, SSD ömrünüzü ve temizlenebilecek gereksiz dosyaları anında çevrimiçi hesaplayın."
   },
   "notFound": {
     "title": "Sayfa Bulunamadı",

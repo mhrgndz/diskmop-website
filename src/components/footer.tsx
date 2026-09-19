@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
-import { Twitter, Instagram, Mail } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import { Link } from '@/i18n/navigation';
-import { localeHref } from '@/lib/locale-path';
+import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
+import { Twitter, Instagram, Mail } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { localeHref } from "@/lib/locale-path";
 
 interface FooterLink {
   labelKey: string;
@@ -25,31 +25,39 @@ interface SocialLink {
 // kullanıcı Blog'a bastığında İngilizce sürüme düşüyordu.
 function getProductLinks(locale: string): FooterLink[] {
   return [
-    { labelKey: 'product.features', href: localeHref(locale, '/#features') },
-    { labelKey: 'product.pricing', href: localeHref(locale, '/#pricing') },
-    { labelKey: 'product.faq', href: localeHref(locale, '/#faq') },
-    { labelKey: 'product.blog', href: localeHref(locale, '/blog') },
+    { labelKey: "product.features", href: localeHref(locale, "/#features") },
+    { labelKey: "product.pricing", href: localeHref(locale, "/#pricing") },
+    { labelKey: "product.faq", href: localeHref(locale, "/#faq") },
+    { labelKey: "product.blog", href: localeHref(locale, "/blog") },
+    {
+      labelKey: "product.calculator",
+      href: localeHref(locale, "/tools/disk-space-calculator"),
+    },
   ];
 }
 
 const companyLinks: FooterLink[] = [
-  { labelKey: 'company.contact', href: 'mailto:diskmopdev@gmail.com' },
+  { labelKey: "company.contact", href: "mailto:diskmopdev@gmail.com" },
 ];
 
 function getLegalLinks(locale: string): FooterLink[] {
-  return [{ labelKey: 'legal.privacy', href: localeHref(locale, '/privacy') }];
+  return [{ labelKey: "legal.privacy", href: localeHref(locale, "/privacy") }];
 }
 
 const supportLinks: FooterLink[] = [
-  { labelKey: 'support.email', href: 'mailto:diskmopdev@gmail.com' },
+  { labelKey: "support.email", href: "mailto:diskmopdev@gmail.com" },
 ];
 
 // github.com/diskmop 404 veriyor (2026-09-04 doğrulandı) — kaldırıldı.
 // Gerçek hesap açılırsa geri konur.
 const socialLinks: SocialLink[] = [
-  { label: 'Instagram', href: 'https://www.instagram.com/diskmop/', icon: Instagram },
-  { label: 'Twitter', href: 'https://twitter.com/diskmop', icon: Twitter },
-  { label: 'Email', href: 'mailto:diskmopdev@gmail.com', icon: Mail },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/diskmop/",
+    icon: Instagram,
+  },
+  { label: "Twitter", href: "https://twitter.com/diskmop", icon: Twitter },
+  { label: "Email", href: "mailto:diskmopdev@gmail.com", icon: Mail },
 ];
 
 function FooterColumn({
@@ -66,7 +74,8 @@ function FooterColumn({
       <h3 className="text-white font-semibold text-sm mb-4">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => {
-          const isInternal = link.href.startsWith('/') && !link.href.includes('#');
+          const isInternal =
+            link.href.startsWith("/") && !link.href.includes("#");
           return (
             <li key={link.labelKey}>
               {isInternal ? (
@@ -93,7 +102,7 @@ function FooterColumn({
 }
 
 export function Footer() {
-  const t = useTranslations('footer');
+  const t = useTranslations("footer");
   const locale = useLocale();
   const productLinks = getProductLinks(locale);
 
@@ -113,36 +122,24 @@ export function Footer() {
               />
               <span className="text-white font-bold text-lg">Disk Mop</span>
             </div>
-            <p className="text-sm text-gray-500 mt-2">{t('slogan')}</p>
+            <p className="text-sm text-gray-500 mt-2">{t("slogan")}</p>
           </div>
 
           {/* Link Columns */}
+          <FooterColumn title={t("product.title")} links={productLinks} t={t} />
+          <FooterColumn title={t("company.title")} links={companyLinks} t={t} />
           <FooterColumn
-            title={t('product.title')}
-            links={productLinks}
-            t={t}
-          />
-          <FooterColumn
-            title={t('company.title')}
-            links={companyLinks}
-            t={t}
-          />
-          <FooterColumn
-            title={t('legal.title')}
+            title={t("legal.title")}
             links={getLegalLinks(locale)}
             t={t}
           />
-          <FooterColumn
-            title={t('support.title')}
-            links={supportLinks}
-            t={t}
-          />
+          <FooterColumn title={t("support.title")} links={supportLinks} t={t} />
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-gray-500">
-            <p>{t('copyright')}</p>
+            <p>{t("copyright")}</p>
             <span className="hidden sm:inline">·</span>
             <a
               href="https://lovasoftware.com/"

@@ -438,6 +438,7 @@
       "pricing": "Prezzi",
       "faq": "FAQ",
       "blog": "Blog",
+      "calculator": "Calcolatore di Spazio",
       "changelog": "Changelog"
     },
     "company": {
@@ -514,7 +515,26 @@
     "trustSafe": "100% Sicuro e firmato",
     "stickyBarTitle": "Pulisci e velocizza il tuo sistema automaticamente con DiskMop",
     "stickyBarSubtitle": "Download gratuito · Trova e rimuovi i file spazzatura in pochi secondi",
-    "stickyBarButton": "Scarica gratis per {os}"
+    "stickyBarButton": "Scarica gratis per {os}",
+    "tableOfContents": "Indice dei contenuti",
+    "testedOn": "Testato su",
+    "verifiedSafe": "Verificato e testato dal team di ingegneria di Disk Mop",
+    "lastUpdated": "Ultimo aggiornamento",
+    "share": "Condividi",
+    "copyLink": "Copia link",
+    "linkCopied": "Copiato!",
+    "allPlatforms": "Tutti",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Confronti",
+    "searchArticles": "Cerca articoli...",
+    "noArticlesFound": "Nessun articolo trovato corrispondente ai tuoi criteri.",
+    "clearSearch": "Cancella ricerca",
+    "toolsBadge": "Strumenti Web Gratuiti",
+    "toolsTitle": "Calcolatori Gratuiti di Spazio e Disco",
+    "toolsSubtitle": "Calcola online il tuo fabbisogno di memoria, la durata dell'SSD e lo spazio recuperabile."
   },
   "notFound": {
     "title": "Pagina non trovata",

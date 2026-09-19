@@ -438,6 +438,7 @@
       "pricing": "Tarifs",
       "faq": "FAQ",
       "blog": "Blog",
+      "calculator": "Calculateur d'Espace",
       "changelog": "Journal des modifications"
     },
     "company": {
@@ -514,7 +515,26 @@
     "trustSafe": "100% Sûr et signé",
     "stickyBarTitle": "Nettoyez et accélérez votre système automatiquement avec DiskMop",
     "stickyBarSubtitle": "Téléchargement gratuit · Trouvez et nettoyez les fichiers inutiles en secondes",
-    "stickyBarButton": "Télécharger gratuitement pour {os}"
+    "stickyBarButton": "Télécharger gratuitement pour {os}",
+    "tableOfContents": "Sommaire",
+    "testedOn": "Testé sur",
+    "verifiedSafe": "Vérifié et approuvé par l'équipe d'ingénierie système Disk Mop",
+    "lastUpdated": "Dernière mise à jour",
+    "share": "Partager",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Copié !",
+    "allPlatforms": "Tous",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Comparatifs",
+    "searchArticles": "Rechercher des articles...",
+    "noArticlesFound": "Aucun article correspondant à vos critères.",
+    "clearSearch": "Effacer la recherche",
+    "toolsBadge": "Outils Web Gratuits",
+    "toolsTitle": "Calculateurs de Stockage et Disque Gratuits",
+    "toolsSubtitle": "Calculez vos besoins en stockage, durée de vie SSD et gain d'espace en ligne."
   },
   "notFound": {
     "title": "Page introuvable",

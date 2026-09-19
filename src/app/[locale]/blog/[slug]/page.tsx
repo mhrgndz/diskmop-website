@@ -6,12 +6,16 @@ import { notFound } from "next/navigation";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getArticle, getAllSlugs, articles } from "@/content/articles";
-import { getRelatedArticles } from "@/lib/related-articles";
+import { getRelatedArticles, getPlatformForSlug } from "@/lib/related-articles";
 import { FormattedText } from "@/components/formatted-text";
 import { routing } from "@/i18n/routing";
 import { localeHref } from "@/lib/locale-path";
+import { alternatesFor, socialFor } from "@/lib/seo";
 import { BlogCtaCard } from "@/components/blog-cta-card";
 import { BlogStickyBar } from "@/components/blog-sticky-bar";
+import { TableOfContents, type TocItem } from "@/components/table-of-contents";
+import { BlogEeatBadge } from "@/components/blog-eeat-badge";
+import { BlogShareButtons } from "@/components/blog-share-buttons";
 import {
   Check,
   X,
@@ -51,39 +55,20 @@ export async function generateMetadata({
   if (!article) return { title: "Not Found" };
 
   const content = article.content[locale] || article.content["en"];
-  const baseUrl = "https://diskmop.com";
-  const canonicalPath =
-    locale === "en" ? `/blog/${slug}` : `/${locale}/blog/${slug}`;
+  const title = `${content.title} | Disk Mop Blog`;
+  const description = content.metaDescription;
 
   return {
-    title: `${content.title} | Disk Mop Blog`,
-    description: content.metaDescription,
-    alternates: {
-      canonical: `${baseUrl}${canonicalPath}`,
-      languages: {
-        en: `${baseUrl}/blog/${slug}`,
-        tr: `${baseUrl}/tr/blog/${slug}`,
-        de: `${baseUrl}/de/blog/${slug}`,
-        fr: `${baseUrl}/fr/blog/${slug}`,
-        es: `${baseUrl}/es/blog/${slug}`,
-        it: `${baseUrl}/it/blog/${slug}`,
-        pt: `${baseUrl}/pt/blog/${slug}`,
-        ja: `${baseUrl}/ja/blog/${slug}`,
-      },
-    },
-    openGraph: {
-      title: content.title,
-      description: content.metaDescription,
-      url: `${baseUrl}${canonicalPath}`,
-      siteName: "Disk Mop",
+    title,
+    description,
+    alternates: alternatesFor(locale, `/blog/${slug}`),
+    ...socialFor({
+      locale,
+      path: `/blog/${slug}`,
+      title,
+      description,
       type: "article",
-      publishedTime: article.date,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: content.title,
-      description: content.metaDescription,
-    },
+    }),
   };
 }
 
@@ -102,6 +87,34 @@ export default async function ArticlePage({
   const t = await getTranslations({ locale, namespace: "blog" });
 
   const related = getRelatedArticles(article, articles, 3);
+  const platform = getPlatformForSlug(slug);
+
+  const tocItems: TocItem[] = [];
+  if (content.keyTakeaways && content.keyTakeaways.length > 0) {
+    tocItems.push({ id: "key-takeaways", title: t("keyTakeaways") });
+  }
+  if (article.comparison && article.comparison.length > 0) {
+    tocItems.push({ id: "comparison-table", title: t("comparisonTable") });
+  }
+  if ("diskmopPros" in content) {
+    tocItems.push({
+      id: "pros-and-cons",
+      title: `${t("pros")} & ${t("cons")}`,
+    });
+  }
+  if (content.dataTable && content.dataTable.rows.length > 0) {
+    tocItems.push({
+      id: "data-table",
+      title: content.dataTable.caption || t("feature"),
+    });
+  }
+  content.sections.forEach((section, idx) => {
+    tocItems.push({ id: `section-${idx + 1}`, title: section.title });
+  });
+  if (content.faq && content.faq.length > 0) {
+    tocItems.push({ id: "faq", title: t("faq") });
+  }
+  tocItems.push({ id: "verdict", title: t("verdict") });
 
   const baseUrl = "https://diskmop.com";
   const articleUrl = `${baseUrl}${locale === "en" ? "" : `/${locale}`}/blog/${slug}`;
@@ -218,7 +231,7 @@ export default async function ArticlePage({
         </div>
 
         {/* Article Hero */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
@@ -232,11 +245,29 @@ export default async function ArticlePage({
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
             {content.title}
           </h1>
-          <p className="text-xl text-muted-foreground">{content.subtitle}</p>
+          <p className="text-xl text-muted-foreground mb-6">
+            {content.subtitle}
+          </p>
+
+          <BlogEeatBadge
+            platform={platform}
+            updatedDate={article.updated || article.date}
+            testedOnLabel={t("testedOn")}
+            verifiedSafeLabel={t("verifiedSafe")}
+            lastUpdatedLabel={t("lastUpdated")}
+          />
+
+          <BlogShareButtons
+            title={content.title}
+            url={articleUrl}
+            shareLabel={t("share")}
+            copyLinkLabel={t("copyLink")}
+            linkCopiedLabel={t("linkCopied")}
+          />
         </section>
 
         {/* Intro */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           {content.intro.map((p, i) => (
             <p
               key={i}
@@ -247,9 +278,19 @@ export default async function ArticlePage({
           ))}
         </section>
 
+        {/* Table of Contents */}
+        {tocItems.length > 0 && (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+            <TableOfContents items={tocItems} title={t("tableOfContents")} />
+          </div>
+        )}
+
         {/* Key takeaways — kendi kendine yeten, alintilanabilir cevap cumleleri */}
         {content.keyTakeaways && content.keyTakeaways.length > 0 && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <section
+            id="key-takeaways"
+            className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+          >
             <div className="rounded-xl border border-border bg-card p-6">
               <h2 className="flex items-center gap-2 text-lg font-bold text-foreground mb-4">
                 <ListChecks className="h-5 w-5 text-brand-600 dark:text-brand-400" />
@@ -275,7 +316,10 @@ export default async function ArticlePage({
 
         {/* Comparison Table (only for comparison articles) */}
         {article.comparison && article.comparison.length > 0 && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <section
+            id="comparison-table"
+            className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+          >
             <h2 className="text-2xl font-bold text-foreground mb-6">
               {t("comparisonTable")}
             </h2>
@@ -331,7 +375,10 @@ export default async function ArticlePage({
 
         {/* Pros & Cons (only for comparison articles) */}
         {"diskmopPros" in content && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <section
+            id="pros-and-cons"
+            className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-foreground">Disk Mop</h3>
@@ -422,7 +469,10 @@ export default async function ArticlePage({
             AI alintilarinin yaklasik %44'u sayfanin ilk %30'undan gelir ve
             tablolar en guclu alintilanabilirlik sinyallerinden biridir. */}
         {content.dataTable && content.dataTable.rows.length > 0 && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <section
+            id="data-table"
+            className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+          >
             {content.dataTable.caption && (
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 {content.dataTable.caption}
@@ -473,7 +523,7 @@ export default async function ArticlePage({
         {/* Detailed Sections */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           {content.sections.map((section, i) => (
-            <div key={i} className="mb-10">
+            <div key={i} id={`section-${i + 1}`} className="scroll-mt-24 mb-10">
               <h2 className="text-2xl font-bold text-foreground mb-4">
                 {section.title}
               </h2>
@@ -492,7 +542,10 @@ export default async function ArticlePage({
         {/* FAQ — FAQPage JSON-LD ile ayni icerik, AI motorlari icin dogrudan
             alintilanabilir soru-cevap ciftleri */}
         {content.faq && content.faq.length > 0 && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <section
+            id="faq"
+            className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+          >
             <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground mb-6">
               <HelpCircle className="h-6 w-6 text-brand-600 dark:text-brand-400" />
               {t("faq")}
@@ -516,7 +569,10 @@ export default async function ArticlePage({
         )}
 
         {/* Verdict */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <section
+          id="verdict"
+          className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+        >
           <div className="rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-950/30 dark:to-brand-900/20 border border-brand-200 dark:border-brand-800 p-8">
             <h2 className="text-2xl font-bold text-foreground mb-4">
               {t("verdict")}
@@ -538,6 +594,17 @@ export default async function ArticlePage({
           customTitle={content.ctaText}
           customSubtitle={t("ctaSubtitle")}
         />
+
+        {/* Bottom Share Buttons */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <BlogShareButtons
+            title={content.title}
+            url={articleUrl}
+            shareLabel={t("share")}
+            copyLinkLabel={t("copyLink")}
+            linkCopiedLabel={t("linkCopied")}
+          />
+        </div>
 
         {/* Related Articles */}
         {related.length > 0 && (

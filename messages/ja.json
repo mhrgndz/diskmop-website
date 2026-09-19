@@ -438,6 +438,7 @@
       "pricing": "料金",
       "faq": "よくある質問",
       "blog": "ブログ",
+      "calculator": "ディスク容量計算ツール",
       "changelog": "変更履歴"
     },
     "company": {
@@ -514,7 +515,26 @@
     "trustSafe": "100% 安全・署名済み",
     "stickyBarTitle": "DiskMop でシステムを自動的にクリーンアップして高速化",
     "stickyBarSubtitle": "無料ダウンロード · 不要なファイルを数秒で検出・削除",
-    "stickyBarButton": "{os} 向けに無料ダウンロード"
+    "stickyBarButton": "{os} 向けに無料ダウンロード",
+    "tableOfContents": "目次",
+    "testedOn": "検証環境",
+    "verifiedSafe": "Disk Mop システム開発チームによる安全性検証済み",
+    "lastUpdated": "最終更新日",
+    "share": "共有",
+    "copyLink": "リンクをコピー",
+    "linkCopied": "コピーしました！",
+    "allPlatforms": "すべて",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "比較",
+    "searchArticles": "記事を検索...",
+    "noArticlesFound": "一致する記事が見つかりませんでした。",
+    "clearSearch": "検索をクリア",
+    "toolsBadge": "無料ウェブツール",
+    "toolsTitle": "無料ディスク＆ストレージ計算ツール",
+    "toolsSubtitle": "ストレージ必要容量、SSDの寿命、削減可能な空き容量をオンラインで即座に計算します。"
   },
   "notFound": {
     "title": "ページが見つかりません",

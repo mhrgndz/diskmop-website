@@ -438,6 +438,7 @@
       "pricing": "Precios",
       "faq": "Preguntas frecuentes",
       "blog": "Blog",
+      "calculator": "Calculadora de Espacio",
       "changelog": "Registro de cambios"
     },
     "company": {
@@ -514,7 +515,26 @@
     "trustSafe": "100% Seguro y firmado",
     "stickyBarTitle": "Limpia y acelera tu equipo automáticamente con DiskMop",
     "stickyBarSubtitle": "Descarga gratis · Encuentra y elimina archivos basura en segundos",
-    "stickyBarButton": "Descarga gratis para {os}"
+    "stickyBarButton": "Descarga gratis para {os}",
+    "tableOfContents": "Índice de contenidos",
+    "testedOn": "Probado en",
+    "verifiedSafe": "Verificado y probado por el equipo de ingeniería de Disk Mop",
+    "lastUpdated": "Última actualización",
+    "share": "Compartir",
+    "copyLink": "Copiar enlace",
+    "linkCopied": "¡Copiado!",
+    "allPlatforms": "Todos",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Comparativas",
+    "searchArticles": "Buscar artículos...",
+    "noArticlesFound": "No se encontraron artículos que coincidan con tu búsqueda.",
+    "clearSearch": "Borrar búsqueda",
+    "toolsBadge": "Herramientas Web Gratuitas",
+    "toolsTitle": "Calculadoras Gratuitas de Espacio y Disco",
+    "toolsSubtitle": "Calcula tus necesidades de almacenamiento, vida útil del SSD y espacio liberable en línea."
   },
   "notFound": {
     "title": "Página no encontrada",

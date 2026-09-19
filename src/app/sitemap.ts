@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next';
-import { articles } from '@/content/articles';
-import { LOCALES, localeUrl } from '@/lib/seo';
+import type { MetadataRoute } from "next";
+import { articles } from "@/content/articles";
+import { LOCALES, localeUrl } from "@/lib/seo";
 
 /**
  * Her giriş 8 dilin tamamını + x-default'u ilan eder. x-default İngilizce
@@ -11,7 +11,7 @@ function diller(path: string) {
   return {
     languages: {
       ...Object.fromEntries(LOCALES.map((l) => [l, localeUrl(l, path)])),
-      'x-default': localeUrl('en', path),
+      "x-default": localeUrl("en", path),
     },
   };
 }
@@ -28,31 +28,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of LOCALES) {
     entries.push({
-      url: localeUrl(locale, ''),
+      url: localeUrl(locale, ""),
       lastModified: sonIcerik,
-      changeFrequency: 'weekly',
-      priority: locale === 'en' ? 1.0 : 0.9,
-      alternates: diller(''),
+      changeFrequency: "weekly",
+      priority: locale === "en" ? 1.0 : 0.9,
+      alternates: diller(""),
     });
   }
 
   for (const locale of LOCALES) {
     entries.push({
-      url: localeUrl(locale, '/privacy'),
-      lastModified: new Date('2026-05-24'),
-      changeFrequency: 'yearly',
+      url: localeUrl(locale, "/privacy"),
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "yearly",
       priority: 0.3,
-      alternates: diller('/privacy'),
+      alternates: diller("/privacy"),
     });
   }
 
   for (const locale of LOCALES) {
     entries.push({
-      url: localeUrl(locale, '/blog'),
+      url: localeUrl(locale, "/blog"),
       lastModified: sonIcerik,
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.8,
-      alternates: diller('/blog'),
+      alternates: diller("/blog"),
+    });
+  }
+
+  for (const locale of LOCALES) {
+    entries.push({
+      url: localeUrl(locale, "/tools/disk-space-calculator"),
+      lastModified: sonIcerik,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: diller("/tools/disk-space-calculator"),
     });
   }
 
@@ -61,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: localeUrl(locale, `/blog/${article.slug}`),
         lastModified: new Date(article.updated || article.date),
-        changeFrequency: 'monthly',
+        changeFrequency: "monthly",
         priority: 0.7,
         alternates: diller(`/blog/${article.slug}`),
       });
