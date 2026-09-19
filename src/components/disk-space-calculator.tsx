@@ -37,6 +37,17 @@ interface CalculatorLabels {
   msgJunk: string;
   downloadButton: string;
   freeTrialTrust: string;
+  sliderRelaxed: string;
+  sliderWarning: string;
+  sliderCritical: string;
+  actGaming: string;
+  actDev: string;
+  actMedia: string;
+  actMessaging: string;
+  barSystemTooltip: string;
+  barReclaimableTooltip: string;
+  barPersonalLegend: string;
+  barReclaimableLegend: string;
 }
 
 interface DiskSpaceCalculatorProps {
@@ -195,9 +206,11 @@ export function DiskSpaceCalculator({
               className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-brand-600"
             />
             <div className="flex justify-between text-[11px] text-muted-foreground mt-1">
-              <span>%30 (Ferah)</span>
-              <span>%75 (Sınır)</span>
-              <span className="text-red-500 font-semibold">%90+ (Kritik)</span>
+              <span>{labels.sliderRelaxed}</span>
+              <span>{labels.sliderWarning}</span>
+              <span className="text-red-500 font-semibold">
+                {labels.sliderCritical}
+              </span>
             </div>
           </div>
 
@@ -216,7 +229,7 @@ export function DiskSpaceCalculator({
                 />
                 <Gamepad2 className="h-4 w-4 text-purple-500" />
                 <span className="text-xs sm:text-sm text-foreground">
-                  Steam / Epic / Oyun Paketleri
+                  {labels.actGaming}
                 </span>
               </label>
 
@@ -230,7 +243,7 @@ export function DiskSpaceCalculator({
                   />
                   <Code2 className="h-4 w-4 text-blue-500" />
                   <span className="text-xs sm:text-sm text-foreground">
-                    Docker / Node / Geliştirici Önbelleği
+                    {labels.actDev}
                   </span>
                 </label>
               )}
@@ -244,7 +257,7 @@ export function DiskSpaceCalculator({
                 />
                 <ImageIcon className="h-4 w-4 text-emerald-500" />
                 <span className="text-xs sm:text-sm text-foreground">
-                  4K Video / Benzer Fotoğraflar
+                  {labels.actMedia}
                 </span>
               </label>
 
@@ -257,7 +270,7 @@ export function DiskSpaceCalculator({
                 />
                 <MessageSquare className="h-4 w-4 text-green-500" />
                 <span className="text-xs sm:text-sm text-foreground">
-                  WhatsApp / Discord / Telegram Önbelleği
+                  {labels.actMessaging}
                 </span>
               </label>
             </div>
@@ -294,24 +307,24 @@ export function DiskSpaceCalculator({
                     width: `${Math.max(10, usagePercent - (breakdown.total / capacity) * 100)}%`,
                   }}
                   className="bg-slate-400 dark:bg-slate-600 h-full"
-                  title="Gerekli Sistem & Dosyalar"
+                  title={labels.barSystemTooltip}
                 />
                 <div
                   style={{
                     width: `${Math.min(40, (breakdown.total / capacity) * 100)}%`,
                   }}
                   className="bg-brand-500 h-full animate-pulse"
-                  title="DiskMop ile Temizlenebilir Çöpler"
+                  title={labels.barReclaimableTooltip}
                 />
               </div>
               <div className="flex justify-between text-[11px] text-muted-foreground font-medium">
                 <span className="flex items-center gap-1">
                   <span className="inline-block w-2 h-2 rounded-full bg-slate-400" />
-                  Kişisel Dosyalar
+                  {labels.barPersonalLegend}
                 </span>
                 <span className="flex items-center gap-1 text-brand-600 dark:text-brand-400 font-bold">
                   <span className="inline-block w-2 h-2 rounded-full bg-brand-500" />
-                  Geri Kazanılacak ({breakdown.total} GB)
+                  {labels.barReclaimableLegend} ({breakdown.total} GB)
                 </span>
               </div>
             </div>

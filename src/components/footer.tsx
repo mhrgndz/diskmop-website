@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Twitter, Instagram, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { localeHref } from "@/lib/locale-path";
 
 interface FooterLink {
@@ -29,6 +29,7 @@ function getProductLinks(locale: string): FooterLink[] {
     { labelKey: "product.pricing", href: localeHref(locale, "/#pricing") },
     { labelKey: "product.faq", href: localeHref(locale, "/#faq") },
     { labelKey: "product.blog", href: localeHref(locale, "/blog") },
+    { labelKey: "product.tools", href: localeHref(locale, "/tools") },
     {
       labelKey: "product.calculator",
       href: localeHref(locale, "/tools/disk-space-calculator"),
