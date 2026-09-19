@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
+import { Menu, X } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { localeHref } from '@/lib/locale-path';
-import { LanguageSwitcher } from '@/components/language-switcher';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { DownloadDropdown } from '@/components/download-dropdown';
+import { cn } from "@/lib/utils";
+import { localeHref } from "@/lib/locale-path";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { DownloadDropdown } from "@/components/download-dropdown";
 
 interface NavLink {
   key: string;
@@ -17,14 +17,15 @@ interface NavLink {
 }
 
 export function Navigation() {
-  const t = useTranslations('nav');
+  const t = useTranslations("nav");
   const locale = useLocale();
 
   const navLinks: NavLink[] = [
-    { key: 'features', href: localeHref(locale, '/#features') },
-    { key: 'pricing', href: localeHref(locale, '/#pricing') },
-    { key: 'faq', href: localeHref(locale, '/#faq') },
-    { key: 'blog', href: localeHref(locale, '/blog') },
+    { key: "features", href: localeHref(locale, "/#features") },
+    { key: "pricing", href: localeHref(locale, "/#pricing") },
+    { key: "faq", href: localeHref(locale, "/#faq") },
+    { key: "blog", href: localeHref(locale, "/blog") },
+    { key: "tools", href: localeHref(locale, "/tools") },
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,18 +35,18 @@ export function Navigation() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -55,14 +56,17 @@ export function Navigation() {
     <>
       <nav
         className={cn(
-          'fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 transition-shadow duration-300',
-          isScrolled && 'shadow-sm'
+          "fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 transition-shadow duration-300",
+          isScrolled && "shadow-sm",
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Left: Logo */}
-            <a href={localeHref(locale, '/')} className="flex items-center gap-2.5 shrink-0">
+            <a
+              href={localeHref(locale, "/")}
+              className="flex items-center gap-2.5 shrink-0"
+            >
               <Image
                 src="/brand/icon.svg"
                 alt="Disk Mop"

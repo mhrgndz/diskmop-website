@@ -58,6 +58,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of LOCALES) {
     entries.push({
+      url: localeUrl(locale, "/tools"),
+      lastModified: sonIcerik,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: diller("/tools"),
+    });
+  }
+
+  for (const locale of LOCALES) {
+    entries.push({
       url: localeUrl(locale, "/tools/disk-space-calculator"),
       lastModified: sonIcerik,
       changeFrequency: "weekly",

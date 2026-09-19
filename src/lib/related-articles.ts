@@ -26,6 +26,7 @@ const MAC_SLUGS = new Set([
 ]);
 
 const WINDOWS_SPEED_SLUGS = new Set([
+  "steam-shader-cache-cleanup",
   "windows-11-24h2-cache-bug",
   "how-to-speed-up-computer",
   "fix-slow-startup-windows",
@@ -141,6 +142,11 @@ const HANDPICKED_RELATED: Record<string, string[]> = {
   ],
 
   // Windows Temizlik Hub'ları
+  "steam-shader-cache-cleanup": [
+    "free-up-disk-space-for-gaming",
+    "c-drive-full-for-no-reason",
+    "clear-cache-windows-11",
+  ],
   "windows-11-24h2-cache-bug": [
     "c-drive-full-for-no-reason",
     "clear-cache-windows-11",

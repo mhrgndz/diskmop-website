@@ -59,10 +59,12 @@ import { whatsappStorageFullAndroid } from "./whatsapp-storage-full-android";
 import { clearCacheAndroid } from "./clear-cache-android";
 import { deleteDuplicatePhotosAndroid } from "./delete-duplicate-photos-android";
 import { windows1124h2CacheBug } from "./windows-11-24h2-cache-bug";
+import { steamShaderCacheCleanup } from "./steam-shader-cache-cleanup";
 
 export const articles: Article[] = [
-  // 2026-09-19 eklenen — Windows 11 24H2 8.63 GB güncelleme temizleme bug'ı ve çözümü
+  // 2026-09-19 eklenenler — Windows 11 24H2 güncelleme temizleme bug'ı ve Steam Shader Cache
   windows1124h2CacheBug,
+  steamShaderCacheCleanup,
   // 2026-09-17 eklenenler — iPhone (DiskMop: Photo & Video Cleaner) ve Android (Disk Mop) için
   // altı mobil rehber. Konular mevcut android-storage-full ile ÇAKIŞMAZ: her biri o makalenin
   // bir bölümünü değil, ayrı bir arama niyetini (Son Silinenler, kopya/benzer, video boyutu,
