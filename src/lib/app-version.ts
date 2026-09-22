@@ -12,7 +12,7 @@
  */
 export const APP_VERSIONS = {
   windows: '1.0.26',
-  mac: '1.0.25',
+  mac: '1.0.26',
   android: '1.0.9',
   ios: '1.0',
 } as const;
