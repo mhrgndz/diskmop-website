@@ -11,7 +11,7 @@
  * (Android, iPhone) yalnızca buradan okunur, canlı API onları bilmez.
  */
 export const APP_VERSIONS = {
-  windows: "1.0.27",
+  windows: "1.0.29",
   mac: "1.0.27",
   android: "1.0.9",
   ios: "1.0",
