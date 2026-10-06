@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
@@ -13,6 +14,7 @@ import { localeHref } from "@/lib/locale-path";
 import { alternatesFor, socialFor } from "@/lib/seo";
 import { BlogCtaCard } from "@/components/blog-cta-card";
 import { BlogStickyBar } from "@/components/blog-sticky-bar";
+import { BlogScreenshotShowcase } from "@/components/blog-screenshot-showcase";
 import { TableOfContents, type TocItem } from "@/components/table-of-contents";
 import { BlogEeatBadge } from "@/components/blog-eeat-badge";
 import { BlogShareButtons } from "@/components/blog-share-buttons";
@@ -528,19 +530,31 @@ export default async function ArticlePage({
         {/* Detailed Sections */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           {content.sections.map((section, i) => (
-            <div key={i} id={`section-${i + 1}`} className="scroll-mt-24 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                {section.title}
-              </h2>
-              {section.content.map((p, j) => (
-                <p
-                  key={j}
-                  className="text-muted-foreground leading-relaxed mb-4"
-                >
-                  <FormattedText text={p} locale={locale} />
-                </p>
-              ))}
-            </div>
+            <Fragment key={i}>
+              <div id={`section-${i + 1}`} className="scroll-mt-24 mb-10">
+                <h2 className="text-2xl font-bold text-foreground mb-4">
+                  {section.title}
+                </h2>
+                {section.content.map((p, j) => (
+                  <p
+                    key={j}
+                    className="text-muted-foreground leading-relaxed mb-4"
+                  >
+                    <FormattedText text={p} locale={locale} />
+                  </p>
+                ))}
+              </div>
+
+              {/* DiskMop Gercek Arayuz Vitrini (2. bolumden hemen sonra, tek bolum varsa 1.'den sonra) */}
+              {((content.sections.length > 1 && i === 1) ||
+                (content.sections.length === 1 && i === 0)) && (
+                <BlogScreenshotShowcase
+                  slug={slug}
+                  locale={locale}
+                  articlePlatform={platform}
+                />
+              )}
+            </Fragment>
           ))}
         </section>
 

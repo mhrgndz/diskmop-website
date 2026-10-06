@@ -28,6 +28,7 @@ export type CtaLocation =
   | "blog_inline"
   | "blog_bottom"
   | "blog_sticky"
+  | "blog_showcase"
   | "calculator"
   | "pricing"
   | "success";
