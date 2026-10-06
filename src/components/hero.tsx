@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { DownloadDropdown } from '@/components/download-dropdown';
-import { PlatterManifest } from '@/components/hero-visuals/platter-manifest';
+import { cn } from "@/lib/utils";
+import { DownloadDropdown } from "@/components/download-dropdown";
+import { PlatterManifest } from "@/components/hero-visuals/platter-manifest";
 
 export function Hero() {
-  const t = useTranslations('hero');
+  const t = useTranslations("hero");
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
@@ -25,11 +25,11 @@ export function Hero() {
             >
               <span
                 className={cn(
-                  'inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium',
-                  'bg-brand-50 dark:bg-brand-950/50 text-brand-600 border border-brand-200 dark:border-brand-800'
+                  "inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium",
+                  "bg-brand-50 dark:bg-brand-950/50 text-brand-600 border border-brand-200 dark:border-brand-800",
                 )}
               >
-                {t('badge')}
+                {t("badge")}
               </span>
             </motion.div>
 
@@ -40,9 +40,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
             >
-              {t('title')}{' '}
+              {t("title")}{" "}
               <span className="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
-                {t('titleHighlight')}
+                {t("titleHighlight")}
               </span>
             </motion.h1>
 
@@ -53,7 +53,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0"
             >
-              {t('subtitle')}
+              {t("subtitle")}
             </motion.p>
 
             {/* CTA Group */}
@@ -63,7 +63,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
-              <DownloadDropdown variant="primary" />
+              <DownloadDropdown variant="primary" location="hero" />
             </motion.div>
 
             {/* Social Proof */}
@@ -82,7 +82,7 @@ export function Hero() {
                 ))}
               </div>
               <span className="text-sm text-muted-foreground">
-                {t('users')}
+                {t("users")}
               </span>
             </motion.div>
 
@@ -93,7 +93,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-4 text-xs text-muted-foreground"
             >
-              {t('platforms')}
+              {t("platforms")}
             </motion.p>
           </div>
 

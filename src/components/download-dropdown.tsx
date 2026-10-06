@@ -1,96 +1,119 @@
-'use client';
+"use client";
 
-import { Monitor, Laptop, Smartphone, ChevronDown, Download, ShieldCheck } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import {
+  Monitor,
+  Laptop,
+  Smartphone,
+  ChevronDown,
+  Download,
+  ShieldCheck,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { cn } from '@/lib/utils';
-import { useOSDetection } from '@/hooks/use-os-detection';
-import { useAppInfo } from '@/hooks/use-app-info';
-import { STORE_URLS } from '@/lib/app-version';
-import { Badge } from '@/components/ui/badge';
+import { cn } from "@/lib/utils";
+import { useOSDetection } from "@/hooks/use-os-detection";
+import { useAppInfo } from "@/hooks/use-app-info";
+import { STORE_URLS } from "@/lib/app-version";
+import {
+  trackDownload,
+  type CtaLocation,
+  type DownloadPlatform,
+} from "@/lib/analytics";
+import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 
 interface DownloadDropdownProps {
-  variant?: 'primary' | 'secondary';
+  variant?: "primary" | "secondary";
   className?: string;
+  /** Hangi yerleşimden indirildiği GA4 olayına bu adla yazılır. */
+  location?: CtaLocation;
 }
 
 interface DownloadOption {
-  os: 'windows' | 'mac' | 'android' | 'ios';
+  os: "windows" | "mac" | "android" | "ios";
+  /** Ölçüm kimliği: iki macOS satırı 'mac' ve 'mac-intel' olarak ayrılır. */
+  platform: DownloadPlatform;
   label: string;
   sublabel?: string;
   href: string;
   icon: typeof Monitor;
   signed?: boolean;
   /** Mağaza adı: dosya boyutunun yerine basılır, bağlantı yeni sekmede açılır. */
-  store?: 'Google Play' | 'App Store';
+  store?: "Google Play" | "App Store";
   /** Aynı platformun ikinci mimarisi: "önerilen" rozeti almaz, ayırıcı da yemez. */
   altArch?: boolean;
 }
 
 const downloadOptions: DownloadOption[] = [
   {
-    os: 'windows',
-    label: 'Windows',
-    sublabel: '.exe',
-    href: 'https://api.diskmop.com/download/windows',
+    os: "windows",
+    platform: "windows",
+    label: "Windows",
+    sublabel: ".exe",
+    href: "https://api.diskmop.com/download/windows",
     icon: Monitor,
     signed: true,
   },
   // Burada "Universal (.dmg)" yazıyordu ama dosya universal DEĞİL: yayınlanan dmg
   // arm64-only (lipo -archs → arm64). Intel kullanıcısı indirdiğini açamıyordu.
   {
-    os: 'mac',
-    label: 'macOS',
-    sublabel: 'Apple Silicon',
-    href: 'https://api.diskmop.com/download/mac',
+    os: "mac",
+    platform: "mac",
+    label: "macOS",
+    sublabel: "Apple Silicon",
+    href: "https://api.diskmop.com/download/mac",
     icon: Laptop,
     signed: true,
   },
   {
-    os: 'mac',
-    label: 'macOS',
-    sublabel: 'Intel',
-    href: 'https://api.diskmop.com/download/mac-intel',
+    os: "mac",
+    platform: "mac-intel",
+    label: "macOS",
+    sublabel: "Intel",
+    href: "https://api.diskmop.com/download/mac-intel",
     icon: Laptop,
     signed: true,
     altArch: true,
   },
   {
-    os: 'android',
-    label: 'Android',
+    os: "android",
+    platform: "android",
+    label: "Android",
     href: STORE_URLS.android,
     icon: Smartphone,
-    store: 'Google Play',
+    store: "Google Play",
   },
   {
-    os: 'ios',
-    label: 'iPhone',
+    os: "ios",
+    platform: "ios",
+    label: "iPhone",
     href: STORE_URLS.ios,
     icon: Smartphone,
-    store: 'App Store',
+    store: "App Store",
   },
 ];
 
 export function DownloadDropdown({
-  variant = 'primary',
+  variant = "primary",
   className,
+  location = "nav",
 }: DownloadDropdownProps) {
-  const t = useTranslations('common');
+  const t = useTranslations("common");
   const detectedOS = useOSDetection();
   const { windowsSize, macSize } = useAppInfo();
 
   const getSize = (option: DownloadOption) =>
-    option.store ?? ((option.os === 'windows' ? windowsSize : macSize) || '~80 MB');
+    option.store ??
+    ((option.os === "windows" ? windowsSize : macSize) || "~80 MB");
 
   const isRecommended = (option: DownloadOption): boolean => {
-    if (detectedOS === 'unknown') return false;
+    if (detectedOS === "unknown") return false;
     // İki macOS satırından yalnızca ilki (Apple Silicon) rozet alır; User-Agent
     // Apple Silicon ile Intel'i ayırt edemediği için Intel'i biz seçemeyiz.
     if (option.altArch) return false;
@@ -102,16 +125,16 @@ export function DownloadDropdown({
       <DropdownMenuTrigger asChild>
         <button
           className={cn(
-            'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-            variant === 'primary' &&
-              'h-12 bg-brand-600 px-6 text-base text-white shadow-lg hover:bg-brand-700 active:bg-brand-800',
-            variant === 'secondary' &&
-              'h-10 border border-border bg-background px-4 text-sm hover:bg-muted',
-            className
+            "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+            variant === "primary" &&
+              "h-12 bg-brand-600 px-6 text-base text-white shadow-lg hover:bg-brand-700 active:bg-brand-800",
+            variant === "secondary" &&
+              "h-10 border border-border bg-background px-4 text-sm hover:bg-muted",
+            className,
           )}
         >
           <Download className="h-4 w-4" />
-          {t('download')}
+          {t("download")}
           <ChevronDown className="h-4 w-4 opacity-60" />
         </button>
       </DropdownMenuTrigger>
@@ -126,11 +149,12 @@ export function DownloadDropdown({
               <DropdownMenuItem asChild>
                 <a
                   href={option.href}
-                  target={option.store ? '_blank' : undefined}
-                  rel={option.store ? 'noopener noreferrer' : undefined}
+                  onClick={() => trackDownload(option.platform, location)}
+                  target={option.store ? "_blank" : undefined}
+                  rel={option.store ? "noopener noreferrer" : undefined}
                   className={cn(
-                    'flex items-center gap-3 px-3 py-2.5',
-                    recommended && 'bg-brand-50 dark:bg-brand-950'
+                    "flex items-center gap-3 px-3 py-2.5",
+                    recommended && "bg-brand-50 dark:bg-brand-950",
                   )}
                 >
                   <Icon className="h-5 w-5 shrink-0 text-muted-foreground" />
@@ -145,8 +169,11 @@ export function DownloadDropdown({
                         </span>
                       )}
                       {recommended && (
-                        <Badge variant="default" className="ml-auto text-[10px] px-1.5 py-0">
-                          {t('recommended')}
+                        <Badge
+                          variant="default"
+                          className="ml-auto text-[10px] px-1.5 py-0"
+                        >
+                          {t("recommended")}
                         </Badge>
                       )}
                     </div>
@@ -155,7 +182,7 @@ export function DownloadDropdown({
                       {option.signed && (
                         <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 font-medium">
                           <ShieldCheck className="h-3 w-3" />
-                          {t('signed')}
+                          {t("signed")}
                         </span>
                       )}
                     </span>

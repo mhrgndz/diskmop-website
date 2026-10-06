@@ -1,16 +1,16 @@
-import { createHmac } from 'crypto';
+import { createHmac } from "crypto";
 
 export function verifyWebhookSignature(
   payload: string,
   signature: string,
-  secret: string
+  secret: string,
 ): boolean {
-  const hmac = createHmac('sha256', secret);
+  const hmac = createHmac("sha256", secret);
   hmac.update(payload);
-  const expectedSignature = hmac.digest('hex');
+  const expectedSignature = hmac.digest("hex");
   return signature === expectedSignature;
 }
 
 export function getCheckoutUrl(): string {
-  return process.env.POLAR_CHECKOUT_URL || 'https://polar.sh/checkout/mock';
+  return process.env.POLAR_CHECKOUT_URL || "https://polar.sh/checkout/mock";
 }

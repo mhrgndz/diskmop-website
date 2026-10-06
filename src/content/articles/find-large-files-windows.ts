@@ -1,145 +1,150 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const findLargeFilesWindows: Article = {
-  slug: 'find-large-files-windows',
-  type: 'guide',
-  category: 'Disk Management',
-  date: '2026-06-29',
+  slug: "find-large-files-windows",
+  type: "guide",
+  category: "Disk Management",
+  date: "2026-06-29",
   readingTime: 6,
   content: {
     tr: {
-      title: 'Windows\'ta Büyük Dosyaları Bulmanın En Hızlı 3 Yolu',
+      title: "Windows'ta Büyük Dosyaları Bulmanın En Hızlı 3 Yolu",
       metaDescription:
-        'Windows\'ta büyük dosyaları bulma yöntemleri: Dosya Gezgini boyut filtreleri, treemap analizi ve otomatik 500 MB taraması ile disk alanınızı geri kazanın.',
-      subtitle: 'Dosya Gezgini filtrelerinden treemap analizine: diskinizi dolduran dosyaları dakikalar içinde bulun',
+        "Windows'ta büyük dosyaları bulma yöntemleri: Dosya Gezgini boyut filtreleri, treemap analizi ve otomatik 500 MB taraması ile disk alanınızı geri kazanın.",
+      subtitle:
+        "Dosya Gezgini filtrelerinden treemap analizine: diskinizi dolduran dosyaları dakikalar içinde bulun",
       intro: [
-        'Windows 10 ve 11\'de büyük dosyaları bulmanın en hızlı yolu, Dosya Gezgini\'ni açıp Bu Bilgisayar görünümündeyken arama kutusuna size:gigantic yazmaktır; bu komut 4 GB\'ın üzerindeki tüm dosyaları listeler. Daha kapsamlı bir bakış için, treemap görünümlü bir disk analiz aracı sabit diskinizde neyin yer kapladığını tek bakışta gösterir. İki yöntem de beş dakikadan kısa sürer ve bu rehberde her adımı tek tek göreceksiniz.',
-        'Diskler sessizce dolar: unutulmuş bir video dışa aktarımı, eski bir sanal makine diski veya artık oynamadığınız bir oyun onlarca gigabayt yutabilir. Bu rehber bir beceri merdiveni gibi ilerliyor: önce Dosya Gezgini\'nin az bilinen boyut arama operatörleri, ardından görsel treemap analizi ve son olarak 500 MB üzerindeki dosyaları otomatik yakalayan bir tarama. Sonunda diskinizi dolduran her büyük dosyayı bulabilecek ve ne yapacağınıza güvenle karar verebileceksiniz.',
+        "Windows 10 ve 11'de büyük dosyaları bulmanın en hızlı yolu, Dosya Gezgini'ni açıp Bu Bilgisayar görünümündeyken arama kutusuna size:gigantic yazmaktır; bu komut 4 GB'ın üzerindeki tüm dosyaları listeler. Daha kapsamlı bir bakış için, treemap görünümlü bir disk analiz aracı sabit diskinizde neyin yer kapladığını tek bakışta gösterir. İki yöntem de beş dakikadan kısa sürer ve bu rehberde her adımı tek tek göreceksiniz.",
+        "Diskler sessizce dolar: unutulmuş bir video dışa aktarımı, eski bir sanal makine diski veya artık oynamadığınız bir oyun onlarca gigabayt yutabilir. Bu rehber bir beceri merdiveni gibi ilerliyor: önce Dosya Gezgini'nin az bilinen boyut arama operatörleri, ardından görsel treemap analizi ve son olarak 500 MB üzerindeki dosyaları otomatik yakalayan bir tarama. Sonunda diskinizi dolduran her büyük dosyayı bulabilecek ve ne yapacağınıza güvenle karar verebileceksiniz.",
       ],
       sections: [
         {
-          title: 'Büyük Dosyalar Windows\'ta Neden Bu Kadar İyi Gizlenir',
+          title: "Büyük Dosyalar Windows'ta Neden Bu Kadar İyi Gizlenir",
           content: [
-            'Dosya Gezgini varsayılan olarak klasörlerin boyutunu göstermez ve boyuta göre sıralama yalnızca o an içinde bulunduğunuz klasör için çalışır. Bu yüzden üç klasör derinlikte gömülü 20 GB\'lık bir dosya hiçbir zaman gözünüze çarpmaz. Üstüne, Windows sistem dosyalarını ve bazı klasörleri varsayılan olarak gizler; yani en büyük alan tüketicilerinin bir kısmı normal gezinmede hiç görünmez.',
-            'İlk hızlı kontrol için Ayarlar, Sistem ve Depolama yolunu izleyin. Hem Windows 10 hem Windows 11, diskinizi uygulamalar, geçici dosyalar ve belgeler gibi kategorilere ayırarak gösterir. Bu ekran yönünüzü bulmak için iyidir, ancak kategori düzeyinde kalır: size diğer dosyaların 120 GB tuttuğunu söyler, hangi dosyaların tuttuğunu söylemez. Bilgisayardaki en büyük dosyaları tek tek görmek için aşağıdaki üç tekniğe ihtiyacınız var.',
+            "Dosya Gezgini varsayılan olarak klasörlerin boyutunu göstermez ve boyuta göre sıralama yalnızca o an içinde bulunduğunuz klasör için çalışır. Bu yüzden üç klasör derinlikte gömülü 20 GB'lık bir dosya hiçbir zaman gözünüze çarpmaz. Üstüne, Windows sistem dosyalarını ve bazı klasörleri varsayılan olarak gizler; yani en büyük alan tüketicilerinin bir kısmı normal gezinmede hiç görünmez.",
+            "İlk hızlı kontrol için Ayarlar, Sistem ve Depolama yolunu izleyin. Hem Windows 10 hem Windows 11, diskinizi uygulamalar, geçici dosyalar ve belgeler gibi kategorilere ayırarak gösterir. Bu ekran yönünüzü bulmak için iyidir, ancak kategori düzeyinde kalır: size diğer dosyaların 120 GB tuttuğunu söyler, hangi dosyaların tuttuğunu söylemez. Bilgisayardaki en büyük dosyaları tek tek görmek için aşağıdaki üç tekniğe ihtiyacınız var.",
           ],
         },
         {
-          title: 'Dosya Gezgini\'nin Boyut Filtrelerini Kullanın (size:gigantic)',
+          title:
+            "Dosya Gezgini'nin Boyut Filtrelerini Kullanın (size:gigantic)",
           content: [
-            'Dosya Gezgini\'ni açın ve tüm diski kapsaması için Bu Bilgisayar\'ı ya da doğrudan C: sürücüsünü seçin. Sağ üstteki arama kutusuna tıklayıp size: yazdığınızda Windows hazır filtreler önerir: Boş (0 KB), Çok küçük (16 KB\'a kadar), Küçük (16 KB - 1 MB), Orta (1 - 128 MB), Büyük (128 MB - 1 GB), Çok büyük (1 - 4 GB) ve Devasa (4 GB üzeri). En hızlı sonuç için size:gigantic filtresiyle 4 GB üzerindeki dosyaları listeleyin.',
-            'Hazır aralıklar yetmezse kendi eşiğinizi yazabilirsiniz: size:>500MB veya size:>1GB gibi. Sonuçlar geldiğinde görünümü Ayrıntılar\'a çevirin ve Boyut sütununa tıklayarak büyükten küçüğe sıralayın. Gizli dosyaları da yakalamak için Windows 11\'de Görünüm, Göster ve Gizli öğeler seçeneğini, Windows 10\'da Görünüm sekmesindeki Gizli öğeler kutusunu işaretleyin.',
-            'İki uyarı: pagefile.sys ve hiberfil.sys gibi sistem dosyalarına ve Windows klasörünün içindeki hiçbir dosyaya dokunmayın; bunlar işletim sisteminin çalışması için gereklidir. Ayrıca bu yöntemin sınırını bilin: dizinlenmemiş sürücülerde arama uzun sürebilir ve sonuç, hangi klasörlerin şiştiğini göstermeyen düz bir listedir.',
+            "Dosya Gezgini'ni açın ve tüm diski kapsaması için Bu Bilgisayar'ı ya da doğrudan C: sürücüsünü seçin. Sağ üstteki arama kutusuna tıklayıp size: yazdığınızda Windows hazır filtreler önerir: Boş (0 KB), Çok küçük (16 KB'a kadar), Küçük (16 KB - 1 MB), Orta (1 - 128 MB), Büyük (128 MB - 1 GB), Çok büyük (1 - 4 GB) ve Devasa (4 GB üzeri). En hızlı sonuç için size:gigantic filtresiyle 4 GB üzerindeki dosyaları listeleyin.",
+            "Hazır aralıklar yetmezse kendi eşiğinizi yazabilirsiniz: size:>500MB veya size:>1GB gibi. Sonuçlar geldiğinde görünümü Ayrıntılar'a çevirin ve Boyut sütununa tıklayarak büyükten küçüğe sıralayın. Gizli dosyaları da yakalamak için Windows 11'de Görünüm, Göster ve Gizli öğeler seçeneğini, Windows 10'da Görünüm sekmesindeki Gizli öğeler kutusunu işaretleyin.",
+            "İki uyarı: pagefile.sys ve hiberfil.sys gibi sistem dosyalarına ve Windows klasörünün içindeki hiçbir dosyaya dokunmayın; bunlar işletim sisteminin çalışması için gereklidir. Ayrıca bu yöntemin sınırını bilin: dizinlenmemiş sürücülerde arama uzun sürebilir ve sonuç, hangi klasörlerin şiştiğini göstermeyen düz bir listedir.",
           ],
         },
         {
-          title: 'Alan Yiyenleri Treemap ile Görsel Olarak Tespit Edin',
+          title: "Alan Yiyenleri Treemap ile Görsel Olarak Tespit Edin",
           content: [
-            'Treemap, diskinizin tamamını iç içe dikdörtgenler olarak çizen bir görselleştirmedir: her dikdörtgenin alanı, o dosya veya klasörün kapladığı yerle orantılıdır. Dev bloklar anında göze çarpar ve düz arama listesinin çözemediği soruyu yanıtlar: ağırlık klasör ağacının neresinde? Tek bakışta videolar klasörünüzün mü, yoksa unutulmuş bir yedekleme klasörünün mü şiştiğini görürsünüz.',
-            'Yıllardır var olan ücretsiz treemap araçları bu işi görür ve hakkını teslim etmek gerekir; ancak çoğunun arayüzü eskimiştir ve büyük disklerde tarama yavaş olabilir. Teknik kullanıcılar için sorun değil, ama sonucu hızlıca görüp temizliğe geçmek isteyenler için sürtünme yaratır.',
-            'Disk Mop\'un disk analizi (Disk Analysis) özelliği, sürücünüzü tarayıp etkileşimli bir treemap çıkarır: en çok yer kaplayan klasörleri anında görür, bir klasöre tıklayarak içine iner ve her öğenin toplam alandaki payını okursunuz. Aynı deneyim hem Windows 10 ve 11\'de hem de macOS\'te aynı şekilde çalışır.',
+            "Treemap, diskinizin tamamını iç içe dikdörtgenler olarak çizen bir görselleştirmedir: her dikdörtgenin alanı, o dosya veya klasörün kapladığı yerle orantılıdır. Dev bloklar anında göze çarpar ve düz arama listesinin çözemediği soruyu yanıtlar: ağırlık klasör ağacının neresinde? Tek bakışta videolar klasörünüzün mü, yoksa unutulmuş bir yedekleme klasörünün mü şiştiğini görürsünüz.",
+            "Yıllardır var olan ücretsiz treemap araçları bu işi görür ve hakkını teslim etmek gerekir; ancak çoğunun arayüzü eskimiştir ve büyük disklerde tarama yavaş olabilir. Teknik kullanıcılar için sorun değil, ama sonucu hızlıca görüp temizliğe geçmek isteyenler için sürtünme yaratır.",
+            "Disk Mop'un disk analizi (Disk Analysis) özelliği, sürücünüzü tarayıp etkileşimli bir treemap çıkarır: en çok yer kaplayan klasörleri anında görür, bir klasöre tıklayarak içine iner ve her öğenin toplam alandaki payını okursunuz. Aynı deneyim hem Windows 10 ve 11'de hem de macOS'te aynı şekilde çalışır.",
           ],
         },
         {
-          title: '500 MB Üzerindeki Dosyaları Otomatik Tarayın',
+          title: "500 MB Üzerindeki Dosyaları Otomatik Tarayın",
           content: [
-            'Manuel aramalar anlık fotoğraflardır: operatör sözdizimini hatırlamanız, her sürücü için aramayı tekrarlamanız ve sonuçları kendiniz ayıklamanız gerekir. Otomatik bir büyük dosya taraması bu denklemi tersine çevirir: eşiği bir kez tanımlarsınız, araç tüm diski gezip sonuçları hazır getirir.',
-            'Disk Mop\'un büyük dosya bulucusu (Large File Finder) tam olarak bunu yapar: 500 MB\'ın üzerindeki her dosyayı tespit eder ve konumlarıyla birlikte boyuta göre sıralı bir listede sunar. Konum bilgisi önemlidir, çünkü bir dosyanın silinip silinemeyeceğine ancak nerede durduğunu görerek karar verebilirsiniz. Treemap ile birlikte kullanıldığında hem genel harita hem de ayrıntılı döküm elinizde olur.',
-            'Pratik bir iş akışı önerisi: taramayı çalıştırın, listenin en üstündeki on dosyayı tek tek gözden geçirin. Geri kazanılabilir alanın büyük kısmı neredeyse her zaman bu ilk sayfadadır; eski disk görüntüleri, video dosyaları ve unutulmuş indirmeler listenin tepesinde toplanır.',
+            "Manuel aramalar anlık fotoğraflardır: operatör sözdizimini hatırlamanız, her sürücü için aramayı tekrarlamanız ve sonuçları kendiniz ayıklamanız gerekir. Otomatik bir büyük dosya taraması bu denklemi tersine çevirir: eşiği bir kez tanımlarsınız, araç tüm diski gezip sonuçları hazır getirir.",
+            "Disk Mop'un büyük dosya bulucusu (Large File Finder) tam olarak bunu yapar: 500 MB'ın üzerindeki her dosyayı tespit eder ve konumlarıyla birlikte boyuta göre sıralı bir listede sunar. Konum bilgisi önemlidir, çünkü bir dosyanın silinip silinemeyeceğine ancak nerede durduğunu görerek karar verebilirsiniz. Treemap ile birlikte kullanıldığında hem genel harita hem de ayrıntılı döküm elinizde olur.",
+            "Pratik bir iş akışı önerisi: taramayı çalıştırın, listenin en üstündeki on dosyayı tek tek gözden geçirin. Geri kazanılabilir alanın büyük kısmı neredeyse her zaman bu ilk sayfadadır; eski disk görüntüleri, video dosyaları ve unutulmuş indirmeler listenin tepesinde toplanır.",
           ],
         },
         {
-          title: 'Neyi Sileceğinize, Taşıyacağınıza veya Arşivleyeceğinize Karar Verin',
+          title:
+            "Neyi Sileceğinize, Taşıyacağınıza veya Arşivleyeceğinize Karar Verin",
           content: [
-            'Bulduğunuz her büyük dosya için üç kutu kuralını uygulayın. Silin: kurulumu çoktan bitmiş yükleyiciler, eski ISO görüntüleri, süresi geçmiş yedekler ve bariz kopyalar. Taşıyın: saklamak istediğiniz ama nadiren açtığınız video arşivleri ve fotoğraf koleksiyonlarını harici bir diske veya ağ depolamasına aktarın. Arşivleyin: artık aktif olmayan proje klasörlerine sağ tıklayıp sıkıştırılmış klasöre göndererek yerinde küçültün.',
-            'Güvenlik kuralları basittir: Windows klasöründen veya program kurulum klasörlerinden asla dosya silmeyin ve emin olmadığınız bir dosya adını önce araştırın. Sildiğiniz dosyaların Geri Dönüşüm Kutusu\'na gittiğini ve kutu boşaltılana kadar diskte yer kaplamaya devam ettiğini de unutmayın.',
-            'Büyük dosyaların şaşırtıcı bir bölümü aslında kopyadır: aynı videonun iki dışa aktarımı, aynı fotoğraf klasörünün iki yedeği gibi. Disk Mop\'un yinelenen dosya dedektörü (Duplicate Detector) dosyaları SHA-256 özetiyle karşılaştırır; böylece adları farklı olsa bile içeriği birebir aynı olan kopyaları güvenle yakalarsınız.',
+            "Bulduğunuz her büyük dosya için üç kutu kuralını uygulayın. Silin: kurulumu çoktan bitmiş yükleyiciler, eski ISO görüntüleri, süresi geçmiş yedekler ve bariz kopyalar. Taşıyın: saklamak istediğiniz ama nadiren açtığınız video arşivleri ve fotoğraf koleksiyonlarını harici bir diske veya ağ depolamasına aktarın. Arşivleyin: artık aktif olmayan proje klasörlerine sağ tıklayıp sıkıştırılmış klasöre göndererek yerinde küçültün.",
+            "Güvenlik kuralları basittir: Windows klasöründen veya program kurulum klasörlerinden asla dosya silmeyin ve emin olmadığınız bir dosya adını önce araştırın. Sildiğiniz dosyaların Geri Dönüşüm Kutusu'na gittiğini ve kutu boşaltılana kadar diskte yer kaplamaya devam ettiğini de unutmayın.",
+            "Büyük dosyaların şaşırtıcı bir bölümü aslında kopyadır: aynı videonun iki dışa aktarımı, aynı fotoğraf klasörünün iki yedeği gibi. Disk Mop'un yinelenen dosya dedektörü (Duplicate Detector) dosyaları SHA-256 özetiyle karşılaştırır; böylece adları farklı olsa bile içeriği birebir aynı olan kopyaları güvenle yakalarsınız.",
           ],
         },
         {
-          title: 'Büyük Dosyaları Kontrol Altında Tutun',
+          title: "Büyük Dosyaları Kontrol Altında Tutun",
           content: [
-            'Çoğu bilgisayarda bir numaralı suçlu İndirilenler klasörüdür: yükleyiciler, ZIP arşivleri ve videolar sessizce birikir. Ayda bir kez klasörü boyuta göre sıralayıp tepedeki dosyaları gözden geçirmeyi alışkanlık haline getirin; bu beş dakikalık kontrol, diskin bir daha fark ettirmeden dolmasını engeller.',
-            'Windows\'un yerleşik Depolama Algılayıcısı (Ayarlar, Sistem, Depolama yolunda) geçici dosyaları ve Geri Dönüşüm Kutusu\'nu otomatik temizleyebilir; bu iyi bir temel sağlar ve açık kalmasında fayda var. Ancak sizin oluşturduğunuz büyük dosyalara, video arşivlerine veya eski indirmelere dokunmaz; onlar için düzenli bir tarama gerekir.',
-            'Disk Mop bu rutini otomatikleştirir: zamanlanmış temizlik (Scheduled Cleanup) haftalık veya aylık bakım görevleri kurar, indirilenler temizleyicisi ise İndirilenler klasörünüzdeki eski dosyaları kategorilere ayırarak gösterir. Büyük dosya taramasını da düzenli aralıklarla yeniden çalıştırdığınızda disk doluluğu bir daha sürpriz olmaz.',
+            "Çoğu bilgisayarda bir numaralı suçlu İndirilenler klasörüdür: yükleyiciler, ZIP arşivleri ve videolar sessizce birikir. Ayda bir kez klasörü boyuta göre sıralayıp tepedeki dosyaları gözden geçirmeyi alışkanlık haline getirin; bu beş dakikalık kontrol, diskin bir daha fark ettirmeden dolmasını engeller.",
+            "Windows'un yerleşik Depolama Algılayıcısı (Ayarlar, Sistem, Depolama yolunda) geçici dosyaları ve Geri Dönüşüm Kutusu'nu otomatik temizleyebilir; bu iyi bir temel sağlar ve açık kalmasında fayda var. Ancak sizin oluşturduğunuz büyük dosyalara, video arşivlerine veya eski indirmelere dokunmaz; onlar için düzenli bir tarama gerekir.",
+            "Disk Mop bu rutini otomatikleştirir: zamanlanmış temizlik (Scheduled Cleanup) haftalık veya aylık bakım görevleri kurar, indirilenler temizleyicisi ise İndirilenler klasörünüzdeki eski dosyaları kategorilere ayırarak gösterir. Büyük dosya taramasını da düzenli aralıklarla yeniden çalıştırdığınızda disk doluluğu bir daha sürpriz olmaz.",
           ],
         },
       ],
       verdict: [
-        'Windows\'ta büyük dosyaları bulmak üç beceri katmanından oluşur: hızlı bir kontrol için Dosya Gezgini\'nde size:gigantic araması, diskin genel haritası için treemap analizi ve rutin denetim için 500 MB üzerini tarayan otomatik bir araç. Bu üçünü birlikte kullandığınızda, on beş dakikalık bir oturumda onlarca gigabayt alanı geri kazanmak çoğu bilgisayarda gerçekçi bir hedeftir.',
-        'Disk Mop bu iş akışının tamamını tek uygulamada toplar: disk analizi treemap\'i, 500 MB üzerini bulan büyük dosya bulucu, SHA-256 tabanlı yinelenen dosya dedektörü ve zamanlanmış temizlik. Ücretsiz sürümle deneyebilir, tüm özellikleri 19,90 dolarlık tek seferlik ömür boyu lisansla açabilirsiniz.',
+        "Windows'ta büyük dosyaları bulmak üç beceri katmanından oluşur: hızlı bir kontrol için Dosya Gezgini'nde size:gigantic araması, diskin genel haritası için treemap analizi ve rutin denetim için 500 MB üzerini tarayan otomatik bir araç. Bu üçünü birlikte kullandığınızda, on beş dakikalık bir oturumda onlarca gigabayt alanı geri kazanmak çoğu bilgisayarda gerçekçi bir hedeftir.",
+        "Disk Mop bu iş akışının tamamını tek uygulamada toplar: disk analizi treemap'i, 500 MB üzerini bulan büyük dosya bulucu, SHA-256 tabanlı yinelenen dosya dedektörü ve zamanlanmış temizlik. Ücretsiz sürümle deneyebilir, tüm özellikleri 19,90 dolarlık tek seferlik ömür boyu lisansla açabilirsiniz.",
       ],
-      ctaText: 'Disk Mop ile en büyük dosyalarınızı bulun',
+      ctaText: "Disk Mop ile en büyük dosyalarınızı bulun",
     },
     en: {
-      title: 'How to Find Large Files on Windows 10 and 11 Fast',
+      title: "How to Find Large Files on Windows 10 and 11 Fast",
       metaDescription:
-        'Learn how to find large files on Windows 10 and 11 using File Explorer size filters, treemap analysis, and an automatic 500 MB scan. Free up gigabytes today.',
-      subtitle: 'From hidden size: search operators to treemap analysis — track down the files eating your disk in minutes',
+        "Learn how to find large files on Windows 10 and 11 using File Explorer size filters, treemap analysis, and an automatic 500 MB scan. Free up gigabytes today.",
+      subtitle:
+        "From hidden size: search operators to treemap analysis — track down the files eating your disk in minutes",
       intro: [
-        'The fastest way to find large files on Windows 10 and 11 is to open File Explorer, select This PC, and type size:gigantic in the search box — this lists every file over 4 GB. For a fuller picture, a disk analysis tool with a treemap view shows exactly what is taking up space on your hard drive at a glance. Both methods take under five minutes, and this guide walks through each one step by step.',
-        'Drives fill up quietly. A forgotten video export, an old virtual machine disk, or a game you no longer play can swallow tens of gigabytes without ever crossing your screen. This guide is built as a skill progression: first File Explorer\'s little-known size search operators, then visual treemap analysis, and finally an automatic scan that catches every file over 500 MB. By the end, you\'ll be able to find the big files eating disk space and decide confidently what to do with each one.',
+        "The fastest way to find large files on Windows 10 and 11 is to open File Explorer, select This PC, and type size:gigantic in the search box — this lists every file over 4 GB. For a fuller picture, a disk analysis tool with a treemap view shows exactly what is taking up space on your hard drive at a glance. Both methods take under five minutes, and this guide walks through each one step by step.",
+        "Drives fill up quietly. A forgotten video export, an old virtual machine disk, or a game you no longer play can swallow tens of gigabytes without ever crossing your screen. This guide is built as a skill progression: first File Explorer's little-known size search operators, then visual treemap analysis, and finally an automatic scan that catches every file over 500 MB. By the end, you'll be able to find the big files eating disk space and decide confidently what to do with each one.",
       ],
       sections: [
         {
-          title: 'Why Big Files Hide So Well on Windows',
+          title: "Why Big Files Hide So Well on Windows",
           content: [
-            'File Explorer doesn\'t show folder sizes by default, and sorting by size only works within the folder you\'re currently viewing. That\'s why a 20 GB file buried three folders deep never catches your eye. On top of that, Windows hides system files and certain folders by default, so some of the biggest space consumers are invisible during normal browsing.',
-            'For a first quick check, open Settings, then System, then Storage. Both Windows 10 and Windows 11 break your drive down into categories such as apps, temporary files, and documents. This screen is good for orientation, but it stops at the category level: it tells you that other files take 120 GB, not which files. To see the largest files on your PC one by one, you need the three techniques below.',
+            "File Explorer doesn't show folder sizes by default, and sorting by size only works within the folder you're currently viewing. That's why a 20 GB file buried three folders deep never catches your eye. On top of that, Windows hides system files and certain folders by default, so some of the biggest space consumers are invisible during normal browsing.",
+            "For a first quick check, open Settings, then System, then Storage. Both Windows 10 and Windows 11 break your drive down into categories such as apps, temporary files, and documents. This screen is good for orientation, but it stops at the category level: it tells you that other files take 120 GB, not which files. To see the largest files on your PC one by one, you need the three techniques below.",
           ],
         },
         {
-          title: 'Use File Explorer\'s Size Filters (size:gigantic)',
+          title: "Use File Explorer's Size Filters (size:gigantic)",
           content: [
-            'Open File Explorer and select This PC, or the C: drive directly, so the search covers everything. Click the search box in the top right and type size: — Windows suggests preset filters: Empty (0 KB), Tiny (up to 16 KB), Small (16 KB to 1 MB), Medium (1 to 128 MB), Large (128 MB to 1 GB), Huge (1 to 4 GB), and Gigantic (over 4 GB). For the quickest win, run the size:gigantic search in File Explorer to list everything above 4 GB.',
-            'If the presets don\'t fit, type your own threshold, such as size:>500MB or size:>1GB. Once results load, switch to the Details view and click the Size column to sort largest first. To catch hidden files too, enable View, then Show, then Hidden items on Windows 11, or tick Hidden items on the View tab in Windows 10.',
-            'Two warnings: leave system files like pagefile.sys and hiberfil.sys alone, and never delete anything inside the Windows folder — the operating system needs them. Also know this method\'s limits: searching unindexed drives can be slow, and the output is a flat list that doesn\'t show which folders are bloated.',
+            "Open File Explorer and select This PC, or the C: drive directly, so the search covers everything. Click the search box in the top right and type size: — Windows suggests preset filters: Empty (0 KB), Tiny (up to 16 KB), Small (16 KB to 1 MB), Medium (1 to 128 MB), Large (128 MB to 1 GB), Huge (1 to 4 GB), and Gigantic (over 4 GB). For the quickest win, run the size:gigantic search in File Explorer to list everything above 4 GB.",
+            "If the presets don't fit, type your own threshold, such as size:>500MB or size:>1GB. Once results load, switch to the Details view and click the Size column to sort largest first. To catch hidden files too, enable View, then Show, then Hidden items on Windows 11, or tick Hidden items on the View tab in Windows 10.",
+            "Two warnings: leave system files like pagefile.sys and hiberfil.sys alone, and never delete anything inside the Windows folder — the operating system needs them. Also know this method's limits: searching unindexed drives can be slow, and the output is a flat list that doesn't show which folders are bloated.",
           ],
         },
         {
-          title: 'Spot Space Hogs Visually with a Treemap',
+          title: "Spot Space Hogs Visually with a Treemap",
           content: [
-            'A treemap draws your entire drive as nested rectangles, where each rectangle\'s area is proportional to the space that file or folder occupies. Giant blocks jump out immediately, and the view answers the question a flat search list can\'t: where in the folder tree does the weight sit? In one glance you see whether it\'s your videos folder or a forgotten backup directory that has ballooned.',
-            'Free treemap utilities have existed for years and genuinely do the job — credit where it\'s due. But many have dated interfaces and can be slow to scan large drives. That\'s fine for technical users, though it adds friction if you just want to see the result and move straight to cleanup.',
-            'Disk Mop\'s Disk Analysis feature scans your drive and renders an interactive treemap: you instantly see which folders take the most space, click into any folder to drill down, and read each item\'s share of the total. The same experience works identically on Windows 10, Windows 11, and macOS.',
+            "A treemap draws your entire drive as nested rectangles, where each rectangle's area is proportional to the space that file or folder occupies. Giant blocks jump out immediately, and the view answers the question a flat search list can't: where in the folder tree does the weight sit? In one glance you see whether it's your videos folder or a forgotten backup directory that has ballooned.",
+            "Free treemap utilities have existed for years and genuinely do the job — credit where it's due. But many have dated interfaces and can be slow to scan large drives. That's fine for technical users, though it adds friction if you just want to see the result and move straight to cleanup.",
+            "Disk Mop's Disk Analysis feature scans your drive and renders an interactive treemap: you instantly see which folders take the most space, click into any folder to drill down, and read each item's share of the total. The same experience works identically on Windows 10, Windows 11, and macOS.",
           ],
         },
         {
-          title: 'Scan for Files Over 500 MB Automatically',
+          title: "Scan for Files Over 500 MB Automatically",
           content: [
-            'Manual searches are snapshots: you have to remember the operator syntax, repeat the search for every drive, and sift the results yourself. An automatic large file scan flips that equation — you define the threshold once, and the tool sweeps the whole disk and delivers the results ready-sorted.',
-            'Disk Mop\'s Large File Finder does exactly this: it detects every file over 500 MB and presents them in a list sorted by size, with each file\'s location shown. Location matters, because you can only judge whether a file is safe to remove once you see where it lives. Combined with the treemap, you get both the overview map and the detailed inventory.',
-            'A practical workflow: run the scan, then review the top ten entries one by one. Most of the reclaimable space is almost always on that first page — old disk images, video files, and forgotten downloads cluster at the top of the list.',
+            "Manual searches are snapshots: you have to remember the operator syntax, repeat the search for every drive, and sift the results yourself. An automatic large file scan flips that equation — you define the threshold once, and the tool sweeps the whole disk and delivers the results ready-sorted.",
+            "Disk Mop's Large File Finder does exactly this: it detects every file over 500 MB and presents them in a list sorted by size, with each file's location shown. Location matters, because you can only judge whether a file is safe to remove once you see where it lives. Combined with the treemap, you get both the overview map and the detailed inventory.",
+            "A practical workflow: run the scan, then review the top ten entries one by one. Most of the reclaimable space is almost always on that first page — old disk images, video files, and forgotten downloads cluster at the top of the list.",
           ],
         },
         {
-          title: 'Decide What to Delete, Move or Archive',
+          title: "Decide What to Delete, Move or Archive",
           content: [
-            'Apply the three-bucket rule to every large file you find. Delete: installers you already ran, old ISO images, expired backups, and obvious copies. Move: video archives and photo collections you want to keep but rarely open belong on an external drive or network storage. Archive: for project folders that are no longer active, right-click and compress them to a ZIP file to shrink them in place.',
-            'The safety rules are simple: never delete files from the Windows folder or from program installation folders, and look up any file name you don\'t recognize before touching it. Remember too that deleted files go to the Recycle Bin and keep occupying disk space until you empty it.',
-            'A surprising share of large files are actually duplicates — two exports of the same video, two backups of the same photo folder. Disk Mop\'s Duplicate Detector compares files by SHA-256 hash, so it safely catches copies whose content is truly identical even when the file names differ.',
+            "Apply the three-bucket rule to every large file you find. Delete: installers you already ran, old ISO images, expired backups, and obvious copies. Move: video archives and photo collections you want to keep but rarely open belong on an external drive or network storage. Archive: for project folders that are no longer active, right-click and compress them to a ZIP file to shrink them in place.",
+            "The safety rules are simple: never delete files from the Windows folder or from program installation folders, and look up any file name you don't recognize before touching it. Remember too that deleted files go to the Recycle Bin and keep occupying disk space until you empty it.",
+            "A surprising share of large files are actually duplicates — two exports of the same video, two backups of the same photo folder. Disk Mop's Duplicate Detector compares files by SHA-256 hash, so it safely catches copies whose content is truly identical even when the file names differ.",
           ],
         },
         {
-          title: 'Keep Large Files Under Control',
+          title: "Keep Large Files Under Control",
           content: [
-            'On most PCs, the number one offender is the Downloads folder: installers, ZIP archives, and videos pile up silently. Make it a habit to sort the folder by size once a month and review the files at the top — this five-minute check stops the disk from quietly filling up again.',
-            'Windows\' built-in Storage Sense (under Settings, System, Storage) can automatically clean temporary files and the Recycle Bin; it\'s a solid baseline and worth keeping enabled. But it never touches your own large files, video archives, or old downloads — those need a recurring scan of their own.',
-            'Disk Mop automates that routine: Scheduled Cleanup sets up weekly or monthly maintenance tasks, and the Downloads Cleaner categorizes the old files in your Downloads folder so you can clear them in bulk. Re-run the large file scan at regular intervals and a full disk will never take you by surprise again.',
+            "On most PCs, the number one offender is the Downloads folder: installers, ZIP archives, and videos pile up silently. Make it a habit to sort the folder by size once a month and review the files at the top — this five-minute check stops the disk from quietly filling up again.",
+            "Windows' built-in Storage Sense (under Settings, System, Storage) can automatically clean temporary files and the Recycle Bin; it's a solid baseline and worth keeping enabled. But it never touches your own large files, video archives, or old downloads — those need a recurring scan of their own.",
+            "Disk Mop automates that routine: Scheduled Cleanup sets up weekly or monthly maintenance tasks, and the Downloads Cleaner categorizes the old files in your Downloads folder so you can clear them in bulk. Re-run the large file scan at regular intervals and a full disk will never take you by surprise again.",
           ],
         },
       ],
       verdict: [
-        'Finding large files on Windows comes down to three layers of skill: a size:gigantic search in File Explorer for a quick check, a treemap analysis for the overall map of your drive, and an automatic scanner for files over 500 MB as your recurring audit. Use all three together and reclaiming tens of gigabytes in a fifteen-minute session is a realistic goal on most PCs.',
-        'Disk Mop packs this entire workflow into one app: the Disk Analysis treemap, the Large File Finder for files over 500 MB, the SHA-256 based Duplicate Detector, and Scheduled Cleanup for maintenance. You can try it free, and a one-time $19.90 lifetime license unlocks everything.',
+        "Finding large files on Windows comes down to three layers of skill: a size:gigantic search in File Explorer for a quick check, a treemap analysis for the overall map of your drive, and an automatic scanner for files over 500 MB as your recurring audit. Use all three together and reclaiming tens of gigabytes in a fifteen-minute session is a realistic goal on most PCs.",
+        "Disk Mop packs this entire workflow into one app: the Disk Analysis treemap, the Large File Finder for files over 500 MB, the SHA-256 based Duplicate Detector, and Scheduled Cleanup for maintenance. You can try it free, and a one-time $19.90 lifetime license unlocks everything.",
       ],
-      ctaText: 'Find your largest files with Disk Mop',
+      ctaText: "Find your largest files with Disk Mop",
     },
     de: {
       title: "Große Dateien unter Windows finden: 3 schnelle Methoden",
       metaDescription:
         "Große Dateien unter Windows 10 und 11 finden: mit Explorer-Größenfiltern, Treemap-Analyse und automatischem 500-MB-Scan Speicherplatz zurückgewinnen.",
-      subtitle: "Vom versteckten size:-Suchoperator bis zur Treemap-Analyse — finden Sie die Speicherfresser in Minuten",
+      subtitle:
+        "Vom versteckten size:-Suchoperator bis zur Treemap-Analyse — finden Sie die Speicherfresser in Minuten",
       intro: [
         "Der schnellste Weg, große Dateien unter Windows 10 und 11 zu finden: Öffnen Sie den Datei-Explorer, wählen Sie Dieser PC und tippen Sie size:gigantic in das Suchfeld — so werden alle Dateien über 4 GB aufgelistet. Für das vollständige Bild zeigt ein Analyse-Tool mit Treemap-Ansicht auf einen Blick, was den Speicherplatz auf Ihrer Festplatte belegt. Beide Methoden dauern keine fünf Minuten, und diese Anleitung führt Sie Schritt für Schritt durch jede davon.",
         "Festplatten füllen sich leise: ein vergessener Videoexport, eine alte VM-Festplatte oder ein Spiel, das Sie längst nicht mehr spielen, kann Dutzende Gigabyte verschlingen. Diese Anleitung ist als Stufenmodell aufgebaut: zuerst die wenig bekannten size:-Suchoperatoren des Datei-Explorers, dann die visuelle Treemap-Analyse und schließlich ein automatischer Scan für alle Dateien über 500 MB. Am Ende wissen Sie, wie Sie jede große Datei aufspüren, die Ihren Speicherplatz belegt, und können sicher entscheiden, was damit geschehen soll.",
@@ -177,7 +182,8 @@ export const findLargeFilesWindows: Article = {
           ],
         },
         {
-          title: "Löschen, verschieben oder archivieren: die richtige Entscheidung",
+          title:
+            "Löschen, verschieben oder archivieren: die richtige Entscheidung",
           content: [
             "Wenden Sie auf jede gefundene Datei die Drei-Körbe-Regel an. Löschen: bereits ausgeführte Installationsprogramme, alte ISO-Abbilder, abgelaufene Backups und offensichtliche Kopien. Verschieben: Videoarchive und Fotosammlungen, die Sie behalten, aber selten öffnen, gehören auf eine externe Festplatte oder ein Netzwerklaufwerk. Archivieren: Nicht mehr aktive Projektordner lassen sich per Rechtsklick in eine ZIP-Datei komprimieren und schrumpfen so an Ort und Stelle.",
             "Die Sicherheitsregeln sind einfach: Löschen Sie nie Dateien aus dem Windows-Ordner oder aus Programmordnern, und recherchieren Sie jeden Dateinamen, den Sie nicht kennen, bevor Sie ihn anfassen. Denken Sie außerdem daran, dass gelöschte Dateien im Papierkorb landen und dort weiter Speicherplatz belegen, bis Sie ihn leeren.",
@@ -200,10 +206,12 @@ export const findLargeFilesWindows: Article = {
       ctaText: "Finden Sie Ihre größten Dateien mit Disk Mop",
     },
     fr: {
-      title: "Trouver les gros fichiers sur Windows 10 et 11 : 3 méthodes rapides",
+      title:
+        "Trouver les gros fichiers sur Windows 10 et 11 : 3 méthodes rapides",
       metaDescription:
         "Trouver les gros fichiers sur Windows 10 et 11 : filtres de taille de l'Explorateur de fichiers, analyse en treemap et scan automatique dès 500 Mo.",
-      subtitle: "Des opérateurs de recherche size: méconnus à l'analyse en treemap : repérez en quelques minutes les fichiers qui dévorent votre disque",
+      subtitle:
+        "Des opérateurs de recherche size: méconnus à l'analyse en treemap : repérez en quelques minutes les fichiers qui dévorent votre disque",
       intro: [
         "Le moyen le plus rapide de trouver les gros fichiers sous Windows 10 et 11 : ouvrez l'Explorateur de fichiers, sélectionnez Ce PC et tapez size:gigantic dans le champ de recherche — la liste affiche alors tous les fichiers de plus de 4 Go. Pour une vue d'ensemble complète, un outil d'analyse de disque doté d'une treemap montre d'un seul coup d'œil ce qui occupe l'espace de votre disque dur. Les deux méthodes prennent moins de cinq minutes, et ce guide vous accompagne pas à pas dans chacune d'elles.",
         "Les disques se remplissent en silence. Un export vidéo oublié, un ancien disque de machine virtuelle ou un jeu auquel vous ne jouez plus peuvent engloutir des dizaines de gigaoctets sans jamais attirer votre attention. Ce guide est construit comme une progression : d'abord les opérateurs de recherche size: méconnus de l'Explorateur de fichiers, puis l'analyse visuelle en treemap, et enfin un scan automatique qui repère tous les fichiers de plus de 500 Mo. À la fin, vous saurez débusquer les gros fichiers qui saturent votre disque et décider en confiance de ce qu'il faut en faire.",
@@ -217,7 +225,8 @@ export const findLargeFilesWindows: Article = {
           ],
         },
         {
-          title: "Utilisez les filtres de taille de l'Explorateur de fichiers (size:gigantic)",
+          title:
+            "Utilisez les filtres de taille de l'Explorateur de fichiers (size:gigantic)",
           content: [
             "Ouvrez l'Explorateur de fichiers et sélectionnez Ce PC, ou directement le lecteur C:, pour que la recherche couvre tout. Cliquez dans le champ de recherche en haut à droite et tapez size: — Windows propose alors des filtres prédéfinis : Vide (0 Ko), Minuscule (jusqu'à 16 Ko), Petit (16 Ko à 1 Mo), Moyen (1 à 128 Mo), Grand (128 Mo à 1 Go), Énorme (1 à 4 Go) et Gigantesque (plus de 4 Go). Pour un résultat immédiat, lancez la recherche size:gigantic afin de lister tout ce qui dépasse 4 Go.",
             "Si les valeurs prédéfinies ne conviennent pas, saisissez votre propre seuil, par exemple size:>500MB ou size:>1GB. Une fois les résultats affichés, basculez en mode Détails et cliquez sur la colonne Taille pour trier du plus grand au plus petit. Pour ne pas passer à côté des fichiers masqués, activez Affichage, puis Afficher, puis Éléments masqués sous Windows 11, ou cochez Éléments masqués dans l'onglet Affichage sous Windows 10.",
@@ -267,7 +276,8 @@ export const findLargeFilesWindows: Article = {
       title: "Cómo encontrar archivos grandes en Windows 10 y 11 rápidamente",
       metaDescription:
         "Cómo encontrar archivos grandes en Windows 10 y 11: filtros de tamaño del Explorador de archivos, análisis treemap y escaneo automático desde 500 MB.",
-      subtitle: "De los operadores de búsqueda size: al análisis en treemap: localiza en minutos los archivos que se comen tu disco",
+      subtitle:
+        "De los operadores de búsqueda size: al análisis en treemap: localiza en minutos los archivos que se comen tu disco",
       intro: [
         "La forma más rápida de encontrar archivos grandes en Windows 10 y 11 es abrir el Explorador de archivos, seleccionar Este equipo y escribir size:gigantic en el cuadro de búsqueda: así aparecen todos los archivos de más de 4 GB. Para una visión más completa, una herramienta de análisis de disco con vista de treemap muestra de un vistazo qué está ocupando el espacio de tu disco duro. Ambos métodos llevan menos de cinco minutos, y esta guía recorre cada uno paso a paso.",
         "Los discos se llenan en silencio. Una exportación de vídeo olvidada, el disco de una máquina virtual antigua o un juego al que ya no juegas pueden tragarse decenas de gigabytes sin que llegues a verlos nunca. Esta guía está planteada como una progresión: primero los poco conocidos operadores de búsqueda size: del Explorador de archivos, después el análisis visual en treemap y, por último, un escaneo automático que detecta todos los archivos de más de 500 MB. Al terminar sabrás localizar los archivos grandes que ocupan tu disco y decidir con criterio qué hacer con cada uno.",
@@ -281,7 +291,8 @@ export const findLargeFilesWindows: Article = {
           ],
         },
         {
-          title: "Usa los filtros de tamaño del Explorador de archivos (size:gigantic)",
+          title:
+            "Usa los filtros de tamaño del Explorador de archivos (size:gigantic)",
           content: [
             "Abre el Explorador de archivos y selecciona Este equipo, o directamente la unidad C:, para que la búsqueda lo abarque todo. Haz clic en el cuadro de búsqueda de la esquina superior derecha y escribe size:; Windows te sugiere filtros predefinidos: Vacío (0 KB), Diminuto (hasta 16 KB), Pequeño (16 KB a 1 MB), Mediano (1 a 128 MB), Grande (128 MB a 1 GB), Enorme (1 a 4 GB) y Gigantesco (más de 4 GB). Para el resultado más rápido, lanza la búsqueda size:gigantic y lista todo lo que supere los 4 GB.",
             "Si los valores predefinidos no te encajan, escribe tu propio umbral, por ejemplo size:>500MB o size:>1GB. Cuando aparezcan los resultados, cambia a la vista Detalles y haz clic en la columna Tamaño para ordenar de mayor a menor. Para no dejar fuera los archivos ocultos, activa Ver, luego Mostrar y luego Elementos ocultos en Windows 11, o marca Elementos ocultos en la pestaña Vista de Windows 10.",
@@ -289,7 +300,8 @@ export const findLargeFilesWindows: Article = {
           ],
         },
         {
-          title: "Detecta visualmente los devoradores de espacio con un treemap",
+          title:
+            "Detecta visualmente los devoradores de espacio con un treemap",
           content: [
             "Un treemap dibuja toda la unidad como rectángulos anidados, donde el área de cada rectángulo es proporcional al espacio que ocupa ese archivo o carpeta. Los bloques enormes saltan a la vista de inmediato, y esta vista responde a la pregunta que una lista de búsqueda plana no puede resolver: ¿en qué punto del árbol de carpetas está el peso? De un solo vistazo ves si lo que se ha desbordado es tu carpeta de vídeos o un directorio de copias de seguridad olvidado.",
             "Existen utilidades de treemap gratuitas desde hace años y cumplen su función, hay que reconocerlo. Pero muchas tienen interfaces anticuadas y analizan con lentitud las unidades grandes. Para un usuario técnico eso no supone un problema, aunque añade fricción si lo único que quieres es ver el resultado y pasar directamente a la limpieza.",
@@ -331,14 +343,16 @@ export const findLargeFilesWindows: Article = {
       title: "Come trovare i file di grandi dimensioni su Windows 10 e 11",
       metaDescription:
         "Come trovare i file di grandi dimensioni su Windows 10 e 11 con i filtri di Esplora file, l'analisi treemap e una scansione automatica sopra i 500 MB.",
-      subtitle: "Dagli operatori di ricerca size: poco noti all'analisi treemap: individua in pochi minuti i file che divorano il disco",
+      subtitle:
+        "Dagli operatori di ricerca size: poco noti all'analisi treemap: individua in pochi minuti i file che divorano il disco",
       intro: [
         "Il modo più rapido per trovare i file di grandi dimensioni su Windows 10 e 11 è aprire Esplora file, selezionare Questo PC e digitare size:gigantic nella casella di ricerca: compaiono così tutti i file oltre i 4 GB. Per un quadro più completo, uno strumento di analisi del disco con vista treemap mostra a colpo d'occhio che cosa sta occupando lo spazio sul disco. Entrambi i metodi richiedono meno di cinque minuti, e questa guida li percorre passo per passo.",
         "I dischi si riempiono in silenzio. Un'esportazione video dimenticata, il disco di una vecchia macchina virtuale o un gioco che non apri più possono divorare decine di gigabyte senza mai finirti davanti agli occhi. Questa guida è costruita come una progressione: prima gli operatori di ricerca size: poco conosciuti di Esplora file, poi l'analisi visiva con la treemap e infine una scansione automatica che intercetta ogni file oltre i 500 MB. Alla fine saprai individuare i file di grandi dimensioni che occupano il disco e decidere con sicurezza che cosa farne.",
       ],
       sections: [
         {
-          title: "Perché i file di grandi dimensioni si nascondono così bene su Windows",
+          title:
+            "Perché i file di grandi dimensioni si nascondono così bene su Windows",
           content: [
             "Esplora file non mostra la dimensione delle cartelle per impostazione predefinita, e l'ordinamento per dimensione funziona solo all'interno della cartella che stai guardando in quel momento. Ecco perché un file da 20 GB sepolto tre cartelle più in basso non ti salta mai all'occhio. In più Windows nasconde i file di sistema e alcune cartelle per impostazione predefinita, quindi una parte dei maggiori divoratori di spazio resta invisibile durante la normale navigazione.",
             "Per un primo controllo veloce apri Impostazioni, poi Sistema, poi Archiviazione. Sia Windows 10 sia Windows 11 suddividono l'unità in categorie come app, file temporanei e documenti. Questa schermata è utile per orientarsi, ma si ferma al livello di categoria: ti dice che altri file occupano 120 GB, non quali file siano. Per vedere uno per uno i file più grandi del PC servono le tre tecniche descritte qui sotto.",
@@ -395,7 +409,8 @@ export const findLargeFilesWindows: Article = {
       title: "Como encontrar arquivos grandes no Windows 10 e 11 rapidamente",
       metaDescription:
         "Como encontrar arquivos grandes no Windows 10 e 11 com os filtros de tamanho do Explorador de Arquivos, a análise treemap e uma varredura automática de 500 MB.",
-      subtitle: "Dos operadores de busca size: pouco conhecidos à análise em treemap: localize em minutos os arquivos que engolem seu disco",
+      subtitle:
+        "Dos operadores de busca size: pouco conhecidos à análise em treemap: localize em minutos os arquivos que engolem seu disco",
       intro: [
         "A maneira mais rápida de encontrar arquivos grandes no Windows 10 e 11 é abrir o Explorador de Arquivos, selecionar Este Computador e digitar size:gigantic na caixa de pesquisa: isso lista todos os arquivos acima de 4 GB. Para um panorama mais completo, uma ferramenta de análise de disco com visualização em treemap mostra num relance o que está ocupando espaço no seu disco. Os dois métodos levam menos de cinco minutos, e este guia percorre cada um passo a passo.",
         "Os discos enchem em silêncio. Uma exportação de vídeo esquecida, o disco de uma máquina virtual antiga ou um jogo que você não abre mais podem engolir dezenas de gigabytes sem nunca aparecer na sua frente. Este guia foi montado como uma progressão: primeiro os operadores de busca size: pouco conhecidos do Explorador de Arquivos, depois a análise visual em treemap e, por fim, uma varredura automática que encontra todo arquivo acima de 500 MB. No final, você saberá localizar os arquivos grandes que ocupam o disco e decidir com segurança o que fazer com cada um.",
@@ -409,7 +424,8 @@ export const findLargeFilesWindows: Article = {
           ],
         },
         {
-          title: "Use os filtros de tamanho do Explorador de Arquivos (size:gigantic)",
+          title:
+            "Use os filtros de tamanho do Explorador de Arquivos (size:gigantic)",
           content: [
             "Abra o Explorador de Arquivos e selecione Este Computador, ou diretamente a unidade C:, para que a busca cubra tudo. Clique na caixa de pesquisa no canto superior direito e digite size:; o Windows sugere filtros prontos: Vazio (0 KB), Minúsculo (até 16 KB), Pequeno (16 KB a 1 MB), Médio (1 a 128 MB), Grande (128 MB a 1 GB), Enorme (1 a 4 GB) e Gigantesco (acima de 4 GB). Para o resultado mais rápido, rode a busca size:gigantic e liste tudo que passa de 4 GB.",
             "Se os valores prontos não servirem, digite seu próprio limite, como size:>500MB ou size:>1GB. Quando os resultados carregarem, mude para o modo Detalhes e clique na coluna Tamanho para ordenar do maior para o menor. Para não deixar de fora os arquivos ocultos, ative Exibir, depois Mostrar, depois Itens ocultos no Windows 11, ou marque Itens ocultos na guia Exibir do Windows 10.",
@@ -459,7 +475,8 @@ export const findLargeFilesWindows: Article = {
       title: "Windowsで大きいファイルを探す3つの方法｜Windows 10/11対応",
       metaDescription:
         "Windows 10/11で大きいファイルを見つける方法。エクスプローラーのサイズ フィルター、ツリーマップ分析、500 MB超の自動スキャンを使い、容量を圧迫しているファイルを数分で特定して空き容量を取り戻します。",
-      subtitle: "エクスプローラーの隠れたsize:検索からツリーマップ分析まで — ディスクを圧迫しているファイルを数分で突き止める",
+      subtitle:
+        "エクスプローラーの隠れたsize:検索からツリーマップ分析まで — ディスクを圧迫しているファイルを数分で突き止める",
       intro: [
         "Windows 10/11で大きいファイルをいちばん早く見つける方法は、エクスプローラーを開いて「PC」を選び、検索ボックスに size:gigantic と入力することです。これだけで4 GBを超えるファイルがすべて一覧表示されます。全体像をつかみたいときは、ツリーマップ表示に対応したディスク分析ツールを使えば、ハードディスクの容量を何が占めているのかがひと目で分かります。どちらの方法も5分とかかりません。この記事では、その手順をひとつずつ順を追って説明します。",
         "ディスクは静かに埋まっていきます。書き出したまま忘れた動画、古い仮想マシンのディスク、もう遊ばなくなったゲーム。こうしたファイルは、目に触れないまま数十ギガバイトを飲み込みます。この記事は段階を追って進む構成です。まずエクスプローラーのあまり知られていない size: 検索演算子、次に視覚的なツリーマップ分析、最後に500 MBを超えるファイルをすべて拾い出す自動スキャン。読み終えるころには、ディスクを圧迫している大きいファイルを見つけ出し、それぞれをどうするか自信を持って判断できるようになります。",

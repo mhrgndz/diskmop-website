@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { useReducedMotion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useReducedMotion } from "framer-motion";
+import { Check } from "lucide-react";
 
 /**
  * D — Plaka ve döküm. A ile B'nin birleşimi, ama yan yana yapıştırılmış iki
@@ -26,13 +26,13 @@ interface JunkFile {
   to: number;
 }
 
-const RAW: Array<Omit<JunkFile, 'from' | 'to'>> = [
-  { name: 'Temp\\chrome_cache', gb: 12, color: '#f59e0b' },
-  { name: 'IMG_2841 (2).jpg', gb: 6, color: '#8b5cf6' },
-  { name: 'node_modules.old', gb: 9, color: '#14b8a6' },
-  { name: 'setup_v3.exe', gb: 4, color: '#f43f5e' },
-  { name: 'Ekran Kaydı 12.mp4', gb: 8, color: '#8b5cf6' },
-  { name: 'update.log', gb: 8, color: '#f59e0b' },
+const RAW: Array<Omit<JunkFile, "from" | "to">> = [
+  { name: "Temp\\chrome_cache", gb: 12, color: "#f59e0b" },
+  { name: "IMG_2841 (2).jpg", gb: 6, color: "#8b5cf6" },
+  { name: "node_modules.old", gb: 9, color: "#14b8a6" },
+  { name: "setup_v3.exe", gb: 4, color: "#f43f5e" },
+  { name: "Ekran Kaydı 12.mp4", gb: 8, color: "#8b5cf6" },
+  { name: "update.log", gb: 8, color: "#f59e0b" },
 ];
 
 const TOTAL_GB = RAW.reduce((s, f) => s + f.gb, 0);
@@ -48,7 +48,7 @@ const FILES: JunkFile[] = (() => {
   });
 })();
 
-const KEEP = { from: 0, to: JUNK_FROM, color: '#2563eb' };
+const KEEP = { from: 0, to: JUNK_FROM, color: "#2563eb" };
 
 const REFILL_MS = 500;
 const SWEEP_MS = 6200;
@@ -66,7 +66,7 @@ function arcDash(from: number, to: number) {
 }
 
 export function PlatterManifest() {
-  const t = useTranslations('heroVisual');
+  const t = useTranslations("heroVisual");
   const reduceMotion = useReducedMotion();
   const [elapsed, setElapsed] = useState(reduceMotion ? SWEEP_MS : 0);
   const frameRef = useRef<number | null>(null);
@@ -104,7 +104,7 @@ export function PlatterManifest() {
     <div className="w-full">
       <figure
         className="rounded-3xl border border-border bg-muted p-7 sm:p-9"
-        aria-label={t('aria', { gb: TOTAL_GB })}
+        aria-label={t("aria", { gb: TOTAL_GB })}
       >
         <div className="flex flex-col items-center gap-7 sm:flex-row sm:items-center sm:gap-9">
           {/* Plaka */}
@@ -177,7 +177,14 @@ export function PlatterManifest() {
 
               {!reduceMotion && sweeping && (
                 <g transform={`rotate(${arm} 100 100)`}>
-                  <line x1="100" y1="58" x2="100" y2="18" stroke="url(#dm-arm-d)" strokeWidth="2" />
+                  <line
+                    x1="100"
+                    y1="58"
+                    x2="100"
+                    y2="18"
+                    stroke="url(#dm-arm-d)"
+                    strokeWidth="2"
+                  />
                   <circle cx="100" cy="20" r="8" fill="#60a5fa" opacity="0.2" />
                   <circle cx="100" cy="20" r="3.5" fill="#3b82f6" />
                 </g>
@@ -189,10 +196,12 @@ export function PlatterManifest() {
                 <span className="text-5xl font-bold tabular-nums tracking-tight text-foreground lg:text-6xl">
                   {Math.round(freed)}
                 </span>
-                <span className="text-xl font-semibold text-muted-foreground">GB</span>
+                <span className="text-xl font-semibold text-muted-foreground">
+                  GB
+                </span>
               </div>
               <span className="mt-1 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-                {t('freed')}
+                {t("freed")}
               </span>
             </div>
           </div>
@@ -200,7 +209,7 @@ export function PlatterManifest() {
           {/* Döküm — kol bir dilimi bitirdikçe satır düşer */}
           <div className="w-full min-w-0 flex-1">
             <span className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-              {t('cleaned')}
+              {t("cleaned")}
             </span>
             {/* Satırlar baştan durur, kol dilimi bitirince yanar. Böylece panel hep
                 dolu görünür ve neyin sırada olduğu da okunur. */}
@@ -225,7 +234,7 @@ export function PlatterManifest() {
                     </span>
                     <span
                       className={`truncate font-mono text-[13px] ${
-                        done ? 'text-foreground' : 'text-muted-foreground'
+                        done ? "text-foreground" : "text-muted-foreground"
                       }`}
                     >
                       {f.name}

@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 
 // Tanıtım videoları uygulamadan demo veriyle, 8 dilde kaydedildi (1280×688).
 // Demo modu: diskmop-app src/main/demo (DISKMOP_DEMO=1 npm run dev).
 // Aynı dosyaları hem özellikler ızgarası hem tanıtım sekmeleri kullanır.
 export const SHOWCASE_VIDEO_W = 1280;
 export const SHOWCASE_VIDEO_H = 688;
-export const showcaseVideoSrc = (id: string, locale: string) => `/videos/${id}/${locale}.mp4`;
-export const showcasePosterSrc = (id: string, locale: string) => `/videos/${id}/${locale}.webp`;
+export const showcaseVideoSrc = (id: string, locale: string) =>
+  `/videos/${id}/${locale}.mp4`;
+export const showcasePosterSrc = (id: string, locale: string) =>
+  `/videos/${id}/${locale}.webp`;
 
 interface ShowcaseVideoProps {
   src: string;
@@ -35,7 +37,14 @@ interface ShowcaseVideoProps {
  * yalnız kapak (WebP) gösterilir. "Hareketi azalt" tercihi olan ziyaretçiye
  * video kendiliğinden oynatılmaz, kapak ve oynatma düğmesi gösterilir.
  */
-export function ShowcaseVideo({ src, poster, label, width, height, lazy = false }: ShowcaseVideoProps) {
+export function ShowcaseVideo({
+  src,
+  poster,
+  label,
+  width,
+  height,
+  lazy = false,
+}: ShowcaseVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const placeholderRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
@@ -53,7 +62,7 @@ export function ShowcaseVideo({ src, poster, label, width, height, lazy = false 
           observer.disconnect();
         }
       },
-      { rootMargin: '300px' }
+      { rootMargin: "300px" },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -77,7 +86,7 @@ export function ShowcaseVideo({ src, poster, label, width, height, lazy = false 
           video.pause();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.35 },
     );
     observer.observe(video);
     return () => observer.disconnect();
@@ -96,7 +105,15 @@ export function ShowcaseVideo({ src, poster, label, width, height, lazy = false 
 
   if (failed) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={poster} alt={label} width={width} height={height} className="w-full h-auto" />;
+    return (
+      <img
+        src={poster}
+        alt={label}
+        width={width}
+        height={height}
+        className="w-full h-auto"
+      />
+    );
   }
 
   return (

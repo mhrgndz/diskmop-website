@@ -1,8 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+
+import { trackCheckout } from "@/lib/analytics";
 
 const features = [
   "features.0",
@@ -17,9 +20,40 @@ const features = [
 
 export function Pricing() {
   const t = useTranslations("pricing");
+  const locale = useLocale();
 
-  const checkoutUrl =
-    "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq?discount_code=WELCOME25";
+  const [pricing, setPricing] = useState({
+    discountedPrice: 14.9,
+    originalPrice: 19.9,
+    discountPercent: 25,
+    hasDiscount: true,
+    currencySymbol: "$",
+    checkoutUrl:
+      "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq?discount_code=WELCOME25",
+  });
+
+  useEffect(() => {
+    fetch("https://api.diskmop.com/api/pricing")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && (data.checkoutUrl || data.originalPrice)) {
+          const original = data.originalPrice ?? 19.9;
+          const discounted = data.discountedPrice ?? original;
+          const percent = data.discountPercent ?? 0;
+          setPricing({
+            discountedPrice: discounted,
+            originalPrice: original,
+            discountPercent: percent,
+            hasDiscount: discounted < original && percent > 0,
+            currencySymbol: data.currencySymbol ?? "$",
+            checkoutUrl:
+              data.checkoutUrl ||
+              "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq",
+          });
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <section id="pricing" className="py-24">
@@ -62,14 +96,20 @@ export function Pricing() {
             <div className="mt-6">
               <div className="flex items-baseline gap-3">
                 <span className="text-5xl font-black text-foreground">
-                  $14.90
+                  {pricing.currencySymbol}
+                  {pricing.discountedPrice.toFixed(2)}
                 </span>
-                <span className="text-xl text-muted-foreground line-through font-semibold">
-                  $19.90
-                </span>
-                <span className="text-xs font-bold bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 px-2.5 py-1 rounded-full">
-                  25% OFF
-                </span>
+                {pricing.hasDiscount && (
+                  <span className="text-xl text-muted-foreground line-through font-semibold">
+                    {pricing.currencySymbol}
+                    {pricing.originalPrice.toFixed(2)}
+                  </span>
+                )}
+                {pricing.hasDiscount && (
+                  <span className="text-xs font-bold bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 px-2.5 py-1 rounded-full">
+                    {pricing.discountPercent}% OFF
+                  </span>
+                )}
               </div>
               <p className="mt-2 text-muted-foreground text-sm">
                 {t("plan.period")}
@@ -88,7 +128,8 @@ export function Pricing() {
 
             {/* CTA */}
             <a
-              href={checkoutUrl}
+              href={`/buy?lang=${locale}`}
+              onClick={() => trackCheckout("pricing")}
               className="mt-8 block w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl py-4 text-lg font-semibold shadow-lg shadow-brand-600/25 text-center transition-colors"
             >
               {t("plan.cta")}

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 /**
  * İndirme/kurulum istatistikleri paneli. Sayfanın kendisi client bileşeni
@@ -10,11 +10,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 };
 
-export default function MyAdminLayout({ children }: { children: React.ReactNode }) {
+export default function MyAdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       {/* Panel koyu; sayfanın dışında kalan alan (esneme, taşma) beyaz görünmesin. */}
-      <style>{'body{background-color:#09090b}'}</style>
+      <style>{"body{background-color:#09090b}"}</style>
       {children}
     </>
   );

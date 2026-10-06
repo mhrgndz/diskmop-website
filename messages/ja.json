@@ -11,7 +11,11 @@
       "キャッシュ 削除",
       "Windows ディスク クリーンアップ",
       "Mac ストレージ 整理"
-    ]
+    ],
+    "loginTitle": "Sign in — Disk Mop",
+    "loginDescription": "Sign in with your email and a one-time code to view your Disk Mop licenses and devices.",
+    "accountTitle": "Your account — Disk Mop",
+    "accountDescription": "Your Disk Mop Pro licenses, devices and purchases."
   },
   "nav": {
     "features": "機能",
@@ -19,7 +23,9 @@
     "faq": "よくある質問",
     "blog": "ブログ",
     "tools": "ツール",
-    "download": "ダウンロード"
+    "download": "ダウンロード",
+    "signIn": "Sign in",
+    "account": "My account"
   },
   "hero": {
     "badge": "✨ Disk Mop for Windows & macOS",
@@ -672,5 +678,59 @@
     "faqA2": "Windows更新プログラムの残骸（WinSxS）、ブラウザキャッシュ、Steamシェーダー事前キャッシュ、孤立したAppDataフォルダー、通信アプリのメディアが最大80%を占めます。",
     "faqQ3": "Disk Mopでのクリーンアップは安全ですか？",
     "faqA3": "はい。Disk Mopは完全ローカルで動作し、個人データを収集しません。安全に再生成可能なキャッシュのみを対象とします。無料の3回削除機能で実際にお試しいただけます。"
+  },
+  "login": {
+    "title": "Sign in to Disk Mop",
+    "subtitle": "Enter your email and we'll send you a 6-digit code. There is no password. If you are new, the same code creates your account.",
+    "buyContext": "Sign in first, then you will continue to the payment page.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Send login code",
+    "sending": "Sending...",
+    "codeTitle": "Check your inbox",
+    "codeSent": "We sent a 6-digit code to {email}. It expires in 10 minutes.",
+    "codeLabel": "6-digit code",
+    "verify": "Sign in",
+    "verifying": "Signing in...",
+    "resend": "Resend code",
+    "resent": "A new code has been sent.",
+    "otherEmail": "Use a different email",
+    "errors": {
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidCode": "Invalid or expired code. Please try again.",
+      "tooMany": "Too many attempts. Please wait a few minutes.",
+      "mailFailed": "Could not send the email. Please try again later.",
+      "generic": "An error occurred. Please try again."
+    }
+  },
+  "account": {
+    "title": "Your Account",
+    "signedInAs": "Signed in as {email}",
+    "signOut": "Sign out",
+    "licensesTitle": "Licenses",
+    "licensesEmpty": "You don't have a license yet. Disk Mop Pro gives you lifetime access and unlocks all features.",
+    "buyFirst": "Get Disk Mop Pro",
+    "buyMore": "Buy another license",
+    "keyLabel": "License key",
+    "copy": "Copy key",
+    "copied": "Copied",
+    "statusActive": "Active",
+    "statusRevoked": "Revoked",
+    "activeDevice": "Active device",
+    "unnamedDevice": "Device",
+    "activatedAt": "Activated on {date}",
+    "noDevice": "Not activated on any device yet",
+    "activateHint": "Open Disk Mop on your PC or Mac, go to Settings > License, enter this key and click Activate.",
+    "removeDevice": "Remove device",
+    "removingDevice": "Removing...",
+    "removeConfirm": "Remove this device from the license? The app on it will return to the free version and you will be able to use the license on another computer.",
+    "removedDone": "Device removed successfully.",
+    "removeError": "Could not remove device. Please try again.",
+    "ordersTitle": "Order History",
+    "ordersEmpty": "No purchase history found.",
+    "orderDate": "Date",
+    "orderQty": "Qty",
+    "orderTotal": "Total",
+    "orderStatus": "Status"
   }
 }

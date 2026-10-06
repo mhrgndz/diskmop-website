@@ -10,7 +10,7 @@ export interface ComparisonRow {
   feature: Record<string, string>;
   diskmop: LocalizedText;
   competitor: LocalizedText;
-  winner: 'diskmop' | 'competitor' | 'tie';
+  winner: "diskmop" | "competitor" | "tie";
 }
 
 export interface ArticleSection {
@@ -82,7 +82,7 @@ export type GuideContent = BaseContent;
 
 export interface Article {
   slug: string;
-  type?: 'comparison' | 'guide';
+  type?: "comparison" | "guide";
   category?: string;
   date: string;
   /** Son guncelleme. AI motorlari tazeligi sinyal olarak kullanir. */

@@ -1,10 +1,10 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const windowsUpdateNotEnoughSpace: Article = {
-  slug: 'windows-update-not-enough-space',
-  type: 'guide',
-  category: 'Windows Tips',
-  date: '2026-08-17',
+  slug: "windows-update-not-enough-space",
+  type: "guide",
+  category: "Windows Tips",
+  date: "2026-08-17",
   readingTime: 8,
   content: {
     tr: {
@@ -13,12 +13,12 @@ export const windowsUpdateNotEnoughSpace: Article = {
         "Windows güncellemesi 0x80070070 hatası veriyor veya yeterli alan olmadığını söylüyorsa: ne kadar alan gerektiği, nereden açılacağı ve Ayrılmış Depolama'nın rolü.",
       subtitle: "20 GB'ı Nereden Bulacaksınız?",
       intro: [
-        "Kısa cevap: Windows 11 özellik güncellemeleri sistem diskinde yaklaşık 20 GB boş alan ister. En hızlı yol, Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından \"Windows Update temizliği\" ve \"Önceki Windows kurulumları\" kutularını işaretleyip temizlemektir; bu genellikle tek başına 10-25 GB kazandırır. Yetmezse SoftwareDistribution indirme klasörünü boşaltın ve DISM ile bileşen deposunu temizleyin.",
-        "0x80070070 hata kodu veya \"Windows'u yüklemek için daha fazla alana ihtiyaç var\" mesajı, güncellemenin başlayamadığı anlamına gelir. İyi haber, bu hatanın nedeninin neredeyse her zaman geçici dosyalar olmasıdır: eski güncelleme paketleri, önceki Windows kurulumu ve yarım kalmış indirmeler. Bu rehberde alanı sırayla nereden açacağınızı, hangi adımın ne kadar kazandırdığını ve tekrar yaşamamak için ne yapmanız gerektiğini anlatıyoruz.",
+        'Kısa cevap: Windows 11 özellik güncellemeleri sistem diskinde yaklaşık 20 GB boş alan ister. En hızlı yol, Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından "Windows Update temizliği" ve "Önceki Windows kurulumları" kutularını işaretleyip temizlemektir; bu genellikle tek başına 10-25 GB kazandırır. Yetmezse SoftwareDistribution indirme klasörünü boşaltın ve DISM ile bileşen deposunu temizleyin.',
+        '0x80070070 hata kodu veya "Windows\'u yüklemek için daha fazla alana ihtiyaç var" mesajı, güncellemenin başlayamadığı anlamına gelir. İyi haber, bu hatanın nedeninin neredeyse her zaman geçici dosyalar olmasıdır: eski güncelleme paketleri, önceki Windows kurulumu ve yarım kalmış indirmeler. Bu rehberde alanı sırayla nereden açacağınızı, hangi adımın ne kadar kazandırdığını ve tekrar yaşamamak için ne yapmanız gerektiğini anlatıyoruz.',
       ],
       keyTakeaways: [
         "Windows 11 özellik güncellemeleri sistem diskinde yaklaşık 20 GB boş alan gerektirir.",
-        "En yüksek kazanç genellikle \"Windows Update temizliği\" ve \"Önceki Windows kurulumları\" seçeneklerindedir — birlikte 10-25 GB.",
+        'En yüksek kazanç genellikle "Windows Update temizliği" ve "Önceki Windows kurulumları" seçeneklerindedir — birlikte 10-25 GB.',
         "SoftwareDistribution\\Download klasörü güvenle boşaltılabilir; Windows gereken paketleri yeniden indirir.",
         "DISM /Online /Cleanup-Image /StartComponentCleanup bileşen deposunu güvenli biçimde küçültür; WinSxS'i elle silmek ise sistemi bozar.",
         "Ayrılmış Depolama (Reserved Storage) güncellemeler için yaklaşık 7 GB tutar ve kapatılabilir, ancak bu sorunu ertelemekten öte bir şey yapmaz.",
@@ -34,7 +34,7 @@ export const windowsUpdateNotEnoughSpace: Article = {
           },
           {
             name: "Geçici dosya temizliğini çalıştırın",
-            text: "Ayarlar > Sistem > Depolama > Geçici dosyalar yolunu izleyin. Listede \"Windows Update temizliği\", \"Önceki Windows kurulumları\", \"Teslimat Optimizasyonu dosyaları\" ve \"Geçici dosyalar\" kutularını işaretleyip Dosyaları kaldır'a tıklayın.",
+            text: 'Ayarlar > Sistem > Depolama > Geçici dosyalar yolunu izleyin. Listede "Windows Update temizliği", "Önceki Windows kurulumları", "Teslimat Optimizasyonu dosyaları" ve "Geçici dosyalar" kutularını işaretleyip Dosyaları kaldır\'a tıklayın.',
           },
           {
             name: "Windows Update indirme klasörünü boşaltın",
@@ -60,15 +60,15 @@ export const windowsUpdateNotEnoughSpace: Article = {
           content: [
             "Bir özellik güncellemesi yalnızca indirilen paketin boyutu kadar yer istemez. Windows önce paketi indirir, sonra onu geçici bir alana açar, yeni sistem dosyalarını yerleştirir ve bu sırada eski sürümü geri dönüş için saklar. Üç kopya bir süre aynı anda diskte durur.",
             "Bu yüzden 4 GB'lık bir güncelleme paketi 20 GB boş alan isteyebilir. Kurulum tamamlandıktan sonra bu alanın çoğu serbest bırakılır ama Windows.old klasörü 10 gün boyunca durmaya devam eder.",
-            "Aylık güvenlik güncellemeleri çok daha mütevazıdır, genellikle birkaç yüz megabayt ile birkaç gigabayt arasında yer ister. \"Yeterli alan yok\" hatası neredeyse her zaman büyük sürüm güncellemelerinde karşınıza çıkar.",
+            'Aylık güvenlik güncellemeleri çok daha mütevazıdır, genellikle birkaç yüz megabayt ile birkaç gigabayt arasında yer ister. "Yeterli alan yok" hatası neredeyse her zaman büyük sürüm güncellemelerinde karşınıza çıkar.',
           ],
         },
         {
           title: "En Çok Kazandıran Adım: Windows Update Temizliği",
           content: [
-            "Ayarlar > Sistem > Depolama > Geçici dosyalar ekranı, çoğu kullanıcının hiç bakmadığı ama en büyük kazancı barındıran yerdir. Listedeki \"Windows Update temizliği\" girdisi, kurulduktan sonra artık gerekmeyen eski güncelleme dosyalarını içerir ve tek başına 5-10 GB'ı bulabilir.",
-            "\"Önceki Windows kurulumları\" satırı ise Windows.old klasörüdür ve genellikle 15-30 GB tutar. Bunu temizlemek, bir önceki Windows sürümüne geri dönme hakkınızı kaybetmeniz anlamına gelir; mevcut sürümde sorun yaşamıyorsanız güvenle işaretleyebilirsiniz.",
-            "Aynı listede \"Teslimat Optimizasyonu dosyaları\" (diğer bilgisayarlarla paylaşılan güncelleme parçaları) ve klasik \"Geçici dosyalar\" da bulunur. Dördünü birlikte işaretlemek çoğu makinede gereken 20 GB'ın tamamını karşılar.",
+            'Ayarlar > Sistem > Depolama > Geçici dosyalar ekranı, çoğu kullanıcının hiç bakmadığı ama en büyük kazancı barındıran yerdir. Listedeki "Windows Update temizliği" girdisi, kurulduktan sonra artık gerekmeyen eski güncelleme dosyalarını içerir ve tek başına 5-10 GB\'ı bulabilir.',
+            '"Önceki Windows kurulumları" satırı ise Windows.old klasörüdür ve genellikle 15-30 GB tutar. Bunu temizlemek, bir önceki Windows sürümüne geri dönme hakkınızı kaybetmeniz anlamına gelir; mevcut sürümde sorun yaşamıyorsanız güvenle işaretleyebilirsiniz.',
+            'Aynı listede "Teslimat Optimizasyonu dosyaları" (diğer bilgisayarlarla paylaşılan güncelleme parçaları) ve klasik "Geçici dosyalar" da bulunur. Dördünü birlikte işaretlemek çoğu makinede gereken 20 GB\'ın tamamını karşılar.',
           ],
         },
         {
@@ -125,11 +125,11 @@ export const windowsUpdateNotEnoughSpace: Article = {
         {
           question: "Güncelleme sonrası Windows.old klasörünü silebilir miyim?",
           answer:
-            "Evet. Windows.old yalnızca ilk 10 gün içinde önceki sürüme dönmenizi sağlar ve zaten 10 gün sonra otomatik silinir. Yeni sürümde sorun yaşamıyorsanız Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından \"Önceki Windows kurulumları\" seçeneğiyle hemen kaldırabilir, 15-30 GB kazanabilirsiniz.",
+            'Evet. Windows.old yalnızca ilk 10 gün içinde önceki sürüme dönmenizi sağlar ve zaten 10 gün sonra otomatik silinir. Yeni sürümde sorun yaşamıyorsanız Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından "Önceki Windows kurulumları" seçeneğiyle hemen kaldırabilir, 15-30 GB kazanabilirsiniz.',
         },
       ],
       verdict: [
-        "\"Yeterli disk alanı yok\" hatasının çözümü sıralıdır: önce Geçici dosyalar ekranından Windows Update temizliği ve önceki Windows kurulumlarını kaldırın, sonra SoftwareDistribution indirme klasörünü boşaltın, gerekirse DISM ile bileşen deposunu temizleyin. Bu üç adım çoğu makinede gereken 20 GB'ı fazlasıyla karşılar.",
+        '"Yeterli disk alanı yok" hatasının çözümü sıralıdır: önce Geçici dosyalar ekranından Windows Update temizliği ve önceki Windows kurulumlarını kaldırın, sonra SoftwareDistribution indirme klasörünü boşaltın, gerekirse DISM ile bileşen deposunu temizleyin. Bu üç adım çoğu makinede gereken 20 GB\'ı fazlasıyla karşılar.',
         "Ayrılmış Depolama'yı kapatmak ve harici USB kullanmak işe yarar ama ikisi de sorunu ertelemekten ibarettir. Diskiniz her güncellemede sınırda kalıyorsa asıl mesele kalıcı doluluktur.",
         "Kalıcı çözüm, sistem diskinde 20 GB'lık bir tamponu sürekli korumaktır. Depolama Alanı Algılayıcısı'nı açın, temizliği zamanlanmış bir göreve bağlayın ve alanın nereye gittiğini ara ara kontrol edin.",
       ],
@@ -141,12 +141,12 @@ export const windowsUpdateNotEnoughSpace: Article = {
         "If Windows Update fails with 0x80070070 or says it needs more space: how much is actually required, where to reclaim it, and what Reserved Storage has to do with it.",
       subtitle: "Where to Find the 20 GB",
       intro: [
-        "Short answer: Windows 11 feature updates need roughly 20 GB free on the system drive. The fastest route is Settings > System > Storage > Temporary files, where ticking \"Windows Update Cleanup\" and \"Previous Windows installation(s)\" typically reclaims 10-25 GB on its own. If that is not enough, clear the SoftwareDistribution download folder and run a DISM component store cleanup.",
+        'Short answer: Windows 11 feature updates need roughly 20 GB free on the system drive. The fastest route is Settings > System > Storage > Temporary files, where ticking "Windows Update Cleanup" and "Previous Windows installation(s)" typically reclaims 10-25 GB on its own. If that is not enough, clear the SoftwareDistribution download folder and run a DISM component store cleanup.',
         "The error code 0x80070070, or the message that Windows needs more space to install, means the update never got started. The good news is that the cause is almost always temporary data: old update packages, the previous Windows installation and abandoned downloads. This guide walks through where to reclaim space in order, how much each step typically returns, and what to change so it does not happen again.",
       ],
       keyTakeaways: [
         "Windows 11 feature updates require roughly 20 GB of free space on the system drive.",
-        "The biggest single win is usually \"Windows Update Cleanup\" plus \"Previous Windows installation(s)\" — together 10-25 GB.",
+        'The biggest single win is usually "Windows Update Cleanup" plus "Previous Windows installation(s)" — together 10-25 GB.',
         "The SoftwareDistribution\\Download folder can be emptied safely; Windows re-downloads whatever it still needs.",
         "DISM /Online /Cleanup-Image /StartComponentCleanup shrinks the component store safely, whereas deleting WinSxS by hand breaks the system.",
         "Reserved Storage holds about 7 GB for updates and can be disabled, but doing so only postpones the problem.",
@@ -162,7 +162,7 @@ export const windowsUpdateNotEnoughSpace: Article = {
           },
           {
             name: "Run the temporary files cleanup",
-            text: "Go to Settings > System > Storage > Temporary files. Tick \"Windows Update Cleanup\", \"Previous Windows installation(s)\", \"Delivery Optimization Files\" and \"Temporary files\", then click Remove files.",
+            text: 'Go to Settings > System > Storage > Temporary files. Tick "Windows Update Cleanup", "Previous Windows installation(s)", "Delivery Optimization Files" and "Temporary files", then click Remove files.',
           },
           {
             name: "Empty the Windows Update download folder",
@@ -188,15 +188,15 @@ export const windowsUpdateNotEnoughSpace: Article = {
           content: [
             "A feature update does not need only as much space as the package it downloads. Windows first downloads the package, then expands it into a working area, installs the new system files, and keeps the previous version for rollback throughout. Three copies coexist on the disk for a while.",
             "That is why a 4 GB update package can demand 20 GB of free space. Most of it is released once installation completes, but the Windows.old folder stays behind for 10 days.",
-            "Monthly security updates are far more modest, typically wanting a few hundred megabytes to a few gigabytes. The \"not enough space\" error almost always appears on major version updates rather than routine patches.",
+            'Monthly security updates are far more modest, typically wanting a few hundred megabytes to a few gigabytes. The "not enough space" error almost always appears on major version updates rather than routine patches.',
           ],
         },
         {
           title: "The Biggest Win: Windows Update Cleanup",
           content: [
-            "Settings > System > Storage > Temporary files is the screen most users never open, and it holds the largest single win. The \"Windows Update Cleanup\" entry contains old update files that are no longer needed once installed, and it alone can reach 5-10 GB.",
-            "\"Previous Windows installation(s)\" is the Windows.old folder and typically holds 15-30 GB. Clearing it means giving up the ability to roll back to your previous Windows version; if the current version is running fine, you can tick it safely.",
-            "The same list includes \"Delivery Optimization Files\" (update fragments shared with other PCs) and the classic \"Temporary files\". Ticking all four together covers the full 20 GB requirement on most machines.",
+            'Settings > System > Storage > Temporary files is the screen most users never open, and it holds the largest single win. The "Windows Update Cleanup" entry contains old update files that are no longer needed once installed, and it alone can reach 5-10 GB.',
+            '"Previous Windows installation(s)" is the Windows.old folder and typically holds 15-30 GB. Clearing it means giving up the ability to roll back to your previous Windows version; if the current version is running fine, you can tick it safely.',
+            'The same list includes "Delivery Optimization Files" (update fragments shared with other PCs) and the classic "Temporary files". Ticking all four together covers the full 20 GB requirement on most machines.',
           ],
         },
         {
@@ -253,28 +253,29 @@ export const windowsUpdateNotEnoughSpace: Article = {
         {
           question: "Can I delete Windows.old after the update?",
           answer:
-            "Yes. Windows.old only lets you roll back to the previous version within 10 days, and it is deleted automatically after that period. If the new version is working fine, remove it immediately via Settings > System > Storage > Temporary files by ticking \"Previous Windows installation(s)\" and reclaim 15-30 GB.",
+            'Yes. Windows.old only lets you roll back to the previous version within 10 days, and it is deleted automatically after that period. If the new version is working fine, remove it immediately via Settings > System > Storage > Temporary files by ticking "Previous Windows installation(s)" and reclaim 15-30 GB.',
         },
       ],
       verdict: [
-        "The fix for \"not enough disk space\" follows a clear order: clear Windows Update Cleanup and previous Windows installations from the Temporary files screen, then empty the SoftwareDistribution download folder, then run a DISM component store cleanup if needed. Those three steps cover the required 20 GB on most machines with room to spare.",
+        'The fix for "not enough disk space" follows a clear order: clear Windows Update Cleanup and previous Windows installations from the Temporary files screen, then empty the SoftwareDistribution download folder, then run a DISM component store cleanup if needed. Those three steps cover the required 20 GB on most machines with room to spare.',
         "Disabling Reserved Storage and using an external USB drive both work, but both only postpone the problem. If your drive is on the edge at every update, the real issue is permanent fullness.",
         "The durable answer is maintaining a 20 GB buffer on the system drive at all times. Turn on Storage Sense, put cleanup on a schedule, and check where the space is going from time to time.",
       ],
       ctaText: "Make Room Before the Next Update",
     },
     de: {
-      title: "Windows Update meldet zu wenig Speicherplatz: die dauerhafte Lösung",
+      title:
+        "Windows Update meldet zu wenig Speicherplatz: die dauerhafte Lösung",
       metaDescription:
         "Wenn Windows Update mit 0x80070070 scheitert oder mehr Platz verlangt: Wie viel wirklich nötig ist, woher Sie ihn nehmen und welche Rolle der reservierte Speicher spielt.",
       subtitle: "Woher die 20 GB kommen",
       intro: [
-        "Kurze Antwort: Funktionsupdates von Windows 11 benötigen rund 20 GB freien Speicher auf dem Systemlaufwerk. Der schnellste Weg führt über Einstellungen > System > Speicher > Temporäre Dateien: Dort die Punkte \"Bereinigung von Windows Update\" und \"Vorherige Windows-Installationen\" ankreuzen — das bringt meist schon 10-25 GB. Reicht das nicht, leeren Sie den Download-Ordner von SoftwareDistribution und bereinigen Sie den Komponentenspeicher mit DISM.",
+        'Kurze Antwort: Funktionsupdates von Windows 11 benötigen rund 20 GB freien Speicher auf dem Systemlaufwerk. Der schnellste Weg führt über Einstellungen > System > Speicher > Temporäre Dateien: Dort die Punkte "Bereinigung von Windows Update" und "Vorherige Windows-Installationen" ankreuzen — das bringt meist schon 10-25 GB. Reicht das nicht, leeren Sie den Download-Ordner von SoftwareDistribution und bereinigen Sie den Komponentenspeicher mit DISM.',
         "Der Fehlercode 0x80070070 oder die Meldung, Windows benötige mehr Platz für die Installation, bedeutet, dass das Update gar nicht erst begonnen hat. Die gute Nachricht: Die Ursache sind fast immer temporäre Daten — alte Update-Pakete, die vorherige Windows-Installation und abgebrochene Downloads. Dieser Ratgeber zeigt der Reihe nach, woher Sie Platz holen, wie viel jeder Schritt typischerweise bringt und was Sie ändern sollten, damit es nicht wieder passiert.",
       ],
       keyTakeaways: [
         "Funktionsupdates von Windows 11 benötigen rund 20 GB freien Speicher auf dem Systemlaufwerk.",
-        "Den größten Einzelgewinn bringen meist \"Bereinigung von Windows Update\" und \"Vorherige Windows-Installationen\" — zusammen 10-25 GB.",
+        'Den größten Einzelgewinn bringen meist "Bereinigung von Windows Update" und "Vorherige Windows-Installationen" — zusammen 10-25 GB.',
         "Der Ordner SoftwareDistribution\\Download kann gefahrlos geleert werden; Windows lädt benötigte Pakete erneut herunter.",
         "DISM /Online /Cleanup-Image /StartComponentCleanup verkleinert den Komponentenspeicher sicher, während manuelles Löschen von WinSxS das System zerstört.",
         "Der reservierte Speicher hält rund 7 GB für Updates frei und lässt sich abschalten, was das Problem allerdings nur vertagt.",
@@ -290,7 +291,7 @@ export const windowsUpdateNotEnoughSpace: Article = {
           },
           {
             name: "Die Bereinigung temporärer Dateien ausführen",
-            text: "Öffnen Sie Einstellungen > System > Speicher > Temporäre Dateien. Kreuzen Sie \"Bereinigung von Windows Update\", \"Vorherige Windows-Installationen\", \"Dateien für die Übermittlungsoptimierung\" und \"Temporäre Dateien\" an und klicken Sie auf Dateien entfernen.",
+            text: 'Öffnen Sie Einstellungen > System > Speicher > Temporäre Dateien. Kreuzen Sie "Bereinigung von Windows Update", "Vorherige Windows-Installationen", "Dateien für die Übermittlungsoptimierung" und "Temporäre Dateien" an und klicken Sie auf Dateien entfernen.',
           },
           {
             name: "Den Windows-Update-Download-Ordner leeren",
@@ -316,15 +317,15 @@ export const windowsUpdateNotEnoughSpace: Article = {
           content: [
             "Ein Funktionsupdate benötigt nicht nur so viel Platz wie das heruntergeladene Paket. Windows lädt das Paket zunächst herunter, entpackt es in einen Arbeitsbereich, installiert die neuen Systemdateien und behält währenddessen die Vorversion für eine mögliche Rückkehr. Drei Kopien liegen eine Zeit lang gleichzeitig auf der Festplatte.",
             "Deshalb kann ein 4 GB großes Update-Paket 20 GB freien Speicher verlangen. Nach Abschluss der Installation wird der größte Teil wieder freigegeben, der Ordner Windows.old bleibt jedoch 10 Tage bestehen.",
-            "Monatliche Sicherheitsupdates sind weit genügsamer und verlangen meist einige hundert Megabyte bis wenige Gigabyte. Die Meldung \"nicht genügend Speicherplatz\" erscheint fast ausschließlich bei großen Versionsupdates.",
+            'Monatliche Sicherheitsupdates sind weit genügsamer und verlangen meist einige hundert Megabyte bis wenige Gigabyte. Die Meldung "nicht genügend Speicherplatz" erscheint fast ausschließlich bei großen Versionsupdates.',
           ],
         },
         {
           title: "Der größte Gewinn: Bereinigung von Windows Update",
           content: [
-            "Einstellungen > System > Speicher > Temporäre Dateien ist der Bildschirm, den die meisten Nutzer nie öffnen — und er birgt den größten Einzelgewinn. Der Eintrag \"Bereinigung von Windows Update\" enthält alte Update-Dateien, die nach der Installation nicht mehr benötigt werden, und erreicht allein oft 5-10 GB.",
-            "\"Vorherige Windows-Installationen\" ist der Ordner Windows.old und belegt typischerweise 15-30 GB. Ihn zu entfernen bedeutet, auf die Rückkehr zur vorherigen Windows-Version zu verzichten; läuft die aktuelle Version einwandfrei, können Sie den Punkt bedenkenlos ankreuzen.",
-            "In derselben Liste finden sich \"Dateien für die Übermittlungsoptimierung\" (mit anderen PCs geteilte Update-Fragmente) und die klassischen \"Temporären Dateien\". Alle vier zusammen decken auf den meisten Rechnern die geforderten 20 GB vollständig ab.",
+            'Einstellungen > System > Speicher > Temporäre Dateien ist der Bildschirm, den die meisten Nutzer nie öffnen — und er birgt den größten Einzelgewinn. Der Eintrag "Bereinigung von Windows Update" enthält alte Update-Dateien, die nach der Installation nicht mehr benötigt werden, und erreicht allein oft 5-10 GB.',
+            '"Vorherige Windows-Installationen" ist der Ordner Windows.old und belegt typischerweise 15-30 GB. Ihn zu entfernen bedeutet, auf die Rückkehr zur vorherigen Windows-Version zu verzichten; läuft die aktuelle Version einwandfrei, können Sie den Punkt bedenkenlos ankreuzen.',
+            'In derselben Liste finden sich "Dateien für die Übermittlungsoptimierung" (mit anderen PCs geteilte Update-Fragmente) und die klassischen "Temporären Dateien". Alle vier zusammen decken auf den meisten Rechnern die geforderten 20 GB vollständig ab.',
           ],
         },
         {
@@ -364,7 +365,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Der Code steht für unzureichenden Speicherplatz, das Update bricht vor dem Start ab. Die Lösung ist Platz schaffen: Entfernen Sie über Einstellungen > System > Speicher > Temporäre Dateien die Windows-Update-Bereinigung und vorherige Windows-Installationen und leeren Sie anschließend den Download-Ordner von SoftwareDistribution.",
         },
         {
-          question: "Ist es sicher, den Ordner SoftwareDistribution zu löschen?",
+          question:
+            "Ist es sicher, den Ordner SoftwareDistribution zu löschen?",
           answer:
             "Den Inhalt des Unterordners Download zu löschen ist sicher; Windows lädt weiterhin benötigte Pakete erneut herunter. Stoppen Sie zuvor die Dienste mit net stop wuauserv und net stop bits in einer Eingabeaufforderung als Administrator und starten Sie sie danach mit net start wieder.",
         },
@@ -374,25 +376,27 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "In der Regel nein. Der reservierte Speicher ist ein Puffer von etwa 7 GB, damit Updates stets Platz finden, und existiert genau zur Vermeidung dieses Fehlers. Deaktivieren lässt er sich mit DISM /Online /Set-ReservedStorageState /State:Disabled, das erhöht aber die Wahrscheinlichkeit fehlschlagender Updates. Echten Speicher freizumachen ist die bessere Lösung.",
         },
         {
-          question: "Kann ich für das Update einen externen USB-Stick verwenden?",
+          question:
+            "Kann ich für das Update einen externen USB-Stick verwenden?",
           answer:
             "Ja. Fehlt Platz, bietet Windows die Nutzung eines externen Speichermediums an, und ein 32-GB-Stick genügt dafür. Das ist eine gültige, aber vorübergehende Lösung; wenn Sie sie bei jedem Update brauchen, ist Ihr Systemlaufwerk dauerhaft zu voll.",
         },
         {
           question: "Kann ich Windows.old nach dem Update löschen?",
           answer:
-            "Ja. Windows.old erlaubt nur innerhalb von 10 Tagen die Rückkehr zur Vorversion und wird danach automatisch entfernt. Läuft die neue Version einwandfrei, entfernen Sie den Ordner sofort über Einstellungen > System > Speicher > Temporäre Dateien mit \"Vorherige Windows-Installationen\" und gewinnen 15-30 GB.",
+            'Ja. Windows.old erlaubt nur innerhalb von 10 Tagen die Rückkehr zur Vorversion und wird danach automatisch entfernt. Läuft die neue Version einwandfrei, entfernen Sie den Ordner sofort über Einstellungen > System > Speicher > Temporäre Dateien mit "Vorherige Windows-Installationen" und gewinnen 15-30 GB.',
         },
       ],
       verdict: [
-        "Die Behebung von \"nicht genügend Speicherplatz\" folgt einer klaren Reihenfolge: erst Windows-Update-Bereinigung und vorherige Windows-Installationen über die temporären Dateien entfernen, dann den Download-Ordner von SoftwareDistribution leeren, bei Bedarf den Komponentenspeicher per DISM bereinigen. Diese drei Schritte decken auf den meisten Rechnern die nötigen 20 GB mit Reserve ab.",
+        'Die Behebung von "nicht genügend Speicherplatz" folgt einer klaren Reihenfolge: erst Windows-Update-Bereinigung und vorherige Windows-Installationen über die temporären Dateien entfernen, dann den Download-Ordner von SoftwareDistribution leeren, bei Bedarf den Komponentenspeicher per DISM bereinigen. Diese drei Schritte decken auf den meisten Rechnern die nötigen 20 GB mit Reserve ab.',
         "Den reservierten Speicher abzuschalten und einen externen USB-Stick zu nutzen funktioniert zwar, vertagt das Problem aber nur. Steht Ihr Laufwerk bei jedem Update am Limit, ist die dauerhafte Überfüllung die eigentliche Ursache.",
         "Die dauerhafte Antwort lautet: auf dem Systemlaufwerk jederzeit einen Puffer von 20 GB halten. Aktivieren Sie die Speicheroptimierung, planen Sie die Bereinigung als wiederkehrende Aufgabe und kontrollieren Sie gelegentlich, wohin der Platz geht.",
       ],
       ctaText: "Schaffen Sie Platz vor dem nächsten Update",
     },
     fr: {
-      title: "Pas assez d'espace disque pour Windows Update : la solution durable",
+      title:
+        "Pas assez d'espace disque pour Windows Update : la solution durable",
       metaDescription:
         "Windows Update échoue avec 0x80070070 ou réclame plus de place ? Voici combien d'espace il faut vraiment, où le récupérer et le rôle du stockage réservé.",
       subtitle: "Où trouver les 20 GB",
@@ -440,7 +444,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       },
       sections: [
         {
-          title: "Pourquoi une mise à jour Windows réclame-t-elle autant de place ?",
+          title:
+            "Pourquoi une mise à jour Windows réclame-t-elle autant de place ?",
           content: [
             "Une mise à jour de fonctionnalités ne demande pas seulement l'équivalent du paquet téléchargé. Windows télécharge d'abord ce paquet, le décompresse dans une zone de travail, installe les nouveaux fichiers système et conserve pendant toute l'opération la version précédente pour un éventuel retour en arrière. Trois copies cohabitent un moment sur le disque.",
             "C'est pourquoi un paquet de mise à jour de 4 GB peut exiger 20 GB d'espace libre. L'essentiel est restitué une fois l'installation terminée, mais le dossier Windows.old reste en place pendant 10 jours.",
@@ -482,7 +487,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ],
       faq: [
         {
-          question: "Combien d'espace libre faut-il pour une mise à jour Windows ?",
+          question:
+            "Combien d'espace libre faut-il pour une mise à jour Windows ?",
           answer:
             "Les mises à jour de fonctionnalités de Windows 11 réclament environ 20 GB libres sur le disque système. Les mises à jour de sécurité mensuelles en demandent bien moins, de quelques centaines de mégaoctets à quelques gigaoctets. Cet espace se partage entre le paquet téléchargé, les fichiers temporaires qu'il décompresse et la version précédente conservée pour un retour en arrière.",
         },
@@ -492,7 +498,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Ce code signale un espace disque insuffisant : la mise à jour s'arrête avant même de commencer. La solution est de libérer de la place. Passez par Paramètres > Système > Stockage > Fichiers temporaires pour supprimer le nettoyage de Windows Update et les installations précédentes de Windows, puis videz le dossier de téléchargement de SoftwareDistribution.",
         },
         {
-          question: "Peut-on supprimer le dossier SoftwareDistribution sans risque ?",
+          question:
+            "Peut-on supprimer le dossier SoftwareDistribution sans risque ?",
           answer:
             "Supprimer le contenu de son sous-dossier Download ne présente aucun risque : Windows retélécharge les paquets dont il a encore besoin. Arrêtez d'abord les services avec net stop wuauserv et net stop bits dans une invite de commandes en tant qu'administrateur, puis relancez-les ensuite avec net start.",
         },
@@ -502,12 +509,14 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "En général non. Le stockage réservé est un matelas d'environ 7 GB mis de côté pour que les mises à jour trouvent toujours de la place, et il existe précisément pour éviter cette erreur. Il se désactive avec DISM /Online /Set-ReservedStorageState /State:Disabled, mais cela rend les échecs de mise à jour plus probables. Libérer de l'espace réel reste la meilleure solution.",
         },
         {
-          question: "Puis-je utiliser une clé USB externe pour la mise à jour ?",
+          question:
+            "Puis-je utiliser une clé USB externe pour la mise à jour ?",
           answer:
             "Oui. Quand la place manque, Windows propose d'utiliser un stockage externe, et une clé USB de 32 GB suffit. C'est une solution valable mais temporaire ; si vous en avez besoin à chaque mise à jour, votre disque système est durablement trop plein.",
         },
         {
-          question: "Puis-je supprimer le dossier Windows.old après la mise à jour ?",
+          question:
+            "Puis-je supprimer le dossier Windows.old après la mise à jour ?",
           answer:
             "Oui. Windows.old ne sert qu'à revenir à la version précédente dans les 10 jours, et il est supprimé automatiquement passé ce délai. Si la nouvelle version fonctionne bien, retirez-le immédiatement via Paramètres > Système > Stockage > Fichiers temporaires en cochant « Installations précédentes de Windows » : vous récupérez 15-30 GB.",
         },
@@ -520,7 +529,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ctaText: "Faites de la place avant la prochaine mise à jour",
     },
     es: {
-      title: "Windows Update dice que no hay espacio suficiente: la solución definitiva",
+      title:
+        "Windows Update dice que no hay espacio suficiente: la solución definitiva",
       metaDescription:
         "Si Windows Update falla con el error 0x80070070 o pide más espacio: cuánto hace falta de verdad, de dónde sacarlo y qué papel juega el almacenamiento reservado.",
       subtitle: "De dónde sacar los 20 GB",
@@ -610,7 +620,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ],
       faq: [
         {
-          question: "¿Cuánto espacio libre necesita una actualización de Windows?",
+          question:
+            "¿Cuánto espacio libre necesita una actualización de Windows?",
           answer:
             "Las actualizaciones de características de Windows 11 necesitan unos 20 GB libres en el disco del sistema. Las actualizaciones de seguridad mensuales piden mucho menos, desde unos cientos de megabytes hasta unos pocos gigabytes. Ese espacio se reparte entre el paquete descargado, los archivos temporales que se descomprimen y la versión anterior que se guarda por si hay que volver atrás.",
         },
@@ -630,12 +641,14 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Normalmente no. El almacenamiento reservado es un colchón de unos 7 GB apartado para que las actualizaciones siempre tengan sitio, y existe precisamente para evitar este error. Se puede desactivar con DISM /Online /Set-ReservedStorageState /State:Disabled, pero eso hace más probables los fallos de actualización. Liberar espacio real es la mejor solución.",
         },
         {
-          question: "¿Puedo usar una memoria USB externa para la actualización?",
+          question:
+            "¿Puedo usar una memoria USB externa para la actualización?",
           answer:
             "Sí. Cuando falta sitio, Windows ofrece usar almacenamiento externo, y con una memoria USB de 32 GB es suficiente. Es una solución válida, pero temporal; si la necesitas en cada actualización, tu disco del sistema está permanentemente demasiado lleno.",
         },
         {
-          question: "¿Puedo borrar la carpeta Windows.old después de actualizar?",
+          question:
+            "¿Puedo borrar la carpeta Windows.old después de actualizar?",
           answer:
             "Sí. Windows.old solo sirve para volver a la versión anterior durante 10 días, y pasado ese plazo se borra sola. Si la versión nueva funciona bien, elimínala ya desde Configuración > Sistema > Almacenamiento > Archivos temporales marcando « Instalaciones anteriores de Windows » y recupera entre 15 y 30 GB.",
         },
@@ -648,7 +661,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ctaText: "Haz sitio antes de la próxima actualización",
     },
     it: {
-      title: "Windows Update dice che non c'è spazio sufficiente: la soluzione definitiva",
+      title:
+        "Windows Update dice che non c'è spazio sufficiente: la soluzione definitiva",
       metaDescription:
         "Se Windows Update fallisce con l'errore 0x80070070 o chiede più spazio: quanto ne serve davvero, dove recuperarlo e che ruolo ha l'archiviazione riservata.",
       subtitle: "Dove trovare i 20 GB",
@@ -696,7 +710,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       },
       sections: [
         {
-          title: "Perché un aggiornamento di Windows chiede tutto questo spazio?",
+          title:
+            "Perché un aggiornamento di Windows chiede tutto questo spazio?",
           content: [
             "Un aggiornamento delle funzionalità non richiede soltanto lo spazio del pacchetto che scarica. Windows prima scarica il pacchetto, poi lo espande in un'area di lavoro, installa i nuovi file di sistema e per tutto il tempo conserva la versione precedente per un eventuale ritorno indietro. Per un po' sul disco convivono tre copie.",
             "Ecco perché un pacchetto di aggiornamento da 4 GB può pretendere 20 GB liberi. La maggior parte viene restituita a installazione conclusa, ma la cartella Windows.old resta lì per 10 giorni.",
@@ -738,7 +753,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ],
       faq: [
         {
-          question: "Quanto spazio libero serve per un aggiornamento di Windows?",
+          question:
+            "Quanto spazio libero serve per un aggiornamento di Windows?",
           answer:
             "Gli aggiornamenti delle funzionalità di Windows 11 richiedono circa 20 GB liberi sul disco di sistema. Gli aggiornamenti di sicurezza mensili ne chiedono molto meno, di solito da qualche centinaio di megabyte a pochi gigabyte. Lo spazio necessario si divide tra il pacchetto scaricato, i file temporanei in cui viene espanso e la versione precedente conservata per il ritorno indietro.",
         },
@@ -758,12 +774,14 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "In genere no. L'archiviazione riservata è un cuscinetto di circa 7 GB messo da parte perché gli aggiornamenti trovino sempre posto, e serve proprio a evitare questo errore. Si disattiva con DISM /Online /Set-ReservedStorageState /State:Disabled, ma così i fallimenti degli aggiornamenti diventano più probabili. Liberare spazio vero resta la scelta migliore.",
         },
         {
-          question: "Posso usare una chiavetta USB esterna per l'aggiornamento?",
+          question:
+            "Posso usare una chiavetta USB esterna per l'aggiornamento?",
           answer:
             "Sì. Quando lo spazio non basta, Windows propone di usare una memoria esterna e una chiavetta da 32 GB è sufficiente. È una soluzione valida ma temporanea: se ti serve a ogni aggiornamento, il disco di sistema è stabilmente troppo pieno.",
         },
         {
-          question: "Posso eliminare la cartella Windows.old dopo l'aggiornamento?",
+          question:
+            "Posso eliminare la cartella Windows.old dopo l'aggiornamento?",
           answer:
             "Sì. Windows.old serve solo a tornare alla versione precedente entro 10 giorni e dopo viene eliminata automaticamente. Se la nuova versione funziona bene, rimuovila subito da Impostazioni > Sistema > Archiviazione > File temporanei spuntando « Installazioni precedenti di Windows » e recupera 15-30 GB.",
         },
@@ -776,7 +794,8 @@ export const windowsUpdateNotEnoughSpace: Article = {
       ctaText: "Fai spazio prima del prossimo aggiornamento",
     },
     pt: {
-      title: "Windows Update diz que não há espaço suficiente: a solução definitiva",
+      title:
+        "Windows Update diz que não há espaço suficiente: a solução definitiva",
       metaDescription:
         "Se o Windows Update falha com o erro 0x80070070 ou pede mais espaço: quanto é realmente necessário, de onde tirar e qual o papel do armazenamento reservado.",
       subtitle: "De onde tirar os 20 GB",

@@ -1,18 +1,25 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Monitor, Laptop, Smartphone, Download, ShieldCheck } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import {
+  Monitor,
+  Laptop,
+  Smartphone,
+  Download,
+  ShieldCheck,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { useOSDetection, type OSType } from '@/hooks/use-os-detection';
-import { useAppInfo } from '@/hooks/use-app-info';
-import { APP_VERSIONS, STORE_URLS } from '@/lib/app-version';
-import { Button } from '@/components/ui/button';
+import { cn } from "@/lib/utils";
+import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
+import { useAppInfo } from "@/hooks/use-app-info";
+import { APP_VERSIONS, STORE_URLS } from "@/lib/app-version";
+import { trackDownload } from "@/lib/analytics";
+import { Button } from "@/components/ui/button";
 
 interface PlatformCard {
-  key: 'windows' | 'mac' | 'android' | 'ios';
+  key: "windows" | "mac" | "android" | "ios";
   matchOS: OSType;
   icon: LucideIcon;
   name: string;
@@ -23,61 +30,62 @@ interface PlatformCard {
   altArchHref?: string;
   signed?: boolean;
   /** Mağazadan dağıtılan platform: kart mağaza adı + sürümü basar, düğme yeni sekmede açılır. */
-  store?: 'Google Play' | 'App Store';
+  store?: "Google Play" | "App Store";
 }
 
 const platforms: PlatformCard[] = [
   {
-    key: 'windows',
-    matchOS: 'windows',
+    key: "windows",
+    matchOS: "windows",
     icon: Monitor,
-    name: 'Windows',
-    ext: '.exe',
-    systemReq: 'Windows 10/11 (64-bit)',
-    href: 'https://api.diskmop.com/download/windows',
+    name: "Windows",
+    ext: ".exe",
+    systemReq: "Windows 10/11 (64-bit)",
+    href: "https://api.diskmop.com/download/windows",
     signed: true,
   },
   {
-    key: 'mac',
-    matchOS: 'mac',
+    key: "mac",
+    matchOS: "mac",
     icon: Laptop,
-    name: 'macOS',
-    ext: '.dmg',
-    systemReq: 'macOS 12+ (Apple Silicon & Intel)',
-    href: 'https://api.diskmop.com/download/mac',
-    altArchHref: 'https://api.diskmop.com/download/mac-intel',
+    name: "macOS",
+    ext: ".dmg",
+    systemReq: "macOS 12+ (Apple Silicon & Intel)",
+    href: "https://api.diskmop.com/download/mac",
+    altArchHref: "https://api.diskmop.com/download/mac-intel",
     signed: true,
   },
   {
-    key: 'android',
-    matchOS: 'android',
+    key: "android",
+    matchOS: "android",
     icon: Smartphone,
-    name: 'Android',
-    ext: '',
-    systemReq: 'Android 8.0+',
+    name: "Android",
+    ext: "",
+    systemReq: "Android 8.0+",
     href: STORE_URLS.android,
-    store: 'Google Play',
+    store: "Google Play",
   },
   {
-    key: 'ios',
-    matchOS: 'ios',
+    key: "ios",
+    matchOS: "ios",
     icon: Smartphone,
-    name: 'iPhone',
-    ext: '',
-    systemReq: 'iOS 18.0+',
+    name: "iPhone",
+    ext: "",
+    systemReq: "iOS 18.0+",
     href: STORE_URLS.ios,
-    store: 'App Store',
+    store: "App Store",
   },
 ];
 
 // Canlı indirme sayaçları KAPALI (kullanıcı kararı, 2026-09-04). API'den gelen
 // downloadCounts artık gösterilmiyor; useAppInfo yalnız sürüm ve dosya boyutu için.
 export function PlatformSelector() {
-  const t = useTranslations('platformSelector');
+  const t = useTranslations("platformSelector");
   const detectedOS = useOSDetection();
   const { version, windowsSize, macSize } = useAppInfo();
 
-  const getSize = (key: string) => (key === 'windows' ? windowsSize : macSize) || '~80 MB';
+  const getSize = (key: string) =>
+    (key === "windows" ? windowsSize : macSize) || "~80 MB";
 
   /**
    * Sürüm SUNUCUDA basılır. Eskiden burada sabit "v1.0.0" yedeği vardı ve
@@ -86,8 +94,8 @@ export function PlatformSelector() {
    * geldiği için yalnızca Windows sürümünü günceller; macOS ve mağaza
    * platformları (Android, iPhone) sabitten okunur.
    */
-  const getVersion = (key: PlatformCard['key']) => {
-    if (key === 'windows') return version || `v${APP_VERSIONS.windows}`;
+  const getVersion = (key: PlatformCard["key"]) => {
+    if (key === "windows") return version || `v${APP_VERSIONS.windows}`;
     return `v${APP_VERSIONS[key]}`;
   };
 
@@ -102,10 +110,10 @@ export function PlatformSelector() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -122,10 +130,10 @@ export function PlatformSelector() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={cn(
-                  'relative bg-card rounded-2xl p-8 xl:p-5 border-2 transition-all duration-300',
+                  "relative bg-card rounded-2xl p-8 xl:p-5 border-2 transition-all duration-300",
                   isHighlighted
-                    ? 'border-brand-500 shadow-lg shadow-brand-500/10'
-                    : 'border-border hover:border-brand-500/50 hover:shadow-lg'
+                    ? "border-brand-500 shadow-lg shadow-brand-500/10"
+                    : "border-border hover:border-brand-500/50 hover:shadow-lg",
                 )}
               >
                 {isHighlighted && (
@@ -139,18 +147,18 @@ export function PlatformSelector() {
                 <div className="flex justify-center mb-4">
                   <div
                     className={cn(
-                      'w-16 h-16 rounded-2xl flex items-center justify-center',
+                      "w-16 h-16 rounded-2xl flex items-center justify-center",
                       isHighlighted
-                        ? 'bg-brand-100 dark:bg-brand-950'
-                        : 'bg-muted'
+                        ? "bg-brand-100 dark:bg-brand-950"
+                        : "bg-muted",
                     )}
                   >
                     <Icon
                       className={cn(
-                        'h-8 w-8',
+                        "h-8 w-8",
                         isHighlighted
-                          ? 'text-brand-600'
-                          : 'text-muted-foreground'
+                          ? "text-brand-600"
+                          : "text-muted-foreground",
                       )}
                     />
                   </div>
@@ -165,8 +173,8 @@ export function PlatformSelector() {
                     `${platform.store} · ${getVersion(platform.key)}`
                   ) : (
                     <>
-                      {getVersion(platform.key)} &bull; {getSize(platform.key)} &bull;{' '}
-                      {platform.ext}
+                      {getVersion(platform.key)} &bull; {getSize(platform.key)}{" "}
+                      &bull; {platform.ext}
                     </>
                   )}
                 </p>
@@ -204,14 +212,17 @@ export function PlatformSelector() {
                       Sarmaya izin ver, dolguyu daralt, ikonu ezilmez yap. */}
                   <Button
                     asChild
-                    variant={isHighlighted ? 'default' : 'outline'}
+                    variant={isHighlighted ? "default" : "outline"}
                     size="lg"
                     className="w-full gap-2 h-auto min-h-12 whitespace-normal px-3 py-3 xl:text-sm"
                   >
                     <a
                       href={platform.href}
-                      target={platform.store ? '_blank' : undefined}
-                      rel={platform.store ? 'noopener noreferrer' : undefined}
+                      onClick={() =>
+                        trackDownload(platform.key, "platform_cards")
+                      }
+                      target={platform.store ? "_blank" : undefined}
+                      rel={platform.store ? "noopener noreferrer" : undefined}
                     >
                       <Download className="h-4 w-4 shrink-0" />
                       {t(`${platform.key}.download`)}
@@ -229,6 +240,9 @@ export function PlatformSelector() {
                   <p className="mt-3 text-center">
                     <a
                       href={platform.altArchHref}
+                      onClick={() =>
+                        trackDownload("mac-intel", "platform_cards")
+                      }
                       className="text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
                     >
                       {t(`${platform.key}.intelLink`)}
@@ -239,7 +253,6 @@ export function PlatformSelector() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

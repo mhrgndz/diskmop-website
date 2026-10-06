@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
 import { STORE_URLS } from "@/lib/app-version";
+import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 
 export function BlogStickyBar() {
   const t = useTranslations("blog");
@@ -49,16 +50,20 @@ export function BlogStickyBar() {
   };
 
   let osName = "Windows";
+  let platform: DownloadPlatform = "windows";
   let downloadHref = "https://api.diskmop.com/download/windows";
 
   if (detectedOS === "mac") {
     osName = "macOS";
+    platform = "mac";
     downloadHref = "https://api.diskmop.com/download/mac";
   } else if (detectedOS === "android") {
     osName = "Android";
+    platform = "android";
     downloadHref = STORE_URLS.android;
   } else if (detectedOS === "ios") {
     osName = "iPhone";
+    platform = "ios";
     downloadHref = STORE_URLS.ios;
   }
 
@@ -94,6 +99,7 @@ export function BlogStickyBar() {
             <div className="flex items-center gap-2 shrink-0">
               <a
                 href={downloadHref}
+                onClick={() => trackDownload(platform, "blog_sticky")}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Download className="w-4 h-4 shrink-0" />

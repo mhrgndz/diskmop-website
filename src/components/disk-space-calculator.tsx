@@ -17,6 +17,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { STORE_URLS } from "@/lib/app-version";
+import { trackDownload } from "@/lib/analytics";
 
 interface CalculatorLabels {
   platformLabel: string;
@@ -401,6 +402,7 @@ export function DiskSpaceCalculator({
           <div>
             <a
               href={downloadUrl}
+              onClick={() => trackDownload(platform, "calculator")}
               className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
             >
               <Download className="h-4 w-4" />

@@ -1,10 +1,10 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const isItSafeToDeleteWindowsFiles: Article = {
-  slug: 'is-it-safe-to-delete-windows-files',
-  type: 'guide',
-  category: 'Windows Tips',
-  date: '2026-08-17',
+  slug: "is-it-safe-to-delete-windows-files",
+  type: "guide",
+  category: "Windows Tips",
+  date: "2026-08-17",
   readingTime: 10,
   content: {
     tr: {
@@ -14,7 +14,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       subtitle: "Silinebilir, Şartlı Silinebilir ve Asla Dokunulmaz Listesi",
       intro: [
         "Kısa cevap: geçici dosyalar, Windows.old, Prefetch, küçük resim önbelleği ve SoftwareDistribution indirme klasörü silinebilir. pagefile.sys ve hiberfil.sys silinmez ama Windows ayarlarından kapatılabilir. WinSxS, C:\\Windows\\Installer, System32 ve System Volume Information klasörlerine ise asla elle dokunulmaz — bunları silmek uygulamaların kaldırılmasını, güncellemeleri ve sistem kurtarmayı kalıcı olarak bozar.",
-        "İnternette \"şu klasörü sil, 20 GB kazan\" tavsiyesi bol. Bu tavsiyelerin bir kısmı doğru, bir kısmı ise yıllar sonra ortaya çıkan onarılamaz hasar bırakıyor. Bu rehber Windows'ta yer kaplayan dosyaları üç net kategoriye ayırıyor: silinebilir, şartlı silinebilir ve asla dokunulmaz. Her madde için ne olduğunu, ne kadar yer kapladığını ve silersen ne kaybettiğini yazdık.",
+        'İnternette "şu klasörü sil, 20 GB kazan" tavsiyesi bol. Bu tavsiyelerin bir kısmı doğru, bir kısmı ise yıllar sonra ortaya çıkan onarılamaz hasar bırakıyor. Bu rehber Windows\'ta yer kaplayan dosyaları üç net kategoriye ayırıyor: silinebilir, şartlı silinebilir ve asla dokunulmaz. Her madde için ne olduğunu, ne kadar yer kapladığını ve silersen ne kaybettiğini yazdık.',
       ],
       keyTakeaways: [
         "Geçici dosyalar (%TEMP% ve C:\\Windows\\Temp) her zaman güvenle silinebilir; kullanımda olan dosyaları Windows zaten atlar.",
@@ -29,7 +29,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           title: "Güvenle Silinebilir: Geçici Dosyalar ve Önbellekler",
           content: [
             "Geçici dosya klasörleri Windows'ta güvenle boşaltılabilecek en büyük alandır. Kullanıcı geçici klasörü %TEMP% (genellikle C:\\Users\\KullanıcıAdı\\AppData\\Local\\Temp) ve sistem geçici klasörü C:\\Windows\\Temp, kurulum artıkları, yarım kalan indirmeler ve program çalışma dosyalarıyla dolar. Aylardır temizlenmemiş bir bilgisayarda bu iki klasör toplamda 5 ila 20 GB arasında yer tutabilir.",
-            "Silme işlemi risksizdir çünkü Windows o anda kullanımda olan dosyaları kilitler ve silinmelerine izin vermez; siz \"tümünü sil\" deseniz bile atlanırlar. Bir programın çalışırken oluşturduğu geçici dosya silinemezse basitçe kalır, hata oluşmaz.",
+            'Silme işlemi risksizdir çünkü Windows o anda kullanımda olan dosyaları kilitler ve silinmelerine izin vermez; siz "tümünü sil" deseniz bile atlanırlar. Bir programın çalışırken oluşturduğu geçici dosya silinemezse basitçe kalır, hata oluşmaz.',
             "Aynı kategoriye küçük resim önbelleği (thumbcache_*.db), Windows Update günlükleri, bellek dökümü dosyaları (.dmp) ve Teslimat Optimizasyonu dosyaları da girer. Hepsi yeniden oluşturulabilir. Disk Mop'un Önbellek Temizleyici (Cache Cleaner) modülü bu kategorilerin yaklaşık yirmisini tek ekranda listeler ve hangisinin ne kadar yer kapladığını silmeden önce gösterir.",
           ],
         },
@@ -37,7 +37,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           title: "Güvenle Silinebilir: Windows.old ve Yükseltme Artıkları",
           content: [
             "Windows.old, büyük bir Windows sürüm yükseltmesinden sonra oluşan ve eski kurulumunuzun tamamını içeren klasördür. Boyutu genellikle 15 ila 30 GB'dir ve tek işlevi, yükseltmeden sonraki ilk 10 gün içinde eski sürüme geri dönebilmenizi sağlamaktır.",
-            "Silmek güvenlidir, tek kaybınız o geri dönüş hakkıdır. Zaten Windows 10 gün sonra klasörü kendiliğinden siler. Yeni sürümde bir sorun yaşamıyorsanız beklemek yerine Ayarlar > Sistem > Depolama > Geçici dosyalar yolundan \"Önceki Windows kurulumları\" kutusunu işaretleyip kaldırabilirsiniz.",
+            'Silmek güvenlidir, tek kaybınız o geri dönüş hakkıdır. Zaten Windows 10 gün sonra klasörü kendiliğinden siler. Yeni sürümde bir sorun yaşamıyorsanız beklemek yerine Ayarlar > Sistem > Depolama > Geçici dosyalar yolundan "Önceki Windows kurulumları" kutusunu işaretleyip kaldırabilirsiniz.',
             "Yanında $WINDOWS.~BT ve $WINDOWS.~WS gizli klasörleri de bulunur; bunlar yükseltme sırasında kullanılan çalışma dosyalarıdır ve aynı ekrandan temizlenir. Bu klasörleri Dosya Gezgini'nden elle silmeye çalışmak izin hatası verir — doğru yol her zaman Windows'un kendi temizlik aracıdır.",
           ],
         },
@@ -58,7 +58,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Asla Dokunmayın: System32, Sürücü Deposu ve Sistem Geri Yükleme",
+          title:
+            "Asla Dokunmayın: System32, Sürücü Deposu ve Sistem Geri Yükleme",
           content: [
             "C:\\Windows\\System32 Windows'un kendisidir; buradan dosya silmek sistemi açılamaz hale getirir. \"System32'yi sil, bilgisayarın hızlanır\" tavsiyesi internetin en eski şakalarından biridir ve maalesef hâlâ ciddiye alan çıkmaktadır.",
             "C:\\Windows\\System32\\DriverStore\\FileRepository sürücü deposudur ve 5 ila 15 GB tutabilir. İçinde eski sürücü sürümleri birikir ama elle silmek sürücü güncellemelerini ve donanım kurtarmayı bozar. Gerçekten yer kazanmak isterseniz doğru araç pnputil /enum-drivers ile listeleyip yalnızca gereksiz eski paketleri kaldırmaktır.",
@@ -69,7 +70,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           title: "Silmeden Önce Ne Kadar Yer Kazanacağınızı Görün",
           content: [
             "Bu listenin en önemli dersi, kazanacağınız alanın çoğu zaman tahmin ettiğinizden farklı olmasıdır. WinSxS 12 GB görünüp 2 GB kazandırabilir; hiç aklınıza gelmeyen bir oyun önbelleği ise 40 GB tutuyor olabilir. Doğru sıra önce ölçmek, sonra silmektir.",
-            "Disk Mop'un Disk Analizi (Disk Analysis) modülü sürücünüzü tarayıp klasörleri boyuta göre görsel bir treemap olarak dizer; hangi klasörün gerçekten şiştiğini tek bakışta görürsünüz. Sistem Dosyası Koruması ise bu rehberdeki \"asla dokunmayın\" listesini kod düzeyinde uygular: System32, WinSxS ve Installer gibi kritik yollar korumalı listede tutulur, bir silme işlemine karışırlarsa ayrı bir uyarıyla işaretlenir ve onaysız silinmezler.",
+            'Disk Mop\'un Disk Analizi (Disk Analysis) modülü sürücünüzü tarayıp klasörleri boyuta göre görsel bir treemap olarak dizer; hangi klasörün gerçekten şiştiğini tek bakışta görürsünüz. Sistem Dosyası Koruması ise bu rehberdeki "asla dokunmayın" listesini kod düzeyinde uygular: System32, WinSxS ve Installer gibi kritik yollar korumalı listede tutulur, bir silme işlemine karışırlarsa ayrı bir uyarıyla işaretlenir ve onaysız silinmezler.',
             "Disk Mop'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 19,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Windows 10 ve 11 (64-bit) ile macOS 12 ve üzerinde çalışır.",
           ],
         },
@@ -78,7 +79,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
         {
           question: "Windows.old klasörünü silmek güvenli mi?",
           answer:
-            "Evet, güvenlidir. Windows.old yalnızca yükseltme sonrası ilk 10 gün içinde eski Windows sürümüne geri dönmenizi sağlar. Sildiğinizde tek kaybınız bu geri dönüş hakkıdır ve klasör zaten 10 gün sonra otomatik silinir. Doğru yol Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından \"Önceki Windows kurulumları\" seçeneğini kullanmaktır.",
+            'Evet, güvenlidir. Windows.old yalnızca yükseltme sonrası ilk 10 gün içinde eski Windows sürümüne geri dönmenizi sağlar. Sildiğinizde tek kaybınız bu geri dönüş hakkıdır ve klasör zaten 10 gün sonra otomatik silinir. Doğru yol Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından "Önceki Windows kurulumları" seçeneğini kullanmaktır.',
         },
         {
           question: "WinSxS klasörünü silebilir miyim?",
@@ -86,7 +87,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Hayır. WinSxS'ten elle dosya silmek Windows güncellemelerini ve sistem dosyası onarımını kalıcı olarak bozar. Klasörün Dosya Gezgini'nde görünen boyutu da yanıltıcıdır çünkü içindeki dosyaların çoğu sabit bağlantıdır ve iki kez sayılır. Tek güvenli temizlik yöntemi yönetici komut isteminde DISM /Online /Cleanup-Image /StartComponentCleanup komutunu çalıştırmaktır.",
         },
         {
-          question: "C:\\Windows\\Installer klasörünü silmek yer kazandırır mı?",
+          question:
+            "C:\\Windows\\Installer klasörünü silmek yer kazandırır mı?",
           answer:
             "Kazandırır ama bunu asla yapmayın. Windows bu klasördeki .msi ve .msp dosyalarını MSI tabanlı programları kaldırırken ve onarırken kullanır. Klasörü sildiğinizde Microsoft Office gibi uygulamalar ne kaldırılabilir ne de onarılabilir hale gelir; çoğu durumda tek çözüm işletim sisteminin temiz kurulumudur.",
         },
@@ -120,7 +122,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       subtitle: "The Safe, Conditional and Never-Touch Lists",
       intro: [
         "Short answer: temporary files, Windows.old, Prefetch, the thumbnail cache and the SoftwareDistribution download folder are safe to delete. pagefile.sys and hiberfil.sys should not be deleted but can be disabled through Windows settings. WinSxS, C:\\Windows\\Installer, System32 and System Volume Information must never be touched by hand — deleting them permanently breaks program uninstalls, Windows updates and system recovery.",
-        "The internet is full of \"delete this folder, reclaim 20 GB\" advice. Some of it is correct and some of it leaves damage that only surfaces years later, when an update refuses to install or a program cannot be uninstalled. This guide sorts the space hogs in Windows into three clear buckets: safe, conditional and never. For each entry you get what it is, how much space it typically uses and exactly what you lose by removing it.",
+        'The internet is full of "delete this folder, reclaim 20 GB" advice. Some of it is correct and some of it leaves damage that only surfaces years later, when an update refuses to install or a program cannot be uninstalled. This guide sorts the space hogs in Windows into three clear buckets: safe, conditional and never. For each entry you get what it is, how much space it typically uses and exactly what you lose by removing it.',
       ],
       keyTakeaways: [
         "Temporary files (%TEMP% and C:\\Windows\\Temp) are always safe to delete; Windows automatically skips any file currently in use.",
@@ -143,7 +145,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           title: "Safe to Delete: Windows.old and Upgrade Leftovers",
           content: [
             "Windows.old is created after a major Windows version upgrade and contains your entire previous installation. It is typically 15 to 30 GB, and its only purpose is to let you roll back to the old version within the first 10 days after upgrading.",
-            "Deleting it is safe; the only thing you give up is that rollback option. Windows removes the folder on its own after 10 days regardless. If the new version is running fine, you can reclaim the space immediately via Settings > System > Storage > Temporary files by ticking \"Previous Windows installation(s)\".",
+            'Deleting it is safe; the only thing you give up is that rollback option. Windows removes the folder on its own after 10 days regardless. If the new version is running fine, you can reclaim the space immediately via Settings > System > Storage > Temporary files by ticking "Previous Windows installation(s)".',
             "You will often find the hidden $WINDOWS.~BT and $WINDOWS.~WS folders alongside it. These are working files from the upgrade process and are cleared from the same screen. Trying to delete them manually in File Explorer produces permission errors — the built-in cleanup tool is always the correct route.",
           ],
         },
@@ -166,7 +168,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
         {
           title: "Never Touch: System32, the Driver Store and System Restore",
           content: [
-            "C:\\Windows\\System32 is Windows itself; removing files from it makes the system unbootable. The old \"delete System32 to speed up your PC\" line is one of the internet's oldest pranks, and people still fall for it.",
+            'C:\\Windows\\System32 is Windows itself; removing files from it makes the system unbootable. The old "delete System32 to speed up your PC" line is one of the internet\'s oldest pranks, and people still fall for it.',
             "C:\\Windows\\System32\\DriverStore\\FileRepository is the driver store and can hold 5 to 15 GB of accumulated driver packages, including old versions. Deleting from it by hand breaks driver updates and hardware recovery. If you genuinely need that space, the correct tool is pnputil /enum-drivers to list packages and remove only the obsolete ones.",
             "System Volume Information holds System Restore points and Shadow Copies, and access to it is restricted deliberately. To reclaim space, lower the disk percentage reserved for restore points, or delete old points, under Control Panel > System > System Protection. Forcing your way into the folder to delete files leaves system recovery non-functional.",
           ],
@@ -184,7 +186,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
         {
           question: "Is it safe to delete the Windows.old folder?",
           answer:
-            "Yes. Windows.old exists only so you can roll back to your previous Windows version within 10 days of an upgrade. Deleting it costs you that rollback option and nothing else, and Windows removes the folder automatically after 10 days anyway. Use Settings > System > Storage > Temporary files and tick \"Previous Windows installation(s)\" rather than deleting it in File Explorer.",
+            'Yes. Windows.old exists only so you can roll back to your previous Windows version within 10 days of an upgrade. Deleting it costs you that rollback option and nothing else, and Windows removes the folder automatically after 10 days anyway. Use Settings > System > Storage > Temporary files and tick "Previous Windows installation(s)" rather than deleting it in File Explorer.',
         },
         {
           question: "Can I delete the WinSxS folder?",
@@ -220,13 +222,14 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       ctaText: "Stop Guessing What Is Safe to Delete",
     },
     de: {
-      title: "Ist es sicher, diese Windows-Dateien zu löschen? Datei für Datei erklärt",
+      title:
+        "Ist es sicher, diese Windows-Dateien zu löschen? Datei für Datei erklärt",
       metaDescription:
         "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution und der Installer-Ordner: Was können Sie gefahrlos löschen und was zerstört Ihr System? Ein klares Urteil zu jeder Datei.",
       subtitle: "Die Listen: gefahrlos, bedingt und niemals anfassen",
       intro: [
         "Kurze Antwort: Temporäre Dateien, Windows.old, Prefetch, der Miniaturansichten-Cache und der SoftwareDistribution-Download-Ordner können gefahrlos gelöscht werden. pagefile.sys und hiberfil.sys sollten nicht gelöscht, sondern über die Windows-Einstellungen deaktiviert werden. WinSxS, C:\\Windows\\Installer, System32 und System Volume Information dürfen niemals von Hand angefasst werden — sie zu löschen zerstört dauerhaft die Deinstallation von Programmen, Windows-Updates und die Systemwiederherstellung.",
-        "Das Internet ist voll von Ratschlägen der Sorte \"lösche diesen Ordner und gewinne 20 GB\". Ein Teil davon stimmt, ein anderer Teil hinterlässt Schäden, die erst Jahre später auffallen — wenn ein Update sich nicht mehr installieren lässt oder ein Programm sich nicht deinstallieren lässt. Dieser Ratgeber sortiert die Speicherfresser in Windows in drei klare Kategorien: gefahrlos, bedingt und niemals. Zu jedem Eintrag erfahren Sie, worum es sich handelt, wie viel Platz er üblicherweise belegt und was Sie durch das Löschen verlieren.",
+        'Das Internet ist voll von Ratschlägen der Sorte "lösche diesen Ordner und gewinne 20 GB". Ein Teil davon stimmt, ein anderer Teil hinterlässt Schäden, die erst Jahre später auffallen — wenn ein Update sich nicht mehr installieren lässt oder ein Programm sich nicht deinstallieren lässt. Dieser Ratgeber sortiert die Speicherfresser in Windows in drei klare Kategorien: gefahrlos, bedingt und niemals. Zu jedem Eintrag erfahren Sie, worum es sich handelt, wie viel Platz er üblicherweise belegt und was Sie durch das Löschen verlieren.',
       ],
       keyTakeaways: [
         "Temporäre Dateien (%TEMP% und C:\\Windows\\Temp) können immer gefahrlos gelöscht werden; Windows überspringt automatisch jede gerade verwendete Datei.",
@@ -249,7 +252,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           title: "Gefahrlos löschbar: Windows.old und Upgrade-Reste",
           content: [
             "Windows.old entsteht nach einem großen Windows-Versionsupgrade und enthält Ihre komplette vorherige Installation. Der Ordner ist typischerweise 15 bis 30 GB groß und hat nur einen Zweck: Er erlaubt die Rückkehr zur alten Version innerhalb der ersten 10 Tage nach dem Upgrade.",
-            "Das Löschen ist sicher; Sie geben ausschließlich diese Rückkehrmöglichkeit auf. Windows entfernt den Ordner nach 10 Tagen ohnehin selbst. Läuft die neue Version einwandfrei, holen Sie sich den Platz sofort zurück über Einstellungen > System > Speicher > Temporäre Dateien, indem Sie \"Vorherige Windows-Installationen\" ankreuzen.",
+            'Das Löschen ist sicher; Sie geben ausschließlich diese Rückkehrmöglichkeit auf. Windows entfernt den Ordner nach 10 Tagen ohnehin selbst. Läuft die neue Version einwandfrei, holen Sie sich den Platz sofort zurück über Einstellungen > System > Speicher > Temporäre Dateien, indem Sie "Vorherige Windows-Installationen" ankreuzen.',
             "Daneben finden sich häufig die versteckten Ordner $WINDOWS.~BT und $WINDOWS.~WS. Das sind Arbeitsdateien des Upgrade-Vorgangs, die über denselben Bildschirm entfernt werden. Ein manueller Löschversuch im Explorer erzeugt nur Berechtigungsfehler — der richtige Weg ist immer das eingebaute Bereinigungswerkzeug.",
           ],
         },
@@ -270,9 +273,10 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Niemals anfassen: System32, Treiberspeicher und Systemwiederherstellung",
+          title:
+            "Niemals anfassen: System32, Treiberspeicher und Systemwiederherstellung",
           content: [
-            "C:\\Windows\\System32 ist Windows selbst; Dateien daraus zu entfernen macht das System nicht mehr startfähig. Der alte Spruch \"lösche System32, dann wird dein PC schneller\" ist einer der ältesten Scherze des Internets — und es fallen bis heute Leute darauf herein.",
+            'C:\\Windows\\System32 ist Windows selbst; Dateien daraus zu entfernen macht das System nicht mehr startfähig. Der alte Spruch "lösche System32, dann wird dein PC schneller" ist einer der ältesten Scherze des Internets — und es fallen bis heute Leute darauf herein.',
             "C:\\Windows\\System32\\DriverStore\\FileRepository ist der Treiberspeicher und kann 5 bis 15 GB angesammelter Treiberpakete enthalten, darunter alte Versionen. Manuelles Löschen zerstört Treiberupdates und die Hardware-Wiederherstellung. Wenn Sie den Platz wirklich brauchen, ist das richtige Werkzeug pnputil /enum-drivers, um die Pakete aufzulisten und gezielt nur veraltete zu entfernen.",
             "System Volume Information enthält die Wiederherstellungspunkte und Schattenkopien, und der Zugriff darauf ist bewusst eingeschränkt. Um Platz zu gewinnen, verringern Sie unter Systemsteuerung > System > Computerschutz den für Wiederherstellungspunkte reservierten Anteil oder löschen dort alte Punkte. Sich gewaltsam Zugriff auf den Ordner zu verschaffen, macht die Systemwiederherstellung funktionsunfähig.",
           ],
@@ -290,7 +294,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
         {
           question: "Ist es sicher, den Ordner Windows.old zu löschen?",
           answer:
-            "Ja. Windows.old existiert nur, damit Sie innerhalb von 10 Tagen nach einem Upgrade zur vorherigen Windows-Version zurückkehren können. Beim Löschen verlieren Sie ausschließlich diese Rückkehrmöglichkeit, und Windows entfernt den Ordner nach 10 Tagen ohnehin automatisch. Nutzen Sie Einstellungen > System > Speicher > Temporäre Dateien und kreuzen Sie \"Vorherige Windows-Installationen\" an, statt im Explorer zu löschen.",
+            'Ja. Windows.old existiert nur, damit Sie innerhalb von 10 Tagen nach einem Upgrade zur vorherigen Windows-Version zurückkehren können. Beim Löschen verlieren Sie ausschließlich diese Rückkehrmöglichkeit, und Windows entfernt den Ordner nach 10 Tagen ohnehin automatisch. Nutzen Sie Einstellungen > System > Speicher > Temporäre Dateien und kreuzen Sie "Vorherige Windows-Installationen" an, statt im Explorer zu löschen.',
         },
         {
           question: "Kann ich den WinSxS-Ordner löschen?",
@@ -298,7 +302,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Nein. Dateien von Hand aus WinSxS zu löschen zerstört dauerhaft Windows-Updates und die Reparatur von Systemdateien. Die im Explorer angezeigte Ordnergröße ist zudem irreführend, weil die meisten Dateien darin Hardlinks sind und doppelt gezählt werden. Die einzige sichere Bereinigung ist DISM /Online /Cleanup-Image /StartComponentCleanup in einer Eingabeaufforderung als Administrator.",
         },
         {
-          question: "Bringt das Löschen von C:\\Windows\\Installer Speicherplatz?",
+          question:
+            "Bringt das Löschen von C:\\Windows\\Installer Speicherplatz?",
           answer:
             "Ja, aber tun Sie es niemals. Windows verwendet die .msi- und .msp-Dateien in diesem Ordner bei jeder Deinstallation und Reparatur eines MSI-basierten Programms. Nach dem Löschen lassen sich Anwendungen wie Microsoft Office weder deinstallieren noch reparieren, und in vielen Fällen bleibt nur eine Neuinstallation von Windows.",
         },
@@ -326,10 +331,12 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       ctaText: "Hören Sie auf zu raten, was sicher löschbar ist",
     },
     fr: {
-      title: "Peut-on supprimer ces fichiers Windows sans risque ? La réponse fichier par fichier",
+      title:
+        "Peut-on supprimer ces fichiers Windows sans risque ? La réponse fichier par fichier",
       metaDescription:
         "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution et le dossier Installer : lesquels supprimer sans risque et lesquels cassent Windows ? Un verdict clair pour chacun.",
-      subtitle: "Les listes : sans risque, sous conditions et à ne jamais toucher",
+      subtitle:
+        "Les listes : sans risque, sous conditions et à ne jamais toucher",
       intro: [
         "Réponse courte : les fichiers temporaires, Windows.old, Prefetch, le cache des miniatures et le dossier de téléchargement SoftwareDistribution peuvent être supprimés sans risque. pagefile.sys et hiberfil.sys ne se suppriment pas, ils se désactivent depuis les paramètres de Windows. WinSxS, C:\\Windows\\Installer, System32 et System Volume Information ne doivent jamais être touchés à la main — les supprimer casse définitivement la désinstallation des programmes, les mises à jour de Windows et la récupération du système.",
         "Internet regorge de conseils du type « supprimez ce dossier et récupérez 20 Go ». Une partie est exacte, l'autre laisse des dégâts qui n'apparaissent que des années plus tard, le jour où une mise à jour refuse de s'installer ou qu'un programme ne peut plus être désinstallé. Ce guide range les gros consommateurs d'espace de Windows en trois catégories nettes : sans risque, sous conditions et jamais. Pour chaque entrée, vous saurez de quoi il s'agit, combien de place elle occupe habituellement et ce que vous perdez exactement en la supprimant.",
@@ -352,7 +359,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Suppression sans risque : Windows.old et restes de mise à niveau",
+          title:
+            "Suppression sans risque : Windows.old et restes de mise à niveau",
           content: [
             "Windows.old est créé après une mise à niveau majeure de Windows et contient l'intégralité de votre installation précédente. Il pèse généralement 15 à 30 Go et n'a qu'un seul rôle : vous permettre de revenir à l'ancienne version dans les 10 jours qui suivent la mise à niveau.",
             "Le supprimer est sans danger ; la seule chose que vous abandonnez est cette possibilité de retour en arrière. Windows efface de toute façon le dossier tout seul au bout de 10 jours. Si la nouvelle version fonctionne bien, récupérez l'espace immédiatement via Paramètres > Système > Stockage > Fichiers temporaires en cochant « Installations précédentes de Windows ».",
@@ -376,7 +384,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "À ne jamais toucher : System32, le magasin de pilotes et la restauration du système",
+          title:
+            "À ne jamais toucher : System32, le magasin de pilotes et la restauration du système",
           content: [
             "C:\\Windows\\System32, c'est Windows lui-même ; en retirer des fichiers rend le système impossible à démarrer. La vieille blague « supprimez System32 pour accélérer votre PC » est l'un des plus anciens canulars du web, et des gens tombent encore dans le panneau.",
             "C:\\Windows\\System32\\DriverStore\\FileRepository est le magasin de pilotes ; il peut accumuler 5 à 15 Go de paquets de pilotes, anciennes versions comprises. Y supprimer des fichiers à la main casse les mises à jour de pilotes et la récupération du matériel. Si vous avez vraiment besoin de cet espace, le bon outil est pnputil /enum-drivers, qui liste les paquets et permet de ne retirer que ceux qui sont obsolètes.",
@@ -404,7 +413,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Non. Supprimer des fichiers de WinSxS à la main casse définitivement les mises à jour de Windows et la réparation des fichiers système. La taille affichée dans l'Explorateur de fichiers est en outre trompeuse, car la plupart des fichiers qu'il contient sont des liens physiques comptés deux fois. Le seul nettoyage sûr consiste à exécuter DISM /Online /Cleanup-Image /StartComponentCleanup dans une invite de commandes en tant qu'administrateur.",
         },
         {
-          question: "Supprimer C:\\Windows\\Installer libère-t-il de l'espace ?",
+          question:
+            "Supprimer C:\\Windows\\Installer libère-t-il de l'espace ?",
           answer:
             "Oui, mais il ne faut jamais le faire. Windows utilise les fichiers .msi et .msp de ce dossier à chaque désinstallation ou réparation d'un programme basé sur MSI. Une fois supprimés, des applications comme Microsoft Office ne peuvent plus être ni désinstallées ni réparées, et dans bien des cas une réinstallation propre de Windows reste la seule solution.",
         },
@@ -432,7 +442,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       ctaText: "Arrêtez de deviner ce qui peut être supprimé sans risque",
     },
     es: {
-      title: "¿Es seguro borrar estos archivos de Windows? La respuesta archivo por archivo",
+      title:
+        "¿Es seguro borrar estos archivos de Windows? La respuesta archivo por archivo",
       metaDescription:
         "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution y la carpeta Installer: cuáles puedes borrar sin riesgo y cuáles rompen Windows. Un veredicto claro para cada uno.",
       subtitle: "Las listas: seguro, con condiciones y nunca tocar",
@@ -482,7 +493,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Nunca tocar: System32, el almacén de controladores y Restaurar sistema",
+          title:
+            "Nunca tocar: System32, el almacén de controladores y Restaurar sistema",
           content: [
             "C:\\Windows\\System32 es Windows en sí; quitarle archivos deja el sistema sin poder arrancar. Aquello de « borra System32 para acelerar tu PC » es una de las bromas más antiguas de internet, y todavía hay quien pica.",
             "C:\\Windows\\System32\\DriverStore\\FileRepository es el almacén de controladores y puede acumular entre 5 y 15 GB de paquetes, versiones antiguas incluidas. Borrar ahí a mano rompe las actualizaciones de controladores y la recuperación del hardware. Si de verdad necesitas ese espacio, la herramienta correcta es pnputil /enum-drivers, que lista los paquetes y permite quitar solo los obsoletos.",
@@ -538,7 +550,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       ctaText: "Deja de adivinar qué se puede borrar sin riesgo",
     },
     it: {
-      title: "È sicuro eliminare questi file di Windows? La risposta file per file",
+      title:
+        "È sicuro eliminare questi file di Windows? La risposta file per file",
       metaDescription:
         "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution e la cartella Installer: quali si possono eliminare senza rischi e quali rompono Windows. Un verdetto chiaro per ciascuno.",
       subtitle: "Le liste: sicuro, con riserva e da non toccare mai",
@@ -564,7 +577,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Sicuro da eliminare: Windows.old e residui dell'aggiornamento",
+          title:
+            "Sicuro da eliminare: Windows.old e residui dell'aggiornamento",
           content: [
             "Windows.old viene creata dopo un aggiornamento di versione importante e contiene l'intera installazione precedente. Di solito pesa tra i 15 e i 30 GB e ha un unico scopo: permetterti di tornare alla vecchia versione entro i primi 10 giorni dall'aggiornamento.",
             "Eliminarla è sicuro; l'unica cosa a cui rinunci è quel ritorno indietro. Windows rimuove comunque la cartella da solo dopo 10 giorni. Se la nuova versione funziona bene, recupera subito lo spazio da Impostazioni > Sistema > Archiviazione > File temporanei spuntando « Installazioni precedenti di Windows ».",
@@ -588,7 +602,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Da non toccare mai: System32, l'archivio driver e Ripristino configurazione di sistema",
+          title:
+            "Da non toccare mai: System32, l'archivio driver e Ripristino configurazione di sistema",
           content: [
             "C:\\Windows\\System32 è Windows stesso; togliere file da lì rende il sistema non più avviabile. La vecchia battuta « elimina System32 per velocizzare il PC » è uno degli scherzi più antichi di internet, e c'è ancora chi ci casca.",
             "C:\\Windows\\System32\\DriverStore\\FileRepository è l'archivio driver e può accumulare dai 5 ai 15 GB di pacchetti, versioni vecchie comprese. Eliminare lì a mano rompe gli aggiornamenti dei driver e il ripristino dell'hardware. Se quello spazio ti serve davvero, lo strumento corretto è pnputil /enum-drivers, che elenca i pacchetti e permette di rimuovere solo quelli obsoleti.",
@@ -644,7 +659,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
       ctaText: "Smetti di tirare a indovinare su che cosa si può eliminare",
     },
     pt: {
-      title: "É seguro apagar estes arquivos do Windows? A resposta arquivo por arquivo",
+      title:
+        "É seguro apagar estes arquivos do Windows? A resposta arquivo por arquivo",
       metaDescription:
         "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution e a pasta Installer: quais dá para apagar sem risco e quais quebram o Windows. Um veredito claro para cada um.",
       subtitle: "As listas: seguro, condicional e nunca toque",
@@ -694,7 +710,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "Nunca toque: System32, o repositório de drivers e a Restauração do Sistema",
+          title:
+            "Nunca toque: System32, o repositório de drivers e a Restauração do Sistema",
           content: [
             "C:\\Windows\\System32 é o próprio Windows; tirar arquivos de lá deixa o sistema sem conseguir iniciar. Aquela velha frase “apague o System32 para deixar o PC mais rápido” é uma das pegadinhas mais antigas da internet, e ainda tem gente que cai.",
             "C:\\Windows\\System32\\DriverStore\\FileRepository é o repositório de drivers e pode acumular de 5 a 15 GB de pacotes, versões antigas incluídas. Apagar ali na mão quebra as atualizações de driver e a recuperação de hardware. Se você precisa mesmo desse espaço, a ferramenta certa é pnputil /enum-drivers, que lista os pacotes e permite remover só os obsoletos.",
@@ -800,7 +817,8 @@ export const isItSafeToDeleteWindowsFiles: Article = {
           ],
         },
         {
-          title: "絶対に触らないもの：System32、ドライバーストア、システムの復元",
+          title:
+            "絶対に触らないもの：System32、ドライバーストア、システムの復元",
           content: [
             "C:\\Windows\\System32 はWindows本体そのもので、ここからファイルを削除するとシステムは起動しなくなります。「System32を削除するとパソコンが速くなる」という古い言い回しは、インターネット最古級のいたずらですが、今でも引っかかる人がいます。",
             "C:\\Windows\\System32\\DriverStore\\FileRepository はドライバーストアで、古いバージョンを含むドライバーパッケージが5〜15 GBたまっていることがあります。ここを手作業で削除すると、ドライバーの更新とハードウェアの回復が壊れます。どうしてもその容量が必要なら、正しい方法は pnputil /enum-drivers でパッケージを一覧表示し、古いものだけを取り除くことです。",

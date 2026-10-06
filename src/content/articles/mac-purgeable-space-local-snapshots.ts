@@ -1,20 +1,21 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const macPurgeableSpaceLocalSnapshots: Article = {
-  slug: 'mac-purgeable-space-local-snapshots',
-  type: 'guide',
-  category: 'Mac Tips',
-  date: '2026-08-17',
+  slug: "mac-purgeable-space-local-snapshots",
+  type: "guide",
+  category: "Mac Tips",
+  date: "2026-08-17",
   readingTime: 8,
   content: {
     tr: {
-      title: "Mac'te Temizlenebilir (Purgeable) Alan Nedir ve Nasıl Geri Alınır?",
+      title:
+        "Mac'te Temizlenebilir (Purgeable) Alan Nedir ve Nasıl Geri Alınır?",
       metaDescription:
-        "Mac'inizde \"X GB temizlenebilir\" yazıyorsa sebebi genellikle Time Machine yerel anlık görüntüleridir. tmutil ile listeleme, silme ve inceltme adımları.",
+        'Mac\'inizde "X GB temizlenebilir" yazıyorsa sebebi genellikle Time Machine yerel anlık görüntüleridir. tmutil ile listeleme, silme ve inceltme adımları.',
       subtitle: "Time Machine Yerel Anlık Görüntüleri ve Kaybolan Gigabaytlar",
       intro: [
         "Kısa cevap: Mac'te \"temizlenebilir\" (purgeable) alan, macOS'in yer gerektiğinde kendiliğinden silebileceği veridir ve büyük kısmı Time Machine'in saatlik yerel anlık görüntülerinden oluşur. Terminal'de tmutil listlocalsnapshots / komutuyla listeleyebilir, tmutil thinlocalsnapshots / 50000000000 4 komutuyla yaklaşık 50 GB'lık bir hedefle inceltebilirsiniz. Yeni anlık görüntülerin oluşmasını durdurmak için Time Machine'in otomatik yedeklemesini kapatmanız gerekir.",
-        "Mac kullanıcılarını en çok şaşırtan durum şudur: Finder 200 GB boş alan gösterirken bir dosya kopyalamaya çalıştığınızda \"yeterli alan yok\" hatası alırsınız, ya da Disk İzlencesi ile Finder tamamen farklı rakamlar söyler. Sebep, APFS'in temizlenebilir alanı boş alan gibi sayması ama bu alanın anında serbest kalmamasıdır. Bu rehberde o alanın nereden geldiğini, nasıl geri alınacağını ve neyi feda ettiğinizi anlatıyoruz.",
+        'Mac kullanıcılarını en çok şaşırtan durum şudur: Finder 200 GB boş alan gösterirken bir dosya kopyalamaya çalıştığınızda "yeterli alan yok" hatası alırsınız, ya da Disk İzlencesi ile Finder tamamen farklı rakamlar söyler. Sebep, APFS\'in temizlenebilir alanı boş alan gibi sayması ama bu alanın anında serbest kalmamasıdır. Bu rehberde o alanın nereden geldiğini, nasıl geri alınacağını ve neyi feda ettiğinizi anlatıyoruz.',
       ],
       keyTakeaways: [
         "Temizlenebilir alan, macOS'in gerektiğinde silebileceği veridir; büyük kısmı Time Machine'in yerel anlık görüntüleridir.",
@@ -30,7 +31,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
         steps: [
           {
             name: "Temizlenebilir alanı görün",
-            text: "Finder'da Macintosh HD simgesine sağ tıklayıp Bilgi Al'ı seçin. \"Kullanılabilir\" satırında parantez içinde \"temizlenebilir\" olarak belirtilen miktarı göreceksiniz.",
+            text: 'Finder\'da Macintosh HD simgesine sağ tıklayıp Bilgi Al\'ı seçin. "Kullanılabilir" satırında parantez içinde "temizlenebilir" olarak belirtilen miktarı göreceksiniz.',
           },
           {
             name: "Terminal'i açın",
@@ -58,9 +59,9 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
         {
           title: "Temizlenebilir Alan Tam Olarak Nedir?",
           content: [
-            "APFS dosya sisteminde macOS, diskteki bazı verileri \"gerektiğinde feda edilebilir\" olarak işaretler. Bu veri gerçek dosyalardan oluşur ama macOS, yer sıkıntısı çektiğinizde onları sizin haberiniz olmadan silebilir. Finder bu alanı kullanılabilir alanın bir parçası olarak sayar, çünkü teknik olarak istediğiniz an geri alınabilir.",
+            'APFS dosya sisteminde macOS, diskteki bazı verileri "gerektiğinde feda edilebilir" olarak işaretler. Bu veri gerçek dosyalardan oluşur ama macOS, yer sıkıntısı çektiğinizde onları sizin haberiniz olmadan silebilir. Finder bu alanı kullanılabilir alanın bir parçası olarak sayar, çünkü teknik olarak istediğiniz an geri alınabilir.',
             "Bu kategoriye üç tür veri girer. Birincisi ve en büyüğü Time Machine'in yerel anlık görüntüleridir. İkincisi iCloud Drive'dan indirilmiş, gerektiğinde yeniden indirilebilecek dosyalardır. Üçüncüsü ise uygulama önbellekleri, Xcode türev verileri ve sistem geçici dosyalarıdır.",
-            "Sorun, bu mekanizmanın her zaman yeterince hızlı devreye girmemesidir. Büyük bir dosyayı tek seferde kopyalamaya çalıştığınızda macOS gerekli alanı serbest bırakmaya çalışır ama işlem bazen zaman aşımına uğrar ve \"yeterli alan yok\" hatası alırsınız — Finder 200 GB boş gösterirken.",
+            'Sorun, bu mekanizmanın her zaman yeterince hızlı devreye girmemesidir. Büyük bir dosyayı tek seferde kopyalamaya çalıştığınızda macOS gerekli alanı serbest bırakmaya çalışır ama işlem bazen zaman aşımına uğrar ve "yeterli alan yok" hatası alırsınız — Finder 200 GB boş gösterirken.',
           ],
         },
         {
@@ -74,7 +75,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
         {
           title: "Finder ve Disk İzlencesi Neden Farklı Rakam Gösteriyor?",
           content: [
-            "Bu farkı görmek kafa karıştırıcıdır ama açıklaması basittir: iki araç aynı soruyu farklı yorumlar. Finder, temizlenebilir alanı kullanılabilir alanın içine katarak \"teorik olarak elinizde ne kadar var\" sorusunu cevaplar. Disk İzlencesi ise yalnızca gerçekten serbest olan alanı gösterir.",
+            'Bu farkı görmek kafa karıştırıcıdır ama açıklaması basittir: iki araç aynı soruyu farklı yorumlar. Finder, temizlenebilir alanı kullanılabilir alanın içine katarak "teorik olarak elinizde ne kadar var" sorusunu cevaplar. Disk İzlencesi ise yalnızca gerçekten serbest olan alanı gösterir.',
             "Bu yüzden Finder 200 GB kullanılabilir derken Disk İzlencesi 40 GB boş diyebilir. Aradaki 160 GB, silinmesi gereken ama henüz silinmemiş anlık görüntüler ve önbelleklerdir. Hangi rakamın doğru olduğu sorusunun cevabı ikisidir de: biri potansiyeli, diğeri mevcudu ölçer.",
             "Pratikte hangisine güvenmelisiniz? Bir işlem yapmadan önce Disk İzlencesi'nin rakamını esas alın. Büyük bir dosya kopyalayacak, bir uygulama kuracak veya macOS güncellemesi yapacaksanız gerçekten serbest olan alan belirleyicidir.",
           ],
@@ -83,14 +84,14 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           title: "Anlık Görüntüleri Silmek Neyi Kaybettirir?",
           content: [
             "Yerel anlık görüntüleri silmek harici diskinizdeki Time Machine yedeklerini etkilemez. Bunlar tamamen ayrı iki şeydir: harici yedek uzun vadeli arşivinizdir, yerel anlık görüntüler ise son saatlere hızlı dönüş için tutulan geçici kopyalardır.",
-            "Kaybettiğiniz tek şey, harici diskiniz bağlı değilken \"iki saat önceki hâline dön\" yapabilme imkânıdır. Yanlışlıkla sildiğiniz bir dosyayı bu anlık görüntülerden geri getirebiliyordunuz; sildikten sonra bunun için harici yedeğe ihtiyacınız olur.",
+            'Kaybettiğiniz tek şey, harici diskiniz bağlı değilken "iki saat önceki hâline dön" yapabilme imkânıdır. Yanlışlıkla sildiğiniz bir dosyayı bu anlık görüntülerden geri getirebiliyordunuz; sildikten sonra bunun için harici yedeğe ihtiyacınız olur.',
             "Bu takas çoğu kullanıcı için makuldür, özellikle disk sürekli dolu çalışıyorsa. Ancak düzenli harici yedek almıyorsanız yerel anlık görüntüler sizin tek güvenlik ağınızdır; bu durumda silmeden önce en azından bir kez Time Machine yedeği almanız yerinde olur.",
           ],
         },
         {
           title: "Temizlenebilir Alanın Diğer Kaynakları",
           content: [
-            "Anlık görüntüler tek kaynak değildir. Depolama ekranındaki \"Sistem Verileri\" (eski adıyla \"Diğer\") kategorisi uygulama önbellekleri, günlük dosyaları, iOS aygıt yedekleri, Mail ekleri ve indirilmiş yazılım güncellemelerini içerir ve tek başına on gigabaytları bulabilir.",
+            'Anlık görüntüler tek kaynak değildir. Depolama ekranındaki "Sistem Verileri" (eski adıyla "Diğer") kategorisi uygulama önbellekleri, günlük dosyaları, iOS aygıt yedekleri, Mail ekleri ve indirilmiş yazılım güncellemelerini içerir ve tek başına on gigabaytları bulabilir.',
             "Yazılım geliştiriyorsanız Xcode ayrı bir kategori sayılır: türev veriler (DerivedData), aygıt destek dosyaları ve simülatör imajları toplamda 50 GB'ı geçebilir. Tarayıcı önbellekleri, Docker imajları ve Homebrew önbelleği de aynı sessiz birikimin parçasıdır.",
             "Disk Mop'un macOS sürümü bu kategorileri tek ekranda toplar: Önbellek Temizleyici modülü kullanıcı önbellekleri, Homebrew ve Xcode dahil ondan fazla macOS kategorisini listeler, Disk Analizi ise sürücüyü treemap olarak çizerek hangi klasörün gerçekte şiştiğini gösterir. Büyük Dosyalar modülü macOS'ta mdfind altyapısını kullandığı için tarama tüm diski gezmeden hızlı sonuç verir.",
           ],
@@ -111,7 +112,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "macOS'in yer gerektiğinde kendiliğinden silebileceği veridir. Büyük kısmı Time Machine'in saatlik yerel anlık görüntülerinden oluşur; geri kalanı iCloud'dan yeniden indirilebilecek dosyalar ve uygulama önbellekleridir. Finder bu alanı kullanılabilir alana dahil eder, Disk İzlencesi ise etmez.",
         },
         {
-          question: "Finder 200 GB boş diyor ama dosya kopyalayamıyorum, neden?",
+          question:
+            "Finder 200 GB boş diyor ama dosya kopyalayamıyorum, neden?",
           answer:
             "Çünkü o 200 GB'ın büyük kısmı temizlenebilir alandır ve henüz gerçekten serbest bırakılmamıştır. macOS kopyalama sırasında alanı boşaltmaya çalışır ama işlem zaman aşımına uğrayabilir. Terminal'de tmutil thinlocalsnapshots / 50000000000 4 komutuyla alanı önceden serbest bırakarak sorunu çözebilirsiniz.",
         },
@@ -121,7 +123,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Terminal'de tmutil listlocalsnapshots / komutuyla listeleyin, ardından tmutil thinlocalsnapshots / <bayt> 4 komutuyla hedeflediğiniz alanı açacak kadarını silin — örneğin 50 GB için 50000000000 yazın. Belirli bir görüntüyü kaldırmak için tmutil deletelocalsnapshots komutunu tarih damgasıyla kullanın.",
         },
         {
-          question: "Yerel anlık görüntüleri silmek Time Machine yedeğimi bozar mı?",
+          question:
+            "Yerel anlık görüntüleri silmek Time Machine yedeğimi bozar mı?",
           answer:
             "Hayır. Harici diskinizdeki Time Machine yedekleri tamamen ayrıdır ve etkilenmez. Kaybettiğiniz tek şey, harici disk bağlı değilken son saatlere hızlı dönüş yapabilme imkânıdır. Uzun vadeli arşiviniz olduğu gibi kalır.",
         },
@@ -131,7 +134,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Eskiden kullanılan sudo tmutil disablelocal komutu macOS High Sierra ile kaldırıldı. Bugün tek yol Time Machine'in otomatik yedeklemesini kapatmaktır: Sistem Ayarları > Genel > Time Machine (macOS 12'de Sistem Tercihleri > Time Machine) yolundan otomatik yedeklemeyi devre dışı bırakın ve yedekleri elle başlatın.",
         },
         {
-          question: "\"Sistem Verileri\" kategorisi neden bu kadar büyük?",
+          question: '"Sistem Verileri" kategorisi neden bu kadar büyük?',
           answer:
             "Bu kategori uygulama önbellekleri, günlük dosyaları, iOS aygıt yedekleri, Mail ekleri, indirilmiş yazılım güncellemeleri ve yerel anlık görüntüleri birlikte sayar. Yazılım geliştiriyorsanız Xcode türev verileri ve simülatör imajları da eklenir. Tek bir kalem değil, onlarca küçük kaynağın toplamıdır — bu yüzden hangisinin şiştiğini görmek için klasör bazlı bir analiz gerekir.",
         },
@@ -146,11 +149,11 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
     en: {
       title: "What Is Purgeable Space on a Mac and How Do I Reclaim It?",
       metaDescription:
-        "If your Mac reports \"X GB purgeable\", Time Machine local snapshots are usually the cause. How to list, thin and delete them with tmutil — and what you give up.",
+        'If your Mac reports "X GB purgeable", Time Machine local snapshots are usually the cause. How to list, thin and delete them with tmutil — and what you give up.',
       subtitle: "Time Machine Local Snapshots and the Missing Gigabytes",
       intro: [
         "Short answer: purgeable space on a Mac is data macOS can delete on its own when it needs room, and most of it consists of Time Machine's hourly local snapshots. List them in Terminal with tmutil listlocalsnapshots / and reclaim space with tmutil thinlocalsnapshots / 50000000000 4, where the number is the target in bytes. To stop new snapshots from being created, you have to turn off Time Machine's automatic backups.",
-        "The situation that confuses Mac users most is this: Finder reports 200 GB available, yet copying a file fails with \"not enough space\", or Disk Utility and Finder disagree completely. The reason is that APFS counts purgeable space as available even though it is not actually free yet. This guide explains where that space comes from, how to get it back, and what you give up in the process.",
+        'The situation that confuses Mac users most is this: Finder reports 200 GB available, yet copying a file fails with "not enough space", or Disk Utility and Finder disagree completely. The reason is that APFS counts purgeable space as available even though it is not actually free yet. This guide explains where that space comes from, how to get it back, and what you give up in the process.',
       ],
       keyTakeaways: [
         "Purgeable space is data macOS can delete when needed; most of it is Time Machine local snapshots.",
@@ -196,7 +199,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           content: [
             "On the APFS file system, macOS marks certain data on disk as expendable when necessary. That data consists of real files, but macOS is allowed to delete them without asking when you run short on room. Finder counts this as part of available space because, technically, you can have it back at any moment.",
             "Three kinds of data fall into this category. The first and largest is Time Machine's local snapshots. The second is files downloaded from iCloud Drive that could simply be downloaded again. The third is application caches, Xcode derived data and system temporary files.",
-            "The problem is that this mechanism does not always kick in fast enough. When you try to copy a large file in one go, macOS attempts to free the space it needs, but the operation sometimes times out and you get a \"not enough space\" error — while Finder still shows 200 GB free.",
+            'The problem is that this mechanism does not always kick in fast enough. When you try to copy a large file in one go, macOS attempts to free the space it needs, but the operation sometimes times out and you get a "not enough space" error — while Finder still shows 200 GB free.',
           ],
         },
         {
@@ -210,7 +213,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
         {
           title: "Why Finder and Disk Utility Disagree",
           content: [
-            "Seeing two different numbers is confusing, but the explanation is simple: the two tools answer the same question differently. Finder includes purgeable space in the available figure, answering \"how much could you theoretically have\". Disk Utility reports only what is genuinely free right now.",
+            'Seeing two different numbers is confusing, but the explanation is simple: the two tools answer the same question differently. Finder includes purgeable space in the available figure, answering "how much could you theoretically have". Disk Utility reports only what is genuinely free right now.',
             "That is how Finder can say 200 GB available while Disk Utility says 40 GB free. The 160 GB difference is snapshots and caches that should be deleted but have not been yet. Asked which number is correct, the answer is both: one measures potential, the other measures actual.",
             "Which should you trust in practice? Go by Disk Utility's number before doing anything demanding. If you are about to copy a large file, install an application or run a macOS update, genuinely free space is what determines whether it succeeds.",
           ],
@@ -219,14 +222,14 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           title: "What You Lose by Deleting Snapshots",
           content: [
             "Deleting local snapshots does not affect the Time Machine backups on your external drive. They are two entirely separate things: the external backup is your long-term archive, while local snapshots are temporary copies kept for fast rollback over the last few hours.",
-            "The only thing you give up is the ability to \"go back to two hours ago\" while your external drive is disconnected. If you accidentally deleted a file, you could previously restore it from those snapshots; afterwards, you need the external backup for that.",
+            'The only thing you give up is the ability to "go back to two hours ago" while your external drive is disconnected. If you accidentally deleted a file, you could previously restore it from those snapshots; afterwards, you need the external backup for that.',
             "For most users that is a reasonable trade, particularly when the disk runs permanently full. But if you are not taking regular external backups, local snapshots are your only safety net — in that case, run at least one Time Machine backup before clearing them.",
           ],
         },
         {
           title: "Other Sources of Purgeable Space",
           content: [
-            "Snapshots are not the only source. The \"System Data\" category on the storage screen (previously called \"Other\") covers application caches, log files, iOS device backups, Mail attachments and downloaded software updates, and can reach tens of gigabytes on its own.",
+            'Snapshots are not the only source. The "System Data" category on the storage screen (previously called "Other") covers application caches, log files, iOS device backups, Mail attachments and downloaded software updates, and can reach tens of gigabytes on its own.',
             "If you write software, Xcode is a category in itself: derived data, device support files and simulator images together can exceed 50 GB. Browser caches, Docker images and the Homebrew cache are part of the same quiet accumulation.",
             "The macOS build of Disk Mop gathers these categories on a single screen: Cache Cleaner lists more than ten macOS-specific categories including user caches, Homebrew and Xcode, while Disk Analysis draws the drive as a treemap so the genuinely bloated folder is obvious. Large Files uses the mdfind index on macOS, so scans return quickly without walking the entire disk.",
           ],
@@ -257,7 +260,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "List them in Terminal with tmutil listlocalsnapshots /, then remove enough of them with tmutil thinlocalsnapshots / <bytes> 4 — for example 50000000000 to reclaim about 50 GB. To remove one specific snapshot, use tmutil deletelocalsnapshots with the timestamp from the listing.",
         },
         {
-          question: "Does deleting local snapshots break my Time Machine backup?",
+          question:
+            "Does deleting local snapshots break my Time Machine backup?",
           answer:
             "No. The Time Machine backups on your external drive are entirely separate and are unaffected. The only thing you lose is the ability to roll back to the last few hours while the external drive is disconnected. Your long-term archive stays intact.",
         },
@@ -267,7 +271,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "The old sudo tmutil disablelocal command was removed in macOS High Sierra. Today the only route is turning off Time Machine's automatic backups: go to System Settings > General > Time Machine (System Preferences > Time Machine on macOS 12), disable automatic backups, and start backups manually instead.",
         },
         {
-          question: "Why is the \"System Data\" category so large?",
+          question: 'Why is the "System Data" category so large?',
           answer:
             "That category combines application caches, log files, iOS device backups, Mail attachments, downloaded software updates and local snapshots. If you develop software, Xcode derived data and simulator images are added on top. It is not one item but the sum of dozens of small sources, which is why a folder-level analysis is needed to find the one that is bloated.",
         },
@@ -280,13 +284,14 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       ctaText: "See Where the Space on Your Mac Goes",
     },
     de: {
-      title: "Was ist bereinigbarer Speicher auf dem Mac und wie hole ich ihn zurück?",
+      title:
+        "Was ist bereinigbarer Speicher auf dem Mac und wie hole ich ihn zurück?",
       metaDescription:
-        "Wenn Ihr Mac \"X GB bereinigbar\" meldet, sind meist lokale Time-Machine-Schnappschüsse die Ursache. So listen, verkleinern und löschen Sie sie mit tmutil.",
+        'Wenn Ihr Mac "X GB bereinigbar" meldet, sind meist lokale Time-Machine-Schnappschüsse die Ursache. So listen, verkleinern und löschen Sie sie mit tmutil.',
       subtitle: "Lokale Time-Machine-Schnappschüsse und die fehlenden Gigabyte",
       intro: [
         "Kurze Antwort: Bereinigbarer Speicher auf dem Mac sind Daten, die macOS bei Bedarf selbstständig löschen kann — überwiegend die stündlichen lokalen Schnappschüsse von Time Machine. Im Terminal listen Sie sie mit tmutil listlocalsnapshots / auf und geben Platz frei mit tmutil thinlocalsnapshots / 50000000000 4, wobei die Zahl das Ziel in Byte angibt. Damit keine neuen Schnappschüsse entstehen, müssen Sie die automatische Sicherung von Time Machine abschalten.",
-        "Am meisten verwirrt Mac-Nutzer diese Situation: Der Finder meldet 200 GB verfügbar, doch das Kopieren einer Datei scheitert mit \"nicht genügend Speicherplatz\" — oder Festplattendienstprogramm und Finder nennen völlig unterschiedliche Werte. Der Grund: APFS zählt bereinigbaren Speicher als verfügbar, obwohl er noch nicht tatsächlich frei ist. Dieser Ratgeber erklärt, woher dieser Speicher kommt, wie Sie ihn zurückholen und was Sie dafür aufgeben.",
+        'Am meisten verwirrt Mac-Nutzer diese Situation: Der Finder meldet 200 GB verfügbar, doch das Kopieren einer Datei scheitert mit "nicht genügend Speicherplatz" — oder Festplattendienstprogramm und Finder nennen völlig unterschiedliche Werte. Der Grund: APFS zählt bereinigbaren Speicher als verfügbar, obwohl er noch nicht tatsächlich frei ist. Dieser Ratgeber erklärt, woher dieser Speicher kommt, wie Sie ihn zurückholen und was Sie dafür aufgeben.',
       ],
       keyTakeaways: [
         "Bereinigbarer Speicher sind Daten, die macOS bei Bedarf löschen kann; den größten Teil machen lokale Time-Machine-Schnappschüsse aus.",
@@ -332,7 +337,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           content: [
             "Im Dateisystem APFS markiert macOS bestimmte Daten auf dem Datenträger als bei Bedarf entbehrlich. Es handelt sich um echte Dateien, doch macOS darf sie ohne Rückfrage löschen, wenn der Platz knapp wird. Der Finder rechnet sie zum verfügbaren Speicher, weil sie technisch gesehen jederzeit zurückgewonnen werden können.",
             "Drei Arten von Daten fallen in diese Kategorie. Die erste und größte sind die lokalen Schnappschüsse von Time Machine. Die zweite sind aus iCloud Drive geladene Dateien, die sich einfach erneut herunterladen ließen. Die dritte sind Programm-Caches, Xcode-Zwischendaten und temporäre Systemdateien.",
-            "Das Problem: Dieser Mechanismus greift nicht immer schnell genug. Wenn Sie eine große Datei in einem Zug kopieren, versucht macOS den nötigen Platz freizugeben, doch der Vorgang läuft mitunter in eine Zeitüberschreitung — und Sie erhalten \"nicht genügend Speicherplatz\", während der Finder weiter 200 GB frei meldet.",
+            'Das Problem: Dieser Mechanismus greift nicht immer schnell genug. Wenn Sie eine große Datei in einem Zug kopieren, versucht macOS den nötigen Platz freizugeben, doch der Vorgang läuft mitunter in eine Zeitüberschreitung — und Sie erhalten "nicht genügend Speicherplatz", während der Finder weiter 200 GB frei meldet.',
           ],
         },
         {
@@ -344,9 +349,10 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           ],
         },
         {
-          title: "Warum Finder und Festplattendienstprogramm sich widersprechen",
+          title:
+            "Warum Finder und Festplattendienstprogramm sich widersprechen",
           content: [
-            "Zwei unterschiedliche Zahlen zu sehen verwirrt, die Erklärung ist aber einfach: Die beiden Werkzeuge beantworten dieselbe Frage unterschiedlich. Der Finder rechnet bereinigbaren Speicher zum verfügbaren hinzu und beantwortet damit \"wie viel könnten Sie theoretisch haben\". Das Festplattendienstprogramm meldet nur, was jetzt tatsächlich frei ist.",
+            'Zwei unterschiedliche Zahlen zu sehen verwirrt, die Erklärung ist aber einfach: Die beiden Werkzeuge beantworten dieselbe Frage unterschiedlich. Der Finder rechnet bereinigbaren Speicher zum verfügbaren hinzu und beantwortet damit "wie viel könnten Sie theoretisch haben". Das Festplattendienstprogramm meldet nur, was jetzt tatsächlich frei ist.',
             "So kann der Finder 200 GB verfügbar melden, während das Festplattendienstprogramm 40 GB frei anzeigt. Die Differenz von 160 GB sind Schnappschüsse und Caches, die gelöscht werden sollten, aber noch nicht gelöscht wurden. Auf die Frage, welche Zahl stimmt, lautet die Antwort: beide — die eine misst Potenzial, die andere den Ist-Zustand.",
             "Worauf sollten Sie sich in der Praxis verlassen? Ziehen Sie vor anspruchsvollen Aktionen den Wert des Festplattendienstprogramms heran. Wenn Sie eine große Datei kopieren, ein Programm installieren oder ein macOS-Update einspielen wollen, entscheidet der tatsächlich freie Platz über den Erfolg.",
           ],
@@ -355,14 +361,14 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           title: "Was Sie beim Löschen von Schnappschüssen verlieren",
           content: [
             "Das Löschen lokaler Schnappschüsse berührt die Time-Machine-Sicherungen auf Ihrer externen Festplatte nicht. Das sind zwei völlig getrennte Dinge: Die externe Sicherung ist Ihr Langzeitarchiv, lokale Schnappschüsse sind temporäre Kopien für die schnelle Rückkehr über die letzten Stunden.",
-            "Sie geben ausschließlich die Möglichkeit auf, bei nicht angeschlossener externer Platte \"auf den Stand von vor zwei Stunden\" zurückzugehen. Eine versehentlich gelöschte Datei konnten Sie zuvor aus diesen Schnappschüssen wiederherstellen; danach brauchen Sie dafür die externe Sicherung.",
+            'Sie geben ausschließlich die Möglichkeit auf, bei nicht angeschlossener externer Platte "auf den Stand von vor zwei Stunden" zurückzugehen. Eine versehentlich gelöschte Datei konnten Sie zuvor aus diesen Schnappschüssen wiederherstellen; danach brauchen Sie dafür die externe Sicherung.',
             "Für die meisten Nutzer ist das ein vertretbarer Tausch, besonders bei dauerhaft vollem Laufwerk. Wer allerdings keine regelmäßigen externen Sicherungen anlegt, hat in den lokalen Schnappschüssen sein einziges Sicherheitsnetz — dann sollten Sie vor dem Löschen mindestens einmal eine Time-Machine-Sicherung durchführen.",
           ],
         },
         {
           title: "Weitere Quellen bereinigbaren Speichers",
           content: [
-            "Schnappschüsse sind nicht die einzige Quelle. Die Kategorie \"Systemdaten\" in der Speicherübersicht (früher \"Sonstige\") umfasst Programm-Caches, Protokolldateien, iOS-Gerätesicherungen, Mail-Anhänge und heruntergeladene Softwareupdates und erreicht allein schon zweistellige Gigabyte-Beträge.",
+            'Schnappschüsse sind nicht die einzige Quelle. Die Kategorie "Systemdaten" in der Speicherübersicht (früher "Sonstige") umfasst Programm-Caches, Protokolldateien, iOS-Gerätesicherungen, Mail-Anhänge und heruntergeladene Softwareupdates und erreicht allein schon zweistellige Gigabyte-Beträge.',
             "Wer Software entwickelt, hat mit Xcode eine eigene Kategorie: Zwischendaten (DerivedData), Geräteunterstützungsdateien und Simulator-Images summieren sich leicht auf über 50 GB. Browser-Caches, Docker-Images und der Homebrew-Cache gehören zur selben stillen Ansammlung.",
             "Die macOS-Version von Disk Mop bündelt diese Kategorien auf einem Bildschirm: Der Cache Cleaner listet über zehn macOS-spezifische Kategorien einschließlich Benutzer-Caches, Homebrew und Xcode, während die Datenträgeranalyse das Laufwerk als Treemap zeichnet, sodass der tatsächlich aufgeblähte Ordner sofort auffällt. Das Modul Große Dateien nutzt unter macOS den mdfind-Index, wodurch Suchläufe schnell antworten, ohne das gesamte Laufwerk zu durchlaufen.",
           ],
@@ -383,7 +389,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Es sind Daten, die macOS bei Platzmangel selbstständig löschen kann. Den größten Teil machen die stündlichen lokalen Schnappschüsse von Time Machine aus; hinzu kommen aus iCloud erneut ladbare Dateien und Programm-Caches. Der Finder rechnet sie zum verfügbaren Speicher, das Festplattendienstprogramm nicht.",
         },
         {
-          question: "Der Finder meldet 200 GB frei, trotzdem kann ich nichts kopieren — warum?",
+          question:
+            "Der Finder meldet 200 GB frei, trotzdem kann ich nichts kopieren — warum?",
           answer:
             "Weil der Großteil dieser 200 GB bereinigbarer Speicher ist, der noch nicht tatsächlich freigegeben wurde. macOS versucht ihn während des Kopiervorgangs freizugeben, was in eine Zeitüberschreitung laufen kann. Geben Sie den Platz vorab frei mit tmutil thinlocalsnapshots / 50000000000 4 im Terminal.",
         },
@@ -393,7 +400,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Listen Sie sie im Terminal mit tmutil listlocalsnapshots / auf und entfernen Sie anschließend mit tmutil thinlocalsnapshots / <Byte> 4 so viele wie nötig — etwa 50000000000 für rund 50 GB. Einen bestimmten Schnappschuss entfernen Sie mit tmutil deletelocalsnapshots und dem Zeitstempel aus der Auflistung.",
         },
         {
-          question: "Zerstört das Löschen lokaler Schnappschüsse meine Time-Machine-Sicherung?",
+          question:
+            "Zerstört das Löschen lokaler Schnappschüsse meine Time-Machine-Sicherung?",
           answer:
             "Nein. Die Time-Machine-Sicherungen auf Ihrer externen Festplatte sind vollständig getrennt und bleiben unberührt. Sie verlieren lediglich die Möglichkeit, bei getrennter externer Platte auf die letzten Stunden zurückzugehen. Ihr Langzeitarchiv bleibt vollständig erhalten.",
         },
@@ -403,7 +411,7 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Der frühere Befehl sudo tmutil disablelocal wurde mit macOS High Sierra entfernt. Heute bleibt nur, die automatische Sicherung von Time Machine abzuschalten: unter Systemeinstellungen > Allgemein > Time Machine (macOS 12: Systemeinstellungen > Time Machine) die automatische Sicherung deaktivieren und Sicherungen manuell starten.",
         },
         {
-          question: "Warum ist die Kategorie \"Systemdaten\" so groß?",
+          question: 'Warum ist die Kategorie "Systemdaten" so groß?',
           answer:
             "Diese Kategorie fasst Programm-Caches, Protokolldateien, iOS-Gerätesicherungen, Mail-Anhänge, heruntergeladene Softwareupdates und lokale Schnappschüsse zusammen. Wer Software entwickelt, hat zusätzlich Xcode-Zwischendaten und Simulator-Images. Es ist kein einzelner Posten, sondern die Summe vieler kleiner Quellen — deshalb braucht es eine ordnerbasierte Analyse, um den aufgeblähten Anteil zu finden.",
         },
@@ -416,10 +424,12 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       ctaText: "Sehen Sie, wohin der Speicher auf Ihrem Mac geht",
     },
     fr: {
-      title: "Espace purgeable sur Mac : d'où vient-il et comment le récupérer ?",
+      title:
+        "Espace purgeable sur Mac : d'où vient-il et comment le récupérer ?",
       metaDescription:
         "Votre Mac affiche « X GB purgeables » ? Ce sont souvent les instantanés locaux de Time Machine. Comment les lister, les alléger et les supprimer avec tmutil.",
-      subtitle: "Les instantanés locaux de Time Machine et les gigaoctets qui manquent",
+      subtitle:
+        "Les instantanés locaux de Time Machine et les gigaoctets qui manquent",
       intro: [
         "Réponse courte : l'espace purgeable (purgeable space) d'un Mac correspond aux données que macOS peut supprimer de lui-même lorsqu'il a besoin de place, et il s'agit pour l'essentiel des instantanés locaux (local snapshots) que Time Machine crée toutes les heures. Listez-les dans le Terminal avec tmutil listlocalsnapshots / et libérez de la place avec tmutil thinlocalsnapshots / 50000000000 4, où le nombre indique l'objectif en octets. Pour empêcher la création de nouveaux instantanés, il faut désactiver la sauvegarde automatique de Time Machine.",
         "La situation qui déroute le plus les utilisateurs de Mac est la suivante : le Finder annonce 200 GB disponibles, mais la copie d'un fichier échoue sur un message d'espace insuffisant, ou bien l'Utilitaire de disque et le Finder donnent des chiffres complètement différents. La raison tient à APFS, qui compte l'espace purgeable comme disponible alors qu'il n'est pas encore réellement libre. Ce guide explique d'où vient cet espace, comment le récupérer et ce que vous perdez au passage.",
@@ -472,7 +482,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           ],
         },
         {
-          title: "Les instantanés locaux de Time Machine : la source principale",
+          title:
+            "Les instantanés locaux de Time Machine : la source principale",
           content: [
             "Dès que vous activez Time Machine pour sauvegarder vers un disque externe, macOS se met aussi à créer des instantanés horaires sur votre disque interne. Ils sont créés même lorsque le disque externe n'est pas branché, afin que vous puissiez revenir sur les dernières heures loin de votre disque de sauvegarde.",
             "Ces instantanés sont généralement conservés environ 24 heures et, grâce à la copie sur écriture (copy-on-write) d'APFS, ils n'occupent presque rien au départ. Mais à mesure que vos fichiers changent, les anciennes versions sont conservées et l'empreinte grossit vite. Pour qui manipule de gros fichiers — montage vidéo, machines virtuelles, jeux de données volumineux —, les instantanés locaux dépassent facilement 100 GB.",
@@ -480,7 +491,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
           ],
         },
         {
-          title: "Pourquoi le Finder et l'Utilitaire de disque ne sont pas d'accord",
+          title:
+            "Pourquoi le Finder et l'Utilitaire de disque ne sont pas d'accord",
           content: [
             "Voir deux chiffres différents déroute, mais l'explication est simple : les deux outils répondent à la même question de deux façons. Le Finder inclut l'espace purgeable dans le volume disponible et répond donc à « combien pourriez-vous avoir en théorie ». L'Utilitaire de disque, lui, n'indique que ce qui est réellement libre à l'instant présent.",
             "C'est ainsi que le Finder peut annoncer 200 GB disponibles pendant que l'Utilitaire de disque affiche 40 GB libres. Les 160 GB d'écart sont des instantanés et des caches qui devraient être supprimés mais ne l'ont pas encore été. Si vous demandez lequel des deux chiffres est le bon, la réponse est : les deux. L'un mesure un potentiel, l'autre une réalité.",
@@ -519,7 +531,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Ce sont des données que macOS peut supprimer de lui-même quand il manque de place. L'essentiel provient des instantanés locaux que Time Machine crée toutes les heures ; le reste correspond à des fichiers retéléchargeables depuis iCloud et à des caches d'applications. Le Finder les compte dans l'espace disponible, l'Utilitaire de disque non.",
         },
         {
-          question: "Le Finder indique 200 GB libres mais je ne peux pas copier un fichier, pourquoi ?",
+          question:
+            "Le Finder indique 200 GB libres mais je ne peux pas copier un fichier, pourquoi ?",
           answer:
             "Parce que la majeure partie de ces 200 GB est de l'espace purgeable qui n'a pas encore été réellement libéré. macOS essaie de le libérer pendant la copie, mais l'opération peut dépasser le délai imparti. Libérez la place à l'avance avec tmutil thinlocalsnapshots / 50000000000 4 dans le Terminal et le problème disparaît.",
         },
@@ -529,7 +542,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Listez-les dans le Terminal avec tmutil listlocalsnapshots /, puis supprimez-en assez avec tmutil thinlocalsnapshots / <octets> 4 — par exemple 50000000000 pour récupérer environ 50 GB. Pour retirer un instantané précis, utilisez tmutil deletelocalsnapshots suivi de l'horodatage vu dans la liste.",
         },
         {
-          question: "Supprimer les instantanés locaux abîme-t-il ma sauvegarde Time Machine ?",
+          question:
+            "Supprimer les instantanés locaux abîme-t-il ma sauvegarde Time Machine ?",
           answer:
             "Non. Les sauvegardes Time Machine de votre disque externe sont totalement distinctes et ne sont pas touchées. Vous perdez seulement la possibilité de revenir sur les dernières heures quand le disque externe est débranché. Votre archive de long terme reste intacte.",
         },
@@ -539,7 +553,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "L'ancienne commande sudo tmutil disablelocal a été retirée à partir de macOS High Sierra. Aujourd'hui, la seule voie consiste à désactiver la sauvegarde automatique de Time Machine : ouvrez Réglages Système > Général > Time Machine (Préférences Système > Time Machine sous macOS 12), désactivez la sauvegarde automatique et lancez vos sauvegardes à la main.",
         },
         {
-          question: "Pourquoi la catégorie « Données système » est-elle si volumineuse ?",
+          question:
+            "Pourquoi la catégorie « Données système » est-elle si volumineuse ?",
           answer:
             "Cette catégorie additionne les caches d'applications, les fichiers journaux, les sauvegardes d'appareils iOS, les pièces jointes de Mail, les mises à jour logicielles téléchargées et les instantanés locaux. Si vous développez, les données dérivées de Xcode et les images de simulateur s'y ajoutent. Ce n'est pas un poste unique mais la somme de dizaines de petites sources : d'où l'intérêt d'une analyse dossier par dossier pour trouver celle qui a enflé.",
         },
@@ -555,7 +570,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       title: "¿Qué es el espacio purgable en un Mac y cómo se recupera?",
       metaDescription:
         "Si tu Mac indica « X GB purgables », lo normal es que sean las instantáneas locales de Time Machine. Cómo listarlas, reducirlas y borrarlas con tmutil.",
-      subtitle: "Las instantáneas locales de Time Machine y los gigabytes que faltan",
+      subtitle:
+        "Las instantáneas locales de Time Machine y los gigabytes que faltan",
       intro: [
         "Respuesta corta: el espacio purgable (purgeable space) de un Mac son datos que macOS puede borrar por su cuenta cuando necesita sitio, y en su mayoría son las instantáneas locales (local snapshots) que Time Machine crea cada hora. Puedes listarlas en el Terminal con tmutil listlocalsnapshots / y liberar espacio con tmutil thinlocalsnapshots / 50000000000 4, donde el número es el objetivo en bytes. Para que no se creen instantáneas nuevas hay que desactivar la copia de seguridad automática de Time Machine.",
         "La situación que más desconcierta a los usuarios de Mac es esta: el Finder indica 200 GB disponibles, pero al copiar un archivo aparece un aviso de espacio insuficiente, o bien la Utilidad de Discos y el Finder dan cifras completamente distintas. El motivo es que APFS cuenta el espacio purgable como disponible aunque todavía no esté realmente libre. Esta guía explica de dónde sale ese espacio, cómo recuperarlo y qué pierdes por el camino.",
@@ -655,7 +671,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Son datos que macOS puede borrar por su cuenta cuando necesita sitio. La mayor parte son las instantáneas locales que Time Machine crea cada hora; el resto son archivos que podrían volver a descargarse de iCloud y cachés de aplicaciones. El Finder los incluye en el espacio disponible y la Utilidad de Discos no.",
         },
         {
-          question: "El Finder dice 200 GB libres pero no puedo copiar un archivo, ¿por qué?",
+          question:
+            "El Finder dice 200 GB libres pero no puedo copiar un archivo, ¿por qué?",
           answer:
             "Porque la mayor parte de esos 200 GB es espacio purgable que todavía no se ha liberado de verdad. macOS intenta liberarlo durante la copia, pero la operación puede agotar el tiempo de espera. Libera el espacio de antemano con tmutil thinlocalsnapshots / 50000000000 4 en el Terminal y el problema desaparece.",
         },
@@ -665,7 +682,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Lístalas en el Terminal con tmutil listlocalsnapshots / y después elimina las necesarias con tmutil thinlocalsnapshots / <bytes> 4; por ejemplo, 50000000000 para recuperar unos 50 GB. Para quitar una instantánea concreta, usa tmutil deletelocalsnapshots con la marca de tiempo del listado.",
         },
         {
-          question: "¿Borrar las instantáneas locales estropea mi copia de Time Machine?",
+          question:
+            "¿Borrar las instantáneas locales estropea mi copia de Time Machine?",
           answer:
             "No. Las copias de Time Machine del disco externo son completamente independientes y no se ven afectadas. Lo único que pierdes es la posibilidad de volver atrás unas horas mientras el disco externo está desconectado. Tu archivo a largo plazo queda intacto.",
         },
@@ -675,7 +693,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "El antiguo comando sudo tmutil disablelocal se retiró en macOS High Sierra. Hoy la única vía es desactivar la copia de seguridad automática de Time Machine: entra en Ajustes del Sistema > General > Time Machine (Preferencias del Sistema > Time Machine en macOS 12), desactiva la copia automática e inicia las copias a mano.",
         },
         {
-          question: "¿Por qué es tan grande la categoría « Datos del sistema »?",
+          question:
+            "¿Por qué es tan grande la categoría « Datos del sistema »?",
           answer:
             "Esa categoría suma cachés de aplicaciones, archivos de registro, copias de dispositivos iOS, adjuntos de Mail, actualizaciones de software descargadas e instantáneas locales. Si desarrollas software, se añaden los datos derivados de Xcode y las imágenes del simulador. No es un único elemento, sino la suma de decenas de fuentes pequeñas: por eso hace falta un análisis por carpetas para dar con la que se ha hinchado.",
         },
@@ -691,7 +710,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       title: "Che cos'è lo spazio eliminabile sul Mac e come si recupera?",
       metaDescription:
         "Se il Mac segnala « X GB eliminabili », la causa sono quasi sempre gli snapshot locali di Time Machine. Come elencarli, ridurli ed eliminarli con tmutil.",
-      subtitle: "Gli snapshot locali di Time Machine e i gigabyte che spariscono",
+      subtitle:
+        "Gli snapshot locali di Time Machine e i gigabyte che spariscono",
       intro: [
         "Risposta breve: lo spazio eliminabile (purgeable space) sul Mac è costituito da dati che macOS può cancellare da solo quando ha bisogno di posto, e in gran parte si tratta degli snapshot locali (local snapshots) che Time Machine crea ogni ora. Puoi elencarli nel Terminale con tmutil listlocalsnapshots / e liberare spazio con tmutil thinlocalsnapshots / 50000000000 4, dove il numero indica l'obiettivo in byte. Per impedire la creazione di nuovi snapshot devi disattivare il backup automatico di Time Machine.",
         "La situazione che disorienta di più gli utenti Mac è questa: il Finder segnala 200 GB disponibili, ma la copia di un file si interrompe con un errore di spazio insufficiente, oppure Utility Disco e Finder indicano numeri completamente diversi. Il motivo è che APFS conteggia lo spazio eliminabile come disponibile anche se non è ancora davvero libero. Questa guida spiega da dove arriva quello spazio, come riprenderselo e a che cosa rinunci nel farlo.",
@@ -791,7 +811,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Sono dati che macOS può cancellare da solo quando ha bisogno di posto. La parte più consistente sono gli snapshot locali creati ogni ora da Time Machine; il resto sono file riscaricabili da iCloud e cache delle applicazioni. Il Finder li include nello spazio disponibile, Utility Disco no.",
         },
         {
-          question: "Il Finder dice 200 GB liberi ma non riesco a copiare un file, perché?",
+          question:
+            "Il Finder dice 200 GB liberi ma non riesco a copiare un file, perché?",
           answer:
             "Perché gran parte di quei 200 GB è spazio eliminabile non ancora liberato davvero. macOS prova a liberarlo durante la copia, ma l'operazione può andare in timeout. Libera lo spazio in anticipo con tmutil thinlocalsnapshots / 50000000000 4 nel Terminale e il problema si risolve.",
         },
@@ -801,7 +822,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Elencali nel Terminale con tmutil listlocalsnapshots /, poi rimuovine quanti bastano con tmutil thinlocalsnapshots / <byte> 4: per esempio 50000000000 per recuperare circa 50 GB. Per togliere uno snapshot specifico usa tmutil deletelocalsnapshots con la data e ora presa dall'elenco.",
         },
         {
-          question: "Eliminare gli snapshot locali rovina il backup di Time Machine?",
+          question:
+            "Eliminare gli snapshot locali rovina il backup di Time Machine?",
           answer:
             "No. I backup di Time Machine sul disco esterno sono del tutto separati e restano intatti. L'unica cosa che perdi è la possibilità di tornare indietro di poche ore mentre il disco esterno è scollegato. Il tuo archivio di lungo periodo non viene toccato.",
         },
@@ -827,7 +849,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       title: "O que é o espaço liberável no Mac e como recuperá-lo?",
       metaDescription:
         "Se o seu Mac mostra “X GB liberáveis”, a causa costuma ser os instantâneos locais do Time Machine. Como listar, reduzir e apagar tudo isso com o tmutil.",
-      subtitle: "Os instantâneos locais do Time Machine e os gigabytes que somem",
+      subtitle:
+        "Os instantâneos locais do Time Machine e os gigabytes que somem",
       intro: [
         "Resposta rápida: o espaço liberável (purgeable space) do Mac são dados que o macOS pode apagar sozinho quando precisa de lugar, e a maior parte deles são os instantâneos locais (local snapshots) que o Time Machine cria a cada hora. Liste-os no Terminal com tmutil listlocalsnapshots / e libere espaço com tmutil thinlocalsnapshots / 50000000000 4, em que o número é a meta em bytes. Para impedir a criação de novos instantâneos, é preciso desativar o backup automático do Time Machine.",
         "A situação que mais confunde quem usa Mac é esta: o Finder informa 200 GB disponíveis, mas a cópia de um arquivo falha com um aviso de espaço insuficiente, ou então o Utilitário de Disco e o Finder mostram números completamente diferentes. O motivo é que o APFS conta o espaço liberável como disponível mesmo que ele ainda não esteja realmente livre. Este guia explica de onde vem esse espaço, como recuperá-lo e do que você abre mão no caminho.",
@@ -927,7 +950,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "São dados que o macOS pode apagar sozinho quando precisa de lugar. A maior parte são os instantâneos locais que o Time Machine cria a cada hora; o resto são arquivos que poderiam ser baixados de novo do iCloud e caches de aplicativos. O Finder inclui isso no espaço disponível; o Utilitário de Disco, não.",
         },
         {
-          question: "O Finder diz 200 GB livres, mas não consigo copiar um arquivo. Por quê?",
+          question:
+            "O Finder diz 200 GB livres, mas não consigo copiar um arquivo. Por quê?",
           answer:
             "Porque a maior parte desses 200 GB é espaço liberável que ainda não foi de fato liberado. O macOS tenta liberá-lo durante a cópia, mas a operação pode estourar o tempo limite. Libere o espaço antes com tmutil thinlocalsnapshots / 50000000000 4 no Terminal e o problema some.",
         },
@@ -937,7 +961,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Liste-os no Terminal com tmutil listlocalsnapshots / e depois remova quantos forem necessários com tmutil thinlocalsnapshots / <bytes> 4 — por exemplo, 50000000000 para recuperar cerca de 50 GB. Para remover um instantâneo específico, use tmutil deletelocalsnapshots com a data e hora da listagem.",
         },
         {
-          question: "Apagar os instantâneos locais estraga meu backup do Time Machine?",
+          question:
+            "Apagar os instantâneos locais estraga meu backup do Time Machine?",
           answer:
             "Não. Os backups do Time Machine no disco externo são totalmente separados e não são afetados. A única coisa que você perde é a possibilidade de voltar às últimas horas com o disco externo desconectado. Seu arquivo de longo prazo continua intacto.",
         },
@@ -963,7 +988,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
       title: "Macの「削除可能」な領域とは？空き容量を取り戻す方法",
       metaDescription:
         "Macで「XX GBの削除可能」と表示される主な原因は、Time Machineのローカルスナップショットです。tmutilで一覧表示・削減・削除する具体的な手順と、Finderとディスクユーティリティで数字が食い違う理由、そして削除で失うものを解説します。",
-      subtitle: "Time Machineのローカルスナップショットと、消えたギガバイトの行方",
+      subtitle:
+        "Time Machineのローカルスナップショットと、消えたギガバイトの行方",
       intro: [
         "短い答えから。Macの「削除可能」（purgeable space）な領域とは、macOSが容量を必要としたときに自分で削除できるデータのことで、その大半はTime Machineが1時間ごとに作成するローカルスナップショット（local snapshots）です。ターミナルでtmutil listlocalsnapshots /を実行すれば一覧を表示でき、tmutil thinlocalsnapshots / 50000000000 4で容量を解放できます。数字は解放したい容量をバイト単位で指定するものです。新しいスナップショットが作られないようにするには、Time Machineの自動バックアップをオフにする必要があります。",
         "Macユーザーを最も戸惑わせるのは次のような場面です。Finderは200 GBの空きがあると表示しているのに、ファイルをコピーしようとすると容量不足のエラーが出る。あるいは、ディスクユーティリティとFinderがまったく違う数字を示す。原因は、APFSが「削除可能」な領域を、まだ実際には解放されていないにもかかわらず空き容量として数えている点にあります。この記事では、その領域がどこから来るのか、どうすれば取り戻せるのか、そして取り戻す代わりに何を失うのかを説明します。",
@@ -1063,7 +1089,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "macOSが容量を必要としたときに自分で削除できるデータのことです。その大半はTime Machineが1時間ごとに作成するローカルスナップショットで、残りはiCloudから再ダウンロードできるファイルやアプリケーションのキャッシュです。Finderはこれを使用可能な容量に含めますが、ディスクユーティリティは含めません。",
         },
         {
-          question: "Finderには200 GBの空きと出るのにファイルをコピーできません。なぜですか？",
+          question:
+            "Finderには200 GBの空きと出るのにファイルをコピーできません。なぜですか？",
           answer:
             "その200 GBの大半が「削除可能」な領域で、まだ実際には解放されていないからです。macOSはコピー中に解放しようとしますが、処理がタイムアウトすることがあります。ターミナルでtmutil thinlocalsnapshots / 50000000000 4を実行し、あらかじめ容量を解放しておけば解決します。",
         },
@@ -1073,7 +1100,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "ターミナルでtmutil listlocalsnapshots /を実行して一覧を表示し、続けてtmutil thinlocalsnapshots / <バイト数> 4で必要な分だけ削除します。たとえば約50 GBを取り戻すなら50000000000と指定します。特定のスナップショットだけを消す場合は、一覧の日時を付けてtmutil deletelocalsnapshotsを実行します。",
         },
         {
-          question: "ローカルスナップショットを削除するとTime Machineのバックアップは壊れますか？",
+          question:
+            "ローカルスナップショットを削除するとTime Machineのバックアップは壊れますか？",
           answer:
             "壊れません。外付けディスク上のTime Machineバックアップは完全に別物で、影響を受けません。失うのは、外付けディスクを接続していないときに直近数時間へ戻れる機能だけです。長期の保管庫はそのまま残ります。",
         },
@@ -1083,7 +1111,8 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "かつて使われていたsudo tmutil disablelocalコマンドは、macOS High Sierraで廃止されました。現在の唯一の方法は、Time Machineの自動バックアップをオフにすることです。「システム設定」>「一般」>「Time Machine」（macOS 12では「システム環境設定」>「Time Machine」）で自動バックアップを無効にし、バックアップは手動で開始してください。",
         },
         {
-          question: "「システムデータ」のカテゴリーはなぜこれほど大きいのですか？",
+          question:
+            "「システムデータ」のカテゴリーはなぜこれほど大きいのですか？",
           answer:
             "このカテゴリーは、アプリケーションのキャッシュ、ログファイル、iOSデバイスのバックアップ、Mailの添付ファイル、ダウンロード済みのソフトウェアアップデート、そしてローカルスナップショットをまとめて数えています。ソフトウェアを開発しているなら、Xcodeの派生データやシミュレータのイメージも加わります。単一の項目ではなく、数十の小さな要因の合計です。そのため、どれが肥大化しているのかを知るにはフォルダー単位の分析が必要になります。",
         },

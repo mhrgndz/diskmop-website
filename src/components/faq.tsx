@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 import {
   AccordionRoot,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
 const FAQ_COUNT = 8;
 
 export function FAQ() {
-  const t = useTranslations('faq');
+  const t = useTranslations("faq");
 
   return (
     <section id="faq" className="py-24">
@@ -27,11 +27,9 @@ export function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            {t('subtitle')}
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
         </motion.div>
 
         {/* Accordion */}

@@ -1,29 +1,29 @@
-import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { Navigation } from '@/components/navigation';
-import { Hero } from '@/components/hero';
-import { TrustBar } from '@/components/trust-bar';
-import { PlatformSelector } from '@/components/platform-selector';
-import { FeaturesGrid } from '@/components/features-grid';
-import { HowItWorks } from '@/components/how-it-works';
-import { ProductShowcase } from '@/components/product-showcase';
-import { Stats } from '@/components/stats';
-import { Testimonials } from '@/components/testimonials';
-import { Pricing } from '@/components/pricing';
-import { FAQ } from '@/components/faq';
-import { FinalCTA } from '@/components/final-cta';
-import { Footer } from '@/components/footer';
-import { CookieBanner } from '@/components/cookie-banner';
-import { FloatingSupport } from '@/components/floating-support';
-import { SITE_URL, alternatesFor, localeUrl, socialFor } from '@/lib/seo';
+import { Navigation } from "@/components/navigation";
+import { Hero } from "@/components/hero";
+import { TrustBar } from "@/components/trust-bar";
+import { PlatformSelector } from "@/components/platform-selector";
+import { FeaturesGrid } from "@/components/features-grid";
+import { HowItWorks } from "@/components/how-it-works";
+import { ProductShowcase } from "@/components/product-showcase";
+import { Stats } from "@/components/stats";
+import { Testimonials } from "@/components/testimonials";
+import { Pricing } from "@/components/pricing";
+import { FAQ } from "@/components/faq";
+import { FinalCTA } from "@/components/final-cta";
+import { Footer } from "@/components/footer";
+import { CookieBanner } from "@/components/cookie-banner";
+import { FloatingSupport } from "@/components/floating-support";
+import { SITE_URL, alternatesFor, localeUrl, socialFor } from "@/lib/seo";
 import {
   FIRST_RELEASE_DATE,
   LATEST_RELEASE_DATE,
   LATEST_VERSION,
   RELEASE_NOTES_URL,
   STORE_URLS,
-} from '@/lib/app-version';
+} from "@/lib/app-version";
 
 export async function generateMetadata({
   params,
@@ -31,17 +31,17 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
+  const t = await getTranslations({ locale, namespace: "meta" });
 
-  const title = t('title');
-  const description = t('description');
+  const title = t("title");
+  const description = t("description");
 
   return {
     title,
     description,
-    keywords: t.raw('keywords') as string[],
+    keywords: t.raw("keywords") as string[],
     alternates: alternatesFor(locale),
-    ...socialFor({ locale, title, description: t('ogDescription') }),
+    ...socialFor({ locale, title, description: t("ogDescription") }),
   };
 }
 
@@ -56,23 +56,23 @@ export async function generateMetadata({
  * TÜM zengin sonuçların kaybı olabilir.
  */
 async function buildJsonLd(locale: string) {
-  const tFaq = await getTranslations({ locale, namespace: 'faq' });
-  const tMeta = await getTranslations({ locale, namespace: 'meta' });
-  const sss = tFaq.raw('items') as Array<{ question: string; answer: string }>;
+  const tFaq = await getTranslations({ locale, namespace: "faq" });
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
+  const sss = tFaq.raw("items") as Array<{ question: string; answer: string }>;
 
   const kurulusId = `${SITE_URL}/#organization`;
   const uygulamaId = `${SITE_URL}/#app`;
 
   return {
-    '@context': 'https://schema.org',
-    '@graph': [
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        '@type': 'Organization',
-        '@id': kurulusId,
-        name: 'Disk Mop',
+        "@type": "Organization",
+        "@id": kurulusId,
+        name: "Disk Mop",
         url: SITE_URL,
         logo: {
-          '@type': 'ImageObject',
+          "@type": "ImageObject",
           url: `${SITE_URL}/brand/icon.png`,
           width: 512,
           height: 512,
@@ -81,43 +81,43 @@ async function buildJsonLd(locale: string) {
         // Yalnız var olduğu doğrulanmış hesaplar: Instagram 2026-09-04'te
         // "Disk Mop (@diskmop)" olarak teyit edildi.
         sameAs: [
-          'https://www.instagram.com/diskmop/',
-          'https://twitter.com/diskmop',
+          "https://www.instagram.com/diskmop/",
+          "https://twitter.com/diskmop",
           STORE_URLS.android,
           STORE_URLS.ios,
         ],
         parentOrganization: {
-          '@type': 'Organization',
-          name: 'Lova Software',
-          url: 'https://lovasoftware.com/',
+          "@type": "Organization",
+          name: "Lova Software",
+          url: "https://lovasoftware.com/",
         },
         contactPoint: {
-          '@type': 'ContactPoint',
-          contactType: 'customer support',
-          email: 'diskmopdev@gmail.com',
-          availableLanguage: ['en', 'tr', 'de', 'fr', 'es', 'it', 'pt', 'ja'],
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "diskmopdev@gmail.com",
+          availableLanguage: ["en", "tr", "de", "fr", "es", "it", "pt", "ja"],
         },
       },
       {
-        '@type': 'WebSite',
-        '@id': `${SITE_URL}/#website`,
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: 'Disk Mop',
-        publisher: { '@id': kurulusId },
+        name: "Disk Mop",
+        publisher: { "@id": kurulusId },
         inLanguage: locale,
       },
       {
-        '@type': 'SoftwareApplication',
-        '@id': uygulamaId,
-        name: 'Disk Mop',
+        "@type": "SoftwareApplication",
+        "@id": uygulamaId,
+        name: "Disk Mop",
         url: localeUrl(locale),
-        description: tMeta('description'),
-        applicationCategory: 'UtilitiesApplication',
-        applicationSubCategory: 'Disk Cleaner',
+        description: tMeta("description"),
+        applicationCategory: "UtilitiesApplication",
+        applicationSubCategory: "Disk Cleaner",
         // iPhone uygulaması BİLEREK burada yok: ayrı bir ürün (fotoğraf/video
         // temizleyici) ve ayrı fiyat (4,99 $ uygulama içi); bu düğümdeki teklif
         // 19,90 $'lık masaüstü lisansıdır. App Store bağlantısı Organization.sameAs'te.
-        operatingSystem: 'Windows 10, Windows 11, macOS 12+, Android 8.0+',
+        operatingSystem: "Windows 10, Windows 11, macOS 12+, Android 8.0+",
         // Olgunluk sinyalleri: ilk sürüm tarihi, güncel sürüm ve sürüm notları.
         // Bunlar olmadan LLM'ler ürünü "yeni çıkmış / ilk sürüm" sanıyordu.
         softwareVersion: LATEST_VERSION,
@@ -126,26 +126,26 @@ async function buildJsonLd(locale: string) {
         releaseNotes: RELEASE_NOTES_URL,
         image: `${SITE_URL}/brand/icon.png`,
         screenshot: `${SITE_URL}/videos/overview/${locale}.webp`,
-        downloadUrl: 'https://api.diskmop.com/download/windows',
+        downloadUrl: "https://api.diskmop.com/download/windows",
         installUrl: `${localeUrl(locale)}#platforms`,
-        publisher: { '@id': kurulusId },
+        publisher: { "@id": kurulusId },
         offers: {
-          '@type': 'Offer',
-          price: '19.90',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
+          "@type": "Offer",
+          price: "19.90",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
           url: `${localeUrl(locale)}#pricing`,
-          category: 'Lifetime license',
+          category: "Lifetime license",
         },
       },
       {
-        '@type': 'FAQPage',
-        '@id': `${localeUrl(locale)}#faq`,
+        "@type": "FAQPage",
+        "@id": `${localeUrl(locale)}#faq`,
         inLanguage: locale,
         mainEntity: sss.map((s) => ({
-          '@type': 'Question',
+          "@type": "Question",
           name: s.question,
-          acceptedAnswer: { '@type': 'Answer', text: s.answer },
+          acceptedAnswer: { "@type": "Answer", text: s.answer },
         })),
       },
     ],

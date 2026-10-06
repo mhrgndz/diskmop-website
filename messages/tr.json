@@ -11,7 +11,11 @@
       "önbellek temizleme",
       "Windows disk temizleyici",
       "Mac disk temizleyici"
-    ]
+    ],
+    "loginTitle": "Giriş yap — Disk Mop",
+    "loginDescription": "Disk Mop lisanslarınızı ve bağlı cihazlarınızı görmek için e-posta ve tek kullanımlık kodla giriş yapın.",
+    "accountTitle": "Hesabım — Disk Mop",
+    "accountDescription": "Disk Mop Pro lisanslarınız, cihazlarınız ve siparişleriniz."
   },
   "nav": {
     "features": "Özellikler",
@@ -19,7 +23,9 @@
     "faq": "SSS",
     "blog": "Blog",
     "tools": "Araçlar",
-    "download": "İndir"
+    "download": "İndir",
+    "signIn": "Giriş yap",
+    "account": "Hesabım"
   },
   "hero": {
     "badge": "✨ Windows & macOS için Disk Mop",
@@ -672,5 +678,60 @@
     "faqA2": "Windows güncelleme artıkları (WinSxS), tarayıcı önbellekleri, Steam shader önbelleği, kaldırılan uygulamaların AppData artıkları ve mesajlaşma önbellekleri (WhatsApp, Discord) en büyük gizli yer tüketicileridir.",
     "faqQ3": "Disk Mop temizliği güvenli midir?",
     "faqA3": "Evet. Disk Mop yerel olarak çalışır, kişisel verilerinizi toplamaz ve yalnızca işletim sisteminin güvenle yeniden oluşturabileceği önbellekleri ve artık dosyaları hedefler. Cihaz başına 3 ücretsiz silme hakkı ile güvenle test edebilirsiniz."
+  },
+  "login": {
+    "title": "Disk Mop'a Giriş Yap",
+    "subtitle": "E-posta adresinizi girin, size 6 haneli bir kod gönderelim. Şifre yok. Yeniyseniz aynı kod hesabınızı oluşturur.",
+    "buyContext": "Önce giriş yapın, ardından hemen ödeme sayfasına geçeceksiniz.",
+    "emailLabel": "E-posta adresi",
+    "emailPlaceholder": "ornek@eposta.com",
+    "sendCode": "Giriş kodu gönder",
+    "sending": "Gönderiliyor...",
+    "codeTitle": "E-postanızı kontrol edin",
+    "codeSent": "{email} adresine 6 haneli bir kod gönderdik. Kod 10 dakika geçerlidir.",
+    "codeLabel": "6 haneli kod",
+    "verify": "Giriş yap",
+    "verifying": "Giriş yapılıyor...",
+    "resend": "Tekrar kod gönder",
+    "resent": "Yeni bir kod gönderildi.",
+    "otherEmail": "Farklı e-posta kullan",
+    "errors": {
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin.",
+      "invalidCode": "Geçersiz veya süresi dolmuş kod. Lütfen tekrar deneyin.",
+      "tooMany": "Çok fazla deneme yapıldı. Lütfen birkaç dakika bekleyin.",
+      "mailFailed": "E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin.",
+      "generic": "Bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "account": {
+    "title": "Hesabım",
+    "signedInAs": "Giriş yapılan e-posta: {email}",
+    "signOut": "Çıkış yap",
+    "licensesTitle": "Lisanslarım",
+    "licensesEmpty": "Henüz bir lisansınız yok. Disk Mop Pro ömür boyu erişim sağlar ve tüm özellikleri açar.",
+    "buyFirst": "Disk Mop Pro Satın Al",
+    "buyMore": "Yeni lisans satın al",
+    "keyLabel": "Lisans anahtarı",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "statusActive": "Aktif",
+    "statusRevoked": "İptal",
+    "activeDevice": "Bağlı cihaz",
+    "unnamedDevice": "Cihaz",
+    "activatedAt": "Etkinleştirilme: {date}",
+    "noDevice": "Henüz bir cihaza bağlanmadı",
+    "activateHint": "Disk Mop uygulamasını açın, Ayarlar > Lisans bölümüne gidin ve bu anahtarı yapıştırarak Etkinleştir butonuna tıklayın.",
+    "removeDevice": "Cihazı kaldır",
+    "removingDevice": "Kaldırılıyor...",
+    "removeConfirm": "Bu cihazı lisanstan kaldırmak istiyor musunuz? O bilgisayardaki uygulama ücretsiz sürüme döner ve bu anahtarı başka bir bilgisayarda kullanabilirsiniz.",
+    "removedDone": "Cihaz başarıyla kaldırıldı.",
+    "removeError": "Cihaz kaldırılamadı. Lütfen tekrar deneyin.",
+    "ordersTitle": "Sipariş Geçmişi",
+    "ordersEmpty": "Kayıtlı sipariş bulunamadı.",
+    "orderDate": "Tarih",
+    "orderQty": "Adet",
+    "orderTotal": "Tutar",
+    "orderStatus": "Durum"
   }
 }
+

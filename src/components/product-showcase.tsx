@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard,
   HardDrive,
@@ -25,17 +25,17 @@ import {
   PackageX,
   Images,
   Activity,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { ExpandableVideo } from '@/components/expandable-video';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ExpandableVideo } from "@/components/expandable-video";
 import {
   SHOWCASE_VIDEO_W as VIDEO_W,
   SHOWCASE_VIDEO_H as VIDEO_H,
   showcaseVideoSrc as videoSrc,
   showcasePosterSrc as posterSrc,
-} from '@/components/showcase-video';
+} from "@/components/showcase-video";
 
 interface ShowcaseTab {
   /** public/videos/<id>/<dil>.mp4 + <dil>.webp kapak */
@@ -51,33 +51,33 @@ interface ShowcaseTab {
 const showcaseTabs: ShowcaseTab[] = [
   // Açılışı Hızlandır (sekme 21) burada yok: Özellikler bölümünün en başında
   // büyük kart olarak duruyor, aynı videoyu iki kez göstermeyelim.
-  { id: 'overview', icon: LayoutDashboard, nameKey: '0', descKey: '0' },
-  { id: 'disk-analysis', icon: HardDrive, nameKey: '1', descKey: '1' },
-  { id: 'large-files', icon: Search, nameKey: '2', descKey: '2' },
-  { id: 'duplicates', icon: Copy, nameKey: '3', descKey: '3' },
-  { id: 'speed-up', icon: Zap, nameKey: '4', descKey: '4' },
-  { id: 'downloads', icon: Download, nameKey: '5', descKey: '5' },
-  { id: 'cache', icon: Trash2, nameKey: '6', descKey: '6' },
-  { id: 'browser', icon: Globe, nameKey: '7', descKey: '7' },
-  { id: 'recycle-bin', icon: Recycle, nameKey: '8', descKey: '8' },
-  { id: 'dns-cache', icon: Wifi, nameKey: '9', descKey: '9' },
-  { id: 'startup', icon: Rocket, nameKey: '10', descKey: '10' },
-  { id: 'empty-folders', icon: FolderOpen, nameKey: '11', descKey: '11' },
-  { id: 'file-shredder', icon: ShieldX, nameKey: '12', descKey: '12' },
-  { id: 'disk-treemap', icon: TreePine, nameKey: '13', descKey: '13' },
-  { id: 'ram-cleaner', icon: Cpu, nameKey: '14', descKey: '14' },
-  { id: 'service-manager', icon: Settings2, nameKey: '15', descKey: '15' },
+  { id: "overview", icon: LayoutDashboard, nameKey: "0", descKey: "0" },
+  { id: "disk-analysis", icon: HardDrive, nameKey: "1", descKey: "1" },
+  { id: "large-files", icon: Search, nameKey: "2", descKey: "2" },
+  { id: "duplicates", icon: Copy, nameKey: "3", descKey: "3" },
+  { id: "speed-up", icon: Zap, nameKey: "4", descKey: "4" },
+  { id: "downloads", icon: Download, nameKey: "5", descKey: "5" },
+  { id: "cache", icon: Trash2, nameKey: "6", descKey: "6" },
+  { id: "browser", icon: Globe, nameKey: "7", descKey: "7" },
+  { id: "recycle-bin", icon: Recycle, nameKey: "8", descKey: "8" },
+  { id: "dns-cache", icon: Wifi, nameKey: "9", descKey: "9" },
+  { id: "startup", icon: Rocket, nameKey: "10", descKey: "10" },
+  { id: "empty-folders", icon: FolderOpen, nameKey: "11", descKey: "11" },
+  { id: "file-shredder", icon: ShieldX, nameKey: "12", descKey: "12" },
+  { id: "disk-treemap", icon: TreePine, nameKey: "13", descKey: "13" },
+  { id: "ram-cleaner", icon: Cpu, nameKey: "14", descKey: "14" },
+  { id: "service-manager", icon: Settings2, nameKey: "15", descKey: "15" },
   // 16. sıra eskiden "Scheduled Cleanup" idi; o ekran UYGULAMADA YOK.
   // Yerine gerçek bir ekran olan Kaldırma Artıkları kondu.
-  { id: 'uninstall-leftovers', icon: Eraser, nameKey: '16', descKey: '16' },
-  { id: 'privacy-report', icon: FileCheck, nameKey: '17', descKey: '17' },
-  { id: 'unused-apps', icon: PackageX, nameKey: '18', descKey: '18' },
-  { id: 'visual-duplicates', icon: Images, nameKey: '19', descKey: '19' },
-  { id: 'disk-health', icon: Activity, nameKey: '20', descKey: '20' },
+  { id: "uninstall-leftovers", icon: Eraser, nameKey: "16", descKey: "16" },
+  { id: "privacy-report", icon: FileCheck, nameKey: "17", descKey: "17" },
+  { id: "unused-apps", icon: PackageX, nameKey: "18", descKey: "18" },
+  { id: "visual-duplicates", icon: Images, nameKey: "19", descKey: "19" },
+  { id: "disk-health", icon: Activity, nameKey: "20", descKey: "20" },
 ];
 
 export function ProductShowcase() {
-  const t = useTranslations('showcase');
+  const t = useTranslations("showcase");
   const locale = useLocale();
   const [activeTab, setActiveTab] = useState(showcaseTabs[0].id);
   const sectionRef = useRef<HTMLElement>(null);
@@ -90,7 +90,8 @@ export function ProductShowcase() {
     const el = sectionRef.current;
     if (!el) return;
 
-    const baglanti = (navigator as { connection?: { saveData?: boolean } }).connection;
+    const baglanti = (navigator as { connection?: { saveData?: boolean } })
+      .connection;
     if (baglanti?.saveData) return;
 
     const gozlemci = new IntersectionObserver(
@@ -98,10 +99,15 @@ export function ProductShowcase() {
         if (!girisler.some((g) => g.isIntersecting)) return;
         gozlemci.disconnect();
 
-        const kuyruk = showcaseTabs.slice(1).map((tab) => posterSrc(tab.id, locale));
+        const kuyruk = showcaseTabs
+          .slice(1)
+          .map((tab) => posterSrc(tab.id, locale));
         const sirala = (fn: () => void) => {
-          const ric = (window as { requestIdleCallback?: (cb: () => void, o?: object) => void })
-            .requestIdleCallback;
+          const ric = (
+            window as {
+              requestIdleCallback?: (cb: () => void, o?: object) => void;
+            }
+          ).requestIdleCallback;
           if (ric) ric(fn, { timeout: 2000 });
           else window.setTimeout(fn, 200);
         };
@@ -114,7 +120,7 @@ export function ProductShowcase() {
         };
         sirala(sonraki);
       },
-      { rootMargin: '300px' }
+      { rootMargin: "300px" },
     );
 
     gozlemci.observe(el);
@@ -132,7 +138,7 @@ export function ProductShowcase() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h2>
         </motion.div>
 

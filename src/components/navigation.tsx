@@ -10,6 +10,7 @@ import { localeHref } from "@/lib/locale-path";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DownloadDropdown } from "@/components/download-dropdown";
+import { AccountLink } from "@/components/account-link";
 
 interface NavLink {
   key: string;
@@ -94,12 +95,18 @@ export function Navigation() {
 
             {/* Right: Actions */}
             <div className="flex items-center gap-1.5">
+              <AccountLink
+                locale={locale}
+                signInLabel={t("signIn")}
+                accountLabel={t("account")}
+                variant="header"
+              />
               <div className="hidden sm:flex items-center gap-1.5">
                 <LanguageSwitcher />
                 <ThemeToggle />
               </div>
               <div className="hidden sm:block">
-                <DownloadDropdown variant="secondary" />
+                <DownloadDropdown variant="secondary" location="nav" />
               </div>
 
               {/* Mobile menu button */}
@@ -133,12 +140,18 @@ export function Navigation() {
                 {t(link.key)}
               </a>
             ))}
+            <AccountLink
+              locale={locale}
+              signInLabel={t("signIn")}
+              accountLabel={t("account")}
+              variant="mobile"
+            />
             <div className="flex items-center gap-3 mt-4">
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
             <div className="mt-2">
-              <DownloadDropdown variant="primary" />
+              <DownloadDropdown variant="primary" location="nav_mobile" />
             </div>
           </div>
         </div>

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function CookieBanner() {
-  const t = useTranslations('cookie');
+  const t = useTranslations("cookie");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
+    const consent = localStorage.getItem("cookie-consent");
     if (consent) return;
 
     const timer = setTimeout(() => {
@@ -20,12 +20,12 @@ export function CookieBanner() {
   }, []);
 
   function handleAccept() {
-    localStorage.setItem('cookie-consent', 'accepted');
+    localStorage.setItem("cookie-consent", "accepted");
     setVisible(false);
   }
 
   function handleReject() {
-    localStorage.setItem('cookie-consent', 'rejected');
+    localStorage.setItem("cookie-consent", "rejected");
     setVisible(false);
   }
 
@@ -36,18 +36,18 @@ export function CookieBanner() {
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           exit={{ y: 100 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t shadow-lg"
         >
           <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Text */}
             <p className="text-sm text-foreground">
-              {t('text')}{' '}
+              {t("text")}{" "}
               <a
                 href="#"
                 className="text-brand-600 hover:text-brand-700 underline underline-offset-2"
               >
-                {t('privacy')}
+                {t("privacy")}
               </a>
             </p>
 
@@ -57,13 +57,13 @@ export function CookieBanner() {
                 onClick={handleReject}
                 className="border border-border bg-background hover:bg-muted text-foreground rounded-lg px-4 py-2 text-sm font-medium transition-colors"
               >
-                {t('reject')}
+                {t("reject")}
               </button>
               <button
                 onClick={handleAccept}
                 className="bg-brand-600 hover:bg-brand-700 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors"
               >
-                {t('accept')}
+                {t("accept")}
               </button>
             </div>
           </div>

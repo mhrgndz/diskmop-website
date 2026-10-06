@@ -1,10 +1,10 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const treesize: Article = {
-  slug: 'disk-mop-vs-treesize',
-  date: '2025-04-18',
+  slug: "disk-mop-vs-treesize",
+  date: "2025-04-18",
   readingTime: 5,
-  competitorName: 'TreeSize',
+  competitorName: "TreeSize",
   comparison: [
     {
       feature: {
@@ -37,7 +37,7 @@ export const treesize: Article = {
         pt: "Gratuito / Pro a partir de 24,50 €",
         ja: "無料 / Proは24.50ユーロ〜",
       },
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -61,7 +61,7 @@ export const treesize: Article = {
         pt: "Apenas Windows",
         ja: "Windowsのみ",
       },
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -94,7 +94,7 @@ export const treesize: Article = {
         pt: "✓ Treemap detalhado",
         ja: "✓ 詳細なツリーマップ",
       },
-      winner: 'competitor',
+      winner: "competitor",
     },
     {
       feature: {
@@ -118,7 +118,7 @@ export const treesize: Article = {
         pt: "✓ Filtro por tamanho",
         ja: "✓ サイズで絞り込み",
       },
-      winner: 'tie',
+      winner: "tie",
     },
     {
       feature: {
@@ -151,7 +151,7 @@ export const treesize: Article = {
         pt: "✗ Apenas análise",
         ja: "✗ 分析のみ",
       },
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -166,7 +166,7 @@ export const treesize: Article = {
       },
       diskmop: "✓",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -181,7 +181,7 @@ export const treesize: Article = {
       },
       diskmop: "✓ SHA-256",
       competitor: "✓ (Pro)",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -205,7 +205,7 @@ export const treesize: Article = {
         ja: "✓ 4種類のブラウザー",
       },
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -220,7 +220,7 @@ export const treesize: Article = {
       },
       diskmop: "✓",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -253,7 +253,7 @@ export const treesize: Article = {
         pt: "Apenas análise",
         ja: "分析のみ",
       },
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -268,7 +268,7 @@ export const treesize: Article = {
       },
       diskmop: "✓ DoD 5220.22-M",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -292,7 +292,7 @@ export const treesize: Article = {
         ja: "✓ インタラクティブ",
       },
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -307,7 +307,7 @@ export const treesize: Article = {
       },
       diskmop: "✓",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -322,7 +322,7 @@ export const treesize: Article = {
       },
       diskmop: "✓",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -346,7 +346,7 @@ export const treesize: Article = {
         ja: "✓ 知覚ハッシュ",
       },
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
     {
       feature: {
@@ -361,148 +361,154 @@ export const treesize: Article = {
       },
       diskmop: "✓",
       competitor: "✗",
-      winner: 'diskmop',
+      winner: "diskmop",
     },
   ],
   content: {
     tr: {
-      title: 'Disk Mop vs TreeSize: 2025 Karşılaştırması',
-      metaDescription: 'Disk Mop ve TreeSize karşılaştırması. Disk analizi aracı mı, tam kapsamlı temizleyici mi? Hangisi ihtiyaçlarınıza uygun?',
-      subtitle: 'TreeSize mükemmel bir disk analiz aracı ama sadece o — temizleme yapamıyor. Disk Mop hem analiz ediyor hem temizliyor.',
+      title: "Disk Mop vs TreeSize: 2025 Karşılaştırması",
+      metaDescription:
+        "Disk Mop ve TreeSize karşılaştırması. Disk analizi aracı mı, tam kapsamlı temizleyici mi? Hangisi ihtiyaçlarınıza uygun?",
+      subtitle:
+        "TreeSize mükemmel bir disk analiz aracı ama sadece o — temizleme yapamıyor. Disk Mop hem analiz ediyor hem temizliyor.",
       intro: [
-        'TreeSize, JAM Software tarafından geliştirilen ve Windows\'ta disk alanı kullanımını analiz etmek için kullanılan popüler bir araç. Treemap görselleştirmesi ile hangi klasörlerin ne kadar yer kapladığını detaylı şekilde gösteriyor.',
-        'Ancak TreeSize bir analiz aracıdır, temizlik aracı değil. Dosyaları gösterir ama otomatik temizleme, cache silme veya tarayıcı verisi temizleme gibi özellikler sunmaz. Disk Mop ise hem analiz hem temizlik yapan komple bir çözüm.',
+        "TreeSize, JAM Software tarafından geliştirilen ve Windows'ta disk alanı kullanımını analiz etmek için kullanılan popüler bir araç. Treemap görselleştirmesi ile hangi klasörlerin ne kadar yer kapladığını detaylı şekilde gösteriyor.",
+        "Ancak TreeSize bir analiz aracıdır, temizlik aracı değil. Dosyaları gösterir ama otomatik temizleme, cache silme veya tarayıcı verisi temizleme gibi özellikler sunmaz. Disk Mop ise hem analiz hem temizlik yapan komple bir çözüm.",
       ],
       diskmopPros: [
-        'Hem analiz hem temizlik tek pakette',
-        'macOS desteği (TreeSize\'da yok)',
-        'Cache, tarayıcı ve DNS temizleme',
-        'SHA-256 yinelenen dosya tespiti',
-        'Başlangıç yöneticisi',
-        'Sistem sağlığı skoru',
-        'Modern arayüz',
+        "Hem analiz hem temizlik tek pakette",
+        "macOS desteği (TreeSize'da yok)",
+        "Cache, tarayıcı ve DNS temizleme",
+        "SHA-256 yinelenen dosya tespiti",
+        "Başlangıç yöneticisi",
+        "Sistem sağlığı skoru",
+        "Modern arayüz",
       ],
       diskmopCons: [
-        'Disk analizi TreeSize kadar detaylı değil',
-        'Treemap görselleştirmesi yok',
-        'Ağ sürücülerini taramaz',
+        "Disk analizi TreeSize kadar detaylı değil",
+        "Treemap görselleştirmesi yok",
+        "Ağ sürücülerini taramaz",
       ],
       competitorPros: [
-        'Çok detaylı disk analizi',
-        'Treemap görselleştirmesi',
-        'Dosya yaşı ve boyut filtreleme',
-        'Ağ sürücülerini tarayabilir (Pro)',
-        'Export ve raporlama (Pro)',
-        'Ücretsiz temel sürüm',
+        "Çok detaylı disk analizi",
+        "Treemap görselleştirmesi",
+        "Dosya yaşı ve boyut filtreleme",
+        "Ağ sürücülerini tarayabilir (Pro)",
+        "Export ve raporlama (Pro)",
+        "Ücretsiz temel sürüm",
       ],
       competitorCons: [
-        'Temizleme özelliği yok — sadece analiz',
-        'Sadece Windows',
-        'Cache/tarayıcı temizleme yok',
-        'Yinelenen dosya tespiti yok (Free)',
-        'Başlangıç yöneticisi yok',
-        'Pro sürüm €24.50+ (kişisel)',
+        "Temizleme özelliği yok — sadece analiz",
+        "Sadece Windows",
+        "Cache/tarayıcı temizleme yok",
+        "Yinelenen dosya tespiti yok (Free)",
+        "Başlangıç yöneticisi yok",
+        "Pro sürüm €24.50+ (kişisel)",
       ],
       sections: [
         {
-          title: 'Analiz Aracı vs Komple Çözüm',
+          title: "Analiz Aracı vs Komple Çözüm",
           content: [
-            'TreeSize bir mikroskop gibidir — diskinizde neler olduğunu çok detaylı gösterir. Ancak görüp beğenmediğiniz dosyaları tek tek elle silmeniz gerekir. Otomatik cache temizleme, tarayıcı verisi silme veya duplicate bulma gibi işlemler yapamaz.',
-            'Disk Mop ise hem diskinizi analiz eder hem de temizleme araçları sunar. Büyük dosyaları bulur, duplicate\'leri tespit eder, cache\'i temizler, tarayıcı verilerini siler — hepsi tek arayüzde.',
+            "TreeSize bir mikroskop gibidir — diskinizde neler olduğunu çok detaylı gösterir. Ancak görüp beğenmediğiniz dosyaları tek tek elle silmeniz gerekir. Otomatik cache temizleme, tarayıcı verisi silme veya duplicate bulma gibi işlemler yapamaz.",
+            "Disk Mop ise hem diskinizi analiz eder hem de temizleme araçları sunar. Büyük dosyaları bulur, duplicate'leri tespit eder, cache'i temizler, tarayıcı verilerini siler — hepsi tek arayüzde.",
           ],
         },
         {
-          title: 'TreeSize\'ın Güçlü Yanı: Derinlik',
+          title: "TreeSize'ın Güçlü Yanı: Derinlik",
           content: [
-            'Eğer ihtiyacınız sadece "diskte neler var, hangi klasör ne kadar yer kaplıyor" sorusuna detaylı yanıt almaksa, TreeSize\'ın treemap\'i gerçekten çok iyi. Özellikle IT profesyonelleri ve sistem yöneticileri için ağ sürücü tarama ve raporlama özellikleri değerli.',
-            'Ancak ortalama bir kullanıcı için TreeSize tek başına yeterli değildir. Analiz ettikten sonra temizlik için ayrı bir araç gerekir.',
+            "Eğer ihtiyacınız sadece \"diskte neler var, hangi klasör ne kadar yer kaplıyor\" sorusuna detaylı yanıt almaksa, TreeSize'ın treemap'i gerçekten çok iyi. Özellikle IT profesyonelleri ve sistem yöneticileri için ağ sürücü tarama ve raporlama özellikleri değerli.",
+            "Ancak ortalama bir kullanıcı için TreeSize tek başına yeterli değildir. Analiz ettikten sonra temizlik için ayrı bir araç gerekir.",
           ],
         },
         {
-          title: 'Platform Desteği',
+          title: "Platform Desteği",
           content: [
-            'TreeSize sadece Windows\'ta çalışır. macOS kullanıcıları için alternatif bulmanız gerekir.',
-            'Disk Mop hem Windows hem macOS\'ta çalışarak iki platformu da tek çözümle kapsar.',
+            "TreeSize sadece Windows'ta çalışır. macOS kullanıcıları için alternatif bulmanız gerekir.",
+            "Disk Mop hem Windows hem macOS'ta çalışarak iki platformu da tek çözümle kapsar.",
           ],
         },
       ],
       verdict: [
-        'TreeSize, disk analizi konusunda uzman bir araçtır ve bu alanda çok başarılıdır. Ancak temizleme yapamaz — sadece gösterir.',
-        'Disk Mop, analiz ve temizliği bir arada sunarak çoğu kullanıcı için daha pratik bir çözüm sağlar. Diskinizi hem görüp hem temizlemek istiyorsanız, Disk Mop ihtiyacınız olan tek araç.',
+        "TreeSize, disk analizi konusunda uzman bir araçtır ve bu alanda çok başarılıdır. Ancak temizleme yapamaz — sadece gösterir.",
+        "Disk Mop, analiz ve temizliği bir arada sunarak çoğu kullanıcı için daha pratik bir çözüm sağlar. Diskinizi hem görüp hem temizlemek istiyorsanız, Disk Mop ihtiyacınız olan tek araç.",
       ],
-      ctaText: 'Analiz Et ve Temizle: Disk Mop',
+      ctaText: "Analiz Et ve Temizle: Disk Mop",
     },
     en: {
-      title: 'Disk Mop vs TreeSize: 2025 Comparison',
-      metaDescription: 'Compare Disk Mop and TreeSize. Disk analysis tool or full-featured cleaner? Find out which fits your needs.',
-      subtitle: 'TreeSize is an excellent disk analysis tool, but that\'s all it does — it can\'t clean. Disk Mop both analyzes and cleans.',
+      title: "Disk Mop vs TreeSize: 2025 Comparison",
+      metaDescription:
+        "Compare Disk Mop and TreeSize. Disk analysis tool or full-featured cleaner? Find out which fits your needs.",
+      subtitle:
+        "TreeSize is an excellent disk analysis tool, but that's all it does — it can't clean. Disk Mop both analyzes and cleans.",
       intro: [
-        'TreeSize by JAM Software is a popular Windows tool for analyzing disk space usage. Its treemap visualization shows exactly which folders consume the most space.',
-        'However, TreeSize is an analysis tool, not a cleaning tool. It shows files but doesn\'t offer automatic cleaning, cache clearing, or browser data removal. Disk Mop is a complete solution that does both.',
+        "TreeSize by JAM Software is a popular Windows tool for analyzing disk space usage. Its treemap visualization shows exactly which folders consume the most space.",
+        "However, TreeSize is an analysis tool, not a cleaning tool. It shows files but doesn't offer automatic cleaning, cache clearing, or browser data removal. Disk Mop is a complete solution that does both.",
       ],
       diskmopPros: [
-        'Analysis and cleaning in one package',
-        'macOS support (unavailable in TreeSize)',
-        'Cache, browser, and DNS cleaning',
-        'SHA-256 duplicate detection',
-        'Startup manager',
-        'System health score',
-        'Modern interface',
+        "Analysis and cleaning in one package",
+        "macOS support (unavailable in TreeSize)",
+        "Cache, browser, and DNS cleaning",
+        "SHA-256 duplicate detection",
+        "Startup manager",
+        "System health score",
+        "Modern interface",
       ],
       diskmopCons: [
-        'Disk analysis not as detailed as TreeSize',
-        'No treemap visualization',
-        'Cannot scan network drives',
+        "Disk analysis not as detailed as TreeSize",
+        "No treemap visualization",
+        "Cannot scan network drives",
       ],
       competitorPros: [
-        'Very detailed disk analysis',
-        'Treemap visualization',
-        'File age and size filtering',
-        'Network drive scanning (Pro)',
-        'Export and reporting (Pro)',
-        'Free basic version',
+        "Very detailed disk analysis",
+        "Treemap visualization",
+        "File age and size filtering",
+        "Network drive scanning (Pro)",
+        "Export and reporting (Pro)",
+        "Free basic version",
       ],
       competitorCons: [
-        'No cleaning features — analysis only',
-        'Windows only',
-        'No cache/browser cleaning',
-        'No duplicate finder (Free)',
-        'No startup manager',
-        'Pro version €24.50+ (personal)',
+        "No cleaning features — analysis only",
+        "Windows only",
+        "No cache/browser cleaning",
+        "No duplicate finder (Free)",
+        "No startup manager",
+        "Pro version €24.50+ (personal)",
       ],
       sections: [
         {
-          title: 'Analysis Tool vs Complete Solution',
+          title: "Analysis Tool vs Complete Solution",
           content: [
-            'TreeSize is like a microscope — it shows what\'s on your disk in great detail. But you have to manually delete unwanted files one by one. No automatic cache cleaning, browser data removal, or duplicate finding.',
-            'Disk Mop both analyzes your disk and provides cleaning tools. Find large files, detect duplicates, clear caches, clean browser data — all in one interface.',
+            "TreeSize is like a microscope — it shows what's on your disk in great detail. But you have to manually delete unwanted files one by one. No automatic cache cleaning, browser data removal, or duplicate finding.",
+            "Disk Mop both analyzes your disk and provides cleaning tools. Find large files, detect duplicates, clear caches, clean browser data — all in one interface.",
           ],
         },
         {
-          title: 'TreeSize\'s Strength: Depth',
+          title: "TreeSize's Strength: Depth",
           content: [
-            'If you only need detailed answers to "what\'s taking up space and which folders are the largest," TreeSize\'s treemap is excellent. Network drive scanning and reporting are valuable for IT professionals.',
-            'But for average users, TreeSize alone isn\'t enough. After analysis, you need a separate tool for cleaning.',
+            "If you only need detailed answers to \"what's taking up space and which folders are the largest,\" TreeSize's treemap is excellent. Network drive scanning and reporting are valuable for IT professionals.",
+            "But for average users, TreeSize alone isn't enough. After analysis, you need a separate tool for cleaning.",
           ],
         },
         {
-          title: 'Platform Support',
+          title: "Platform Support",
           content: [
-            'TreeSize is Windows-only. macOS users need to look elsewhere.',
-            'Disk Mop covers both Windows and macOS with a single solution.',
+            "TreeSize is Windows-only. macOS users need to look elsewhere.",
+            "Disk Mop covers both Windows and macOS with a single solution.",
           ],
         },
       ],
       verdict: [
-        'TreeSize excels at disk analysis, but it can\'t clean — it only shows.',
-        'Disk Mop combines analysis and cleaning, making it more practical for most users. If you want to see and clean your disk, Disk Mop is the only tool you need.',
+        "TreeSize excels at disk analysis, but it can't clean — it only shows.",
+        "Disk Mop combines analysis and cleaning, making it more practical for most users. If you want to see and clean your disk, Disk Mop is the only tool you need.",
       ],
-      ctaText: 'Analyze and Clean: Try Disk Mop',
+      ctaText: "Analyze and Clean: Try Disk Mop",
     },
     de: {
       title: "Disk Mop vs TreeSize: Vergleich 2025",
-      metaDescription: "Disk Mop und TreeSize im Vergleich: reines Analyse-Tool oder vollständiger Reiniger? Preis, Reinigungsfunktionen, Duplikatsuche und Plattformen im Überblick.",
-      subtitle: "TreeSize aus deutscher Entwicklung ist ein hervorragendes Analysewerkzeug — mehr aber auch nicht. TreeSize analysiert, aber reinigt nicht. Disk Mop macht beides.",
+      metaDescription:
+        "Disk Mop und TreeSize im Vergleich: reines Analyse-Tool oder vollständiger Reiniger? Preis, Reinigungsfunktionen, Duplikatsuche und Plattformen im Überblick.",
+      subtitle:
+        "TreeSize aus deutscher Entwicklung ist ein hervorragendes Analysewerkzeug — mehr aber auch nicht. TreeSize analysiert, aber reinigt nicht. Disk Mop macht beides.",
       intro: [
         "TreeSize von JAM Software aus Trier gehört unter Windows zu den bekanntesten Werkzeugen, um die Belegung der Festplatte zu analysieren. Die Treemap-Darstellung zeigt bis ins Detail, welche Ordner wie viel Speicherplatz beanspruchen.",
         "TreeSize ist allerdings ein Analyse-Tool und kein Reinigungsprogramm. Es zeigt Dateien an, bietet aber weder eine automatische Bereinigung noch das Leeren von Caches oder das Löschen von Browserdaten. Disk Mop kombiniert Analyse und Reinigung in einer Komplettlösung.",
@@ -568,8 +574,10 @@ export const treesize: Article = {
     },
     fr: {
       title: "Disk Mop vs TreeSize : le comparatif 2025",
-      metaDescription: "Disk Mop ou TreeSize ? Comparatif 2025 : prix, analyse du disque, fonctions de nettoyage et plateformes. Simple outil d'analyse ou nettoyeur complet ?",
-      subtitle: "TreeSize est un excellent outil d'analyse de disque, mais il ne fait que cela : il ne nettoie pas. Disk Mop analyse et nettoie.",
+      metaDescription:
+        "Disk Mop ou TreeSize ? Comparatif 2025 : prix, analyse du disque, fonctions de nettoyage et plateformes. Simple outil d'analyse ou nettoyeur complet ?",
+      subtitle:
+        "TreeSize est un excellent outil d'analyse de disque, mais il ne fait que cela : il ne nettoie pas. Disk Mop analyse et nettoie.",
       intro: [
         "Édité par JAM Software, TreeSize est un outil Windows très répandu pour analyser l'occupation du disque. Sa treemap montre précisément quels dossiers consomment le plus d'espace.",
         "TreeSize reste toutefois un outil d'analyse, pas un outil de nettoyage. Il affiche les fichiers, mais ne propose ni nettoyage automatique, ni vidage des caches, ni suppression des données de navigation. Disk Mop, lui, est une solution complète qui fait les deux.",
@@ -635,8 +643,10 @@ export const treesize: Article = {
     },
     es: {
       title: "Disk Mop vs TreeSize: comparativa 2025",
-      metaDescription: "¿Disk Mop o TreeSize? Comparativa 2025: precio, análisis del disco, funciones de limpieza y plataformas. ¿Solo herramienta de análisis o limpiador completo?",
-      subtitle: "TreeSize es una herramienta excelente para analizar el disco, pero solo hace eso: no limpia. Disk Mop analiza y limpia.",
+      metaDescription:
+        "¿Disk Mop o TreeSize? Comparativa 2025: precio, análisis del disco, funciones de limpieza y plataformas. ¿Solo herramienta de análisis o limpiador completo?",
+      subtitle:
+        "TreeSize es una herramienta excelente para analizar el disco, pero solo hace eso: no limpia. Disk Mop analiza y limpia.",
       intro: [
         "TreeSize, de JAM Software, es una herramienta muy conocida en Windows para analizar el uso del espacio en disco. Su visualización en treemap muestra con precisión qué carpetas ocupan más espacio.",
         "Sin embargo, TreeSize es una herramienta de análisis, no de limpieza. Muestra los archivos, pero no ofrece limpieza automática, ni vaciado de cachés, ni borrado de los datos de navegación. Disk Mop es una solución completa que hace las dos cosas.",
@@ -702,8 +712,10 @@ export const treesize: Article = {
     },
     it: {
       title: "Disk Mop vs TreeSize: il confronto 2025",
-      metaDescription: "Disk Mop o TreeSize? Confronto 2025: prezzo, analisi del disco, funzioni di pulizia e piattaforme. Solo uno strumento di analisi o un pulitore completo?",
-      subtitle: "TreeSize è un ottimo strumento per analizzare il disco, ma fa solo questo: non pulisce. Disk Mop analizza e pulisce.",
+      metaDescription:
+        "Disk Mop o TreeSize? Confronto 2025: prezzo, analisi del disco, funzioni di pulizia e piattaforme. Solo uno strumento di analisi o un pulitore completo?",
+      subtitle:
+        "TreeSize è un ottimo strumento per analizzare il disco, ma fa solo questo: non pulisce. Disk Mop analizza e pulisce.",
       intro: [
         "TreeSize, sviluppato da JAM Software, è uno strumento molto diffuso su Windows per analizzare l'occupazione del disco. La visualizzazione a treemap mostra con precisione quali cartelle occupano più spazio.",
         "TreeSize resta però uno strumento di analisi, non di pulizia: mostra i file, ma non offre pulizia automatica, svuotamento delle cache o cancellazione dei dati di navigazione. Disk Mop è una soluzione completa che fa entrambe le cose.",
@@ -769,8 +781,10 @@ export const treesize: Article = {
     },
     pt: {
       title: "Disk Mop vs TreeSize: comparativo 2025",
-      metaDescription: "Disk Mop ou TreeSize? Comparativo 2025: preço, análise do disco, recursos de limpeza e plataformas. Apenas ferramenta de análise ou limpador completo?",
-      subtitle: "O TreeSize é uma excelente ferramenta de análise de disco, mas faz só isso: não limpa. O Disk Mop analisa e limpa.",
+      metaDescription:
+        "Disk Mop ou TreeSize? Comparativo 2025: preço, análise do disco, recursos de limpeza e plataformas. Apenas ferramenta de análise ou limpador completo?",
+      subtitle:
+        "O TreeSize é uma excelente ferramenta de análise de disco, mas faz só isso: não limpa. O Disk Mop analisa e limpa.",
       intro: [
         "O TreeSize, da JAM Software, é uma ferramenta popular no Windows para analisar o uso do espaço em disco. A visualização em treemap mostra com precisão quais pastas ocupam mais espaço.",
         "Acontece que o TreeSize é uma ferramenta de análise, não de limpeza. Ele mostra os arquivos, mas não oferece limpeza automática, esvaziamento de cache nem remoção de dados de navegação. O Disk Mop é uma solução completa que faz as duas coisas.",
@@ -836,8 +850,10 @@ export const treesize: Article = {
     },
     ja: {
       title: "Disk Mop vs TreeSize：2025年比較",
-      metaDescription: "Disk MopとTreeSizeを比較。ディスクの使用状況を細かく可視化する解析ツールと、分析からクリーニングまで1本でこなせるソフト。価格・クリーニング機能・重複ファイル検出・対応OSの違いを2025年の視点で整理しました。",
-      subtitle: "TreeSizeは優れたディスク解析ツールですが、できるのはそこまでで、クリーニングはできません。Disk Mopは分析とクリーニングの両方に対応します。",
+      metaDescription:
+        "Disk MopとTreeSizeを比較。ディスクの使用状況を細かく可視化する解析ツールと、分析からクリーニングまで1本でこなせるソフト。価格・クリーニング機能・重複ファイル検出・対応OSの違いを2025年の視点で整理しました。",
+      subtitle:
+        "TreeSizeは優れたディスク解析ツールですが、できるのはそこまでで、クリーニングはできません。Disk Mopは分析とクリーニングの両方に対応します。",
       intro: [
         "JAM Software社のTreeSizeは、Windowsでディスクの使用状況を分析する定番ツールです。ツリーマップ表示によって、どのフォルダーがどれだけ容量を使っているかが正確に分かります。",
         "ただしTreeSizeはあくまで解析ツールであり、クリーニングツールではありません。ファイルを表示することはできても、自動クリーニングやキャッシュ削除、ブラウザーデータの消去といった機能は備えていません。Disk Mopは、その両方をこなせるオールインワンのソフトです。",

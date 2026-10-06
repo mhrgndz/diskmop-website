@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef, useCallback, Suspense } from 'react';
-import { useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { useEffect, useState, useRef, useCallback, Suspense } from "react";
+import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 import {
   CheckCircle,
   Copy,
@@ -14,10 +14,11 @@ import {
   Loader2,
   AlertCircle,
   RefreshCw,
-} from 'lucide-react';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import { useAppInfo } from '@/hooks/use-app-info';
+} from "lucide-react";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { useAppInfo } from "@/hooks/use-app-info";
+import { trackDownload } from "@/lib/analytics";
 
 function Confetti() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -25,13 +26,20 @@ function Confetti() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+    const colors = [
+      "#3b82f6",
+      "#10b981",
+      "#f59e0b",
+      "#ef4444",
+      "#8b5cf6",
+      "#ec4899",
+    ];
     const particles: Array<{
       x: number;
       y: number;
@@ -107,9 +115,9 @@ interface CheckoutData {
 }
 
 function SuccessContent() {
-  const t = useTranslations('success');
+  const t = useTranslations("success");
   const searchParams = useSearchParams();
-  const checkoutId = searchParams.get('checkout_id');
+  const checkoutId = searchParams.get("checkout_id");
   const { windowsSize, macSize } = useAppInfo();
 
   const [data, setData] = useState<CheckoutData | null>(null);
@@ -129,8 +137,10 @@ function SuccessContent() {
     setError(false);
 
     try {
-      const res = await fetch(`https://api.diskmop.com/api/checkout/${checkoutId}`);
-      if (!res.ok) throw new Error('fetch_failed');
+      const res = await fetch(
+        `https://api.diskmop.com/api/checkout/${checkoutId}`,
+      );
+      if (!res.ok) throw new Error("fetch_failed");
       const result: CheckoutData = await res.json();
 
       if (!result.licenseKey && retryRef.current < 3) {
@@ -172,8 +182,10 @@ function SuccessContent() {
           className="text-center"
         >
           <Loader2 className="w-12 h-12 text-brand-500 mx-auto animate-spin" />
-          <h2 className="text-xl font-semibold mt-4">{t('loading')}</h2>
-          <p className="text-muted-foreground mt-2 text-sm">{t('loadingSubtitle')}</p>
+          <h2 className="text-xl font-semibold mt-4">{t("loading")}</h2>
+          <p className="text-muted-foreground mt-2 text-sm">
+            {t("loadingSubtitle")}
+          </p>
         </motion.div>
       </div>
     );
@@ -188,15 +200,15 @@ function SuccessContent() {
           className="max-w-md w-full text-center"
         >
           <AlertCircle className="w-16 h-16 text-amber-500 mx-auto" />
-          <h2 className="text-2xl font-bold mt-4">{t('error')}</h2>
-          <p className="text-muted-foreground mt-2">{t('errorDesc')}</p>
+          <h2 className="text-2xl font-bold mt-4">{t("error")}</h2>
+          <p className="text-muted-foreground mt-2">{t("errorDesc")}</p>
           {checkoutId && (
             <button
               onClick={handleRetry}
               className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-brand-500 text-white rounded-xl hover:bg-brand-600 transition-colors font-medium"
             >
               <RefreshCw className="w-4 h-4" />
-              {t('retry')}
+              {t("retry")}
             </button>
           )}
           <div className="mt-6">
@@ -205,7 +217,7 @@ function SuccessContent() {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {t('backHome')}
+              {t("backHome")}
             </Link>
           </div>
         </motion.div>
@@ -226,18 +238,18 @@ function SuccessContent() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
           >
             <CheckCircle className="w-20 h-20 text-emerald-500 mx-auto" />
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl font-bold mt-6">{t('title')}</h1>
-          <p className="text-muted-foreground mt-2">{t('subtitle')}</p>
+          <h1 className="text-3xl sm:text-4xl font-bold mt-6">{t("title")}</h1>
+          <p className="text-muted-foreground mt-2">{t("subtitle")}</p>
 
           {data.licenseKey && (
             <div className="mt-8 bg-card rounded-2xl border p-6">
               <p className="text-sm font-medium text-muted-foreground mb-2">
-                {t('licenseLabel')}
+                {t("licenseLabel")}
               </p>
               <div className="flex items-center gap-2 justify-center bg-muted rounded-xl p-4">
                 <code className="text-lg font-mono font-bold tracking-wider">
@@ -255,15 +267,15 @@ function SuccessContent() {
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mt-3">
-                {t('licenseNote')}
+                {t("licenseNote")}
               </p>
             </div>
           )}
 
           <div className="mt-8 bg-card rounded-2xl border p-6 text-left">
-            <h3 className="font-semibold text-sm mb-4">{t('stepsTitle')}</h3>
+            <h3 className="font-semibold text-sm mb-4">{t("stepsTitle")}</h3>
             <div className="space-y-3">
-              {[t('step1'), t('step2'), t('step3')].map((step, i) => (
+              {[t("step1"), t("step2"), t("step3")].map((step, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold flex items-center justify-center mt-0.5">
                     {i + 1}
@@ -275,31 +287,35 @@ function SuccessContent() {
           </div>
 
           <div className="mt-8">
-            <h2 className="font-semibold text-lg mb-4">{t('downloadTitle')}</h2>
+            <h2 className="font-semibold text-lg mb-4">{t("downloadTitle")}</h2>
             <p className="text-sm text-muted-foreground mb-4">
-              {t('downloadSubtitle')}
+              {t("downloadSubtitle")}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
                 href="https://api.diskmop.com/download/windows"
+                onClick={() => trackDownload("windows", "success")}
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">Windows</p>
-                  <p className="text-xs text-muted-foreground">Setup • {windowsSize || '~80 MB'}</p>
+                  <p className="text-xs text-muted-foreground">
+                    Setup • {windowsSize || "~80 MB"}
+                  </p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
               </a>
               <a
                 href="https://api.diskmop.com/download/mac"
+                onClick={() => trackDownload("mac", "success")}
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Laptop className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
                   <p className="font-semibold text-sm">macOS</p>
                   <p className="text-xs text-muted-foreground">
-                    Apple Silicon • {macSize || '~175 MB'}
+                    Apple Silicon • {macSize || "~175 MB"}
                   </p>
                 </div>
                 <Download className="w-4 h-4 ml-auto text-muted-foreground" />
@@ -309,9 +325,10 @@ function SuccessContent() {
             <p className="mt-3 text-center sm:text-right">
               <a
                 href="https://api.diskmop.com/download/mac-intel"
+                onClick={() => trackDownload("mac-intel", "success")}
                 className="text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
               >
-                {t('macIntel')}
+                {t("macIntel")}
               </a>
             </p>
           </div>
@@ -322,7 +339,7 @@ function SuccessContent() {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {t('backHome')}
+              {t("backHome")}
             </Link>
           </div>
 

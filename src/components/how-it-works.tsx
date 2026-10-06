@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Download, Search, Sparkles } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Download, Search, Sparkles } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface Step {
   number: number;
@@ -15,13 +15,13 @@ interface Step {
 }
 
 const steps: Step[] = [
-  { number: 1, icon: Download, titleKey: '0', descKey: '0' },
-  { number: 2, icon: Search, titleKey: '1', descKey: '1' },
-  { number: 3, icon: Sparkles, titleKey: '2', descKey: '2' },
+  { number: 1, icon: Download, titleKey: "0", descKey: "0" },
+  { number: 2, icon: Search, titleKey: "1", descKey: "1" },
+  { number: 3, icon: Sparkles, titleKey: "2", descKey: "2" },
 ];
 
 export function HowItWorks() {
-  const t = useTranslations('howItWorks');
+  const t = useTranslations("howItWorks");
 
   return (
     <section className="py-24 bg-muted/30">
@@ -35,10 +35,10 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -63,8 +63,8 @@ export function HowItWorks() {
                 {/* Step Number Circle */}
                 <div
                   className={cn(
-                    'relative z-10 w-16 h-16 rounded-full bg-brand-600 text-white',
-                    'flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-600/25'
+                    "relative z-10 w-16 h-16 rounded-full bg-brand-600 text-white",
+                    "flex items-center justify-center text-2xl font-bold shadow-lg shadow-brand-600/25",
                   )}
                 >
                   {step.number}

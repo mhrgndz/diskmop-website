@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 export function FinalCTA() {
-  const t = useTranslations('finalCta');
+  const t = useTranslations("finalCta");
 
   return (
     <section className="py-24">
@@ -17,7 +17,7 @@ export function FinalCTA() {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
           >
-            {t('title')}
+            {t("title")}
           </motion.h2>
 
           <motion.p
@@ -27,7 +27,7 @@ export function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-4 text-lg text-brand-100"
           >
-            {t('subtitle')}
+            {t("subtitle")}
           </motion.p>
 
           <motion.div
@@ -41,7 +41,7 @@ export function FinalCTA() {
               href="#platforms"
               className="inline-flex items-center justify-center bg-white text-brand-700 hover:bg-gray-100 rounded-xl px-8 py-4 text-lg font-semibold transition-colors shadow-lg"
             >
-              {t('cta')}
+              {t("cta")}
             </a>
           </motion.div>
 
@@ -52,7 +52,7 @@ export function FinalCTA() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-6 text-brand-200 text-sm"
           >
-            {t('trust')}
+            {t("trust")}
           </motion.p>
         </div>
       </div>

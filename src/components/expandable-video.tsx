@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { Maximize2, X } from 'lucide-react';
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Maximize2, X } from "lucide-react";
 
-import { ShowcaseVideo } from '@/components/showcase-video';
+import { ShowcaseVideo } from "@/components/showcase-video";
 
 interface ExpandableVideoProps {
   src: string;
@@ -23,17 +23,34 @@ interface ExpandableVideoProps {
  * `<video>` bir `<button>`un içine konamaz — geçersiz HTML olurdu).
  * Pencere Esc, dış alana tıklama ya da X ile kapanır.
  */
-export function ExpandableVideo({ src, poster, title, width, height, lazy }: ExpandableVideoProps) {
-  const t = useTranslations('common');
+export function ExpandableVideo({
+  src,
+  poster,
+  title,
+  width,
+  height,
+  lazy,
+}: ExpandableVideoProps) {
+  const t = useTranslations("common");
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div className="group/video relative cursor-zoom-in" onClick={() => setOpen(true)}>
-        <ShowcaseVideo src={src} poster={poster} label={title} width={width} height={height} lazy={lazy} />
+      <div
+        className="group/video relative cursor-zoom-in"
+        onClick={() => setOpen(true)}
+      >
+        <ShowcaseVideo
+          src={src}
+          poster={poster}
+          label={title}
+          width={width}
+          height={height}
+          lazy={lazy}
+        />
         <button
           type="button"
-          aria-label={`${t('enlarge')}: ${title}`}
+          aria-label={`${t("enlarge")}: ${title}`}
           onClick={(e) => {
             e.stopPropagation();
             setOpen(true);
@@ -58,7 +75,7 @@ export function ExpandableVideo({ src, poster, title, width, height, lazy }: Exp
                 {title}
               </DialogPrimitive.Title>
               <DialogPrimitive.Close
-                aria-label={t('close')}
+                aria-label={t("close")}
                 className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <X className="h-5 w-5" />

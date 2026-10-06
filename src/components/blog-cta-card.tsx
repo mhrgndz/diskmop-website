@@ -14,11 +14,27 @@ import {
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
 import { STORE_URLS } from "@/lib/app-version";
 import {
+  trackDownload,
+  type CtaLocation,
+  type DownloadPlatform,
+} from "@/lib/analytics";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+/** Menüdeki alternatif platform satırı. */
+interface CtaPlatform {
+  label: string;
+  sub: string;
+  href: string;
+  platform: DownloadPlatform;
+  icon: typeof Monitor;
+  show: boolean;
+  store?: boolean;
+}
 
 interface BlogCtaCardProps {
   variant?: "inline" | "bottom";
@@ -34,8 +50,14 @@ export function BlogCtaCard({
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
 
+  // Kart iki yerde kullanılıyor: yazının başında (erken dönüşüm) ve sonunda.
+  // Hangisinin çevirdiğini ayırt edebilmek için yerleşim adı olayla gider.
+  const location: CtaLocation =
+    variant === "bottom" ? "blog_bottom" : "blog_inline";
+
   // Hedef OS yapılandırması
   let primaryLabel = "Windows";
+  let primaryPlatform: DownloadPlatform = "windows";
   let primaryHref = "https://api.diskmop.com/download/windows";
   let primarySublabel = "Windows 10 / 11";
   let isStore = false;
@@ -43,28 +65,32 @@ export function BlogCtaCard({
 
   if (detectedOS === "mac") {
     primaryLabel = "macOS";
+    primaryPlatform = "mac";
     primaryHref = "https://api.diskmop.com/download/mac";
     primarySublabel = "macOS 11+ (Apple Silicon / Intel)";
     PrimaryIcon = Laptop;
   } else if (detectedOS === "android") {
     primaryLabel = "Android";
+    primaryPlatform = "android";
     primaryHref = STORE_URLS.android;
     primarySublabel = "Google Play";
     PrimaryIcon = Smartphone;
     isStore = true;
   } else if (detectedOS === "ios") {
     primaryLabel = "iPhone";
+    primaryPlatform = "ios";
     primaryHref = STORE_URLS.ios;
     primarySublabel = "App Store";
     PrimaryIcon = Smartphone;
     isStore = true;
   }
 
-  const otherPlatforms = [
+  const allPlatforms: CtaPlatform[] = [
     {
       label: "Windows",
       sub: ".exe (Win 10/11)",
       href: "https://api.diskmop.com/download/windows",
+      platform: "windows",
       icon: Monitor,
       show: detectedOS !== "windows",
     },
@@ -72,6 +98,7 @@ export function BlogCtaCard({
       label: "macOS (Apple Silicon)",
       sub: ".dmg",
       href: "https://api.diskmop.com/download/mac",
+      platform: "mac",
       icon: Laptop,
       show: detectedOS !== "mac",
     },
@@ -79,6 +106,7 @@ export function BlogCtaCard({
       label: "macOS (Intel)",
       sub: ".dmg",
       href: "https://api.diskmop.com/download/mac-intel",
+      platform: "mac-intel",
       icon: Laptop,
       show: detectedOS === "mac",
     },
@@ -86,6 +114,7 @@ export function BlogCtaCard({
       label: "Android",
       sub: "Google Play",
       href: STORE_URLS.android,
+      platform: "android",
       icon: Smartphone,
       show: detectedOS !== "android",
       store: true,
@@ -94,11 +123,14 @@ export function BlogCtaCard({
       label: "iPhone",
       sub: "App Store",
       href: STORE_URLS.ios,
+      platform: "ios",
       icon: Smartphone,
       show: detectedOS !== "ios",
       store: true,
     },
-  ].filter((p) => p.show);
+  ];
+
+  const otherPlatforms = allPlatforms.filter((p) => p.show);
 
   if (variant === "bottom") {
     return (
@@ -125,6 +157,7 @@ export function BlogCtaCard({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <a
                 href={primaryHref}
+                onClick={() => trackDownload(primaryPlatform, location)}
                 target={isStore ? "_blank" : undefined}
                 rel={isStore ? "noopener noreferrer" : undefined}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 active:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-brand-600/30 transition-all hover:scale-[1.02]"
@@ -150,6 +183,7 @@ export function BlogCtaCard({
                       <DropdownMenuItem key={p.label} asChild>
                         <a
                           href={p.href}
+                          onClick={() => trackDownload(p.platform, location)}
                           target={p.store ? "_blank" : undefined}
                           rel={p.store ? "noopener noreferrer" : undefined}
                           className="flex items-center gap-3 px-3 py-2.5 text-xs hover:bg-gray-800 cursor-pointer"
@@ -228,6 +262,7 @@ export function BlogCtaCard({
           <div className="flex flex-col sm:flex-row lg:flex-col shrink-0 items-stretch sm:items-center lg:items-end gap-2.5">
             <a
               href={primaryHref}
+              onClick={() => trackDownload(primaryPlatform, location)}
               target={isStore ? "_blank" : undefined}
               rel={isStore ? "noopener noreferrer" : undefined}
               className="inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-brand-600/20 transition-all hover:scale-[1.02]"
@@ -250,6 +285,7 @@ export function BlogCtaCard({
                     <DropdownMenuItem key={p.label} asChild>
                       <a
                         href={p.href}
+                        onClick={() => trackDownload(p.platform, location)}
                         target={p.store ? "_blank" : undefined}
                         rel={p.store ? "noopener noreferrer" : undefined}
                         className="flex items-center gap-2.5 px-3 py-2 text-xs cursor-pointer"

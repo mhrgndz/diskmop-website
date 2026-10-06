@@ -1,10 +1,10 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const onedriveTakingUpSpace: Article = {
-  slug: 'onedrive-taking-up-space',
-  type: 'guide',
-  category: 'Windows Tips',
-  date: '2026-08-17',
+  slug: "onedrive-taking-up-space",
+  type: "guide",
+  category: "Windows Tips",
+  date: "2026-08-17",
   readingTime: 7,
   content: {
     tr: {
@@ -14,12 +14,12 @@ export const onedriveTakingUpSpace: Article = {
       subtitle: "İsteğe Bağlı Dosyalar, Yer Açma ve Otomatik Çevrimiçi Yapma",
       intro: [
         "Kısa cevap: OneDrive dosyalarınız buluta yüklenmiş olsa bile, bilgisayarınıza indirilmiş bir kopyası varsa disk alanı kaplar. Çözüm, OneDrive klasöründe istediğiniz klasöre sağ tıklayıp \"Alan boşalt\" seçeneğini kullanmaktır; dosya Dosya Gezgini'nde görünmeye devam eder ama yalnızca bulutta durur. Bunu kalıcı hale getirmek için Depolama Alanı Algılayıcısı'ndan belirli gün sayısı boyunca açılmayan dosyaların otomatik olarak çevrimiçi yapılmasını açın.",
-        "OneDrive kullanıcılarının en sık şaşırdığı nokta budur: dosyalar \"bulutta\" olduğu halde C sürücüsü dolmaya devam eder. Sebep, OneDrive'ın varsayılan davranışının senkronize ettiği dosyaları yerel olarak da tutması ve açtığınız her dosyanın sessizce indirilmesidir. Bu rehberde alanı nasıl geri alacağınızı, işlemi nasıl otomatikleştireceğinizi ve durumu daha kötü hale getiren yaygın hatayı anlatıyoruz.",
+        'OneDrive kullanıcılarının en sık şaşırdığı nokta budur: dosyalar "bulutta" olduğu halde C sürücüsü dolmaya devam eder. Sebep, OneDrive\'ın varsayılan davranışının senkronize ettiği dosyaları yerel olarak da tutması ve açtığınız her dosyanın sessizce indirilmesidir. Bu rehberde alanı nasıl geri alacağınızı, işlemi nasıl otomatikleştireceğinizi ve durumu daha kötü hale getiren yaygın hatayı anlatıyoruz.',
       ],
       keyTakeaways: [
         "OneDrive dosyaları buluta yüklenmiş olsa bile yerel bir kopyası varsa diskte yer kaplar.",
-        "\"Alan boşalt\" (Free up space) seçeneği dosyayı silmez; yalnızca yerel kopyayı kaldırır, dosya Dosya Gezgini'nde görünmeye devam eder.",
-        "Bulut simgesi çevrimiçi, içi boş yeşil onay yerel kopya, dolu yeşil onay ise \"her zaman bu cihazda tut\" anlamına gelir.",
+        '"Alan boşalt" (Free up space) seçeneği dosyayı silmez; yalnızca yerel kopyayı kaldırır, dosya Dosya Gezgini\'nde görünmeye devam eder.',
+        'Bulut simgesi çevrimiçi, içi boş yeşil onay yerel kopya, dolu yeşil onay ise "her zaman bu cihazda tut" anlamına gelir.',
         "Depolama Alanı Algılayıcısı, belirlediğiniz gün sayısı boyunca açılmayan OneDrive dosyalarını otomatik olarak çevrimiçi yapabilir.",
         "İsteğe Bağlı Dosyalar özelliğini KAPATMAK tüm bulut içeriğinizi diske indirir — durumu düzeltmez, kötüleştirir.",
         "OneDrive'ın bağlantısını kesmek yerel dosyaları silmez; bilgisayarda kalırlar ve yer kaplamaya devam ederler.",
@@ -63,16 +63,16 @@ export const onedriveTakingUpSpace: Article = {
           title: "Durum Simgelerini Okumak",
           content: [
             "Dosya Gezgini'nde OneDrive klasöründeki her öğenin yanında küçük bir durum simgesi vardır ve bu simgeler size dosyanın diskte yer kaplayıp kaplamadığını doğrudan söyler.",
-            "İçi boş mavi bulut simgesi dosyanın yalnızca çevrimiçi olduğunu, yani diskte yer kaplamadığını gösterir. İçi beyaz, kenarı yeşil onay işareti dosyanın yerel bir kopyasının bulunduğunu ama gerekirse otomatik kaldırılabileceğini belirtir. İçi dolu yeşil onay işareti ise \"Bu cihazda her zaman tut\" olarak işaretlenmiş dosyaları gösterir; bunlar Depolama Alanı Algılayıcısı tarafından bile kaldırılmaz.",
-            "Yer açmak istediğinizde önce dolu yeşil onaylı klasörlere bakın. Bir klasörü bu işaretten çıkarmak için sağ tıklayıp \"Bu cihazda her zaman tut\" seçeneğinin işaretini kaldırmanız yeterlidir.",
+            'İçi boş mavi bulut simgesi dosyanın yalnızca çevrimiçi olduğunu, yani diskte yer kaplamadığını gösterir. İçi beyaz, kenarı yeşil onay işareti dosyanın yerel bir kopyasının bulunduğunu ama gerekirse otomatik kaldırılabileceğini belirtir. İçi dolu yeşil onay işareti ise "Bu cihazda her zaman tut" olarak işaretlenmiş dosyaları gösterir; bunlar Depolama Alanı Algılayıcısı tarafından bile kaldırılmaz.',
+            'Yer açmak istediğinizde önce dolu yeşil onaylı klasörlere bakın. Bir klasörü bu işaretten çıkarmak için sağ tıklayıp "Bu cihazda her zaman tut" seçeneğinin işaretini kaldırmanız yeterlidir.',
           ],
         },
         {
           title: "En Yaygın Hata: İsteğe Bağlı Dosyaları Kapatmak",
           content: [
-            "Disk dolduğunda birçok kullanıcı OneDrive ayarlarında \"İsteğe Bağlı Dosyalar\" seçeneğini görür ve mantıklı görünen şeyi yapar: onu kapatır. Bu, yapabileceğiniz en ters hamledir.",
-            "Bu seçeneği kapatmak, buluttaki tüm OneDrive içeriğinizin diskinize indirilmesini tetikler. 500 GB'lık bir OneDrive hesabınız varsa Windows onu indirmeye çalışır ve zaten dolu olan diski tamamen doldurur. Özellik adı yanıltıcıdır: \"kapatmak\" bulut bağlantısını kesmek değil, her şeyi yerelleştirmek anlamına gelir.",
-            "Doğru yön tam tersidir: İsteğe Bağlı Dosyalar açık kalmalı ve yerel kopyalar \"Alan boşalt\" ile temizlenmelidir. Aynı şekilde OneDrive'ın bağlantısını kesmek de alan kazandırmaz; bağlantı kesildiğinde indirilmiş dosyalar bilgisayarda kalır, yalnızca eşitleme durur.",
+            'Disk dolduğunda birçok kullanıcı OneDrive ayarlarında "İsteğe Bağlı Dosyalar" seçeneğini görür ve mantıklı görünen şeyi yapar: onu kapatır. Bu, yapabileceğiniz en ters hamledir.',
+            'Bu seçeneği kapatmak, buluttaki tüm OneDrive içeriğinizin diskinize indirilmesini tetikler. 500 GB\'lık bir OneDrive hesabınız varsa Windows onu indirmeye çalışır ve zaten dolu olan diski tamamen doldurur. Özellik adı yanıltıcıdır: "kapatmak" bulut bağlantısını kesmek değil, her şeyi yerelleştirmek anlamına gelir.',
+            'Doğru yön tam tersidir: İsteğe Bağlı Dosyalar açık kalmalı ve yerel kopyalar "Alan boşalt" ile temizlenmelidir. Aynı şekilde OneDrive\'ın bağlantısını kesmek de alan kazandırmaz; bağlantı kesildiğinde indirilmiş dosyalar bilgisayarda kalır, yalnızca eşitleme durur.',
           ],
         },
         {
@@ -86,7 +86,7 @@ export const onedriveTakingUpSpace: Article = {
         {
           title: "Kalıcı Bir Düzen Kurmak",
           content: [
-            "Tek seferlik temizlik birkaç ay dayanır, sonra aynı noktaya dönersiniz. Kalıcı çözüm iki ayarı birlikte kullanmaktır: Depolama Alanı Algılayıcısı'nda bulut içeriği için 30 günlük bir eşik belirleyin ve gerçekten çevrimdışı erişmeniz gereken klasörleri \"Bu cihazda her zaman tut\" olarak işaretleyin.",
+            'Tek seferlik temizlik birkaç ay dayanır, sonra aynı noktaya dönersiniz. Kalıcı çözüm iki ayarı birlikte kullanmaktır: Depolama Alanı Algılayıcısı\'nda bulut içeriği için 30 günlük bir eşik belirleyin ve gerçekten çevrimdışı erişmeniz gereken klasörleri "Bu cihazda her zaman tut" olarak işaretleyin.',
             "Bu düzende sık kullandığınız belgeler her zaman yerelde kalır, bir yıl önce açtığınız arşivler ise sessizce buluta geri döner. Elle müdahale gerekmez ve OneDrive klasörünün disk üzerindeki ayak izi dengede kalır.",
             "Aynı düzeni disk temizliğinin geneline yaymak için Disk Mop'un zamanlanmış temizliğini kullanabilirsiniz: haftalık bir görev geçici dosyaları, tarayıcı önbelleklerini ve eski indirmeleri toplar. Disk Mop'u ücretsiz indirip sınırlı özelliklerle deneyebilirsiniz; Pro sürüm 19,90 dolarlık tek seferlik ödemeyle ömür boyu lisans sunar. Windows 10 ve 11 (64-bit) ile macOS 12 ve üzerinde çalışır.",
           ],
@@ -94,40 +94,43 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "OneDrive dosyaları bulutta olduğu halde neden disk alanı kaplıyor?",
+          question:
+            "OneDrive dosyaları bulutta olduğu halde neden disk alanı kaplıyor?",
           answer:
-            "Çünkü OneDrive bir eşitleme istemcisidir ve açtığınız dosyaların yerel bir kopyasını bilgisayarınızda tutar. Bu, çevrimdışı çalışabilmeniz için tasarlanmıştır. Bir dosyayı bir kez açmanız onu kalıcı olarak indirir ve siz \"Alan boşalt\" komutunu vermedikçe yerel kopya diskte kalır.",
+            'Çünkü OneDrive bir eşitleme istemcisidir ve açtığınız dosyaların yerel bir kopyasını bilgisayarınızda tutar. Bu, çevrimdışı çalışabilmeniz için tasarlanmıştır. Bir dosyayı bir kez açmanız onu kalıcı olarak indirir ve siz "Alan boşalt" komutunu vermedikçe yerel kopya diskte kalır.',
         },
         {
-          question: "\"Alan boşalt\" seçeneği dosyalarımı siler mi?",
+          question: '"Alan boşalt" seçeneği dosyalarımı siler mi?',
           answer:
             "Hayır. Bu komut yalnızca dosyanın bilgisayarınızdaki yerel kopyasını kaldırır; dosya bulutta olduğu gibi kalır ve Dosya Gezgini'nde görünmeye devam eder. Üzerine çift tıkladığınızda otomatik olarak yeniden indirilir. Tek koşul, o anda internet bağlantınızın olmasıdır.",
         },
         {
           question: "İsteğe Bağlı Dosyalar özelliğini kapatmalı mıyım?",
           answer:
-            "Hayır, bu en yaygın hatadır. Özelliği kapatmak buluttaki tüm OneDrive içeriğinizin diske indirilmesini başlatır ve alan sorununu ciddi biçimde kötüleştirir. Alan kazanmak için özellik açık kalmalı, yerel kopyalar ise \"Alan boşalt\" ile temizlenmelidir.",
+            'Hayır, bu en yaygın hatadır. Özelliği kapatmak buluttaki tüm OneDrive içeriğinizin diske indirilmesini başlatır ve alan sorununu ciddi biçimde kötüleştirir. Alan kazanmak için özellik açık kalmalı, yerel kopyalar ise "Alan boşalt" ile temizlenmelidir.',
         },
         {
           question: "OneDrive bağlantısını kesersem yer açılır mı?",
           answer:
-            "Hayır. Bağlantı kesildiğinde eşitleme durur ama bilgisayara daha önce indirilmiş dosyalar yerinde kalır ve yer kaplamaya devam eder. Alan kazanmak istiyorsanız bağlantıyı kesmeden önce klasörlere \"Alan boşalt\" uygulamanız gerekir.",
+            'Hayır. Bağlantı kesildiğinde eşitleme durur ama bilgisayara daha önce indirilmiş dosyalar yerinde kalır ve yer kaplamaya devam eder. Alan kazanmak istiyorsanız bağlantıyı kesmeden önce klasörlere "Alan boşalt" uygulamanız gerekir.',
         },
         {
-          question: "OneDrive dosyalarını otomatik olarak çevrimiçi yapabilir miyim?",
+          question:
+            "OneDrive dosyalarını otomatik olarak çevrimiçi yapabilir miyim?",
           answer:
-            "Evet. Ayarlar > Sistem > Depolama > Depolama Alanı Algılayıcısı ekranında, bulut içeriği için belirlediğiniz süre boyunca (14, 30 veya 60 gün) açılmayan dosyaların otomatik olarak yalnızca çevrimiçi hale getirilmesini seçebilirsiniz. \"Bu cihazda her zaman tut\" olarak işaretlediğiniz klasörler bu işlemden etkilenmez.",
+            'Evet. Ayarlar > Sistem > Depolama > Depolama Alanı Algılayıcısı ekranında, bulut içeriği için belirlediğiniz süre boyunca (14, 30 veya 60 gün) açılmayan dosyaların otomatik olarak yalnızca çevrimiçi hale getirilmesini seçebilirsiniz. "Bu cihazda her zaman tut" olarak işaretlediğiniz klasörler bu işlemden etkilenmez.',
         },
         {
-          question: "OneDrive klasörümün ne kadar yer kapladığını nasıl görürüm?",
+          question:
+            "OneDrive klasörümün ne kadar yer kapladığını nasıl görürüm?",
           answer:
             "Dosya Gezgini'nde OneDrive klasörüne sağ tıklayıp Özellikler'e bakabilirsiniz, ancak bu yalnızca toplam boyutu verir. Hangi alt klasörün şiştiğini görmek için Disk Mop'un Disk Analizi modülü gibi bir treemap görselleştirmesi kullanmak daha hızlıdır; klasörler gerçek boyutlarıyla orantılı alanlar olarak çizilir.",
         },
       ],
       verdict: [
-        "OneDrive'ın disk alanı kaplaması bir hata değil, tasarım gereğidir: açtığınız her dosya çevrimdışı erişim için yerelde tutulur. Alanı geri almanın doğru yolu, klasörlere sağ tıklayıp \"Alan boşalt\" demek ve İsteğe Bağlı Dosyalar özelliğini açık bırakmaktır.",
+        'OneDrive\'ın disk alanı kaplaması bir hata değil, tasarım gereğidir: açtığınız her dosya çevrimdışı erişim için yerelde tutulur. Alanı geri almanın doğru yolu, klasörlere sağ tıklayıp "Alan boşalt" demek ve İsteğe Bağlı Dosyalar özelliğini açık bırakmaktır.',
         "Kaçınılması gereken iki hamle var: İsteğe Bağlı Dosyalar'ı kapatmak (her şeyi indirir) ve OneDrive bağlantısını kesmek (hiçbir şey silmez). İkisi de sezgisel görünür, ikisi de işe yaramaz.",
-        "Kalıcı çözüm için Depolama Alanı Algılayıcısı'nda 30 günlük bir eşik belirleyin ve gerçekten çevrimdışı ihtiyaç duyduğunuz klasörleri \"her zaman bu cihazda tut\" olarak işaretleyin. Böylece düzen kendi kendini korur.",
+        'Kalıcı çözüm için Depolama Alanı Algılayıcısı\'nda 30 günlük bir eşik belirleyin ve gerçekten çevrimdışı ihtiyaç duyduğunuz klasörleri "her zaman bu cihazda tut" olarak işaretleyin. Böylece düzen kendi kendini korur.',
       ],
       ctaText: "OneDrive Klasörünüzün Gerçek Boyutunu Görün",
     },
@@ -137,13 +140,13 @@ export const onedriveTakingUpSpace: Article = {
         "If your OneDrive folder eats disk space even though the files live in the cloud, Files On-Demand is the reason. How to free up space, automate it, and the mistake to avoid.",
       subtitle: "Files On-Demand, Free Up Space and Automatic Cloud-Only Files",
       intro: [
-        "Short answer: OneDrive files take up disk space whenever a local copy exists on your PC, even though they are also stored in the cloud. The fix is to right-click a folder inside your OneDrive folder and choose \"Free up space\" — the file keeps appearing in File Explorer but lives only in the cloud. To make it permanent, turn on the Storage Sense option that automatically makes cloud files online-only after a number of days you choose.",
-        "This is the point that surprises OneDrive users most: the files are \"in the cloud\", yet the C: drive keeps filling up. The reason is that OneDrive's default behaviour keeps a local copy of anything it syncs, and every file you open is quietly downloaded. This guide covers how to reclaim the space, how to automate it, and the common mistake that makes the problem considerably worse.",
+        'Short answer: OneDrive files take up disk space whenever a local copy exists on your PC, even though they are also stored in the cloud. The fix is to right-click a folder inside your OneDrive folder and choose "Free up space" — the file keeps appearing in File Explorer but lives only in the cloud. To make it permanent, turn on the Storage Sense option that automatically makes cloud files online-only after a number of days you choose.',
+        'This is the point that surprises OneDrive users most: the files are "in the cloud", yet the C: drive keeps filling up. The reason is that OneDrive\'s default behaviour keeps a local copy of anything it syncs, and every file you open is quietly downloaded. This guide covers how to reclaim the space, how to automate it, and the common mistake that makes the problem considerably worse.',
       ],
       keyTakeaways: [
         "OneDrive files occupy disk space whenever a local copy exists, regardless of them also being in the cloud.",
-        "\"Free up space\" does not delete anything; it removes only the local copy, and the file still appears in File Explorer.",
-        "A cloud outline icon means online-only, a hollow green check means a local copy exists, and a solid green check means \"always keep on this device\".",
+        '"Free up space" does not delete anything; it removes only the local copy, and the file still appears in File Explorer.',
+        'A cloud outline icon means online-only, a hollow green check means a local copy exists, and a solid green check means "always keep on this device".',
         "Storage Sense can automatically make OneDrive files online-only after they have gone unopened for a number of days you set.",
         "Turning Files On-Demand OFF downloads your entire cloud library to the disk — it makes the problem worse, not better.",
         "Unlinking OneDrive does not delete local files; they stay on the PC and keep occupying space.",
@@ -187,15 +190,15 @@ export const onedriveTakingUpSpace: Article = {
           title: "Reading the Status Icons",
           content: [
             "Every item in your OneDrive folder carries a small status icon in File Explorer, and those icons tell you directly whether the file is using disk space.",
-            "A hollow blue cloud means the file is online-only and occupies no local space. A green check outline on a white background means a local copy exists but can be removed automatically if needed. A solid green check marks files flagged as \"Always keep on this device\" — these are never removed, not even by Storage Sense.",
-            "When you need space, look at the solid-green folders first. To unpin one, right-click it and untick \"Always keep on this device\".",
+            'A hollow blue cloud means the file is online-only and occupies no local space. A green check outline on a white background means a local copy exists but can be removed automatically if needed. A solid green check marks files flagged as "Always keep on this device" — these are never removed, not even by Storage Sense.',
+            'When you need space, look at the solid-green folders first. To unpin one, right-click it and untick "Always keep on this device".',
           ],
         },
         {
           title: "The Most Common Mistake: Turning Files On-Demand Off",
           content: [
-            "When the disk fills up, many users find the \"Files On-Demand\" setting in OneDrive and do the thing that looks logical: they turn it off. This is the single worst move available.",
-            "Disabling that option triggers a download of your entire OneDrive library onto the disk. If you have a 500 GB OneDrive account, Windows will attempt to pull all of it down and fill an already-full drive completely. The feature name is misleading: \"off\" does not mean disconnect from the cloud, it means localise everything.",
+            'When the disk fills up, many users find the "Files On-Demand" setting in OneDrive and do the thing that looks logical: they turn it off. This is the single worst move available.',
+            'Disabling that option triggers a download of your entire OneDrive library onto the disk. If you have a 500 GB OneDrive account, Windows will attempt to pull all of it down and fill an already-full drive completely. The feature name is misleading: "off" does not mean disconnect from the cloud, it means localise everything.',
             "The correct direction is the opposite: leave Files On-Demand enabled and clear local copies with Free up space. Unlinking OneDrive does not help either — when you unlink, downloaded files remain on the PC and only syncing stops.",
           ],
         },
@@ -210,7 +213,7 @@ export const onedriveTakingUpSpace: Article = {
         {
           title: "Setting Up an Arrangement That Lasts",
           content: [
-            "A one-off cleanup buys you a few months before you end up in the same place. The durable fix combines two settings: set a 30-day threshold for cloud content in Storage Sense, and mark the folders you genuinely need offline as \"Always keep on this device\".",
+            'A one-off cleanup buys you a few months before you end up in the same place. The durable fix combines two settings: set a 30-day threshold for cloud content in Storage Sense, and mark the folders you genuinely need offline as "Always keep on this device".',
             "In that arrangement, the documents you use regularly stay local while archives you last opened a year ago quietly return to the cloud. No manual intervention is required and the OneDrive folder's footprint stays balanced.",
             "To extend the same discipline to disk cleanup generally, use Disk Mop's scheduled cleanup: a weekly task collects temporary files, browser caches and old downloads. You can download Disk Mop free and try it with limited features; the Pro version is a one-time $19.90 payment for a lifetime license. It runs on Windows 10 and 11 (64-bit) and macOS 12 or later.",
           ],
@@ -218,12 +221,13 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "Why does OneDrive take up disk space if the files are in the cloud?",
+          question:
+            "Why does OneDrive take up disk space if the files are in the cloud?",
           answer:
-            "Because OneDrive is a sync client and keeps a local copy of the files you open so you can work offline. Opening a file once downloads it permanently, and that local copy stays on the disk until you run the \"Free up space\" command on it.",
+            'Because OneDrive is a sync client and keeps a local copy of the files you open so you can work offline. Opening a file once downloads it permanently, and that local copy stays on the disk until you run the "Free up space" command on it.',
         },
         {
-          question: "Does \"Free up space\" delete my files?",
+          question: 'Does "Free up space" delete my files?',
           answer:
             "No. The command removes only the local copy on your PC; the file remains in the cloud and still appears in File Explorer. Double-clicking it downloads the file again automatically. The only requirement is an internet connection at that moment.",
         },
@@ -240,7 +244,7 @@ export const onedriveTakingUpSpace: Article = {
         {
           question: "Can OneDrive files be made online-only automatically?",
           answer:
-            "Yes. Under Settings > System > Storage > Storage Sense, you can have cloud files become online-only automatically if they have not been opened for a period you choose — 14, 30 or 60 days. Folders you have marked as \"Always keep on this device\" are excluded from this.",
+            'Yes. Under Settings > System > Storage > Storage Sense, you can have cloud files become online-only automatically if they have not been opened for a period you choose — 14, 30 or 60 days. Folders you have marked as "Always keep on this device" are excluded from this.',
         },
         {
           question: "How do I see how much space my OneDrive folder uses?",
@@ -251,25 +255,26 @@ export const onedriveTakingUpSpace: Article = {
       verdict: [
         "OneDrive using disk space is by design rather than a fault: every file you open is kept locally for offline access. The correct way to reclaim that space is to right-click folders and choose Free up space while leaving Files On-Demand enabled.",
         "There are two moves to avoid: turning Files On-Demand off (which downloads everything) and unlinking OneDrive (which deletes nothing). Both look intuitive and neither works.",
-        "For a durable fix, set a 30-day threshold in Storage Sense and pin only the folders you truly need offline as \"always keep on this device\". After that, the arrangement maintains itself.",
+        'For a durable fix, set a 30-day threshold in Storage Sense and pin only the folders you truly need offline as "always keep on this device". After that, the arrangement maintains itself.',
       ],
       ctaText: "See What Your OneDrive Folder Really Holds",
     },
     de: {
       title: "Warum belegt OneDrive Speicherplatz und wie hole ich ihn zurück?",
       metaDescription:
-        "Wenn Ihr OneDrive-Ordner Speicher belegt, obwohl die Dateien in der Cloud liegen, ist \"Dateien bei Bedarf\" der Grund. So geben Sie Platz frei, automatisieren es und vermeiden den häufigsten Fehler.",
-      subtitle: "Dateien bei Bedarf, Speicherplatz freigeben und automatische Cloud-Dateien",
+        'Wenn Ihr OneDrive-Ordner Speicher belegt, obwohl die Dateien in der Cloud liegen, ist "Dateien bei Bedarf" der Grund. So geben Sie Platz frei, automatisieren es und vermeiden den häufigsten Fehler.',
+      subtitle:
+        "Dateien bei Bedarf, Speicherplatz freigeben und automatische Cloud-Dateien",
       intro: [
-        "Kurze Antwort: OneDrive-Dateien belegen immer dann Speicherplatz, wenn eine lokale Kopie auf dem PC existiert — auch wenn sie zusätzlich in der Cloud liegen. Die Lösung: Klicken Sie im OneDrive-Ordner mit der rechten Maustaste auf einen Ordner und wählen Sie \"Speicherplatz freigeben\". Die Datei bleibt im Explorer sichtbar, liegt aber nur noch in der Cloud. Dauerhaft wird es über die Speicheroptimierung, die Cloud-Dateien nach einer von Ihnen gewählten Anzahl von Tagen automatisch auf reine Online-Dateien umstellt.",
-        "Das ist der Punkt, der OneDrive-Nutzer am meisten überrascht: Die Dateien liegen \"in der Cloud\", und trotzdem füllt sich Laufwerk C. Der Grund: OneDrive behält standardmäßig eine lokale Kopie aller synchronisierten Dateien, und jede Datei, die Sie öffnen, wird still heruntergeladen. Dieser Ratgeber zeigt, wie Sie den Platz zurückholen, wie Sie das automatisieren und welchen verbreiteten Fehler Sie vermeiden sollten.",
+        'Kurze Antwort: OneDrive-Dateien belegen immer dann Speicherplatz, wenn eine lokale Kopie auf dem PC existiert — auch wenn sie zusätzlich in der Cloud liegen. Die Lösung: Klicken Sie im OneDrive-Ordner mit der rechten Maustaste auf einen Ordner und wählen Sie "Speicherplatz freigeben". Die Datei bleibt im Explorer sichtbar, liegt aber nur noch in der Cloud. Dauerhaft wird es über die Speicheroptimierung, die Cloud-Dateien nach einer von Ihnen gewählten Anzahl von Tagen automatisch auf reine Online-Dateien umstellt.',
+        'Das ist der Punkt, der OneDrive-Nutzer am meisten überrascht: Die Dateien liegen "in der Cloud", und trotzdem füllt sich Laufwerk C. Der Grund: OneDrive behält standardmäßig eine lokale Kopie aller synchronisierten Dateien, und jede Datei, die Sie öffnen, wird still heruntergeladen. Dieser Ratgeber zeigt, wie Sie den Platz zurückholen, wie Sie das automatisieren und welchen verbreiteten Fehler Sie vermeiden sollten.',
       ],
       keyTakeaways: [
         "OneDrive-Dateien belegen Speicherplatz, sobald eine lokale Kopie existiert — unabhängig davon, dass sie auch in der Cloud liegen.",
-        "\"Speicherplatz freigeben\" löscht nichts; es entfernt nur die lokale Kopie, und die Datei bleibt im Explorer sichtbar.",
-        "Ein Wolkensymbol bedeutet nur online, ein grünes Häkchen mit weißer Füllung eine lokale Kopie, ein ausgefülltes grünes Häkchen \"immer auf diesem Gerät behalten\".",
+        '"Speicherplatz freigeben" löscht nichts; es entfernt nur die lokale Kopie, und die Datei bleibt im Explorer sichtbar.',
+        'Ein Wolkensymbol bedeutet nur online, ein grünes Häkchen mit weißer Füllung eine lokale Kopie, ein ausgefülltes grünes Häkchen "immer auf diesem Gerät behalten".',
         "Die Speicheroptimierung kann OneDrive-Dateien automatisch auf reine Online-Dateien umstellen, wenn sie eine festgelegte Zeit lang nicht geöffnet wurden.",
-        "\"Dateien bei Bedarf\" AUSZUSCHALTEN lädt Ihre gesamte Cloud-Bibliothek auf die Festplatte — das verschlimmert das Problem, statt es zu lösen.",
+        '"Dateien bei Bedarf" AUSZUSCHALTEN lädt Ihre gesamte Cloud-Bibliothek auf die Festplatte — das verschlimmert das Problem, statt es zu lösen.',
         "Die Verknüpfung von OneDrive aufzuheben löscht keine lokalen Dateien; sie bleiben auf dem PC und belegen weiterhin Platz.",
       ],
       howTo: {
@@ -311,15 +316,15 @@ export const onedriveTakingUpSpace: Article = {
           title: "Die Statussymbole richtig lesen",
           content: [
             "Jedes Element im OneDrive-Ordner trägt im Explorer ein kleines Statussymbol, und diese Symbole sagen Ihnen direkt, ob die Datei Speicherplatz belegt.",
-            "Eine blaue Wolkenkontur bedeutet: nur online, kein lokaler Speicherverbrauch. Ein grünes Häkchen mit weißer Füllung bedeutet: Eine lokale Kopie existiert, kann bei Bedarf aber automatisch entfernt werden. Ein ausgefülltes grünes Häkchen kennzeichnet Dateien mit \"Immer auf diesem Gerät behalten\" — diese werden nie entfernt, auch nicht von der Speicheroptimierung.",
-            "Wenn Sie Platz brauchen, sehen Sie sich zuerst die Ordner mit ausgefülltem grünem Häkchen an. Um die Markierung aufzuheben, klicken Sie mit der rechten Maustaste darauf und entfernen den Haken bei \"Immer auf diesem Gerät behalten\".",
+            'Eine blaue Wolkenkontur bedeutet: nur online, kein lokaler Speicherverbrauch. Ein grünes Häkchen mit weißer Füllung bedeutet: Eine lokale Kopie existiert, kann bei Bedarf aber automatisch entfernt werden. Ein ausgefülltes grünes Häkchen kennzeichnet Dateien mit "Immer auf diesem Gerät behalten" — diese werden nie entfernt, auch nicht von der Speicheroptimierung.',
+            'Wenn Sie Platz brauchen, sehen Sie sich zuerst die Ordner mit ausgefülltem grünem Häkchen an. Um die Markierung aufzuheben, klicken Sie mit der rechten Maustaste darauf und entfernen den Haken bei "Immer auf diesem Gerät behalten".',
           ],
         },
         {
           title: "Der häufigste Fehler: Dateien bei Bedarf abschalten",
           content: [
-            "Wenn die Festplatte volläuft, entdecken viele Nutzer die Einstellung \"Dateien bei Bedarf\" und tun das scheinbar Naheliegende: Sie schalten sie ab. Das ist die schlechteste verfügbare Entscheidung.",
-            "Diese Option zu deaktivieren löst den Download Ihrer gesamten OneDrive-Bibliothek auf die Festplatte aus. Bei einem 500-GB-Konto versucht Windows, alles herunterzuladen, und füllt ein ohnehin volles Laufwerk vollständig. Der Name der Funktion führt in die Irre: \"aus\" bedeutet nicht, die Cloud-Verbindung zu trennen, sondern alles lokal vorzuhalten.",
+            'Wenn die Festplatte volläuft, entdecken viele Nutzer die Einstellung "Dateien bei Bedarf" und tun das scheinbar Naheliegende: Sie schalten sie ab. Das ist die schlechteste verfügbare Entscheidung.',
+            'Diese Option zu deaktivieren löst den Download Ihrer gesamten OneDrive-Bibliothek auf die Festplatte aus. Bei einem 500-GB-Konto versucht Windows, alles herunterzuladen, und füllt ein ohnehin volles Laufwerk vollständig. Der Name der Funktion führt in die Irre: "aus" bedeutet nicht, die Cloud-Verbindung zu trennen, sondern alles lokal vorzuhalten.',
             "Richtig ist genau das Gegenteil: Dateien bei Bedarf aktiviert lassen und lokale Kopien über Speicherplatz freigeben entfernen. Auch das Aufheben der OneDrive-Verknüpfung hilft nicht — dabei stoppt nur die Synchronisierung, heruntergeladene Dateien bleiben auf dem PC.",
           ],
         },
@@ -334,7 +339,7 @@ export const onedriveTakingUpSpace: Article = {
         {
           title: "Eine dauerhafte Regelung einrichten",
           content: [
-            "Eine einmalige Bereinigung reicht für einige Monate, danach stehen Sie wieder am selben Punkt. Die dauerhafte Lösung kombiniert zwei Einstellungen: Setzen Sie in der Speicheroptimierung eine 30-Tage-Schwelle für Cloud-Inhalte und markieren Sie die Ordner, die Sie wirklich offline brauchen, mit \"Immer auf diesem Gerät behalten\".",
+            'Eine einmalige Bereinigung reicht für einige Monate, danach stehen Sie wieder am selben Punkt. Die dauerhafte Lösung kombiniert zwei Einstellungen: Setzen Sie in der Speicheroptimierung eine 30-Tage-Schwelle für Cloud-Inhalte und markieren Sie die Ordner, die Sie wirklich offline brauchen, mit "Immer auf diesem Gerät behalten".',
             "So bleiben regelmäßig genutzte Dokumente lokal verfügbar, während Archive, die Sie zuletzt vor einem Jahr geöffnet haben, still in die Cloud zurückwandern. Manuelles Eingreifen entfällt, und der Platzbedarf des OneDrive-Ordners bleibt im Gleichgewicht.",
             "Um dieselbe Disziplin auf die gesamte Datenträgerbereinigung auszudehnen, nutzen Sie die geplante Bereinigung von Disk Mop: Eine wöchentliche Aufgabe erfasst temporäre Dateien, Browser-Caches und alte Downloads. Sie können Disk Mop kostenlos herunterladen und mit eingeschränkten Funktionen testen; die Pro-Version kostet einmalig 19,90 US-Dollar und beinhaltet eine lebenslange Lizenz. Sie läuft unter Windows 10 und 11 (64-Bit) sowie macOS 12 und neuer.",
           ],
@@ -342,12 +347,13 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "Warum belegt OneDrive Speicherplatz, wenn die Dateien in der Cloud liegen?",
+          question:
+            "Warum belegt OneDrive Speicherplatz, wenn die Dateien in der Cloud liegen?",
           answer:
-            "Weil OneDrive ein Synchronisierungsclient ist und von geöffneten Dateien eine lokale Kopie behält, damit Sie offline arbeiten können. Einmaliges Öffnen lädt eine Datei dauerhaft herunter, und diese lokale Kopie bleibt auf der Festplatte, bis Sie darauf \"Speicherplatz freigeben\" ausführen.",
+            'Weil OneDrive ein Synchronisierungsclient ist und von geöffneten Dateien eine lokale Kopie behält, damit Sie offline arbeiten können. Einmaliges Öffnen lädt eine Datei dauerhaft herunter, und diese lokale Kopie bleibt auf der Festplatte, bis Sie darauf "Speicherplatz freigeben" ausführen.',
         },
         {
-          question: "Löscht \"Speicherplatz freigeben\" meine Dateien?",
+          question: 'Löscht "Speicherplatz freigeben" meine Dateien?',
           answer:
             "Nein. Der Befehl entfernt nur die lokale Kopie auf Ihrem PC; die Datei bleibt in der Cloud und weiterhin im Explorer sichtbar. Ein Doppelklick lädt sie automatisch erneut herunter. Voraussetzung ist lediglich eine Internetverbindung in diesem Moment.",
         },
@@ -362,9 +368,10 @@ export const onedriveTakingUpSpace: Article = {
             "Nein. Dabei stoppt lediglich die Synchronisierung; bereits heruntergeladene Dateien bleiben unverändert auf dem PC und belegen weiter Platz. Wenn Sie den Speicher zurückwollen, führen Sie vor dem Aufheben der Verknüpfung auf den Ordnern Speicherplatz freigeben aus.",
         },
         {
-          question: "Können OneDrive-Dateien automatisch zu Online-Dateien werden?",
+          question:
+            "Können OneDrive-Dateien automatisch zu Online-Dateien werden?",
           answer:
-            "Ja. Unter Einstellungen > System > Speicher > Speicheroptimierung können Sie festlegen, dass Cloud-Dateien automatisch zu reinen Online-Dateien werden, wenn sie einen gewählten Zeitraum lang nicht geöffnet wurden — 14, 30 oder 60 Tage. Ordner mit \"Immer auf diesem Gerät behalten\" sind davon ausgenommen.",
+            'Ja. Unter Einstellungen > System > Speicher > Speicheroptimierung können Sie festlegen, dass Cloud-Dateien automatisch zu reinen Online-Dateien werden, wenn sie einen gewählten Zeitraum lang nicht geöffnet wurden — 14, 30 oder 60 Tage. Ordner mit "Immer auf diesem Gerät behalten" sind davon ausgenommen.',
         },
         {
           question: "Wie sehe ich, wie viel Platz mein OneDrive-Ordner belegt?",
@@ -375,15 +382,17 @@ export const onedriveTakingUpSpace: Article = {
       verdict: [
         "Dass OneDrive Speicherplatz belegt, ist kein Fehler, sondern Absicht: Jede geöffnete Datei wird für den Offlinezugriff lokal vorgehalten. Der richtige Weg, diesen Platz zurückzugewinnen, ist der Rechtsklick auf Ordner und Speicherplatz freigeben — bei aktivierter Funktion Dateien bei Bedarf.",
         "Zwei Schritte sollten Sie vermeiden: Dateien bei Bedarf abzuschalten (lädt alles herunter) und die OneDrive-Verknüpfung aufzuheben (löscht nichts). Beides wirkt naheliegend, beides hilft nicht.",
-        "Für eine dauerhafte Lösung setzen Sie in der Speicheroptimierung eine 30-Tage-Schwelle und markieren nur die wirklich offline benötigten Ordner mit \"immer auf diesem Gerät behalten\". Danach trägt sich die Regelung von selbst.",
+        'Für eine dauerhafte Lösung setzen Sie in der Speicheroptimierung eine 30-Tage-Schwelle und markieren nur die wirklich offline benötigten Ordner mit "immer auf diesem Gerät behalten". Danach trägt sich die Regelung von selbst.',
       ],
       ctaText: "Sehen Sie, was Ihr OneDrive-Ordner wirklich belegt",
     },
     fr: {
-      title: "Pourquoi OneDrive occupe-t-il de l'espace disque et comment le récupérer ?",
+      title:
+        "Pourquoi OneDrive occupe-t-il de l'espace disque et comment le récupérer ?",
       metaDescription:
         "Votre dossier OneDrive prend de la place alors que les fichiers sont dans le cloud ? La cause : Fichiers à la demande. Comment libérer de l'espace et automatiser.",
-      subtitle: "Fichiers à la demande, Libérer de l'espace et fichiers en ligne uniquement",
+      subtitle:
+        "Fichiers à la demande, Libérer de l'espace et fichiers en ligne uniquement",
       intro: [
         "Réponse courte : les fichiers OneDrive occupent de l'espace disque dès qu'une copie locale existe sur votre PC, même s'ils sont également stockés dans le cloud. La solution consiste à faire un clic droit sur un dossier situé dans votre dossier OneDrive et à choisir « Libérer de l'espace » (Free up space) : le fichier continue d'apparaître dans l'Explorateur de fichiers, mais il ne réside plus que dans le cloud. Pour rendre l'opération permanente, activez l'option de l'Assistant Stockage qui rend automatiquement les fichiers cloud disponibles en ligne uniquement au bout d'un nombre de jours que vous choisissez.",
         "C'est le point qui surprend le plus les utilisateurs de OneDrive : les fichiers sont « dans le cloud » et pourtant le disque C: continue de se remplir. La raison tient au comportement par défaut de OneDrive, qui conserve une copie locale de tout ce qu'il synchronise, et au fait que chaque fichier ouvert est discrètement téléchargé. Ce guide explique comment récupérer cet espace, comment automatiser l'opération et quelle erreur courante aggrave nettement le problème.",
@@ -466,12 +475,14 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "Pourquoi OneDrive occupe-t-il de l'espace disque si les fichiers sont dans le cloud ?",
+          question:
+            "Pourquoi OneDrive occupe-t-il de l'espace disque si les fichiers sont dans le cloud ?",
           answer:
             "Parce que OneDrive est un client de synchronisation : il conserve une copie locale des fichiers que vous ouvrez afin que vous puissiez travailler hors connexion. Ouvrir un fichier une seule fois le télécharge définitivement, et cette copie locale reste sur le disque tant que vous n'exécutez pas la commande « Libérer de l'espace » dessus.",
         },
         {
-          question: "Est-ce que « Libérer de l'espace » supprime mes fichiers ?",
+          question:
+            "Est-ce que « Libérer de l'espace » supprime mes fichiers ?",
           answer:
             "Non. La commande retire uniquement la copie locale présente sur votre PC ; le fichier reste dans le cloud et continue d'apparaître dans l'Explorateur de fichiers. Un double-clic le retélécharge automatiquement. La seule condition est de disposer d'une connexion Internet à ce moment-là.",
         },
@@ -486,7 +497,8 @@ export const onedriveTakingUpSpace: Article = {
             "Non. La dissociation arrête la synchronisation, mais les fichiers déjà téléchargés sur le PC restent exactement là où ils sont et continuent d'occuper de la place. Si vous voulez récupérer l'espace, exécutez Libérer de l'espace sur les dossiers avant de dissocier le compte.",
         },
         {
-          question: "Peut-on rendre les fichiers OneDrive disponibles en ligne uniquement de façon automatique ?",
+          question:
+            "Peut-on rendre les fichiers OneDrive disponibles en ligne uniquement de façon automatique ?",
           answer:
             "Oui. Dans Paramètres > Système > Stockage > Assistant Stockage, vous pouvez demander que les fichiers cloud deviennent disponibles en ligne uniquement s'ils n'ont pas été ouverts pendant une durée au choix : 14, 30 ou 60 jours. Les dossiers marqués « Toujours conserver sur cet appareil » sont exclus de ce traitement.",
         },
@@ -590,7 +602,8 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "¿Por qué OneDrive ocupa espacio en disco si los archivos están en la nube?",
+          question:
+            "¿Por qué OneDrive ocupa espacio en disco si los archivos están en la nube?",
           answer:
             "Porque OneDrive es un cliente de sincronización y guarda una copia local de los archivos que abres para que puedas trabajar sin conexión. Abrir un archivo una sola vez lo descarga de forma permanente, y esa copia local se queda en el disco hasta que ejecutas sobre ella el comando « Liberar espacio ».",
         },
@@ -610,7 +623,8 @@ export const onedriveTakingUpSpace: Article = {
             "No. Al desvincular se detiene la sincronización, pero los archivos ya descargados en el PC se quedan exactamente donde están y siguen ocupando espacio. Si quieres recuperar ese espacio, ejecuta Liberar espacio sobre las carpetas antes de desvincular la cuenta.",
         },
         {
-          question: "¿Se pueden poner los archivos de OneDrive solo en línea automáticamente?",
+          question:
+            "¿Se pueden poner los archivos de OneDrive solo en línea automáticamente?",
           answer:
             "Sí. En Configuración > Sistema > Almacenamiento > Sensor de almacenamiento puedes hacer que los archivos de la nube pasen a estar solo en línea de forma automática cuando lleven sin abrirse un periodo a tu elección: 14, 30 o 60 días. Las carpetas marcadas como « Conservar siempre en este dispositivo » quedan excluidas.",
         },
@@ -714,7 +728,8 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "Perché OneDrive occupa spazio su disco se i file sono nel cloud?",
+          question:
+            "Perché OneDrive occupa spazio su disco se i file sono nel cloud?",
           answer:
             "Perché OneDrive è un client di sincronizzazione e conserva una copia locale dei file che apri, così puoi lavorare offline. Aprire un file una sola volta lo scarica in modo permanente, e quella copia locale resta sul disco finché non esegui su di essa il comando « Libera spazio ».",
         },
@@ -734,12 +749,14 @@ export const onedriveTakingUpSpace: Article = {
             "No. Lo scollegamento interrompe la sincronizzazione, ma i file già scaricati sul PC restano esattamente dove sono e continuano a occupare spazio. Se vuoi recuperare lo spazio, esegui Libera spazio sulle cartelle prima di scollegare l'account.",
         },
         {
-          question: "I file di OneDrive possono diventare solo online in automatico?",
+          question:
+            "I file di OneDrive possono diventare solo online in automatico?",
           answer:
             "Sì. In Impostazioni > Sistema > Archiviazione > Sensore memoria puoi far sì che i file cloud diventino solo online automaticamente quando non vengono aperti per un periodo a tua scelta: 14, 30 o 60 giorni. Le cartelle contrassegnate come « Mantieni sempre su questo dispositivo » sono escluse.",
         },
         {
-          question: "Come faccio a vedere quanto spazio occupa la cartella OneDrive?",
+          question:
+            "Come faccio a vedere quanto spazio occupa la cartella OneDrive?",
           answer:
             "Puoi fare clic con il tasto destro sulla cartella OneDrive in Esplora file e aprire le Proprietà, ma così ottieni solo un totale. Per capire quale sottocartella si è davvero gonfiata è molto più rapida una visualizzazione a treemap come l'Analisi disco di Disk Mop, che disegna le cartelle come aree proporzionali alla dimensione reale.",
         },
@@ -752,10 +769,12 @@ export const onedriveTakingUpSpace: Article = {
       ctaText: "Scopri che cosa contiene davvero la tua cartella OneDrive",
     },
     pt: {
-      title: "Por que o OneDrive ocupa espaço em disco e como recuperar esse espaço",
+      title:
+        "Por que o OneDrive ocupa espaço em disco e como recuperar esse espaço",
       metaDescription:
         "Sua pasta do OneDrive ocupa espaço mesmo com os arquivos na nuvem? A causa é Arquivos Sob Demanda. Como liberar espaço, automatizar tudo e evitar o erro mais comum.",
-      subtitle: "Arquivos Sob Demanda, Liberar espaço e arquivos somente online",
+      subtitle:
+        "Arquivos Sob Demanda, Liberar espaço e arquivos somente online",
       intro: [
         "Resposta curta: os arquivos do OneDrive ocupam espaço em disco sempre que existe uma cópia local no PC, mesmo estando também guardados na nuvem. A solução é clicar com o botão direito em uma pasta dentro da sua pasta do OneDrive e escolher “Liberar espaço” (Free up space): o arquivo continua aparecendo no Explorador de Arquivos, mas passa a existir apenas na nuvem. Para tornar isso permanente, ative a opção do Sensor de Armazenamento que transforma os arquivos da nuvem em arquivos somente online depois de um número de dias definido por você.",
         "Esse é o ponto que mais surpreende quem usa o OneDrive: os arquivos estão “na nuvem” e mesmo assim a unidade C: continua enchendo. O motivo é que o comportamento padrão do OneDrive mantém uma cópia local de tudo o que sincroniza, e cada arquivo que você abre é baixado silenciosamente. Este guia mostra como recuperar o espaço, como automatizar o processo e qual é o erro comum que piora bastante a situação.",
@@ -838,7 +857,8 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "Por que o OneDrive ocupa espaço em disco se os arquivos estão na nuvem?",
+          question:
+            "Por que o OneDrive ocupa espaço em disco se os arquivos estão na nuvem?",
           answer:
             "Porque o OneDrive é um cliente de sincronização e mantém uma cópia local dos arquivos que você abre, para que você consiga trabalhar offline. Abrir um arquivo uma única vez o baixa de forma permanente, e essa cópia local fica no disco até você executar o comando “Liberar espaço” sobre ela.",
         },
@@ -858,7 +878,8 @@ export const onedriveTakingUpSpace: Article = {
             "Não. Desvincular para a sincronização, mas os arquivos já baixados no PC continuam exatamente onde estão e seguem ocupando espaço. Se você quer o espaço de volta, execute o Liberar espaço nas pastas antes de desvincular a conta.",
         },
         {
-          question: "Dá para deixar os arquivos do OneDrive somente online automaticamente?",
+          question:
+            "Dá para deixar os arquivos do OneDrive somente online automaticamente?",
           answer:
             "Sim. Em Configurações > Sistema > Armazenamento > Sensor de Armazenamento, você pode fazer com que os arquivos da nuvem fiquem somente online automaticamente quando não forem abertos por um período à sua escolha: 14, 30 ou 60 dias. As pastas marcadas como “Sempre manter neste dispositivo” ficam de fora.",
         },
@@ -879,7 +900,8 @@ export const onedriveTakingUpSpace: Article = {
       title: "OneDriveがディスク容量を圧迫する理由と、空き容量を取り戻す方法",
       metaDescription:
         "ファイルはクラウドにあるはずなのに、なぜOneDriveでCドライブが埋まるのか。原因は「ファイル オンデマンド」です。空き容量を増やす手順、ストレージ センサーによる自動化の設定、そして多くの人がやってしまう逆効果な操作まで解説します。",
-      subtitle: "「ファイル オンデマンド」と「空き容量を増やす」、そしてオンラインのみのファイル",
+      subtitle:
+        "「ファイル オンデマンド」と「空き容量を増やす」、そしてオンラインのみのファイル",
       intro: [
         "先に結論です。OneDriveのファイルは、クラウドにも保存されているかどうかに関係なく、PCにローカルコピーが存在するかぎりディスク容量を消費します。解決策は、OneDriveフォルダーの中にあるフォルダーを右クリックして「空き容量を増やす」（Free up space）を選ぶことです。ファイルはエクスプローラーに表示されたまま、実体はクラウドだけに残ります。これを恒久的にするには、指定した日数だけ開かれなかったクラウド ファイルを自動的にオンラインのみにする「ストレージ センサー」の設定をオンにします。",
         "OneDriveの利用者が最も戸惑うのはこの点です。ファイルは「クラウドにある」はずなのに、Cドライブは埋まり続けます。理由は、OneDriveが既定では同期したものすべてのローカルコピーを保持し、開いたファイルが静かにダウンロードされていくからです。この記事では、容量を取り戻す方法、その作業を自動化する方法、そして状況をかなり悪化させてしまう典型的な失敗を説明します。",
@@ -962,12 +984,14 @@ export const onedriveTakingUpSpace: Article = {
       ],
       faq: [
         {
-          question: "ファイルがクラウドにあるのに、OneDriveがディスク容量を使うのはなぜですか？",
+          question:
+            "ファイルがクラウドにあるのに、OneDriveがディスク容量を使うのはなぜですか？",
           answer:
             "OneDriveが同期クライアントであり、オフラインでも作業できるように、開いたファイルのローカルコピーを保持するためです。一度開いたファイルは恒久的にダウンロードされ、そのローカルコピーは「空き容量を増やす」を実行するまでディスクに残り続けます。",
         },
         {
-          question: "「空き容量を増やす」を実行するとファイルは削除されますか？",
+          question:
+            "「空き容量を増やす」を実行するとファイルは削除されますか？",
           answer:
             "削除されません。このコマンドが取り除くのはPC上のローカルコピーだけで、ファイル自体はクラウドに残り、エクスプローラーにも表示され続けます。ダブルクリックすれば自動的に再ダウンロードされます。条件は、そのときにインターネットへ接続していることだけです。",
         },
@@ -987,7 +1011,8 @@ export const onedriveTakingUpSpace: Article = {
             "できます。「設定」>「システム」>「ストレージ」>「ストレージ センサー」で、14日・30日・60日など任意の期間だけ開かれなかったクラウド ファイルを自動的にオンラインのみにする設定ができます。「このデバイス上に常に保持する」を設定したフォルダーは対象外です。",
         },
         {
-          question: "OneDriveフォルダーがどれだけ容量を使っているか確認するには？",
+          question:
+            "OneDriveフォルダーがどれだけ容量を使っているか確認するには？",
           answer:
             "エクスプローラーでOneDriveフォルダーを右クリックして「プロパティ」を開く方法もありますが、これでは合計しか分かりません。どのサブフォルダーが実際に膨らんでいるかを知るには、Disk Mopのディスク分析のようなツリーマップ表示のほうがはるかに速く、フォルダーが実際のサイズに比例した面積で描かれます。",
         },

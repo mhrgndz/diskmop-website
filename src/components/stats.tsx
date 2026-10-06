@@ -1,36 +1,40 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
-import { motion, useInView } from 'framer-motion';
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useTranslations } from "next-intl";
+import { motion, useInView } from "framer-motion";
 
 interface StatConfig {
   target: number;
   decimals: number;
   prefix: string;
   suffix: string;
-  format: 'integer' | 'decimal' | 'comma';
+  format: "integer" | "decimal" | "comma";
 }
 
 const statConfigs: StatConfig[] = [
-  { target: 47, decimals: 0, prefix: '', suffix: ' GB', format: 'integer' },
-  { target: 32, decimals: 0, prefix: '%', suffix: '', format: 'integer' },
-  { target: 10000, decimals: 0, prefix: '', suffix: '+', format: 'comma' },
-  { target: 4.8, decimals: 1, prefix: '', suffix: '/5', format: 'decimal' },
+  { target: 47, decimals: 0, prefix: "", suffix: " GB", format: "integer" },
+  { target: 32, decimals: 0, prefix: "%", suffix: "", format: "integer" },
+  { target: 10000, decimals: 0, prefix: "", suffix: "+", format: "comma" },
+  { target: 4.8, decimals: 1, prefix: "", suffix: "/5", format: "decimal" },
 ];
 
 function formatNumber(value: number, config: StatConfig): string {
-  if (config.format === 'comma') {
-    return Math.round(value).toLocaleString('tr-TR');
+  if (config.format === "comma") {
+    return Math.round(value).toLocaleString("tr-TR");
   }
-  if (config.format === 'decimal') {
+  if (config.format === "decimal") {
     return value.toFixed(config.decimals);
   }
   return Math.round(value).toString();
 }
 
-function useCountUp(target: number, config: StatConfig, shouldStart: boolean): string {
-  const [displayValue, setDisplayValue] = useState('0');
+function useCountUp(
+  target: number,
+  config: StatConfig,
+  shouldStart: boolean,
+): string {
+  const [displayValue, setDisplayValue] = useState("0");
   const animationRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
 
@@ -54,7 +58,7 @@ function useCountUp(target: number, config: StatConfig, shouldStart: boolean): s
         animationRef.current = requestAnimationFrame(animate);
       }
     },
-    [target, config]
+    [target, config],
   );
 
   useEffect(() => {
@@ -105,15 +109,15 @@ function StatItem({
 }
 
 export function Stats() {
-  const t = useTranslations('stats');
+  const t = useTranslations("stats");
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const items = [
-    t('items.0.label'),
-    t('items.1.label'),
-    t('items.2.label'),
-    t('items.3.label'),
+    t("items.0.label"),
+    t("items.1.label"),
+    t("items.2.label"),
+    t("items.3.label"),
   ];
 
   return (

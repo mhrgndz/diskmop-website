@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Download, Star, ShieldCheck, BadgeCheck } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Download, Star, ShieldCheck, BadgeCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface TrustItem {
   key: string;
@@ -12,14 +12,14 @@ interface TrustItem {
 }
 
 const trustItems: TrustItem[] = [
-  { key: 'downloads', value: '10,000+', icon: Download },
-  { key: 'rating', value: '4.8/5 ★', icon: Star },
-  { key: 'safe', value: '100%', icon: ShieldCheck },
-  { key: 'guarantee', value: '∞', icon: BadgeCheck },
+  { key: "downloads", value: "10,000+", icon: Download },
+  { key: "rating", value: "4.8/5 ★", icon: Star },
+  { key: "safe", value: "100%", icon: ShieldCheck },
+  { key: "guarantee", value: "∞", icon: BadgeCheck },
 ];
 
 export function TrustBar() {
-  const t = useTranslations('trustBar');
+  const t = useTranslations("trustBar");
 
   return (
     <section className="bg-muted/50 dark:bg-muted/30 py-6 border-y border-border">

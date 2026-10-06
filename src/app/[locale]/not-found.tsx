@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Home, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Home, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
-import { Button } from '@/components/ui/button';
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
-  const t = useTranslations('notFound');
+  const t = useTranslations("notFound");
 
   return (
     <>
@@ -26,16 +26,14 @@ export default function NotFound() {
             404
           </div>
           <h1 className="mt-4 text-2xl font-bold text-foreground">
-            {t('title')}
+            {t("title")}
           </h1>
-          <p className="mt-3 text-muted-foreground">
-            {t('description')}
-          </p>
+          <p className="mt-3 text-muted-foreground">{t("description")}</p>
           <div className="mt-8 flex items-center justify-center gap-4">
             <Button asChild variant="default" size="lg" className="gap-2">
               <Link href="/">
                 <Home className="h-4 w-4" />
-                {t('home')}
+                {t("home")}
               </Link>
             </Button>
             <Button
@@ -45,7 +43,7 @@ export default function NotFound() {
               onClick={() => history.back()}
             >
               <ArrowLeft className="h-4 w-4" />
-              {t('back')}
+              {t("back")}
             </Button>
           </div>
         </motion.div>

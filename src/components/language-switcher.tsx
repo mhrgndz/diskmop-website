@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
-import { Globe, ChevronDown } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useState, useRef, useEffect } from "react";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { Globe, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const locales = [
-  { code: 'en', label: 'English', flag: 'EN' },
-  { code: 'tr', label: 'Türkçe', flag: 'TR' },
-  { code: 'de', label: 'Deutsch', flag: 'DE' },
-  { code: 'fr', label: 'Français', flag: 'FR' },
-  { code: 'es', label: 'Español', flag: 'ES' },
-  { code: 'it', label: 'Italiano', flag: 'IT' },
-  { code: 'pt', label: 'Português', flag: 'PT' },
-  { code: 'ja', label: '日本語', flag: 'JA' },
+  { code: "en", label: "English", flag: "EN" },
+  { code: "tr", label: "Türkçe", flag: "TR" },
+  { code: "de", label: "Deutsch", flag: "DE" },
+  { code: "fr", label: "Français", flag: "FR" },
+  { code: "es", label: "Español", flag: "ES" },
+  { code: "it", label: "Italiano", flag: "IT" },
+  { code: "pt", label: "Português", flag: "PT" },
+  { code: "ja", label: "日本語", flag: "JA" },
 ] as const;
 
 export function LanguageSwitcher() {
@@ -37,8 +37,8 @@ export function LanguageSwitcher() {
         setOpen(false);
       }
     };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   return (
@@ -50,7 +50,9 @@ export function LanguageSwitcher() {
       >
         <Globe className="h-3.5 w-3.5" />
         {current.flag}
-        <ChevronDown className={cn('h-3 w-3 transition-transform', open && 'rotate-180')} />
+        <ChevronDown
+          className={cn("h-3 w-3 transition-transform", open && "rotate-180")}
+        />
       </button>
 
       {open && (
@@ -60,10 +62,10 @@ export function LanguageSwitcher() {
               key={l.code}
               onClick={() => switchTo(l.code)}
               className={cn(
-                'w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors',
+                "w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors",
                 locale === l.code
-                  ? 'bg-muted text-foreground font-medium'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  ? "bg-muted text-foreground font-medium"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
               )}
             >
               <span className="text-xs font-semibold w-6">{l.flag}</span>

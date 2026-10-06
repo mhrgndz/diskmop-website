@@ -1,10 +1,10 @@
-import type { Article } from '../types';
+import type { Article } from "../types";
 
 export const howMuchFreeDiskSpaceDoINeed: Article = {
-  slug: 'how-much-free-disk-space-do-i-need',
-  type: 'guide',
-  category: 'Disk Management',
-  date: '2026-08-17',
+  slug: "how-much-free-disk-space-do-i-need",
+  type: "guide",
+  category: "Disk Management",
+  date: "2026-08-17",
   readingTime: 8,
   content: {
     tr: {
@@ -46,13 +46,13 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
           content: [
             "Windows 11'in büyük özellik güncellemeleri, kurulum sırasında sistem diskinde yaklaşık 20 GB boş alan ister. Bu alan indirilen paket, açılan geçici dosyalar ve geri dönüş için saklanan eski sürüm arasında paylaşılır. Yeterli boşluk yoksa güncelleme başlamaz veya yarıda kesilerek geri alınır.",
             "Küçük aylık güvenlik güncellemeleri çok daha az yer ister, genellikle birkaç yüz megabayttan birkaç gigabayta kadar. Ancak indirilen paketler SoftwareDistribution klasöründe birikir ve temizlenmezse zamanla gigabaytlara ulaşır.",
-            "Güncelleme sırasında \"yeterli disk alanı yok\" hatası alıyorsanız Windows harici bir USB bellek kullanmayı teklif eder. Bu bir çözümdür ama kalıcı değildir; asıl mesele sistem diskinin sürekli dolu çalışmasıdır. Kalıcı çözüm için güncelleme öncesi 20 GB'lık tamponu kalıcı olarak boş tutmak gerekir.",
+            'Güncelleme sırasında "yeterli disk alanı yok" hatası alıyorsanız Windows harici bir USB bellek kullanmayı teklif eder. Bu bir çözümdür ama kalıcı değildir; asıl mesele sistem diskinin sürekli dolu çalışmasıdır. Kalıcı çözüm için güncelleme öncesi 20 GB\'lık tamponu kalıcı olarak boş tutmak gerekir.',
           ],
         },
         {
           title: "macOS ve Diğer Özel Durumlar",
           content: [
-            "macOS güncellemeleri için 15-20 GB boş alan bırakın. macOS ayrıca APFS anlık görüntüleri (snapshot) ve Time Machine yerel yedekleri için sessizce yer kullanır; bu alan Finder'da \"temizlenebilir\" (purgeable) olarak görünür ve gerektiğinde otomatik boşaltılır, ama sürücü zaten kritik seviyedeyse bu mekanizma yetişemez.",
+            'macOS güncellemeleri için 15-20 GB boş alan bırakın. macOS ayrıca APFS anlık görüntüleri (snapshot) ve Time Machine yerel yedekleri için sessizce yer kullanır; bu alan Finder\'da "temizlenebilir" (purgeable) olarak görünür ve gerektiğinde otomatik boşaltılır, ama sürücü zaten kritik seviyedeyse bu mekanizma yetişemez.',
             "Oyun oynuyorsanız hesabı yeniden yapın: modern büyük bütçeli oyunlar tek başına 100-150 GB tutabilir ve güncellemeleri sırasında geçici olarak iki katına yakın alan ister. Steam ve benzeri platformlar güncelleme sırasında eski ve yeni dosyaları bir süre birlikte tutar.",
             "Video düzenleme, sanal makineler ve yazılım geliştirme aynı mantıkla çalışır: hepsi geçici çalışma alanı ister. 4K video düzenlerken proje boyutunun birkaç katı kadar önizleme ve önbellek dosyası oluşur. Bu iş yüklerinde %20 boş alanı alt sınır olarak alın, mümkünse çalışma dosyalarını ayrı bir sürücüye taşıyın.",
           ],
@@ -120,7 +120,7 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       subtitle: "Percentages or Gigabytes? The Real Thresholds by Drive Type",
       intro: [
         "Short answer: leave at least 15-20% of total capacity free on an SSD and at least 10-15% free on a hard drive. For a 500 GB SSD that is roughly 75-100 GB; for a 1 TB SSD, 150-200 GB. Your system drive additionally needs about 20 GB of headroom for Windows feature updates, or 15-20 GB for macOS updates.",
-        "The answer to \"my disk is full but everything still works, what's the problem?\" is that free space is not only storage — the operating system needs it to function. On SSDs, free space directly affects write speed. On Windows, virtual memory, temporary files and update staging all draw from the same pool. This guide gives you the numbers to target based on your drive type and how you use the machine.",
+        'The answer to "my disk is full but everything still works, what\'s the problem?" is that free space is not only storage — the operating system needs it to function. On SSDs, free space directly affects write speed. On Windows, virtual memory, temporary files and update staging all draw from the same pool. This guide gives you the numbers to target based on your drive type and how you use the machine.',
       ],
       keyTakeaways: [
         "Leave at least 15-20% free on an SSD; write speeds drop noticeably once an SSD is more than 90% full.",
@@ -152,13 +152,13 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
           content: [
             "Major Windows 11 feature updates require around 20 GB of free space on the system drive during installation. That space is shared between the downloaded package, the temporary files it expands into, and the previous version kept for rollback. Without enough headroom, the update either never starts or is rolled back partway through.",
             "Monthly security updates need far less, typically a few hundred megabytes to a few gigabytes. However, the downloaded packages accumulate in the SoftwareDistribution folder and grow into gigabytes over time if never cleared.",
-            "If you hit a \"not enough disk space\" error during an update, Windows offers to use an external USB drive. That works, but it is a workaround rather than a fix; the underlying problem is a system drive that runs permanently full. The real solution is keeping that 20 GB buffer free as a standing rule.",
+            'If you hit a "not enough disk space" error during an update, Windows offers to use an external USB drive. That works, but it is a workaround rather than a fix; the underlying problem is a system drive that runs permanently full. The real solution is keeping that 20 GB buffer free as a standing rule.',
           ],
         },
         {
           title: "macOS and Other Special Cases",
           content: [
-            "Leave 15-20 GB free for macOS updates. macOS also quietly consumes space for APFS snapshots and local Time Machine backups; that space shows up as \"purgeable\" in Finder and is released automatically when needed, but the mechanism cannot keep up if the drive is already at a critical level.",
+            'Leave 15-20 GB free for macOS updates. macOS also quietly consumes space for APFS snapshots and local Time Machine backups; that space shows up as "purgeable" in Finder and is released automatically when needed, but the mechanism cannot keep up if the drive is already at a critical level.',
             "If you game, redo the maths: a single modern big-budget title can occupy 100-150 GB and temporarily demand close to double that while updating. Steam and similar platforms keep old and new files side by side for part of the update process.",
             "Video editing, virtual machines and software development follow the same pattern: all of them want scratch space. Editing 4K footage generates preview and cache files several times the size of the project itself. For these workloads, treat 20% free as the floor and move working files to a separate drive where possible.",
           ],
@@ -220,13 +220,15 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ctaText: "Reach Your Target Free Space Today",
     },
     de: {
-      title: "Wie viel freier Speicherplatz wird benötigt? Konkrete Zahlen für SSD und HDD",
+      title:
+        "Wie viel freier Speicherplatz wird benötigt? Konkrete Zahlen für SSD und HDD",
       metaDescription:
         "Wie viel freien Speicher sollten Sie auf Ihrem Laufwerk lassen? 15-20 % bei SSDs, 10-15 % bei Festplatten. Die tatsächlichen Werte für Windows-Updates, Gaming und Videobearbeitung.",
-      subtitle: "Prozent oder Gigabyte? Die realen Schwellenwerte je Laufwerkstyp",
+      subtitle:
+        "Prozent oder Gigabyte? Die realen Schwellenwerte je Laufwerkstyp",
       intro: [
         "Kurze Antwort: Lassen Sie auf einer SSD mindestens 15-20 % der Gesamtkapazität frei, auf einer Festplatte mindestens 10-15 %. Bei einer 500-GB-SSD sind das etwa 75-100 GB, bei einer 1-TB-SSD 150-200 GB. Auf dem Systemlaufwerk kommen rund 20 GB Reserve für Windows-Funktionsupdates hinzu, beziehungsweise 15-20 GB für macOS-Updates.",
-        "Die Antwort auf \"meine Festplatte ist voll, aber alles läuft noch — wo ist das Problem?\" lautet: Freier Speicher ist nicht nur Ablagefläche, das Betriebssystem braucht ihn zum Arbeiten. Bei SSDs beeinflusst freier Platz direkt die Schreibgeschwindigkeit; unter Windows speisen sich Auslagerungsdatei, temporäre Dateien und Update-Installation aus demselben Vorrat. Dieser Ratgeber nennt die Zahlen, die Sie je nach Laufwerkstyp und Nutzung anpeilen sollten.",
+        'Die Antwort auf "meine Festplatte ist voll, aber alles läuft noch — wo ist das Problem?" lautet: Freier Speicher ist nicht nur Ablagefläche, das Betriebssystem braucht ihn zum Arbeiten. Bei SSDs beeinflusst freier Platz direkt die Schreibgeschwindigkeit; unter Windows speisen sich Auslagerungsdatei, temporäre Dateien und Update-Installation aus demselben Vorrat. Dieser Ratgeber nennt die Zahlen, die Sie je nach Laufwerkstyp und Nutzung anpeilen sollten.',
       ],
       keyTakeaways: [
         "Lassen Sie auf einer SSD mindestens 15-20 % frei; ab etwa 90 % Füllstand sinkt die Schreibgeschwindigkeit spürbar.",
@@ -258,13 +260,13 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
           content: [
             "Große Funktionsupdates von Windows 11 benötigen während der Installation etwa 20 GB freien Speicher auf dem Systemlaufwerk. Dieser Platz verteilt sich auf das heruntergeladene Paket, die daraus entpackten temporären Dateien und die zur Rückkehr aufbewahrte Vorversion. Ohne ausreichenden Puffer startet das Update entweder gar nicht oder wird mittendrin zurückgenommen.",
             "Monatliche Sicherheitsupdates brauchen weit weniger, typischerweise einige hundert Megabyte bis wenige Gigabyte. Die heruntergeladenen Pakete sammeln sich jedoch im Ordner SoftwareDistribution an und wachsen mit der Zeit auf mehrere Gigabyte, wenn sie nie bereinigt werden.",
-            "Erscheint während eines Updates die Meldung \"nicht genügend Speicherplatz\", bietet Windows die Nutzung eines externen USB-Sticks an. Das funktioniert, ist aber ein Notbehelf; die eigentliche Ursache ist ein dauerhaft volles Systemlaufwerk. Die dauerhafte Lösung besteht darin, den 20-GB-Puffer grundsätzlich freizuhalten.",
+            'Erscheint während eines Updates die Meldung "nicht genügend Speicherplatz", bietet Windows die Nutzung eines externen USB-Sticks an. Das funktioniert, ist aber ein Notbehelf; die eigentliche Ursache ist ein dauerhaft volles Systemlaufwerk. Die dauerhafte Lösung besteht darin, den 20-GB-Puffer grundsätzlich freizuhalten.',
           ],
         },
         {
           title: "macOS und weitere Sonderfälle",
           content: [
-            "Halten Sie 15-20 GB für macOS-Updates frei. macOS belegt zusätzlich still Speicher für APFS-Schnappschüsse und lokale Time-Machine-Sicherungen; dieser Platz erscheint im Finder als \"bereinigbar\" und wird bei Bedarf automatisch freigegeben — der Mechanismus kommt jedoch nicht hinterher, wenn das Laufwerk bereits kritisch voll ist.",
+            'Halten Sie 15-20 GB für macOS-Updates frei. macOS belegt zusätzlich still Speicher für APFS-Schnappschüsse und lokale Time-Machine-Sicherungen; dieser Platz erscheint im Finder als "bereinigbar" und wird bei Bedarf automatisch freigegeben — der Mechanismus kommt jedoch nicht hinterher, wenn das Laufwerk bereits kritisch voll ist.',
             "Wenn Sie spielen, rechnen Sie neu: Ein einzelner moderner Blockbuster belegt 100-150 GB und verlangt beim Aktualisieren zeitweise fast das Doppelte. Steam und vergleichbare Plattformen halten während eines Teils des Update-Vorgangs alte und neue Dateien gleichzeitig vor.",
             "Videobearbeitung, virtuelle Maschinen und Softwareentwicklung folgen demselben Muster: Alle benötigen Arbeitsspeicherplatz auf dem Laufwerk. Beim Schnitt von 4K-Material entstehen Vorschau- und Cache-Dateien in mehrfacher Projektgröße. Nehmen Sie bei solchen Aufgaben 20 % freien Platz als Untergrenze und lagern Sie Arbeitsdateien nach Möglichkeit auf ein separates Laufwerk aus.",
           ],
@@ -326,10 +328,12 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ctaText: "Erreichen Sie Ihren Zielwert noch heute",
     },
     fr: {
-      title: "Combien d'espace disque libre faut-il laisser ? Les chiffres pour SSD et HDD",
+      title:
+        "Combien d'espace disque libre faut-il laisser ? Les chiffres pour SSD et HDD",
       metaDescription:
         "Combien d'espace libre laisser sur son disque ? 15-20 % sur un SSD, 10-15 % sur un HDD. Les chiffres réels pour les mises à jour Windows, les jeux et la vidéo.",
-      subtitle: "Pourcentages ou gigaoctets ? Les vrais seuils selon le type de disque",
+      subtitle:
+        "Pourcentages ou gigaoctets ? Les vrais seuils selon le type de disque",
       intro: [
         "Réponse courte : laissez au moins 15-20 % de la capacité totale libre sur un SSD, et au moins 10-15 % sur un disque dur. Pour un SSD de 500 GB, cela représente environ 75-100 GB ; pour un SSD de 1 TB, 150-200 GB. Votre disque système a besoin en plus d'une réserve d'environ 20 GB pour les mises à jour de fonctionnalités de Windows, ou de 15-20 GB pour les mises à jour de macOS.",
         "La réponse à « mon disque est plein mais tout fonctionne encore, où est le problème ? » tient en une phrase : l'espace libre n'est pas seulement du rangement, le système d'exploitation en a besoin pour fonctionner. Sur un SSD, l'espace libre influence directement la vitesse d'écriture. Sous Windows, la mémoire virtuelle, les fichiers temporaires et l'installation des mises à jour puisent tous dans la même réserve. Ce guide vous donne les chiffres à viser selon votre type de disque et votre usage de la machine.",
@@ -344,7 +348,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ],
       sections: [
         {
-          title: "La réponse courte : les pourcentages à viser selon le type de disque",
+          title:
+            "La réponse courte : les pourcentages à viser selon le type de disque",
           content: [
             "Règle générale : gardez au moins 10-15 % de chaque disque libre. S'il s'agit d'un SSD, montez ce seuil à 15-20 %. Raisonner en pourcentage est plus juste que raisonner en gigaoctets, car la marge nécessaire augmente avec la taille du disque.",
             "En chiffres concrets : visez environ 40-50 GB libres sur un SSD de 256 GB, 75-100 GB sur un SSD de 500 GB, 150-200 GB sur un SSD de 1 TB et 300-400 GB sur un SSD de 2 TB. Sur un disque dur, la borne basse de ces fourchettes suffit.",
@@ -404,7 +409,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Sur un disque dur, oui la plupart du temps ; sur un SSD, c'est limite. Sur un HDD, 10-15 % restent acceptables, même si la défragmentation a besoin d'au moins 15 % pour bien fonctionner. Sur un SSD, 10 % correspond au seuil où la dégradation des performances commence : viser 15-20 % est plus sûr.",
         },
         {
-          question: "Combien d'espace libre faut-il pour une mise à jour de Windows 11 ?",
+          question:
+            "Combien d'espace libre faut-il pour une mise à jour de Windows 11 ?",
           answer:
             "Les grandes mises à jour de fonctionnalités réclament environ 20 GB d'espace libre sur le disque système. Cet espace se partage entre le paquet téléchargé, les fichiers d'installation temporaires et la version précédente conservée pour un retour en arrière. Sans marge suffisante, la mise à jour ne démarre pas ou est annulée en cours de route.",
         },
@@ -432,10 +438,12 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ctaText: "Atteignez votre objectif d'espace libre dès aujourd'hui",
     },
     es: {
-      title: "¿Cuánto espacio libre en disco necesito? Cifras reales para SSD y HDD",
+      title:
+        "¿Cuánto espacio libre en disco necesito? Cifras reales para SSD y HDD",
       metaDescription:
         "¿Cuánto espacio libre dejar en el disco? Un 15-20 % en SSD y un 10-15 % en HDD. Las cifras reales para actualizaciones de Windows, juegos y edición de vídeo.",
-      subtitle: "¿Porcentajes o gigabytes? Los umbrales reales según el tipo de unidad",
+      subtitle:
+        "¿Porcentajes o gigabytes? Los umbrales reales según el tipo de unidad",
       intro: [
         "Respuesta corta: deja libre al menos el 15-20 % de la capacidad total en un SSD y al menos el 10-15 % en un disco duro. En un SSD de 500 GB eso equivale a unos 75-100 GB; en uno de 1 TB, a 150-200 GB. Además, la unidad del sistema necesita un margen de unos 20 GB para las actualizaciones de características de Windows, o de 15-20 GB para las de macOS.",
         "La respuesta a «mi disco está lleno pero todo sigue funcionando, ¿dónde está el problema?» es que el espacio libre no es solo almacenamiento: el sistema operativo lo necesita para funcionar. En los SSD, el espacio libre afecta directamente a la velocidad de escritura. En Windows, la memoria virtual, los archivos temporales y la preparación de las actualizaciones beben del mismo depósito. Esta guía te da las cifras que debes marcarte según el tipo de unidad y el uso que le das al equipo.",
@@ -450,7 +458,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ],
       sections: [
         {
-          title: "La respuesta corta: porcentajes objetivo según el tipo de unidad",
+          title:
+            "La respuesta corta: porcentajes objetivo según el tipo de unidad",
           content: [
             "Como regla general, mantén libre al menos el 10-15 % de cada unidad. Si es un SSD, sube ese umbral al 15-20 %. Pensar en porcentajes es más preciso que pensar en gigabytes, porque el margen necesario crece con el tamaño de la unidad.",
             "En cifras concretas: apunta a unos 40-50 GB libres en un SSD de 256 GB, 75-100 GB en uno de 500 GB, 150-200 GB en uno de 1 TB y 300-400 GB en uno de 2 TB. En discos duros basta con el extremo inferior de esos rangos.",
@@ -510,7 +519,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "En un disco duro, normalmente sí; en un SSD está al límite. En un HDD un 10-15 % es aceptable, aunque la desfragmentación necesita al menos un 15 % para trabajar bien. En un SSD, el 10 % es justo donde empieza la degradación del rendimiento, así que apuntar al 15-20 % es la opción más segura.",
         },
         {
-          question: "¿Cuánto espacio libre necesita una actualización de Windows 11?",
+          question:
+            "¿Cuánto espacio libre necesita una actualización de Windows 11?",
           answer:
             "Las grandes actualizaciones de características piden unos 20 GB libres en la unidad del sistema. Ese espacio se reparte entre el paquete descargado, los archivos temporales de instalación y la versión anterior que se guarda para poder revertir. Sin margen suficiente, la actualización no arranca o se revierte a mitad de camino.",
         },
@@ -541,7 +551,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       title: "Quanto spazio libero serve sul disco? Numeri reali per SSD e HDD",
       metaDescription:
         "Quanto spazio libero lasciare sul disco? Il 15-20 % su SSD e il 10-15 % su HDD. I valori reali per gli aggiornamenti di Windows, i giochi e il montaggio video.",
-      subtitle: "Percentuali o gigabyte? Le soglie reali per ogni tipo di unità",
+      subtitle:
+        "Percentuali o gigabyte? Le soglie reali per ogni tipo di unità",
       intro: [
         "Risposta breve: lascia libero almeno il 15-20 % della capacità totale su un SSD e almeno il 10-15 % su un disco fisso. Su un SSD da 500 GB significa circa 75-100 GB; su uno da 1 TB, 150-200 GB. L'unità di sistema richiede in più un margine di circa 20 GB per gli aggiornamenti delle funzionalità di Windows, oppure 15-20 GB per gli aggiornamenti di macOS.",
         "La risposta a «il disco è pieno ma funziona ancora tutto, dov'è il problema?» è che lo spazio libero non serve solo ad archiviare: il sistema operativo ne ha bisogno per lavorare. Sugli SSD lo spazio libero incide direttamente sulla velocità di scrittura. Su Windows, memoria virtuale, file temporanei e preparazione degli aggiornamenti attingono tutti alla stessa riserva. Questa guida ti indica i numeri da puntare in base al tipo di unità e a come usi il computer.",
@@ -556,7 +567,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ],
       sections: [
         {
-          title: "La risposta breve: le percentuali da puntare per tipo di unità",
+          title:
+            "La risposta breve: le percentuali da puntare per tipo di unità",
           content: [
             "Come regola generale, tieni libero almeno il 10-15 % di ogni unità. Se si tratta di un SSD, alza la soglia al 15-20 %. Ragionare in percentuale è più corretto che ragionare in gigabyte, perché il margine necessario cresce insieme alla dimensione dell'unità.",
             "In numeri concreti: punta a circa 40-50 GB liberi su un SSD da 256 GB, 75-100 GB su uno da 500 GB, 150-200 GB su uno da 1 TB e 300-400 GB su uno da 2 TB. Sui dischi fissi è sufficiente l'estremo inferiore di questi intervalli.",
@@ -616,7 +628,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Su un disco fisso di solito sì, su un SSD è al limite. Su un HDD il 10-15 % è accettabile, anche se la deframmentazione ha bisogno di almeno il 15 % per lavorare bene. Su un SSD il 10 % è esattamente il punto in cui comincia il calo di prestazioni, quindi puntare al 15-20 % è la scelta più sicura.",
         },
         {
-          question: "Quanto spazio libero serve per un aggiornamento di Windows 11?",
+          question:
+            "Quanto spazio libero serve per un aggiornamento di Windows 11?",
           answer:
             "I grandi aggiornamenti delle funzionalità richiedono circa 20 GB liberi sull'unità di sistema. Quello spazio si divide fra il pacchetto scaricato, i file temporanei di installazione e la versione precedente conservata per il ripristino. Senza margine sufficiente l'aggiornamento non parte oppure viene annullato a metà.",
         },
@@ -644,10 +657,12 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
       ctaText: "Raggiungi oggi il tuo obiettivo di spazio libero",
     },
     pt: {
-      title: "Quanto espaço livre em disco eu preciso? Números reais para SSD e HDD",
+      title:
+        "Quanto espaço livre em disco eu preciso? Números reais para SSD e HDD",
       metaDescription:
         "Quanto espaço livre deixar no disco? 15-20 % em um SSD e 10-15 % em um HDD. Os números reais para atualizações do Windows, jogos e edição de vídeo em 4K.",
-      subtitle: "Porcentagem ou gigabytes? Os limites reais por tipo de unidade",
+      subtitle:
+        "Porcentagem ou gigabytes? Os limites reais por tipo de unidade",
       intro: [
         "Resposta curta: deixe pelo menos 15-20 % da capacidade total livre em um SSD e pelo menos 10-15 % em um disco rígido. Em um SSD de 500 GB, isso significa cerca de 75-100 GB; em um de 1 TB, 150-200 GB. A unidade do sistema precisa ainda de uma folga de aproximadamente 20 GB para as atualizações de recursos do Windows, ou de 15-20 GB para as atualizações do macOS.",
         "A resposta para “meu disco está cheio, mas tudo continua funcionando, qual é o problema?” é que o espaço livre não serve apenas para guardar arquivos: o sistema operacional precisa dele para trabalhar. Em SSDs, o espaço livre afeta diretamente a velocidade de gravação. No Windows, a memória virtual, os arquivos temporários e a preparação das atualizações bebem da mesma reserva. Este guia traz os números que você deve mirar conforme o tipo de unidade e o uso que faz do computador.",
@@ -722,7 +737,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Em um disco rígido, geralmente sim; em um SSD, está no limite. No HDD, 10-15 % é aceitável, embora a desfragmentação precise de pelo menos 15 % para funcionar bem. No SSD, 10 % é justamente onde começa a queda de desempenho, então mirar 15-20 % é a escolha mais segura.",
         },
         {
-          question: "Quanto espaço livre uma atualização do Windows 11 precisa?",
+          question:
+            "Quanto espaço livre uma atualização do Windows 11 precisa?",
           answer:
             "As grandes atualizações de recursos exigem cerca de 20 GB livres na unidade do sistema. Esse espaço é dividido entre o pacote baixado, os arquivos temporários de instalação e a versão anterior mantida para reversão. Sem folga suficiente, a atualização não começa ou é revertida no meio do caminho.",
         },
@@ -828,7 +844,8 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "ハードディスクなら多くの場合は足りますが、SSDでは境界線上です。HDDでは10-15%でも許容範囲ですが、デフラグを正しく動かすには最低15%が必要です。SSDの10%は性能低下が始まる領域なので、15-20%を目標にするほうが安全です。",
         },
         {
-          question: "Windows 11の更新プログラムにはどれくらいの空き容量が必要ですか？",
+          question:
+            "Windows 11の更新プログラムにはどれくらいの空き容量が必要ですか？",
           answer:
             "大型の機能更新プログラムには、システムドライブに約20 GBの空き容量が必要です。この領域はダウンロードしたパッケージ、一時的なインストールファイル、復元用に保持される以前のバージョンで分け合われます。余裕が足りない場合、更新は始まらないか、途中で中断されて元に戻されます。",
         },

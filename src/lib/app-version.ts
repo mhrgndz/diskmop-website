@@ -11,10 +11,10 @@
  * (Android, iPhone) yalnızca buradan okunur, canlı API onları bilmez.
  */
 export const APP_VERSIONS = {
-  windows: '1.0.27',
-  mac: '1.0.27',
-  android: '1.0.9',
-  ios: '1.0',
+  windows: "1.0.27",
+  mac: "1.0.27",
+  android: "1.0.9",
+  ios: "1.0",
 } as const;
 
 /**
@@ -24,20 +24,21 @@ export const APP_VERSIONS = {
  * kendi vitrinine yönlendirir.
  */
 export const STORE_URLS = {
-  android: 'https://play.google.com/store/apps/details?id=com.diskmop.android',
-  ios: 'https://apps.apple.com/app/diskmop-photo-video-cleaner/id6811601108',
+  android: "https://play.google.com/store/apps/details?id=com.diskmop.android",
+  ios: "https://apps.apple.com/app/diskmop-photo-video-cleaner/id6811601108",
 } as const;
 
 /** Şema ve metinlerde kullanılan "güncel sürüm". */
 export const LATEST_VERSION = APP_VERSIONS.windows;
 
 /** İlk genel sürümün tarihi — olgunluk sinyali. */
-export const FIRST_RELEASE_DATE = '2026-05-15';
+export const FIRST_RELEASE_DATE = "2026-05-15";
 
 /** Güncel sürümün yayın tarihi. */
-export const LATEST_RELEASE_DATE = '2026-09-25';
+export const LATEST_RELEASE_DATE = "2026-09-25";
 
-export const RELEASE_NOTES_URL = 'https://github.com/mhrgndz/diskmop-releases/releases';
+export const RELEASE_NOTES_URL =
+  "https://github.com/mhrgndz/diskmop-releases/releases";
 
 export function versionFor(platform: keyof typeof APP_VERSIONS): string {
   return APP_VERSIONS[platform];

@@ -10,8 +10,8 @@
  * localeHref('tr', '/')           -> '/tr'
  */
 export function localeHref(locale: string, path: string): string {
-  if (locale === 'en') return path;
-  if (path === '/') return `/${locale}`;
-  if (path.startsWith('/#')) return `/${locale}${path.slice(1)}`;
+  if (locale === "en") return path;
+  if (path === "/") return `/${locale}`;
+  if (path.startsWith("/#")) return `/${locale}${path.slice(1)}`;
   return `/${locale}${path}`;
 }
