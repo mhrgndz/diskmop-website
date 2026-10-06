@@ -700,8 +700,12 @@
       "invalidCode": "Invalid or expired code. Please try again.",
       "tooMany": "Too many attempts. Please wait a few minutes.",
       "mailFailed": "Could not send the email. Please try again later.",
-      "generic": "An error occurred. Please try again."
-    }
+      "generic": "An error occurred. Please try again.",
+      "provider": "Accesso con {provider} non riuscito. Riprova."
+    },
+    "or": "oppure",
+    "google": "Continua con Google",
+    "apple": "Continua con Apple"
   },
   "account": {
     "title": "Your Account",

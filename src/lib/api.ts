@@ -107,3 +107,25 @@ export function clientAddressFrom(headers: Headers): string | undefined {
   const forwarded = headers.get("x-forwarded-for")?.split(",").at(-1)?.trim();
   return forwarded || headers.get("x-real-ip")?.trim() || undefined;
 }
+
+export interface SignInProviders {
+  email: boolean;
+  google: boolean;
+  apple: boolean;
+  googleClientId?: string | null;
+  appleClientId?: string | null;
+}
+
+export async function getSignInProviders(): Promise<SignInProviders> {
+  try {
+    return await apiCall<SignInProviders>("/sign-in/providers");
+  } catch {
+    return {
+      email: true,
+      google: false,
+      apple: false,
+      googleClientId: null,
+      appleClientId: null,
+    };
+  }
+}

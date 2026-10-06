@@ -700,8 +700,12 @@
       "invalidCode": "Geçersiz veya süresi dolmuş kod. Lütfen tekrar deneyin.",
       "tooMany": "Çok fazla deneme yapıldı. Lütfen birkaç dakika bekleyin.",
       "mailFailed": "E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin.",
-      "generic": "Bir hata oluştu. Lütfen tekrar deneyin."
-    }
+      "generic": "Bir hata oluştu. Lütfen tekrar deneyin.",
+      "provider": "{provider} ile giriş yapılamadı. Lütfen tekrar deneyin."
+    },
+    "or": "veya",
+    "google": "Google ile devam et",
+    "apple": "Apple ile devam et"
   },
   "account": {
     "title": "Hesabım",
@@ -734,4 +738,3 @@
     "orderStatus": "Durum"
   }
 }
-

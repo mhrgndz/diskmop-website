@@ -700,8 +700,12 @@
       "invalidCode": "Invalid or expired code. Please try again.",
       "tooMany": "Too many attempts. Please wait a few minutes.",
       "mailFailed": "Could not send the email. Please try again later.",
-      "generic": "An error occurred. Please try again."
-    }
+      "generic": "An error occurred. Please try again.",
+      "provider": "Anmeldung mit {provider} fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "or": "oder",
+    "google": "Mit Google fortfahren",
+    "apple": "Mit Apple fortfahren"
   },
   "account": {
     "title": "Your Account",

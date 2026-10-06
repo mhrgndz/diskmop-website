@@ -700,8 +700,12 @@
       "invalidCode": "Invalid or expired code. Please try again.",
       "tooMany": "Too many attempts. Please wait a few minutes.",
       "mailFailed": "Could not send the email. Please try again later.",
-      "generic": "An error occurred. Please try again."
-    }
+      "generic": "An error occurred. Please try again.",
+      "provider": "Could not sign in with {provider}. Please try again."
+    },
+    "or": "or",
+    "google": "Continue with Google",
+    "apple": "Continue with Apple"
   },
   "account": {
     "title": "Your Account",
@@ -734,4 +738,3 @@
     "orderStatus": "Status"
   }
 }
-
