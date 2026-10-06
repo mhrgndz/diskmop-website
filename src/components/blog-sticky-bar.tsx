@@ -59,12 +59,7 @@ export function BlogStickyBar({
     } catch {}
   };
 
-  const targetOS =
-    articlePlatform === "android" ||
-    articlePlatform === "ios" ||
-    articlePlatform === "mac"
-      ? articlePlatform
-      : detectedOS;
+  const targetOS = articlePlatform || detectedOS;
 
   let osName = "Windows";
   let platform: DownloadPlatform = "windows";

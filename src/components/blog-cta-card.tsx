@@ -58,14 +58,9 @@ export function BlogCtaCard({
     variant === "bottom" ? "blog_bottom" : "blog_inline";
 
   // Hedef platform belirleme:
-  // Makale belirli bir mobil/Mac konusundaysa o ekosistem öne çıkarılır;
-  // masaüstü/genel konularda ziyaretçinin kendi işletim sistemi kullanılır.
-  const targetOS =
-    articlePlatform === "android" ||
-    articlePlatform === "ios" ||
-    articlePlatform === "mac"
-      ? articlePlatform
-      : detectedOS;
+  // Makale belirli bir platforma aitse (Windows, Mac, Android, iOS) o ekosistem öne çıkarılır;
+  // platform belirtilmemişse ziyaretçinin kendi işletim sistemi kullanılır.
+  const targetOS = articlePlatform || detectedOS;
 
   // Hedef OS yapılandırması
   let primaryLabel = "Windows";
