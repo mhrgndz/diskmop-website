@@ -3,6 +3,8 @@ import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LoginForm } from "@/components/login-form";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { getSignInProviders } from "@/lib/api";
 import { localeHref } from "@/lib/locale-path";
 import { getSessionToken, safeNextPath } from "@/lib/session";
@@ -53,15 +55,24 @@ export default async function LoginPage({ params, searchParams }: Props) {
   return (
     <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 sm:py-24">
       <div className="w-full max-w-[26rem] rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/brand/icon.svg"
-            alt="Disk Mop"
-            width={36}
-            height={36}
-            className="w-9 h-9"
-          />
-          <span className="font-bold text-lg text-foreground">Disk Mop</span>
+        <div className="flex items-center justify-between">
+          <a
+            href={localeHref(locale, "/")}
+            className="flex items-center gap-3 transition-opacity hover:opacity-85"
+          >
+            <Image
+              src="/brand/icon.svg"
+              alt="Disk Mop"
+              width={36}
+              height={36}
+              className="w-9 h-9"
+            />
+            <span className="font-bold text-lg text-foreground">Disk Mop</span>
+          </a>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
         </div>
 
         <h1 className="mt-5 text-2xl font-bold tracking-tight text-foreground">

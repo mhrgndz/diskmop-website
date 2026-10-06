@@ -735,6 +735,9 @@
     "orderDate": "Tarih",
     "orderQty": "Adet",
     "orderTotal": "Tutar",
-    "orderStatus": "Durum"
+    "orderStatus": "Durum",
+    "statusPaid": "Ödendi",
+    "statusRefunded": "İade edildi",
+    "homeLink": "Ana Sayfa"
   }
 }

@@ -27,9 +27,11 @@ export interface AccountOrder {
   id: string;
   quantity: number;
   currency: string;
-  totalAmount: number;
+  totalAmount?: number;
+  total_amount?: number;
   status: "paid" | "refunded" | "partially_refunded";
-  paidAt: string;
+  paidAt?: string;
+  paid_at?: string;
 }
 
 export interface AccountData {

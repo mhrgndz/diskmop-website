@@ -735,6 +735,9 @@
     "orderDate": "Date",
     "orderQty": "Qty",
     "orderTotal": "Total",
-    "orderStatus": "Status"
+    "orderStatus": "Status",
+    "statusPaid": "Pago",
+    "statusRefunded": "Reembolsado",
+    "homeLink": "Início"
   }
 }
