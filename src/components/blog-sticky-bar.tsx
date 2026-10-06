@@ -15,7 +15,17 @@ import { useOSDetection } from "@/hooks/use-os-detection";
 import { STORE_URLS } from "@/lib/app-version";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 
-export function BlogStickyBar() {
+interface BlogStickyBarProps {
+  customTitle?: string;
+  customSubtitle?: string;
+  articlePlatform?: "ios" | "android" | "mac" | "windows";
+}
+
+export function BlogStickyBar({
+  customTitle,
+  customSubtitle,
+  articlePlatform,
+}: BlogStickyBarProps = {}) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
   const [visible, setVisible] = useState(false);
@@ -49,19 +59,26 @@ export function BlogStickyBar() {
     } catch {}
   };
 
+  const targetOS =
+    articlePlatform === "android" ||
+    articlePlatform === "ios" ||
+    articlePlatform === "mac"
+      ? articlePlatform
+      : detectedOS;
+
   let osName = "Windows";
   let platform: DownloadPlatform = "windows";
   let downloadHref = "https://api.diskmop.com/download/windows";
 
-  if (detectedOS === "mac") {
+  if (targetOS === "mac") {
     osName = "macOS";
     platform = "mac";
     downloadHref = "https://api.diskmop.com/download/mac";
-  } else if (detectedOS === "android") {
+  } else if (targetOS === "android") {
     osName = "Android";
     platform = "android";
     downloadHref = STORE_URLS.android;
-  } else if (detectedOS === "ios") {
+  } else if (targetOS === "ios") {
     osName = "iPhone";
     platform = "ios";
     downloadHref = STORE_URLS.ios;
@@ -87,10 +104,10 @@ export function BlogStickyBar() {
               </div>
               <div className="min-w-0">
                 <div className="text-sm font-bold text-foreground truncate">
-                  {t("stickyBarTitle")}
+                  {customTitle || t("stickyBarTitle")}
                 </div>
                 <div className="text-xs text-muted-foreground truncate hidden sm:block">
-                  {t("stickyBarSubtitle")}
+                  {customSubtitle || t("stickyBarSubtitle")}
                 </div>
               </div>
             </div>

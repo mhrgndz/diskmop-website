@@ -312,7 +312,12 @@ export default async function ArticlePage({
         )}
 
         {/* Inline Smart CTA (Erken Dönüşüm) */}
-        <BlogCtaCard variant="inline" />
+        <BlogCtaCard
+          variant="inline"
+          customTitle={content.ctaText}
+          customSubtitle={t("inlineCtaSubtitle")}
+          articlePlatform={platform}
+        />
 
         {/* Comparison Table (only for comparison articles) */}
         {article.comparison && article.comparison.length > 0 && (
@@ -592,7 +597,8 @@ export default async function ArticlePage({
         <BlogCtaCard
           variant="bottom"
           customTitle={content.ctaText}
-          customSubtitle={t("ctaSubtitle")}
+          customSubtitle={t("inlineCtaSubtitle")}
+          articlePlatform={platform}
         />
 
         {/* Bottom Share Buttons */}
@@ -639,7 +645,7 @@ export default async function ArticlePage({
           </section>
         )}
       </main>
-      <BlogStickyBar />
+      <BlogStickyBar customTitle={content.ctaText} articlePlatform={platform} />
       <Footer />
     </>
   );

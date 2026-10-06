@@ -40,12 +40,14 @@ interface BlogCtaCardProps {
   variant?: "inline" | "bottom";
   customTitle?: string;
   customSubtitle?: string;
+  articlePlatform?: "ios" | "android" | "mac" | "windows";
 }
 
 export function BlogCtaCard({
   variant = "inline",
   customTitle,
   customSubtitle,
+  articlePlatform,
 }: BlogCtaCardProps) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
@@ -55,6 +57,16 @@ export function BlogCtaCard({
   const location: CtaLocation =
     variant === "bottom" ? "blog_bottom" : "blog_inline";
 
+  // Hedef platform belirleme:
+  // Makale belirli bir mobil/Mac konusundaysa o ekosistem öne çıkarılır;
+  // masaüstü/genel konularda ziyaretçinin kendi işletim sistemi kullanılır.
+  const targetOS =
+    articlePlatform === "android" ||
+    articlePlatform === "ios" ||
+    articlePlatform === "mac"
+      ? articlePlatform
+      : detectedOS;
+
   // Hedef OS yapılandırması
   let primaryLabel = "Windows";
   let primaryPlatform: DownloadPlatform = "windows";
@@ -63,20 +75,20 @@ export function BlogCtaCard({
   let isStore = false;
   let PrimaryIcon = Monitor;
 
-  if (detectedOS === "mac") {
+  if (targetOS === "mac") {
     primaryLabel = "macOS";
     primaryPlatform = "mac";
     primaryHref = "https://api.diskmop.com/download/mac";
     primarySublabel = "macOS 11+ (Apple Silicon / Intel)";
     PrimaryIcon = Laptop;
-  } else if (detectedOS === "android") {
+  } else if (targetOS === "android") {
     primaryLabel = "Android";
     primaryPlatform = "android";
     primaryHref = STORE_URLS.android;
     primarySublabel = "Google Play";
     PrimaryIcon = Smartphone;
     isStore = true;
-  } else if (detectedOS === "ios") {
+  } else if (targetOS === "ios") {
     primaryLabel = "iPhone";
     primaryPlatform = "ios";
     primaryHref = STORE_URLS.ios;
@@ -92,7 +104,7 @@ export function BlogCtaCard({
       href: "https://api.diskmop.com/download/windows",
       platform: "windows",
       icon: Monitor,
-      show: detectedOS !== "windows",
+      show: primaryPlatform !== "windows",
     },
     {
       label: "macOS (Apple Silicon)",
@@ -100,7 +112,7 @@ export function BlogCtaCard({
       href: "https://api.diskmop.com/download/mac",
       platform: "mac",
       icon: Laptop,
-      show: detectedOS !== "mac",
+      show: primaryPlatform !== "mac",
     },
     {
       label: "macOS (Intel)",
@@ -108,7 +120,7 @@ export function BlogCtaCard({
       href: "https://api.diskmop.com/download/mac-intel",
       platform: "mac-intel",
       icon: Laptop,
-      show: detectedOS === "mac",
+      show: primaryPlatform === "mac",
     },
     {
       label: "Android",
@@ -116,7 +128,7 @@ export function BlogCtaCard({
       href: STORE_URLS.android,
       platform: "android",
       icon: Smartphone,
-      show: detectedOS !== "android",
+      show: primaryPlatform !== "android",
       store: true,
     },
     {
@@ -125,7 +137,7 @@ export function BlogCtaCard({
       href: STORE_URLS.ios,
       platform: "ios",
       icon: Smartphone,
-      show: detectedOS !== "ios",
+      show: primaryPlatform !== "ios",
       store: true,
     },
   ];
