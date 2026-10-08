@@ -97,18 +97,28 @@ export function ClickHint({
       {children}
       {running && (
         <span aria-hidden className="click-hint-hand pointer-events-none absolute z-10">
-          <span className="click-hint-ripple absolute rounded-full" />
-          <svg viewBox="0 0 32 32" className="relative h-8 w-8 drop-shadow-md">
+          {/* Bağlantı imleci eli; parmak ucu (12.5, 2.5), basınca uçta üç çizgi belirir */}
+          <svg viewBox="0 0 32 32" className="click-hint-svg block h-[34px] w-[34px] overflow-visible">
+            <g
+              className="click-hint-rays"
+              stroke="#ffffff"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M12.5 -4.5v-3.5" />
+              <path d="M6.5 -1.5l-2.5-2.5" />
+              <path d="M18.5 -1.5l2.5-2.5" />
+            </g>
             <path
-              d="M11.5 3.5c1.4 0 2.5 1.1 2.5 2.5v8.2l.6-.1c1-.2 2 .4 2.3 1.4l.1.3.4-.1c1-.2 2 .4 2.3 1.3l.1.3.5-.1c1.1-.1 2.1.6 2.3 1.7l.9 4.3c.4 2-.2 4-1.6 5.4l-1 1c-.8.8-1.9 1.3-3 1.3h-5.2c-1.4 0-2.7-.6-3.5-1.7l-4.7-6.1c-.7-.9-.6-2.2.3-2.9.8-.7 2-.6 2.8.1l1.4 1.3V6c0-1.4 1.1-2.5 2.5-2.5Z"
+              d="M10.5 4.5a2 2 0 0 1 4 0v8a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v6.5c0 4.5-3 8-8 8h-3.5c-2.6 0-4.5-1.2-6-3.2l-4.4-5.9a2.1 2.1 0 0 1 3.1-2.8l2.8 2.4z"
               fill="#ffffff"
-              stroke="#0f172a"
-              strokeWidth="1.6"
+              stroke="#111111"
+              strokeWidth="1.5"
               strokeLinejoin="round"
             />
             <path
-              d="M14 15v5M17.4 16.4v4.2M20.8 18.2v3"
-              stroke="#0f172a"
+              d="M14.5 12.5v4.5M18.5 13.5v4M22.5 14.5v3.5"
+              stroke="#111111"
               strokeWidth="1.3"
               strokeLinecap="round"
             />
