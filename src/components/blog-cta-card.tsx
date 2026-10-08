@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
 import { STORE_URLS } from "@/lib/app-version";
+import { ClickHint } from "@/components/click-hint";
 import {
   trackDownload,
   type CtaLocation,
@@ -162,16 +163,18 @@ export function BlogCtaCard({
 
             {/* İndirme Butonu & Diğer Platformlar */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <ClickHint className="w-full sm:w-auto">
               <a
                 href={primaryHref}
                 onClick={() => trackDownload(primaryPlatform, location)}
                 target={isStore ? "_blank" : undefined}
                 rel={isStore ? "noopener noreferrer" : undefined}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 active:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-brand-600/30 transition-all hover:scale-[1.02]"
+                className="w-full inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 active:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-brand-600/30 transition-all hover:scale-[1.02]"
               >
                 <Download className="h-5 w-5" />
                 <span>{t("downloadFor", { os: primaryLabel })}</span>
               </a>
+              </ClickHint>
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -267,16 +270,18 @@ export function BlogCtaCard({
 
           {/* Aksiyon Alanı */}
           <div className="flex flex-col sm:flex-row lg:flex-col shrink-0 items-stretch sm:items-center lg:items-end gap-2.5">
+            <ClickHint className="flex">
             <a
               href={primaryHref}
               onClick={() => trackDownload(primaryPlatform, location)}
               target={isStore ? "_blank" : undefined}
               rel={isStore ? "noopener noreferrer" : undefined}
-              className="inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-brand-600/20 transition-all hover:scale-[1.02]"
+              className="w-full inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-brand-600/20 transition-all hover:scale-[1.02]"
             >
               <Download className="h-4 w-4" />
               <span>{t("downloadFor", { os: primaryLabel })}</span>
             </a>
+            </ClickHint>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

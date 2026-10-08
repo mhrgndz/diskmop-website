@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
 import { STORE_URLS } from "@/lib/app-version";
+import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 
 interface BlogStickyBarProps {
@@ -109,6 +110,7 @@ export function BlogStickyBar({
 
             {/* Right: CTA Button & Dismiss */}
             <div className="flex items-center gap-2 shrink-0">
+              <ClickHint immediate delay={900}>
               <a
                 href={downloadHref}
                 onClick={() => trackDownload(platform, "blog_sticky")}
@@ -117,6 +119,7 @@ export function BlogStickyBar({
                 <Download className="w-4 h-4 shrink-0" />
                 <span>{t("stickyBarButton", { os: osName })}</span>
               </a>
+              </ClickHint>
 
               <button
                 type="button"

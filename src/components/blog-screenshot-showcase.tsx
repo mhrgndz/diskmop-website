@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Download, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
+import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 import { ExpandableVideo } from "@/components/expandable-video";
 import {
@@ -194,15 +195,17 @@ export function BlogScreenshotShowcase({
         </div>
 
         <div className="shrink-0 flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2">
+          <ClickHint className="flex">
           <a
             href={downloadHref}
             download
             onClick={() => trackDownload(downloadPlatform, "blog_showcase")}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition-all hover:from-brand-500 hover:to-teal-500 hover:shadow-lg hover:shadow-brand-500/30 active:scale-[0.98]"
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition-all hover:from-brand-500 hover:to-teal-500 hover:shadow-lg hover:shadow-brand-500/30 active:scale-[0.98]"
           >
             <Download className="h-4 w-4" />
             <span>{tBlog("downloadFor", { os: osLabel })}</span>
           </a>
+          </ClickHint>
           <span className="text-[11px] text-center md:text-right text-muted-foreground/75">
             {tBlog("trustNoCard")}
           </span>
