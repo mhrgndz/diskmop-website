@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { ApiError, apiCall, clientAddressFrom } from "@/lib/api";
+import { gaIdentityFromCookies } from "@/lib/ga-identity";
 import { localeHref } from "@/lib/locale-path";
 import { SESSION_COOKIE, SIGNED_IN_COOKIE } from "@/lib/session";
 
@@ -31,11 +32,20 @@ export async function GET(
     return toLogin();
   }
 
+  // GA4 purchase olayı (API webhook'u yollar) bu ziyaretçinin oturumuna bağlansın
+  const ga = gaIdentityFromCookies(store.getAll());
+
   try {
     const checkout = await apiCall<{ url: string }>("/account/checkout", {
       method: "POST",
       token,
-      body: { quantity, client, locale },
+      body: {
+        quantity,
+        client,
+        locale,
+        ga_client_id: ga.clientId,
+        ga_session_id: ga.sessionId,
+      },
       clientIp: clientAddressFrom(request.headers),
       userAgent: request.headers.get("user-agent") || undefined,
     });

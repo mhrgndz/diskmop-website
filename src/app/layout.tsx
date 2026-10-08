@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { DownloadLinkTagger } from "@/components/download-link-tagger";
 import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -54,6 +55,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <GoogleAnalytics />
+        <DownloadLinkTagger />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
