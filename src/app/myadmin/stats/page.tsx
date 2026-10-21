@@ -47,7 +47,27 @@ interface Stats {
     activeTrackedSince: string | null;
   };
   series: SeriesDay[];
+  appStore?: AppStoreStats;
   github: GithubStats | { error: string };
+}
+
+// iOS: uygulama ping atmaz ("Data Not Collected"); sayılar Apple'ın günlük raporundan,
+// API 6 saatte bir eşitler. Apple raporu 1–2 gün geriden üretir.
+interface AppStoreDay {
+  firstTime: number;
+  redownload: number;
+  update: number;
+  installs: number | null;
+  deletions: number | null;
+}
+
+interface AppStoreStats {
+  configured: boolean;
+  lastSyncAt: string | null;
+  lastError: string | null;
+  latestDate: string | null;
+  daily: Record<string, AppStoreDay>;
+  last30: { territories: Counts; devices: Counts; sources: Counts };
 }
 
 interface Device {
@@ -134,6 +154,7 @@ const COLORS = {
   windows: "#3b82f6",
   mac: "#a78bfa",
   android: "#34d399",
+  ios: "#f472b6",
   bot: "#52525b",
 };
 
@@ -292,6 +313,8 @@ function Dashboard({ stats }: { stats: Stats }) {
         ]}
       />
 
+      <AppStoreSection days={s} appStore={stats.appStore} />
+
       <DailyTable days={s} activeSince={stats.installs.activeTrackedSince} />
 
       <Reliability stats={stats} />
@@ -416,6 +439,149 @@ function DailyChart({
         ))}
       </div>
     </section>
+  );
+}
+
+// ---------- iPhone (App Store) ----------
+
+const SOURCE_LABELS: Record<string, string> = {
+  "App Store search": "App Store araması",
+  "App Store browse": "App Store gezinme",
+  "App referrer": "Başka uygulama",
+  "Web referrer": "Web sitesi",
+  "Institutional purchase": "Kurumsal",
+  Unavailable: "Bilinmiyor",
+};
+
+function AppStoreSection({
+  days,
+  appStore,
+}: {
+  days: SeriesDay[];
+  appStore?: AppStoreStats;
+}) {
+  if (!appStore || !appStore.configured) {
+    return (
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 text-sm text-zinc-400">
+        iPhone (App Store) sayıları için API'de App Store Connect anahtarı
+        tanımlı değil.
+      </section>
+    );
+  }
+  const day = (d: SeriesDay) => appStore.daily[d.date];
+  const first = (d: SeriesDay) => day(d)?.firstTime ?? 0;
+  const redownload = (d: SeriesDay) => day(d)?.redownload ?? 0;
+  const update = (d: SeriesDay) => day(d)?.update ?? 0;
+  const hasInstalls = Object.values(appStore.daily).some(
+    (d) => d.installs !== null,
+  );
+
+  // Apple raporu geriden geldiği için "son N gün" en son raporlu günden geriye sayılır.
+  const end = days.findIndex((d) => d.date === appStore.latestDate);
+  const upTo = end >= 0 ? days.slice(0, end + 1) : [];
+  const periods = [
+    { label: "Son raporlu gün", days: upTo.slice(-1) },
+    { label: "Son 7 gün", days: upTo.slice(-7) },
+    { label: "Son 30 gün", days: upTo.slice(-30) },
+    { label: `${days.length} gün`, days },
+  ];
+  const top = (c: Counts, label?: (k: string) => string) =>
+    Object.entries(c)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 12)
+      .map(([k, n]) => `${label ? label(k) : k} ${fmt(n)}`)
+      .join(" · ") || "—";
+
+  return (
+    <>
+      <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="font-semibold">iPhone (App Store)</h2>
+          <p className="text-xs text-zinc-500">
+            Son raporlu gün{" "}
+            {appStore.latestDate
+              ? dayLabel(appStore.latestDate, { day: "numeric", month: "long" })
+              : "—"}
+            {appStore.lastSyncAt && <> · eşitlendi {timeAgo(appStore.lastSyncAt)}</>}
+          </p>
+        </div>
+        <p className="mt-1 text-xs text-zinc-500">
+          Apple&apos;ın günlük indirme raporu (App Analytics). iOS uygulaması
+          hiçbir veri göndermediği için kurulum/etkin cihaz sayılamaz; Apple
+          raporu 1–2 gün geriden üretir, günler Apple&apos;ın tarihine göre.
+        </p>
+        {appStore.lastError && (
+          <p className="mt-2 text-xs text-red-400">
+            Son eşitleme hatası: {appStore.lastError}
+          </p>
+        )}
+        <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {periods.map((p) => {
+            const f = p.days.reduce((a, d) => a + first(d), 0);
+            const r = p.days.reduce((a, d) => a + redownload(d), 0);
+            const u = p.days.reduce((a, d) => a + update(d), 0);
+            return (
+              <div key={p.label} className="rounded-lg bg-zinc-950/60 p-3">
+                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+                  {p.label}
+                </p>
+                <p className="mt-1 text-2xl font-bold tabular-nums text-pink-400">
+                  {fmt(f)}
+                </p>
+                <p className="text-xs text-zinc-400">
+                  ilk indirme · yeniden {fmt(r)} · güncelleme {fmt(u)}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-4 space-y-1 text-xs text-zinc-400">
+          <p>
+            <span className="text-zinc-500">Ülke (30 gün, ilk indirme): </span>
+            {top(appStore.last30.territories)}
+          </p>
+          <p>
+            <span className="text-zinc-500">Kaynak: </span>
+            {top(appStore.last30.sources, (k) => SOURCE_LABELS[k] ?? k)}
+          </p>
+          <p>
+            <span className="text-zinc-500">Cihaz: </span>
+            {top(appStore.last30.devices)}
+          </p>
+        </div>
+      </section>
+
+      <DailyChart
+        title="Günlük iPhone indirmesi"
+        hint="App Store ilk indirmeleri ve aynı Apple hesabıyla yeniden indirmeler (güncellemeler hariç)."
+        days={days}
+        segments={[
+          { label: "İlk indirme", color: COLORS.ios, value: first },
+          { label: "Yeniden", color: "#9d174d", value: redownload },
+        ]}
+        extra={(d) => (update(d) ? `güncelleme ${fmt(update(d))}` : "")}
+      />
+
+      {hasInstalls && (
+        <DailyChart
+          title="Günlük iPhone kurulum / silme"
+          hint="Apple'ın kurulum ve silme raporu (yalnız izin veren cihazlar)."
+          days={days}
+          segments={[
+            {
+              label: "Kurulum",
+              color: COLORS.ios,
+              value: (d) => day(d)?.installs ?? 0,
+            },
+            {
+              label: "Silme",
+              color: "#52525b",
+              value: (d) => day(d)?.deletions ?? 0,
+            },
+          ]}
+        />
+      )}
+    </>
   );
 }
 
