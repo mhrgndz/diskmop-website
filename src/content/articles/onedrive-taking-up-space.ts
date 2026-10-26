@@ -135,9 +135,9 @@ export const onedriveTakingUpSpace: Article = {
       ctaText: "OneDrive Klasörünüzün Gerçek Boyutunu Görün",
     },
     en: {
-      title: "Why Is OneDrive Taking Up Disk Space and How Do I Get It Back?",
+      title: "Is OneDrive Taking Up Space on Your PC? How to Free It Up",
       metaDescription:
-        "If your OneDrive folder eats disk space even though the files live in the cloud, Files On-Demand is the reason. How to free up space, automate it, and the mistake to avoid.",
+        "OneDrive keeps copies of your files on the PC unless Files On-Demand is set up. Why it uses disk space, how to free it up safely, and the setting to avoid.",
       subtitle: "Files On-Demand, Free Up Space and Automatic Cloud-Only Files",
       intro: [
         'Short answer: OneDrive files take up disk space whenever a local copy exists on your PC, even though they are also stored in the cloud. The fix is to right-click a folder inside your OneDrive folder and choose "Free up space" — the file keeps appearing in File Explorer but lives only in the cloud. To make it permanent, turn on the Storage Sense option that automatically makes cloud files online-only after a number of days you choose.',

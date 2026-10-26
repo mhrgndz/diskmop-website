@@ -140,10 +140,9 @@ export const whatsappStorageFullAndroid: Article = {
       ctaText: "Disk Mop'u Google Play'den edinin",
     },
     en: {
-      title:
-        "WhatsApp Taking Up Too Much Space on Android: Clear Media Without Losing Chats",
+      title: "How to Clear WhatsApp Storage on Android Without Losing Chats",
       metaDescription:
-        "WhatsApp can quietly reach 10–20 GB on Android. Here is how to clear photos, videos and voice notes without deleting a conversation, and how to stop it from filling up again.",
+        "WhatsApp can grow to 10–20 GB on Android. Clear photos, videos and voice notes without deleting a single chat, and stop auto-download from refilling it.",
       subtitle:
         "Manage Storage, auto-download settings and the folders WhatsApp leaves on the phone",
       intro: [

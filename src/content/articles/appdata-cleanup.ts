@@ -76,9 +76,9 @@ export const appdataCleanup: Article = {
       ctaText: "Disk Mop ile AppData klasörünüzü temizleyin",
     },
     en: {
-      title: "AppData Folder Too Big? How to Clean It Up Safely",
+      title: "How to Clean the AppData Folder Safely (Windows 11/10)",
       metaDescription:
-        "Is your AppData folder too big? Learn what is safe to delete in Local, LocalLow and Roaming, clear Temp and app caches, and shrink it safely today.",
+        "Learn which AppData files are safe to delete in Local, LocalLow and Roaming, how to clear Temp and app caches, and what to leave alone in Windows 11 and 10.",
       subtitle: "A Safe-vs-Unsafe Map for AppData's Three Subfolders",
       intro: [
         "Is your AppData folder too big? In most cases you can safely shrink it by emptying the Temp folder inside AppData\\Local, clearing application caches, and deleting folders left behind by programs you have already uninstalled. What you should never do is delete the entire AppData folder, because it also stores the settings, profiles and saved data your installed apps need to run.",
