@@ -60,8 +60,29 @@ import { clearCacheAndroid } from "./clear-cache-android";
 import { deleteDuplicatePhotosAndroid } from "./delete-duplicate-photos-android";
 import { windows1124h2CacheBug } from "./windows-11-24h2-cache-bug";
 import { steamShaderCacheCleanup } from "./steam-shader-cache-cleanup";
+import { swipeToDeletePhotosIphone } from "./swipe-to-delete-photos-iphone";
+import { mergeDuplicateContactsIphone } from "./merge-duplicate-contacts-iphone";
+import { hidePhotosIphone } from "./hide-photos-iphone";
+import { deleteWhatsappPhotosIphone } from "./delete-whatsapp-photos-iphone";
+import { deleteScreenshotsIphone } from "./delete-screenshots-iphone";
+import { deleteBlurryPhotosIphone } from "./delete-blurry-photos-iphone";
+import { findDuplicateVideosIphone } from "./find-duplicate-videos-iphone";
+import { livePhotosStorageIphone } from "./live-photos-storage-iphone";
+import { bestIphoneCleanerApps } from "./best-iphone-cleaner-apps";
 
 export const articles: Article[] = [
+  // 2026-10-26 eklenenler — iPhone uygulamasının 1.1.x özelliklerine (kaydırma, Kişiler, Kasa, sohbet
+  // medyası, ekran görüntüsü sınıflandırma, bulanık, benzer videolar, Live Photo) dayanan dokuz rehber.
+  // 2026-09-17'deki üç iPhone rehberiyle çakışmaz; her biri ayrı bir arama niyetini karşılar. 8 dil.
+  swipeToDeletePhotosIphone,
+  mergeDuplicateContactsIphone,
+  hidePhotosIphone,
+  deleteWhatsappPhotosIphone,
+  deleteScreenshotsIphone,
+  deleteBlurryPhotosIphone,
+  findDuplicateVideosIphone,
+  livePhotosStorageIphone,
+  bestIphoneCleanerApps,
   // 2026-09-19 eklenenler — Windows 11 24H2 güncelleme temizleme bug'ı ve Steam Shader Cache
   windows1124h2CacheBug,
   steamShaderCacheCleanup,

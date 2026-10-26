@@ -129,7 +129,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "Bir iPhone'un depolaması videoya gider ve birkaç bilinçli hamleye yanıt verir: daha fazlasına ihtiyacınız yoksa HEVC ile 1080p'de çekin, işini görmüş ekran kayıtlarını silin, sakladığınız 4K klipleri 1080p'ye dönüştürün ve hiç oynatmadığınız Live Photo'ları sabit fotoğrafa çevirin. Sonra Son Silinenler'i boşaltın.",
-        "Ağır işi DiskMop telefon üzerinde yapar: sıkıştırılabilir videoları ve ekran kayıtlarını bulur, iOS'un kendi onayıyla toplu dönüştürür ve sabit fotoğrafa çevirir, tahmin yerine ölçtüğü alanı raporlar. Tarama ücretsizdir; tam sürüm tek seferlik bir satın almadır.",
+        "Ağır işi DiskMop telefon üzerinde yapar: sıkıştırılabilir videoları ve ekran kayıtlarını bulur, iOS'un kendi onayıyla toplu dönüştürür ve sabit fotoğrafa çevirir, tahmin yerine ölçtüğü alanı raporlar. Tarama ücretsizdir; küçültme ve düzleştirme, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro'nun parçasıdır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -253,7 +253,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "Video is where an iPhone's storage goes, and it responds to a few deliberate moves: record in HEVC at 1080p unless you need more, delete screen recordings once they have done their job, convert the 4K clips you keep to 1080p, and flatten the Live Photos you never play. Then empty Recently Deleted.",
-        "DiskMop does the heavy lifting on the phone: it finds the compressible videos and screen recordings, converts and flattens in bulk with iOS's own confirmation, and reports the space it measured rather than an estimate. Scanning is free, and the full version is a one-time purchase.",
+        "DiskMop does the heavy lifting on the phone: it finds the compressible videos and screen recordings, converts and flattens in bulk with iOS's own confirmation, and reports the space it measured rather than an estimate. Scanning is free; shrinking and flattening are part of DiskMop Pro, a monthly subscription with a 7-day free trial.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -379,7 +379,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "Videos sind der Ort, an dem der Speicher eines iPhones verschwindet, und sie reagieren auf ein paar gezielte Schritte: in HEVC mit 1080p aufnehmen, sofern Sie nicht mehr brauchen, Bildschirmaufnahmen löschen, sobald sie ihren Zweck erfüllt haben, die 4K-Clips, die Sie behalten, in 1080p umwandeln und die Live Photos, die Sie nie abspielen, in Standbilder verwandeln. Dann Zuletzt gelöscht leeren.",
-        "Die schwere Arbeit erledigt DiskMop auf dem Telefon: Es findet die komprimierbaren Videos und Bildschirmaufnahmen, wandelt und reduziert gesammelt mit der Bestätigung von iOS selbst und meldet den gemessenen statt eines geschätzten Platzgewinns. Das Scannen ist kostenlos, die Vollversion ein einmaliger Kauf.",
+        "Die schwere Arbeit erledigt DiskMop auf dem Telefon: Es findet die komprimierbaren Videos und Bildschirmaufnahmen, wandelt und reduziert gesammelt mit der Bestätigung von iOS selbst und meldet den gemessenen statt eines geschätzten Platzgewinns. Das Scannen ist kostenlos; Verkleinern und Umwandeln gehören zu DiskMop Pro, einem Monatsabo mit 7-tägiger Gratis-Testphase.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -506,7 +506,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "La vidéo est là où part le stockage d'un iPhone, et elle réagit à quelques gestes délibérés : filmer en HEVC à 1080p sauf besoin particulier, supprimer les enregistrements d'écran une fois leur rôle rempli, convertir en 1080p les clips 4K que vous gardez et transformer en photos fixes les Live Photos que vous ne lisez jamais. Puis vider Supprimés récemment.",
-        "DiskMop fait le gros du travail sur le téléphone : il trouve les vidéos compressibles et les enregistrements d'écran, convertit et aplatit en lot avec la confirmation d'iOS lui-même, et rapporte l'espace mesuré plutôt qu'une estimation. L'analyse est gratuite et la version complète est un achat unique.",
+        "DiskMop fait le gros du travail sur le téléphone : il trouve les vidéos compressibles et les enregistrements d'écran, convertit et aplatit en lot avec la confirmation d'iOS lui-même, et rapporte l'espace mesuré plutôt qu'une estimation. L'analyse est gratuite ; la réduction et la conversion font partie de DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -631,7 +631,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "El vídeo es a donde se va el almacenamiento de un iPhone, y responde a unos pocos movimientos deliberados: graba en HEVC a 1080p salvo que necesites más, borra las grabaciones de pantalla cuando hayan cumplido su función, convierte a 1080p los clips 4K que conserves y convierte en fijas las Live Photos que nunca reproduces. Después vacía Eliminados recientemente.",
-        "DiskMop hace el trabajo pesado en el teléfono: encuentra los vídeos comprimibles y las grabaciones de pantalla, convierte y aplana en bloque con la confirmación del propio iOS, e informa del espacio que ha medido en lugar de una estimación. El análisis es gratuito y la versión completa es una compra única.",
+        "DiskMop hace el trabajo pesado en el teléfono: encuentra los vídeos comprimibles y las grabaciones de pantalla, convierte y aplana en bloque con la confirmación del propio iOS, e informa del espacio que ha medido en lugar de una estimación. El análisis es gratuito; reducir y aplanar forman parte de DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -756,7 +756,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "I video sono il punto in cui finisce lo spazio di un iPhone, e rispondono a poche mosse mirate: registra in HEVC a 1080p a meno che non ti serva di più, elimina le registrazioni schermo una volta che hanno fatto il loro dovere, converti in 1080p le clip 4K che tieni e trasforma in foto statiche le Live Photo che non riproduci mai. Poi svuota Eliminati di recente.",
-        "DiskMop fa il lavoro pesante sul telefono: trova i video comprimibili e le registrazioni schermo, converte e appiattisce in blocco con la conferma di iOS stesso, e riporta lo spazio misurato anziché una stima. La scansione è gratuita e la versione completa è un acquisto una tantum.",
+        "DiskMop fa il lavoro pesante sul telefono: trova i video comprimibili e le registrazioni schermo, converte e appiattisce in blocco con la conferma di iOS stesso, e riporta lo spazio misurato anziché una stima. La scansione è gratuita; riduzione e appiattimento fanno parte di DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -881,7 +881,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "É no vídeo que o armazenamento de um iPhone vai embora, e ele responde a alguns movimentos deliberados: grave em HEVC a 1080p a menos que precise de mais, apague as gravações de tela depois que cumprirem seu papel, converta para 1080p os clipes 4K que você guarda e transforme em fotos estáticas as Live Photos que nunca reproduz. Depois esvazie Apagados Recentemente.",
-        "O DiskMop faz o trabalho pesado no celular: encontra os vídeos compressíveis e as gravações de tela, converte e transforma em lote com a confirmação do próprio iOS, e informa o espaço que mediu em vez de uma estimativa. A verificação é gratuita e a versão completa é uma compra única.",
+        "O DiskMop faz o trabalho pesado no celular: encontra os vídeos compressíveis e as gravações de tela, converte e transforma em lote com a confirmação do próprio iOS, e informa o espaço que mediu em vez de uma estimativa. A verificação é gratuita; reduzir e transformar fazem parte do DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1005,7 +1005,7 @@ export const reduceVideoSizeIphone: Article = {
       ],
       verdict: [
         "iPhone のストレージが消えていく先は動画で、いくつかの意図的な手順で対処できます。必要がなければ HEVC の 1080p で撮影し、役目を終えた画面収録は削除し、残す 4K クリップは 1080p に変換し、再生しない Live Photo は静止画にする。そして「最近削除した項目」を空にします。",
-        "重い作業は DiskMop が iPhone 上で引き受けます。圧縮できる動画と画面収録を見つけ、iOS 自身の確認を挟んでまとめて変換・静止画化し、推定値ではなく実測した空き容量を報告します。スキャンは無料で、フル版は買い切りです。",
+        "重い作業は DiskMop が iPhone 上で引き受けます。圧縮できる動画と画面収録を見つけ、iOS 自身の確認を挟んでまとめて変換・静止画化し、推定値ではなく実測した空き容量を報告します。スキャンは無料で、縮小と静止画化は 7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro の機能です。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

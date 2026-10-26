@@ -6,6 +6,15 @@ const IOS_SLUGS = new Set([
   "iphone-storage-full",
   "find-duplicate-similar-photos-iphone",
   "reduce-video-size-iphone",
+  "swipe-to-delete-photos-iphone",
+  "merge-duplicate-contacts-iphone",
+  "hide-photos-iphone",
+  "delete-whatsapp-photos-iphone",
+  "delete-screenshots-iphone",
+  "delete-blurry-photos-iphone",
+  "find-duplicate-videos-iphone",
+  "live-photos-storage-iphone",
+  "best-iphone-cleaner-apps",
 ]);
 
 const ANDROID_SLUGS = new Set([
@@ -109,14 +118,62 @@ const HANDPICKED_RELATED: Record<string, string[]> = {
   "iphone-storage-full": [
     "find-duplicate-similar-photos-iphone",
     "reduce-video-size-iphone",
+    "swipe-to-delete-photos-iphone",
   ],
   "find-duplicate-similar-photos-iphone": [
     "iphone-storage-full",
     "reduce-video-size-iphone",
+    "find-duplicate-videos-iphone",
   ],
   "reduce-video-size-iphone": [
     "iphone-storage-full",
     "find-duplicate-similar-photos-iphone",
+    "live-photos-storage-iphone",
+  ],
+  "swipe-to-delete-photos-iphone": [
+    "find-duplicate-similar-photos-iphone",
+    "delete-screenshots-iphone",
+    "delete-blurry-photos-iphone",
+  ],
+  "merge-duplicate-contacts-iphone": [
+    "iphone-storage-full",
+    "best-iphone-cleaner-apps",
+    "swipe-to-delete-photos-iphone",
+  ],
+  "hide-photos-iphone": [
+    "swipe-to-delete-photos-iphone",
+    "iphone-storage-full",
+    "best-iphone-cleaner-apps",
+  ],
+  "delete-whatsapp-photos-iphone": [
+    "find-duplicate-similar-photos-iphone",
+    "swipe-to-delete-photos-iphone",
+    "iphone-storage-full",
+  ],
+  "delete-screenshots-iphone": [
+    "swipe-to-delete-photos-iphone",
+    "reduce-video-size-iphone",
+    "delete-blurry-photos-iphone",
+  ],
+  "delete-blurry-photos-iphone": [
+    "find-duplicate-similar-photos-iphone",
+    "swipe-to-delete-photos-iphone",
+    "delete-screenshots-iphone",
+  ],
+  "find-duplicate-videos-iphone": [
+    "reduce-video-size-iphone",
+    "find-duplicate-similar-photos-iphone",
+    "live-photos-storage-iphone",
+  ],
+  "live-photos-storage-iphone": [
+    "reduce-video-size-iphone",
+    "iphone-storage-full",
+    "find-duplicate-videos-iphone",
+  ],
+  "best-iphone-cleaner-apps": [
+    "iphone-storage-full",
+    "find-duplicate-similar-photos-iphone",
+    "swipe-to-delete-photos-iphone",
   ],
 
   // Android Kümesi
