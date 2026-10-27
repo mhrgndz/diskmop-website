@@ -23,9 +23,11 @@ export const APP_VERSIONS = {
  * `com.diskmop.ios`). App Store bağlantısı ülke öneksiz: Apple ziyaretçiyi
  * kendi vitrinine yönlendirir.
  */
+export const IOS_APP_ID = "6811601108";
+
 export const STORE_URLS = {
   android: "https://play.google.com/store/apps/details?id=com.diskmop.android",
-  ios: "https://apps.apple.com/app/diskmop-photo-video-cleaner/id6811601108",
+  ios: `https://apps.apple.com/app/diskmop-photo-video-cleaner/id${IOS_APP_ID}`,
 } as const;
 
 /** Şema ve metinlerde kullanılan "güncel sürüm". */

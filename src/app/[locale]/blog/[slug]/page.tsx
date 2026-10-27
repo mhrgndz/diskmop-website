@@ -14,6 +14,7 @@ import { localeHref } from "@/lib/locale-path";
 import { alternatesFor, socialFor } from "@/lib/seo";
 import { BlogCtaCard } from "@/components/blog-cta-card";
 import { BlogStickyBar } from "@/components/blog-sticky-bar";
+import { IphoneCompanionCard } from "@/components/iphone-companion-card";
 import { BlogScreenshotShowcase } from "@/components/blog-screenshot-showcase";
 import { TableOfContents, type TocItem } from "@/components/table-of-contents";
 import { BlogEeatBadge } from "@/components/blog-eeat-badge";
@@ -614,6 +615,9 @@ export default async function ArticlePage({
           customSubtitle={t("inlineCtaSubtitle")}
           articlePlatform={platform}
         />
+
+        {/* iPhone uygulaması köprüsü (Mac makaleleri + iPhone'dan okunan masaüstü makaleleri) */}
+        <IphoneCompanionCard articlePlatform={platform} />
 
         {/* Bottom Share Buttons */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">

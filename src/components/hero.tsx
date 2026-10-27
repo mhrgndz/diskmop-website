@@ -2,14 +2,22 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, Download } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { DownloadDropdown } from "@/components/download-dropdown";
+import { useOSDetection } from "@/hooks/use-os-detection";
+import { STORE_URLS } from "@/lib/app-version";
+import { trackDownload } from "@/lib/analytics";
 import { PlatterManifest } from "@/components/hero-visuals/platter-manifest";
 
 export function Hero() {
   const t = useTranslations("hero");
+  // iPhone/iPad ziyaretçisine masaüstü ürünü değil iPhone uygulaması anlatılır:
+  // metinler `hero.ios.*`'tan gelir, ana düğme doğrudan App Store'a gider.
+  // "10.000+ kullanıcı" satırı masaüstüne ait olduğu için orada gösterilmez.
+  const isIOS = useOSDetection() === "ios";
+  const text = (key: string) => (isIOS ? t(`ios.${key}`) : t(key));
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
@@ -29,7 +37,7 @@ export function Hero() {
                   "bg-brand-50 dark:bg-brand-950/50 text-brand-600 border border-brand-200 dark:border-brand-800",
                 )}
               >
-                {t("badge")}
+                {text("badge")}
               </span>
             </motion.div>
 
@@ -40,9 +48,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
             >
-              {t("title")}{" "}
+              {text("title")}{" "}
               <span className="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
-                {t("titleHighlight")}
+                {text("titleHighlight")}
               </span>
             </motion.h1>
 
@@ -53,7 +61,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0"
             >
-              {t("subtitle")}
+              {text("subtitle")}
             </motion.p>
 
             {/* CTA Group */}
@@ -63,28 +71,43 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
-              <DownloadDropdown variant="primary" location="hero" />
+              {isIOS ? (
+                <a
+                  href={STORE_URLS.ios}
+                  onClick={() => trackDownload("ios", "hero")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 text-base font-medium text-white shadow-lg transition-colors hover:bg-brand-700 active:bg-brand-800"
+                >
+                  <Download className="h-4 w-4" />
+                  {t("ios.cta")}
+                </a>
+              ) : (
+                <DownloadDropdown variant="primary" location="hero" />
+              )}
             </motion.div>
 
             {/* Social Proof */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 flex items-center gap-3 justify-center lg:justify-start"
-            >
-              <div className="flex items-center gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-muted-foreground">
-                {t("users")}
-              </span>
-            </motion.div>
+            {!isIOS && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mt-8 flex items-center gap-3 justify-center lg:justify-start"
+              >
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  {t("users")}
+                </span>
+              </motion.div>
+            )}
 
             {/* Platform Micro Badge */}
             <motion.p
@@ -93,7 +116,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-4 text-xs text-muted-foreground"
             >
-              {t("platforms")}
+              {text("platforms")}
             </motion.p>
           </div>
 

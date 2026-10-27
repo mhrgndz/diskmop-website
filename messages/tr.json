@@ -35,7 +35,15 @@
     "cta": "Hemen İndir",
     "watchVideo": "Nasıl Çalışır?",
     "users": "10,000+ kullanıcı güveniyor",
-    "platforms": "Windows 10/11 & macOS 12+ • Virüssüz • İmzalı & Notarized"
+    "platforms": "Windows 10/11 & macOS 12+ • Virüssüz • İmzalı & Notarized",
+    "ios": {
+      "badge": "✨ Yeni: iPhone için DiskMop",
+      "title": "Fotoğraf Galerini",
+      "titleHighlight": "Toparla",
+      "subtitle": "Kopya, benzer ve bulanık fotoğrafları, ekran görüntülerini ve büyük videoları bul. Her grubu gözden geçir, en iyisini sakla. Fotoğraflar iPhone'unda analiz edilir.",
+      "cta": "App Store'dan İndir",
+      "platforms": "iOS 18.0+ • Tarama ücretsiz • Hesap yok, takip yok"
+    }
   },
   "heroVisual": {
     "aria": "Animasyon: Disk Mop {gb} GB disk alanı geri kazanıyor",
@@ -545,7 +553,13 @@
     "clearSearch": "Aramayı Temizle",
     "toolsBadge": "Ücretsiz Web Araçları",
     "toolsTitle": "Ücretsiz Disk & Depolama Hesaplayıcıları",
-    "toolsSubtitle": "Depolama ihtiyacınızı, SSD ömrünüzü ve temizlenebilecek gereksiz dosyaları anında çevrimiçi hesaplayın."
+    "toolsSubtitle": "Depolama ihtiyacınızı, SSD ömrünüzü ve temizlenebilecek gereksiz dosyaları anında çevrimiçi hesaplayın.",
+    "iphoneCompanion": {
+      "badge": "iPhone'da da var",
+      "title": "iPhone'unda da yer mi kalmadı?",
+      "subtitle": "iPhone için DiskMop, galerindeki kopya ve benzer fotoğrafları, ekran görüntülerini ve büyük videoları bulur. Tarama ücretsiz, fotoğraflar cihazda analiz edilir.",
+      "cta": "App Store'dan İndir"
+    }
   },
   "notFound": {
     "title": "Sayfa Bulunamadı",

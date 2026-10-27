@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { DownloadLinkTagger } from "@/components/download-link-tagger";
 import { SITE_URL } from "@/lib/seo";
+import { IOS_APP_ID } from "@/lib/app-version";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
   creator: "Lova Software",
   publisher: "Lova Software",
   formatDetection: { telephone: false },
+  // iPhone/iPad Safari'de sayfanın üstüne Apple'ın kendi "Al / Aç" şeridini
+  // çıkarır (puan ve mağaza bağlantısıyla). Diğer tarayıcılar etiketi yok sayar.
+  itunes: { appId: IOS_APP_ID },
   icons: {
     icon: "/favicon.ico",
     apple: "/brand/icon.png",

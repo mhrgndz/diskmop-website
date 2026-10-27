@@ -60,7 +60,18 @@ export function BlogStickyBar({
     } catch {}
   };
 
-  const targetOS = articlePlatform || detectedOS;
+  // iPhone/iPad'den okunan iPhone dışı makalede masaüstü/Android indirmesi
+  // önermek anlamsız: çubuk iPhone uygulamasını anlatır (başlık ve alt satır
+  // makale CTA'sı yerine iPhone kartının metinleri).
+  const iphoneOverride = detectedOS === "ios" && articlePlatform !== "ios";
+  const targetOS = iphoneOverride ? "ios" : articlePlatform || detectedOS;
+  const title = iphoneOverride
+    ? t("iphoneCompanion.title")
+    : customTitle || t("stickyBarTitle");
+  const subtitle = iphoneOverride
+    ? t("iphoneCompanion.badge")
+    : customSubtitle || t("stickyBarSubtitle");
+  const isStore = targetOS === "ios" || targetOS === "android";
 
   let osName = "Windows";
   let platform: DownloadPlatform = "windows";
@@ -100,10 +111,10 @@ export function BlogStickyBar({
               </div>
               <div className="min-w-0">
                 <div className="text-sm font-bold text-foreground truncate">
-                  {customTitle || t("stickyBarTitle")}
+                  {title}
                 </div>
                 <div className="text-xs text-muted-foreground truncate hidden sm:block">
-                  {customSubtitle || t("stickyBarSubtitle")}
+                  {subtitle}
                 </div>
               </div>
             </div>
@@ -114,6 +125,8 @@ export function BlogStickyBar({
               <a
                 href={downloadHref}
                 onClick={() => trackDownload(platform, "blog_sticky")}
+                target={isStore ? "_blank" : undefined}
+                rel={isStore ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-brand-600/20 hover:shadow-brand-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Download className="w-4 h-4 shrink-0" />

@@ -35,7 +35,15 @@
     "cta": "今すぐダウンロード",
     "watchVideo": "使い方を見る",
     "users": "10,000人以上のユーザーに信頼されています",
-    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • コード署名済み・Apple公証済み"
+    "platforms": "Windows 10/11 & macOS 12+ • ウイルスフリー • コード署名済み・Apple公証済み",
+    "ios": {
+      "badge": "✨ 新登場：iPhone版 DiskMop",
+      "title": "写真ライブラリを",
+      "titleHighlight": "すっきり整理",
+      "subtitle": "重複写真、似た写真、ブレた写真、スクリーンショット、大きな動画を見つけます。グループごとに確認して、ベストな1枚を残せます。写真の分析はiPhone上で行われます。",
+      "cta": "App Storeからダウンロード",
+      "platforms": "iOS 18.0以降 • スキャン無料 • アカウント不要・トラッキングなし"
+    }
   },
   "heroVisual": {
     "aria": "アニメーション: Disk Mop が {gb} GB のディスク領域を解放",
@@ -545,7 +553,13 @@
     "clearSearch": "検索をクリア",
     "toolsBadge": "無料ウェブツール",
     "toolsTitle": "無料ディスク＆ストレージ計算ツール",
-    "toolsSubtitle": "ストレージ必要容量、SSDの寿命、削減可能な空き容量をオンラインで即座に計算します。"
+    "toolsSubtitle": "ストレージ必要容量、SSDの寿命、削減可能な空き容量をオンラインで即座に計算します。",
+    "iphoneCompanion": {
+      "badge": "iPhone版もあります",
+      "title": "iPhoneの容量も足りませんか？",
+      "subtitle": "iPhone版 DiskMopは、写真ライブラリの重複写真、似た写真、スクリーンショット、大きな動画を見つけます。スキャンは無料で、写真の分析は端末上で行われます。",
+      "cta": "App Storeからダウンロード"
+    }
   },
   "notFound": {
     "title": "ページが見つかりません",

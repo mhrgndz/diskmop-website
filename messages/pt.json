@@ -35,7 +35,15 @@
     "cta": "Baixar Agora",
     "watchVideo": "Como Funciona?",
     "users": "Mais de 10.000 usuários confiam",
-    "platforms": "Windows 10/11 e macOS 12+ • Livre de vírus • Assinado e notarizado"
+    "platforms": "Windows 10/11 e macOS 12+ • Livre de vírus • Assinado e notarizado",
+    "ios": {
+      "badge": "✨ Novo: DiskMop para iPhone",
+      "title": "Organize Sua",
+      "titleHighlight": "Galeria de Fotos",
+      "subtitle": "Encontre duplicatas, fotos parecidas e borradas, capturas de tela e vídeos grandes. Revise cada grupo e fique com a melhor. As fotos são analisadas no seu iPhone.",
+      "cta": "Baixar na App Store",
+      "platforms": "iOS 18.0+ • Verificação grátis • Sem conta, sem rastreamento"
+    }
   },
   "heroVisual": {
     "aria": "Animação: o Disk Mop libera {gb} GB de espaço em disco",
@@ -545,7 +553,13 @@
     "clearSearch": "Limpar pesquisa",
     "toolsBadge": "Ferramentas Web Gratuitas",
     "toolsTitle": "Calculadoras Gratuitas de Armazenamento e Disco",
-    "toolsSubtitle": "Calcule seus requisitos de espaço, vida útil do SSD e gigabytes recuperáveis online."
+    "toolsSubtitle": "Calcule seus requisitos de espaço, vida útil do SSD e gigabytes recuperáveis online.",
+    "iphoneCompanion": {
+      "badge": "Também no iPhone",
+      "title": "Seu iPhone também está sem espaço?",
+      "subtitle": "O DiskMop para iPhone encontra duplicatas, fotos parecidas, capturas de tela e vídeos grandes na sua galeria. A verificação é grátis e as fotos são analisadas no aparelho.",
+      "cta": "Baixar na App Store"
+    }
   },
   "notFound": {
     "title": "Página não encontrada",

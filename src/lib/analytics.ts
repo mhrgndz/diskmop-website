@@ -27,6 +27,7 @@ export type CtaLocation =
   | "platform_cards"
   | "blog_inline"
   | "blog_bottom"
+  | "blog_iphone_companion"
   | "blog_sticky"
   | "blog_showcase"
   | "calculator"

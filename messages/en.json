@@ -35,7 +35,15 @@
     "cta": "Download Now",
     "watchVideo": "How It Works?",
     "users": "Trusted by 10,000+ users",
-    "platforms": "Windows 10/11 & macOS 12+ • Virus-free • Signed & Notarized"
+    "platforms": "Windows 10/11 & macOS 12+ • Virus-free • Signed & Notarized",
+    "ios": {
+      "badge": "✨ New: DiskMop for iPhone",
+      "title": "Tidy Up Your",
+      "titleHighlight": "Photo Library",
+      "subtitle": "Find duplicates, similar shots, blurry photos, screenshots and large videos. Review every group and keep the best one. Photos are analyzed on your iPhone.",
+      "cta": "Download on the App Store",
+      "platforms": "iOS 18.0+ • Free to scan • No account, no tracking"
+    }
   },
   "heroVisual": {
     "aria": "Animation: Disk Mop reclaiming {gb} GB of disk space",
@@ -545,7 +553,13 @@
     "clearSearch": "Clear Search",
     "toolsBadge": "Free Web Tools",
     "toolsTitle": "Free Disk & Storage Calculators",
-    "toolsSubtitle": "Calculate your storage requirements, SSD lifespan, and estimated junk file savings online."
+    "toolsSubtitle": "Calculate your storage requirements, SSD lifespan, and estimated junk file savings online.",
+    "iphoneCompanion": {
+      "badge": "Also on iPhone",
+      "title": "Is your iPhone running out of space too?",
+      "subtitle": "DiskMop for iPhone finds duplicates, similar shots, screenshots and large videos in your photo library. Scanning is free and photos are analyzed on the device.",
+      "cta": "Download on the App Store"
+    }
   },
   "notFound": {
     "title": "Page Not Found",
