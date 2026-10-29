@@ -569,7 +569,7 @@
   },
   "privacy": {
     "title": "Política de Privacidade",
-    "lastUpdated": "Última atualização: 27 de outubro de 2026",
+    "lastUpdated": "Última atualização: 29 de outubro de 2026",
     "sections": {
       "overview": {
         "title": "1. Visão Geral",
@@ -577,7 +577,7 @@
       },
       "dataCollection": {
         "title": "2. Dados que não coletamos",
-        "content": "O Disk Mop opera inteiramente no seu computador local. Não coletamos, armazenamos ou transmitimos nenhum dos seguintes dados:\n\n• Arquivos pessoais, documentos, fotos ou vídeos\n• Nomes de arquivos, nomes de pastas ou estruturas de diretórios\n• Histórico de navegação ou dados do navegador\n• Senhas, credenciais ou informações financeiras\n• Configuração do sistema ou identificadores de hardware\n• Padrões de uso ou análises comportamentais dentro do aplicativo\n\nTodas as operações de varredura, análise e limpeza são realizadas localmente no seu dispositivo. Nenhum dado de arquivo sai do seu computador."
+        "content": "O Disk Mop opera inteiramente no seu computador local. Não coletamos, armazenamos ou transmitimos nenhum dos seguintes dados:\n\n• Arquivos pessoais, documentos, fotos ou vídeos\n• Nomes de arquivos, nomes de pastas ou estruturas de diretórios\n• Histórico de navegação ou dados do navegador\n• Senhas, credenciais ou informações financeiras\n\nTodas as operações de varredura, análise e limpeza são realizadas localmente no seu dispositivo. Nenhum dado de arquivo sai do seu computador."
       },
       "localStorage": {
         "title": "3. Dados armazenados localmente",
@@ -585,7 +585,7 @@
       },
       "internetUsage": {
         "title": "4. Conexão com a Internet",
-        "content": "O Disk Mop usa uma conexão com a Internet apenas para os seguintes propósitos:\n\n• Validação de licença: Sua chave de licença é verificada em nosso servidor de licenças (api.diskmop.com). Apenas a chave de licença é transmitida — nenhum dado pessoal, informação de arquivo ou detalhes do sistema são enviados.\n• Atualizações automáticas: O aplicativo verifica novas versões via GitHub Releases e baixa atualizações disponíveis.\n\nNenhuma outra comunicação de rede ocorre durante a operação normal."
+        "content": "O Disk Mop usa uma conexão com a Internet apenas para os seguintes propósitos:\n\n• Validação de licença: Sua chave de licença é verificada em nosso servidor de licenças (api.diskmop.com). Apenas a chave de licença é transmitida — nenhum dado pessoal, informação de arquivo ou detalhes do sistema são enviados.\n• Atualizações automáticas: O aplicativo verifica novas versões via GitHub Releases e baixa atualizações disponíveis.\n• Estatísticas de uso anônimas: ao iniciar, o aplicativo envia um ID de dispositivo anônimo aleatório (gerado pelo aplicativo, não vinculado a você nem ao seu hardware), o nome e a versão do sistema operacional, a arquitetura da CPU e a versão do aplicativo, para que possamos contar instalações e atualizações. Durante o uso, ele também informa alguns passos anônimos — que uma varredura foi iniciada, que a tela de upgrade foi aberta ou o botão de compra foi clicado, que uma exclusão gratuita foi usada — junto com o nome da tela ou do tipo de varredura. Nomes de arquivos, caminhos e conteúdos nunca são enviados.\n\nNenhuma outra comunicação de rede ocorre durante a operação normal."
       },
       "thirdParty": {
         "title": "5. Serviços de terceiros",
@@ -593,7 +593,7 @@
       },
       "analytics": {
         "title": "6. Análises do site",
-        "content": "Nosso site diskmop.com usa o Google Analytics para coletar estatísticas de uso anônimas, como visualizações de página, região geográfica e fontes de referência. Esses dados nos ajudam a melhorar nosso site. Você pode desativar o Google Analytics usando extensões do navegador ou configurações de cookies. O aplicativo de desktop não inclui nenhuma análise ou telemetria."
+        "content": "Nosso site diskmop.com usa o Google Analytics para coletar estatísticas de uso anônimas, como visualizações de página, região geográfica e fontes de referência. Esses dados nos ajudam a melhorar nosso site. Você pode desativar o Google Analytics usando extensões do navegador ou configurações de cookies. O aplicativo de desktop envia apenas as estatísticas de uso anônimas descritas na seção 4."
       },
       "children": {
         "title": "8. Privacidade infantil",

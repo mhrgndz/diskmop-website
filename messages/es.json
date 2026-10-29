@@ -569,7 +569,7 @@
   },
   "privacy": {
     "title": "Política de Privacidad",
-    "lastUpdated": "Última actualización: 27 de octubre de 2026",
+    "lastUpdated": "Última actualización: 29 de octubre de 2026",
     "sections": {
       "overview": {
         "title": "1. Descripción general",
@@ -577,7 +577,7 @@
       },
       "dataCollection": {
         "title": "2. Datos que no recopilamos",
-        "content": "Disk Mop funciona completamente en su computadora local. No recopilamos, almacenamos ni transmitimos ninguno de los siguientes datos:\n\n• Archivos personales, documentos, fotos o videos\n• Nombres de archivos, nombres de carpetas o estructuras de directorios\n• Historial de navegación o datos del navegador\n• Contraseñas, credenciales o información financiera\n• Configuración del sistema o identificadores de hardware\n• Patrones de uso o análisis de comportamiento dentro de la aplicación\n\nTodas las operaciones de escaneo, análisis y limpieza se realizan localmente en su dispositivo. Ningún dato de archivo sale de su computadora."
+        "content": "Disk Mop funciona completamente en su computadora local. No recopilamos, almacenamos ni transmitimos ninguno de los siguientes datos:\n\n• Archivos personales, documentos, fotos o videos\n• Nombres de archivos, nombres de carpetas o estructuras de directorios\n• Historial de navegación o datos del navegador\n• Contraseñas, credenciales o información financiera\n\nTodas las operaciones de escaneo, análisis y limpieza se realizan localmente en su dispositivo. Ningún dato de archivo sale de su computadora."
       },
       "localStorage": {
         "title": "3. Datos almacenados localmente",
@@ -585,7 +585,7 @@
       },
       "internetUsage": {
         "title": "4. Conexión a Internet",
-        "content": "Disk Mop utiliza una conexión a Internet solo para los siguientes propósitos:\n\n• Validación de licencia: Su clave de licencia se verifica en nuestro servidor de licencias (api.diskmop.com). Solo se transmite la clave de licencia — no se envían datos personales, información de archivos ni detalles del sistema.\n• Actualizaciones automáticas: La aplicación busca nuevas versiones a través de GitHub Releases y descarga las actualizaciones disponibles.\n\nNo se produce ninguna otra comunicación de red durante el funcionamiento normal."
+        "content": "Disk Mop utiliza una conexión a Internet solo para los siguientes propósitos:\n\n• Validación de licencia: Su clave de licencia se verifica en nuestro servidor de licencias (api.diskmop.com). Solo se transmite la clave de licencia — no se envían datos personales, información de archivos ni detalles del sistema.\n• Actualizaciones automáticas: La aplicación busca nuevas versiones a través de GitHub Releases y descarga las actualizaciones disponibles.\n• Estadísticas de uso anónimas: al iniciarse, la aplicación envía un identificador de dispositivo anónimo aleatorio (generado por la aplicación, no vinculado a usted ni a su hardware), el nombre y la versión de su sistema operativo, la arquitectura de la CPU y la versión de la aplicación, para que podamos contar instalaciones y actualizaciones. Mientras la usa, también informa de unos pocos pasos anónimos — que se inició un análisis, que se abrió la pantalla de actualización o se pulsó el botón de compra, que se usó una eliminación gratuita — junto con el nombre de la pantalla o del tipo de análisis. Nunca se envían nombres de archivos, rutas ni contenidos.\n\nNo se produce ninguna otra comunicación de red durante el funcionamiento normal."
       },
       "thirdParty": {
         "title": "5. Servicios de terceros",
@@ -593,7 +593,7 @@
       },
       "analytics": {
         "title": "6. Análisis del sitio web",
-        "content": "Nuestro sitio web diskmop.com utiliza Google Analytics para recopilar estadísticas de uso anónimas como vistas de página, región geográfica y fuentes de referencia. Estos datos nos ayudan a mejorar nuestro sitio web. Puede desactivar Google Analytics usando extensiones del navegador o la configuración de cookies. La aplicación de escritorio no incluye ningún análisis ni telemetría."
+        "content": "Nuestro sitio web diskmop.com utiliza Google Analytics para recopilar estadísticas de uso anónimas como vistas de página, región geográfica y fuentes de referencia. Estos datos nos ayudan a mejorar nuestro sitio web. Puede desactivar Google Analytics usando extensiones del navegador o la configuración de cookies. La aplicación de escritorio solo envía las estadísticas de uso anónimas descritas en la sección 4."
       },
       "children": {
         "title": "8. Privacidad de los niños",

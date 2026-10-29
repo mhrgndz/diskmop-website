@@ -569,7 +569,7 @@
   },
   "privacy": {
     "title": "Gizlilik Politikası",
-    "lastUpdated": "Son güncelleme: 27 Ekim 2026",
+    "lastUpdated": "Son güncelleme: 29 Ekim 2026",
     "sections": {
       "overview": {
         "title": "1. Genel Bakış",
@@ -577,7 +577,7 @@
       },
       "dataCollection": {
         "title": "2. Toplamadığımız Veriler",
-        "content": "Disk Mop tamamen yerel bilgisayarınızda çalışır. Aşağıdaki verilerin hiçbirini toplamaz, saklamaz veya iletmeyiz:\n\n• Kişisel dosyalar, belgeler, fotoğraflar veya videolar\n• Dosya adları, klasör adları veya dizin yapıları\n• Tarama geçmişi veya tarayıcı verileri\n• Şifreler, kimlik bilgileri veya finansal bilgiler\n• Sistem yapılandırması veya donanım tanımlayıcıları\n• Uygulama içi kullanım kalıpları veya davranış analizleri\n\nTüm tarama, analiz ve temizleme işlemleri cihazınızda yerel olarak gerçekleştirilir. Hiçbir dosya verisi bilgisayarınızdan çıkmaz."
+        "content": "Disk Mop tamamen yerel bilgisayarınızda çalışır. Aşağıdaki verilerin hiçbirini toplamaz, saklamaz veya iletmeyiz:\n\n• Kişisel dosyalar, belgeler, fotoğraflar veya videolar\n• Dosya adları, klasör adları veya dizin yapıları\n• Tarama geçmişi veya tarayıcı verileri\n• Şifreler, kimlik bilgileri veya finansal bilgiler\n\nTüm tarama, analiz ve temizleme işlemleri cihazınızda yerel olarak gerçekleştirilir. Hiçbir dosya verisi bilgisayarınızdan çıkmaz."
       },
       "localStorage": {
         "title": "3. Yerel Olarak Saklanan Veriler",
@@ -585,7 +585,7 @@
       },
       "internetUsage": {
         "title": "4. İnternet Bağlantısı",
-        "content": "Disk Mop internet bağlantısını yalnızca aşağıdaki amaçlarla kullanır:\n\n• Lisans doğrulama: Lisans anahtarınız, geçerliliğini onaylamak için lisans sunucumuzda (api.diskmop.com) doğrulanır. Yalnızca lisans anahtarı iletilir — kişisel veri, dosya bilgisi veya sistem detayı gönderilmez.\n• Otomatik güncellemeler: Uygulama, GitHub Releases üzerinden yeni sürümleri kontrol eder ve mevcut güncellemeleri indirir.\n\nNormal çalışma sırasında başka bir ağ iletişimi gerçekleşmez."
+        "content": "Disk Mop internet bağlantısını yalnızca aşağıdaki amaçlarla kullanır:\n\n• Lisans doğrulama: Lisans anahtarınız, geçerliliğini onaylamak için lisans sunucumuzda (api.diskmop.com) doğrulanır. Yalnızca lisans anahtarı iletilir — kişisel veri, dosya bilgisi veya sistem detayı gönderilmez.\n• Otomatik güncellemeler: Uygulama, GitHub Releases üzerinden yeni sürümleri kontrol eder ve mevcut güncellemeleri indirir.\n• Anonim kullanım istatistikleri: Uygulama açılırken rastgele bir anonim cihaz kimliği (uygulama tarafından üretilir, sizinle veya donanımınızla ilişkilendirilmez), işletim sistemi adı ve sürümü, işlemci mimarisi ve uygulama sürümü gönderilir; böylece kurulum ve güncelleme sayısını sayabiliriz. Uygulamayı kullanırken ayrıca birkaç anonim adım bildirilir — bir taramanın başladığı, yükseltme ekranının açıldığı veya satın alma düğmesine basıldığı, bir ücretsiz silme hakkının kullanıldığı — ekranın veya tarama türünün adıyla birlikte. Dosya adları, yolları ve içerikleri asla gönderilmez.\n\nNormal çalışma sırasında başka bir ağ iletişimi gerçekleşmez."
       },
       "thirdParty": {
         "title": "5. Üçüncü Taraf Hizmetler",
@@ -593,7 +593,7 @@
       },
       "analytics": {
         "title": "6. Web Sitesi Analizleri",
-        "content": "diskmop.com adresindeki web sitemiz, sayfa görüntülemeleri, coğrafi bölge ve yönlendirme kaynakları gibi anonim kullanım istatistiklerini toplamak için Google Analytics kullanır. Bu veriler web sitemizi iyileştirmemize yardımcı olur. Tarayıcı uzantıları veya çerez ayarları kullanarak Google Analytics'i devre dışı bırakabilirsiniz. Masaüstü uygulaması herhangi bir analiz veya telemetri içermez."
+        "content": "diskmop.com adresindeki web sitemiz, sayfa görüntülemeleri, coğrafi bölge ve yönlendirme kaynakları gibi anonim kullanım istatistiklerini toplamak için Google Analytics kullanır. Bu veriler web sitemizi iyileştirmemize yardımcı olur. Tarayıcı uzantıları veya çerez ayarları kullanarak Google Analytics'i devre dışı bırakabilirsiniz. Masaüstü uygulaması yalnızca 4. bölümde açıklanan anonim kullanım istatistiklerini gönderir."
       },
       "children": {
         "title": "8. Çocukların Gizliliği",

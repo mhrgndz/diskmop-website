@@ -37,6 +37,7 @@ interface Stats {
     logSince: string | null;
     clientTrackedSince: string | null;
     clientMix30: Record<string, Counts>;
+    flow30?: DownloadFlow;
   };
   installs: {
     total: number;
@@ -47,8 +48,31 @@ interface Stats {
     activeTrackedSince: string | null;
   };
   series: SeriesDay[];
+  funnel?: { minVersion: string; windows: FunnelOs | null; mac: FunnelOs | null };
   appStore?: AppStoreStats;
   github: GithubStats | { error: string };
+}
+
+// Son 30 gün indirme akışı (API 2026-10-29'dan beri kaydeder; öncesi "başladı" sayılmaz).
+interface DownloadFlow {
+  started: number;
+  completed: number;
+  aborted: number;
+  unknown: number;
+  fromSite: number;
+  direct: number;
+  byReferrer: Record<string, number>;
+}
+
+// Uygulama içi satış hunisi (1.0.32+ sürümlerinden gelen olaylar; cihaz başına bir kez sayılır).
+interface FunnelOs {
+  devices: number;
+  scanned: number;
+  blocked: number;
+  paywallShown: number;
+  freeDelete: number;
+  buyClick: number;
+  paywallScreens: Record<string, number>;
 }
 
 // iOS: uygulama ping atmaz ("Data Not Collected"); sayılar Apple'ın günlük raporundan,
@@ -313,6 +337,8 @@ function Dashboard({ stats }: { stats: Stats }) {
         ]}
       />
 
+      <FunnelSection funnel={stats.funnel} flow={stats.downloads.flow30} />
+
       <AppStoreSection days={s} appStore={stats.appStore} />
 
       <DailyTable days={s} activeSince={stats.installs.activeTrackedSince} />
@@ -452,6 +478,84 @@ const SOURCE_LABELS: Record<string, string> = {
   "Institutional purchase": "Kurumsal",
   Unavailable: "Bilinmiyor",
 };
+
+function FunnelSection({
+  funnel,
+  flow,
+}: {
+  funnel?: Stats["funnel"];
+  flow?: DownloadFlow;
+}) {
+  const win = funnel?.windows;
+  const steps: Array<[string, number]> = win
+    ? [
+        ["Kurulum (1.0.32+)", win.devices],
+        ["Tarama yaptı", win.scanned],
+        ["Duvara çarptı", win.blocked],
+        ["Duvarı gördü", win.paywallShown],
+        ["Satın al'a bastı", win.buyClick],
+      ]
+    : [];
+  const hasFlow = flow && flow.started > 0;
+  if (!win && !hasFlow) return null;
+  return (
+    <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+      <h2 className="font-semibold">Satış hunisi</h2>
+      <p className="mt-1 text-xs text-zinc-500">
+        Windows, uygulama içi olaylar (1.0.32 ve üstü, cihaz başına bir kez).
+        Eski sürümler olay göndermez; sayılar yeni sürüm yayılınca anlam kazanır.
+      </p>
+      {win && (
+        <div className="mt-3 grid grid-cols-2 gap-3 text-center sm:grid-cols-5">
+          {steps.map(([label, n], i) => (
+            <div key={label} className="rounded-lg bg-zinc-950/60 p-3">
+              <p className="text-2xl font-bold tabular-nums">{fmt(n)}</p>
+              <p className="text-xs text-zinc-500">{label}</p>
+              {i > 0 && (
+                <p className="text-xs text-zinc-600">
+                  {pct(n, steps[0][1])}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+      {win && (
+        <p className="mt-3 text-xs text-zinc-500">
+          Ücretsiz silme kullanan: {fmt(win.freeDelete)}
+          {Object.keys(win.paywallScreens).length > 0 &&
+            " · Duvarın çıktığı ekranlar: " +
+              Object.entries(win.paywallScreens)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 6)
+                .map(([k, n]) => k + " " + n)
+                .join(", ")}
+        </p>
+      )}
+      {hasFlow && (
+        <>
+          <h3 className="mt-5 text-sm font-medium text-zinc-300">
+            İndirme akışı (son 30 gün, bot hariç)
+          </h3>
+          <p className="mt-1 text-xs text-zinc-400">
+            Başladı {fmt(flow.started)} · tamamlandı {fmt(flow.completed)} (
+            {pct(flow.completed, flow.started)}) · yarıda kesildi{" "}
+            {fmt(flow.aborted)} · site düğmesinden {fmt(flow.fromSite)} ·
+            doğrudan bağlantı {fmt(flow.direct)}
+          </p>
+          <p className="mt-1 text-xs text-zinc-500">
+            Gelen alan adı:{" "}
+            {Object.entries(flow.byReferrer)
+              .sort(([, a], [, b]) => b - a)
+              .slice(0, 8)
+              .map(([k, n]) => k + " " + n)
+              .join(" · ")}
+          </p>
+        </>
+      )}
+    </section>
+  );
+}
 
 function AppStoreSection({
   days,
