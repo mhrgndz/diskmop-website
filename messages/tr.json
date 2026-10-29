@@ -569,11 +569,11 @@
   },
   "privacy": {
     "title": "Gizlilik Politikası",
-    "lastUpdated": "Son güncelleme: 29 Ekim 2026",
+    "lastUpdated": "Son güncelleme: 30 Ekim 2026",
     "sections": {
       "overview": {
         "title": "1. Genel Bakış",
-        "content": "Disk Mop (\"biz\", \"uygulama\"), Lova Software tarafından geliştirilir. Bu Gizlilik Politikası; Windows ve macOS için Disk Mop masaüstü uygulamasını, Android için Disk Mop uygulamasını ve App Store'daki DiskMop for iPhone fotoğraf ve video temizleyicisini kapsar. 2-6. bölümler masaüstü ve Android uygulamalarını, 7. bölüm iPhone uygulamasını anlatır. Gizliliğinizi korumaya kararlıyız."
+        "content": "Disk Mop (\"biz\", \"uygulama\"), Lova Software tarafından geliştirilir. Bu Gizlilik Politikası; Windows ve macOS için Disk Mop masaüstü uygulamasını, Android için Disk Mop uygulamasını ve App Store'daki DiskMop for iPhone fotoğraf ve video temizleyicisini kapsar. 2-6. bölümler masaüstü ve Android uygulamalarını, 7. bölüm iPhone uygulamasını anlatır, 8. bölüm Android uygulamasına özgü konuları ekler. Gizliliğinizi korumaya kararlıyız."
       },
       "dataCollection": {
         "title": "2. Toplamadığımız Veriler",
@@ -596,20 +596,24 @@
         "content": "diskmop.com adresindeki web sitemiz, sayfa görüntülemeleri, coğrafi bölge ve yönlendirme kaynakları gibi anonim kullanım istatistiklerini toplamak için Google Analytics kullanır. Bu veriler web sitemizi iyileştirmemize yardımcı olur. Tarayıcı uzantıları veya çerez ayarları kullanarak Google Analytics'i devre dışı bırakabilirsiniz. Masaüstü uygulaması yalnızca 4. bölümde açıklanan anonim kullanım istatistiklerini gönderir."
       },
       "children": {
-        "title": "8. Çocukların Gizliliği",
+        "title": "9. Çocukların Gizliliği",
         "content": "Disk Mop genel amaçlı bir yardımcı programdır. 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. Uygulama kişisel veri toplamadığından, yaşa özel veri endişesi bulunmamaktadır."
       },
       "changes": {
-        "title": "9. Bu Politikadaki Değişiklikler",
+        "title": "10. Bu Politikadaki Değişiklikler",
         "content": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişiklik, güncellenmiş revizyon tarihiyle birlikte bu sayfada yayınlanacaktır. Değişikliklerden sonra uygulamayı kullanmaya devam etmeniz, güncellenen politikayı kabul ettiğiniz anlamına gelir."
       },
       "contact": {
-        "title": "10. İletişim",
+        "title": "11. İletişim",
         "content": "Bu Gizlilik Politikası hakkında sorularınız varsa lütfen bizimle iletişime geçin:\n\nE-posta: diskmopdev@gmail.com\nWeb sitesi: https://diskmop.com\nGeliştirici: Lova Software — https://lovasoftware.com"
       },
       "ios": {
         "title": "7. iPhone için DiskMop (iOS)",
         "content": "iPhone için DiskMop, benzer ve kopya fotoğrafları, ekran görüntülerini, bulanık kareleri, ekran kayıtlarını, Live Photo'ları ve büyük videoları bulabilmek için fotoğraf kitaplığınıza erişim ister. Analiz tamamen iPhone'unuzda, Apple'ın Vision çatısı kullanılarak yapılır. Fotoğraflarınız ve videolarınız hiçbir zaman yüklenmez, cihazdan dışarı kopyalanmaz, bize ya da başka birine gönderilmez.\n\n• Hesap ve giriş yok. Uygulamada kayıt ya da kullanıcı hesabı bulunmaz.\n• Sunucu yok. Herhangi bir Disk Mop sunucusuna bağlanmaz. Masaüstü uygulamasının kullandığı lisans sunucusu (api.diskmop.com) iPhone uygulamasında kullanılmaz.\n• İzleme yok. Analitik SDK'sı, reklam SDK'sı ya da çökme raporlama servisi yoktur. App Store gizlilik etiketimiz \"Veri Toplanmıyor\" der.\n\nCihazınızda saklananlar: tarama sonuçlarının yerel önbelleği (görüntü parmak izleri ve dosya boyutları), tercihleriniz ve tek seferlik satın almanın yapılıp yapılmadığı. Bu veriler iPhone'unuzda uygulamanın kendi alanında kalır, uygulamayı sildiğinizde kaybolur ve hiçbir yere gönderilmez.\n\nSatın alma: tek seferlik satın alma, App Store üzerinden Apple tarafından işlenir. Uygulama yalnızca StoreKit'e satın almanın var olup olmadığını sorar; adınızı, ödeme bilgilerinizi veya Apple Hesabınızı almaz ve saklamayız. İşleme Apple'ın gizlilik politikası uygulanır. Masaüstü lisans ödemelerini yürüten Polar.sh bu akışta yer almaz.\n\nFotoğraf silme: fotoğrafları sildiğinizde uygulama bunu iOS'tan ister ve onay ekranını iOS gösterir. Silinenler 30 gün boyunca Son Silinenler albümünde durur, bu yüzden alan hemen boşalmaz. Uygulama sizin seçmediğiniz hiçbir şeye erişemez ve onu silemez.\n\nE-posta temizleyici (isteğe bağlı, Gmail)\nE-posta temizleyiciyi kullanmayı seçerseniz Google Hesabınızla giriş yapar ve DiskMop'un Gmail'inize erişmesine izin verirsiniz (kapsam: https://www.googleapis.com/auth/gmail.modify). Uygulama, postalarınızı kategoriye ve gönderene göre listelemek için yalnızca mesaj başlıklarını ve kısa önizlemeleri (gönderen, konu, tarih, etiketler ve abonelikten çıkış bağlantıları) okur; açıkça seçtiğiniz mesajları Gmail Çöp Kutusu'na taşır ve 30 gün boyunca geri alabilirsiniz. Abonelikten çıkmayı seçtiğinizde uygulama, gönderenin e-postada yayımladığı adrese abonelikten çıkış isteği gönderir. Uygulama hiçbir zaman e-posta göndermez ya da oluşturmaz, mesajları kalıcı olarak silmez.\n\nHer şey doğrudan iPhone'unuz ile Google arasında olur. E-posta içeriğiniz ve Google Hesabı verileriniz Disk Mop sunucularına gönderilmez, cihazınız dışında saklanmaz, üçüncü taraflarla paylaşılmaz veya satılmaz, reklam için ya da yapay zekâ modellerini eğitmek için kullanılmaz ve hiçbir insan tarafından okunmaz. Giriş belirteçleri cihazınızdaki iOS Anahtar Zinciri'nde tutulur. Uygulamada istediğiniz zaman bağlantıyı kesebilir, erişimi https://myaccount.google.com/permissions adresinden kaldırabilirsiniz.\n\nDiskMop'un Google API'lerinden aldığı bilgileri kullanması ve başka bir uygulamaya aktarması, Sınırlı Kullanım şartları dahil Google API Hizmetleri Kullanıcı Verileri Politikası'na uygundur."
+      },
+      "android": {
+        "title": "8. Android için Disk Mop",
+        "content": "Android uygulaması telefonunuzun depolama alanını, fotoğraflarını, videolarını ve kişilerini tamamen cihaz üzerinde inceler. Fotoğraf analizi (benzer ve kopya fotoğraflar, bulanık kareler, içeriğe göre arama) cihaz üzerinde çalışan makine öğrenmesi modelleriyle yapılır: Google ML Kit görüntü etiketleme ve uygulamaya gömülü bir model. Fotoğraflarınız ve videolarınız asla yüklenmez.\n\n• Kişiler. Kişilerinize erişim izni verirseniz uygulama, kopya ve eksik kişi kartlarını bulmak için onları telefonunuzda okur. Kişileri birleştirmeden ya da silmeden önce, geri yükleyebilmeniz için telefonunuzda uygulamanın özel depolama alanına bir yedek kaydeder (son beş yedek tutulur). Kişileriniz ve bu yedekler bize ya da başka birine asla gönderilmez; uygulamayı kaldırdığınızda silinir.\n• Gizli kasa. Kasaya taşıdığınız fotoğraf ve videolar, Android Keystore ile korunan bir anahtarla telefonunuzda şifrelenir. Cihaz yedeklerine dahil edilmez; yalnızca siz dışa aktarırsanız telefonunuzdan çıkar.\n• Fotoğraf silme. Android 11 ve sonrasında silinen fotoğraf ve videolar 30 gün boyunca sistemin Çöp Kutusu'nda kalır; Android 8–10'da kalıcı olarak silinir.\n• Abonelikler ve satın almalar. DiskMop Pro, Google Play üzerinden satılır. Ödemeyi Google işler; uygulama yalnızca Google Play'e etkin bir aboneliğiniz ya da satın almanız olup olmadığını sorar. Adınızı ya da ödeme bilgilerinizi almayız; işlem için Google'ın gizlilik politikası geçerlidir. Mevcut bir Disk Mop lisans anahtarı Ayarlar'dan yine girilebilir; 4. bölümde anlatıldığı gibi doğrulanır.\n• Android uygulamasının gönderdikleri. Yalnızca: 4. bölümde anlatılan anonim açılış bildirimi (rastgele cihaz kimliği, Android sürümü, işlemci mimarisi, uygulama sürümü); uygulama çökerse otomatik çökme raporu (hata mesajı ve yığın izi, telefon üreticisi ve modeli, Android sürümü ve uygulama sürümü — dosyalar, fotoğraflar ya da kişiler asla); ve destek formundan göndermeyi seçtiğiniz mesaj, e-posta adresi ve ekler.\n• Google ML Kit. Cihaz üzerinde çalışan ML Kit kitaplığı, Google'ın ML Kit veri açıklamasında belirtildiği gibi Google'a anonim tanılama bilgileri (cihaz modeli, Android ve uygulama sürümü, performans ölçümleri gibi) gönderebilir. Fotoğraflarınızı asla göndermez."
       }
     }
   },

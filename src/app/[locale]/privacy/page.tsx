@@ -39,6 +39,10 @@ function PrivacyContent() {
     },
     { title: t("sections.ios.title"), content: t("sections.ios.content") },
     {
+      title: t("sections.android.title"),
+      content: t("sections.android.content"),
+    },
+    {
       title: t("sections.children.title"),
       content: t("sections.children.content"),
     },
