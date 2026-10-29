@@ -5,6 +5,7 @@ export const findDuplicateVideosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -94,7 +95,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "DiskMop her grupta tutulacak bir videoyu işaretler. Favori olarak işaretlediğiniz video önce gelir, sonra düzenlediğiniz video, sonra en yüksek çözünürlüklü çekim ve eşitse en uzun olanı. Silinmek üzere hiçbir şey seçilmez: grubu açarsınız, klipleri önizlemek için basılı tutarsınız ve ihtiyacınız olmayan çekimleri işaretlersiniz.",
             "Bazen doğru cevap uzun bir videoyu tutup küçültmektir. DiskMop büyük videoları ve küçültmeye değer videoları da listeler; Araçlar bölümü ise ne kadar küçüleceğini önceden gösterip herhangi bir videonun daha küçük bir kopyasını kaydedebilir, özgün de Son Silinenler'e gider. [iPhone'da video boyutunu küçültme](/blog/reduce-video-size-iphone) rehberimiz kalite ayarlarını anlatıyor.",
-            "Kaldırılan videoların 30 gün boyunca depolama alanınızdan sayılmaya devam ettiği Son Silinenler'de bitirin. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde beş öğeye kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır ve küçültmeyi açar. Tekrarlanan fotoğraflar için aynı yaklaşım [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) rehberinde anlatılıyor.",
+            "Kaldırılan videoların 30 gün boyunca depolama alanınızdan sayılmaya devam ettiği Son Silinenler'de bitirin. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde on öğeye kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır ve küçültmeyi açar. Tekrarlanan fotoğraflar için aynı yaklaşım [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) rehberinde anlatılıyor.",
           ],
         },
       ],
@@ -127,7 +128,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Hızla yere ihtiyacınız varsa fotoğraflardan önce videolara bakın. Birebir kopyaları Apple'ın Kopyalar albümüyle birleştirin, sonra yalnızca görsel karşılaştırmanın görebileceği tekrar çekimleri bulun, en iyisini tutun ve Son Silinenler'i boşaltın.",
-        "iPhone için DiskMop her videonun üç karesini aygıtta karşılaştırır, yalnızca aynı anın çekimlerini gruplar, en iyisini önerir ve silinmek üzere hiçbir şey seçmez. Tarama ücretsizdir, günde beş öğeye kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır ve video küçültmeyi ekler.",
+        "iPhone için DiskMop her videonun üç karesini aygıtta karşılaştırır, yalnızca aynı anın çekimlerini gruplar, en iyisini önerir ve silinmek üzere hiçbir şey seçmez. Tarama ücretsizdir, günde on öğeye kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır ve video küçültmeyi ekler.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -221,7 +222,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "In every group DiskMop marks one video to keep. A video you marked as a favourite comes first, then one you edited, then the take with the highest resolution and, if they are equal, the longest one. Nothing is selected for deletion: you open the group, touch and hold to preview the clips, and tick the takes you do not need.",
             "Sometimes the right answer is to keep one long video but make it smaller. DiskMop also lists large videos and videos worth shrinking, and its Tools can save a smaller copy of any video, with a preview of how small it will get, while the original goes to Recently Deleted. Our guide on [reducing video size on iPhone](/blog/reduce-video-size-iphone) explains the quality settings.",
-            "Finish in Recently Deleted, where removed videos still count against your storage for 30 days. Scanning is free in DiskMop; without a subscription you can delete up to five items a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit and unlocks shrinking. For repeated photos, the same approach is described in [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone).",
+            "Finish in Recently Deleted, where removed videos still count against your storage for 30 days. Scanning is free in DiskMop; without a subscription you can delete up to ten items a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit and unlocks shrinking. For repeated photos, the same approach is described in [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone).",
           ],
         },
       ],
@@ -254,7 +255,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "If you need space quickly, look at videos before photos. Merge exact copies with Apple's Duplicates album, then find the repeated takes that only a visual comparison can see, keep the best one and empty Recently Deleted.",
-        "DiskMop for iPhone compares three frames of every video on the device, groups only takes of the same moment, suggests the best one and selects nothing for deletion. Scanning is free, up to five items a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit and adds video shrinking.",
+        "DiskMop for iPhone compares three frames of every video on the device, groups only takes of the same moment, suggests the best one and selects nothing for deletion. Scanning is free, up to ten items a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit and adds video shrinking.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -348,7 +349,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "In jeder Gruppe markiert DiskMop ein Video zum Behalten. Ein als Favorit markiertes Video kommt zuerst, dann ein bearbeitetes, dann die Aufnahme mit der höchsten Auflösung und bei Gleichstand die längste. Nichts wird zum Löschen ausgewählt: Sie öffnen die Gruppe, halten zum Ansehen gedrückt und haken die Aufnahmen ab, die Sie nicht brauchen.",
             "Manchmal ist die richtige Antwort, ein langes Video zu behalten, aber kleiner zu machen. DiskMop listet auch große Videos und Videos, die sich verkleinern lassen, und seine Werkzeuge können von jedem Video eine kleinere Kopie speichern, mit einer Vorschau, wie klein es wird, während das Original nach „Zuletzt gelöscht“ geht. Unser Ratgeber zum [Verkleinern von Videos auf dem iPhone](/blog/reduce-video-size-iphone) erklärt die Qualitätsstufen.",
-            "Enden Sie in „Zuletzt gelöscht“, wo entfernte Videos 30 Tage lang weiter zum Speicher zählen. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu fünf Objekte pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf und schaltet das Verkleinern frei. Für wiederholte Fotos beschreibt [Doppelte und ähnliche Fotos auf dem iPhone finden](/blog/find-duplicate-similar-photos-iphone) denselben Ansatz.",
+            "Enden Sie in „Zuletzt gelöscht“, wo entfernte Videos 30 Tage lang weiter zum Speicher zählen. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu zehn Objekte pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf und schaltet das Verkleinern frei. Für wiederholte Fotos beschreibt [Doppelte und ähnliche Fotos auf dem iPhone finden](/blog/find-duplicate-similar-photos-iphone) denselben Ansatz.",
           ],
         },
       ],
@@ -382,7 +383,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Wenn Sie schnell Platz brauchen, sehen Sie sich Videos vor Fotos an. Führen Sie exakte Kopien mit Apples Album Duplikate zusammen, finden Sie dann die wiederholten Aufnahmen, die nur ein visueller Vergleich erkennt, behalten Sie die beste und leeren Sie „Zuletzt gelöscht“.",
-        "DiskMop für iPhone vergleicht drei Bilder jedes Videos auf dem Gerät, gruppiert nur Aufnahmen desselben Moments, schlägt die beste vor und wählt nichts zum Löschen aus. Der Scan ist kostenlos, bis zu fünf Objekte pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf und ergänzt das Verkleinern von Videos.",
+        "DiskMop für iPhone vergleicht drei Bilder jedes Videos auf dem Gerät, gruppiert nur Aufnahmen desselben Moments, schlägt die beste vor und wählt nichts zum Löschen aus. Der Scan ist kostenlos, bis zu zehn Objekte pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf und ergänzt das Verkleinern von Videos.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -477,7 +478,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "Dans chaque groupe, DiskMop marque une vidéo à garder. Une vidéo marquée comme favorite passe en premier, puis une vidéo retouchée, puis la prise de plus haute résolution et, à égalité, la plus longue. Rien n'est sélectionné pour suppression : vous ouvrez le groupe, maintenez le doigt pour prévisualiser les clips et cochez les prises dont vous n'avez pas besoin.",
             "Parfois, la bonne réponse est de garder une longue vidéo tout en la réduisant. DiskMop liste aussi les vidéos volumineuses et les vidéos à réduire, et ses Outils peuvent enregistrer une copie plus légère de n'importe quelle vidéo, avec un aperçu de la taille obtenue, tandis que l'original part dans Supprimés récemment. Notre guide pour [réduire la taille d'une vidéo sur iPhone](/blog/reduce-video-size-iphone) explique les réglages de qualité.",
-            "Terminez par Supprimés récemment, où les vidéos retirées comptent encore dans votre stockage pendant 30 jours. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à cinq éléments par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite et débloque la réduction. Pour les photos répétées, la même approche est décrite dans [trouver les photos en double et similaires sur iPhone](/blog/find-duplicate-similar-photos-iphone).",
+            "Terminez par Supprimés récemment, où les vidéos retirées comptent encore dans votre stockage pendant 30 jours. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à dix éléments par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite et débloque la réduction. Pour les photos répétées, la même approche est décrite dans [trouver les photos en double et similaires sur iPhone](/blog/find-duplicate-similar-photos-iphone).",
           ],
         },
       ],
@@ -512,7 +513,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Si vous avez besoin d'espace rapidement, regardez les vidéos avant les photos. Fusionnez les copies exactes avec l'album Doublons d'Apple, puis trouvez les prises répétées que seule une comparaison visuelle peut voir, gardez la meilleure et videz Supprimés récemment.",
-        "DiskMop pour iPhone compare trois images de chaque vidéo sur l'appareil, ne regroupe que les prises d'un même moment, suggère la meilleure et ne sélectionne rien pour suppression. L'analyse est gratuite, jusqu'à cinq éléments par jour peuvent être supprimés gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite et ajoute la réduction des vidéos.",
+        "DiskMop pour iPhone compare trois images de chaque vidéo sur l'appareil, ne regroupe que les prises d'un même moment, suggère la meilleure et ne sélectionne rien pour suppression. L'analyse est gratuite, jusqu'à dix éléments par jour peuvent être supprimés gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite et ajoute la réduction des vidéos.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -607,7 +608,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "En cada grupo, DiskMop marca un vídeo para conservar. Un vídeo marcado como favorito va primero, luego uno editado, después la toma de mayor resolución y, si empatan, la más larga. No se selecciona nada para borrar: abres el grupo, mantienes pulsado para previsualizar los clips y marcas las tomas que no necesitas.",
             "A veces lo correcto es conservar un vídeo largo pero hacerlo más pequeño. DiskMop también muestra los vídeos grandes y los que conviene reducir, y sus Herramientas pueden guardar una copia más pequeña de cualquier vídeo, con una vista previa de cuánto ocupará, mientras el original va a Eliminados recientemente. Nuestra guía para [reducir el tamaño de un vídeo en iPhone](/blog/reduce-video-size-iphone) explica los niveles de calidad.",
-            "Termina en Eliminados recientemente, donde los vídeos quitados siguen contando en tu almacenamiento durante 30 días. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta cinco elementos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite y desbloquea la reducción. Para las fotos repetidas, el mismo enfoque se describe en [encontrar fotos duplicadas y similares en iPhone](/blog/find-duplicate-similar-photos-iphone).",
+            "Termina en Eliminados recientemente, donde los vídeos quitados siguen contando en tu almacenamiento durante 30 días. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta diez elementos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite y desbloquea la reducción. Para las fotos repetidas, el mismo enfoque se describe en [encontrar fotos duplicadas y similares en iPhone](/blog/find-duplicate-similar-photos-iphone).",
           ],
         },
       ],
@@ -641,7 +642,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Si necesitas espacio rápido, mira los vídeos antes que las fotos. Combina las copias exactas con el álbum Duplicados de Apple, después encuentra las tomas repetidas que solo una comparación visual puede ver, quédate con la mejor y vacía Eliminados recientemente.",
-        "DiskMop para iPhone compara tres fotogramas de cada vídeo en el dispositivo, agrupa solo las tomas de un mismo momento, sugiere la mejor y no selecciona nada para borrar. El análisis es gratis, se pueden borrar hasta cinco elementos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite y añade la reducción de vídeos.",
+        "DiskMop para iPhone compara tres fotogramas de cada vídeo en el dispositivo, agrupa solo las tomas de un mismo momento, sugiere la mejor y no selecciona nada para borrar. El análisis es gratis, se pueden borrar hasta diez elementos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite y añade la reducción de vídeos.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -735,7 +736,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "In ogni gruppo DiskMop segna un video da tenere. Un video contrassegnato come preferito viene per primo, poi uno modificato, poi la ripresa con la risoluzione più alta e, a parità, la più lunga. Nulla viene selezionato per l'eliminazione: apri il gruppo, tieni premuto per vedere l'anteprima dei clip e spunti le riprese che non ti servono.",
             "A volte la risposta giusta è tenere un video lungo ma renderlo più piccolo. DiskMop elenca anche i video di grandi dimensioni e quelli da rimpicciolire, e i suoi Strumenti possono salvare una copia più leggera di qualsiasi video, con un'anteprima di quanto diventerà piccolo, mentre l'originale va in Eliminati di recente. La nostra guida per [ridurre le dimensioni dei video su iPhone](/blog/reduce-video-size-iphone) spiega i livelli di qualità.",
-            "Concludi in Eliminati di recente, dove i video rimossi continuano a occupare spazio per 30 giorni. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a cinque elementi al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite e sblocca la riduzione. Per le foto ripetute, lo stesso approccio è descritto in [trovare foto duplicate e simili su iPhone](/blog/find-duplicate-similar-photos-iphone).",
+            "Concludi in Eliminati di recente, dove i video rimossi continuano a occupare spazio per 30 giorni. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a dieci elementi al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite e sblocca la riduzione. Per le foto ripetute, lo stesso approccio è descritto in [trovare foto duplicate e simili su iPhone](/blog/find-duplicate-similar-photos-iphone).",
           ],
         },
       ],
@@ -768,7 +769,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Se ti serve spazio in fretta, guarda i video prima delle foto. Unisci le copie esatte con l'album Duplicati di Apple, poi trova le riprese ripetute che solo un confronto visivo può vedere, tieni la migliore e svuota Eliminati di recente.",
-        "DiskMop per iPhone confronta tre fotogrammi di ogni video sul dispositivo, raggruppa solo le riprese dello stesso momento, suggerisce la migliore e non seleziona nulla per l'eliminazione. L'analisi è gratuita, si possono eliminare gratis fino a cinque elementi al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite e aggiunge la riduzione dei video.",
+        "DiskMop per iPhone confronta tre fotogrammi di ogni video sul dispositivo, raggruppa solo le riprese dello stesso momento, suggerisce la migliore e non seleziona nulla per l'eliminazione. L'analisi è gratuita, si possono eliminare gratis fino a dieci elementi al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite e aggiunge la riduzione dei video.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -862,7 +863,7 @@ export const findDuplicateVideosIphone: Article = {
           content: [
             "Em cada grupo, o DiskMop marca um vídeo para manter. Um vídeo marcado como favorito vem primeiro, depois um editado, depois a tomada de maior resolução e, se empatar, a mais longa. Nada é selecionado para apagar: você abre o grupo, toca e segura para pré-visualizar os clipes e marca as tomadas de que não precisa.",
             "Às vezes a resposta certa é manter um vídeo longo, mas deixá-lo menor. O DiskMop também lista vídeos grandes e vídeos que vale a pena reduzir, e as Ferramentas podem salvar uma cópia menor de qualquer vídeo, com uma prévia de quanto ele vai ocupar, enquanto o original vai para Apagados Recentemente. Nosso guia para [reduzir o tamanho de vídeos no iPhone](/blog/reduce-video-size-iphone) explica os níveis de qualidade.",
-            "Termine em Apagados Recentemente, onde os vídeos removidos continuam ocupando armazenamento por 30 dias. A análise é grátis no DiskMop; sem assinatura, você pode apagar até cinco itens por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite e libera a redução. Para fotos repetidas, a mesma abordagem está em [encontrar fotos duplicadas e semelhantes no iPhone](/blog/find-duplicate-similar-photos-iphone).",
+            "Termine em Apagados Recentemente, onde os vídeos removidos continuam ocupando armazenamento por 30 dias. A análise é grátis no DiskMop; sem assinatura, você pode apagar até diez itens por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite e libera a redução. Para fotos repetidas, a mesma abordagem está em [encontrar fotos duplicadas e semelhantes no iPhone](/blog/find-duplicate-similar-photos-iphone).",
           ],
         },
       ],
@@ -895,7 +896,7 @@ export const findDuplicateVideosIphone: Article = {
       ],
       verdict: [
         "Se precisar de espaço rápido, olhe os vídeos antes das fotos. Combine as cópias exatas com o álbum Duplicatas da Apple, depois encontre as tomadas repetidas que só uma comparação visual enxerga, fique com a melhor e esvazie Apagados Recentemente.",
-        "O DiskMop para iPhone compara três quadros de cada vídeo no aparelho, agrupa só as tomadas do mesmo momento, sugere a melhor e não seleciona nada para apagar. A análise é grátis, até cinco itens por dia podem ser apagados sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite e adiciona a redução de vídeos.",
+        "O DiskMop para iPhone compara três quadros de cada vídeo no aparelho, agrupa só as tomadas do mesmo momento, sugere a melhor e não seleciona nada para apagar. A análise é grátis, até diez itens por dia podem ser apagados sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite e adiciona a redução de vídeos.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },

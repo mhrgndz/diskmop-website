@@ -69,8 +69,14 @@ import { deleteBlurryPhotosIphone } from "./delete-blurry-photos-iphone";
 import { findDuplicateVideosIphone } from "./find-duplicate-videos-iphone";
 import { livePhotosStorageIphone } from "./live-photos-storage-iphone";
 import { bestIphoneCleanerApps } from "./best-iphone-cleaner-apps";
+import { removeLocationFromPhotosIphone } from "./remove-location-from-photos-iphone";
+import { searchPhotosByContentIphone } from "./search-photos-by-content-iphone";
 
 export const articles: Article[] = [
+  // 2026-10-30 eklenenler — iPhone 1.1.10 (Konumu ve bilgileri sil) ve 1.1.2 (içeriğe/yere göre arama)
+  // özelliklerine dayanan iki rehber. 8 dil, keyTakeaways + FAQ + HowTo + tablo.
+  removeLocationFromPhotosIphone,
+  searchPhotosByContentIphone,
   // 2026-10-26 eklenenler — iPhone uygulamasının 1.1.x özelliklerine (kaydırma, Kişiler, Kasa, sohbet
   // medyası, ekran görüntüsü sınıflandırma, bulanık, benzer videolar, Live Photo) dayanan dokuz rehber.
   // 2026-09-17'deki üç iPhone rehberiyle çakışmaz; her biri ayrı bir arama niyetini karşılar. 8 dil.

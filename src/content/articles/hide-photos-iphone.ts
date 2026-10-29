@@ -5,6 +5,7 @@ export const hidePhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -117,7 +118,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "Kasa klasörü bilerek iCloud yedeklerinin dışında tutulur. İçeriğini Apple'ın sunucularından uzak tutan budur ve uygulamanın açıkça söylediği bir sonucu vardır: DiskMop'u silerseniz kasadaki her şey gider; kasa yeni bir iPhone'a da taşınmaz, çünkü anahtarı yalnızca onu oluşturan aygıtta bulunur. Geri yüklenecek bir hesap ya da sunucu kopyası yoktur.",
             "Kasayı bir yedek değil, özel bir depo olarak görün. Yeri doldurulamayacak her şeyin başka bir yerde kopyasını tutun ve telefon değiştirmeden önce kasayı açıp saklamak istediğiniz öğeleri Fotoğraflar'a geri aktarın. Bir aygıt parolası gerekir; parola yoksa kasa korunamaz ve açılmaz.",
-            "Kasayı kullanmak ücretsizdir. Ekledikten sonra özgünleri kitaplığınızdan kaldırmak DiskMop'ta sıradan bir fotoğraf silme sayılır; bu, günde beş fotoğrafa kadar ücretsiz, DiskMop Pro ile sınırsızdır. Fotoğrafları kitaplık kontrolden çıktığı için gizliyorsanız [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) asıl sorunu çözebilir.",
+            "Kasayı kullanmak ücretsizdir. Ekledikten sonra özgünleri kitaplığınızdan kaldırmak DiskMop'ta sıradan bir fotoğraf silme sayılır; bu, günde on fotoğrafa kadar ücretsiz, DiskMop Pro ile sınırsızdır. Fotoğrafları kitaplık kontrolden çıktığı için gizliyorsanız [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) asıl sorunu çözebilir.",
           ],
         },
       ],
@@ -264,7 +265,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "The vault folder is excluded from iCloud backups on purpose. That is what keeps its contents off Apple's servers, and it has a consequence the app states openly: if you delete DiskMop, everything in the vault is gone, and the vault does not move to a new iPhone either, because its key exists only on the device that created it. There is no account and no server copy to restore from.",
             "Treat the vault as private storage, not as a backup. Keep a copy elsewhere of anything irreplaceable, and before you switch phones, open the vault and save the items you want to keep back to Photos. A device passcode is required; without one, the vault cannot be protected and will not open.",
-            "The vault is free to use. Removing the originals from your library after adding them counts as an ordinary photo deletion in DiskMop, which is free for up to five photos a day and unlimited with DiskMop Pro. If you are hiding photos because the library has grown out of control, [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone) may solve the bigger problem.",
+            "The vault is free to use. Removing the originals from your library after adding them counts as an ordinary photo deletion in DiskMop, which is free for up to ten photos a day and unlimited with DiskMop Pro. If you are hiding photos because the library has grown out of control, [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone) may solve the bigger problem.",
           ],
         },
       ],
@@ -411,7 +412,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "Der Tresorordner ist bewusst von iCloud-Backups ausgenommen. Das hält seinen Inhalt von Apples Servern fern und hat eine Folge, die die App offen benennt: Löschen Sie DiskMop, ist alles im Tresor weg, und auf ein neues iPhone zieht der Tresor auch nicht um, weil sein Schlüssel nur auf dem Gerät existiert, das ihn erzeugt hat. Es gibt kein Konto und keine Serverkopie zum Wiederherstellen.",
             "Betrachten Sie den Tresor als privaten Speicher, nicht als Backup. Bewahren Sie von allem Unersetzlichen eine Kopie an anderer Stelle auf, und öffnen Sie vor einem Gerätewechsel den Tresor, um alles, was Sie behalten möchten, zurück in Fotos zu sichern. Ein Gerätecode ist Pflicht; ohne ihn kann der Tresor nicht geschützt werden und öffnet sich nicht.",
-            "Der Tresor ist kostenlos. Die Originale nach dem Hinzufügen aus der Mediathek zu entfernen, zählt in DiskMop als gewöhnliche Fotolöschung; sie ist für bis zu fünf Fotos pro Tag kostenlos und mit DiskMop Pro unbegrenzt. Wenn Sie Fotos ausblenden, weil die Mediathek außer Kontrolle geraten ist, löst [iPhone-Fotos per Wischen aufräumen](/blog/swipe-to-delete-photos-iphone) vielleicht das größere Problem.",
+            "Der Tresor ist kostenlos. Die Originale nach dem Hinzufügen aus der Mediathek zu entfernen, zählt in DiskMop als gewöhnliche Fotolöschung; sie ist für bis zu zehn Fotos pro Tag kostenlos und mit DiskMop Pro unbegrenzt. Wenn Sie Fotos ausblenden, weil die Mediathek außer Kontrolle geraten ist, löst [iPhone-Fotos per Wischen aufräumen](/blog/swipe-to-delete-photos-iphone) vielleicht das größere Problem.",
           ],
         },
       ],
@@ -560,7 +561,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "Le dossier du coffre est volontairement exclu des sauvegardes iCloud. C'est ce qui garde son contenu loin des serveurs d'Apple, et cela a une conséquence que l'app énonce clairement : si vous supprimez DiskMop, tout ce que contient le coffre disparaît, et le coffre ne suit pas non plus sur un nouvel iPhone, car sa clé n'existe que sur l'appareil qui l'a créée. Il n'y a ni compte ni copie sur un serveur à restaurer.",
             "Considérez le coffre comme un espace privé, pas comme une sauvegarde. Gardez ailleurs une copie de tout ce qui est irremplaçable et, avant de changer de téléphone, ouvrez le coffre pour réenregistrer dans Photos ce que vous voulez conserver. Un code d'appareil est indispensable ; sans lui, le coffre ne peut pas être protégé et ne s'ouvre pas.",
-            "Le coffre est gratuit. Retirer les originaux de la photothèque après les avoir ajoutés compte comme une suppression de photos ordinaire dans DiskMop, gratuite jusqu'à cinq photos par jour et illimitée avec DiskMop Pro. Si vous masquez des photos parce que la photothèque est devenue ingérable, [trier ses photos iPhone en balayant](/blog/swipe-to-delete-photos-iphone) peut régler le vrai problème.",
+            "Le coffre est gratuit. Retirer les originaux de la photothèque après les avoir ajoutés compte comme une suppression de photos ordinaire dans DiskMop, gratuite jusqu'à dix photos par jour et illimitée avec DiskMop Pro. Si vous masquez des photos parce que la photothèque est devenue ingérable, [trier ses photos iPhone en balayant](/blog/swipe-to-delete-photos-iphone) peut régler le vrai problème.",
           ],
         },
       ],
@@ -708,7 +709,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "La carpeta de la caja fuerte está excluida a propósito de las copias de iCloud. Eso es lo que mantiene su contenido lejos de los servidores de Apple, y tiene una consecuencia que la app explica con claridad: si borras DiskMop, todo lo que hay en la caja desaparece, y la caja tampoco pasa a un iPhone nuevo, porque su clave solo existe en el dispositivo que la creó. No hay cuenta ni copia en un servidor desde la que restaurar.",
             "Trata la caja fuerte como almacenamiento privado, no como copia de seguridad. Guarda en otro sitio una copia de todo lo que sea insustituible y, antes de cambiar de teléfono, abre la caja y devuelve a Fotos lo que quieras conservar. Hace falta un código en el dispositivo; sin él, la caja no puede protegerse y no se abre.",
-            "Usar la caja fuerte es gratis. Quitar los originales de la fototeca después de añadirlos cuenta como un borrado normal de fotos en DiskMop, gratuito hasta cinco fotos al día e ilimitado con DiskMop Pro. Si ocultas fotos porque la fototeca se te ha ido de las manos, [limpiar las fotos del iPhone deslizando](/blog/swipe-to-delete-photos-iphone) puede resolver el problema de fondo.",
+            "Usar la caja fuerte es gratis. Quitar los originales de la fototeca después de añadirlos cuenta como un borrado normal de fotos en DiskMop, gratuito hasta diez fotos al día e ilimitado con DiskMop Pro. Si ocultas fotos porque la fototeca se te ha ido de las manos, [limpiar las fotos del iPhone deslizando](/blog/swipe-to-delete-photos-iphone) puede resolver el problema de fondo.",
           ],
         },
       ],
@@ -855,7 +856,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "La cartella della cassaforte è esclusa di proposito dai backup di iCloud. È ciò che tiene il contenuto lontano dai server di Apple, e ha una conseguenza che l'app dichiara apertamente: se elimini DiskMop, tutto ciò che è nella cassaforte sparisce, e la cassaforte non passa nemmeno a un nuovo iPhone, perché la sua chiave esiste solo sul dispositivo che l'ha creata. Non ci sono account né copie su server da cui ripristinare.",
             "Considera la cassaforte uno spazio privato, non un backup. Tieni altrove una copia di tutto ciò che è insostituibile e, prima di cambiare telefono, apri la cassaforte e salva in Foto ciò che vuoi conservare. Serve un codice sul dispositivo; senza, la cassaforte non può essere protetta e non si apre.",
-            "La cassaforte è gratuita. Rimuovere gli originali dalla libreria dopo averli aggiunti conta in DiskMop come una normale eliminazione di foto, gratuita fino a cinque foto al giorno e illimitata con DiskMop Pro. Se nascondi le foto perché la libreria è sfuggita di mano, [pulire le foto dell'iPhone scorrendo](/blog/swipe-to-delete-photos-iphone) può risolvere il problema più grande.",
+            "La cassaforte è gratuita. Rimuovere gli originali dalla libreria dopo averli aggiunti conta in DiskMop come una normale eliminazione di foto, gratuita fino a dieci foto al giorno e illimitata con DiskMop Pro. Se nascondi le foto perché la libreria è sfuggita di mano, [pulire le foto dell'iPhone scorrendo](/blog/swipe-to-delete-photos-iphone) può risolvere il problema più grande.",
           ],
         },
       ],
@@ -1002,7 +1003,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "A pasta do cofre fica fora dos backups do iCloud de propósito. É isso que mantém o conteúdo longe dos servidores da Apple, e há uma consequência que o app diz abertamente: se você apagar o DiskMop, tudo o que está no cofre se perde, e o cofre também não passa para um iPhone novo, porque a chave só existe no aparelho que a criou. Não há conta nem cópia em servidor para restaurar.",
             "Trate o cofre como armazenamento privado, não como backup. Mantenha em outro lugar uma cópia de tudo o que for insubstituível e, antes de trocar de telefone, abra o cofre e devolva ao Fotos o que quiser manter. É preciso ter um código no aparelho; sem ele, o cofre não pode ser protegido e não abre.",
-            "Usar o cofre é grátis. Remover os originais da fototeca depois de adicioná-los conta como uma exclusão de fotos comum no DiskMop, grátis para até cinco fotos por dia e ilimitada com o DiskMop Pro. Se você está ocultando fotos porque a fototeca saiu do controle, [limpar as fotos do iPhone deslizando](/blog/swipe-to-delete-photos-iphone) pode resolver o problema maior.",
+            "Usar o cofre é grátis. Remover os originais da fototeca depois de adicioná-los conta como uma exclusão de fotos comum no DiskMop, grátis para até diez fotos por dia e ilimitada com o DiskMop Pro. Se você está ocultando fotos porque a fototeca saiu do controle, [limpar as fotos do iPhone deslizando](/blog/swipe-to-delete-photos-iphone) pode resolver o problema maior.",
           ],
         },
       ],
@@ -1144,7 +1145,7 @@ export const hidePhotosIphone: Article = {
           content: [
             "保管庫のフォルダは、意図的に iCloud バックアップの対象から外されています。だからこそ中身が Apple のサーバーに置かれないのですが、その結果として、アプリが明示しているとおり DiskMop を削除すると保管庫の中身はすべて消えます。また鍵は作成した端末にしか存在しないため、新しい iPhone にも引き継がれません。復元に使えるアカウントやサーバー上のコピーはありません。",
             "保管庫はバックアップではなく、プライベートな保管場所と考えてください。かけがえのないものは別の場所にもコピーを残し、機種変更の前には保管庫を開いて残したいものを写真に保存し直しましょう。デバイスのパスコードの設定が必須で、パスコードがないと保管庫は保護できず、開きません。",
-            "保管庫は無料で使えます。追加後に元の写真をライブラリから削除する操作は、DiskMop では通常の写真削除として扱われ、1 日 5 枚までは無料、DiskMop Pro なら無制限です。ライブラリが手に負えなくなったから写真を隠しているのなら、[スワイプで iPhone の写真を整理する方法](/blog/swipe-to-delete-photos-iphone)が根本的な解決になるかもしれません。",
+            "保管庫は無料で使えます。追加後に元の写真をライブラリから削除する操作は、DiskMop では通常の写真削除として扱われ、1 日 10 枚までは無料、DiskMop Pro なら無制限です。ライブラリが手に負えなくなったから写真を隠しているのなら、[スワイプで iPhone の写真を整理する方法](/blog/swipe-to-delete-photos-iphone)が根本的な解決になるかもしれません。",
           ],
         },
       ],

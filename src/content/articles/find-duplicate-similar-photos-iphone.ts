@@ -5,6 +5,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -134,7 +135,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Araçları doğru sırayla kullanın. Fotoğraflar'ın birebir kopyaları birleştirmesine ve seri çekimleri ücretsiz kırpmasına izin verin, ardından boşa giden alanın çoğunu oluşturan tekrar çekimler ve yeniden kaydedilmiş kopyalar için görsel benzerlik taraması çalıştırın. Korunacak kareyi kendiniz seçin ve işiniz bitince Son Silinenler'i boşaltın.",
-        "iPhone için DiskMop benzerlik kısmını cihaz üzerinde yapar: çekimleri ana göre gruplar, aylar sonra geri gelen kopyaları yakalar, önerilen bir kareyi işaretler ve önceden hiçbir şey seçmez. Tarama ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop benzerlik kısmını cihaz üzerinde yapar: çekimleri ana göre gruplar, aylar sonra geri gelen kopyaları yakalar, önerilen bir kareyi işaretler ve önceden hiçbir şey seçmez. Tarama ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -262,7 +263,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Use the tools in the right order. Let Photos merge exact duplicates and trim bursts for free, then run a visual similarity scan for the retries and re-saved copies that make up most of the wasted space. Choose the keeper yourself, and empty Recently Deleted when you are done.",
-        "DiskMop for iPhone does the similarity part on the device: it groups shots by moment, catches copies that came back months later, marks a suggested keeper and pre-selects nothing. Scanning is free, up to five photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone does the similarity part on the device: it groups shots by moment, catches copies that came back months later, marks a suggested keeper and pre-selects nothing. Scanning is free, up to ten photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -393,7 +394,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         'Nutzen Sie die Werkzeuge in der richtigen Reihenfolge. Lassen Sie Fotos exakte Duplikate zusammenführen und Serien kostenlos ausdünnen, und führen Sie dann einen visuellen Ähnlichkeitsscan für die Wiederholungen und erneut gespeicherten Kopien aus, die den größten Teil des verschwendeten Platzes ausmachen. Wählen Sie den Favoriten selbst, und leeren Sie "Zuletzt gelöscht", wenn Sie fertig sind.',
-        "DiskMop für iPhone erledigt den Ähnlichkeitsteil auf dem Gerät: Es gruppiert Aufnahmen nach Moment, erwischt Kopien, die Monate später zurückgekommen sind, markiert einen vorgeschlagenen Favoriten und wählt nichts vorab aus. Der Scan ist kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
+        "DiskMop für iPhone erledigt den Ähnlichkeitsteil auf dem Gerät: Es gruppiert Aufnahmen nach Moment, erwischt Kopien, die Monate später zurückgekommen sind, markiert einen vorgeschlagenen Favoriten und wählt nichts vorab aus. Der Scan ist kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -524,7 +525,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Utilisez les outils dans le bon ordre. Laissez Photos fusionner gratuitement les doublons exacts et élaguer les rafales, puis lancez une analyse de similarité visuelle pour les reprises et les copies réenregistrées, qui représentent l'essentiel de l'espace gaspillé. Choisissez vous-même l'image à garder, et videz Supprimés récemment quand vous avez terminé.",
-        "DiskMop pour iPhone assure la partie similarité sur l'appareil : il regroupe les clichés par instant, attrape les copies revenues des mois plus tard, marque une image recommandée et ne présélectionne rien. L'analyse est gratuite, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone assure la partie similarité sur l'appareil : il regroupe les clichés par instant, attrape les copies revenues des mois plus tard, marque une image recommandée et ne présélectionne rien. L'analyse est gratuite, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -654,7 +655,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Usa las herramientas en el orden correcto. Deja que Fotos fusione los duplicados exactos y recorte las ráfagas gratis, y luego ejecuta un análisis de similitud visual para las repeticiones y las copias guardadas de nuevo, que son la mayor parte del espacio desperdiciado. Elige tú la foto que se queda y vacía Eliminados recientemente cuando termines.",
-        "DiskMop para iPhone hace la parte de similitud en el dispositivo: agrupa las tomas por momento, caza las copias que volvieron meses después, marca una foto sugerida y no preselecciona nada. El análisis es gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone hace la parte de similitud en el dispositivo: agrupa las tomas por momento, caza las copias que volvieron meses después, marca una foto sugerida y no preselecciona nada. El análisis es gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -784,7 +785,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Usa gli strumenti nell'ordine giusto. Lascia che Foto unisca gratis i duplicati esatti e sfoltisca le raffiche, poi esegui un'analisi di somiglianza visiva per gli scatti ripetuti e le copie salvate di nuovo, che costituiscono la maggior parte dello spazio sprecato. Scegli tu lo scatto da tenere e svuota Eliminati di recente quando hai finito.",
-        "DiskMop per iPhone fa la parte di somiglianza sul dispositivo: raggruppa gli scatti per momento, cattura le copie tornate mesi dopo, segna uno scatto consigliato e non preseleziona nulla. L'analisi è gratuita, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone fa la parte di somiglianza sul dispositivo: raggruppa gli scatti per momento, cattura le copie tornate mesi dopo, segna uno scatto consigliato e non preseleziona nulla. L'analisi è gratuita, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -914,7 +915,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "Use as ferramentas na ordem certa. Deixe o Fotos combinar as duplicatas exatas e enxugar as sequências de graça, depois rode uma análise de semelhança visual para as repetições e cópias salvas de novo, que são a maior parte do espaço desperdiçado. Escolha você mesmo a foto que fica e esvazie Apagados Recentemente quando terminar.",
-        "O DiskMop para iPhone faz a parte de semelhança no aparelho: agrupa as fotos por momento, pega cópias que voltaram meses depois, marca uma foto sugerida e não pré-seleciona nada. A análise é grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone faz a parte de semelhança no aparelho: agrupa as fotos por momento, pega cópias que voltaram meses depois, marca uma foto sugerida e não pré-seleciona nada. A análise é grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1043,7 +1044,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ],
       verdict: [
         "ツールは正しい順番で使いましょう。まず写真アプリに完全な複製の結合とバーストの整理を無料でやらせ、次に無駄な容量の大半を占める撮り直しと再保存コピーのために視覚的な類似性スキャンを実行します。残す写真は自分で選び、終わったら「最近削除した項目」を空にしてください。",
-        "iPhone 版 DiskMop は類似性の部分を端末上で処理します。写真を瞬間ごとにグループ化し、数か月後に戻ってきたコピーを捕まえ、提案するベストショットに印を付け、何も事前選択しません。スキャンは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop は類似性の部分を端末上で処理します。写真を瞬間ごとにグループ化し、数か月後に戻ってきたコピーを捕まえ、提案するベストショットに印を付け、何も事前選択しません。スキャンは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

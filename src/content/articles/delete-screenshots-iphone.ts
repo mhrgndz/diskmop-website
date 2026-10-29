@@ -5,6 +5,7 @@ export const deleteScreenshotsIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -93,7 +94,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop ekran kayıtlarını iOS'un kaydettiği ekran kaydı türünden tanır, yedek denetim olarak iOS'un kayıtlara verdiği dosya adlarını da kullanır ve onları boyutlarıyla birlikte kendi kategorisinde listeler. Önce en büyüğe göre sıralayın; genellikle yüzlerce ekran görüntüsünden daha fazla yer tutan birkaç uzun kayıt bulursunuz.",
             "Her kayıt gitmemeli. Destek için kaydedilmiş bir hata, hazırladığınız bir eğitim ya da bir oyundan bir an saklanmaya değer olabilir, yalnızca tam boyutta değil. DiskMop'un Araçlar bölümünde küçültmek daha küçük bir kopya kaydeder ve özgünü Son Silinenler'e taşır; [iPhone'da video boyutunu küçültme](/blog/reduce-video-size-iphone) rehberimiz bunun artılarını ve eksilerini anlatıyor.",
-            "Hangisini seçerseniz seçin, Son Silinenler'de bitirin. Siz onu boşaltana kadar silinen ekran görüntüleri ve kayıtlar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde beş fotoğrafa kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır ve küçültmeyi açar. 100 ekran görüntüsü silmek ayrıca Ekran Görüntüsü Avcısı kupasını kazandırır.",
+            "Hangisini seçerseniz seçin, Son Silinenler'de bitirin. Siz onu boşaltana kadar silinen ekran görüntüleri ve kayıtlar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde on fotoğrafa kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır ve küçültmeyi açar. 100 ekran görüntüsü silmek ayrıca Ekran Görüntüsü Avcısı kupasını kazandırır.",
           ],
         },
       ],
@@ -128,7 +129,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Apple'ın zaten sunduğu iki albümle başlayın: Ortam Türleri altındaki Ekran Görüntüleri ve Ekran Kayıtları. Eski ekran görüntülerini toplu silin, yenilerin üzerinden daha yavaş geçin ve hızla yere ihtiyacınız varsa önce kayıtlara bakın. Son Silinenler'i boşaltarak bitirin.",
-        "iPhone için DiskMop albümlerde olmayanı ekler: Apple Intelligence açık iOS 26'da içeriğine göre ayrılmış ekran görüntüleri, tekrarlanan görüntü grupları ve boyuta göre listelenen ekran kayıtları; hepsi aygıtta ve hiçbir şey önceden seçili değil. Tarama ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop albümlerde olmayanı ekler: Apple Intelligence açık iOS 26'da içeriğine göre ayrılmış ekran görüntüleri, tekrarlanan görüntü grupları ve boyuta göre listelenen ekran kayıtları; hepsi aygıtta ve hiçbir şey önceden seçili değil. Tarama ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -217,7 +218,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop recognises screen recordings through the screen-recording type that iOS records, with the file names iOS uses for recordings as a backup check, and lists them in their own category with their sizes. Sort by largest first and you will usually find a few long recordings that are worth more space than hundreds of screenshots.",
             "Not every recording should go. A recording of a bug for support, a tutorial you made or a moment from a game can be worth keeping, just not at full size. Shrinking it in DiskMop's Tools saves a smaller copy and moves the original to Recently Deleted; our guide on [reducing video size on iPhone](/blog/reduce-video-size-iphone) explains the trade-offs.",
-            "Whichever you choose, finish in Recently Deleted. Until you empty it, deleted screenshots and recordings still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to five photos a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit and unlocks shrinking. Deleting 100 screenshots also earns the Screenshot Hunter trophy.",
+            "Whichever you choose, finish in Recently Deleted. Until you empty it, deleted screenshots and recordings still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to ten photos a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit and unlocks shrinking. Deleting 100 screenshots also earns the Screenshot Hunter trophy.",
           ],
         },
       ],
@@ -250,7 +251,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Start with the two albums Apple already provides: Screenshots and Screen Recordings under Media Types. Delete old screenshots in bulk, go slower through recent ones, and look at recordings first if you need space quickly. Finish by emptying Recently Deleted.",
-        "DiskMop for iPhone adds what the albums lack: screenshots sorted by what they show on iOS 26 with Apple Intelligence, groups of repeated captures, and screen recordings listed by size, all on the device and with nothing preselected. Scanning is free, up to five photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone adds what the albums lack: screenshots sorted by what they show on iOS 26 with Apple Intelligence, groups of repeated captures, and screen recordings listed by size, all on the device and with nothing preselected. Scanning is free, up to ten photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -340,7 +341,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop erkennt Bildschirmaufnahmen am Aufnahmetyp, den iOS dafür vermerkt, nutzt die Dateinamen, die iOS für Aufnahmen vergibt, als zusätzliche Prüfung und listet sie in einer eigenen Kategorie mit ihrer Größe auf. Sortieren Sie nach Größte, und Sie finden meist ein paar lange Aufnahmen, die mehr Platz belegen als Hunderte Screenshots.",
             "Nicht jede Aufnahme muss weg. Ein aufgezeichneter Fehler für den Support, eine selbst erstellte Anleitung oder ein Moment aus einem Spiel kann es wert sein, behalten zu werden, nur nicht in voller Größe. Das Verkleinern in den Werkzeugen von DiskMop speichert eine kleinere Kopie und verschiebt das Original nach „Zuletzt gelöscht“; unser Ratgeber zum [Verkleinern von Videos auf dem iPhone](/blog/reduce-video-size-iphone) erklärt die Abwägungen.",
-            "Wofür Sie sich auch entscheiden: Enden Sie in „Zuletzt gelöscht“. Bis Sie es leeren, zählen gelöschte Screenshots und Aufnahmen weiter zu Ihrem Speicher. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu fünf Fotos pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf und schaltet das Verkleinern frei. 100 gelöschte Screenshots bringen außerdem die Trophäe Screenshot-Jäger.",
+            "Wofür Sie sich auch entscheiden: Enden Sie in „Zuletzt gelöscht“. Bis Sie es leeren, zählen gelöschte Screenshots und Aufnahmen weiter zu Ihrem Speicher. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu zehn Fotos pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf und schaltet das Verkleinern frei. 100 gelöschte Screenshots bringen außerdem die Trophäe Screenshot-Jäger.",
           ],
         },
       ],
@@ -376,7 +377,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Beginnen Sie mit den beiden Alben, die Apple schon mitliefert: Bildschirmfotos und Bildschirmaufnahmen unter Medienarten. Löschen Sie alte Screenshots in großen Mengen, gehen Sie neue langsamer durch und schauen Sie zuerst auf Aufnahmen, wenn Sie schnell Platz brauchen. Leeren Sie zum Schluss „Zuletzt gelöscht“.",
-        "DiskMop für iPhone ergänzt, was den Alben fehlt: Screenshots nach Inhalt sortiert unter iOS 26 mit Apple Intelligence, Gruppen wiederholter Aufnahmen und Bildschirmaufnahmen nach Größe, alles auf dem Gerät und ohne Vorauswahl. Der Scan ist kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
+        "DiskMop für iPhone ergänzt, was den Alben fehlt: Screenshots nach Inhalt sortiert unter iOS 26 mit Apple Intelligence, Gruppen wiederholter Aufnahmen und Bildschirmaufnahmen nach Größe, alles auf dem Gerät und ohne Vorauswahl. Der Scan ist kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -466,7 +467,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop reconnaît les enregistrements d'écran grâce au type « enregistrement d'écran » qu'iOS leur attribue, avec en vérification de secours les noms de fichiers qu'iOS utilise pour les enregistrements, et les liste dans leur propre catégorie avec leur taille. Triez par Plus lourdes et vous trouverez souvent quelques longs enregistrements qui pèsent plus que des centaines de captures.",
             "Tous les enregistrements ne doivent pas partir. L'enregistrement d'un bug pour le support, un tutoriel que vous avez réalisé ou un moment de jeu peuvent valoir la peine d'être gardés, simplement pas en taille réelle. Les réduire dans les Outils de DiskMop enregistre une copie plus légère et place l'original dans Supprimés récemment ; notre guide pour [réduire la taille d'une vidéo sur iPhone](/blog/reduce-video-size-iphone) détaille les compromis.",
-            "Quel que soit votre choix, terminez par Supprimés récemment. Tant que vous ne le videz pas, les captures et enregistrements supprimés comptent toujours dans votre stockage. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à cinq photos par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite et débloque la réduction. Supprimer 100 captures rapporte aussi le trophée Chasseur de captures.",
+            "Quel que soit votre choix, terminez par Supprimés récemment. Tant que vous ne le videz pas, les captures et enregistrements supprimés comptent toujours dans votre stockage. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à dix photos par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite et débloque la réduction. Supprimer 100 captures rapporte aussi le trophée Chasseur de captures.",
           ],
         },
       ],
@@ -502,7 +503,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Commencez par les deux albums qu'Apple fournit déjà : Captures d'écran et Enregistrements d'écran sous Types de médias. Supprimez en masse les anciennes captures, parcourez plus lentement les récentes et regardez d'abord les enregistrements si vous avez besoin d'espace rapidement. Terminez en vidant Supprimés récemment.",
-        "DiskMop pour iPhone ajoute ce qui manque aux albums : des captures triées selon leur contenu sous iOS 26 avec Apple Intelligence, des groupes de captures répétées et des enregistrements d'écran listés par taille, le tout sur l'appareil et sans rien présélectionner. L'analyse est gratuite, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone ajoute ce qui manque aux albums : des captures triées selon leur contenu sous iOS 26 avec Apple Intelligence, des groupes de captures répétées et des enregistrements d'écran listés par taille, le tout sur l'appareil et sans rien présélectionner. L'analyse est gratuite, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -592,7 +593,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop reconoce las grabaciones de pantalla por el tipo de grabación de pantalla que iOS registra, usa como comprobación adicional los nombres de archivo que iOS da a las grabaciones y las muestra en su propia categoría con su tamaño. Ordena por Más grandes y normalmente encontrarás unas pocas grabaciones largas que ocupan más que cientos de capturas.",
             "No todas las grabaciones deben irse. La grabación de un fallo para soporte, un tutorial que hiciste o un momento de un juego pueden merecer la pena, solo que no a tamaño completo. Reducirlas en las Herramientas de DiskMop guarda una copia más pequeña y mueve el original a Eliminados recientemente; nuestra guía para [reducir el tamaño de un vídeo en iPhone](/blog/reduce-video-size-iphone) explica los pros y contras.",
-            "Elijas lo que elijas, termina en Eliminados recientemente. Hasta que lo vacíes, las capturas y grabaciones borradas siguen contando en tu almacenamiento. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta cinco fotos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite y desbloquea la reducción. Borrar 100 capturas también te da el trofeo Cazador de capturas.",
+            "Elijas lo que elijas, termina en Eliminados recientemente. Hasta que lo vacíes, las capturas y grabaciones borradas siguen contando en tu almacenamiento. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta diez fotos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite y desbloquea la reducción. Borrar 100 capturas también te da el trofeo Cazador de capturas.",
           ],
         },
       ],
@@ -627,7 +628,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Empieza por los dos álbumes que Apple ya ofrece: Capturas de pantalla y Grabaciones de pantalla en Tipos de contenido. Borra en bloque las capturas antiguas, repasa más despacio las recientes y mira primero las grabaciones si necesitas espacio rápido. Termina vaciando Eliminados recientemente.",
-        "DiskMop para iPhone añade lo que les falta a los álbumes: capturas ordenadas por su contenido en iOS 26 con Apple Intelligence, grupos de capturas repetidas y grabaciones de pantalla ordenadas por tamaño, todo en el dispositivo y sin nada preseleccionado. El análisis es gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone añade lo que les falta a los álbumes: capturas ordenadas por su contenido en iOS 26 con Apple Intelligence, grupos de capturas repetidas y grabaciones de pantalla ordenadas por tamaño, todo en el dispositivo y sin nada preseleccionado. El análisis es gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -717,7 +718,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop riconosce le registrazioni schermo dal tipo di registrazione che iOS assegna loro, usa come verifica aggiuntiva i nomi di file che iOS dà alle registrazioni e le elenca in una categoria propria con le loro dimensioni. Ordina per Più grandi e di solito troverai alcune registrazioni lunghe che occupano più di centinaia di screenshot.",
             "Non tutte le registrazioni devono sparire. La registrazione di un bug per l'assistenza, un tutorial che hai creato o un momento di un gioco possono valere la pena, solo non a grandezza piena. Ridurle negli Strumenti di DiskMop salva una copia più piccola e sposta l'originale in Eliminati di recente; la nostra guida per [ridurre le dimensioni dei video su iPhone](/blog/reduce-video-size-iphone) spiega i compromessi.",
-            "Qualunque cosa scegli, concludi in Eliminati di recente. Finché non lo svuoti, gli screenshot e le registrazioni eliminati continuano a occupare spazio. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a cinque foto al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite e sblocca la riduzione. Eliminare 100 screenshot fa guadagnare anche il trofeo Cacciatore di screenshot.",
+            "Qualunque cosa scegli, concludi in Eliminati di recente. Finché non lo svuoti, gli screenshot e le registrazioni eliminati continuano a occupare spazio. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a dieci foto al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite e sblocca la riduzione. Eliminare 100 screenshot fa guadagnare anche il trofeo Cacciatore di screenshot.",
           ],
         },
       ],
@@ -753,7 +754,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Comincia dai due album che Apple offre già: Istantanee schermo e Registrazioni schermo in Tipi di media. Elimina in blocco gli screenshot vecchi, scorri più lentamente quelli recenti e guarda prima le registrazioni se ti serve spazio in fretta. Concludi svuotando Eliminati di recente.",
-        "DiskMop per iPhone aggiunge ciò che manca agli album: screenshot ordinati in base al contenuto su iOS 26 con Apple Intelligence, gruppi di catture ripetute e registrazioni schermo elencate per dimensione, tutto sul dispositivo e senza nulla di preselezionato. L'analisi è gratuita, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone aggiunge ciò che manca agli album: screenshot ordinati in base al contenuto su iOS 26 con Apple Intelligence, gruppi di catture ripetute e registrazioni schermo elencate per dimensione, tutto sul dispositivo e senza nulla di preselezionato. L'analisi è gratuita, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -843,7 +844,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "O DiskMop reconhece as gravações de tela pelo tipo de gravação de tela que o iOS registra, usa como verificação extra os nomes de arquivo que o iOS dá às gravações e as lista numa categoria própria com o tamanho de cada uma. Ordene por Maiores e normalmente você encontra algumas gravações longas que ocupam mais que centenas de capturas.",
             "Nem toda gravação precisa sair. A gravação de um erro para o suporte, um tutorial que você fez ou um momento de um jogo podem valer a pena, só não em tamanho cheio. Reduzi-las nas Ferramentas do DiskMop salva uma cópia menor e move o original para Apagados Recentemente; nosso guia para [reduzir o tamanho de vídeos no iPhone](/blog/reduce-video-size-iphone) explica os prós e contras.",
-            "Seja qual for a escolha, termine em Apagados Recentemente. Até você esvaziá-lo, capturas e gravações apagadas continuam ocupando armazenamento. A análise é grátis no DiskMop; sem assinatura, você pode apagar até cinco fotos por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite e libera a redução. Apagar 100 capturas também rende o troféu Caçador de capturas.",
+            "Seja qual for a escolha, termine em Apagados Recentemente. Até você esvaziá-lo, capturas e gravações apagadas continuam ocupando armazenamento. A análise é grátis no DiskMop; sem assinatura, você pode apagar até diez fotos por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite e libera a redução. Apagar 100 capturas também rende o troféu Caçador de capturas.",
           ],
         },
       ],
@@ -878,7 +879,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "Comece pelos dois álbuns que a Apple já oferece: Capturas de Tela e Gravações de Tela em Tipos de Mídia. Apague em lote as capturas antigas, passe mais devagar pelas recentes e olhe primeiro as gravações se precisar de espaço rápido. Termine esvaziando Apagados Recentemente.",
-        "O DiskMop para iPhone acrescenta o que falta aos álbuns: capturas separadas pelo conteúdo no iOS 26 com a Apple Intelligence, grupos de capturas repetidas e gravações de tela listadas por tamanho, tudo no aparelho e sem nada pré-selecionado. A análise é grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone acrescenta o que falta aos álbuns: capturas separadas pelo conteúdo no iOS 26 com a Apple Intelligence, grupos de capturas repetidas e gravações de tela listadas por tamanho, tudo no aparelho e sem nada pré-selecionado. A análise é grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -967,7 +968,7 @@ export const deleteScreenshotsIphone: Article = {
           content: [
             "DiskMop は iOS が記録している画面収録の種類から画面収録を見分け、念のため iOS が収録に付けるファイル名でも確認し、サイズ付きで専用のカテゴリに一覧表示します。「大きい順」に並べ替えると、たいてい数百枚のスクリーンショットより大きい長い収録がいくつか見つかります。",
             "すべての収録を消すべきとは限りません。サポートに送る不具合の記録、自分で作った操作説明、ゲームの名場面などは残す価値があるでしょう。ただ、フルサイズである必要はありません。DiskMop の「ツール」で縮小すると小さなコピーが保存され、元の動画は「最近削除した項目」に移ります。メリットとデメリットは[iPhone で動画のサイズを小さくする方法](/blog/reduce-video-size-iphone)で解説しています。",
-            "どれを選んでも、最後は「最近削除した項目」で締めくくりましょう。空にするまで、削除したスクリーンショットや収録はストレージを使い続けます。DiskMop のスキャンは無料です。サブスクリプションなしでも 1 日 5 枚まで削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなり、縮小機能も使えます。スクリーンショットを 100 枚削除すると、トロフィー「スクショハンター」も手に入ります。",
+            "どれを選んでも、最後は「最近削除した項目」で締めくくりましょう。空にするまで、削除したスクリーンショットや収録はストレージを使い続けます。DiskMop のスキャンは無料です。サブスクリプションなしでも 1 日 10 枚まで削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなり、縮小機能も使えます。スクリーンショットを 100 枚削除すると、トロフィー「スクショハンター」も手に入ります。",
           ],
         },
       ],
@@ -1002,7 +1003,7 @@ export const deleteScreenshotsIphone: Article = {
       ],
       verdict: [
         "まずは Apple が用意している 2 つのアルバム、メディアタイプの「スクリーンショット」と「画面収録」から始めましょう。古いスクリーンショットはまとめて削除し、新しいものはゆっくり確認し、急いで容量が必要なら収録から見ます。最後に「最近削除した項目」を空にします。",
-        "iPhone 版 DiskMop は、アルバムにないものを補います。Apple Intelligence をオンにした iOS 26 での内容によるスクリーンショットの仕分け、繰り返し撮ったキャプチャのグループ、サイズ順の画面収録一覧。すべて端末上で処理され、事前選択はありません。スキャンは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop は、アルバムにないものを補います。Apple Intelligence をオンにした iOS 26 での内容によるスクリーンショットの仕分け、繰り返し撮ったキャプチャのグループ、サイズ順の画面収録一覧。すべて端末上で処理され、事前選択はありません。スキャンは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

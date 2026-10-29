@@ -5,6 +5,7 @@ export const deleteWhatsappPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -145,7 +146,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Önce WhatsApp'ın otomatik kaydetmesini kapatın; yoksa her temizlik birkaç hafta içinde boşa gider. Sonra iki kopyayı ayrı ayrı temizleyin: Fotoğraflar'daki WhatsApp albümünü ve Depolamayı Yönet üzerinden WhatsApp'ın içindeki medyayı. Son Silinenler'le bitirin, yoksa alan hiç geri gelmez.",
-        "iPhone için DiskMop, WhatsApp'tan ve diğer sohbet uygulamalarından kaydedilen fotoğrafları her birinin üzerinde uygulama adıyla tek bir listede toplar, kendi resimlerinizin yeniden sıkıştırılmış kopyalarını bulur ve hiçbir şeyi önceden seçmez. Tarama ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop, WhatsApp'tan ve diğer sohbet uygulamalarından kaydedilen fotoğrafları her birinin üzerinde uygulama adıyla tek bir listede toplar, kendi resimlerinizin yeniden sıkıştırılmış kopyalarını bulur ve hiçbir şeyi önceden seçmez. Tarama ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -284,7 +285,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Turn off WhatsApp's automatic saving first; otherwise every clean-up is undone within weeks. Then clear the two copies separately: the WhatsApp album in Photos, and media inside WhatsApp through Manage Storage. Finish with Recently Deleted, or the space never comes back.",
-        "DiskMop for iPhone collects photos saved from WhatsApp and other chat apps into one list with the app named on each photo, finds recompressed copies of your own pictures and preselects nothing. Scanning is free, up to five photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone collects photos saved from WhatsApp and other chat apps into one list with the app named on each photo, finds recompressed copies of your own pictures and preselects nothing. Scanning is free, up to ten photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -425,7 +426,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Schalten Sie zuerst das automatische Speichern von WhatsApp aus, sonst ist jedes Aufräumen in wenigen Wochen hinfällig. Entfernen Sie dann beide Kopien getrennt: das Album WhatsApp in Fotos und die Medien in WhatsApp über „Speicher verwalten“. Leeren Sie zum Schluss „Zuletzt gelöscht“, sonst kommt der Platz nie zurück.",
-        "DiskMop für iPhone sammelt Fotos aus WhatsApp und anderen Chat-Apps in einer Liste mit dem App-Namen auf jedem Foto, findet neu komprimierte Kopien Ihrer eigenen Bilder und wählt nichts vorab aus. Der Scan ist kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
+        "DiskMop für iPhone sammelt Fotos aus WhatsApp und anderen Chat-Apps in einer Liste mit dem App-Namen auf jedem Foto, findet neu komprimierte Kopien Ihrer eigenen Bilder und wählt nichts vorab aus. Der Scan ist kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -567,7 +568,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Désactivez d'abord l'enregistrement automatique de WhatsApp, sinon chaque nettoyage est défait en quelques semaines. Supprimez ensuite les deux copies séparément : l'album WhatsApp dans Photos, et les médias dans WhatsApp via Gérer le stockage. Terminez par Supprimés récemment, sinon l'espace ne revient jamais.",
-        "DiskMop pour iPhone regroupe les photos enregistrées depuis WhatsApp et d'autres messageries dans une seule liste, avec le nom de l'app sur chaque photo, retrouve les copies recompressées de vos propres images et ne présélectionne rien. L'analyse est gratuite, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone regroupe les photos enregistrées depuis WhatsApp et d'autres messageries dans une seule liste, avec le nom de l'app sur chaque photo, retrouve les copies recompressées de vos propres images et ne présélectionne rien. L'analyse est gratuite, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -707,7 +708,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Desactiva primero el guardado automático de WhatsApp; si no, cada limpieza se deshace en pocas semanas. Después borra las dos copias por separado: el álbum WhatsApp de Fotos y los archivos dentro de WhatsApp desde Administrar almacenamiento. Termina con Eliminados recientemente, o el espacio no volverá nunca.",
-        "DiskMop para iPhone reúne en una sola lista las fotos guardadas de WhatsApp y otras apps de chat, con el nombre de la app en cada foto, encuentra copias recomprimidas de tus propias imágenes y no preselecciona nada. El análisis es gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone reúne en una sola lista las fotos guardadas de WhatsApp y otras apps de chat, con el nombre de la app en cada foto, encuentra copias recomprimidas de tus propias imágenes y no preselecciona nada. El análisis es gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -847,7 +848,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Disattiva prima il salvataggio automatico di WhatsApp, altrimenti ogni pulizia viene vanificata in poche settimane. Poi elimina le due copie separatamente: l'album WhatsApp in Foto e i media dentro WhatsApp con Gestisci spazio. Concludi con Eliminati di recente, altrimenti lo spazio non torna mai.",
-        "DiskMop per iPhone raccoglie in un'unica lista le foto salvate da WhatsApp e da altre app di chat, con il nome dell'app su ogni foto, trova le copie ricompresse delle tue immagini e non preseleziona nulla. L'analisi è gratuita, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone raccoglie in un'unica lista le foto salvate da WhatsApp e da altre app di chat, con il nome dell'app su ogni foto, trova le copie ricompresse delle tue immagini e non preseleziona nulla. L'analisi è gratuita, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -987,7 +988,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "Desligue primeiro o salvamento automático do WhatsApp; senão, cada limpeza se desfaz em poucas semanas. Depois apague as duas cópias separadamente: o álbum WhatsApp no Fotos e a mídia dentro do WhatsApp pelo Gerenciar armazenamento. Termine com Apagados Recentemente, ou o espaço nunca volta.",
-        "O DiskMop para iPhone reúne numa só lista as fotos salvas do WhatsApp e de outros apps de conversa, com o nome do app em cada foto, encontra cópias recomprimidas das suas próprias imagens e não pré-seleciona nada. A análise é grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone reúne numa só lista as fotos salvas do WhatsApp e de outros apps de conversa, com o nome do app em cada foto, encontra cópias recomprimidas das suas próprias imagens e não pré-seleciona nada. A análise é grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1127,7 +1128,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ],
       verdict: [
         "まず WhatsApp の自動保存をオフにしましょう。そうしないと、片付けても数週間で元に戻ってしまいます。そのうえで 2 つのコピーを別々に片付けます。写真アプリの WhatsApp アルバムと、「ストレージを管理」から WhatsApp 内のメディアです。最後に「最近削除した項目」を空にしないと、容量は戻りません。",
-        "iPhone 版 DiskMop は、WhatsApp やほかのチャットアプリから保存された写真を、アプリ名付きでひとつのリストにまとめ、自分の写真の再圧縮コピーを見つけ、何も事前選択しません。スキャンは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop は、WhatsApp やほかのチャットアプリから保存された写真を、アプリ名付きでひとつのリストにまとめ、自分の写真の再圧縮コピーを見つけ、何も事前選択しません。スキャンは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

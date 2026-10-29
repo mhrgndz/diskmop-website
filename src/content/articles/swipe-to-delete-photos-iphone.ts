@@ -5,6 +5,7 @@ export const swipeToDeletePhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -141,12 +142,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Kaydırmak ücretsiz mi?",
           answer:
-            "Kaydırmak ve taramak ücretsizdir. Abonelik olmadan günde beş fotoğrafa kadar, artı seriler ve kupalarla kazanılan ekstra hak kadar silebilirsiniz. 7 günlük ücretsiz denemeyle başlayan aylık abonelik DiskMop Pro sınırı kaldırır.",
+            "Kaydırmak ve taramak ücretsizdir. Abonelik olmadan günde on fotoğrafa kadar, artı seriler ve kupalarla kazanılan ekstra hak kadar silebilirsiniz. 7 günlük ücretsiz denemeyle başlayan aylık abonelik DiskMop Pro sınırı kaldırır.",
         },
       ],
       verdict: [
         "Film rulonuz seçmenin mümkün görünmediği noktayı geçtiyse zorlamak yerine yöntemi değiştirin. Her seferinde tek bir tam boy fotoğraf, anında silme yerine bir sepet ve hatırlanan kararlar, imkânsız görünen bir angaryayı birkaç kısa oturuma dönüştürür.",
-        "iPhone için DiskMop kitaplığınıza bu gözden geçirme modunu ekler: tutmak için sağa, sepete atmak için sola kaydırın, son 50 kararı geri alın ve yalnızca siz onaylayınca silin. Tarama ve kaydırma ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop kitaplığınıza bu gözden geçirme modunu ekler: tutmak için sağa, sepete atmak için sola kaydırın, son 50 kararı geri alın ve yalnızca siz onaylayınca silin. Tarama ve kaydırma ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -280,12 +281,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Is swiping free?",
           answer:
-            "Swiping and scanning are free. Without a subscription you can delete up to five photos a day, plus extra deletions earned with streaks and trophies. DiskMop Pro, a monthly subscription that starts with a 7-day free trial, removes the limit.",
+            "Swiping and scanning are free. Without a subscription you can delete up to ten photos a day, plus extra deletions earned with streaks and trophies. DiskMop Pro, a monthly subscription that starts with a 7-day free trial, removes the limit.",
         },
       ],
       verdict: [
         "If your camera roll has grown past the point where selecting feels possible, change the method rather than forcing it. One full-size photo at a time, a basket instead of instant deletion, and decisions that are remembered turn an impossible chore into a few short sessions.",
-        "DiskMop for iPhone adds that review mode to your library: swipe right to keep, left to put in the basket, undo the last 50 decisions, and delete only when you confirm. Scanning and swiping are free, up to five photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone adds that review mode to your library: swipe right to keep, left to put in the basket, undo the last 50 decisions, and delete only when you confirm. Scanning and swiping are free, up to ten photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -420,12 +421,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Ist das Wischen kostenlos?",
           answer:
-            "Wischen und Scannen sind kostenlos. Ohne Abo können Sie bis zu fünf Fotos pro Tag löschen, dazu zusätzliche Löschungen, die Sie mit Serien und Trophäen verdienen. DiskMop Pro, ein Monatsabo, das mit einer 7-tägigen Gratis-Testphase beginnt, hebt das Limit auf.",
+            "Wischen und Scannen sind kostenlos. Ohne Abo können Sie bis zu zehn Fotos pro Tag löschen, dazu zusätzliche Löschungen, die Sie mit Serien und Trophäen verdienen. DiskMop Pro, ein Monatsabo, das mit einer 7-tägigen Gratis-Testphase beginnt, hebt das Limit auf.",
         },
       ],
       verdict: [
         "Wenn Ihre Mediathek über den Punkt hinausgewachsen ist, an dem Auswählen noch machbar wirkt, ändern Sie die Methode, statt sie zu erzwingen. Ein Foto in voller Größe nach dem anderen, ein Korb statt sofortigem Löschen und Entscheidungen, die gespeichert bleiben, machen aus einer unmöglichen Pflicht ein paar kurze Sitzungen.",
-        "DiskMop für iPhone ergänzt Ihre Mediathek um diesen Prüfmodus: rechts wischen zum Behalten, links in den Korb, die letzten 50 Entscheidungen rückgängig machen und erst löschen, wenn Sie bestätigen. Scannen und Wischen sind kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
+        "DiskMop für iPhone ergänzt Ihre Mediathek um diesen Prüfmodus: rechts wischen zum Behalten, links in den Korb, die letzten 50 Entscheidungen rückgängig machen und erst löschen, wenn Sie bestätigen. Scannen und Wischen sind kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -564,12 +565,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Le tri par balayage est-il gratuit ?",
           answer:
-            "Le balayage et l'analyse sont gratuits. Sans abonnement, vous pouvez supprimer jusqu'à cinq photos par jour, plus les suppressions supplémentaires gagnées grâce aux séries et aux trophées. DiskMop Pro, un abonnement mensuel qui commence par un essai gratuit de 7 jours, supprime la limite.",
+            "Le balayage et l'analyse sont gratuits. Sans abonnement, vous pouvez supprimer jusqu'à dix photos par jour, plus les suppressions supplémentaires gagnées grâce aux séries et aux trophées. DiskMop Pro, un abonnement mensuel qui commence par un essai gratuit de 7 jours, supprime la limite.",
         },
       ],
       verdict: [
         "Si votre pellicule a dépassé le point où sélectionner semble possible, changez de méthode plutôt que de vous forcer. Une photo en grand à la fois, une corbeille plutôt qu'une suppression immédiate et des décisions mémorisées transforment une corvée impossible en quelques courtes séances.",
-        "DiskMop pour iPhone ajoute ce mode de tri à votre photothèque : balayez à droite pour garder, à gauche pour mettre à la corbeille, annulez les 50 dernières décisions et ne supprimez qu'après confirmation. L'analyse et le balayage sont gratuits, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone ajoute ce mode de tri à votre photothèque : balayez à droite pour garder, à gauche pour mettre à la corbeille, annulez les 50 dernières décisions et ne supprimez qu'après confirmation. L'analyse et le balayage sont gratuits, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -708,12 +709,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "¿Deslizar es gratis?",
           answer:
-            "Deslizar y analizar son gratis. Sin suscripción puedes borrar hasta cinco fotos al día, más los borrados extra que ganas con rachas y trofeos. DiskMop Pro, una suscripción mensual que empieza con una prueba gratuita de 7 días, elimina el límite.",
+            "Deslizar y analizar son gratis. Sin suscripción puedes borrar hasta diez fotos al día, más los borrados extra que ganas con rachas y trofeos. DiskMop Pro, una suscripción mensual que empieza con una prueba gratuita de 7 días, elimina el límite.",
         },
       ],
       verdict: [
         "Si tu carrete ha pasado del punto en que seleccionar parece posible, cambia de método en lugar de forzarlo. Una foto a tamaño completo cada vez, una papelera en vez de un borrado inmediato y decisiones que se recuerdan convierten una tarea imposible en unas cuantas sesiones cortas.",
-        "DiskMop para iPhone añade ese modo de revisión a tu fototeca: desliza a la derecha para conservar, a la izquierda para dejar en la papelera, deshaz las últimas 50 decisiones y borra solo cuando confirmes. El análisis y el deslizamiento son gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone añade ese modo de revisión a tu fototeca: desliza a la derecha para conservar, a la izquierda para dejar en la papelera, deshaz las últimas 50 decisiones y borra solo cuando confirmes. El análisis y el deslizamiento son gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -852,12 +853,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Scorrere è gratis?",
           answer:
-            "Scorrere e analizzare sono gratis. Senza abbonamento puoi eliminare fino a cinque foto al giorno, più le eliminazioni extra guadagnate con serie e trofei. DiskMop Pro, un abbonamento mensile che inizia con una prova gratuita di 7 giorni, rimuove il limite.",
+            "Scorrere e analizzare sono gratis. Senza abbonamento puoi eliminare fino a dieci foto al giorno, più le eliminazioni extra guadagnate con serie e trofei. DiskMop Pro, un abbonamento mensile che inizia con una prova gratuita di 7 giorni, rimuove il limite.",
         },
       ],
       verdict: [
         "Se il tuo rullino ha superato il punto in cui selezionare sembra possibile, cambia metodo invece di forzarlo. Una foto a grandezza piena alla volta, un cestino invece dell'eliminazione immediata e decisioni che vengono ricordate trasformano un compito impossibile in poche sessioni brevi.",
-        "DiskMop per iPhone aggiunge questa modalità di revisione alla tua libreria: scorri a destra per tenere, a sinistra per mettere nel cestino, annulla le ultime 50 decisioni ed elimina solo quando confermi. Analisi e scorrimento sono gratuiti, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone aggiunge questa modalità di revisione alla tua libreria: scorri a destra per tenere, a sinistra per mettere nel cestino, annulla le ultime 50 decisioni ed elimina solo quando confermi. Analisi e scorrimento sono gratuiti, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -995,12 +996,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "Deslizar é grátis?",
           answer:
-            "Deslizar e analisar são grátis. Sem assinatura, você pode apagar até cinco fotos por dia, mais as exclusões extras ganhas com sequências e troféus. O DiskMop Pro, uma assinatura mensal que começa com um teste gratuito de 7 dias, remove o limite.",
+            "Deslizar e analisar são grátis. Sem assinatura, você pode apagar até diez fotos por dia, mais as exclusões extras ganhas com sequências e troféus. O DiskMop Pro, uma assinatura mensal que começa com um teste gratuito de 7 dias, remove o limite.",
         },
       ],
       verdict: [
         "Se o seu rolo de câmera passou do ponto em que selecionar parece possível, mude o método em vez de forçá-lo. Uma foto em tamanho cheio de cada vez, um cesto em vez de exclusão imediata e decisões que ficam lembradas transformam uma tarefa impossível em algumas sessões curtas.",
-        "O DiskMop para iPhone acrescenta esse modo de revisão à sua fototeca: deslize para a direita para manter, para a esquerda para pôr no cesto, desfaça as últimas 50 decisões e apague só quando confirmar. A análise e o deslizar são grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone acrescenta esse modo de revisão à sua fototeca: deslize para a direita para manter, para a esquerda para pôr no cesto, desfaça as últimas 50 decisões e apague só quando confirmar. A análise e o deslizar são grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1129,12 +1130,12 @@ export const swipeToDeletePhotosIphone: Article = {
         {
           question: "スワイプ整理は無料ですか？",
           answer:
-            "スワイプとスキャンは無料です。サブスクリプションなしでも 1 日 5 枚まで、さらに連続記録やトロフィーで得た追加分を削除できます。7 日間の無料トライアルから始まる月額サブスクリプション DiskMop Pro なら制限がなくなります。",
+            "スワイプとスキャンは無料です。サブスクリプションなしでも 1 日 10 枚まで、さらに連続記録やトロフィーで得た追加分を削除できます。7 日間の無料トライアルから始まる月額サブスクリプション DiskMop Pro なら制限がなくなります。",
         },
       ],
       verdict: [
         "カメラロールが「選択なんて無理」と感じるほど膨らんでいるなら、無理に続けるより方法を変えましょう。フルサイズで 1 枚ずつ、即削除ではなくかごへ、そして判断を覚えておくこと。この 3 つで、不可能に思えた作業が数回の短いセッションに変わります。",
-        "iPhone 版 DiskMop は、その整理モードをあなたのライブラリに加えます。右で残す、左でかごへ、直近 50 回の判断は取り消し可能、削除はあなたが承認したときだけ。スキャンとスワイプは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop は、その整理モードをあなたのライブラリに加えます。右で残す、左でかごへ、直近 50 回の判断は取り消し可能、削除はあなたが承認したときだけ。スキャンとスワイプは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

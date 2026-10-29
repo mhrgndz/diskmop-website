@@ -5,6 +5,7 @@ export const deleteBlurryPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 7,
   content: {
     tr: {
@@ -108,7 +109,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "Bulanıklığın çoğu dört sebepten gelir: sarsıntı, kaçan odak, hareket eden konular ve kirli bir lens. Lensi hızla silmek bulanıklığa benzeyen pusu giderir. Çekmeden önce konuya dokunmak kameraya neye odaklanacağını söyler; basılı tutmak ise kadrajı ayarlarken odağın ve pozlamanın kaymaması için ikisini kilitler.",
             "Az ışıkta iPhone Gece moduna geçer ve deklanşörü bir saniye ya da daha uzun süre açık tutar; çekim bitene kadar kıpırdamamak her şeyden önemlidir. Çocuklar, evcil hayvanlar ve spor için deklanşörü Seri Çekim'de basılı tutun ya da kısa bir video çekip sonra en iyi kareyi seçin, ardından gerisini silin.",
-            "Temizlik yaptığınızda Son Silinenler'de bitirin: siz onu boşaltana kadar silinen fotoğraflar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde beş fotoğrafa kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır. Bulanık kareler sorunun yalnızca bir parçasıysa [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) kitaplığın geri kalanını kapsar.",
+            "Temizlik yaptığınızda Son Silinenler'de bitirin: siz onu boşaltana kadar silinen fotoğraflar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde on fotoğrafa kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır. Bulanık kareler sorunun yalnızca bir parçasıysa [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) kitaplığın geri kalanını kapsar.",
           ],
         },
       ],
@@ -143,7 +144,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Bulanık fotoğrafları yalnızca Fotoğraflar uygulamasıyla bulmak zordur, çünkü netliği değerlendirmenin bir yolu yoktur. Netlik taraması, düz sahneleri yok saydığı ve son kararı size bıraktığı sürece saatlerce gezinmeyi kısa bir listeye dönüştürür.",
-        "iPhone için DiskMop netliği aygıtta ölçer, düz fotoğrafları ve belgeleri atlar, sonucu Apple'ın kalite puanıyla birleştirir ve fotoğrafları hiçbirini önceden seçmeden Bulanık fotoğraflar altında listeler. Tarama ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop netliği aygıtta ölçer, düz fotoğrafları ve belgeleri atlar, sonucu Apple'ın kalite puanıyla birleştirir ve fotoğrafları hiçbirini önceden seçmeden Bulanık fotoğraflar altında listeler. Tarama ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -248,7 +249,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "Most blur comes from four causes: shake, missed focus, moving subjects and a dirty lens. A quick wipe of the lens fixes haze that looks like blur. Tapping the subject before you shoot tells the camera what to focus on, and touching and holding locks focus and exposure so they do not jump while you frame.",
             "In low light, the iPhone switches to Night mode and keeps the shutter open for a second or more; holding still until the capture finishes matters more than anything else. For children, pets and sports, hold the shutter in Burst mode or shoot a short video and pick the best frame later, then delete the rest.",
-            "When you do clean up, finish in Recently Deleted: until you empty it, deleted photos still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to five photos a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit. If the blurry shots are only part of the problem, [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone) covers the rest of the library.",
+            "When you do clean up, finish in Recently Deleted: until you empty it, deleted photos still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to ten photos a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit. If the blurry shots are only part of the problem, [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone) covers the rest of the library.",
           ],
         },
       ],
@@ -281,7 +282,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Blurry photos are hard to find with the Photos app alone because it has no way to judge sharpness. A sharpness scan turns hours of scrolling into a short list, as long as it ignores plain scenes and leaves the final decision to you.",
-        "DiskMop for iPhone measures sharpness on the device, skips flat photos and documents, combines the result with Apple's quality score and lists the photos under Blurry & badly shot with nothing preselected. Scanning is free, up to five photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone measures sharpness on the device, skips flat photos and documents, combines the result with Apple's quality score and lists the photos under Blurry & badly shot with nothing preselected. Scanning is free, up to ten photos a day can be deleted for free, and DiskMop Pro, with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -386,7 +387,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "Die meisten Unschärfen haben vier Ursachen: Verwacklung, verfehlter Fokus, bewegte Motive und eine schmutzige Linse. Ein kurzes Abwischen der Linse beseitigt Dunst, der wie Unschärfe aussieht. Ein Tipp auf das Motiv vor dem Auslösen sagt der Kamera, worauf sie scharfstellen soll, und Gedrückthalten sperrt Fokus und Belichtung, damit sie beim Ausrichten nicht springen.",
             "Bei wenig Licht wechselt das iPhone in den Nachtmodus und belichtet eine Sekunde oder länger; stillzuhalten, bis die Aufnahme fertig ist, zählt mehr als alles andere. Für Kinder, Haustiere und Sport halten Sie den Auslöser im Serienbildmodus gedrückt oder drehen ein kurzes Video und wählen später das beste Bild, dann löschen Sie den Rest.",
-            "Wenn Sie aufräumen, enden Sie in „Zuletzt gelöscht“: Bis Sie es leeren, zählen gelöschte Fotos weiter zu Ihrem Speicher. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu fünf Fotos pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf. Sind die unscharfen Aufnahmen nur ein Teil des Problems, hilft [iPhone-Fotos per Wischen aufräumen](/blog/swipe-to-delete-photos-iphone) beim Rest der Mediathek.",
+            "Wenn Sie aufräumen, enden Sie in „Zuletzt gelöscht“: Bis Sie es leeren, zählen gelöschte Fotos weiter zu Ihrem Speicher. Der Scan ist in DiskMop kostenlos; ohne Abo können Sie bis zu zehn Fotos pro Tag löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf. Sind die unscharfen Aufnahmen nur ein Teil des Problems, hilft [iPhone-Fotos per Wischen aufräumen](/blog/swipe-to-delete-photos-iphone) beim Rest der Mediathek.",
           ],
         },
       ],
@@ -419,7 +420,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Unscharfe Fotos sind mit der Fotos-App allein schwer zu finden, weil sie Schärfe nicht beurteilen kann. Ein Schärfe-Scan macht aus stundenlangem Scrollen eine kurze Liste, solange er schlichte Motive ignoriert und Ihnen die letzte Entscheidung überlässt.",
-        "DiskMop für iPhone misst die Schärfe auf dem Gerät, überspringt flächige Fotos und Dokumente, kombiniert das Ergebnis mit Apples Qualitätswert und listet die Fotos unter „Unscharf & schlecht aufgenommen“ auf, ohne etwas vorauszuwählen. Der Scan ist kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
+        "DiskMop für iPhone misst die Schärfe auf dem Gerät, überspringt flächige Fotos und Dokumente, kombiniert das Ergebnis mit Apples Qualitätswert und listet die Fotos unter „Unscharf & schlecht aufgenommen“ auf, ohne etwas vorauszuwählen. Der Scan ist kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro mit 7-tägiger Gratis-Testphase hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -524,7 +525,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "La plupart des flous viennent de quatre causes : le bougé, une mise au point ratée, un sujet en mouvement et un objectif sale. Un rapide coup de chiffon sur l'objectif supprime le voile qui ressemble à du flou. Toucher le sujet avant de déclencher indique à l'appareil où faire la mise au point, et maintenir le doigt verrouille la mise au point et l'exposition pour qu'elles ne sautent pas pendant le cadrage.",
             "En faible lumière, l'iPhone passe en mode Nuit et garde l'obturateur ouvert une seconde ou plus ; rester immobile jusqu'à la fin de la prise compte plus que tout. Pour les enfants, les animaux et le sport, maintenez le déclencheur en mode Rafale ou filmez une courte vidéo et choisissez plus tard la meilleure image, puis supprimez le reste.",
-            "Quand vous faites le ménage, terminez par Supprimés récemment : tant que vous ne le videz pas, les photos supprimées comptent toujours dans votre stockage. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à cinq photos par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite. Si les photos floues ne sont qu'une partie du problème, [trier ses photos iPhone en balayant](/blog/swipe-to-delete-photos-iphone) couvre le reste de la photothèque.",
+            "Quand vous faites le ménage, terminez par Supprimés récemment : tant que vous ne le videz pas, les photos supprimées comptent toujours dans votre stockage. L'analyse est gratuite dans DiskMop ; sans abonnement, vous pouvez supprimer jusqu'à dix photos par jour, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite. Si les photos floues ne sont qu'une partie du problème, [trier ses photos iPhone en balayant](/blog/swipe-to-delete-photos-iphone) couvre le reste de la photothèque.",
           ],
         },
       ],
@@ -558,7 +559,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Les photos floues sont difficiles à trouver avec la seule app Photos, car elle n'a aucun moyen de juger la netteté. Une analyse de netteté transforme des heures de défilement en une courte liste, à condition d'ignorer les scènes unies et de vous laisser la décision finale.",
-        "DiskMop pour iPhone mesure la netteté sur l'appareil, ignore les photos unies et les documents, combine le résultat avec le score de qualité d'Apple et liste les photos sous Floues et ratées sans rien présélectionner. L'analyse est gratuite, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone mesure la netteté sur l'appareil, ignore les photos unies et les documents, combine le résultat avec le score de qualité d'Apple et liste les photos sous Floues et ratées sans rien présélectionner. L'analyse est gratuite, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, avec un essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -663,7 +664,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "La mayoría de las fotos borrosas tienen cuatro causas: movimiento, enfoque fallido, sujetos en movimiento y una lente sucia. Limpiar la lente rápidamente quita el velo que parece desenfoque. Tocar el sujeto antes de disparar le dice a la cámara dónde enfocar, y mantener pulsado bloquea el enfoque y la exposición para que no salten mientras encuadras.",
             "Con poca luz, el iPhone pasa al modo Noche y mantiene el obturador abierto un segundo o más; quedarse quieto hasta que termina la captura importa más que nada. Para niños, mascotas y deporte, mantén el disparador en modo Ráfaga o graba un vídeo corto y elige después la mejor imagen; luego borra el resto.",
-            "Cuando limpies, termina en Eliminados recientemente: hasta que lo vacíes, las fotos borradas siguen contando en tu almacenamiento. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta cinco fotos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite. Si las fotos borrosas son solo una parte del problema, [limpiar las fotos del iPhone deslizando](/blog/swipe-to-delete-photos-iphone) cubre el resto de la fototeca.",
+            "Cuando limpies, termina en Eliminados recientemente: hasta que lo vacíes, las fotos borradas siguen contando en tu almacenamiento. El análisis es gratis en DiskMop; sin suscripción puedes borrar hasta diez fotos al día, y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite. Si las fotos borrosas son solo una parte del problema, [limpiar las fotos del iPhone deslizando](/blog/swipe-to-delete-photos-iphone) cubre el resto de la fototeca.",
           ],
         },
       ],
@@ -696,7 +697,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Las fotos borrosas son difíciles de encontrar solo con la app Fotos, porque no tiene forma de juzgar la nitidez. Un análisis de nitidez convierte horas de recorrer la fototeca en una lista corta, siempre que ignore las escenas lisas y te deje la decisión final.",
-        "DiskMop para iPhone mide la nitidez en el dispositivo, se salta las fotos lisas y los documentos, combina el resultado con la puntuación de calidad de Apple y muestra las fotos en Borrosas y mal tomadas sin preseleccionar nada. El análisis es gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone mide la nitidez en el dispositivo, se salta las fotos lisas y los documentos, combina el resultado con la puntuación de calidad de Apple y muestra las fotos en Borrosas y mal tomadas sin preseleccionar nada. El análisis es gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -801,7 +802,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "La maggior parte delle foto sfocate ha quattro cause: mosso, messa a fuoco sbagliata, soggetti in movimento e un obiettivo sporco. Una rapida pulizia dell'obiettivo elimina il velo che sembra sfocatura. Toccare il soggetto prima di scattare dice alla fotocamera dove mettere a fuoco, e tenere premuto blocca messa a fuoco ed esposizione perché non saltino mentre inquadri.",
             "Con poca luce l'iPhone passa alla modalità Notte e tiene aperto l'otturatore per un secondo o più; restare fermi fino alla fine dello scatto conta più di tutto. Per bambini, animali e sport, tieni premuto il pulsante di scatto in modalità Raffica o gira un breve video e scegli poi il fotogramma migliore, quindi elimina il resto.",
-            "Quando fai pulizia, concludi in Eliminati di recente: finché non lo svuoti, le foto eliminate continuano a occupare spazio. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a cinque foto al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite. Se le foto sfocate sono solo una parte del problema, [pulire le foto dell'iPhone scorrendo](/blog/swipe-to-delete-photos-iphone) copre il resto della libreria.",
+            "Quando fai pulizia, concludi in Eliminati di recente: finché non lo svuoti, le foto eliminate continuano a occupare spazio. L'analisi è gratuita in DiskMop; senza abbonamento puoi eliminare fino a dieci foto al giorno, e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite. Se le foto sfocate sono solo una parte del problema, [pulire le foto dell'iPhone scorrendo](/blog/swipe-to-delete-photos-iphone) copre il resto della libreria.",
           ],
         },
       ],
@@ -834,7 +835,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Le foto sfocate sono difficili da trovare con la sola app Foto, perché non ha modo di giudicare la nitidezza. Un'analisi della nitidezza trasforma ore di scorrimento in un breve elenco, purché ignori le scene uniformi e lasci a te la decisione finale.",
-        "DiskMop per iPhone misura la nitidezza sul dispositivo, salta le foto uniformi e i documenti, combina il risultato con il punteggio di qualità di Apple ed elenca le foto in Sfocate e venute male senza preselezionare nulla. L'analisi è gratuita, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone misura la nitidezza sul dispositivo, salta le foto uniformi e i documenti, combina il risultato con il punteggio di qualità di Apple ed elenca le foto in Sfocate e venute male senza preselezionare nulla. L'analisi è gratuita, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -939,7 +940,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "A maioria das fotos borradas tem quatro causas: tremor, foco errado, assuntos em movimento e lente suja. Uma limpeza rápida da lente tira a névoa que parece desfoque. Tocar no assunto antes de fotografar diz à câmera onde focar, e tocar e segurar trava o foco e a exposição para que não pulem enquanto você enquadra.",
             "Com pouca luz, o iPhone entra no modo Noite e deixa o obturador aberto por um segundo ou mais; ficar parado até a captura terminar importa mais que tudo. Para crianças, animais e esportes, segure o botão no modo Sequência ou grave um vídeo curto e escolha depois o melhor quadro; então apague o resto.",
-            "Quando fizer a limpeza, termine em Apagados Recentemente: até você esvaziá-lo, as fotos apagadas continuam ocupando armazenamento. A análise é grátis no DiskMop; sem assinatura, você pode apagar até cinco fotos por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite. Se as fotos borradas são só parte do problema, [limpar as fotos do iPhone deslizando](/blog/swipe-to-delete-photos-iphone) cobre o resto da fototeca.",
+            "Quando fizer a limpeza, termine em Apagados Recentemente: até você esvaziá-lo, as fotos apagadas continuam ocupando armazenamento. A análise é grátis no DiskMop; sem assinatura, você pode apagar até diez fotos por dia, e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite. Se as fotos borradas são só parte do problema, [limpar as fotos do iPhone deslizando](/blog/swipe-to-delete-photos-iphone) cobre o resto da fototeca.",
           ],
         },
       ],
@@ -972,7 +973,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "Fotos borradas são difíceis de encontrar só com o app Fotos, porque ele não tem como julgar a nitidez. Uma análise de nitidez transforma horas de rolagem numa lista curta, desde que ignore cenas lisas e deixe a decisão final com você.",
-        "O DiskMop para iPhone mede a nitidez no aparelho, pula fotos lisas e documentos, combina o resultado com a nota de qualidade da Apple e lista as fotos em Desfocadas e mal tiradas sem pré-selecionar nada. A análise é grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone mede a nitidez no aparelho, pula fotos lisas e documentos, combina o resultado com a nota de qualidade da Apple e lista as fotos em Desfocadas e mal tiradas sem pré-selecionar nada. A análise é grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1077,7 +1078,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "ぼけの原因の多くは、手ぶれ、ピントのずれ、被写体ぶれ、レンズの汚れの 4 つです。レンズをさっと拭くだけで、ぼけのように見えるかすみが消えます。撮る前に被写体をタップすればカメラにピントの位置を伝えられ、長押しすればピントと露出が固定されて、構図を決める間に変わることがありません。",
             "暗い場所では iPhone がナイトモードに切り替わり、1 秒以上シャッターを開けたままにします。撮影が終わるまで動かないことが何より大切です。子どもやペット、スポーツは、バーストモードでシャッターを押し続けるか短い動画を撮り、あとでいちばん良いコマを選んで残りを削除しましょう。",
-            "整理したら、最後は「最近削除した項目」で締めくくります。空にするまで、削除した写真はストレージを使い続けます。DiskMop のスキャンは無料です。サブスクリプションなしでも 1 日 5 枚まで削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。ぼやけた写真が問題の一部にすぎないなら、[スワイプで iPhone の写真を整理する方法](/blog/swipe-to-delete-photos-iphone)で残りのライブラリも見直せます。",
+            "整理したら、最後は「最近削除した項目」で締めくくります。空にするまで、削除した写真はストレージを使い続けます。DiskMop のスキャンは無料です。サブスクリプションなしでも 1 日 10 枚まで削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。ぼやけた写真が問題の一部にすぎないなら、[スワイプで iPhone の写真を整理する方法](/blog/swipe-to-delete-photos-iphone)で残りのライブラリも見直せます。",
           ],
         },
       ],
@@ -1111,7 +1112,7 @@ export const deleteBlurryPhotosIphone: Article = {
       ],
       verdict: [
         "写真アプリだけでぼやけた写真を探すのは難しいものです。シャープネスを判断する手段がないからです。シャープネス分析は、単調な場面を誤って拾わず、最終判断をあなたに任せる限り、何時間ものスクロールを短い一覧に変えてくれます。",
-        "iPhone 版 DiskMop は端末上でシャープネスを測り、平坦な写真や書類を除外し、結果を Apple の品質スコアと組み合わせて、事前選択なしで「ぶれ・失敗写真」に一覧表示します。スキャンは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop は端末上でシャープネスを測り、平坦な写真や書類を除外し、結果を Apple の品質スコアと組み合わせて、事前選択なしで「ぶれ・失敗写真」に一覧表示します。スキャンは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付きの DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },

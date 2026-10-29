@@ -5,6 +5,7 @@ export const bestIphoneCleanerApps: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-10-30",
   readingTime: 8,
   content: {
     tr: {
@@ -124,7 +125,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "iPhone için DiskMop bu kontrollerin etrafında kuruldu. App Store gizlilik etiketinde Veri Toplanmaz yazar; analiz Apple'ın çerçeveleriyle aygıtta çalışır, sunucu ve hesap yoktur. Silinmek üzere hiçbir şey önceden seçilmez: benzer fotoğraflar ve videolar önerilen bir kareyle gruplanır ve neyin gideceğini siz seçersiniz. Sepeti ve geri alması olan bir kaydırma modu da vardır; [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) rehberinde anlatılıyor.",
             "Benzer fotoğraf ve videoların ötesinde bulanık kareleri, Apple Intelligence açık iOS 26'da içeriğe göre ayrılmış ekran görüntülerini, ekran kayıtlarını, sohbet uygulamalarından kaydedilen fotoğrafları, büyük videoları ve Live Photo'ları listeler; otomatik yedekli kişi birleştirme ve Face ID'li bir kasa içerir. Fotoğraf ve video küçültme ile Live Photo'ların yalnızca fotoğrafını tutma da aynı uygulamadadır.",
-            "Tarama ücretsizdir ve ödemeden günde beş fotoğrafa kadar, artı seriler ve kupalarla kazanılan ekstra hak kadar silebilirsiniz. DiskMop Pro, 7 günlük ücretsiz denemeyle başlayan ve sınırı kaldıran aylık bir aboneliktir. Asıl sorununuz kopyalarsa [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) rehberimiz karşılaştırmanın nasıl çalıştığını anlatıyor.",
+            "Tarama ücretsizdir ve ödemeden günde on fotoğrafa kadar, artı seriler ve kupalarla kazanılan ekstra hak kadar silebilirsiniz. DiskMop Pro, 7 günlük ücretsiz denemeyle başlayan ve sınırı kaldıran aylık bir aboneliktir. Asıl sorununuz kopyalarsa [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) rehberimiz karşılaştırmanın nasıl çalıştığını anlatıyor.",
           ],
         },
       ],
@@ -159,7 +160,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "En iyi iPhone temizleyicisi, elle bulamadığınızı bulan, sizin onayınız olmadan asla silmeyen ve anladığınız bir şekilde ücret alan temizleyicidir. Apple'ın ücretsiz araçlarıyla başlayın, gizlilik etiketini ve faturalama dönemini okuyun ve deneme süresinde silmenin nasıl çalıştığını deneyin.",
-        "iPhone için DiskMop kitaplığınızı aygıtta analiz eder, veri toplamaz, hiçbir şeyi önceden seçmez ve benzer fotoğraf ve videoları, bulanık kareleri, ekran görüntülerini, sohbet medyasını, kişileri ve bir kasayı tek uygulamada toplar. Tarama ücretsizdir, günde beş fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
+        "iPhone için DiskMop kitaplığınızı aygıtta analiz eder, veri toplamaz, hiçbir şeyi önceden seçmez ve benzer fotoğraf ve videoları, bulanık kareleri, ekran görüntülerini, sohbet medyasını, kişileri ve bir kasayı tek uygulamada toplar. Tarama ücretsizdir, günde on fotoğrafa kadar ücretsiz silinebilir ve 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro sınırı kaldırır.",
       ],
       ctaText: "DiskMop'u App Store'dan indirin",
     },
@@ -280,7 +281,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "DiskMop for iPhone is built around those checks. Its App Store privacy label states Data Not Collected; the analysis runs on the device with Apple's frameworks, with no server and no account. Nothing is preselected for deletion: similar photos and videos are grouped with a suggested keeper, and you choose what goes. There is a swipe mode with a basket and undo, explained in [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone).",
             "Beyond similar photos and videos, it lists blurry shots, screenshots sorted by content on iOS 26 with Apple Intelligence, screen recordings, photos saved from chat apps, large videos and Live Photos, and it includes contact merging with an automatic backup and a Face ID vault. Shrinking photos and videos and keeping only the still of Live Photos are part of the same app.",
-            "Scanning is free and you can delete up to five photos a day without paying, plus extra deletions earned with streaks and trophies. DiskMop Pro is a monthly subscription that starts with a 7-day free trial and removes the limit. If duplicates are your main problem, our guide on [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone) explains how the comparison works.",
+            "Scanning is free and you can delete up to ten photos a day without paying, plus extra deletions earned with streaks and trophies. DiskMop Pro is a monthly subscription that starts with a 7-day free trial and removes the limit. If duplicates are your main problem, our guide on [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone) explains how the comparison works.",
           ],
         },
       ],
@@ -313,7 +314,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "The best iPhone cleaner is the one that finds what you cannot find by hand, never deletes without your say and charges you in a way you understand. Start with Apple's free tools, read the privacy label and the billing period, and test how deletion works during the trial.",
-        "DiskMop for iPhone analyses your library on the device, collects no data, preselects nothing and covers similar photos and videos, blurry shots, screenshots, chat media, contacts and a vault in one app. Scanning is free, up to five photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
+        "DiskMop for iPhone analyses your library on the device, collects no data, preselects nothing and covers similar photos and videos, blurry shots, screenshots, chat media, contacts and a vault in one app. Scanning is free, up to ten photos a day can be deleted for free, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit.",
       ],
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
@@ -434,7 +435,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "DiskMop für iPhone ist um diese Prüfungen herum gebaut. Sein Datenschutzetikett im App Store lautet „Keine Daten erfasst“; die Analyse läuft mit Apples Frameworks auf dem Gerät, ohne Server und ohne Konto. Nichts wird zum Löschen vorausgewählt: Ähnliche Fotos und Videos werden mit einem Vorschlag zum Behalten gruppiert, und Sie entscheiden, was geht. Es gibt einen Wisch-Modus mit Korb und Rückgängig, beschrieben in [iPhone-Fotos per Wischen aufräumen](/blog/swipe-to-delete-photos-iphone).",
             "Neben ähnlichen Fotos und Videos listet es unscharfe Aufnahmen, Screenshots nach Inhalt sortiert unter iOS 26 mit Apple Intelligence, Bildschirmaufnahmen, aus Chat-Apps gespeicherte Fotos, große Videos und Live Photos auf und enthält das Zusammenführen von Kontakten mit automatischer Sicherung sowie einen Tresor mit Face ID. Das Verkleinern von Fotos und Videos und das Behalten nur des Standbilds von Live Photos gehören zur selben App.",
-            "Der Scan ist kostenlos, und Sie können ohne Bezahlung bis zu fünf Fotos pro Tag löschen, dazu zusätzliche Löschungen, die Sie mit Serien und Trophäen verdienen. DiskMop Pro ist ein Monatsabo, das mit einer 7-tägigen Gratis-Testphase beginnt und das Limit aufhebt. Sind Duplikate Ihr Hauptproblem, erklärt unser Ratgeber zum [Finden doppelter und ähnlicher Fotos auf dem iPhone](/blog/find-duplicate-similar-photos-iphone), wie der Vergleich funktioniert.",
+            "Der Scan ist kostenlos, und Sie können ohne Bezahlung bis zu zehn Fotos pro Tag löschen, dazu zusätzliche Löschungen, die Sie mit Serien und Trophäen verdienen. DiskMop Pro ist ein Monatsabo, das mit einer 7-tägigen Gratis-Testphase beginnt und das Limit aufhebt. Sind Duplikate Ihr Hauptproblem, erklärt unser Ratgeber zum [Finden doppelter und ähnlicher Fotos auf dem iPhone](/blog/find-duplicate-similar-photos-iphone), wie der Vergleich funktioniert.",
           ],
         },
       ],
@@ -468,7 +469,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "Der beste iPhone-Cleaner findet, was Sie von Hand nicht finden, löscht nie ohne Ihr Einverständnis und rechnet so ab, dass Sie es verstehen. Beginnen Sie mit Apples kostenlosen Werkzeugen, lesen Sie Datenschutzetikett und Abrechnungszeitraum und testen Sie in der Testphase, wie das Löschen funktioniert.",
-        "DiskMop für iPhone analysiert Ihre Mediathek auf dem Gerät, erfasst keine Daten, wählt nichts vorab aus und deckt ähnliche Fotos und Videos, unscharfe Aufnahmen, Screenshots, Chat-Medien, Kontakte und einen Tresor in einer App ab. Der Scan ist kostenlos, bis zu fünf Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
+        "DiskMop für iPhone analysiert Ihre Mediathek auf dem Gerät, erfasst keine Daten, wählt nichts vorab aus und deckt ähnliche Fotos und Videos, unscharfe Aufnahmen, Screenshots, Chat-Medien, Kontakte und einen Tresor in einer App ab. Der Scan ist kostenlos, bis zu zehn Fotos pro Tag lassen sich gratis löschen, und DiskMop Pro, ein Monatsabo mit 7-tägiger Gratis-Testphase, hebt das Limit auf.",
       ],
       ctaText: "DiskMop für iPhone im App Store laden",
     },
@@ -589,7 +590,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "DiskMop pour iPhone est construit autour de ces vérifications. Son étiquette de confidentialité sur l'App Store indique Données non collectées ; l'analyse se fait sur l'appareil avec les frameworks d'Apple, sans serveur ni compte. Rien n'est présélectionné pour la suppression : les photos et vidéos similaires sont regroupées avec une suggestion à garder, et vous choisissez ce qui part. Un mode balayage avec corbeille et annulation est décrit dans [trier ses photos iPhone en balayant](/blog/swipe-to-delete-photos-iphone).",
             "Au-delà des photos et vidéos similaires, il liste les photos floues, les captures triées par contenu sous iOS 26 avec Apple Intelligence, les enregistrements d'écran, les photos enregistrées depuis les messageries, les vidéos volumineuses et les Live Photos, et il comprend la fusion des contacts avec sauvegarde automatique et un coffre protégé par Face ID. La réduction des photos et vidéos et la conservation de la seule image fixe des Live Photos font partie de la même app.",
-            "L'analyse est gratuite et vous pouvez supprimer jusqu'à cinq photos par jour sans payer, plus les suppressions supplémentaires gagnées avec les séries et les trophées. DiskMop Pro est un abonnement mensuel qui commence par un essai gratuit de 7 jours et supprime la limite. Si les doublons sont votre principal problème, notre guide pour [trouver les photos en double et similaires sur iPhone](/blog/find-duplicate-similar-photos-iphone) explique le fonctionnement de la comparaison.",
+            "L'analyse est gratuite et vous pouvez supprimer jusqu'à dix photos par jour sans payer, plus les suppressions supplémentaires gagnées avec les séries et les trophées. DiskMop Pro est un abonnement mensuel qui commence par un essai gratuit de 7 jours et supprime la limite. Si les doublons sont votre principal problème, notre guide pour [trouver les photos en double et similaires sur iPhone](/blog/find-duplicate-similar-photos-iphone) explique le fonctionnement de la comparaison.",
           ],
         },
       ],
@@ -624,7 +625,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "Le meilleur nettoyeur iPhone est celui qui trouve ce que vous ne trouvez pas à la main, ne supprime jamais sans votre accord et vous facture d'une façon que vous comprenez. Commencez par les outils gratuits d'Apple, lisez l'étiquette de confidentialité et la période de facturation, et testez la suppression pendant l'essai.",
-        "DiskMop pour iPhone analyse votre photothèque sur l'appareil, ne collecte aucune donnée, ne présélectionne rien et réunit photos et vidéos similaires, photos floues, captures d'écran, médias de messageries, contacts et coffre dans une seule app. L'analyse est gratuite, jusqu'à cinq photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
+        "DiskMop pour iPhone analyse votre photothèque sur l'appareil, ne collecte aucune donnée, ne présélectionne rien et réunit photos et vidéos similaires, photos floues, captures d'écran, médias de messageries, contacts et coffre dans une seule app. L'analyse est gratuite, jusqu'à dix photos par jour peuvent être supprimées gratuitement, et DiskMop Pro, un abonnement mensuel avec essai gratuit de 7 jours, supprime la limite.",
       ],
       ctaText: "Télécharger DiskMop pour iPhone sur l'App Store",
     },
@@ -745,7 +746,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "DiskMop para iPhone está construido en torno a esas comprobaciones. Su etiqueta de privacidad en el App Store indica Datos no recopilados; el análisis se hace en el dispositivo con los frameworks de Apple, sin servidor ni cuenta. No se preselecciona nada para borrar: las fotos y vídeos similares se agrupan con una sugerencia para conservar y tú eliges qué se va. Tiene un modo deslizar con papelera y deshacer, explicado en [limpiar las fotos del iPhone deslizando](/blog/swipe-to-delete-photos-iphone).",
             "Además de fotos y vídeos similares, muestra fotos borrosas, capturas ordenadas por contenido en iOS 26 con Apple Intelligence, grabaciones de pantalla, fotos guardadas de apps de chat, vídeos grandes y Live Photos, e incluye la combinación de contactos con copia automática y una caja fuerte con Face ID. Reducir fotos y vídeos y quedarse solo con la foto de las Live Photos forman parte de la misma app.",
-            "El análisis es gratis y puedes borrar hasta cinco fotos al día sin pagar, más los borrados extra que ganas con rachas y trofeos. DiskMop Pro es una suscripción mensual que empieza con 7 días de prueba gratuita y elimina el límite. Si tu problema principal son los duplicados, nuestra guía para [encontrar fotos duplicadas y similares en iPhone](/blog/find-duplicate-similar-photos-iphone) explica cómo funciona la comparación.",
+            "El análisis es gratis y puedes borrar hasta diez fotos al día sin pagar, más los borrados extra que ganas con rachas y trofeos. DiskMop Pro es una suscripción mensual que empieza con 7 días de prueba gratuita y elimina el límite. Si tu problema principal son los duplicados, nuestra guía para [encontrar fotos duplicadas y similares en iPhone](/blog/find-duplicate-similar-photos-iphone) explica cómo funciona la comparación.",
           ],
         },
       ],
@@ -779,7 +780,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "El mejor limpiador de iPhone es el que encuentra lo que tú no encuentras a mano, nunca borra sin tu permiso y te cobra de una forma que entiendes. Empieza por las herramientas gratuitas de Apple, lee la etiqueta de privacidad y el periodo de facturación y prueba cómo funciona el borrado durante la prueba.",
-        "DiskMop para iPhone analiza tu fototeca en el dispositivo, no recopila datos, no preselecciona nada y reúne en una sola app fotos y vídeos similares, fotos borrosas, capturas, contenido de chats, contactos y una caja fuerte. El análisis es gratis, se pueden borrar hasta cinco fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
+        "DiskMop para iPhone analiza tu fototeca en el dispositivo, no recopila datos, no preselecciona nada y reúne en una sola app fotos y vídeos similares, fotos borrosas, capturas, contenido de chats, contactos y una caja fuerte. El análisis es gratis, se pueden borrar hasta diez fotos al día sin coste y DiskMop Pro, una suscripción mensual con 7 días de prueba gratuita, elimina el límite.",
       ],
       ctaText: "Consigue DiskMop para iPhone en el App Store",
     },
@@ -900,7 +901,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "DiskMop per iPhone è costruita attorno a questi controlli. La sua etichetta sulla privacy nell'App Store indica Dati non raccolti; l'analisi avviene sul dispositivo con i framework di Apple, senza server né account. Nulla viene preselezionato per l'eliminazione: foto e video simili vengono raggruppati con uno scatto consigliato da tenere, e sei tu a scegliere cosa eliminare. C'è una modalità a scorrimento con cestino e annulla, descritta in [pulire le foto dell'iPhone scorrendo](/blog/swipe-to-delete-photos-iphone).",
             "Oltre a foto e video simili, elenca foto sfocate, screenshot ordinati per contenuto su iOS 26 con Apple Intelligence, registrazioni schermo, foto salvate dalle app di chat, video grandi e Live Photo, e include l'unione dei contatti con backup automatico e una cassaforte con Face ID. La riduzione di foto e video e il mantenimento della sola foto delle Live Photo fanno parte della stessa app.",
-            "L'analisi è gratuita e puoi eliminare fino a cinque foto al giorno senza pagare, più le eliminazioni extra guadagnate con serie e trofei. DiskMop Pro è un abbonamento mensile che inizia con 7 giorni di prova gratuita e rimuove il limite. Se il tuo problema principale sono i duplicati, la nostra guida per [trovare foto duplicate e simili su iPhone](/blog/find-duplicate-similar-photos-iphone) spiega come funziona il confronto.",
+            "L'analisi è gratuita e puoi eliminare fino a dieci foto al giorno senza pagare, più le eliminazioni extra guadagnate con serie e trofei. DiskMop Pro è un abbonamento mensile che inizia con 7 giorni di prova gratuita e rimuove il limite. Se il tuo problema principale sono i duplicati, la nostra guida per [trovare foto duplicate e simili su iPhone](/blog/find-duplicate-similar-photos-iphone) spiega come funziona il confronto.",
           ],
         },
       ],
@@ -934,7 +935,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "La migliore app di pulizia per iPhone è quella che trova ciò che a mano non trovi, non elimina mai senza il tuo consenso e ti fa pagare in un modo che capisci. Comincia dagli strumenti gratuiti di Apple, leggi l'etichetta sulla privacy e il periodo di fatturazione e prova come funziona l'eliminazione durante la prova.",
-        "DiskMop per iPhone analizza la libreria sul dispositivo, non raccoglie dati, non preseleziona nulla e riunisce in un'unica app foto e video simili, foto sfocate, screenshot, media delle chat, contatti e una cassaforte. L'analisi è gratuita, si possono eliminare gratis fino a cinque foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
+        "DiskMop per iPhone analizza la libreria sul dispositivo, non raccoglie dati, non preseleziona nulla e riunisce in un'unica app foto e video simili, foto sfocate, screenshot, media delle chat, contatti e una cassaforte. L'analisi è gratuita, si possono eliminare gratis fino a dieci foto al giorno e DiskMop Pro, un abbonamento mensile con 7 giorni di prova gratuita, rimuove il limite.",
       ],
       ctaText: "Scarica DiskMop per iPhone dall'App Store",
     },
@@ -1055,7 +1056,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "O DiskMop para iPhone foi construído em torno dessas verificações. O rótulo de privacidade na App Store diz Dados Não Coletados; a análise acontece no aparelho com os frameworks da Apple, sem servidor nem conta. Nada é pré-selecionado para apagar: fotos e vídeos semelhantes são agrupados com uma sugestão para manter, e você escolhe o que sai. Há um modo deslizar com cesto e desfazer, explicado em [limpar as fotos do iPhone deslizando](/blog/swipe-to-delete-photos-iphone).",
             "Além de fotos e vídeos semelhantes, ele lista fotos borradas, capturas separadas por conteúdo no iOS 26 com a Apple Intelligence, gravações de tela, fotos salvas de apps de conversa, vídeos grandes e Live Photos, e inclui a combinação de contatos com cópia automática e um cofre com Face ID. Reduzir fotos e vídeos e ficar só com a foto das Live Photos fazem parte do mesmo app.",
-            "A análise é grátis e você pode apagar até cinco fotos por dia sem pagar, mais as exclusões extras ganhas com sequências e troféus. O DiskMop Pro é uma assinatura mensal que começa com 7 dias de teste gratuito e remove o limite. Se o seu problema principal são duplicatas, nosso guia para [encontrar fotos duplicadas e semelhantes no iPhone](/blog/find-duplicate-similar-photos-iphone) explica como a comparação funciona.",
+            "A análise é grátis e você pode apagar até diez fotos por dia sem pagar, mais as exclusões extras ganhas com sequências e troféus. O DiskMop Pro é uma assinatura mensal que começa com 7 dias de teste gratuito e remove o limite. Se o seu problema principal são duplicatas, nosso guia para [encontrar fotos duplicadas e semelhantes no iPhone](/blog/find-duplicate-similar-photos-iphone) explica como a comparação funciona.",
           ],
         },
       ],
@@ -1089,7 +1090,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "O melhor limpador de iPhone é o que encontra o que você não acha à mão, nunca apaga sem a sua permissão e cobra de um jeito que você entende. Comece pelas ferramentas gratuitas da Apple, leia o rótulo de privacidade e o período de cobrança e teste como a exclusão funciona durante o teste.",
-        "O DiskMop para iPhone analisa sua fototeca no aparelho, não coleta dados, não pré-seleciona nada e reúne num só app fotos e vídeos semelhantes, fotos borradas, capturas, mídia de conversas, contatos e um cofre. A análise é grátis, até cinco fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
+        "O DiskMop para iPhone analisa sua fototeca no aparelho, não coleta dados, não pré-seleciona nada e reúne num só app fotos e vídeos semelhantes, fotos borradas, capturas, mídia de conversas, contatos e um cofre. A análise é grátis, até diez fotos por dia podem ser apagadas sem custo e o DiskMop Pro, uma assinatura mensal com 7 dias de teste gratuito, remove o limite.",
       ],
       ctaText: "Baixe o DiskMop para iPhone na App Store",
     },
@@ -1144,7 +1145,7 @@ export const bestIphoneCleanerApps: Article = {
           [
             "DiskMop: 写真整理・容量クリーナー",
             "DiskMop",
-            "7 日間の無料トライアル付き月額サブスクリプション。スキャン無料、1 日 5 枚まで削除無料",
+            "7 日間の無料トライアル付き月額サブスクリプション。スキャン無料、1 日 10 枚まで削除無料",
             "類似写真・動画、スワイプモード、ぶれ写真、内容別のスクリーンショット、画面収録、チャットのメディア、連絡先、保管庫、Live Photos の静止画化、縮小",
           ],
         ],
@@ -1205,7 +1206,7 @@ export const bestIphoneCleanerApps: Article = {
           content: [
             "iPhone 版 DiskMop は、これらのチェックポイントを前提に作られています。App Store のプライバシーラベルは「データの収集なし」で、分析は Apple のフレームワークを使って端末上で行われ、サーバーもアカウントもありません。削除対象が事前に選ばれることはなく、類似写真や類似動画は残す候補を示したうえでグループ化され、何を消すかはあなたが決めます。かごと取り消しを備えたスワイプモードもあり、[スワイプで iPhone の写真を整理する方法](/blog/swipe-to-delete-photos-iphone)で紹介しています。",
             "類似写真・動画のほかにも、ぶれ写真、Apple Intelligence をオンにした iOS 26 での内容別のスクリーンショット、画面収録、チャットアプリから保存した写真、大きな動画、Live Photos を一覧にし、自動バックアップ付きの連絡先の結合や Face ID 付きの保管庫も備えています。写真や動画の縮小、Live Photos を静止画だけにする機能も同じアプリに入っています。",
-            "スキャンは無料で、支払わなくても 1 日 5 枚まで、さらに連続記録やトロフィーで得た追加分を削除できます。DiskMop Pro は 7 日間の無料トライアルから始まる月額サブスクリプションで、制限がなくなります。重複が主な悩みなら、比較のしくみを[iPhone で重複写真と類似写真を見つける方法](/blog/find-duplicate-similar-photos-iphone)で解説しています。",
+            "スキャンは無料で、支払わなくても 1 日 10 枚まで、さらに連続記録やトロフィーで得た追加分を削除できます。DiskMop Pro は 7 日間の無料トライアルから始まる月額サブスクリプションで、制限がなくなります。重複が主な悩みなら、比較のしくみを[iPhone で重複写真と類似写真を見つける方法](/blog/find-duplicate-similar-photos-iphone)で解説しています。",
           ],
         },
       ],
@@ -1239,7 +1240,7 @@ export const bestIphoneCleanerApps: Article = {
       ],
       verdict: [
         "いちばん良い iPhone クリーナーとは、手作業では見つけられないものを見つけ、あなたの同意なしには決して削除せず、納得できる形で料金を請求するものです。まず Apple の無料ツールから始め、プライバシーラベルと請求期間を確認し、トライアル中に削除のしくみを試しましょう。",
-        "iPhone 版 DiskMop はライブラリを端末上で分析し、データを収集せず、何も事前選択せず、類似写真・動画、ぶれ写真、スクリーンショット、チャットのメディア、連絡先、保管庫をひとつのアプリにまとめています。スキャンは無料、1 日 5 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
+        "iPhone 版 DiskMop はライブラリを端末上で分析し、データを収集せず、何も事前選択せず、類似写真・動画、ぶれ写真、スクリーンショット、チャットのメディア、連絡先、保管庫をひとつのアプリにまとめています。スキャンは無料、1 日 10 枚までは無料で削除でき、7 日間の無料トライアル付き月額サブスクリプション DiskMop Pro なら制限がなくなります。",
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },
