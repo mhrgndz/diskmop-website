@@ -16,6 +16,7 @@ import { FinalCTA } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
 import { CookieBanner } from "@/components/cookie-banner";
 import { FloatingSupport } from "@/components/floating-support";
+import { LOCALES } from "@/lib/locales";
 import { SITE_URL, alternatesFor, localeUrl, socialFor } from "@/lib/seo";
 import {
   FIRST_RELEASE_DATE,
@@ -95,7 +96,7 @@ async function buildJsonLd(locale: string) {
           "@type": "ContactPoint",
           contactType: "customer support",
           email: "diskmopdev@gmail.com",
-          availableLanguage: ["en", "tr", "de", "fr", "es", "it", "pt", "ja"],
+          availableLanguage: [...LOCALES],
         },
       },
       {

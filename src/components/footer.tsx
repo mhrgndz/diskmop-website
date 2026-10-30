@@ -1,5 +1,6 @@
 "use client";
 
+import { POLICY_LOCALES } from "@/lib/locales";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Twitter, Instagram, Mail } from "lucide-react";
@@ -42,7 +43,11 @@ const companyLinks: FooterLink[] = [
 ];
 
 function getLegalLinks(locale: string): FooterLink[] {
-  return [{ labelKey: "legal.privacy", href: localeHref(locale, "/privacy") }];
+  // Politika yalnız 8 dilde çevrili; diğer dillerde doğrudan İngilizce sürüme.
+  const policyLocale = POLICY_LOCALES.includes(locale) ? locale : "en";
+  return [
+    { labelKey: "legal.privacy", href: localeHref(policyLocale, "/privacy") },
+  ];
 }
 
 const supportLinks: FooterLink[] = [

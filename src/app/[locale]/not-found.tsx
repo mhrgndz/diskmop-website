@@ -42,7 +42,7 @@ export default function NotFound() {
               className="gap-2"
               onClick={() => history.back()}
             >
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeft className="rtl:rotate-180 h-4 w-4" />
               {t("back")}
             </Button>
           </div>

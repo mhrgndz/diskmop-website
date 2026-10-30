@@ -6,10 +6,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { getArticle, getAllSlugs, articles } from "@/content/articles";
+import {
+  getArticle,
+  articles,
+  articleLocales,
+  articlesIn,
+} from "@/content/articles";
+import { AvailableLocales } from "@/components/available-locales";
 import { getRelatedArticles, getPlatformForSlug } from "@/lib/related-articles";
 import { FormattedText } from "@/components/formatted-text";
-import { routing } from "@/i18n/routing";
 import { localeHref } from "@/lib/locale-path";
 import { alternatesFor, socialFor } from "@/lib/seo";
 import { BlogCtaCard } from "@/components/blog-cta-card";
@@ -42,9 +47,8 @@ function localizedCell(
 }
 
 export function generateStaticParams() {
-  const slugs = getAllSlugs();
-  return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug })),
+  return articles.flatMap((article) =>
+    articleLocales(article).map((locale) => ({ locale, slug: article.slug })),
   );
 }
 
@@ -55,16 +59,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: "Not Found" };
+  if (!article || !article.content[locale]) return { title: "Not Found" };
 
-  const content = article.content[locale] || article.content["en"];
+  const content = article.content[locale];
   const title = `${content.title} | Disk Mop Blog`;
   const description = content.metaDescription;
 
   return {
     title,
     description,
-    alternates: alternatesFor(locale, `/blog/${slug}`),
+    alternates: alternatesFor(locale, `/blog/${slug}`, articleLocales(article)),
     ...socialFor({
       locale,
       path: `/blog/${slug}`,
@@ -84,12 +88,12 @@ export default async function ArticlePage({
   setRequestLocale(locale);
 
   const article = getArticle(slug);
-  if (!article) notFound();
+  if (!article || !article.content[locale]) notFound();
 
-  const content = article.content[locale] || article.content["en"];
+  const content = article.content[locale];
   const t = await getTranslations({ locale, namespace: "blog" });
 
-  const related = getRelatedArticles(article, articles, 3);
+  const related = getRelatedArticles(article, articlesIn(locale), 3);
   const platform = getPlatformForSlug(slug);
 
   const tocItems: TocItem[] = [];
@@ -122,10 +126,8 @@ export default async function ArticlePage({
   const baseUrl = "https://diskmop.com";
   const articleUrl = `${baseUrl}${locale === "en" ? "" : `/${locale}`}/blog/${slug}`;
 
-  // Cogu makale yalnizca tr/en/de icerir; kalan diller EN'e duser. O sayfalarda
-  // govde Ingilizce oldugu icin inLanguage'i URL diliyle degil, GERCEKTEN
-  // basilan icerigin diliyle bildiriyoruz.
-  const contentLanguage = article.content[locale] ? locale : "en";
+  // Sayfa yalnız içeriği gerçekten yazılı olan dillerde üretilir (bkz. articleLocales).
+  const contentLanguage = locale;
 
   // AI arama motorlari (AI Overviews, ChatGPT, Perplexity) sayfayi parca parca
   // alintilar; her parcayi ayri bir schema.org dugumu olarak yayinliyoruz.
@@ -205,7 +207,7 @@ export default async function ArticlePage({
   const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
   return (
-    <>
+    <AvailableLocales locales={articleLocales(article)}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -221,14 +223,14 @@ export default async function ArticlePage({
             >
               Disk Mop
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="rtl:rotate-180 h-4 w-4" />
             <Link
               href={localeHref(locale, "/blog")}
               className="hover:text-foreground transition-colors"
             >
               Blog
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="rtl:rotate-180 h-4 w-4" />
             <span className="text-foreground truncate">{content.title}</span>
           </nav>
         </div>
@@ -638,7 +640,7 @@ export default async function ArticlePage({
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {related.map((rel) => {
-                const relContent = rel.content[locale] || rel.content["en"];
+                const relContent = rel.content[locale];
                 return (
                   <Link
                     key={rel.slug}
@@ -654,7 +656,7 @@ export default async function ArticlePage({
                       {relContent.title}
                     </h3>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      {t("readMore")} <ArrowRight className="h-3 w-3" />
+                      {t("readMore")} <ArrowRight className="rtl:rotate-180 h-3 w-3" />
                     </span>
                   </Link>
                 );
@@ -665,6 +667,6 @@ export default async function ArticlePage({
       </main>
       <BlogStickyBar customTitle={content.ctaText} articlePlatform={platform} />
       <Footer />
-    </>
+    </AvailableLocales>
   );
 }

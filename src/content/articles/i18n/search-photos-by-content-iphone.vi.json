@@ -1,0 +1,146 @@
+{
+  "title": "Cách tìm ảnh iPhone theo nội dung: ô tô, bãi biển, Paris, đồ ăn",
+  "metaDescription": "Tìm bất kỳ ảnh iPhone nào theo những gì nó thể hiện hoặc nơi chụp. Cách tìm kiếm trong Ảnh hoạt động, và cách DiskMop tìm trên iPhone của bạn để bạn xem lại và dọn kết quả.",
+  "subtitle": "Dùng từ thay vì cuộn: đồ vật, chủ đề và địa điểm, được đối chiếu ngay trên điện thoại",
+  "intro": [
+    "Tóm lại: gõ một từ vào tab Tìm kiếm của ứng dụng Ảnh và iPhone sẽ tìm ảnh theo những gì chúng thể hiện, nơi chụp, ai có trong đó và khi nào. Để đi xa hơn và dùng kết quả để dọn dẹp, DiskMop cho iPhone có tính năng tìm kiếm riêng ở tab Trang chủ: gõ một đồ vật (ô tô, em bé, bãi biển), một chủ đề (đồ ăn, động vật, hoàng hôn), một địa điểm (Paris) hoặc hai thứ cùng lúc (Paris đồ ăn), và nó liệt kê các ảnh khớp cùng số lượng và dung lượng ước tính, sẵn sàng để xem lại.",
+    "Hướng dẫn này nói về những gì ứng dụng Ảnh đã tìm tốt, vì sao tìm kiếm cũng là cách nhanh nhất để thấy nên xóa gì trong thư viện hàng nghìn ảnh, cách tìm kiếm của DiskMop hoạt động và những gì ở lại trên điện thoại của bạn, cùng các giới hạn đáng biết: cần quét lần đầu xong, tìm theo địa điểm cần có vị trí của ảnh, và việc nhận diện chỉ là phỏng đoán tốt nhất."
+  ],
+  "keyTakeaways": [
+    "Tab Tìm kiếm trong ứng dụng Ảnh tìm ảnh theo nội dung, địa điểm, con người và ngày tháng; hãy bắt đầu từ đó khi bạn chỉ muốn xem một bức ảnh.",
+    "DiskMop cho iPhone tìm trong cùng thư viện theo đồ vật (ô tô, em bé, bãi biển), chủ đề (đồ ăn, động vật, hoàng hôn) và địa điểm (Paris), và bạn có thể kết hợp hai thứ, như Paris đồ ăn.",
+    "Việc đối chiếu chạy trên iPhone: dùng nhãn từ lần quét thư viện, vị trí riêng của từng ảnh và danh sách tích hợp khoảng 34.000 địa điểm. Các từ bạn gõ không được gửi tới dịch vụ bản đồ hay bất cứ đâu khác.",
+    "Tìm theo thành phố bao gồm ảnh chụp trong phạm vi khoảng 8 đến 25 km quanh trung tâm, tùy kích thước thành phố.",
+    "Các chủ đề Đồ ăn & thức uống, Động vật và Hoàng hôn loại bỏ ảnh có người, và không có gì được chọn sẵn cho bạn: bạn tự chọn thứ cần xóa.",
+    "Ảnh không có vị trí không thể tìm theo địa điểm, và tìm kiếm chỉ mở sau khi lần quét đầu tiên hoàn tất; bạn có thể theo dõi nó ở tab Trang chủ."
+  ],
+  "dataTable": {
+    "caption": "Những gì bạn có thể gõ vào ô tìm kiếm của DiskMop",
+    "columns": [
+      "Loại",
+      "Ví dụ",
+      "Cách đối chiếu",
+      "Phạm vi"
+    ],
+    "rows": [
+      [
+        "Đồ vật hoặc cảnh",
+        "ô tô, bãi biển, em bé",
+        "Nhãn từ lần quét thư viện, được dùng khi ứng dụng khá chắc chắn",
+        "Ảnh"
+      ],
+      [
+        "Chủ đề",
+        "đồ ăn, động vật, hoàng hôn",
+        "Một nhóm nhãn liên quan; ảnh có người bị loại",
+        "Ảnh"
+      ],
+      [
+        "Địa điểm",
+        "Paris, Antalya, Pháp",
+        "Vị trí riêng của ảnh đối chiếu với danh sách tích hợp khoảng 34.000 địa điểm",
+        "Ảnh và video"
+      ],
+      [
+        "Kết hợp",
+        "Paris đồ ăn",
+        "Cả hai điều kiện cùng lúc: ảnh đồ ăn chụp ở Paris",
+        "Ảnh"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Tìm ảnh iPhone theo nội dung hoặc địa điểm và dọn những gì không cần",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Để lần quét đầu tiên hoàn tất",
+        "text": "Mở DiskMop và chờ lần quét thư viện kết thúc; bạn có thể theo dõi ở tab Trang chủ. Tìm kiếm mở khi quét xong, vì nó dùng những gì lần quét tìm thấy."
+      },
+      {
+        "name": "Gõ một đồ vật, chủ đề hoặc địa điểm",
+        "text": "Mở Tìm ảnh ở tab Trang chủ rồi gõ một từ như ô tô, em bé, bãi biển, Paris hoặc Paris đồ ăn. Gợi ý xuất hiện dưới Đồ vật và chủ đề và dưới Địa điểm, kèm số lượng khớp."
+      },
+      {
+        "name": "Mở một gợi ý và xem kết quả",
+        "text": "Kết quả hiển thị số ảnh và dung lượng ước tính. Cuộn qua và nhấn giữ một ảnh để xem lớn hơn trước khi quyết định."
+      },
+      {
+        "name": "Chọn những gì cần xóa",
+        "text": "Đánh dấu các ảnh bạn muốn xóa, hoặc nhấn Chọn tất cả nếu cả danh sách đều có thể bỏ. Không có gì được chọn sẵn cho bạn."
+      },
+      {
+        "name": "Kiểm tra rồi xóa",
+        "text": "Nhấn Xóa. Khi bạn chọn từ hai ảnh trở lên, màn Kiểm tra trước khi xóa hiển thị chính xác những gì sẽ mất, sau đó iOS yêu cầu bạn xác nhận. Ảnh đã xóa chờ 30 ngày trong Đã xóa gần đây; làm trống album đó để lấy lại dung lượng ngay."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Ứng dụng Ảnh đã tìm được gì",
+      "content": [
+        "Ứng dụng Ảnh tích hợp có tab Tìm kiếm. Gõ một từ và nó tìm ảnh theo những gì chúng thể hiện, theo nơi chụp, theo những người được nhận diện trong đó và theo ngày. Để tìm một bức ảnh, như ảnh chú chó mùa hè năm ngoái, đó là công cụ phù hợp, và nó chạy mà không cần ứng dụng bổ sung nào.",
+        "Ứng dụng Ảnh được xây dựng để xem ảnh, không phải để quyết định xóa ảnh nào. Nó không cho biết một tập kết quả chiếm bao nhiêu dung lượng, và không được tổ chức quanh quy trình dọn dẹp. Đó là chỗ một công cụ tìm kiếm làm ra để dọn dẹp phát huy tác dụng."
+      ]
+    },
+    {
+      "title": "Vì sao tìm kiếm cũng là cách dọn dẹp nhanh nhất",
+      "content": [
+        "Thư viện vài nghìn ảnh rất khó dọn bằng cách cuộn, vì phần lớn không phải đồ lộn xộn và bạn không thể biết qua những hình thu nhỏ bé xíu phần nào là rác. Tìm kiếm đảo ngược thứ tự: trước tiên bạn gọi tên một nhóm mà bạn ngờ là đầy rác, rồi chỉ xem những ảnh đó. Tất cả các món bạn chụp ở một nhà hàng, mọi ảnh chiếc ô tô bạn đã bán, những tấm hoàng hôn từ kỳ nghỉ bạn chụp bốn mươi lần cùng một cảnh.",
+        "Nó cũng cho phép bạn dọn theo một sự kiện hoặc địa điểm. Gõ tên một thành phố sẽ hiện mọi thứ chụp ở đó, nên bạn giữ lại những ảnh đẹp nhất của chuyến đi và dọn phần còn lại trong vài phút. Với những loại lộn xộn đã có công cụ riêng, như [ảnh gần giống hệt nhau](/blog/find-duplicate-similar-photos-iphone), [ảnh chụp màn hình](/blog/delete-screenshots-iphone) hoặc [ảnh bị mờ](/blog/delete-blurry-photos-iphone), hãy dùng các danh sách đó trước và tìm kiếm mọi thứ còn lại."
+      ]
+    },
+    {
+      "title": "Tìm kiếm trong DiskMop cho iPhone hoạt động thế nào",
+      "content": [
+        "Ở tab Trang chủ, mở Tìm ảnh và gõ thứ bạn đang tìm: một đồ vật, một địa điểm hoặc cả hai. Trong khi gõ, gợi ý xuất hiện thành hai nhóm, Đồ vật và chủ đề và Địa điểm, mỗi nhóm kèm số lượng khớp. Gõ hai ý cùng lúc, như Paris đồ ăn, sẽ tìm các ảnh đồ ăn chụp ở Paris. Những từ đó cũng hoạt động như một bộ lọc bên trong các danh sách DiskMop tạo, chẳng hạn để thu hẹp một nhóm ảnh giống nhau xuống những ảnh chụp ở cùng một bãi biển.",
+        "Chọn một gợi ý và bạn thấy các ảnh khớp cùng số lượng và dung lượng ước tính. Đánh dấu những ảnh bạn muốn xóa hoặc nhấn Chọn tất cả. Không có gì được chọn sẵn cho bạn; các chủ đề Đồ ăn & thức uống, Động vật và Hoàng hôn thậm chí còn loại cả ảnh có người, để bữa tối gia đình không lọt vào danh sách món ăn. Việc xóa đi qua cùng màn hình kiểm tra và xác nhận của iOS như mọi nơi khác trong ứng dụng."
+      ]
+    },
+    {
+      "title": "Những gì được đối chiếu trên iPhone của bạn",
+      "content": [
+        "Không có gì bạn gõ rời khỏi điện thoại. Đồ vật và chủ đề đến từ các nhãn mà lần quét đã tạo ra trên iPhone, và một ảnh chỉ được tìm thấy theo nhãn khi ứng dụng khá chắc chắn về nó. Địa điểm đến từ vị trí lưu trong từng ảnh và từ danh sách khoảng 34.000 thành phố và khu vực tích hợp trong ứng dụng, nên từ bạn gõ không bao giờ được gửi tới dịch vụ bản đồ. Tìm theo thành phố bao gồm ảnh chụp trong phạm vi khoảng 8 đến 25 km quanh trung tâm, tùy thành phố lớn đến đâu.",
+        "DiskMop hoạt động không cần tài khoản, và nhãn quyền riêng tư ghi Không thu thập dữ liệu. Tìm kiếm tuân theo cùng quy tắc như phần còn lại của ứng dụng: đọc thư viện của bạn trên thiết bị và không tải lên."
+      ]
+    },
+    {
+      "title": "Những giới hạn đáng biết",
+      "content": [
+        "Tìm kiếm mở sau khi lần quét đầu tiên kết thúc, nên với thư viện rất lớn, nó chưa dùng được trong vài phút đầu. Nhận diện chỉ là phỏng đoán tốt nhất: thỉnh thoảng sẽ có một ảnh sai trong danh sách, đó là lý do không có gì được chọn sẵn cho bạn và là lý do màn hình kiểm tra tồn tại. Video không được phân loại theo nội dung, nên có thể tìm theo địa điểm nhưng không theo những gì chúng thể hiện.",
+        "Tìm theo địa điểm cần ảnh có vị trí. Nếu bạn đã tắt vị trí trong máy ảnh, hoặc [đã xóa vị trí trước khi chia sẻ](/blog/remove-location-from-photos-iphone) và chỉ giữ các bản sao sạch, những bản sao đó không thể tìm theo địa điểm. Và nếu bạn gõ thứ DiskMop không nhận ra, nó sẽ nói vậy và gợi ý gõ một địa điểm, đồ vật hoặc chủ đề. Để tìm người theo tên, hãy dùng album Mọi người trong ứng dụng Ảnh."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Tìm kiếm ảnh của DiskMop có cần kết nối internet không?",
+      "answer": "Không. Việc đối chiếu chạy trên iPhone của bạn, dùng nhãn từ lần quét thư viện, vị trí riêng của từng ảnh và danh sách địa điểm tích hợp trong ứng dụng. Các từ bạn gõ không được gửi đi đâu cả."
+    },
+    {
+      "question": "Vì sao tôi không tìm kiếm được ngay sau khi cài DiskMop?",
+      "answer": "Tìm kiếm dùng những gì lần quét thư viện tìm thấy, nên nó mở khi lần quét đầu tiên hoàn tất. Bạn có thể theo dõi lần quét ở tab Trang chủ; các lần quét sau chỉ xem ảnh mới."
+    },
+    {
+      "question": "Vì sao không tìm thấy ảnh khi tôi tìm theo địa điểm?",
+      "answer": "Tìm theo địa điểm dựa vào vị trí lưu trong ảnh. Ảnh chụp khi tắt vị trí, hoặc bản sao đã bị xóa vị trí, không có vị trí nên không thể ghép với địa điểm."
+    },
+    {
+      "question": "Tôi có thể tìm một người theo tên không?",
+      "answer": "DiskMop tìm đồ vật, chủ đề và địa điểm. Để tìm người theo tên, hãy dùng album Mọi người và tab Tìm kiếm trong ứng dụng Ảnh."
+    },
+    {
+      "question": "Tìm kiếm có xóa gì không?",
+      "answer": "Không. Tìm kiếm chỉ liệt kê ảnh. Không có gì được chọn sẵn cho bạn, và việc xóa đi qua màn hình kiểm tra cùng xác nhận riêng của iOS. Ảnh đã xóa sau đó chờ 30 ngày trong Đã xóa gần đây."
+    },
+    {
+      "question": "Tìm kiếm trong DiskMop có miễn phí không?",
+      "answer": "Tìm kiếm và quét đều miễn phí. Nếu không đăng ký, bạn có thể xóa tối đa mười ảnh mỗi ngày, cộng thêm các lượt xóa bổ sung kiếm được từ chuỗi ngày và cúp, và DiskMop Pro bỏ giới hạn đó."
+    }
+  ],
+  "verdict": [
+    "Tìm kiếm là cách nhanh nhất để tìm một bức ảnh và, trong thư viện lớn, là cách nhanh nhất để quyết định xóa gì: gọi tên một nhóm, chỉ xem những ảnh đó và dọn những ảnh bạn không cần. Tìm kiếm của ứng dụng Ảnh là nơi phù hợp để tìm một hình đơn lẻ.",
+    "DiskMop cho iPhone bổ sung một tính năng tìm kiếm làm ra để dọn dẹp: đồ vật, chủ đề và địa điểm, đối chiếu ngay trên điện thoại, kèm số lượng và dung lượng ước tính của từng kết quả và bước kiểm tra trước khi xóa bất cứ thứ gì. Quét và tìm kiếm miễn phí, và có thể xóa miễn phí tối đa mười ảnh mỗi ngày."
+  ],
+  "ctaText": "Tải DiskMop cho iPhone trên App Store"
+}

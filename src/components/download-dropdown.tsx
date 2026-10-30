@@ -171,7 +171,7 @@ export function DownloadDropdown({
                       {recommended && (
                         <Badge
                           variant="default"
-                          className="ml-auto text-[10px] px-1.5 py-0"
+                          className="ms-auto text-[10px] px-1.5 py-0"
                         >
                           {t("recommended")}
                         </Badge>

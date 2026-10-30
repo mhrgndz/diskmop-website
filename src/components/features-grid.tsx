@@ -167,7 +167,7 @@ export function FeaturesGrid() {
                       {title}
                     </h3>
                     {featured && (
-                      <span className="ml-auto shrink-0 rounded-full bg-brand-500 px-2.5 py-1 text-xs font-semibold text-white">
+                      <span className="ms-auto shrink-0 rounded-full bg-brand-500 px-2.5 py-1 text-xs font-semibold text-white">
                         {t("new")}
                       </span>
                     )}

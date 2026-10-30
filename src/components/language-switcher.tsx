@@ -5,17 +5,10 @@ import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { Globe, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LOCALES, LOCALE_LABELS } from "@/lib/locales";
+import { useAvailableLocales } from "@/components/available-locales";
 
-const locales = [
-  { code: "en", label: "English", flag: "EN" },
-  { code: "tr", label: "Türkçe", flag: "TR" },
-  { code: "de", label: "Deutsch", flag: "DE" },
-  { code: "fr", label: "Français", flag: "FR" },
-  { code: "es", label: "Español", flag: "ES" },
-  { code: "it", label: "Italiano", flag: "IT" },
-  { code: "pt", label: "Português", flag: "PT" },
-  { code: "ja", label: "日本語", flag: "JA" },
-] as const;
+const locales = LOCALES.map((code) => ({ code, ...LOCALE_LABELS[code] }));
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -26,8 +19,16 @@ export function LanguageSwitcher() {
 
   const current = locales.find((l) => l.code === locale) || locales[0];
 
+  // Makale yalnız bazı dillerde varsa, olmayan dile geçince 404 yerine
+  // o dilin blog listesine gidilir.
+  const available = useAvailableLocales();
+
   const switchTo = (newLocale: string) => {
     setOpen(false);
+    if (available && !available.includes(newLocale)) {
+      router.replace("/blog", { locale: newLocale });
+      return;
+    }
     router.replace(pathname, { locale: newLocale });
   };
 
@@ -56,13 +57,13 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-40 rounded-lg border border-border bg-background shadow-lg z-50 py-1">
+        <div className="absolute end-0 top-full mt-1 w-48 max-h-80 overflow-y-auto rounded-lg border border-border bg-background shadow-lg z-50 py-1">
           {locales.map((l) => (
             <button
               key={l.code}
               onClick={() => switchTo(l.code)}
               className={cn(
-                "w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors",
+                "w-full flex items-center gap-2 px-3 py-2 text-sm text-start transition-colors",
                 locale === l.code
                   ? "bg-muted text-foreground font-medium"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",

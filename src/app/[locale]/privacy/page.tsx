@@ -3,6 +3,8 @@ import { useTranslations } from "next-intl";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
+import { POLICY_LOCALES } from "@/lib/locales";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Disk Mop",
@@ -87,6 +89,8 @@ export default async function PrivacyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  // Hukuki metin makine çevirisine bırakılmadı: çevrilmemiş dillerde İngilizce sürüm.
+  if (!POLICY_LOCALES.includes(locale)) permanentRedirect("/privacy");
   setRequestLocale(locale);
 
   return (

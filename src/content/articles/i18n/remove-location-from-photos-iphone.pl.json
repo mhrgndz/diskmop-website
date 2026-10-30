@@ -1,0 +1,147 @@
+{
+  "title": "Jak usunąć lokalizację i metadane ze zdjęć z iPhone’a, zanim je udostępnisz",
+  "metaDescription": "Każde zdjęcie z iPhone’a może nieść współrzędne GPS, datę i model telefonu. Oto, co to ujawnia i jak usunąć te dane ze zdjęć i filmów — hurtowo lub jedno po drugim.",
+  "subtitle": "Co kryje się w każdym pliku, wbudowany przełącznik i czyste kopie, które nie ruszają oryginałów",
+  "intro": [
+    "Krótko: zdjęcia i filmy nagrane iPhone’em mogą nieść w samym pliku miejsce wykonania (współrzędne GPS), datę i godzinę, model telefonu i aparatu oraz wersję oprogramowania. Nazywa się to metadanymi, czyli danymi EXIF, i podróżują razem z plikiem. Aby udostępnić zdjęcie bez nich, otwórz arkusz udostępniania w aplikacji Zdjęcia, stuknij Opcje i wyłącz Lokalizację albo utwórz czyste kopie wielu plików naraz za pomocą DiskMop na iPhone’a (wersja 1.1.10 i nowsze).",
+    "Ten poradnik pokazuje, co jest zapisywane i kto może to odczytać, trzy sposoby usunięcia tych danych na iPhonie i miejsca, w których każdy z nich zawodzi, a także to, czego usunięcie metadanych nie zmienia: twarze, tablice z nazwami ulic i numery rejestracyjne widoczne na samym zdjęciu."
+  ],
+  "keyTakeaways": [
+    "Zdjęcia i filmy nagrane iPhone’em zapisują w pliku miejsce wykonania, datę i godzinę, model urządzenia i wersję oprogramowania; każdy, kto dostanie oryginalny plik, może je odczytać.",
+    "Arkusz udostępniania w aplikacji Zdjęcia ma przycisk Opcje z przełącznikiem Lokalizacja. Usuwa on lokalizację z tego, co wysyłasz, i zostawia zdjęcie w bibliotece bez zmian.",
+    "Ustawienia > Prywatność i ochrona > Usługi lokalizacji > Aparat > Nigdy zapobiega oznaczaniu nowych zdjęć miejscem, ale nic nie zmienia w zdjęciach, które już masz.",
+    "Wiele sieci społecznościowych ukrywa lokalizację przy publikacji, ale e-mail, AirDrop, linki w chmurze, ogłoszenia i zdjęcia wysyłane jako pliki mogą przekazać oryginalne dane, więc nie licz na to, że druga strona je usunie.",
+    "DiskMop na iPhone’a (1.1.10 i nowsze) zaznacza, które z wybranych zdjęć mają lokalizację, usuwa z kopii lokalizację oraz informacje o telefonie i aparacie, a następnie otwiera arkusz udostępniania. Twoje oryginały nigdy się nie zmieniają. Narzędzie jest bezpłatne i działa na zdjęciach oraz filmach.",
+    "Usunięcie metadanych nie ukrywa tego, co widać: twarze, szyldy, numery domów i tablice rejestracyjne zostają na zdjęciu."
+  ],
+  "dataTable": {
+    "caption": "Sposoby usunięcia lokalizacji ze zdjęć z iPhone’a",
+    "columns": [
+      "Metoda",
+      "Zmienia oryginał?",
+      "Wiele zdjęć naraz",
+      "Pokazuje, które zdjęcia mają lokalizację"
+    ],
+    "rows": [
+      [
+        "Arkusz udostępniania > Opcje > Lokalizacja wyłączona",
+        "Nie, tylko wysyłaną kopię",
+        "Tak, zaznacz kilka",
+        "Nie"
+      ],
+      [
+        "Zdjęcia > Informacje > Dostosuj > Brak lokalizacji",
+        "Tak, na stałe w Twojej bibliotece",
+        "Tak, z menu zaznaczenia (iOS 15 i nowsze)",
+        "Nie"
+      ],
+      [
+        "Usługi lokalizacji > Aparat > Nigdy",
+        "Nie, dotyczy tylko przyszłych zdjęć",
+        "Nie dotyczy",
+        "Nie"
+      ],
+      [
+        "DiskMop > Narzędzia > Usuń lokalizację i dane",
+        "Nie, działa na kopiach",
+        "Tak",
+        "Tak, czerwona pinezka oznacza każde z nich"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Usuń lokalizację ze zdjęć z iPhone’a przed udostępnieniem",
+    "totalTime": "PT3M",
+    "steps": [
+      {
+        "name": "Zobacz, co niesie zdjęcie",
+        "text": "Otwórz zdjęcie w aplikacji Zdjęcia i przesuń palcem w górę lub stuknij przycisk informacji. Zobaczysz aparat i obiektyw, szczegóły pliku oraz — jeśli zdjęcie ma lokalizację — małą mapę. Ta mapa to te same informacje, które może odczytać każdy, kto dostanie oryginalny plik."
+      },
+      {
+        "name": "Do szybkiego udostępnienia użyj wbudowanego przełącznika",
+        "text": "Zaznacz zdjęcia, stuknij Udostępnij, potem Opcje u góry arkusza udostępniania i przed wysłaniem wyłącz Lokalizację. Kopia w Twojej bibliotece zachowa lokalizację."
+      },
+      {
+        "name": "Przestań oznaczać przyszłe zdjęcia (opcjonalnie)",
+        "text": "Przejdź do Ustawienia > Prywatność i ochrona > Usługi lokalizacji > Aparat i wybierz Nigdy. Nowe zdjęcia nie będą miały lokalizacji, ale te, które już zrobiłeś, się nie zmienią, a aplikacja Zdjęcia nie będzie już mogła grupować nowych zdjęć według miejsc."
+      },
+      {
+        "name": "Utwórz czyste kopie hurtowo w DiskMop",
+        "text": "W DiskMop na iPhone’a otwórz Narzędzia > Usuń lokalizację i dane i wybierz zdjęcia i filmy. Czerwona pinezka oznacza każdy element, który ma lokalizację. Zostaw włączone Lokalizację oraz Telefon, aparat i opisy, zdecyduj, czy usunąć też datę i godzinę, a potem stuknij Wyczyść i udostępnij."
+      },
+      {
+        "name": "Sprawdź wynik i udostępnij",
+        "text": "Podsumowanie u góry pokazuje, ile elementów wyczyszczono i u ilu usunięto lokalizację, po czym otwiera się arkusz udostępniania iOS z czystymi kopiami. Potem możesz udostępnić ponownie, zapisać kopie w Zdjęciach obok oryginałów albo skopiować pojedyncze zdjęcie."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Co kryje się w zdjęciu lub filmie",
+      "content": [
+        "Każde zdjęcie zrobione iPhone’em jest zapisywane z dodatkowymi informacjami obok obrazu. Najbardziej wrażliwa jest lokalizacja: gdy Aparat ma zgodę na korzystanie z Usług lokalizacji, współrzędne GPS miejsca, w którym stałeś, są zapisywane w pliku. Obok trafiają data i godzina, model telefonu i aparatu, ustawienia obiektywu, wersja oprogramowania oraz każdy opis lub komentarz dodany później w aplikacji Zdjęcia. Filmy niosą informacje tego samego rodzaju.",
+        "Nie widać tego, patrząc na zdjęcie, dlatego łatwo o tym zapomnieć. To tylko kilka linijek tekstu, ale wystarczą, by pokazać, że zdjęcie zrobiono pod konkretnym adresem w konkretny wieczór."
+      ]
+    },
+    {
+      "title": "Kiedy to naprawdę ma znaczenie",
+      "content": [
+        "Przeważnie nic się nie dzieje: znajomi i tak wiedzą, gdzie byłeś. Ma to znaczenie, gdy wysyłasz zdjęcie osobie, której nie znasz — kupującemu, wynajmującemu, na forum czy do działu wsparcia — a zdjęcie zrobiono w domu lub w pracy. Zdjęcie roweru na sprzedaż, zrobione na korytarzu, może wskazywać na Twoje drzwi wejściowe.",
+        "Platformy zachowują się różnie. Wiele sieci społecznościowych usuwa lokalizację z obrazu, który pokazują po publikacji, ale zależy to od platformy i może się zmienić. Załączniki e-mail, AirDrop, pliki wysyłane jako dokumenty, linki w chmurze i ogłoszenia mogą przekazać oryginalne dane. Jeśli zdjęcie jest ważne, usuń metadane sam, zanim opuści telefon."
+      ]
+    },
+    {
+      "title": "Co oferuje iOS (i gdzie się kończy)",
+      "content": [
+        "Pomagają trzy wbudowane narzędzia. Po pierwsze, przycisk Opcje u góry arkusza udostępniania w aplikacji Zdjęcia ma przełącznik Lokalizacja, więc możesz udostępniać bez niej. Kopia w Twojej bibliotece pozostaje nietknięta. Po drugie, w panelu informacji o zdjęciu opcja Dostosuj obok lokalizacji pozwala wybrać Brak lokalizacji, co usuwa ją ze zdjęcia w bibliotece na stałe; nowsze wersje iOS oferują to także dla zaznaczonej grupy zdjęć z poziomu menu. Po trzecie, Ustawienia > Prywatność i ochrona > Usługi lokalizacji > Aparat > Nigdy zapobiega nadawaniu lokalizacji nowym zdjęciom.",
+        "Czego te narzędzia nie dają, to przeglądu. Nic nie mówi, które z czterdziestu wybranych zdjęć naprawdę mają lokalizację, przełącznik Opcje ustawia się osobno dla każdego udostępnienia, a informacji o urządzeniu arkusz udostępniania nie pozwala sprawdzać element po elemencie. Tę lukę wypełnia wyspecjalizowane narzędzie."
+      ]
+    },
+    {
+      "title": "Czyste kopie hurtowo w DiskMop na iPhone’a",
+      "content": [
+        "DiskMop na iPhone’a 1.1.10 dodaje Usuń lokalizację i dane do karty Narzędzia. Wybierasz zdjęcia i filmy z biblioteki, a ekran pokazuje, ile zaznaczyłeś i ile z nich ma lokalizację, z czerwoną pinezką przy każdym z nich. Lokalizacja oraz Telefon, aparat i opisy (model, oprogramowanie, numery seryjne i komentarze) są włączone. Data i godzina wykonania jest domyślnie wyłączona: bez niej kolejność zdjęć u odbiorcy może się pomieszać, ale możesz ją włączyć.",
+        "Stuknij Wyczyść i udostępnij, a DiskMop zapisze czyste kopie i otworzy arkusz udostępniania iOS. Twoje oryginały nigdy się nie zmieniają i nic nie jest dodawane do biblioteki, chyba że o to poprosisz. Obsługiwane są zdjęcia HEIC, JPEG i PNG oraz filmy; film nie jest ponownie kodowany. Jeśli oryginał znajduje się tylko w iCloud, DiskMop pyta, zanim go pobierze. Pliki RAW są pomijane i wypisywane, a w przypadku Live Photo udostępniany jest tylko obraz nieruchomy.",
+        "Po udostępnieniu skróty pod wynikiem pozwalają udostępnić ponownie, zapisać czyste kopie w Zdjęciach obok oryginałów albo skopiować pojedyncze zdjęcie, by wkleić je gdzie indziej. Narzędzie jest bezpłatne: bez dziennego limitu i bez subskrypcji, działa w całości na iPhonie, bez konta i bez wysyłania czegokolwiek."
+      ]
+    },
+    {
+      "title": "Co pozostaje widoczne",
+      "content": [
+        "Usunięcie metadanych usuwa tylko to, co jest ukryte w pliku. Twarze, tablice z nazwami ulic, numery domów, nazwy sklepów i tablice rejestracyjne na samym zdjęciu zostają dokładnie takie, jakie są, podobnie jak wszystko, co człowiek rozpozna na pierwszy rzut oka. Sprawdź zdjęcie przed wysłaniem, a jeśli sam obraz coś zdradza, przytnij je lub rozmyj.",
+        "Jeśli chcesz raczej ukryć niektóre zdjęcia, niż je czyścić, nasz poradnik o [ukrywaniu zdjęć na iPhonie](/blog/hide-photos-iphone) porównuje album Ukryte z zablokowanym sejfem. A jeśli chcesz, by biblioteka znajdowała zdjęcia według miejsca, zostaw włączoną lokalizację Aparatu: [wyszukiwanie zdjęć z iPhone’a według zawartości](/blog/search-photos-by-content-iphone) wykorzystuje lokalizację zdjęcia, by znaleźć na przykład wszystko, co zrobiono w Paryżu."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy przełącznik Opcje w Zdjęciach usuwa lokalizację z mojego oryginalnego zdjęcia?",
+      "answer": "Nie. Przełącznik Lokalizacja w arkuszu udostępniania zmienia tylko to, co wysyłasz. Zdjęcie w Twojej bibliotece zachowuje lokalizację. Aby usunąć ją także z kopii w bibliotece, użyj opcji Dostosuj > Brak lokalizacji w panelu informacji o zdjęciu."
+    },
+    {
+      "question": "Czy zdjęcia wysyłane przez komunikatory i sieci społecznościowe zachowują lokalizację?",
+      "answer": "To zależy od aplikacji, jej wersji i tego, czy wysyłasz obraz jako zdjęcie, czy jako plik. Wiele aplikacji usuwa lokalizację z pokazywanego obrazu, ale e-mail, AirDrop, linki w chmurze i pliki wysyłane jako dokumenty mogą zachować oryginalne dane. Najbezpieczniej jest wyczyścić zdjęcie, zanim opuści telefon."
+    },
+    {
+      "question": "Czy DiskMop potrafi usunąć lokalizację także z filmów?",
+      "answer": "Tak. Filmy są traktowane jak zdjęcia: DiskMop zapisuje czystą kopię bez ponownego kodowania filmu, a Twój oryginał pozostaje nietknięty. Live Photo jest udostępniane tylko jako obraz nieruchomy."
+    },
+    {
+      "question": "Czy DiskMop wysyła moje zdjęcia, aby je wyczyścić?",
+      "answer": "Nie. Czyszczenie odbywa się na Twoim iPhonie. Nie ma konta ani analitycznego SDK, a nic nie opuszcza urządzenia. Tylko jeśli oryginał jest przechowywany w iCloud i się zgodzisz, iPhone najpierw pobierze go z Twojego własnego iCloud."
+    },
+    {
+      "question": "Czy usuwanie lokalizacji i danych jest w DiskMop bezpłatne?",
+      "answer": "Tak. Narzędzie nie wymaga subskrypcji i nie ma dziennego limitu. Bezpłatny dzienny limit dziesięciu usunięć dotyczy tylko usuwania zdjęć, a nie czyszczenia kopii."
+    },
+    {
+      "question": "Czy dzięki temu zdjęcie staje się anonimowe?",
+      "answer": "Nie. Usuwane są tylko ukryte pola. Twarze, szyldy, tablice rejestracyjne i wszystko inne, co widać na zdjęciu, zostają, więc przed udostępnieniem sprawdź sam obraz."
+    }
+  ],
+  "verdict": [
+    "Jeśli udostępniasz zdjęcia osobom, których nie znasz, traktuj lokalizację zapisaną w pliku jako część zdjęcia. Przełącznik Opcje w Zdjęciach to szybkie rozwiązanie dla jednego udostępnienia, a wyłączenie lokalizacji Aparatu zapobiega problemowi na przyszłość, ale żadne z nich nie pokazuje, których zdjęć dotyczy problem.",
+    "DiskMop na iPhone’a sprawia, że jest to widoczne, i naprawia to hurtowo: zaznacza zdjęcia z lokalizacją, zapisuje czyste kopie zdjęć i filmów, a Twoje oryginały zostawia w spokoju. Narzędzie jest bezpłatne, działa na telefonie i wymaga wersji 1.1.10 lub nowszej."
+  ],
+  "ctaText": "Pobierz DiskMop na iPhone’a z App Store"
+}

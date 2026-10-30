@@ -1,0 +1,146 @@
+{
+  "title": "Cara Mencari Foto iPhone Menurut Isinya: Mobil, Pantai, Paris, Makanan",
+  "metaDescription": "Temukan foto iPhone mana pun menurut apa yang ditampilkannya atau tempat pengambilannya. Cara kerja pencarian Foto, dan cara DiskMop mencari di iPhone Anda agar hasilnya bisa ditinjau dan dibersihkan.",
+  "subtitle": "Kata, bukan gulir: benda, topik, dan tempat, dicocokkan di ponsel itu sendiri",
+  "intro": [
+    "Singkatnya: ketik kata di tab Pencarian pada aplikasi Foto dan iPhone Anda menemukan gambar menurut apa yang ditampilkannya, tempat pengambilannya, siapa yang ada di dalamnya, dan kapan. Untuk melangkah lebih jauh dan memakai hasilnya untuk membersihkan, DiskMop untuk iPhone punya pencarian sendiri di tab Beranda: ketik benda (mobil, bayi, pantai), topik (makanan, hewan, matahari terbenam), tempat (Paris), atau dua sekaligus (Paris makanan), dan aplikasi mendaftar foto yang cocok beserta jumlah dan perkiraan ukurannya, siap ditinjau.",
+    "Panduan ini membahas apa yang sudah bisa dicari dengan baik oleh aplikasi Foto, mengapa mencari juga cara tercepat untuk menemukan apa yang perlu dihapus dari pustaka berisi ribuan foto, cara kerja pencarian DiskMop dan apa yang tetap ada di ponsel Anda, serta batasan yang perlu diketahui: pencarian butuh pemindaian pertama selesai, pencarian tempat butuh lokasi foto, dan pengenalan hanyalah perkiraan terbaik."
+  ],
+  "keyTakeaways": [
+    "Tab Pencarian di aplikasi Foto menemukan foto menurut isi, tempat, orang, dan tanggal; mulailah dari sana jika Anda hanya ingin melihat sebuah gambar.",
+    "DiskMop untuk iPhone mencari di pustaka yang sama untuk benda (mobil, bayi, pantai), topik (makanan, hewan, matahari terbenam), dan tempat (Paris), dan Anda bisa menggabungkan dua, seperti Paris makanan.",
+    "Pencocokan berjalan di iPhone: memakai label dari pemindaian pustaka, lokasi bawaan setiap foto, dan daftar bawaan sekitar 34.000 tempat. Kata yang Anda ketik tidak dikirim ke layanan peta atau ke mana pun.",
+    "Pencarian kota mencakup foto yang diambil dalam radius sekitar 8 hingga 25 km dari pusatnya, tergantung ukuran kota.",
+    "Topik Makanan & minuman, Hewan, dan Matahari terbenam menyisihkan foto yang berisi orang, dan tidak ada yang dipilihkan untuk Anda: Anda sendiri yang memilih apa yang dihapus.",
+    "Foto tanpa lokasi tidak bisa ditemukan menurut tempat, dan pencarian baru terbuka setelah pemindaian pertama selesai; Anda bisa mengikutinya di tab Beranda."
+  ],
+  "dataTable": {
+    "caption": "Apa yang bisa Anda ketik di pencarian DiskMop",
+    "columns": [
+      "Jenis",
+      "Contoh",
+      "Cara pencocokan",
+      "Cakupan"
+    ],
+    "rows": [
+      [
+        "Benda atau adegan",
+        "mobil, pantai, bayi",
+        "Label dari pemindaian pustaka, dipakai saat aplikasi cukup yakin",
+        "Foto"
+      ],
+      [
+        "Topik",
+        "makanan, hewan, matahari terbenam",
+        "Kelompok label terkait; foto yang berisi orang disisihkan",
+        "Foto"
+      ],
+      [
+        "Tempat",
+        "Paris, Antalya, Prancis",
+        "Lokasi bawaan foto dicocokkan dengan daftar bawaan sekitar 34.000 tempat",
+        "Foto dan video"
+      ],
+      [
+        "Kombinasi",
+        "Paris makanan",
+        "Kedua syarat sekaligus: foto makanan yang diambil di Paris",
+        "Foto"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Mencari foto iPhone menurut isi atau tempat dan membersihkan yang tidak diperlukan",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Biarkan pemindaian pertama selesai",
+        "text": "Buka DiskMop dan tunggu pemindaian pustaka berakhir; Anda bisa mengikutinya di tab Beranda. Pencarian terbuka saat pemindaian selesai, karena pencarian memakai apa yang ditemukan pemindaian."
+      },
+      {
+        "name": "Ketik benda, topik, atau tempat",
+        "text": "Buka Cari foto di tab Beranda lalu ketik kata seperti mobil, bayi, pantai, Paris, atau Paris makanan. Saran muncul di bawah Benda dan topik serta Tempat, lengkap dengan jumlah yang cocok."
+      },
+      {
+        "name": "Buka satu saran dan lihat hasilnya",
+        "text": "Hasil menunjukkan jumlah foto dan perkiraan ukurannya. Gulir hasilnya dan tekan lama sebuah foto untuk melihatnya lebih besar sebelum memutuskan."
+      },
+      {
+        "name": "Pilih apa yang akan dihapus",
+        "text": "Centang foto yang ingin dihapus, atau ketuk Pilih semua jika seluruh daftar bisa dibuang. Tidak ada yang dipilihkan untuk Anda."
+      },
+      {
+        "name": "Tinjau lalu hapus",
+        "text": "Ketuk Hapus. Saat Anda memilih dua foto atau lebih, Periksa sebelum menghapus menampilkan persis apa yang akan hilang, lalu iOS meminta Anda mengonfirmasi. Foto yang dihapus menunggu 30 hari di Baru Dihapus; kosongkan album itu untuk langsung mendapatkan ruangnya kembali."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Apa yang Sudah Dicari Aplikasi Foto",
+      "content": [
+        "Aplikasi Foto bawaan punya tab Pencarian. Ketik kata dan aplikasi menemukan gambar menurut apa yang ditampilkannya, tempat pengambilannya, orang yang dikenali di dalamnya, dan tanggal. Untuk menemukan satu gambar, seperti foto anjing musim panas lalu, inilah alat yang tepat, dan berfungsi tanpa aplikasi tambahan.",
+        "Aplikasi Foto dibuat untuk melihat gambar, bukan memutuskan mana yang dihapus. Aplikasi ini tidak memberi tahu berapa ruang yang dipakai sekumpulan hasil, dan tidak disusun di sekitar rutinitas pembersihan. Di sinilah pencarian yang dibuat untuk membersihkan membantu."
+      ]
+    },
+    {
+      "title": "Mengapa Mencari Juga Cara Tercepat untuk Membersihkan",
+      "content": [
+        "Pustaka berisi ribuan foto sulit dibersihkan dengan menggulir, karena sebagian besar bukan sampah dan Anda tidak bisa tahu dari thumbnail kecil bagian mana yang sampah. Pencarian membalik urutannya: pertama Anda menyebut kategori yang Anda curigai penuh sampah, lalu Anda hanya melihat foto-foto itu. Semua hidangan yang Anda foto di satu restoran, setiap gambar mobil yang sudah Anda jual, matahari terbenam dari liburan saat Anda memotret yang sama empat puluh kali.",
+        "Pencarian juga memungkinkan Anda membersihkan di sekitar sebuah acara atau tempat. Mengetik nama kota memunculkan semua yang diambil di sana, sehingga Anda bisa menyimpan foto terbaik dari perjalanan dan membersihkan sisanya dalam hitungan menit. Untuk jenis sampah yang punya alatnya sendiri, seperti [foto yang hampir identik](/blog/find-duplicate-similar-photos-iphone), [tangkapan layar](/blog/delete-screenshots-iphone), atau [foto buram](/blog/delete-blurry-photos-iphone), pakai daftar-daftar itu lebih dulu dan cari sisanya."
+      ]
+    },
+    {
+      "title": "Cara Kerja Pencarian di DiskMop untuk iPhone",
+      "content": [
+        "Di tab Beranda, buka Cari foto dan ketik apa yang Anda cari: benda, tempat, atau keduanya. Saat Anda mengetik, saran muncul dalam dua kelompok, Benda dan topik serta Tempat, masing-masing dengan jumlah yang cocok. Mengetik dua gagasan sekaligus, seperti Paris makanan, menemukan foto makanan yang diambil di Paris. Kata yang sama juga berfungsi sebagai filter di dalam daftar yang dibuat DiskMop, misalnya untuk mempersempit kelompok foto serupa menjadi yang diambil di satu pantai.",
+        "Pilih satu saran dan Anda melihat foto yang cocok beserta jumlah dan perkiraan ukurannya. Centang yang ingin Anda hapus atau ketuk Pilih semua. Tidak ada yang dipilihkan untuk Anda; topik Makanan & minuman, Hewan, dan Matahari terbenam bahkan menyisihkan foto yang berisi orang, sehingga makan malam keluarga tidak masuk ke daftar hidangan. Penghapusan melewati layar tinjauan dan konfirmasi iOS yang sama seperti di bagian lain aplikasi."
+      ]
+    },
+    {
+      "title": "Apa yang Dicocokkan di iPhone Anda",
+      "content": [
+        "Tidak ada yang Anda ketik meninggalkan ponsel. Benda dan topik berasal dari label yang sudah dihasilkan pemindaian di iPhone, dan sebuah foto ditemukan lewat label hanya jika aplikasi cukup yakin tentangnya. Tempat berasal dari lokasi yang tersimpan di setiap foto dan dari daftar sekitar 34.000 kota dan wilayah yang tertanam di aplikasi, sehingga kata yang Anda ketik tidak pernah dikirim ke layanan peta. Pencarian kota mencakup foto yang diambil dalam radius sekitar 8 hingga 25 km dari pusatnya, tergantung seberapa besar kota itu.",
+        "DiskMop bekerja tanpa akun, dan label privasinya berbunyi Data Tidak Dikumpulkan. Pencarian mengikuti aturan yang sama seperti bagian lain aplikasi: membaca pustaka Anda di perangkat dan tidak mengunggahnya."
+      ]
+    },
+    {
+      "title": "Batasan yang Perlu Diketahui",
+      "content": [
+        "Pencarian terbuka setelah pemindaian pertama selesai, jadi pada pustaka yang sangat besar pencarian belum tersedia di menit-menit pertama. Pengenalan hanyalah perkiraan terbaik: Anda mungkin sesekali menemukan foto yang salah dalam daftar, itulah sebabnya tidak ada yang dipilihkan untuk Anda dan layar tinjauan ada. Video tidak diklasifikasikan menurut isi, jadi bisa ditemukan menurut tempat tetapi tidak menurut apa yang ditampilkannya.",
+        "Pencarian tempat memerlukan foto yang punya lokasi. Jika Anda mematikan lokasi di kamera, atau [menghapus lokasi sebelum berbagi](/blog/remove-location-from-photos-iphone) dan hanya menyimpan salinan bersihnya, salinan itu tidak bisa ditemukan menurut tempat. Dan jika Anda mengetik sesuatu yang tidak dikenali DiskMop, aplikasi akan mengatakannya dan menyarankan mengetik tempat, benda, atau topik. Untuk mencari orang menurut nama, pakai album Orang di aplikasi Foto."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Apakah pencarian foto DiskMop memerlukan koneksi internet?",
+      "answer": "Tidak. Pencocokan berjalan di iPhone Anda, memakai label dari pemindaian pustaka, lokasi bawaan setiap foto, dan daftar tempat yang tertanam di aplikasi. Kata yang Anda ketik tidak dikirim ke mana pun."
+    },
+    {
+      "question": "Mengapa saya tidak bisa mencari tepat setelah memasang DiskMop?",
+      "answer": "Pencarian memakai apa yang ditemukan pemindaian pustaka, jadi pencarian terbuka saat pemindaian pertama selesai. Anda bisa mengikuti pemindaian di tab Beranda; pemindaian berikutnya hanya memeriksa foto baru."
+    },
+    {
+      "question": "Mengapa foto tidak ditemukan saat saya mencari tempat?",
+      "answer": "Pencarian tempat bergantung pada lokasi yang tersimpan di foto. Foto yang diambil saat lokasi dimatikan, atau salinan yang lokasinya sudah dihapus, tidak punya lokasi dan tidak bisa dicocokkan dengan tempat."
+    },
+    {
+      "question": "Bisakah saya mencari orang menurut nama?",
+      "answer": "DiskMop mencari benda, topik, dan tempat. Untuk orang menurut nama, pakai album Orang dan tab Pencarian di aplikasi Foto."
+    },
+    {
+      "question": "Apakah pencarian menghapus sesuatu?",
+      "answer": "Tidak. Pencarian hanya mendaftar foto. Tidak ada yang dipilihkan untuk Anda, dan penghapusan melewati layar tinjauan serta konfirmasi bawaan iOS. Foto yang dihapus lalu menunggu 30 hari di Baru Dihapus."
+    },
+    {
+      "question": "Apakah pencarian gratis di DiskMop?",
+      "answer": "Pencarian dan pemindaian gratis. Tanpa langganan Anda bisa menghapus hingga sepuluh foto per hari, ditambah penghapusan ekstra yang didapat dari rentetan hari dan trofi, dan DiskMop Pro menghilangkan batasnya."
+    }
+  ],
+  "verdict": [
+    "Mencari adalah cara tercepat menemukan sebuah foto dan, di pustaka besar, cara tercepat memutuskan apa yang dihapus: sebut kategori, lihat hanya foto-foto itu, dan bersihkan yang tidak Anda perlukan. Pencarian aplikasi Foto adalah tempat yang tepat untuk menemukan satu gambar.",
+    "DiskMop untuk iPhone menambahkan pencarian yang dibuat untuk membersihkan: benda, topik, dan tempat, dicocokkan di ponsel, dengan jumlah dan perkiraan ukuran setiap hasil serta tinjauan sebelum apa pun dihapus. Pemindaian dan pencarian gratis, dan hingga sepuluh foto per hari bisa dihapus gratis."
+  ],
+  "ctaText": "Dapatkan DiskMop untuk iPhone di App Store"
+}

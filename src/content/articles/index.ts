@@ -1,4 +1,5 @@
 import type { Article } from "../types";
+import { LOCALES } from "@/lib/locales";
 import { ccleaner } from "./ccleaner";
 import { cleanmymac } from "./cleanmymac";
 import { bleachbit } from "./bleachbit";
@@ -167,4 +168,17 @@ export function getArticle(slug: string): Article | undefined {
 
 export function getAllSlugs(): string[] {
   return articles.map((a) => a.slug);
+}
+
+/**
+ * Makalenin gerçekten yazılı olduğu diller. Yeni 10 dilde (ar he id ko pl ro ru
+ * th vi zh-Hans) yalnız çevrilmiş makaleler var; olmayanlar İngilizceye düşüp
+ * kopya sayfa üretmesin diye sayfa, liste, sitemap ve hreflang bu listeye bakar.
+ */
+export function articleLocales(article: Article): string[] {
+  return LOCALES.filter((l) => Boolean(article.content[l]));
+}
+
+export function articlesIn(locale: string): Article[] {
+  return articles.filter((a) => Boolean(a.content[locale]));
 }

@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { articles } from "@/content/articles";
+import { articlesIn } from "@/content/articles";
 import { alternatesFor, socialFor } from "@/lib/seo";
 import { BlogListClient, type BlogItem } from "@/components/blog-list-client";
 
@@ -40,8 +40,8 @@ export default async function BlogPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "blog" });
 
-  const blogItems: BlogItem[] = articles.map((article) => {
-    const content = article.content[locale] || article.content["en"];
+  const blogItems: BlogItem[] = articlesIn(locale).map((article) => {
+    const content = article.content[locale];
     return {
       slug: article.slug,
       type: article.type,

@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
-import { articles } from "@/content/articles";
+import { articles, articleLocales } from "@/content/articles";
 import { LOCALES, localeUrl } from "@/lib/seo";
+import { POLICY_LOCALES } from "@/lib/locales";
 
 /**
- * Her giriş 8 dilin tamamını + x-default'u ilan eder. x-default İngilizce
+ * Her giriş sayfanın var olduğu dilleri + x-default'u ilan eder. x-default İngilizce
  * sürüme işaret eder: dili eşleşmeyen kullanıcı oraya düşer. (Eskiden yoktu,
  * bu yüzden Google eşleşmeyen diller için sürüm seçemiyordu.)
  */
-function diller(path: string) {
+function diller(path: string, locales: readonly string[] = LOCALES) {
   return {
     languages: {
-      ...Object.fromEntries(LOCALES.map((l) => [l, localeUrl(l, path)])),
+      ...Object.fromEntries(locales.map((l) => [l, localeUrl(l, path)])),
       "x-default": localeUrl("en", path),
     },
   };
@@ -36,13 +37,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const locale of LOCALES) {
+  // Gizlilik politikası yalnız çevrilmiş 8 dilde; diğer diller İngilizceye yönlenir.
+  for (const locale of POLICY_LOCALES) {
     entries.push({
       url: localeUrl(locale, "/privacy"),
       lastModified: new Date("2026-05-24"),
       changeFrequency: "yearly",
       priority: 0.3,
-      alternates: diller("/privacy"),
+      alternates: diller("/privacy", POLICY_LOCALES),
     });
   }
 
@@ -77,13 +79,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const article of articles) {
-    for (const locale of LOCALES) {
+    const dilleri = articleLocales(article);
+    for (const locale of dilleri) {
       entries.push({
         url: localeUrl(locale, `/blog/${article.slug}`),
         lastModified: new Date(article.updated || article.date),
         changeFrequency: "monthly",
         priority: 0.7,
-        alternates: diller(`/blog/${article.slug}`),
+        alternates: diller(`/blog/${article.slug}`, dilleri),
       });
     }
   }

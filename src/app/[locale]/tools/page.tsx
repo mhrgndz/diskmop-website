@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { routing } from "@/i18n/routing";
 import { localeHref } from "@/lib/locale-path";
 import { alternatesFor, socialFor } from "@/lib/seo";
+import { getArticle } from "@/content/articles";
 import {
   Calculator,
   ChevronRight,
@@ -86,12 +87,13 @@ export default async function ToolsHubPage({
     ],
   };
 
-  const toolsList = [
+  const allTools = [
     {
       title: t("cardCalculatorTitle"),
       description: t("cardCalculatorDesc"),
       href: localeHref(locale, "/tools/disk-space-calculator"),
       icon: Calculator,
+      article: undefined,
       isFeatured: true,
       badge: t("featuredBadge"),
     },
@@ -99,6 +101,7 @@ export default async function ToolsHubPage({
       title: t("cardSsdTitle"),
       description: t("cardSsdDesc"),
       href: localeHref(locale, "/blog/ssd-health-check-windows"),
+      article: "ssd-health-check-windows",
       icon: Gauge,
       isFeatured: false,
       badge: t("guideBadge"),
@@ -107,6 +110,7 @@ export default async function ToolsHubPage({
       title: t("cardIphoneTitle"),
       description: t("cardIphoneDesc"),
       href: localeHref(locale, "/blog/iphone-storage-full"),
+      article: "iphone-storage-full",
       icon: Smartphone,
       isFeatured: false,
       badge: t("guideBadge"),
@@ -115,11 +119,17 @@ export default async function ToolsHubPage({
       title: t("cardLargeFilesTitle"),
       description: t("cardLargeFilesDesc"),
       href: localeHref(locale, "/blog/find-large-files-windows"),
+      article: "find-large-files-windows",
       icon: FileSearch,
       isFeatured: false,
       badge: t("guideBadge"),
     },
   ];
+
+  // Rehber kartları yalnız o dilde makalesi varsa gösterilir (yeni dillerde 404 olmasın).
+  const toolsList = allTools.filter(
+    (tool) => !tool.article || getArticle(tool.article)?.content[locale],
+  );
 
   return (
     <>
@@ -139,7 +149,7 @@ export default async function ToolsHubPage({
             >
               Disk Mop
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="rtl:rotate-180 h-4 w-4" />
             <span className="text-foreground font-medium">
               {t("breadcrumb")}
             </span>
@@ -199,7 +209,7 @@ export default async function ToolsHubPage({
 
                   <div className="flex items-center gap-2 text-sm font-semibold text-brand-600 dark:text-brand-400 group-hover:gap-3 transition-all">
                     <span>{t("openTool")}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="rtl:rotate-180 h-4 w-4" />
                   </div>
                 </Link>
               );

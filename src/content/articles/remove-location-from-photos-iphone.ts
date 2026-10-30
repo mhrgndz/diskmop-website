@@ -1,4 +1,5 @@
 import type { Article } from "../types";
+import { translations } from "./i18n/remove-location-from-photos-iphone";
 
 export const removeLocationFromPhotosIphone: Article = {
   slug: "remove-location-from-photos-iphone",
@@ -1273,5 +1274,6 @@ export const removeLocationFromPhotosIphone: Article = {
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },
+    ...translations,
   },
 };

@@ -1,4 +1,5 @@
 import type { Article } from "../types";
+import { translations } from "./i18n/search-photos-by-content-iphone";
 
 export const searchPhotosByContentIphone: Article = {
   slug: "search-photos-by-content-iphone",
@@ -1218,5 +1219,6 @@ export const searchPhotosByContentIphone: Article = {
       ],
       ctaText: "App Store で iPhone 版 DiskMop を入手",
     },
+    ...translations,
   },
 };

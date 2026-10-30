@@ -1,0 +1,147 @@
+{
+  "title": "Cách xóa vị trí và siêu dữ liệu khỏi ảnh iPhone trước khi chia sẻ",
+  "metaDescription": "Mỗi bức ảnh iPhone đều có thể mang tọa độ GPS, ngày chụp và kiểu điện thoại. Đây là những gì nó tiết lộ và cách xóa chúng khỏi ảnh và video, hàng loạt hoặc từng cái một.",
+  "subtitle": "Điều gì ẩn trong mỗi tệp, công tắc có sẵn và các bản sao sạch không động đến bản gốc của bạn",
+  "intro": [
+    "Tóm lại: ảnh và video quay bằng iPhone có thể mang ngay trong tệp nơi chúng được chụp (tọa độ GPS), ngày và giờ, kiểu điện thoại và máy ảnh cùng phiên bản phần mềm. Đây gọi là siêu dữ liệu, hay dữ liệu EXIF, và nó đi cùng tệp. Để chia sẻ mà không có chúng, hãy mở bảng chia sẻ trong Ảnh, nhấn Tùy chọn rồi tắt Vị trí, hoặc tạo bản sao sạch của nhiều tệp cùng lúc bằng DiskMop cho iPhone (phiên bản 1.1.10 trở lên).",
+    "Hướng dẫn này cho thấy những gì được lưu và ai có thể đọc, ba cách xóa chúng trên iPhone cùng hạn chế của từng cách, và những gì việc xóa siêu dữ liệu không thay đổi: khuôn mặt, biển tên đường và biển số xe hiện rõ trong chính bức ảnh."
+  ],
+  "keyTakeaways": [
+    "Ảnh và video quay bằng iPhone lưu nơi chụp, ngày và giờ, kiểu thiết bị và phiên bản phần mềm ngay trong tệp; bất kỳ ai nhận được tệp gốc đều đọc được chúng.",
+    "Bảng chia sẻ trong Ảnh có nút Tùy chọn với công tắc Vị trí. Nó xóa vị trí khỏi thứ bạn gửi đi và để ảnh trong thư viện của bạn nguyên vẹn.",
+    "Cài đặt > Quyền riêng tư và Bảo mật > Dịch vụ định vị > Camera > Không bao giờ ngăn ảnh mới bị gắn địa điểm, nhưng không có tác dụng với những ảnh bạn đã có.",
+    "Nhiều mạng xã hội ẩn vị trí khi bạn đăng, nhưng email, AirDrop, liên kết đám mây, tin rao vặt và ảnh gửi dưới dạng tệp có thể chuyển tiếp dữ liệu gốc, vì vậy đừng trông chờ bên kia sẽ xóa giúp.",
+    "DiskMop cho iPhone (1.1.10 trở lên) đánh dấu ảnh nào trong số bạn đã chọn có vị trí, xóa vị trí cùng thông tin điện thoại và máy ảnh khỏi các bản sao rồi mở bảng chia sẻ. Bản gốc của bạn không bao giờ bị thay đổi. Miễn phí và dùng được cho cả ảnh lẫn video.",
+    "Xóa siêu dữ liệu không che đi những gì nhìn thấy được: khuôn mặt, biển hiệu, số nhà và biển số xe vẫn còn trong ảnh."
+  ],
+  "dataTable": {
+    "caption": "Các cách xóa vị trí khỏi ảnh iPhone",
+    "columns": [
+      "Cách làm",
+      "Có thay đổi bản gốc không?",
+      "Nhiều ảnh cùng lúc",
+      "Cho biết ảnh nào có vị trí"
+    ],
+    "rows": [
+      [
+        "Bảng chia sẻ > Tùy chọn > Tắt Vị trí",
+        "Không, chỉ bản sao bạn gửi",
+        "Có, chọn nhiều ảnh",
+        "Không"
+      ],
+      [
+        "Ảnh > Thông tin > Điều chỉnh > Không có vị trí",
+        "Có, vĩnh viễn trong thư viện của bạn",
+        "Có, từ menu của phần đã chọn (iOS 15 trở lên)",
+        "Không"
+      ],
+      [
+        "Dịch vụ định vị > Camera > Không bao giờ",
+        "Không, chỉ ảnh trong tương lai",
+        "Không áp dụng",
+        "Không"
+      ],
+      [
+        "DiskMop > Công cụ > Xóa vị trí và thông tin",
+        "Không, làm việc trên bản sao",
+        "Có",
+        "Có, một ghim đỏ đánh dấu từng ảnh"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Xóa vị trí khỏi ảnh iPhone trước khi chia sẻ",
+    "totalTime": "PT3M",
+    "steps": [
+      {
+        "name": "Xem ảnh mang theo những gì",
+        "text": "Mở một ảnh trong Ảnh rồi vuốt lên hoặc nhấn nút thông tin. Bạn sẽ thấy máy ảnh và ống kính, chi tiết tệp và, nếu ảnh có vị trí, một bản đồ nhỏ. Bản đồ đó chính là thông tin mà bất kỳ ai nhận được tệp gốc cũng đọc được."
+      },
+      {
+        "name": "Dùng công tắc có sẵn để chia sẻ nhanh",
+        "text": "Chọn ảnh, nhấn Chia sẻ, rồi nhấn Tùy chọn ở đầu bảng chia sẻ và tắt Vị trí trước khi gửi. Bản sao trong thư viện của bạn vẫn giữ vị trí."
+      },
+      {
+        "name": "Ngừng gắn thẻ ảnh trong tương lai (không bắt buộc)",
+        "text": "Vào Cài đặt > Quyền riêng tư và Bảo mật > Dịch vụ định vị > Camera và chọn Không bao giờ. Ảnh mới sẽ không có vị trí, nhưng những ảnh bạn đã chụp không thay đổi, và ứng dụng Ảnh không còn nhóm được ảnh mới theo địa điểm."
+      },
+      {
+        "name": "Tạo bản sao sạch hàng loạt bằng DiskMop",
+        "text": "Trong DiskMop cho iPhone, mở Công cụ > Xóa vị trí và thông tin rồi chọn ảnh và video. Một ghim đỏ đánh dấu mọi mục có vị trí. Giữ bật Vị trí và Điện thoại, máy ảnh và chú thích, quyết định xem có xóa cả ngày và giờ hay không, rồi nhấn Làm sạch và chia sẻ."
+      },
+      {
+        "name": "Kiểm tra kết quả và chia sẻ",
+        "text": "Phần tóm tắt ở trên cùng cho biết đã làm sạch bao nhiêu mục và bao nhiêu mục đã bị xóa vị trí, sau đó bảng chia sẻ iOS mở ra cùng các bản sao sạch. Sau đó bạn có thể chia sẻ lại, lưu các bản sao vào Ảnh cạnh bản gốc hoặc sao chép một ảnh."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Điều gì ẩn trong ảnh hoặc video",
+      "content": [
+        "Mỗi ảnh iPhone chụp được lưu kèm thông tin bổ sung bên cạnh hình ảnh. Phần nhạy cảm nhất là vị trí: khi Camera được phép dùng Dịch vụ định vị, tọa độ GPS của nơi bạn đứng được ghi vào tệp. Cùng với đó là ngày và giờ, kiểu điện thoại và máy ảnh, cài đặt ống kính, phiên bản phần mềm và mọi chú thích hay nhận xét bạn thêm sau trong Ảnh. Video mang loại thông tin tương tự.",
+        "Bạn không thấy điều này khi nhìn vào ảnh, nên rất dễ quên. Đó chỉ là vài dòng văn bản, nhưng đủ để cho thấy một bức ảnh được chụp tại một địa chỉ cụ thể vào một buổi tối cụ thể."
+      ]
+    },
+    {
+      "title": "Khi nào điều này thật sự quan trọng",
+      "content": [
+        "Phần lớn thời gian chẳng có chuyện gì: bạn bè đã biết bạn ở đâu. Điều này quan trọng khi bạn gửi ảnh cho người bạn không quen, như người mua, chủ nhà, diễn đàn hay bộ phận hỗ trợ, và ảnh được chụp ở nhà hoặc nơi làm việc. Một tấm ảnh chiếc xe đạp rao bán, chụp ở hành lang, có thể chỉ thẳng đến cửa nhà bạn.",
+        "Mỗi nền tảng xử lý khác nhau. Nhiều mạng xã hội xóa vị trí khỏi hình ảnh họ hiển thị khi bạn đăng, nhưng điều đó tùy nền tảng và có thể thay đổi. Tệp đính kèm email, AirDrop, tệp gửi dưới dạng tài liệu, liên kết đám mây và tin rao vặt có thể chuyển tiếp dữ liệu gốc. Nếu bức ảnh quan trọng, hãy tự xóa siêu dữ liệu trước khi nó rời khỏi điện thoại."
+      ]
+    },
+    {
+      "title": "iOS đã có sẵn gì (và dừng ở đâu)",
+      "content": [
+        "Có ba công cụ tích hợp giúp ích. Thứ nhất, nút Tùy chọn ở đầu bảng chia sẻ trong Ảnh có công tắc Vị trí, nên bạn có thể chia sẻ mà không kèm vị trí. Bản sao trong thư viện của bạn không bị đụng tới. Thứ hai, trong bảng thông tin của ảnh, mục Điều chỉnh cạnh vị trí cho phép bạn chọn Không có vị trí, xóa vĩnh viễn nó khỏi ảnh trong thư viện của bạn; các phiên bản iOS gần đây còn cho làm việc này với nhiều ảnh đã chọn từ menu. Thứ ba, Cài đặt > Quyền riêng tư và Bảo mật > Dịch vụ định vị > Camera > Không bao giờ ngăn ảnh mới nhận vị trí.",
+        "Điều các công cụ này không cho bạn là cái nhìn tổng quan. Không có gì cho biết trong bốn mươi ảnh bạn đã chọn, ảnh nào thực sự có vị trí, công tắc Tùy chọn được đặt riêng cho từng lần chia sẻ, và thông tin về thiết bị thì bảng chia sẻ không cho kiểm tra từng mục một. Đó là khoảng trống mà một công cụ chuyên dụng lấp đầy."
+      ]
+    },
+    {
+      "title": "Bản sao sạch hàng loạt với DiskMop cho iPhone",
+      "content": [
+        "DiskMop cho iPhone 1.1.10 thêm Xóa vị trí và thông tin vào tab Công cụ. Bạn chọn ảnh và video từ thư viện, và màn hình cho biết bạn đã chọn bao nhiêu và có bao nhiêu mục có vị trí, với một ghim đỏ trên từng mục. Vị trí và Điện thoại, máy ảnh và chú thích (kiểu máy, phần mềm, số sê-ri và nhận xét) được bật. Ngày và giờ chụp mặc định tắt: nếu không có nó, thứ tự ảnh có thể bị lộn xộn với người nhận, nhưng bạn có thể bật lên.",
+        "Nhấn Làm sạch và chia sẻ, DiskMop sẽ ghi các bản sao sạch rồi mở bảng chia sẻ iOS. Bản gốc của bạn không bao giờ thay đổi và không có gì được thêm vào thư viện trừ khi bạn yêu cầu. Hỗ trợ ảnh HEIC, JPEG, PNG và video; video không bị mã hóa lại. Nếu bản gốc chỉ nằm trên iCloud, DiskMop sẽ hỏi trước khi tải xuống. Tệp RAW bị bỏ qua và được liệt kê, còn với Live Photo thì chỉ ảnh tĩnh được chia sẻ.",
+        "Sau khi chia sẻ, các lối tắt bên dưới kết quả cho phép bạn chia sẻ lại, lưu các bản sao sạch vào Ảnh cạnh bản gốc hoặc sao chép một ảnh để dán vào nơi khác. Công cụ này miễn phí: không giới hạn hằng ngày và không cần đăng ký, và hoạt động hoàn toàn trên iPhone, không cần tài khoản và không tải gì lên."
+      ]
+    },
+    {
+      "title": "Những gì vẫn hiển thị",
+      "content": [
+        "Xóa siêu dữ liệu chỉ xóa những gì ẩn trong tệp. Khuôn mặt, biển tên đường, số nhà, tên cửa hàng và biển số xe trong chính bức ảnh vẫn nguyên như cũ, và mọi thứ người ta nhận ra bằng mắt cũng vậy. Hãy kiểm tra ảnh trước khi gửi, và cắt hoặc làm mờ nếu bản thân bức ảnh để lộ điều gì.",
+        "Nếu bạn muốn giấu một số ảnh khỏi tầm mắt thay vì làm sạch chúng, hướng dẫn của chúng tôi về [ẩn ảnh trên iPhone](/blog/hide-photos-iphone) so sánh album Ẩn với một két khóa. Và nếu bạn cũng muốn thư viện tìm được ảnh theo địa điểm, hãy giữ bật vị trí của Camera: [tìm ảnh iPhone theo nội dung](/blog/search-photos-by-content-iphone) dùng vị trí của ảnh để tìm, chẳng hạn, mọi thứ được chụp ở Paris."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Công tắc Tùy chọn trong Ảnh có xóa vị trí khỏi ảnh gốc của tôi không?",
+      "answer": "Không. Công tắc Vị trí trong bảng chia sẻ chỉ thay đổi thứ bạn gửi đi. Ảnh trong thư viện của bạn vẫn giữ vị trí. Để xóa nó khỏi cả bản sao trong thư viện, hãy dùng Điều chỉnh > Không có vị trí trong bảng thông tin của ảnh."
+    },
+    {
+      "question": "Ảnh gửi qua ứng dụng nhắn tin và mạng xã hội có giữ vị trí không?",
+      "answer": "Tùy ứng dụng, phiên bản của nó và việc bạn gửi hình dưới dạng ảnh hay tệp. Nhiều ứng dụng xóa vị trí khỏi hình ảnh họ hiển thị, nhưng email, AirDrop, liên kết đám mây và tệp gửi dưới dạng tài liệu có thể giữ dữ liệu gốc. Cách an toàn là làm sạch ảnh trước khi nó rời khỏi điện thoại."
+    },
+    {
+      "question": "DiskMop có xóa được vị trí khỏi video không?",
+      "answer": "Có. Video được xử lý như ảnh: DiskMop ghi một bản sao sạch mà không mã hóa lại video, và bản gốc của bạn không bị đụng tới. Live Photo chỉ được chia sẻ dưới dạng ảnh tĩnh."
+    },
+    {
+      "question": "DiskMop có tải ảnh của tôi lên để làm sạch không?",
+      "answer": "Không. Việc làm sạch diễn ra trên iPhone của bạn. Không có tài khoản, không có SDK phân tích và không có gì rời khỏi thiết bị. Chỉ khi bản gốc được lưu trên iCloud và bạn đồng ý, iPhone mới tải nó về trước từ chính iCloud của bạn."
+    },
+    {
+      "question": "Xóa vị trí và thông tin trong DiskMop có miễn phí không?",
+      "answer": "Có. Công cụ này không cần đăng ký và không giới hạn hằng ngày. Hạn mức miễn phí mười lần xóa mỗi ngày chỉ áp dụng cho việc xóa ảnh, không áp dụng cho việc làm sạch bản sao."
+    },
+    {
+      "question": "Làm vậy có biến ảnh thành ẩn danh không?",
+      "answer": "Không. Nó chỉ xóa các trường ẩn. Khuôn mặt, biển hiệu, biển số xe và mọi thứ khác nhìn thấy trong ảnh vẫn còn, vì vậy hãy kiểm tra chính bức ảnh trước khi chia sẻ."
+    }
+  ],
+  "verdict": [
+    "Nếu bạn chia sẻ ảnh với người không quen, hãy coi vị trí trong tệp là một phần của bức ảnh. Công tắc Tùy chọn trong Ảnh là cách khắc phục nhanh cho một lần chia sẻ, và tắt vị trí Camera ngăn vấn đề về sau, nhưng cả hai đều không cho bạn biết ảnh nào bị ảnh hưởng.",
+    "DiskMop cho iPhone làm điều đó hiển thị rõ và khắc phục hàng loạt: nó đánh dấu các ảnh có vị trí, ghi bản sao sạch của ảnh và video, và để yên bản gốc của bạn. Công cụ này miễn phí, chạy ngay trên điện thoại và cần phiên bản 1.1.10 trở lên."
+  ],
+  "ctaText": "Tải DiskMop cho iPhone trên App Store"
+}

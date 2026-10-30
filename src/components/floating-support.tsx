@@ -9,7 +9,7 @@ export function FloatingSupport() {
     <a
       href="mailto:diskmopdev@gmail.com"
       className={cn(
-        "fixed bottom-6 right-6 z-40",
+        "fixed bottom-6 end-6 z-40",
         "w-14 h-14 bg-brand-600 text-white rounded-full shadow-lg shadow-brand-600/25",
         "hover:shadow-brand-600/40 hover:scale-110 transition-all",
         "flex items-center justify-center",

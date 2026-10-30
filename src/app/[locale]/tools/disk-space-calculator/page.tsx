@@ -180,14 +180,14 @@ export default async function DiskSpaceCalculatorPage({
             >
               Disk Mop
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="rtl:rotate-180 h-4 w-4" />
             <Link
               href={localeHref(locale, "/tools")}
               className="hover:text-foreground transition-colors"
             >
               {tTools("breadcrumb")}
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="rtl:rotate-180 h-4 w-4" />
             <span className="text-foreground truncate font-medium">
               {tCalc("breadcrumb")}
             </span>

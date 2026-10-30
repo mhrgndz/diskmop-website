@@ -75,7 +75,7 @@ export function TableOfContents({
             <List className="h-4 w-4" />
           </div>
           <span>{title}</span>
-          <span className="text-xs font-normal text-muted-foreground ml-1">
+          <span className="text-xs font-normal text-muted-foreground ms-1">
             ({items.length})
           </span>
         </div>
@@ -93,22 +93,22 @@ export function TableOfContents({
       </div>
 
       <div className={`mt-4 sm:block ${isOpen ? "block" : "hidden sm:block"}`}>
-        <ul className="space-y-1.5 text-sm border-l-2 border-border/60 pl-3">
+        <ul className="space-y-1.5 text-sm border-s-2 border-border/60 ps-3">
           {items.map((item) => {
             const isActive = activeId === item.id;
             return (
               <li
                 key={item.id}
                 className={`transition-colors ${
-                  item.level === 3 ? "ml-3" : ""
+                  item.level === 3 ? "ms-3" : ""
                 }`}
               >
                 <a
                   href={`#${item.id}`}
                   onClick={(e) => scrollTo(e, item.id)}
-                  className={`block py-1 transition-all rounded-md px-2 -ml-2 ${
+                  className={`block py-1 transition-all rounded-md px-2 -ms-2 ${
                     isActive
-                      ? "font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 -translate-x-1 pl-3 border-l-2 border-brand-600 dark:border-brand-400"
+                      ? "font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 -translate-x-1 rtl:translate-x-1 ps-3 border-s-2 border-brand-600 dark:border-brand-400"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
                   }`}
                 >

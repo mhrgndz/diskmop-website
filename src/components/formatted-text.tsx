@@ -1,6 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import { localeHref } from "@/lib/locale-path";
+import { getArticle } from "@/content/articles";
+
+/**
+ * Yeni dillerde (ar he id ko pl ro ru th vi zh-Hans) yalnız bazı makaleler var.
+ * O dilde olmayan bir makaleye giden iç bağlantı 404 verirdi; düz metne düşer.
+ */
+function isLinkable(href: string, locale: string): boolean {
+  const match = href.match(/^\/blog\/([^/#?]+)/);
+  if (!match) return true;
+  const article = getArticle(match[1]);
+  return !article || Boolean(article.content[locale]);
+}
 
 interface FormattedTextProps {
   text: string;
@@ -37,7 +49,9 @@ export function FormattedText({ text, locale }: FormattedTextProps) {
       const href = match[2];
       const isInternal = href.startsWith("/");
 
-      if (isInternal) {
+      if (isInternal && !isLinkable(href, locale)) {
+        parts.push(label);
+      } else if (isInternal) {
         parts.push(
           <Link
             key={match.index}

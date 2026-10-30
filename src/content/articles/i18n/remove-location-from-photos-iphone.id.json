@@ -1,0 +1,147 @@
+{
+  "title": "Cara Menghapus Lokasi dan Metadata dari Foto iPhone Sebelum Dibagikan",
+  "metaDescription": "Setiap foto iPhone bisa membawa koordinat GPS, tanggal, dan model ponsel. Inilah yang terungkap dan cara menghapusnya dari foto dan video, sekaligus banyak atau satu per satu.",
+  "subtitle": "Apa yang tersembunyi di setiap file, tombol bawaan, dan salinan bersih yang tidak mengubah file asli Anda",
+  "intro": [
+    "Singkatnya: foto dan video yang diambil dengan iPhone bisa membawa tempat pengambilannya (koordinat GPS), tanggal dan jam, model ponsel dan kamera, serta versi perangkat lunak di dalam file itu sendiri. Ini disebut metadata, atau data EXIF, dan ikut terbawa bersama file. Untuk berbagi tanpa data itu, buka lembar Bagikan di Foto, ketuk Opsi, lalu matikan Lokasi, atau buat salinan bersih dari banyak file sekaligus dengan DiskMop untuk iPhone (versi 1.1.10 ke atas).",
+    "Panduan ini menunjukkan apa yang tersimpan dan siapa yang bisa membacanya, tiga cara menghapusnya di iPhone beserta kekurangan masing-masing, dan apa yang tidak berubah saat metadata dihapus: wajah, papan nama jalan, dan pelat nomor yang terlihat di gambar itu sendiri."
+  ],
+  "keyTakeaways": [
+    "Foto dan video yang diambil dengan iPhone menyimpan tempat pengambilan, tanggal dan jam, model perangkat, dan versi perangkat lunak di dalam file; siapa pun yang menerima file asli bisa membacanya.",
+    "Lembar Bagikan di Foto punya tombol Opsi dengan sakelar Lokasi. Sakelar ini menghapus lokasi dari apa yang Anda kirim dan membiarkan foto di pustaka Anda tidak berubah.",
+    "Pengaturan > Privasi & Keamanan > Layanan Lokasi > Kamera > Jangan mencegah foto baru diberi tanda tempat, tetapi tidak berpengaruh pada foto yang sudah Anda miliki.",
+    "Banyak jejaring sosial menyembunyikan lokasi saat Anda memposting, tetapi email, AirDrop, tautan cloud, iklan baris, dan foto yang dikirim sebagai file bisa meneruskan data aslinya, jadi jangan mengandalkan pihak lain untuk menghapusnya.",
+    "DiskMop untuk iPhone (1.1.10 ke atas) menandai foto pilihan Anda yang punya lokasi, menghapus lokasi serta informasi ponsel dan kamera dari salinan, lalu membuka lembar Bagikan. File asli Anda tidak pernah diubah. Gratis dan berfungsi untuk foto dan video.",
+    "Menghapus metadata tidak menyembunyikan apa yang terlihat: wajah, papan nama, nomor rumah, dan pelat nomor tetap ada di gambar."
+  ],
+  "dataTable": {
+    "caption": "Cara menghapus lokasi dari foto iPhone",
+    "columns": [
+      "Cara",
+      "Mengubah file asli?",
+      "Banyak foto sekaligus",
+      "Menunjukkan foto mana yang punya lokasi"
+    ],
+    "rows": [
+      [
+        "Lembar Bagikan > Opsi > Lokasi nonaktif",
+        "Tidak, hanya salinan yang Anda kirim",
+        "Ya, pilih beberapa",
+        "Tidak"
+      ],
+      [
+        "Foto > Info > Sesuaikan > Tanpa Lokasi",
+        "Ya, permanen di pustaka Anda",
+        "Ya, dari menu pilihan (iOS 15 ke atas)",
+        "Tidak"
+      ],
+      [
+        "Layanan Lokasi > Kamera > Jangan",
+        "Tidak, hanya memengaruhi foto mendatang",
+        "Tidak berlaku",
+        "Tidak"
+      ],
+      [
+        "DiskMop > Alat > Hapus lokasi & info",
+        "Tidak, bekerja pada salinan",
+        "Ya",
+        "Ya, pin merah menandai setiap foto"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Menghapus lokasi dari foto iPhone sebelum dibagikan",
+    "totalTime": "PT3M",
+    "steps": [
+      {
+        "name": "Lihat apa yang dibawa sebuah foto",
+        "text": "Buka foto di Foto, lalu geser ke atas atau ketuk tombol info. Anda akan melihat kamera dan lensa, detail file, dan, jika foto punya lokasi, sebuah peta kecil. Peta itu adalah informasi yang sama yang bisa dibaca siapa pun yang menerima file asli."
+      },
+      {
+        "name": "Pakai sakelar bawaan untuk berbagi cepat",
+        "text": "Pilih foto, ketuk Bagikan, lalu ketuk Opsi di bagian atas lembar Bagikan dan matikan Lokasi sebelum mengirim. Salinan di pustaka Anda tetap menyimpan lokasinya."
+      },
+      {
+        "name": "Hentikan penandaan foto mendatang (opsional)",
+        "text": "Buka Pengaturan > Privasi & Keamanan > Layanan Lokasi > Kamera dan pilih Jangan. Foto baru tidak akan punya lokasi, tetapi foto yang sudah Anda ambil tidak berubah, dan aplikasi Foto tidak lagi bisa mengelompokkan foto baru menurut tempat."
+      },
+      {
+        "name": "Buat salinan bersih sekaligus banyak dengan DiskMop",
+        "text": "Di DiskMop untuk iPhone, buka Alat > Hapus lokasi & info dan pilih foto dan video. Pin merah menandai setiap item yang punya lokasi. Biarkan Lokasi dan Ponsel, kamera & keterangan tetap menyala, putuskan apakah tanggal dan jam juga ingin dihapus, lalu ketuk Bersihkan & bagikan."
+      },
+      {
+        "name": "Periksa hasilnya dan bagikan",
+        "text": "Ringkasan di bagian atas menunjukkan berapa item yang dibersihkan dan berapa yang lokasinya dihapus, lalu lembar Bagikan iOS terbuka dengan salinan bersih. Setelah itu Anda bisa berbagi lagi, menyimpan salinan ke Foto di samping file asli, atau menyalin satu foto."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Apa yang Tersembunyi di Dalam Foto atau Video",
+      "content": [
+        "Setiap foto yang diambil iPhone Anda disimpan dengan informasi tambahan di samping gambarnya. Bagian paling sensitif adalah lokasi: saat Kamera diizinkan memakai Layanan Lokasi, koordinat GPS tempat Anda berdiri ditulis ke dalam file. Bersamanya ikut tersimpan tanggal dan jam, model ponsel dan kamera, pengaturan lensa, versi perangkat lunak, dan keterangan atau komentar apa pun yang Anda tambahkan kemudian di Foto. Video membawa jenis informasi yang sama.",
+        "Anda tidak melihat ini saat memandang gambarnya, sehingga mudah terlupakan. Isinya hanya beberapa baris teks, tetapi cukup untuk menunjukkan bahwa sebuah foto diambil di alamat tertentu pada malam tertentu."
+      ]
+    },
+    {
+      "title": "Kapan Ini Benar-Benar Penting",
+      "content": [
+        "Pada umumnya tidak terjadi apa-apa: teman-teman Anda sudah tahu di mana Anda berada. Hal ini penting saat Anda mengirim foto ke orang yang tidak Anda kenal, seperti pembeli, pemilik kos, forum, atau tim dukungan, dan foto itu diambil di rumah atau tempat kerja. Foto sepeda yang dijual, diambil di lorong, bisa menunjuk ke pintu depan rumah Anda.",
+        "Setiap platform berperilaku berbeda. Banyak jejaring sosial menghapus lokasi dari gambar yang mereka tampilkan saat Anda memposting, tetapi itu tergantung platform dan bisa berubah. Lampiran email, AirDrop, file yang dikirim sebagai dokumen, tautan cloud, dan iklan baris bisa meneruskan data aslinya. Jika fotonya penting, hapus sendiri metadatanya sebelum foto meninggalkan ponsel Anda."
+      ]
+    },
+    {
+      "title": "Apa yang Sudah Ditawarkan iOS (dan di Mana Batasnya)",
+      "content": [
+        "Tiga alat bawaan membantu. Pertama, tombol Opsi di bagian atas lembar Bagikan di Foto punya sakelar Lokasi, sehingga Anda bisa berbagi tanpa lokasi. Salinan di pustaka Anda tidak disentuh. Kedua, di panel info foto, Sesuaikan di sebelah lokasi memungkinkan Anda memilih Tanpa Lokasi, yang menghapusnya dari foto di pustaka Anda secara permanen; versi iOS terbaru juga menawarkannya untuk sejumlah foto terpilih dari menu. Ketiga, Pengaturan > Privasi & Keamanan > Layanan Lokasi > Kamera > Jangan mencegah foto baru diberi lokasi.",
+        "Yang tidak diberikan alat-alat ini adalah gambaran menyeluruh. Tidak ada yang memberi tahu foto mana dari empat puluh foto yang Anda pilih yang benar-benar punya lokasi, sakelar Opsi diatur per sesi berbagi, dan informasi perangkat tidak bisa diperiksa satu per satu lewat lembar Bagikan. Itulah celah yang diisi oleh alat khusus."
+      ]
+    },
+    {
+      "title": "Salinan Bersih Sekaligus Banyak dengan DiskMop untuk iPhone",
+      "content": [
+        "DiskMop untuk iPhone 1.1.10 menambahkan Hapus lokasi & info ke tab Alat. Anda memilih foto dan video dari pustaka, dan layar menunjukkan berapa yang Anda pilih dan berapa yang punya lokasi, dengan pin merah pada masing-masing. Lokasi dan Ponsel, kamera & keterangan (model, perangkat lunak, nomor seri, dan komentar) menyala. Tanggal dan jam pengambilan mati secara bawaan: tanpa itu, urutan foto bisa tertukar bagi penerimanya, tetapi Anda bisa menyalakannya.",
+        "Ketuk Bersihkan & bagikan dan DiskMop menulis salinan bersih, lalu membuka lembar Bagikan iOS. File asli Anda tidak pernah berubah dan tidak ada yang ditambahkan ke pustaka kecuali Anda memintanya. Foto HEIC, JPEG, dan PNG serta video didukung; video tidak dienkode ulang. Jika file asli hanya ada di iCloud, DiskMop bertanya dulu sebelum mengunduhnya. File RAW dilewati dan didaftar, dan untuk Live Photo hanya gambar diamnya yang dibagikan.",
+        "Setelah berbagi, pintasan di bawah hasil memungkinkan Anda berbagi lagi, menyimpan salinan bersih ke Foto di samping file asli, atau menyalin satu foto untuk ditempel di tempat lain. Alat ini gratis: tanpa batas harian dan tanpa langganan, dan bekerja sepenuhnya di iPhone tanpa akun dan tanpa mengunggah apa pun."
+      ]
+    },
+    {
+      "title": "Apa yang Tetap Terlihat",
+      "content": [
+        "Menghapus metadata hanya menghapus apa yang tersembunyi di dalam file. Wajah, papan nama jalan, nomor rumah, nama toko, dan pelat nomor di gambar itu sendiri tetap persis seperti adanya, begitu pula apa pun yang bisa dikenali seseorang dengan melihatnya. Periksa fotonya sebelum mengirim, dan pangkas atau buramkan jika gambarnya sendiri membocorkan sesuatu.",
+        "Jika Anda ingin menyembunyikan beberapa foto alih-alih membersihkannya, panduan kami tentang [menyembunyikan foto di iPhone](/blog/hide-photos-iphone) membandingkan album Tersembunyi dengan brankas terkunci. Jika Anda juga ingin pustaka menemukan foto menurut tempat, biarkan lokasi Kamera tetap menyala: [mencari foto iPhone menurut isinya](/blog/search-photos-by-content-iphone) memakai lokasi foto untuk menemukan, misalnya, semua yang diambil di Paris."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Apakah sakelar Opsi di Foto menghapus lokasi dari foto asli saya?",
+      "answer": "Tidak. Sakelar Lokasi di lembar Bagikan hanya mengubah apa yang Anda kirim. Foto di pustaka Anda tetap menyimpan lokasinya. Untuk menghapusnya dari salinan di pustaka juga, gunakan Sesuaikan > Tanpa Lokasi di panel info foto."
+    },
+    {
+      "question": "Apakah foto yang dikirim lewat aplikasi pesan dan jejaring sosial tetap menyimpan lokasinya?",
+      "answer": "Itu tergantung aplikasinya, versinya, dan apakah Anda mengirim gambar sebagai foto atau sebagai file. Banyak aplikasi menghapus lokasi dari gambar yang mereka tampilkan, tetapi email, AirDrop, tautan cloud, dan file yang dikirim sebagai dokumen bisa menyimpan data aslinya. Cara paling aman adalah membersihkan foto sebelum meninggalkan ponsel Anda."
+    },
+    {
+      "question": "Apakah DiskMop juga bisa menghapus lokasi dari video?",
+      "answer": "Ya. Video diperlakukan seperti foto: DiskMop menulis salinan bersih tanpa mengenkode ulang video, dan file asli Anda tidak tersentuh. Live Photo dibagikan hanya sebagai gambar diamnya."
+    },
+    {
+      "question": "Apakah DiskMop mengunggah foto saya untuk membersihkannya?",
+      "answer": "Tidak. Pembersihan terjadi di iPhone Anda. Tidak ada akun, tidak ada SDK analitik, dan tidak ada yang meninggalkan perangkat. Hanya jika file asli tersimpan di iCloud dan Anda setuju, iPhone mengunduhnya lebih dulu dari iCloud Anda sendiri."
+    },
+    {
+      "question": "Apakah Hapus lokasi & info gratis di DiskMop?",
+      "answer": "Ya. Alat ini tidak memerlukan langganan dan tidak punya batas harian. Jatah harian gratis sepuluh penghapusan hanya berlaku untuk menghapus foto, bukan untuk membersihkan salinan."
+    },
+    {
+      "question": "Apakah ini membuat foto menjadi anonim?",
+      "answer": "Tidak. Ini hanya menghapus bidang tersembunyi. Wajah, papan nama, pelat nomor, dan apa pun yang terlihat di gambar tetap ada, jadi periksa gambarnya sebelum dibagikan."
+    }
+  ],
+  "verdict": [
+    "Jika Anda membagikan foto kepada orang yang tidak dikenal, anggaplah lokasi di dalam file sebagai bagian dari foto. Sakelar Opsi di Foto adalah solusi cepat untuk satu kali berbagi, dan mematikan lokasi Kamera mencegah masalahnya ke depan, tetapi keduanya tidak menunjukkan foto mana yang terdampak.",
+    "DiskMop untuk iPhone membuatnya terlihat dan memperbaikinya sekaligus banyak: menandai foto yang punya lokasi, menulis salinan bersih foto dan video, dan membiarkan file asli Anda. Alat ini gratis, bekerja di ponsel, dan memerlukan versi 1.1.10 atau lebih baru."
+  ],
+  "ctaText": "Dapatkan DiskMop untuk iPhone di App Store"
+}

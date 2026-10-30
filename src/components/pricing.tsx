@@ -83,7 +83,7 @@ export function Pricing() {
             className="relative w-full max-w-lg bg-card rounded-3xl p-8 border-2 border-brand-500 shadow-2xl shadow-brand-500/10 overflow-hidden"
           >
             {/* Popular Badge */}
-            <div className="absolute -right-8 top-6 rotate-45 bg-brand-600 text-white text-xs px-8 py-1 font-medium">
+            <div className="absolute -end-8 top-6 rotate-45 rtl:-rotate-45 bg-brand-600 text-white text-xs px-8 py-1 font-medium">
               {t("plan.badge")}
             </div>
 

@@ -1,0 +1,147 @@
+{
+  "title": "Cum ștergi locația și metadatele din pozele de pe iPhone înainte să le trimiți",
+  "metaDescription": "Fiecare poză făcută cu iPhone-ul poate purta coordonate GPS, data și modelul telefonului. Iată ce dezvăluie și cum le elimini din poze și videoclipuri, în masă sau pe rând.",
+  "subtitle": "Ce se ascunde în fiecare fișier, comutatorul încorporat și copii curate care nu ating originalele tale",
+  "intro": [
+    "Pe scurt: pozele și videoclipurile făcute cu un iPhone pot purta în fișierul însuși locul în care au fost realizate (coordonate GPS), data și ora, modelul telefonului și al camerei și versiunea software. Acestea se numesc metadate, sau date EXIF, și călătoresc odată cu fișierul. Ca să trimiți fără ele, deschide foaia de partajare din Poze, atinge Opțiuni și dezactivează Locația, sau creează copii curate ale mai multor fișiere deodată cu DiskMop pentru iPhone (versiunea 1.1.10 și ulterioare).",
+    "Acest ghid arată ce se stochează și cine poate citi, trei moduri de a elimina datele pe iPhone și unde se oprește fiecare, precum și ceea ce eliminarea metadatelor nu schimbă: fețele, indicatoarele stradale și numerele de înmatriculare vizibile în imaginea însăși."
+  ],
+  "keyTakeaways": [
+    "Pozele și videoclipurile făcute cu iPhone-ul stochează în fișier locul în care au fost realizate, data și ora, modelul dispozitivului și versiunea software; oricine primește fișierul original le poate citi.",
+    "Foaia de partajare din Poze are un buton Opțiuni cu un comutator Locație. Elimină locația din ceea ce trimiți și lasă poza din bibliotecă neschimbată.",
+    "Setări > Confidențialitate și securitate > Servicii de localizare > Cameră > Niciodată oprește etichetarea pozelor noi cu un loc, dar nu face nimic pentru pozele pe care le ai deja.",
+    "Multe rețele sociale ascund locația la postare, dar e-mailul, AirDrop, linkurile din cloud, anunțurile și pozele trimise ca fișiere pot transmite datele originale, așa că nu te baza pe cealaltă parte ca să le elimine.",
+    "DiskMop pentru iPhone (1.1.10 și ulterioare) marchează care dintre pozele alese au locație, elimină din copii locația și informațiile despre telefon și cameră și deschide foaia de partajare. Originalele tale nu se schimbă niciodată. Este gratuit și funcționează cu poze și videoclipuri.",
+    "Eliminarea metadatelor nu ascunde ce se vede: fețele, panourile, numerele de casă și numerele de înmatriculare rămân în imagine."
+  ],
+  "dataTable": {
+    "caption": "Moduri de a elimina locația din pozele de pe iPhone",
+    "columns": [
+      "Metodă",
+      "Schimbă originalul?",
+      "Mai multe poze deodată",
+      "Arată care poze au locație"
+    ],
+    "rows": [
+      [
+        "Foaia de partajare > Opțiuni > Locație dezactivată",
+        "Nu, doar copia pe care o trimiți",
+        "Da, selectează mai multe",
+        "Nu"
+      ],
+      [
+        "Poze > Informații > Reglează > Fără locație",
+        "Da, definitiv în biblioteca ta",
+        "Da, din meniul unei selecții (iOS 15 și ulterioare)",
+        "Nu"
+      ],
+      [
+        "Servicii de localizare > Cameră > Niciodată",
+        "Nu, afectează doar pozele viitoare",
+        "Nu se aplică",
+        "Nu"
+      ],
+      [
+        "DiskMop > Instrumente > Șterge locația și informațiile",
+        "Nu, lucrează pe copii",
+        "Da",
+        "Da, un pin roșu o marchează pe fiecare"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Elimină locația din pozele de pe iPhone înainte de partajare",
+    "totalTime": "PT3M",
+    "steps": [
+      {
+        "name": "Vezi ce poartă o poză",
+        "text": "Deschide o poză în Poze și glisează în sus sau atinge butonul de informații. Vei vedea camera și obiectivul, detaliile fișierului și, dacă poza are locație, o hartă mică. Harta aceea reprezintă aceleași informații pe care le poate citi oricine primește fișierul original."
+      },
+      {
+        "name": "Folosește comutatorul încorporat pentru o partajare rapidă",
+        "text": "Selectează pozele, atinge Partajează, apoi atinge Opțiuni în partea de sus a foii de partajare și dezactivează Locația înainte de a trimite. Copia din bibliotecă își păstrează locația."
+      },
+      {
+        "name": "Oprește etichetarea pozelor viitoare (opțional)",
+        "text": "Mergi la Setări > Confidențialitate și securitate > Servicii de localizare > Cameră și alege Niciodată. Pozele noi nu vor avea locație, dar cele pe care le-ai făcut deja nu se schimbă, iar aplicația Poze nu va mai putea grupa pozele noi după loc."
+      },
+      {
+        "name": "Creează copii curate în masă cu DiskMop",
+        "text": "În DiskMop pentru iPhone deschide Instrumente > Șterge locația și informațiile și alege poze și videoclipuri. Un pin roșu marchează fiecare element care are locație. Lasă activate Locație și Telefon, cameră și descrieri, decide dacă vrei să elimini și data și ora, apoi atinge Curăță și partajează."
+      },
+      {
+        "name": "Verifică rezultatul și partajează",
+        "text": "Un rezumat în partea de sus arată câte elemente au fost curățate și la câte a fost eliminată locația, apoi se deschide foaia de partajare iOS cu copiile curate. După aceea poți partaja din nou, salva copiile în Poze lângă originale sau copia o singură poză."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Ce se ascunde într-o poză sau într-un videoclip",
+      "content": [
+        "Fiecare poză făcută de iPhone este salvată cu informații suplimentare lângă imagine. Cea mai sensibilă este locația: când Camera are voie să folosească Serviciile de localizare, coordonatele GPS ale locului în care ai stat sunt scrise în fișier. Alături de ele se salvează data și ora, modelul telefonului și al camerei, setările obiectivului, versiunea software și orice descriere sau comentariu adăugat ulterior în Poze. Videoclipurile poartă același tip de informații.",
+        "Nu vezi asta când te uiți la imagine, de aceea e ușor de uitat. Sunt doar câteva rânduri de text, dar sunt suficiente ca să arate că o poză a fost făcută la o anumită adresă, într-o anumită seară."
+      ]
+    },
+    {
+      "title": "Când contează cu adevărat",
+      "content": [
+        "De cele mai multe ori nu se întâmplă nimic: prietenii tăi știu deja unde ai fost. Contează când trimiți o poză cuiva pe care nu-l cunoști, de exemplu un cumpărător, un proprietar, un forum sau o echipă de asistență, iar poza a fost făcută acasă sau la serviciu. O poză cu o bicicletă de vânzare, făcută pe hol, poate indica ușa ta de la intrare.",
+        "Platformele se comportă diferit. Multe rețele sociale elimină locația din imaginea pe care o afișează la postare, dar depinde de platformă și se poate schimba. Atașamentele de e-mail, AirDrop, fișierele trimise ca documente, linkurile din cloud și anunțurile pot transmite datele originale. Dacă poza contează, elimină metadatele singur înainte să-ți părăsească telefonul."
+      ]
+    },
+    {
+      "title": "Ce oferă deja iOS (și unde se oprește)",
+      "content": [
+        "Ajută trei instrumente încorporate. În primul rând, butonul Opțiuni din partea de sus a foii de partajare din Poze are un comutator Locație, deci poți partaja fără ea. Copia din biblioteca ta nu este atinsă. În al doilea rând, în panoul de informații al unei poze, Reglează de lângă locație îți permite să alegi Fără locație, ceea ce o elimină definitiv din poza din bibliotecă; versiunile recente de iOS oferă asta și pentru o selecție de poze, din meniu. În al treilea rând, Setări > Confidențialitate și securitate > Servicii de localizare > Cameră > Niciodată oprește pozele noi să primească o locație.",
+        "Ce nu-ți oferă aceste instrumente este o imagine de ansamblu. Nimic nu-ți spune care dintre cele patruzeci de poze alese au de fapt locație, comutatorul Opțiuni se setează la fiecare partajare, iar informațiile despre dispozitiv nu pot fi inspectate element cu element în foaia de partajare. Acesta este golul pe care îl umple un instrument dedicat."
+      ]
+    },
+    {
+      "title": "Copii curate în masă cu DiskMop pentru iPhone",
+      "content": [
+        "DiskMop pentru iPhone 1.1.10 adaugă Șterge locația și informațiile în fila Instrumente. Alegi poze și videoclipuri din bibliotecă, iar ecranul arată câte ai selectat și câte au locație, cu un pin roșu pe fiecare dintre ele. Locație și Telefon, cameră și descrieri (model, software, numere de serie și comentarii) sunt activate. Data și ora fotografierii este dezactivată implicit: fără ea, ordinea pozelor se poate amesteca la cel care le primește, dar o poți activa.",
+        "Atinge Curăță și partajează, iar DiskMop scrie copii curate, apoi deschide foaia de partajare iOS. Originalele tale nu se schimbă niciodată și nu se adaugă nimic în bibliotecă decât dacă ceri tu. Sunt acceptate pozele HEIC, JPEG și PNG și videoclipurile; un videoclip nu este recodat. Dacă un original se află doar în iCloud, DiskMop întreabă înainte să-l descarce. Fișierele RAW sunt omise și enumerate, iar pentru un Live Photo se partajează doar imaginea statică.",
+        "După partajare, comenzile rapide de sub rezultat îți permit să partajezi din nou, să salvezi copiile curate în Poze lângă originale sau să copiezi o singură poză ca să o lipești altundeva. Instrumentul este gratuit: fără limită zilnică și fără abonament, și funcționează în întregime pe iPhone, fără cont și fără să încarce nimic."
+      ]
+    },
+    {
+      "title": "Ce rămâne vizibil",
+      "content": [
+        "Eliminarea metadatelor elimină doar ce este ascuns în fișier. Fețele, indicatoarele stradale, numerele de casă, numele magazinelor și numerele de înmatriculare din imaginea însăși rămân exact cum sunt, la fel ca tot ce poate recunoaște un om doar privind. Verifică poza înainte să o trimiți și decupeaz-o sau neclarește-o dacă imaginea însăși dă ceva de gol.",
+        "Dacă vrei să ții unele poze departe de priviri în loc să le cureți, ghidul nostru despre [ascunderea pozelor pe iPhone](/blog/hide-photos-iphone) compară albumul Ascunse cu un seif blocat. Iar dacă vrei ca biblioteca să găsească poze după loc, păstrează activată locația Camerei: [căutarea pozelor de pe iPhone după conținut](/blog/search-photos-by-content-iphone) folosește locația unei poze ca să găsească, de exemplu, tot ce a fost fotografiat la Paris."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Comutatorul Opțiuni din Poze elimină locația din poza mea originală?",
+      "answer": "Nu. Comutatorul Locație din foaia de partajare schimbă doar ce trimiți. Poza din biblioteca ta își păstrează locația. Ca să o elimini și din copia din bibliotecă, folosește Reglează > Fără locație în panoul de informații al pozei."
+    },
+    {
+      "question": "Pozele trimise prin aplicații de mesagerie și rețele sociale își păstrează locația?",
+      "answer": "Depinde de aplicație, de versiunea ei și de dacă trimiți imaginea ca poză sau ca fișier. Multe aplicații elimină locația din imaginea pe care o afișează, dar e-mailul, AirDrop, linkurile din cloud și fișierele trimise ca documente pot păstra datele originale. Abordarea sigură este să cureți poza înainte să-ți părăsească telefonul."
+    },
+    {
+      "question": "Poate DiskMop să elimine locația și din videoclipuri?",
+      "answer": "Da. Videoclipurile sunt tratate ca pozele: DiskMop scrie o copie curată fără să recodeze videoclipul, iar originalul tău rămâne neatins. Un Live Photo se partajează doar ca imagine statică."
+    },
+    {
+      "question": "DiskMop îmi încarcă pozele ca să le curețe?",
+      "answer": "Nu. Curățarea are loc pe iPhone-ul tău. Nu există cont, nu există SDK de analiză și nimic nu părăsește dispozitivul. Doar dacă un original este stocat în iCloud și ești de acord, iPhone-ul îl descarcă mai întâi din propriul tău iCloud."
+    },
+    {
+      "question": "Este gratuită ștergerea locației și a informațiilor în DiskMop?",
+      "answer": "Da. Instrumentul nu necesită abonament și nu are limită zilnică. Cota zilnică gratuită de zece ștergeri se aplică doar ștergerii pozelor, nu curățării copiilor."
+    },
+    {
+      "question": "Face asta poza anonimă?",
+      "answer": "Nu. Elimină doar câmpurile ascunse. Fețele, panourile, numerele de înmatriculare și orice altceva vizibil în imagine rămân, așa că verifică imaginea însăși înainte să o partajezi."
+    }
+  ],
+  "verdict": [
+    "Dacă partajezi poze cu oameni pe care nu-i cunoști, tratează locația din fișier ca pe o parte a pozei. Comutatorul Opțiuni din Poze este o soluție rapidă pentru o singură partajare, iar dezactivarea locației Camerei previne problema pe viitor, dar niciuna nu-ți arată care poze sunt afectate.",
+    "DiskMop pentru iPhone face asta vizibil și o rezolvă în masă: marchează pozele care au locație, scrie copii curate ale pozelor și videoclipurilor și lasă originalele în pace. Instrumentul este gratuit, funcționează pe telefon și necesită versiunea 1.1.10 sau ulterioară."
+  ],
+  "ctaText": "Ia DiskMop pentru iPhone din App Store"
+}

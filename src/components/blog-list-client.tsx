@@ -110,7 +110,7 @@ export function BlogListClient({
       <div className="mb-10 space-y-4">
         {/* Search Bar */}
         <div className="relative max-w-xl mx-auto">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
+          <div className="absolute inset-y-0 start-0 ps-3.5 flex items-center pointer-events-none text-muted-foreground">
             <Search className="h-4 w-4" />
           </div>
           <input
@@ -123,7 +123,7 @@ export function BlogListClient({
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute inset-y-0 end-0 pe-3 flex items-center text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Clear search"
             >
               <X className="h-4 w-4" />
@@ -320,7 +320,7 @@ export function BlogListClient({
 
                   <div className="flex items-center gap-1.5 text-sm font-medium text-brand-600 dark:text-brand-400 group-hover:gap-2.5 transition-all pt-4 border-t border-border/50">
                     <span>{labels.readMore}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="rtl:rotate-180 h-4 w-4" />
                   </div>
                 </article>
               </Link>

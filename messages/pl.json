@@ -1,0 +1,702 @@
+{
+  "meta": {
+    "title": "Disk Mop — inteligentne czyszczenie dysku dla Windows i Maca",
+    "description": "Odzyskaj gigabajty w kilka minut. Disk Mop usuwa duże pliki, duplikaty i pamięć podręczną w Windows, macOS i Androidzie, a na iPhonie porządkuje bibliotekę zdjęć.",
+    "ogDescription": "Odzyskaj gigabajty miejsca i przywróć komputerowi dawną szybkość. Jedno kliknięcie, kilka minut.",
+    "keywords": [
+      "czyszczenie dysku",
+      "zwolnij miejsce na dysku",
+      "wyszukiwanie duplikatów plików",
+      "wyszukiwanie dużych plików",
+      "czyszczenie pamięci podręcznej",
+      "oczyszczanie dysku Windows",
+      "czyszczenie pamięci Maca"
+    ],
+    "loginTitle": "Logowanie — Disk Mop",
+    "loginDescription": "Zaloguj się adresem e-mail i jednorazowym kodem, aby zobaczyć swoje licencje i urządzenia Disk Mop.",
+    "accountTitle": "Twoje konto — Disk Mop",
+    "accountDescription": "Twoje licencje Disk Mop Pro, urządzenia i zakupy."
+  },
+  "nav": {
+    "features": "Funkcje",
+    "pricing": "Cennik",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "tools": "Narzędzia",
+    "download": "Pobierz",
+    "signIn": "Zaloguj się",
+    "account": "Moje konto"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop dla Windows i macOS",
+    "title": "Pozwól komputerowi",
+    "titleHighlight": "odetchnąć",
+    "subtitle": "Zwolnij gigabajty miejsca z Disk Mop i przyspiesz system jak pierwszego dnia. Jedno kliknięcie, kilka minut.",
+    "cta": "Pobierz teraz",
+    "watchVideo": "Jak to działa?",
+    "users": "Zaufało nam ponad 10 000 użytkowników",
+    "platforms": "Windows 10/11 i macOS 12+ • Bez wirusów • Podpisany i poświadczony",
+    "ios": {
+      "badge": "✨ Nowość: DiskMop na iPhone’a",
+      "title": "Uporządkuj swoją",
+      "titleHighlight": "bibliotekę zdjęć",
+      "subtitle": "Znajduj duplikaty, podobne ujęcia, rozmazane zdjęcia, zrzuty ekranu i duże filmy. Przejrzyj każdą grupę i zachowaj najlepsze zdjęcie. Zdjęcia są analizowane na Twoim iPhonie.",
+      "cta": "Pobierz z App Store",
+      "platforms": "iOS 18.0+ • Skanowanie za darmo • Bez konta, bez śledzenia"
+    }
+  },
+  "heroVisual": {
+    "aria": "Animacja: Disk Mop odzyskuje {gb} GB miejsca na dysku",
+    "freed": "odzyskano",
+    "cleaned": "Wyczyszczono"
+  },
+  "trustBar": {
+    "downloads": "Pobrania",
+    "downloadsLabel": "Pobrania",
+    "rating": "Ocena",
+    "ratingLabel": "Ocena",
+    "safe": "Bezpieczny",
+    "safeLabel": "Bezpieczny",
+    "guarantee": "Licencja dożywotnia",
+    "guaranteeLabel": "Dożywotnia"
+  },
+  "platformSelector": {
+    "title": "Wybierz swoją platformę",
+    "subtitle": "Natywne aplikacje dla Windows, macOS, Androida i iPhone’a",
+    "recommended": "Polecane",
+    "download": "Pobierz",
+    "systemReqs": "Wymagania systemowe",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bitowy)",
+      "recommended": "Polecane dla Ciebie",
+      "download": "Pobierz dla Windows",
+      "signed": "Podpisany kodem, zweryfikowany wydawca",
+      "signedNote": "Windows pokazuje zweryfikowanego wydawcę, a nie „Nieznanego wydawcę”"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Polecane dla Ciebie",
+      "download": "Pobierz w Google Play",
+      "note": "Czyszczenie pamięci: duże pliki, pobrane pliki, multimedia z komunikatorów i nieużywane aplikacje"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Polecane dla Ciebie",
+      "download": "Pobierz z App Store",
+      "note": "Czyszczenie zdjęć i filmów: duplikaty, podobne ujęcia, zrzuty ekranu i duże filmy"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon i Intel)",
+      "recommended": "Polecane dla Ciebie",
+      "download": "Pobierz dla macOS",
+      "signed": "Poświadczony przez Apple i podpisany",
+      "signedNote": "Bez ostrzeżeń Gatekeepera — otwiera się od razu",
+      "intelLink": "Masz Maca z Intelem? Pobierz wersję dla Intela"
+    }
+  },
+  "features": {
+    "title": "Potężne funkcje",
+    "subtitle": "Wszystko, czego potrzebujesz, aby przyspieszyć komputer i zwolnić miejsce — w jednej aplikacji.",
+    "items": [
+      {
+        "title": "Analiza dysku",
+        "description": "Wizualnie analizuj wykorzystanie dysku. Od razu zobacz, które foldery zajmują najwięcej miejsca."
+      },
+      {
+        "title": "Wyszukiwanie dużych plików",
+        "description": "Natychmiast wykrywaj pliki większe niż 500 MB. Pozbądź się zapomnianych gigantów."
+      },
+      {
+        "title": "Wykrywanie duplikatów",
+        "description": "Znajduj identyczne pliki dzięki SHA-256. Usuwaj zduplikowane zdjęcia, filmy i dokumenty."
+      },
+      {
+        "title": "Przyspieszanie",
+        "description": "Jednym kliknięciem czyść stare pobrane pliki, pamięć podręczną systemu i przeglądarek oraz kosz. Wszystkie zadania czyszczenia uruchamiają się automatycznie."
+      },
+      {
+        "title": "Czyszczenie pobranych plików",
+        "description": "Inteligentnie kategoryzuj i usuwaj stare, niepotrzebne pliki z folderu Pobrane."
+      },
+      {
+        "title": "Czyszczenie pamięci podręcznej",
+        "description": "Bezpiecznie usuwaj pliki pamięci podręcznej systemu i aplikacji. Odzyskaj gigabajty miejsca."
+      },
+      {
+        "title": "Czyszczenie pamięci przeglądarek",
+        "description": "Jednym kliknięciem wyczyść pamięć podręczną Chrome, Firefoksa, Edge i Safari."
+      },
+      {
+        "title": "Kosz",
+        "description": "Opróżnij kosz, aby trwale usunąć pliki i zwolnić miejsce na dysku."
+      },
+      {
+        "title": "Czyszczenie pamięci DNS",
+        "description": "Wyczyść pamięć podręczną DNS, aby naprawić problemy z połączeniem i przyspieszyć przeglądanie."
+      },
+      {
+        "title": "Menedżer autostartu",
+        "description": "Zarządzaj programami uruchamianymi razem z komputerem. Skróć czas uruchamiania."
+      },
+      {
+        "title": "Ocena kondycji systemu",
+        "description": "Oceń ogólną kondycję komputera w skali do 100. Zobacz, co można poprawić."
+      },
+      {
+        "title": "Wyszukiwanie pustych folderów",
+        "description": "Przeskanuj dyski w poszukiwaniu pustych folderów zaśmiecających system plików. Usuń je jednym kliknięciem."
+      },
+      {
+        "title": "Niszczarka plików",
+        "description": "Bezpiecznie usuwaj poufne pliki dzięki nadpisywaniu na poziomie wojskowym (DoD 5220.22-M). Bez możliwości odzyskania."
+      },
+      {
+        "title": "Mapa drzewa dysku",
+        "description": "Zobacz cały dysk jako interaktywną mapę drzewa. Dokładnie sprawdź, co zjada Twoje miejsce."
+      },
+      {
+        "title": "Optymalizator RAM",
+        "description": "Zwolnij pamięć, kończąc nieaktywne procesy. Natychmiast zwiększ wydajność."
+      },
+      {
+        "title": "Menedżer usług",
+        "description": "Kontroluj usługi Windows, które spowalniają system. Wyłącz niepotrzebne usługi w tle."
+      },
+      {
+        "title": "Zaplanowane czyszczenie",
+        "description": "Ustaw automatyczne harmonogramy czyszczenia. Utrzymuj system w czystości bez ruszania palcem."
+      },
+      {
+        "title": "Raport prywatności",
+        "description": "Uzyskaj kompleksową ocenę prywatności. Zobacz, jakie ślady zostawiają przeglądarki i aplikacje."
+      },
+      {
+        "title": "Wykrywanie nieużywanych aplikacji",
+        "description": "Wyświetl wszystkie zainstalowane aplikacje według rozmiaru i odinstaluj te, których już nie potrzebujesz, aby zwolnić miejsce."
+      },
+      {
+        "title": "Wyszukiwanie podobnych obrazów",
+        "description": "Znajduj zduplikowane zdjęcia i obrazy w dowolnym folderze, pogrupowane według sygnatury pliku."
+      },
+      {
+        "title": "Monitor kondycji dysku",
+        "description": "Sprawdź stan zdrowia dysków SSD i HDD oraz uruchom TRIM na SSD."
+      },
+      {
+        "title": "Szybszy start",
+        "description": "Zmierz rzeczywisty czas uruchamiania na podstawie zapisów samego Windows, wyłącz aplikacje, które go spowalniają, a resztę zrób według ilustrowanych instrukcji."
+      }
+    ],
+    "new": "Nowość"
+  },
+  "howItWorks": {
+    "title": "Jak to działa?",
+    "subtitle": "Wyczyść komputer w trzech prostych krokach",
+    "steps": [
+      {
+        "title": "Pobierz i zainstaluj",
+        "description": "Pobierz instalator i zakończ instalację w kilka minut. Rejestracja nie jest wymagana."
+      },
+      {
+        "title": "Skanuj",
+        "description": "Rozpocznij analizę dysku jednym kliknięciem. Zbędne pliki, duplikaty i pamięć podręczna zostaną wykryte."
+      },
+      {
+        "title": "Czyść",
+        "description": "Wybierz, co usunąć, i naciśnij przycisk czyszczenia. Gigabajty miejsca zostają zwolnione natychmiast."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Poznaj aplikację",
+    "subtitle": "Przyjrzyj się z bliska potężnym funkcjom Disk Mop",
+    "tabs": [
+      {
+        "name": "Przegląd",
+        "description": "Zobacz całe wykorzystanie dysku na jednym ekranie. Od razu wskaż obszary, które można wyczyścić."
+      },
+      {
+        "name": "Analiza dysku",
+        "description": "Dowiedz się, które pliki zajmują ile miejsca, dzięki szczegółowej analizie na poziomie folderów."
+      },
+      {
+        "name": "Duże pliki",
+        "description": "Wyświetl pliki większe niż 500 MB posortowane według rozmiaru. Zbędne usuń jednym kliknięciem."
+      },
+      {
+        "name": "Duplikaty",
+        "description": "Znajduj identyczne pliki dzięki skrótowi SHA-256. Usuń kopie, zachowując oryginał."
+      },
+      {
+        "name": "Przyspieszanie",
+        "description": "Uruchom wszystkie zadania czyszczenia jednym kliknięciem. Stare pobrane pliki, pamięć podręczna, dane przeglądarek i kosz są czyszczone automatycznie."
+      },
+      {
+        "name": "Pobrane",
+        "description": "Inteligentnie kategoryzuj folder Pobrane. Usuń stare instalatory i archiwa."
+      },
+      {
+        "name": "Pamięć podręczna",
+        "description": "Bezpiecznie usuwaj pliki pamięci podręcznej systemu i aplikacji. Odzyskaj gigabajty miejsca."
+      },
+      {
+        "name": "Przeglądarki",
+        "description": "Jednym kliknięciem wyczyść pamięć podręczną Chrome, Firefoksa, Edge i Safari."
+      },
+      {
+        "name": "Kosz",
+        "description": "Opróżnij kosz, aby trwale zwolnić miejsce na dysku."
+      },
+      {
+        "name": "Pamięć DNS",
+        "description": "Wyczyść pamięć podręczną DNS, aby naprawić problemy z połączeniem i przyspieszyć przeglądanie."
+      },
+      {
+        "name": "Autostart",
+        "description": "Zarządzaj programami uruchamianymi razem z komputerem. Skróć czas uruchamiania."
+      },
+      {
+        "name": "Puste foldery",
+        "description": "Znajdź i usuń puste foldery zaśmiecające system plików. Utrzymuj porządek w strukturze katalogów."
+      },
+      {
+        "name": "Niszczarka plików",
+        "description": "Trwale niszcz poufne pliki dzięki nadpisywaniu na poziomie wojskowym. Odzyskanie jest niemożliwe."
+      },
+      {
+        "name": "Mapa drzewa dysku",
+        "description": "Interaktywna wizualna mapa wykorzystania dysku. Wchodź do folderów, aby sprawdzić, co zajmuje miejsce."
+      },
+      {
+        "name": "Czyszczenie RAM",
+        "description": "Zoptymalizuj użycie pamięci, zwalniając RAM z nieaktywnych procesów. Natychmiastowy wzrost wydajności."
+      },
+      {
+        "name": "Menedżer usług",
+        "description": "Przeglądaj usługi Windows i zarządzaj nimi. Wyłącz niepotrzebne usługi w tle, aby przyspieszyć system."
+      },
+      {
+        "name": "Pozostałości po odinstalowaniu",
+        "description": "Znajdź pliki i wpisy rejestru pozostawione przez odinstalowane aplikacje i bezpiecznie je usuń."
+      },
+      {
+        "name": "Raport prywatności",
+        "description": "Kompleksowa analiza prywatności. Zobacz ślady przeglądarek, pliki cookie i dane aplikacji, które zdradzają Twoją aktywność."
+      },
+      {
+        "name": "Nieużywane aplikacje",
+        "description": "Zobacz wszystkie zainstalowane aplikacje wraz z rozmiarem, od największej, i odinstaluj te, których już nie używasz, nie wychodząc z Disk Mop."
+      },
+      {
+        "name": "Podobne obrazy",
+        "description": "Przeskanuj folder w poszukiwaniu zduplikowanych zdjęć i obrazów. Kopie są grupowane według sygnatury pliku, wraz z miejscem marnowanym przez każdą grupę."
+      },
+      {
+        "name": "Kondycja dysku",
+        "description": "Sprawdź stan zdrowia każdego dysku SSD i HDD jednym spojrzeniem oraz uruchom TRIM na SSD jednym kliknięciem."
+      },
+      {
+        "name": "Szybszy start",
+        "description": "Zmierz rzeczywisty czas uruchamiania na podstawie zapisów samego Windows, wyłącz aplikacje, które go spowalniają, a resztę zrób według ilustrowanych instrukcji."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Średnio odzyskanego miejsca"
+      },
+      { "value": "32", "suffix": "%", "label": "Wzrost szybkości" },
+      { "value": "10000", "suffix": "+", "label": "Łączna liczba pobrań" },
+      { "value": "4.8", "suffix": "/5", "label": "Ocena użytkowników" }
+    ]
+  },
+  "testimonials": {
+    "title": "Co mówią nasi użytkownicy",
+    "subtitle": "Tysiące użytkowników przyspieszyło swoje komputery dzięki Disk Mop",
+    "items": [
+      {
+        "quote": "Znalazłem na komputerze ponad 50 GB niepotrzebnych plików! Nie miałem pojęcia o latami gromadzonej pamięci podręcznej. Teraz mój dysk odetchnął.",
+        "name": "Ahmet Yılmaz",
+        "role": "Inżynier oprogramowania",
+        "city": "Stambuł"
+      },
+      {
+        "quote": "Wykrywanie duplikatów to wybawienie. Znalazło 4 kopie tego samego pliku PSD. Moje foldery projektowe są teraz nieskazitelne.",
+        "name": "Elif Demir",
+        "role": "Grafik",
+        "city": "Ankara"
+      },
+      {
+        "quote": "Mój stary laptop znów działa jak pierwszego dnia. Dzięki menedżerowi autostartu czas uruchamiania skrócił się o połowę. Gorąco polecam studentom.",
+        "name": "Mehmet Kaya",
+        "role": "Student",
+        "city": "Izmir"
+      },
+      {
+        "quote": "Interfejs jest tak prosty, że poradzi sobie z nim nawet ktoś, kto nie zna się na komputerach. Świadomość, że aplikacja jest bezpieczna, to duży plus.",
+        "name": "Zeynep Arslan",
+        "role": "Księgowa",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Pliki renderowania wideo i pamięć podręczna przeglądarki zajmowały 40% mojego dysku. Disk Mop wyczyścił wszystko jednym kliknięciem. Niesamowite!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "Zainstalowaliśmy go na wszystkich 15 komputerach w biurze. Zarządzanie programami autostartu jest teraz bardzo łatwe. Obciążenie działu IT spadło o połowę.",
+        "name": "Ayşe Çelik",
+        "role": "Office manager",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Prosty i przejrzysty cennik",
+    "subtitle": "Bez subskrypcji i ukrytych opłat. Płacisz raz, używasz na zawsze.",
+    "badge": "Najpopularniejszy",
+    "plan": {
+      "name": "Disk Mop Lifetime",
+      "badge": "Najpopularniejszy",
+      "price": "$19.90",
+      "period": "jednorazowo",
+      "cta": "Kup teraz",
+      "secure": "Bezpieczna płatność: Polar.sh",
+      "paymentTrust": "Bezpieczna płatność przetwarzana przez Polar.sh"
+    },
+    "features": [
+      "Wszystkie funkcje",
+      "Dożywotni dostęp",
+      "Bezpłatne aktualizacje",
+      "Licencja na 1 komputer",
+      "Windows i macOS",
+      "Wsparcie e-mail",
+      "Dożywotnie aktualizacje",
+      "Bez reklam i wirusów"
+    ]
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "subtitle": "Tutaj znajdziesz odpowiedzi na swoje pytania",
+    "items": [
+      {
+        "question": "Czy Disk Mop jest bezpieczny?",
+        "answer": "Tak, Disk Mop jest w 100% bezpieczny. Nie zawiera wirusów, złośliwego oprogramowania ani adware. Nie dotyka plików systemowych — wykrywa i usuwa tylko niepotrzebne pliki (pamięć podręczną, pliki tymczasowe, duplikaty). Pokazuje każdy plik przed usunięciem i czeka na Twoje potwierdzenie."
+      },
+      {
+        "question": "Jakie systemy operacyjne są obsługiwane?",
+        "answer": "Disk Mop działa jako natywna aplikacja w Windows 10/11 (64-bitowy) i macOS 12+ (Apple Silicon i Intel). Dostępne są też natywne aplikacje mobilne: Disk Mop dla Androida 8.0+ w Google Play oraz DiskMop: Photo & Video Cleaner na iPhone’a (iOS 18+) w App Store."
+      },
+      {
+        "question": "Jak działa licencja?",
+        "answer": "Zapłać $19.90 jednorazowo za dożywotni dostęp. 1 licencja = 1 komputer. Bez subskrypcji i dodatkowych opłat. Jeśli zmienisz komputer, możesz przenieść licencję na nowy."
+      },
+      {
+        "question": "Jak zapłacić?",
+        "answer": "Dokonujesz jednorazowej płatności przez bezpieczną infrastrukturę płatniczą Polar.sh. Obsługiwane są karty kredytowe i inne metody płatności."
+      },
+      {
+        "question": "Czy aktualizacje są bezpłatne?",
+        "answer": "Tak, wszystkie aktualizacje i nowe funkcje są bezpłatne do końca życia. Automatyczne aktualizacje otrzymasz z poziomu aplikacji."
+      },
+      {
+        "question": "Czy moje dane są bezpieczne?",
+        "answer": "Disk Mop działa całkowicie lokalnie. Twoje pliki nigdy nie są wysyłane na żaden serwer. Połączenie z internetem służy tylko do weryfikacji licencji i aktualizacji. Całe skanowanie i czyszczenie odbywa się na Twoim komputerze."
+      },
+      {
+        "question": "Czy koliduje z oprogramowaniem antywirusowym?",
+        "answer": "Nie, Disk Mop jest w pełni zgodny ze wszystkimi popularnymi programami antywirusowymi (Windows Defender, Avast, Kaspersky, Norton itd.). To cyfrowo podpisana, bezpieczna aplikacja."
+      },
+      {
+        "question": "Czy Linux jest obsługiwany?",
+        "answer": "Jeszcze nie. Disk Mop jest dostępny dla Windows, macOS, Androida i iPhone’a; obsługa Linuksa jest w naszych planach."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Wyczyść komputer już dziś",
+    "subtitle": "Poczuj różnicę z Disk Mop.",
+    "cta": "Pobierz teraz",
+    "trust": "🔒 Bezpieczne pobieranie • ✓ Bez wirusów • 💰 Licencja dożywotnia"
+  },
+  "footer": {
+    "slogan": "Jeden mop, czysty dysk.",
+    "product": {
+      "title": "Produkt",
+      "features": "Funkcje",
+      "pricing": "Cennik",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "calculator": "Kalkulator miejsca na dysku",
+      "changelog": "Lista zmian",
+      "tools": "Narzędzia"
+    },
+    "company": {
+      "title": "Firma",
+      "about": "O nas",
+      "contact": "Kontakt",
+      "careers": "Kariera"
+    },
+    "legal": {
+      "title": "Prawne",
+      "privacy": "Polityka prywatności",
+      "terms": "Warunki korzystania z usługi",
+      "kvkk": "RODO"
+    },
+    "support": {
+      "title": "Wsparcie",
+      "help": "Centrum pomocy",
+      "helpCenter": "Centrum pomocy",
+      "email": "Wsparcie e-mail",
+      "status": "Strona statusu"
+    },
+    "copyright": "© 2025 Disk Mop. Wszelkie prawa zastrzeżone."
+  },
+  "cookie": {
+    "text": "Ta strona używa plików cookie, aby poprawić Twoje doświadczenia.",
+    "privacy": "Polityka prywatności",
+    "accept": "Akceptuj",
+    "reject": "Odrzuć"
+  },
+  "success": {
+    "title": "Zakup udany! 🎉",
+    "subtitle": "Twoja licencja Disk Mop Lifetime jest gotowa.",
+    "licenseLabel": "Twój klucz licencyjny",
+    "licenseNote": "Przechowuj ten klucz w bezpiecznym miejscu. Został też wysłany na Twój adres e-mail.",
+    "downloadTitle": "Pobierz teraz",
+    "downloadSubtitle": "Wybierz platformę i rozpocznij instalację.",
+    "backHome": "Wróć na stronę główną",
+    "loading": "Wczytujemy Twoją licencję...",
+    "loadingSubtitle": "Poczekaj, aż pobierzemy Twój klucz licencyjny.",
+    "error": "Coś poszło nie tak",
+    "errorDesc": "Nie udało się wczytać Twojego klucza licencyjnego. Sprawdź pocztę, aby znaleźć klucz, lub skontaktuj się z pomocą techniczną.",
+    "retry": "Spróbuj ponownie",
+    "stepsTitle": "Jak aktywować",
+    "step1": "Skopiuj powyższy klucz licencyjny",
+    "step2": "Otwórz Disk Mop i przejdź do Ustawień",
+    "step3": "Wklej klucz i kliknij Aktywuj",
+    "macIntel": "Mac z Intelem? Pobierz wersję dla Intela"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Porównaj Disk Mop z konkurencją. Dowiedz się, które rozwiązanie jest dla Ciebie.",
+    "badge": "Porównania",
+    "readMore": "Czytaj dalej",
+    "readingTime": "min czytania",
+    "comparisonTable": "Tabela porównawcza",
+    "feature": "Funkcja",
+    "pros": "Zalety",
+    "cons": "Wady",
+    "verdict": "Werdykt",
+    "downloadCta": "Pobierz Disk Mop teraz",
+    "ctaSubtitle": "Jednorazowa płatność za dożywotni dostęp do wszystkich funkcji. Bez subskrypcji i ukrytych opłat.",
+    "relatedArticles": "Powiązane artykuły",
+    "backToBlog": "Wróć do bloga",
+    "guide": "Poradnik",
+    "keyTakeaways": "Najważniejsze wnioski",
+    "faq": "Najczęściej zadawane pytania",
+    "inlineCtaBadge": "Automatyczne rozwiązanie jednym kliknięciem",
+    "inlineCtaTitle": "Chcesz to naprawić jednym kliknięciem zamiast ręcznie?",
+    "inlineCtaSubtitle": "DiskMop automatycznie skanuje, rozpoznaje i bezpiecznie czyści ukrytą pamięć podręczną, pozostałości po aplikacjach i systemowe śmieci.",
+    "downloadFor": "Pobierz za darmo dla {os}",
+    "downloadFree": "Pobierz za darmo",
+    "trustFreeDeletions": "W zestawie 3 bezpłatne usunięcia",
+    "trustNoCard": "Karta kredytowa niepotrzebna",
+    "trustSafe": "W 100% bezpieczny i podpisany",
+    "stickyBarTitle": "Czyść i przyspieszaj komputer automatycznie z DiskMop",
+    "stickyBarSubtitle": "Bezpłatne pobranie · Znajdź i usuń zbędne pliki w kilka sekund",
+    "stickyBarButton": "Pobierz za darmo dla {os}",
+    "showcaseBadge": "Interfejs DiskMop",
+    "showcaseTitle": "Jak DiskMop to rozwiązuje: {feature}",
+    "showcaseCaption": "DiskMop automatyzuje cały ten proces, dzięki czemu możesz bezpiecznie skanować i czyścić jednym kliknięciem, nie ruszając ustawień ręcznych.",
+    "tableOfContents": "Spis treści",
+    "testedOn": "Testowano na",
+    "verifiedSafe": "Bezpieczeństwo zweryfikowane przez zespół inżynierii systemowej Disk Mop",
+    "lastUpdated": "Ostatnia aktualizacja",
+    "share": "Udostępnij",
+    "copyLink": "Kopiuj link",
+    "linkCopied": "Skopiowano!",
+    "allPlatforms": "Wszystkie",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Porównania",
+    "searchArticles": "Szukaj artykułów...",
+    "noArticlesFound": "Nie znaleziono artykułów spełniających Twoje kryteria.",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "toolsBadge": "Bezpłatne narzędzia internetowe",
+    "toolsTitle": "Bezpłatne kalkulatory dysku i pamięci",
+    "toolsSubtitle": "Oblicz online swoje zapotrzebowanie na pamięć, żywotność SSD i szacowane oszczędności na zbędnych plikach.",
+    "iphoneCompanion": {
+      "badge": "Także na iPhonie",
+      "title": "Na Twoim iPhonie też kończy się miejsce?",
+      "subtitle": "DiskMop na iPhone’a znajduje w bibliotece zdjęć duplikaty, podobne ujęcia, zrzuty ekranu i duże filmy. Skanowanie jest bezpłatne, a zdjęcia są analizowane na urządzeniu.",
+      "cta": "Pobierz z App Store"
+    }
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "description": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
+    "home": "Strona główna",
+    "back": "Wróć"
+  },
+  "common": {
+    "download": "Pobierz",
+    "learnMore": "Dowiedz się więcej",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Polecane",
+    "signed": "Podpisany",
+    "free": "Bezpłatnie",
+    "lifetime": "Dożywotnia",
+    "enlarge": "Powiększ",
+    "close": "Zamknij"
+  },
+  "tools": {
+    "title": "Bezpłatne narzędzia internetowe i kalkulatory pamięci — Disk Mop",
+    "description": "Kalkulator miejsca na dysku, szacowanie żywotności SSD i narzędzia do optymalizacji pamięci. W 100% bezpłatne, online, z natychmiastowymi wynikami.",
+    "badge": "Narzędzia online",
+    "heroTitle": "Bezpłatne narzędzia internetowe do dysku i pamięci",
+    "heroSubtitle": "Oblicz, ile gigabajtów możesz odzyskać, oszacuj kondycję SSD i zaplanuj swoje potrzeby w zakresie pamięci w kilka sekund.",
+    "openTool": "Uruchom narzędzie",
+    "featuredBadge": "Wyróżnione narzędzie",
+    "guideBadge": "Poradnik",
+    "breadcrumb": "Narzędzia",
+    "cardCalculatorTitle": "Kalkulator miejsca na dysku i pamięci",
+    "cardCalculatorDesc": "Wybierz urządzenie i pojemność, aby obliczyć odzyskiwalne miejsce w pamięci podręcznej gier, pozostałościach narzędzi programistycznych i multimediach, z interaktywnymi ostrzeżeniami o kondycji SSD.",
+    "cardSsdTitle": "Kontrola kondycji i żywotności SSD",
+    "cardSsdDesc": "Zrozum, dlaczego dyski SSD tracą wydajność powyżej 80% pojemności i jak monitorować wyrównywanie zużycia, skuteczność TRIM i wskaźniki SMART.",
+    "cardIphoneTitle": "Zestawienie pamięci multimediów na iPhonie",
+    "cardIphoneDesc": "Szczegółowa tabela rozmiarów plików wideo 4K, Live Photos i ProRAW wraz ze sprawdzonymi, bezpiecznymi krokami czyszczenia w iOS.",
+    "cardLargeFilesTitle": "Wyszukiwanie duplikatów i dużych plików",
+    "cardLargeFilesDesc": "Bezpiecznie odnajdź zapomniane pobrania o rozmiarze wielu gigabajtów, zduplikowane archiwa i pozostałości po odinstalowanych aplikacjach."
+  },
+  "calculator": {
+    "title": "Bezpłatny kalkulator miejsca na dysku i pamięci — ile miejsca możesz zwolnić?",
+    "description": "Oblicz, ile zbędnej pamięci podręcznej kryje się na Twoim komputerze, Macu, iPhonie lub Androidzie. Sprawdź ryzyko dla kondycji SSD i zobacz, ile gigabajtów odzyskasz z Disk Mop.",
+    "badge": "Bezpłatne narzędzie internetowe online",
+    "heroTitle": "Kalkulator miejsca na dysku i pamięci",
+    "heroSubtitle": "Wybierz rozmiar dysku i sposób korzystania, aby obliczyć, ile odzyskiwalnego miejsca kryje się w pamięci podręcznej systemu, grach i multimediach.",
+    "breadcrumb": "Kalkulator miejsca na dysku",
+    "platformLabel": "1. Wybierz urządzenie",
+    "driveSizeLabel": "2. Całkowita pojemność dysku",
+    "currentUsageLabel": "3. Szacowane zajęcie",
+    "activitiesLabel": "4. Główne zajęcia i typy danych",
+    "estimatedSavings": "Szacowane miejsce do zwolnienia",
+    "reclaimableNotice": "Na podstawie średnich danych telemetrycznych dla dzienników systemowych, pozostałości po instalatorach, zduplikowanych multimediów i pamięci podręcznej aplikacji.",
+    "ssdWarningTitle": "Ryzyko dla wydajności zapisu SSD",
+    "ssdWarningDesc": "Dysk przekracza 80% pojemności. Skuteczność TRIM spada, a opóźnienie zapisu rośnie. Zwolnienie miejsca przywraca pierwotną szybkość.",
+    "ssdGoodTitle": "Zdrowy zakres pojemności",
+    "ssdGoodDesc": "Dysk mieści się w zdrowych granicach. Regularna konserwacja zapobiega niespodziewanym zawieszeniom z powodu pełnego dysku.",
+    "breakdownTitle": "Prognozowany podział miejsca",
+    "systemCache": "Pamięć podręczna systemu i przeglądarek",
+    "gameJunk": "Pamięć podręczna Steam i shaderów gier",
+    "devJunk": "Pozostałości narzędzi programistycznych i pakietów",
+    "mediaJunk": "Filmy 4K i zduplikowane multimedia",
+    "msgJunk": "Pamięć podręczna multimediów z komunikatorów",
+    "downloadButton": "Pobierz Disk Mop za darmo",
+    "freeTrialTrust": "W zestawie 3 bezpłatne usunięcia · Karta kredytowa niepotrzebna · W 100% bezpieczny",
+    "sliderRelaxed": "30% (mało)",
+    "sliderWarning": "75% (blisko limitu)",
+    "sliderCritical": "90%+ (krytycznie)",
+    "actGaming": "Steam / Epic / pakiety gier",
+    "actDev": "Docker / Node / pamięć podręczna programistyczna",
+    "actMedia": "Wideo 4K / podobne zdjęcia",
+    "actMessaging": "Pamięć podręczna WhatsApp / Discord / Telegram",
+    "barSystemTooltip": "Niezbędne pliki systemowe i użytkownika",
+    "barReclaimableTooltip": "Bałagan do odzyskania z Disk Mop",
+    "barPersonalLegend": "Pliki osobiste",
+    "barReclaimableLegend": "Do odzyskania",
+    "eduCard1Title": "Próg 80% w SSD",
+    "eduCard1Desc": "Gdy kończą się wolne bloki, dyski SSD muszą wykonywać cykle odczyt–modyfikacja–zapis. Powyżej 80% pojemności prędkość zapisu wyraźnie spada z powodu narzutu TRIM.",
+    "eduCard2Title": "Niewidoczny przyrost plików",
+    "eduCard2Desc": "Dzienniki aktualizacji Windows, wstępna pamięć podręczna shaderów i pozostałości po odinstalowanych aplikacjach gromadzą się po cichu i umykają wbudowanym narzędziom czyszczącym.",
+    "eduCard3Title": "Bezpieczne odzyskiwanie jednym kliknięciem",
+    "eduCard3Desc": "Disk Mop skanuje Twoje dyski w poszukiwaniu zbędnej pamięci podręcznej i osieroconych plików, nigdy nie zagrażając integralności systemu ani dokumentom użytkownika.",
+    "faqTitle": "Najczęściej zadawane pytania",
+    "faqQ1": "Dlaczego SSD zwalnia, gdy jest pełny?",
+    "faqA1": "SSD zapisuje dane w blokach. Gdy przekracza 80% pojemności, znalezienie pustych bloków do wyrównywania zużycia i TRIM trwa znacznie dłużej, co prowadzi do wzmocnienia zapisu i wyraźnego spadku wydajności.",
+    "faqQ2": "Które pliki zajmują najwięcej ukrytego miejsca na dysku?",
+    "faqA2": "Dzienniki aktualizacji Windows (WinSxS), pamięć podręczna przeglądarek, wstępna pamięć podręczna shaderów Steam, osierocone foldery AppData i multimedia z komunikatorów (WhatsApp, Discord, Telegram) odpowiadają za nawet 80% ukrytego bałaganu.",
+    "faqQ3": "Czy czyszczenie z Disk Mop jest całkowicie bezpieczne?",
+    "faqA3": "Tak. Disk Mop działa wyłącznie lokalnie, bez zbierania danych osobowych. Dotyczy tylko pamięci podręcznej, plików dziennika i osieroconych pozostałości, które można odtworzyć, w architekturze stawiającej bezpieczeństwo na pierwszym miejscu. Na każde urządzenie przysługują 3 bezpłatne usunięcia na próbę."
+  },
+  "login": {
+    "title": "Zaloguj się do Disk Mop",
+    "subtitle": "Podaj adres e-mail, a wyślemy Ci 6-cyfrowy kod. Nie ma hasła. Jeśli jesteś nowym użytkownikiem, ten sam kod utworzy Twoje konto.",
+    "buyContext": "Najpierw się zaloguj, a potem przejdziesz do strony płatności.",
+    "emailLabel": "Adres e-mail",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Wyślij kod logowania",
+    "sending": "Wysyłanie...",
+    "codeTitle": "Sprawdź skrzynkę odbiorczą",
+    "codeSent": "Wysłaliśmy 6-cyfrowy kod na adres {email}. Wygaśnie za 10 minut.",
+    "codeLabel": "6-cyfrowy kod",
+    "verify": "Zaloguj się",
+    "verifying": "Logowanie...",
+    "resend": "Wyślij kod ponownie",
+    "resent": "Wysłano nowy kod.",
+    "otherEmail": "Użyj innego adresu e-mail",
+    "errors": {
+      "invalidEmail": "Podaj prawidłowy adres e-mail.",
+      "invalidCode": "Nieprawidłowy lub wygasły kod. Spróbuj ponownie.",
+      "tooMany": "Zbyt wiele prób. Poczekaj kilka minut.",
+      "mailFailed": "Nie udało się wysłać wiadomości. Spróbuj ponownie później.",
+      "generic": "Wystąpił błąd. Spróbuj ponownie.",
+      "provider": "Nie udało się zalogować przez {provider}. Spróbuj ponownie."
+    },
+    "or": "lub",
+    "google": "Kontynuuj z Google",
+    "apple": "Kontynuuj z Apple"
+  },
+  "account": {
+    "title": "Twoje konto",
+    "signedInAs": "Zalogowano jako {email}",
+    "signOut": "Wyloguj się",
+    "licensesTitle": "Licencje",
+    "licensesEmpty": "Nie masz jeszcze licencji. Disk Mop Pro zapewnia dożywotni dostęp i odblokowuje wszystkie funkcje.",
+    "buyFirst": "Zdobądź Disk Mop Pro",
+    "buyMore": "Kup kolejną licencję",
+    "keyLabel": "Klucz licencyjny",
+    "copy": "Kopiuj klucz",
+    "copied": "Skopiowano",
+    "statusActive": "Aktywna",
+    "statusRevoked": "Unieważniona",
+    "activeDevice": "Aktywne urządzenie",
+    "unnamedDevice": "Urządzenie",
+    "activatedAt": "Aktywowano {date}",
+    "noDevice": "Jeszcze nie aktywowano na żadnym urządzeniu",
+    "activateHint": "Otwórz Disk Mop na komputerze PC lub Macu, przejdź do Ustawienia > Licencja, wpisz ten klucz i kliknij Aktywuj.",
+    "removeDevice": "Usuń urządzenie",
+    "removingDevice": "Usuwanie...",
+    "removeConfirm": "Usunąć to urządzenie z licencji? Aplikacja na nim wróci do wersji bezpłatnej, a licencji będzie można użyć na innym komputerze.",
+    "removedDone": "Urządzenie zostało usunięte.",
+    "removeError": "Nie udało się usunąć urządzenia. Spróbuj ponownie.",
+    "ordersTitle": "Historia zamówień",
+    "ordersEmpty": "Nie znaleziono historii zakupów.",
+    "orderDate": "Data",
+    "orderQty": "Ilość",
+    "orderTotal": "Razem",
+    "orderStatus": "Status",
+    "statusPaid": "Opłacone",
+    "statusRefunded": "Zwrócone",
+    "homeLink": "Strona główna"
+  }
+}

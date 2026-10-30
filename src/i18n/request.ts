@@ -11,8 +11,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale;
   }
 
-  return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
-  };
+  const english = (await import("../../messages/en.json")).default;
+  if (locale === "en") return { locale, messages: english };
+
+  // Yeni dillerde çevrilmeyen bölümler (ör. gizlilik politikası) İngilizce
+  // kalsın diye dil dosyası İngilizcenin üzerine bölüm bölüm bindirilir.
+  const localized = (await import(`../../messages/${locale}.json`)).default;
+  return { locale, messages: { ...english, ...localized } };
 });

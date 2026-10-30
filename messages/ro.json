@@ -1,0 +1,698 @@
+{
+  "meta": {
+    "title": "Disk Mop — curățare inteligentă a discului pentru Windows și Mac",
+    "description": "Eliberează gigabyți în câteva minute. Disk Mop șterge fișierele mari, duplicatele și memoria cache din Windows, macOS și Android și pune ordine în biblioteca foto de pe iPhone.",
+    "ogDescription": "Eliberează gigabyți de spațiu și redă computerului aerul de nou. Un singur clic, câteva minute.",
+    "keywords": [
+      "curățare disc",
+      "eliberare spațiu pe disc",
+      "căutare fișiere duplicate",
+      "căutare fișiere mari",
+      "curățare cache",
+      "curățare disc Windows",
+      "curățare stocare Mac"
+    ],
+    "loginTitle": "Autentificare — Disk Mop",
+    "loginDescription": "Autentifică-te cu e-mailul și un cod unic ca să-ți vezi licențele și dispozitivele Disk Mop.",
+    "accountTitle": "Contul tău — Disk Mop",
+    "accountDescription": "Licențele tale Disk Mop Pro, dispozitivele și achizițiile."
+  },
+  "nav": {
+    "features": "Funcții",
+    "pricing": "Preț",
+    "faq": "Întrebări frecvente",
+    "blog": "Blog",
+    "tools": "Instrumente",
+    "download": "Descarcă",
+    "signIn": "Autentificare",
+    "account": "Contul meu"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop pentru Windows și macOS",
+    "title": "Lasă computerul să",
+    "titleHighlight": "respire",
+    "subtitle": "Eliberează gigabyți de spațiu cu Disk Mop și accelerează sistemul ca în prima zi. Un singur clic, în câteva minute.",
+    "cta": "Descarcă acum",
+    "watchVideo": "Cum funcționează?",
+    "users": "Încredere din partea a peste 10.000 de utilizatori",
+    "platforms": "Windows 10/11 și macOS 12+ • Fără viruși • Semnat și notarizat",
+    "ios": {
+      "badge": "✨ Nou: DiskMop pentru iPhone",
+      "title": "Pune ordine în",
+      "titleHighlight": "biblioteca foto",
+      "subtitle": "Găsește duplicate, fotografii asemănătoare, poze neclare, capturi de ecran și videoclipuri mari. Verifică fiecare grup și păstrează-o pe cea mai bună. Pozele sunt analizate pe iPhone-ul tău.",
+      "cta": "Descarcă din App Store",
+      "platforms": "iOS 18.0+ • Scanare gratuită • Fără cont, fără urmărire"
+    }
+  },
+  "heroVisual": {
+    "aria": "Animație: Disk Mop recuperează {gb} GB de spațiu pe disc",
+    "freed": "recuperat",
+    "cleaned": "Curățat"
+  },
+  "trustBar": {
+    "downloads": "Descărcări",
+    "downloadsLabel": "Descărcări",
+    "rating": "Evaluare",
+    "ratingLabel": "Evaluare",
+    "safe": "Sigur",
+    "safeLabel": "Sigur",
+    "guarantee": "Licență pe viață",
+    "guaranteeLabel": "Pe viață"
+  },
+  "platformSelector": {
+    "title": "Alege platforma ta",
+    "subtitle": "Aplicații native pentru Windows, macOS, Android și iPhone",
+    "recommended": "Recomandat",
+    "download": "Descarcă",
+    "systemReqs": "Cerințe de sistem",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64 de biți)",
+      "recommended": "Recomandat pentru tine",
+      "download": "Descarcă pentru Windows",
+      "signed": "Semnat digital și editor verificat",
+      "signedNote": "Windows afișează un editor verificat, nu „Editor necunoscut”"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Recomandat pentru tine",
+      "download": "Instalează din Google Play",
+      "note": "Curățare stocare: fișiere mari, descărcări, media din aplicații de mesagerie și aplicații nefolosite"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Recomandat pentru tine",
+      "download": "Descarcă din App Store",
+      "note": "Curățare poze și videoclipuri: duplicate, fotografii asemănătoare, capturi de ecran și videoclipuri mari"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon și Intel)",
+      "recommended": "Recomandat pentru tine",
+      "download": "Descarcă pentru macOS",
+      "signed": "Notarizat și semnat de Apple",
+      "signedNote": "Fără avertismente Gatekeeper — se deschide direct",
+      "intelLink": "Ai un Mac cu Intel? Descarcă versiunea pentru Intel"
+    }
+  },
+  "features": {
+    "title": "Funcții puternice",
+    "subtitle": "Tot ce ai nevoie ca să-ți accelerezi computerul și să eliberezi spațiu, într-o singură aplicație.",
+    "items": [
+      {
+        "title": "Analiza discului",
+        "description": "Analizează vizual utilizarea discului. Vezi imediat ce foldere ocupă cel mai mult spațiu."
+      },
+      {
+        "title": "Căutare fișiere mari",
+        "description": "Detectează instantaneu fișierele de peste 500 MB. Scapă de fișierele uriașe uitate."
+      },
+      {
+        "title": "Detector de duplicate",
+        "description": "Găsește fișiere identice cu SHA-256. Curăță fotografiile, videoclipurile și documentele duplicate."
+      },
+      {
+        "title": "Accelerare",
+        "description": "Curăță cu un clic descărcările vechi, memoria cache a sistemului și a browserelor și coșul de reciclare. Rulează automat toate sarcinile de curățare."
+      },
+      {
+        "title": "Curățare descărcări",
+        "description": "Clasifică inteligent și curăță fișierele vechi și inutile din folderul Descărcări."
+      },
+      {
+        "title": "Curățare cache",
+        "description": "Curăță în siguranță fișierele cache ale sistemului și ale aplicațiilor. Câștigă gigabyți de spațiu."
+      },
+      {
+        "title": "Curățare cache browsere",
+        "description": "Curăță cu un clic memoria cache din Chrome, Firefox, Edge și Safari."
+      },
+      {
+        "title": "Coș de reciclare",
+        "description": "Golește coșul de reciclare ca să ștergi definitiv fișierele și să eliberezi spațiu pe disc."
+      },
+      {
+        "title": "Curățare cache DNS",
+        "description": "Golește memoria cache DNS ca să rezolvi problemele de conexiune și să accelerezi navigarea."
+      },
+      {
+        "title": "Manager de pornire",
+        "description": "Gestionează programele care pornesc odată cu computerul. Redu timpul de pornire."
+      },
+      {
+        "title": "Scor de sănătate a sistemului",
+        "description": "Evaluează starea generală a computerului pe o scară până la 100. Vezi ce poți îmbunătăți."
+      },
+      {
+        "title": "Căutare foldere goale",
+        "description": "Scanează unitățile după folderele goale care aglomerează sistemul de fișiere. Curăță-le cu un clic."
+      },
+      {
+        "title": "Distrugător de fișiere",
+        "description": "Șterge în siguranță fișierele sensibile prin suprascriere la nivel militar (DoD 5220.22-M). Imposibil de recuperat."
+      },
+      {
+        "title": "Hartă arborescentă a discului",
+        "description": "Vizualizează tot discul ca o hartă arborescentă interactivă. Vezi exact ce îți consumă spațiul."
+      },
+      {
+        "title": "Optimizator RAM",
+        "description": "Eliberează memorie închizând procesele inactive. Crește instantaneu performanța."
+      },
+      {
+        "title": "Manager de servicii",
+        "description": "Controlează serviciile Windows care încetinesc sistemul. Dezactivează serviciile de fundal inutile."
+      },
+      {
+        "title": "Curățare programată",
+        "description": "Setează programe de curățare automată. Menține sistemul curat fără să miști un deget."
+      },
+      {
+        "title": "Raport de confidențialitate",
+        "description": "Primești un scor de confidențialitate complet. Vezi ce urme lasă browserele și aplicațiile."
+      },
+      {
+        "title": "Detector de aplicații nefolosite",
+        "description": "Listează toate aplicațiile instalate după dimensiune și dezinstalează-le pe cele de care nu mai ai nevoie, ca să eliberezi spațiu."
+      },
+      {
+        "title": "Căutare imagini asemănătoare",
+        "description": "Găsește fotografii și imagini duplicate în orice folder, grupate după semnătura fișierului."
+      },
+      {
+        "title": "Monitor al stării discului",
+        "description": "Vezi starea de sănătate a unităților SSD și HDD și rulează TRIM pe SSD."
+      },
+      {
+        "title": "Pornire mai rapidă",
+        "description": "Măsoară timpul real de pornire din înregistrările Windows, oprește aplicațiile care îl încetinesc și urmează ghidurile ilustrate pentru restul."
+      }
+    ],
+    "new": "Nou"
+  },
+  "howItWorks": {
+    "title": "Cum funcționează?",
+    "subtitle": "Curăță-ți computerul în trei pași simpli",
+    "steps": [
+      {
+        "title": "Descarcă și instalează",
+        "description": "Descarcă programul de instalare și finalizează configurarea în câteva minute. Nu e nevoie de înregistrare."
+      },
+      {
+        "title": "Scanează",
+        "description": "Pornește analiza discului cu un singur clic. Fișierele inutile, duplicatele și memoria cache sunt detectate."
+      },
+      {
+        "title": "Curăță",
+        "description": "Alege ce vrei să ștergi și apasă butonul de curățare. Gigabyți de spațiu sunt eliberați instantaneu."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Explorează aplicația",
+    "subtitle": "Aruncă o privire mai atentă asupra funcțiilor puternice ale Disk Mop",
+    "tabs": [
+      {
+        "name": "Prezentare generală",
+        "description": "Vezi toată utilizarea discului pe un singur ecran. Identifică imediat zonele care pot fi curățate."
+      },
+      {
+        "name": "Analiza discului",
+        "description": "Află ce fișiere ocupă cât spațiu printr-o analiză detaliată la nivel de folder."
+      },
+      {
+        "name": "Fișiere mari",
+        "description": "Listează fișierele de peste 500 MB, sortate după dimensiune. Curăță-le pe cele inutile cu un clic."
+      },
+      {
+        "name": "Duplicate",
+        "description": "Găsește fișiere identice cu hash SHA-256. Șterge copiile și păstrează originalul."
+      },
+      {
+        "name": "Accelerare",
+        "description": "Rulează toate sarcinile de curățare cu un clic. Descărcările vechi, memoria cache, datele browserelor și coșul de reciclare sunt curățate automat."
+      },
+      {
+        "name": "Descărcări",
+        "description": "Clasifică inteligent folderul Descărcări. Curăță programele de instalare și arhivele vechi."
+      },
+      {
+        "name": "Cache",
+        "description": "Curăță în siguranță fișierele cache ale sistemului și ale aplicațiilor. Câștigă gigabyți de spațiu."
+      },
+      {
+        "name": "Browsere",
+        "description": "Curăță cu un clic memoria cache din Chrome, Firefox, Edge și Safari."
+      },
+      {
+        "name": "Coș de reciclare",
+        "description": "Golește coșul de reciclare ca să eliberezi definitiv spațiu pe disc."
+      },
+      {
+        "name": "Cache DNS",
+        "description": "Golește memoria cache DNS ca să rezolvi problemele de conexiune și să accelerezi navigarea."
+      },
+      {
+        "name": "Pornire",
+        "description": "Gestionează programele care pornesc odată cu computerul. Redu timpul de pornire."
+      },
+      {
+        "name": "Foldere goale",
+        "description": "Găsește și elimină folderele goale care aglomerează sistemul de fișiere. Păstrează structura de directoare curată."
+      },
+      {
+        "name": "Distrugător de fișiere",
+        "description": "Distruge definitiv fișierele sensibile prin suprascriere la nivel militar. Recuperarea este imposibilă."
+      },
+      {
+        "name": "Hartă arborescentă a discului",
+        "description": "Hartă vizuală interactivă a utilizării discului. Intră în foldere ca să vezi ce ocupă spațiu."
+      },
+      {
+        "name": "Curățare RAM",
+        "description": "Optimizează utilizarea memoriei eliberând RAM de la procesele inactive. Creștere instantanee a performanței."
+      },
+      {
+        "name": "Manager de servicii",
+        "description": "Vezi și controlează serviciile Windows. Dezactivează serviciile de fundal inutile ca să accelerezi sistemul."
+      },
+      {
+        "name": "Resturi după dezinstalare",
+        "description": "Găsește fișierele și intrările de registru lăsate în urmă de aplicațiile dezinstalate și elimină-le în siguranță."
+      },
+      {
+        "name": "Raport de confidențialitate",
+        "description": "Analiză completă a confidențialității. Vezi urmele din browsere, cookie-urile și datele aplicațiilor care îți dezvăluie activitatea."
+      },
+      {
+        "name": "Aplicații nefolosite",
+        "description": "Vezi toate aplicațiile instalate cu dimensiunea lor, cele mai mari primele, și dezinstalează-le pe cele pe care nu le mai folosești fără să părăsești Disk Mop."
+      },
+      {
+        "name": "Imagini asemănătoare",
+        "description": "Scanează un folder după fotografii și imagini duplicate. Copiile sunt grupate după semnătura fișierului, cu spațiul irosit de fiecare grup."
+      },
+      {
+        "name": "Starea discului",
+        "description": "Verifică dintr-o privire starea de sănătate a fiecărui SSD și HDD și rulează TRIM pe SSD cu un clic."
+      },
+      {
+        "name": "Pornire mai rapidă",
+        "description": "Măsoară timpul real de pornire din înregistrările Windows, oprește aplicațiile care îl încetinesc și urmează ghidurile ilustrate pentru restul."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": "47", "suffix": " GB", "label": "Spațiu eliberat în medie" },
+      { "value": "32", "suffix": "%", "label": "Creștere de viteză" },
+      { "value": "10000", "suffix": "+", "label": "Total descărcări" },
+      { "value": "4.8", "suffix": "/5", "label": "Evaluarea utilizatorilor" }
+    ]
+  },
+  "testimonials": {
+    "title": "Ce spun utilizatorii noștri",
+    "subtitle": "Mii de utilizatori și-au accelerat computerele cu Disk Mop",
+    "items": [
+      {
+        "quote": "Am găsit peste 50 GB de fișiere inutile pe computer! Habar n-aveam de anii de fișiere cache acumulate. Acum discul meu respiră ușurat.",
+        "name": "Ahmet Yılmaz",
+        "role": "Inginer software",
+        "city": "Istanbul"
+      },
+      {
+        "quote": "Detectorul de duplicate e o salvare. A găsit 4 copii ale aceluiași fișier PSD. Folderele mele de design sunt acum impecabile.",
+        "name": "Elif Demir",
+        "role": "Designer grafic",
+        "city": "Ankara"
+      },
+      {
+        "quote": "Laptopul meu vechi e din nou rapid ca în prima zi. Timpul de pornire s-a înjumătățit datorită managerului de pornire. Îl recomand cu căldură studenților.",
+        "name": "Mehmet Kaya",
+        "role": "Student",
+        "city": "Izmir"
+      },
+      {
+        "quote": "Interfața e atât de simplă încât o poate folosi ușor chiar și cineva care nu se pricepe la computere. Faptul că știu că e sigur e un mare plus.",
+        "name": "Zeynep Arslan",
+        "role": "Contabilă",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Fișierele de randare video și cache-ul browserului îmi ocupau 40% din disc. Disk Mop le-a curățat pe toate cu un singur clic. Incredibil!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "L-am instalat pe toate cele 15 computere din birou. Gestionarea programelor de pornire e acum foarte ușoară. Volumul de muncă al echipei IT s-a înjumătățit.",
+        "name": "Ayşe Çelik",
+        "role": "Manager de birou",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Prețuri simple și transparente",
+    "subtitle": "Fără abonament, fără taxe ascunse. Plătești o dată, folosești pentru totdeauna.",
+    "badge": "Cel mai popular",
+    "plan": {
+      "name": "Disk Mop pe viață",
+      "badge": "Cel mai popular",
+      "price": "$19.90",
+      "period": "o singură plată",
+      "cta": "Cumpără acum",
+      "secure": "Plată sigură: Polar.sh",
+      "paymentTrust": "Plată procesată în siguranță prin Polar.sh"
+    },
+    "features": [
+      "Toate funcțiile",
+      "Acces pe viață",
+      "Actualizări gratuite",
+      "Licență pentru 1 computer",
+      "Windows și macOS",
+      "Asistență prin e-mail",
+      "Actualizări pe viață",
+      "Fără reclame și fără viruși"
+    ]
+  },
+  "faq": {
+    "title": "Întrebări frecvente",
+    "subtitle": "Găsește aici răspunsuri la întrebările tale",
+    "items": [
+      {
+        "question": "Este Disk Mop sigur?",
+        "answer": "Da, Disk Mop este 100% sigur. Nu conține viruși, programe malware sau adware. Nu atinge fișierele de sistem, ci doar detectează și curăță fișierele inutile (cache, fișiere temporare, duplicate). Îți arată fiecare fișier înainte de ștergere și așteaptă confirmarea ta."
+      },
+      {
+        "question": "Ce sisteme de operare sunt acceptate?",
+        "answer": "Disk Mop rulează ca aplicație nativă pe Windows 10/11 (64 de biți) și macOS 12+ (Apple Silicon și Intel). Există și aplicații mobile native: Disk Mop pentru Android 8.0+ în Google Play și DiskMop: Photo & Video Cleaner pentru iPhone (iOS 18+) în App Store."
+      },
+      {
+        "question": "Cum funcționează licența?",
+        "answer": "Plătești $19.90 o singură dată pentru acces pe viață. 1 licență = 1 computer. Fără abonament, fără costuri suplimentare. Dacă schimbi computerul, îți poți transfera licența pe cel nou."
+      },
+      {
+        "question": "Cum plătesc?",
+        "answer": "Faci o plată unică prin infrastructura de plăți securizată Polar.sh. Sunt acceptate cardurile de credit și alte metode de plată."
+      },
+      {
+        "question": "Sunt actualizările gratuite?",
+        "answer": "Da, toate actualizările și funcțiile noi sunt gratuite pe viață. Poți primi actualizări automate direct din aplicație."
+      },
+      {
+        "question": "Datele mele sunt în siguranță?",
+        "answer": "Disk Mop funcționează în întregime local. Fișierele tale nu sunt trimise niciodată către vreun server. Conexiunea la internet este folosită doar pentru verificarea licenței și pentru actualizări. Toate operațiunile de scanare și curățare au loc pe computerul tău."
+      },
+      {
+        "question": "Intră în conflict cu programele antivirus?",
+        "answer": "Nu, Disk Mop este pe deplin compatibil cu toate programele antivirus importante (Windows Defender, Avast, Kaspersky, Norton etc.). Este o aplicație sigură, semnată digital."
+      },
+      {
+        "question": "Este acceptat Linux?",
+        "answer": "Încă nu. Disk Mop este disponibil pentru Windows, macOS, Android și iPhone; suportul pentru Linux se află în planurile noastre."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Curăță-ți computerul astăzi",
+    "subtitle": "Simte diferența cu Disk Mop.",
+    "cta": "Descarcă acum",
+    "trust": "🔒 Descărcare sigură • ✓ Fără viruși • 💰 Licență pe viață"
+  },
+  "footer": {
+    "slogan": "O mop, un disc curat.",
+    "product": {
+      "title": "Produs",
+      "features": "Funcții",
+      "pricing": "Preț",
+      "faq": "Întrebări frecvente",
+      "blog": "Blog",
+      "calculator": "Calculator de spațiu pe disc",
+      "changelog": "Jurnal de modificări",
+      "tools": "Instrumente"
+    },
+    "company": {
+      "title": "Companie",
+      "about": "Despre noi",
+      "contact": "Contact",
+      "careers": "Cariere"
+    },
+    "legal": {
+      "title": "Aspecte juridice",
+      "privacy": "Politica de confidențialitate",
+      "terms": "Termeni și condiții",
+      "kvkk": "GDPR"
+    },
+    "support": {
+      "title": "Asistență",
+      "help": "Centru de ajutor",
+      "helpCenter": "Centru de ajutor",
+      "email": "Asistență prin e-mail",
+      "status": "Pagina de stare"
+    },
+    "copyright": "© 2025 Disk Mop. Toate drepturile rezervate."
+  },
+  "cookie": {
+    "text": "Acest site folosește cookie-uri pentru a-ți îmbunătăți experiența.",
+    "privacy": "Politica de confidențialitate",
+    "accept": "Acceptă",
+    "reject": "Refuză"
+  },
+  "success": {
+    "title": "Achiziție reușită! 🎉",
+    "subtitle": "Licența ta Disk Mop pe viață este gata.",
+    "licenseLabel": "Cheia ta de licență",
+    "licenseNote": "Păstrează această cheie într-un loc sigur. A fost trimisă și pe e-mailul tău.",
+    "downloadTitle": "Descarcă acum",
+    "downloadSubtitle": "Alege platforma și începe instalarea.",
+    "backHome": "Înapoi la pagina principală",
+    "loading": "Se încarcă licența ta...",
+    "loadingSubtitle": "Te rugăm să aștepți cât timp preluăm cheia ta de licență.",
+    "error": "Ceva nu a mers bine",
+    "errorDesc": "Nu am putut încărca cheia ta de licență. Verifică-ți e-mailul pentru cheie sau contactează asistența.",
+    "retry": "Încearcă din nou",
+    "stepsTitle": "Cum activezi",
+    "step1": "Copiază cheia de licență de mai sus",
+    "step2": "Deschide Disk Mop și mergi la Setări",
+    "step3": "Lipește cheia și apasă Activează",
+    "macIntel": "Mac cu Intel? Descarcă versiunea pentru Intel"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Compară Disk Mop cu concurenții. Află care ți se potrivește.",
+    "badge": "Comparații",
+    "readMore": "Citește mai mult",
+    "readingTime": "min de citit",
+    "comparisonTable": "Tabel comparativ",
+    "feature": "Funcție",
+    "pros": "Avantaje",
+    "cons": "Dezavantaje",
+    "verdict": "Verdict",
+    "downloadCta": "Descarcă Disk Mop acum",
+    "ctaSubtitle": "Plată unică pentru acces pe viață la toate funcțiile. Fără abonament, fără taxe ascunse.",
+    "relatedArticles": "Articole similare",
+    "backToBlog": "Înapoi la blog",
+    "guide": "Ghid",
+    "keyTakeaways": "Ideile principale",
+    "faq": "Întrebări frecvente",
+    "inlineCtaBadge": "Soluție automată cu 1 clic",
+    "inlineCtaTitle": "Vrei să rezolvi asta cu 1 clic, nu manual?",
+    "inlineCtaSubtitle": "DiskMop scanează, identifică și curăță automat și în siguranță memoria cache ascunsă, resturile aplicațiilor și gunoiul de sistem.",
+    "downloadFor": "Descarcă gratuit pentru {os}",
+    "downloadFree": "Descarcă gratuit",
+    "trustFreeDeletions": "3 ștergeri gratuite incluse",
+    "trustNoCard": "Nu e nevoie de card",
+    "trustSafe": "100% sigur și semnat",
+    "stickyBarTitle": "Curăță și accelerează-ți PC-ul automat cu DiskMop",
+    "stickyBarSubtitle": "Descărcare gratuită · Găsește și curăță fișierele inutile în câteva secunde",
+    "stickyBarButton": "Descarcă gratuit pentru {os}",
+    "showcaseBadge": "Interfața DiskMop",
+    "showcaseTitle": "Cum rezolvă DiskMop asta: {feature}",
+    "showcaseCaption": "DiskMop automatizează tot acest proces, ca să scanezi și să cureți în siguranță cu un singur clic, fără să umbli la setări manuale.",
+    "tableOfContents": "Cuprins",
+    "testedOn": "Testat pe",
+    "verifiedSafe": "Verificat ca sigur de echipa de inginerie de sisteme Disk Mop",
+    "lastUpdated": "Ultima actualizare",
+    "share": "Distribuie",
+    "copyLink": "Copiază linkul",
+    "linkCopied": "Copiat!",
+    "allPlatforms": "Toate",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Comparații",
+    "searchArticles": "Caută articole...",
+    "noArticlesFound": "Nu s-au găsit articole care să corespundă criteriilor tale.",
+    "clearSearch": "Șterge căutarea",
+    "toolsBadge": "Instrumente web gratuite",
+    "toolsTitle": "Calculatoare gratuite pentru disc și stocare",
+    "toolsSubtitle": "Calculează online necesarul de stocare, durata de viață a SSD-ului și economiile estimate din fișierele inutile.",
+    "iphoneCompanion": {
+      "badge": "Și pe iPhone",
+      "title": "Se umple și iPhone-ul tău?",
+      "subtitle": "DiskMop pentru iPhone găsește duplicate, fotografii asemănătoare, capturi de ecran și videoclipuri mari în biblioteca ta foto. Scanarea este gratuită, iar pozele sunt analizate pe dispozitiv.",
+      "cta": "Descarcă din App Store"
+    }
+  },
+  "notFound": {
+    "title": "Pagina nu a fost găsită",
+    "description": "Pagina pe care o cauți nu există sau a fost mutată.",
+    "home": "Acasă",
+    "back": "Înapoi"
+  },
+  "common": {
+    "download": "Descarcă",
+    "learnMore": "Află mai multe",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Recomandat",
+    "signed": "Semnat",
+    "free": "Gratuit",
+    "lifetime": "Pe viață",
+    "enlarge": "Mărește",
+    "close": "Închide"
+  },
+  "tools": {
+    "title": "Instrumente web gratuite și calculatoare de stocare — Disk Mop",
+    "description": "Calculator de spațiu pe disc, estimare a duratei de viață a SSD-ului și utilitare de optimizare a stocării. 100% gratuite, online, cu rezultate instantanee.",
+    "badge": "Utilitare online",
+    "heroTitle": "Instrumente web gratuite pentru disc și stocare",
+    "heroSubtitle": "Calculează câți gigabyți poți recupera, estimează starea SSD-ului și planifică-ți necesarul de stocare în câteva secunde.",
+    "openTool": "Lansează instrumentul",
+    "featuredBadge": "Instrument recomandat",
+    "guideBadge": "Ghid",
+    "breadcrumb": "Instrumente",
+    "cardCalculatorTitle": "Calculator de spațiu pe disc și stocare",
+    "cardCalculatorDesc": "Alege dispozitivul și capacitatea ca să calculezi spațiul recuperabil din cache-urile jocurilor, resturile instrumentelor de dezvoltare și media, cu avertismente interactive despre starea SSD-ului.",
+    "cardSsdTitle": "Verificarea stării și a duratei de viață a SSD-ului",
+    "cardSsdDesc": "Înțelege de ce SSD-urile se degradează peste 80% din capacitate și cum să monitorizezi uniformizarea uzurii, eficiența TRIM și indicatorii SMART.",
+    "cardIphoneTitle": "Defalcarea stocării media pe iPhone",
+    "cardIphoneDesc": "Tabel detaliat cu dimensiunile fișierelor video 4K, Live Photos și ProRAW, cu pași de curățare sigură, verificați, pentru iOS.",
+    "cardLargeFilesTitle": "Căutare duplicate și fișiere mari",
+    "cardLargeFilesDesc": "Găsește în siguranță descărcările uitate de mai mulți gigabyți, arhivele duplicate și resturile aplicațiilor dezinstalate."
+  },
+  "calculator": {
+    "title": "Calculator gratuit de spațiu pe disc și stocare — cât spațiu poți elibera?",
+    "description": "Calculează cât cache inutil se ascunde pe PC, Mac, iPhone sau Android. Verifică riscul pentru starea SSD-ului și vezi câți gigabyți poți recupera cu Disk Mop.",
+    "badge": "Instrument web online gratuit",
+    "heroTitle": "Calculator de spațiu pe disc și stocare",
+    "heroSubtitle": "Alege dimensiunea unității și obiceiurile de utilizare ca să calculezi cât spațiu recuperabil se ascunde în cache-urile sistemului, în jocuri și în media.",
+    "breadcrumb": "Calculator de spațiu pe disc",
+    "platformLabel": "1. Alege dispozitivul",
+    "driveSizeLabel": "2. Capacitatea totală a unității",
+    "currentUsageLabel": "3. Utilizare estimată",
+    "activitiesLabel": "4. Activități principale și tipuri de date",
+    "estimatedSavings": "Spațiul estimat pe care îl poți elibera",
+    "reclaimableNotice": "Pe baza mediilor de telemetrie pentru jurnalele de sistem, resturile programelor de instalare, media duplicată și cache-urile aplicațiilor.",
+    "ssdWarningTitle": "Risc pentru performanța de scriere a SSD-ului",
+    "ssdWarningDesc": "Unitatea depășește 80% din capacitate. Eficiența TRIM scade și latența de scriere crește. Eliberarea spațiului restabilește viteza inițială.",
+    "ssdGoodTitle": "Interval sănătos de capacitate",
+    "ssdGoodDesc": "Unitatea se încadrează în marje sănătoase. Întreținerea de rutină previne blocările neașteptate din cauza discului plin.",
+    "breakdownTitle": "Defalcarea estimată a spațiului",
+    "systemCache": "Cache de sistem și de browser",
+    "gameJunk": "Cache Steam și shadere de jocuri",
+    "devJunk": "Resturi ale instrumentelor de dezvoltare și pachetelor",
+    "mediaJunk": "Videoclipuri 4K și media duplicată",
+    "msgJunk": "Cache media din aplicații de mesagerie",
+    "downloadButton": "Descarcă Disk Mop gratuit",
+    "freeTrialTrust": "3 ștergeri gratuite incluse · Nu e nevoie de card · 100% sigur",
+    "sliderRelaxed": "30% (redus)",
+    "sliderWarning": "75% (aproape de limită)",
+    "sliderCritical": "90%+ (critic)",
+    "actGaming": "Steam / Epic / pachete de jocuri",
+    "actDev": "Docker / Node / cache de dezvoltare",
+    "actMedia": "Video 4K / fotografii asemănătoare",
+    "actMessaging": "Cache WhatsApp / Discord / Telegram",
+    "barSystemTooltip": "Fișiere esențiale de sistem și de utilizator",
+    "barReclaimableTooltip": "Dezordine recuperabilă cu Disk Mop",
+    "barPersonalLegend": "Fișiere personale",
+    "barReclaimableLegend": "Recuperabil",
+    "eduCard1Title": "Pragul de 80% la SSD",
+    "eduCard1Desc": "SSD-urile trebuie să execute cicluri de citire-modificare-scriere când se epuizează blocurile libere. Peste 80% din capacitate, vitezele de scriere scad semnificativ din cauza costului suplimentar al TRIM.",
+    "eduCard2Title": "Acumulare invizibilă de fișiere",
+    "eduCard2Desc": "Jurnalele de actualizare Windows, pre-cache-urile shaderelor și resturile aplicațiilor dezinstalate se acumulează pe tăcute și scapă utilitarelor de curățare încorporate.",
+    "eduCard3Title": "Recuperare sigură cu 1 clic",
+    "eduCard3Desc": "Disk Mop scanează unitățile după cache neesențial și fișiere orfane, fără să pună vreodată în pericol integritatea sistemului sau documentele utilizatorului.",
+    "faqTitle": "Întrebări frecvente",
+    "faqQ1": "De ce încetinește un SSD când este plin?",
+    "faqA1": "SSD-urile scriu datele în blocuri. Când un SSD depășește 80% din capacitate, găsirea blocurilor goale pentru uniformizarea uzurii și TRIM devine mult mai lentă, ceea ce duce la amplificarea scrierii și la scăderi semnificative de performanță.",
+    "faqQ2": "Ce fișiere consumă cel mai mult spațiu ascuns pe disc?",
+    "faqA2": "Jurnalele de actualizare Windows (WinSxS), cache-urile browserelor, pre-cache-ul shaderelor Steam, folderele AppData orfane și media din aplicațiile de mesagerie (WhatsApp, Discord, Telegram) reprezintă până la 80% din dezordinea ascunsă.",
+    "faqQ3": "Este curățarea cu Disk Mop complet sigură?",
+    "faqA3": "Da. Disk Mop rulează strict local, fără să colecteze date personale. Vizează doar cache-uri reproductibile, fișiere de jurnal și resturi orfane, cu o arhitectură care pune siguranța pe primul loc. Primești 3 ștergeri gratuite pe dispozitiv ca să verifici."
+  },
+  "login": {
+    "title": "Autentifică-te în Disk Mop",
+    "subtitle": "Introdu adresa de e-mail și îți vom trimite un cod de 6 cifre. Nu există parolă. Dacă ești nou, același cod îți creează contul.",
+    "buyContext": "Autentifică-te mai întâi, apoi vei continua către pagina de plată.",
+    "emailLabel": "Adresă de e-mail",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Trimite codul de autentificare",
+    "sending": "Se trimite...",
+    "codeTitle": "Verifică-ți căsuța de e-mail",
+    "codeSent": "Am trimis un cod de 6 cifre la {email}. Expiră în 10 minute.",
+    "codeLabel": "Cod de 6 cifre",
+    "verify": "Autentifică-te",
+    "verifying": "Se autentifică...",
+    "resend": "Retrimite codul",
+    "resent": "A fost trimis un cod nou.",
+    "otherEmail": "Folosește alt e-mail",
+    "errors": {
+      "invalidEmail": "Introdu o adresă de e-mail validă.",
+      "invalidCode": "Cod invalid sau expirat. Încearcă din nou.",
+      "tooMany": "Prea multe încercări. Așteaptă câteva minute.",
+      "mailFailed": "Nu am putut trimite e-mailul. Încearcă din nou mai târziu.",
+      "generic": "A apărut o eroare. Încearcă din nou.",
+      "provider": "Nu te-am putut autentifica cu {provider}. Încearcă din nou."
+    },
+    "or": "sau",
+    "google": "Continuă cu Google",
+    "apple": "Continuă cu Apple"
+  },
+  "account": {
+    "title": "Contul tău",
+    "signedInAs": "Autentificat ca {email}",
+    "signOut": "Deconectare",
+    "licensesTitle": "Licențe",
+    "licensesEmpty": "Nu ai încă o licență. Disk Mop Pro îți oferă acces pe viață și deblochează toate funcțiile.",
+    "buyFirst": "Ia Disk Mop Pro",
+    "buyMore": "Cumpără o altă licență",
+    "keyLabel": "Cheie de licență",
+    "copy": "Copiază cheia",
+    "copied": "Copiat",
+    "statusActive": "Activă",
+    "statusRevoked": "Revocată",
+    "activeDevice": "Dispozitiv activ",
+    "unnamedDevice": "Dispozitiv",
+    "activatedAt": "Activată pe {date}",
+    "noDevice": "Nu a fost încă activată pe niciun dispozitiv",
+    "activateHint": "Deschide Disk Mop pe PC sau Mac, mergi la Setări > Licență, introdu această cheie și apasă Activează.",
+    "removeDevice": "Elimină dispozitivul",
+    "removingDevice": "Se elimină...",
+    "removeConfirm": "Elimini acest dispozitiv din licență? Aplicația de pe el va reveni la versiunea gratuită și vei putea folosi licența pe alt computer.",
+    "removedDone": "Dispozitivul a fost eliminat.",
+    "removeError": "Nu am putut elimina dispozitivul. Încearcă din nou.",
+    "ordersTitle": "Istoric comenzi",
+    "ordersEmpty": "Nu s-a găsit niciun istoric de achiziții.",
+    "orderDate": "Data",
+    "orderQty": "Cant.",
+    "orderTotal": "Total",
+    "orderStatus": "Stare",
+    "statusPaid": "Plătită",
+    "statusRefunded": "Rambursată",
+    "homeLink": "Acasă"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "title": "Jak wyszukiwać zdjęcia na iPhonie według zawartości: samochód, plaża, Paryż, jedzenie",
+  "metaDescription": "Znajdź dowolne zdjęcie na iPhonie według tego, co przedstawia, lub miejsca wykonania. Jak działa wyszukiwanie w Zdjęciach i jak szuka DiskMop na Twoim iPhonie, abyś mógł przejrzeć i wyczyścić wyniki.",
+  "subtitle": "Słowa zamiast przewijania: rzeczy, tematy i miejsca, dopasowywane na samym telefonie",
+  "intro": [
+    "Krótko: wpisz słowo na karcie Szukaj w aplikacji Zdjęcia, a iPhone znajdzie obrazy według tego, co przedstawiają, gdzie zostały zrobione, kto na nich jest i kiedy. Aby pójść o krok dalej i wykorzystać wynik do porządków, DiskMop na iPhone’a ma własne wyszukiwanie na karcie Start: wpisz rzecz (samochód, dziecko, plaża), temat (jedzenie, zwierzęta, zachody słońca), miejsce (Paryż) lub dwie naraz (Paryż jedzenie), a wyświetli pasujące zdjęcia z ich liczbą i przybliżonym rozmiarem, gotowe do przejrzenia.",
+    "Ten poradnik opisuje, co aplikacja Zdjęcia już dobrze wyszukuje, dlaczego wyszukiwanie jest też najszybszym sposobem na znalezienie tego, co usunąć z biblioteki liczącej tysiące zdjęć, jak działa wyszukiwanie DiskMop i co zostaje na Twoim telefonie, oraz ograniczenia, które warto znać: wymaga ukończenia pierwszego skanowania, wyszukiwanie miejsc potrzebuje lokalizacji zdjęcia, a rozpoznawanie to najlepsze przypuszczenie."
+  ],
+  "keyTakeaways": [
+    "Karta Szukaj w aplikacji Zdjęcia znajduje zdjęcia według zawartości, miejsc, osób i dat; zacznij od niej, gdy chcesz tylko obejrzeć zdjęcie.",
+    "DiskMop na iPhone’a przeszukuje tę samą bibliotekę pod kątem rzeczy (samochód, dziecko, plaża), tematów (jedzenie, zwierzęta, zachody słońca) i miejsc (Paryż), a dwa kryteria można łączyć, na przykład Paryż jedzenie.",
+    "Dopasowanie odbywa się na iPhonie: wykorzystuje etykiety ze skanowania biblioteki, własną lokalizację każdego zdjęcia i wbudowaną listę około 34 000 miejsc. Wpisywane słowa nie są wysyłane do serwisu map ani nigdzie indziej.",
+    "Wyszukiwanie miasta obejmuje zdjęcia zrobione w promieniu około 8–25 km od jego centrum, w zależności od wielkości miasta.",
+    "Tematy Jedzenie i napoje, Zwierzęta i Zachody słońca pomijają zdjęcia z ludźmi, a nic nie jest zaznaczane za Ciebie: to Ty wybierasz, co usunąć.",
+    "Zdjęcia bez lokalizacji nie da się znaleźć według miejsca, a wyszukiwanie otwiera się dopiero po zakończeniu pierwszego skanowania; możesz je śledzić na karcie Start."
+  ],
+  "dataTable": {
+    "caption": "Co możesz wpisać w wyszukiwarkę DiskMop",
+    "columns": [
+      "Typ",
+      "Przykład",
+      "Jak jest dopasowywane",
+      "Zakres"
+    ],
+    "rows": [
+      [
+        "Rzecz lub scena",
+        "samochód, plaża, dziecko",
+        "Etykiety ze skanowania biblioteki, używane, gdy aplikacja jest w miarę pewna",
+        "Zdjęcia"
+      ],
+      [
+        "Temat",
+        "jedzenie, zwierzęta, zachody słońca",
+        "Grupa powiązanych etykiet; zdjęcia z ludźmi są pomijane",
+        "Zdjęcia"
+      ],
+      [
+        "Miejsce",
+        "Paryż, Antalya, Francja",
+        "Własna lokalizacja zdjęcia względem wbudowanej listy około 34 000 miejsc",
+        "Zdjęcia i filmy"
+      ],
+      [
+        "Kombinacja",
+        "Paryż jedzenie",
+        "Oba warunki naraz: zdjęcia jedzenia zrobione w Paryżu",
+        "Zdjęcia"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Wyszukaj zdjęcia na iPhonie według zawartości lub miejsca i usuń to, czego nie potrzebujesz",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Poczekaj na zakończenie pierwszego skanowania",
+        "text": "Otwórz DiskMop i poczekaj, aż skanowanie biblioteki się skończy; możesz je śledzić na karcie Start. Wyszukiwanie otwiera się po zakończeniu skanowania, ponieważ korzysta z jego wyników."
+      },
+      {
+        "name": "Wpisz rzecz, temat lub miejsce",
+        "text": "Otwórz Szukaj w zdjęciach na karcie Start i wpisz słowo, na przykład samochód, dziecko, plaża, Paryż lub Paryż jedzenie. Podpowiedzi pojawiają się w sekcjach Rzeczy i tematy oraz Miejsca, wraz z liczbą dopasowań."
+      },
+      {
+        "name": "Otwórz podpowiedź i przejrzyj wyniki",
+        "text": "Wyniki pokazują liczbę zdjęć i ich przybliżony rozmiar. Przewijaj je i przytrzymaj zdjęcie, aby zobaczyć je w większym rozmiarze, zanim zdecydujesz."
+      },
+      {
+        "name": "Wybierz, co usunąć",
+        "text": "Zaznacz zdjęcia, które chcesz usunąć, lub stuknij Zaznacz wszystko, jeśli cała lista jest do wyrzucenia. Nic nie jest zaznaczane za Ciebie."
+      },
+      {
+        "name": "Sprawdź i usuń",
+        "text": "Stuknij Usuń. Gdy wybierzesz co najmniej dwa zdjęcia, ekran Sprawdź przed usunięciem pokazuje dokładnie, co zniknie, a potem iOS prosi o potwierdzenie. Usunięte zdjęcia czekają 30 dni w albumie Ostatnio usunięte; opróżnij ten album, aby od razu odzyskać miejsce."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Co aplikacja Zdjęcia już wyszukuje",
+      "content": [
+        "Wbudowana aplikacja Zdjęcia ma kartę Szukaj. Wpisz słowo, a znajdzie obrazy według tego, co przedstawiają, miejsca wykonania, rozpoznanych na nich osób i daty. Do znalezienia jednego zdjęcia, na przykład zdjęcia psa z zeszłego lata, to właściwe narzędzie, które działa bez żadnej dodatkowej aplikacji.",
+        "Aplikacja Zdjęcia jest zbudowana do oglądania zdjęć, a nie do decydowania, które usunąć. Nie mówi, ile miejsca zajmuje zestaw wyników, i nie jest zorganizowana wokół porządków. Tu przydaje się wyszukiwanie stworzone do czyszczenia."
+      ]
+    },
+    {
+      "title": "Dlaczego wyszukiwanie to także najszybszy sposób na porządki",
+      "content": [
+        "Bibliotekę liczącą kilka tysięcy zdjęć trudno porządkować przewijaniem, bo większość to nie bałagan, a po maleńkich miniaturach nie da się stwierdzić, które części nim są. Wyszukiwanie odwraca kolejność: najpierw nazywasz kategorię, o której podejrzewasz, że jest pełna zbędnych zdjęć, a potem oglądasz tylko te zdjęcia. Wszystkie dania sfotografowane w jednej restauracji, każde zdjęcie sprzedanego samochodu, zachody słońca z wakacji, na których zrobiłeś czterdzieści takich samych.",
+        "Pozwala też porządkować wokół wydarzenia lub miejsca. Wpisanie nazwy miasta wyświetla wszystko, co tam zrobiono, więc możesz zachować najlepsze zdjęcia z wyjazdu, a resztę usunąć w kilka minut. Do rodzajów bałaganu, które mają własne narzędzia, takich jak [niemal identyczne ujęcia](/blog/find-duplicate-similar-photos-iphone), [zrzuty ekranu](/blog/delete-screenshots-iphone) czy [rozmazane zdjęcia](/blog/delete-blurry-photos-iphone), użyj najpierw tych list, a wyszukiwania — do całej reszty."
+      ]
+    },
+    {
+      "title": "Jak działa wyszukiwanie w DiskMop na iPhone’a",
+      "content": [
+        "Na karcie Start otwórz Szukaj w zdjęciach i wpisz, czego szukasz: rzeczy, miejsca lub obu naraz. Podczas pisania podpowiedzi pojawiają się w dwóch grupach, Rzeczy i tematy oraz Miejsca, każda z liczbą dopasowań. Wpisanie dwóch pojęć razem, na przykład Paryż jedzenie, znajduje zdjęcia jedzenia zrobione w Paryżu. Te same słowa działają też jako filtr wewnątrz list tworzonych przez DiskMop, na przykład aby zawęzić grupę podobnych zdjęć do tych zrobionych na jednej plaży.",
+        "Wybierz podpowiedź, a zobaczysz pasujące zdjęcia z ich liczbą i przybliżonym rozmiarem. Zaznacz te, które chcesz usunąć, lub stuknij Zaznacz wszystko. Nic nie jest zaznaczane za Ciebie; tematy Jedzenie i napoje, Zwierzęta i Zachody słońca pomijają nawet zdjęcia z ludźmi, aby rodzinna kolacja nie trafiła na listę dań. Usuwanie przechodzi przez ten sam ekran sprawdzenia i potwierdzenie iOS co w pozostałych miejscach aplikacji."
+      ]
+    },
+    {
+      "title": "Co jest dopasowywane na Twoim iPhonie",
+      "content": [
+        "Nic, co wpisujesz, nie opuszcza telefonu. Rzeczy i tematy pochodzą z etykiet, które skanowanie tworzy już na iPhonie, a zdjęcie jest znajdowane po etykiecie tylko wtedy, gdy aplikacja jest co do niej w miarę pewna. Miejsca pochodzą z lokalizacji zapisanej w każdym zdjęciu oraz z wbudowanej w aplikację listy około 34 000 miast i regionów, więc wpisywane słowo nigdy nie jest wysyłane do serwisu map. Wyszukiwanie miasta obejmuje zdjęcia zrobione w promieniu około 8–25 km od jego centrum, w zależności od wielkości miasta.",
+        "DiskMop działa bez konta, a etykieta prywatności mówi Dane nie są zbierane. Wyszukiwanie podlega tej samej zasadzie co reszta aplikacji: czyta Twoją bibliotekę na urządzeniu i jej nie wysyła."
+      ]
+    },
+    {
+      "title": "Ograniczenia, które warto znać",
+      "content": [
+        "Wyszukiwanie otwiera się po zakończeniu pierwszego skanowania, więc w bardzo dużej bibliotece nie jest dostępne w pierwszych minutach. Rozpoznawanie to najlepsze przypuszczenie: spodziewaj się od czasu do czasu błędnego zdjęcia na liście, dlatego nic nie jest zaznaczane za Ciebie i dlatego istnieje ekran sprawdzenia. Filmy nie są klasyfikowane według zawartości, więc można je znaleźć według miejsca, ale nie według tego, co przedstawiają.",
+        "Wyszukiwanie miejsc wymaga zdjęć z lokalizacją. Jeśli wyłączyłeś lokalizację w aparacie albo [usunąłeś lokalizację przed udostępnieniem](/blog/remove-location-from-photos-iphone) i zostawiłeś tylko czyste kopie, tych kopii nie da się znaleźć według miejsca. A jeśli wpiszesz coś, czego DiskMop nie rozpoznaje, powie o tym i zasugeruje wpisanie miejsca, rzeczy lub tematu. Do wyszukiwania osób po imieniu użyj albumu Osoby w aplikacji Zdjęcia."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy wyszukiwanie zdjęć w DiskMop wymaga połączenia z internetem?",
+      "answer": "Nie. Dopasowanie odbywa się na Twoim iPhonie, z użyciem etykiet ze skanowania biblioteki, własnej lokalizacji każdego zdjęcia i wbudowanej w aplikację listy miejsc. Wpisywane słowa nie są nigdzie wysyłane."
+    },
+    {
+      "question": "Dlaczego nie mogę wyszukiwać zaraz po zainstalowaniu DiskMop?",
+      "answer": "Wyszukiwanie korzysta z wyników skanowania biblioteki, więc otwiera się po zakończeniu pierwszego skanowania. Skanowanie możesz śledzić na karcie Start; kolejne skanowania sprawdzają tylko nowe zdjęcia."
+    },
+    {
+      "question": "Dlaczego zdjęcie nie jest znajdowane, gdy szukam miejsca?",
+      "answer": "Wyszukiwanie miejsc opiera się na lokalizacji zapisanej w zdjęciu. Zdjęcie zrobione przy wyłączonej lokalizacji albo kopia, z której usunięto lokalizację, jej nie ma i nie da się go dopasować do miejsca."
+    },
+    {
+      "question": "Czy mogę wyszukać osobę po imieniu?",
+      "answer": "DiskMop wyszukuje rzeczy, tematy i miejsca. Do wyszukiwania osób po imieniu użyj albumu Osoby i karty Szukaj w aplikacji Zdjęcia."
+    },
+    {
+      "question": "Czy wyszukiwanie coś usuwa?",
+      "answer": "Nie. Wyszukiwanie tylko wyświetla listę zdjęć. Nic nie jest zaznaczane za Ciebie, a usuwanie przechodzi przez ekran sprawdzenia i własne potwierdzenie iOS. Usunięte zdjęcia czekają potem 30 dni w albumie Ostatnio usunięte."
+    },
+    {
+      "question": "Czy wyszukiwanie jest w DiskMop bezpłatne?",
+      "answer": "Wyszukiwanie i skanowanie są bezpłatne. Bez subskrypcji możesz usuwać do dziesięciu zdjęć dziennie, plus dodatkowe usunięcia zdobywane za serie i trofea, a DiskMop Pro znosi ten limit."
+    }
+  ],
+  "verdict": [
+    "Wyszukiwanie to najszybszy sposób na znalezienie zdjęcia, a w dużej bibliotece także najszybszy sposób na zdecydowanie, co usunąć: nazwij kategorię, obejrzyj tylko te zdjęcia i usuń te, których nie potrzebujesz. Wyszukiwanie w aplikacji Zdjęcia to właściwe miejsce do znalezienia pojedynczego obrazu.",
+    "DiskMop na iPhone’a dodaje wyszukiwanie stworzone do czyszczenia: rzeczy, tematy i miejsca, dopasowywane na telefonie, z liczbą i przybliżonym rozmiarem każdego wyniku oraz sprawdzeniem przed usunięciem czegokolwiek. Skanowanie i wyszukiwanie są bezpłatne, a do dziesięciu zdjęć dziennie można usuwać za darmo."
+  ],
+  "ctaText": "Pobierz DiskMop na iPhone’a z App Store"
+}

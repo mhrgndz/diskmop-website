@@ -5,10 +5,15 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { DownloadLinkTagger } from "@/components/download-link-tagger";
 import { SITE_URL } from "@/lib/seo";
+import { localeDir } from "@/lib/locales";
 import { IOS_APP_ID } from "@/lib/app-version";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Arapça, İbranice, Tayca ve CJK için Inter glif içermez; tarayıcı sistem
+// yazı tipine düşer. Latin-ext/Kiril/Vietnamca alt kümeleri Inter'de var.
+const inter = Inter({
+  subsets: ["latin", "latin-ext", "cyrillic", "vietnamese"],
+});
 
 /**
  * Kök metadata YALNIZ site geneli varsayılanları taşır. Sayfaya özel başlık,
@@ -56,7 +61,7 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} dir={localeDir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
         <GoogleAnalytics />
         <DownloadLinkTagger />

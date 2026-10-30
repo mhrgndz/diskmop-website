@@ -216,7 +216,7 @@ function SuccessContent() {
               href="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="rtl:rotate-180 w-4 h-4" />
               {t("backHome")}
             </Link>
           </div>
@@ -304,7 +304,7 @@ function SuccessContent() {
                     Setup • {windowsSize || "~80 MB"}
                   </p>
                 </div>
-                <Download className="w-4 h-4 ml-auto text-muted-foreground" />
+                <Download className="w-4 h-4 ms-auto text-muted-foreground" />
               </a>
               <a
                 href="https://api.diskmop.com/download/mac"
@@ -318,7 +318,7 @@ function SuccessContent() {
                     Apple Silicon • {macSize || "~175 MB"}
                   </p>
                 </div>
-                <Download className="w-4 h-4 ml-auto text-muted-foreground" />
+                <Download className="w-4 h-4 ms-auto text-muted-foreground" />
               </a>
             </div>
             {/* Ödeme yapmış kullanıcı Intel Mac'teyse elleri boş kalmasın. */}
@@ -338,7 +338,7 @@ function SuccessContent() {
               href="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="rtl:rotate-180 w-4 h-4" />
               {t("backHome")}
             </Link>
           </div>

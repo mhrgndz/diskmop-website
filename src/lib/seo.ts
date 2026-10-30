@@ -1,30 +1,10 @@
 import type { Metadata } from "next";
-
 export const SITE_URL = "https://diskmop.com";
 
-export const LOCALES = [
-  "en",
-  "tr",
-  "de",
-  "fr",
-  "es",
-  "it",
-  "pt",
-  "ja",
-] as const;
-export type Locale = (typeof LOCALES)[number];
+import { LOCALES, OG_LOCALE, type Locale } from "./locales";
 
-/** OpenGraph `locale` alanı IETF değil, dil_ÜLKE biçimi ister. */
-export const OG_LOCALE: Record<Locale, string> = {
-  en: "en_US",
-  tr: "tr_TR",
-  de: "de_DE",
-  fr: "fr_FR",
-  es: "es_ES",
-  it: "it_IT",
-  pt: "pt_BR",
-  ja: "ja_JP",
-};
+export { LOCALES, OG_LOCALE };
+export type { Locale };
 
 /** localePrefix: 'as-needed' — İngilizce öneksiz. */
 export function localeUrl(locale: string, path = ""): string {
@@ -34,17 +14,19 @@ export function localeUrl(locale: string, path = ""): string {
 }
 
 /**
- * Bir sayfanın 8 dilinin hreflang haritası + x-default.
+ * Bir sayfanın hreflang haritası + x-default. `locales` verilmezse 18 dilin
+ * hepsi; yalnız bazı dillerde var olan sayfalar (makaleler) kendi listesini verir.
  * x-default İngilizce sürüme işaret eder: dili eşleşmeyen kullanıcı oraya düşer.
  */
 export function alternatesFor(
   locale: string,
   path = "",
+  locales: readonly string[] = LOCALES,
 ): Metadata["alternates"] {
   return {
     canonical: localeUrl(locale, path),
     languages: {
-      ...Object.fromEntries(LOCALES.map((l) => [l, localeUrl(l, path)])),
+      ...Object.fromEntries(locales.map((l) => [l, localeUrl(l, path)])),
       "x-default": localeUrl("en", path),
     },
   };

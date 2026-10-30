@@ -1,0 +1,702 @@
+{
+  "meta": {
+    "title": "Disk Mop — Pembersih Disk Pintar untuk Windows & Mac",
+    "description": "Kosongkan beberapa gigabyte dalam hitungan menit. Disk Mop membersihkan file besar, file duplikat, dan cache di Windows, macOS, dan Android, serta merapikan pustaka foto di iPhone.",
+    "ogDescription": "Kosongkan gigabyte ruang dan buat komputer terasa baru lagi. Satu klik, hanya beberapa menit.",
+    "keywords": [
+      "pembersih disk",
+      "kosongkan ruang disk",
+      "pencari file duplikat",
+      "pencari file besar",
+      "pembersih cache",
+      "pembersihan disk Windows",
+      "pembersih penyimpanan Mac"
+    ],
+    "loginTitle": "Masuk — Disk Mop",
+    "loginDescription": "Masuk dengan email dan kode sekali pakai untuk melihat lisensi dan perangkat Disk Mop Anda.",
+    "accountTitle": "Akun Anda — Disk Mop",
+    "accountDescription": "Lisensi Disk Mop Pro, perangkat, dan pembelian Anda."
+  },
+  "nav": {
+    "features": "Fitur",
+    "pricing": "Harga",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "tools": "Alat",
+    "download": "Unduh",
+    "signIn": "Masuk",
+    "account": "Akun saya"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop untuk Windows & macOS",
+    "title": "Biarkan Komputer Anda",
+    "titleHighlight": "Bernapas",
+    "subtitle": "Kosongkan gigabyte ruang dengan Disk Mop dan buat sistem Anda secepat hari pertama. Satu klik, dalam hitungan menit.",
+    "cta": "Unduh Sekarang",
+    "watchVideo": "Bagaimana Cara Kerjanya?",
+    "users": "Dipercaya lebih dari 10.000 pengguna",
+    "platforms": "Windows 10/11 & macOS 12+ • Bebas virus • Bertanda tangan & ternotarisasi",
+    "ios": {
+      "badge": "✨ Baru: DiskMop untuk iPhone",
+      "title": "Rapikan",
+      "titleHighlight": "Pustaka Foto Anda",
+      "subtitle": "Temukan duplikat, foto serupa, foto buram, tangkapan layar, dan video besar. Tinjau setiap grup dan simpan yang terbaik. Foto dianalisis di iPhone Anda.",
+      "cta": "Unduh di App Store",
+      "platforms": "iOS 18.0+ • Pindai gratis • Tanpa akun, tanpa pelacakan"
+    }
+  },
+  "heroVisual": {
+    "aria": "Animasi: Disk Mop mengembalikan {gb} GB ruang disk",
+    "freed": "dikembalikan",
+    "cleaned": "Dibersihkan"
+  },
+  "trustBar": {
+    "downloads": "Unduhan",
+    "downloadsLabel": "Unduhan",
+    "rating": "Peringkat",
+    "ratingLabel": "Peringkat",
+    "safe": "Aman",
+    "safeLabel": "Aman",
+    "guarantee": "Lisensi Seumur Hidup",
+    "guaranteeLabel": "Seumur hidup"
+  },
+  "platformSelector": {
+    "title": "Pilih Platform Anda",
+    "subtitle": "Aplikasi native untuk Windows, macOS, Android, dan iPhone",
+    "recommended": "Direkomendasikan",
+    "download": "Unduh",
+    "systemReqs": "Persyaratan Sistem",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bit)",
+      "recommended": "Direkomendasikan untuk Anda",
+      "download": "Unduh untuk Windows",
+      "signed": "Tanda tangan kode & penerbit terverifikasi",
+      "signedNote": "Windows menampilkan penerbit terverifikasi, bukan “Penerbit tidak dikenal”"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Direkomendasikan untuk Anda",
+      "download": "Dapatkan di Google Play",
+      "note": "Pembersih penyimpanan: file besar, unduhan, media pesan, dan aplikasi yang tidak terpakai"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Direkomendasikan untuk Anda",
+      "download": "Unduh di App Store",
+      "note": "Pembersih foto & video: duplikat, foto serupa, tangkapan layar, dan video besar"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon & Intel)",
+      "recommended": "Direkomendasikan untuk Anda",
+      "download": "Unduh untuk macOS",
+      "signed": "Ternotarisasi & bertanda tangan Apple",
+      "signedNote": "Tanpa peringatan Gatekeeper — langsung terbuka",
+      "intelLink": "Memakai Mac Intel? Dapatkan versi Intel"
+    }
+  },
+  "features": {
+    "title": "Fitur Andal",
+    "subtitle": "Semua yang Anda perlukan untuk mempercepat komputer dan mengosongkan ruang, dalam satu aplikasi.",
+    "items": [
+      {
+        "title": "Analisis Disk",
+        "description": "Analisis penggunaan disk secara visual. Langsung lihat folder mana yang memakan ruang terbanyak."
+      },
+      {
+        "title": "Pencari File Besar",
+        "description": "Deteksi seketika file di atas 500 MB. Singkirkan file raksasa yang terlupakan."
+      },
+      {
+        "title": "Pendeteksi Duplikat",
+        "description": "Temukan file identik dengan SHA-256. Bersihkan foto, video, dan dokumen duplikat."
+      },
+      {
+        "title": "Percepat",
+        "description": "Bersihkan unduhan lama, cache sistem, cache browser, dan Recycle Bin dengan satu klik. Menjalankan semua tugas pembersihan secara otomatis."
+      },
+      {
+        "title": "Pembersih Unduhan",
+        "description": "Kategorikan dan bersihkan file lama serta tidak perlu di folder Unduhan dengan cerdas."
+      },
+      {
+        "title": "Pembersih Cache",
+        "description": "Bersihkan file cache sistem dan aplikasi dengan aman. Dapatkan ruang gigabyte."
+      },
+      {
+        "title": "Pembersih Cache Browser",
+        "description": "Bersihkan cache Chrome, Firefox, Edge, dan Safari dengan satu klik."
+      },
+      {
+        "title": "Recycle Bin",
+        "description": "Kosongkan Recycle Bin untuk menghapus file secara permanen dan mengosongkan ruang disk."
+      },
+      {
+        "title": "Pembersih Cache DNS",
+        "description": "Bersihkan cache DNS untuk memperbaiki masalah koneksi dan mempercepat penjelajahan."
+      },
+      {
+        "title": "Pengelola Startup",
+        "description": "Kelola program yang berjalan saat komputer menyala. Persingkat waktu booting."
+      },
+      {
+        "title": "Skor Kesehatan Sistem",
+        "description": "Nilai kesehatan komputer Anda secara keseluruhan dari 100. Lihat apa yang bisa ditingkatkan."
+      },
+      {
+        "title": "Pencari Folder Kosong",
+        "description": "Pindai drive Anda untuk folder kosong yang membuat sistem file berantakan. Bersihkan dengan satu klik."
+      },
+      {
+        "title": "Penghancur File",
+        "description": "Hapus file sensitif dengan aman melalui penimpaan standar militer (DoD 5220.22-M). Tidak dapat dipulihkan."
+      },
+      {
+        "title": "Treemap Disk",
+        "description": "Visualisasikan seluruh disk sebagai treemap interaktif. Lihat persis apa yang menghabiskan ruang Anda."
+      },
+      {
+        "title": "Pengoptimal RAM",
+        "description": "Kosongkan memori dengan menghentikan proses yang tidak aktif. Tingkatkan performa seketika."
+      },
+      {
+        "title": "Pengelola Layanan",
+        "description": "Kendalikan layanan Windows yang memperlambat sistem. Nonaktifkan layanan latar belakang yang tidak perlu."
+      },
+      {
+        "title": "Pembersihan Terjadwal",
+        "description": "Atur jadwal pembersihan otomatis. Jaga sistem tetap bersih tanpa repot."
+      },
+      {
+        "title": "Laporan Privasi",
+        "description": "Dapatkan skor privasi menyeluruh. Lihat jejak apa yang ditinggalkan browser dan aplikasi."
+      },
+      {
+        "title": "Pendeteksi Aplikasi Tidak Terpakai",
+        "description": "Daftar semua aplikasi terpasang menurut ukuran, lalu hapus yang tidak lagi dibutuhkan untuk mengosongkan ruang."
+      },
+      {
+        "title": "Pencari Gambar Serupa",
+        "description": "Temukan foto dan gambar duplikat di folder mana pun, dikelompokkan menurut tanda tangan file."
+      },
+      {
+        "title": "Pemantau Kesehatan Disk",
+        "description": "Lihat status kesehatan SSD dan HDD Anda dan jalankan TRIM pada SSD."
+      },
+      {
+        "title": "Boot Lebih Cepat",
+        "description": "Ukur waktu startup sebenarnya dari catatan Windows sendiri, matikan aplikasi yang memperlambatnya, dan ikuti panduan bergambar untuk sisanya."
+      }
+    ],
+    "new": "Baru"
+  },
+  "howItWorks": {
+    "title": "Bagaimana Cara Kerjanya?",
+    "subtitle": "Bersihkan komputer Anda dalam tiga langkah mudah",
+    "steps": [
+      {
+        "title": "Unduh & Pasang",
+        "description": "Unduh penginstal dan selesaikan pemasangan dalam hitungan menit. Tanpa pendaftaran."
+      },
+      {
+        "title": "Pindai",
+        "description": "Mulai analisis disk dengan satu klik. File tidak perlu, duplikat, dan cache terdeteksi."
+      },
+      {
+        "title": "Bersihkan",
+        "description": "Pilih apa yang ingin dihapus lalu tekan tombol bersihkan. Gigabyte ruang langsung terbebas."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Jelajahi Aplikasinya",
+    "subtitle": "Lihat lebih dekat fitur andal Disk Mop",
+    "tabs": [
+      {
+        "name": "Ikhtisar",
+        "description": "Lihat seluruh penggunaan disk dalam satu layar. Langsung kenali area yang bisa dibersihkan."
+      },
+      {
+        "name": "Analisis Disk",
+        "description": "Ketahui file mana yang memakan berapa banyak ruang lewat analisis rinci tingkat folder."
+      },
+      {
+        "name": "File Besar",
+        "description": "Daftar file di atas 500 MB diurutkan menurut ukuran. Bersihkan yang tidak perlu dengan satu klik."
+      },
+      {
+        "name": "Duplikat",
+        "description": "Temukan file identik dengan hash SHA-256. Hapus salinan dan pertahankan yang asli."
+      },
+      {
+        "name": "Percepat",
+        "description": "Jalankan semua tugas pembersihan dengan satu klik. Unduhan lama, cache, data browser, dan Recycle Bin dibersihkan otomatis."
+      },
+      {
+        "name": "Unduhan",
+        "description": "Kategorikan folder Unduhan dengan cerdas. Bersihkan penginstal dan arsip lama."
+      },
+      {
+        "name": "Cache",
+        "description": "Bersihkan file cache sistem dan aplikasi dengan aman. Dapatkan ruang gigabyte."
+      },
+      {
+        "name": "Browser",
+        "description": "Bersihkan cache Chrome, Firefox, Edge, dan Safari dengan satu klik."
+      },
+      {
+        "name": "Recycle Bin",
+        "description": "Kosongkan Recycle Bin untuk mengosongkan ruang disk secara permanen."
+      },
+      {
+        "name": "Cache DNS",
+        "description": "Bersihkan cache DNS untuk memperbaiki masalah koneksi dan mempercepat penjelajahan."
+      },
+      {
+        "name": "Startup",
+        "description": "Kelola program yang berjalan saat komputer menyala. Persingkat waktu booting."
+      },
+      {
+        "name": "Folder Kosong",
+        "description": "Temukan dan hapus folder kosong yang membuat sistem file berantakan. Jaga struktur direktori tetap rapi."
+      },
+      {
+        "name": "Penghancur File",
+        "description": "Hancurkan file sensitif secara permanen dengan penimpaan standar militer. Tidak mungkin dipulihkan."
+      },
+      {
+        "name": "Treemap Disk",
+        "description": "Peta visual interaktif penggunaan disk Anda. Masuk ke folder untuk melihat apa yang memakan ruang."
+      },
+      {
+        "name": "Pembersih RAM",
+        "description": "Optimalkan penggunaan memori dengan membebaskan RAM dari proses yang tidak aktif. Performa langsung meningkat."
+      },
+      {
+        "name": "Pengelola Layanan",
+        "description": "Lihat dan kendalikan layanan Windows. Nonaktifkan layanan latar belakang yang tidak perlu untuk mempercepat sistem."
+      },
+      {
+        "name": "Sisa Penghapusan Aplikasi",
+        "description": "Temukan file dan entri registri yang ditinggalkan aplikasi yang sudah dihapus, lalu hapus dengan aman."
+      },
+      {
+        "name": "Laporan Privasi",
+        "description": "Analisis privasi menyeluruh. Lihat jejak browser, cookie, dan data aplikasi yang membuka aktivitas Anda."
+      },
+      {
+        "name": "Aplikasi Tidak Terpakai",
+        "description": "Lihat semua aplikasi terpasang beserta ukurannya, dari yang terbesar, dan hapus yang tidak lagi dipakai tanpa keluar dari Disk Mop."
+      },
+      {
+        "name": "Gambar Serupa",
+        "description": "Pindai folder untuk foto dan gambar duplikat. Salinan dikelompokkan menurut tanda tangan file, lengkap dengan ruang yang terbuang di tiap grup."
+      },
+      {
+        "name": "Kesehatan Disk",
+        "description": "Periksa status kesehatan setiap SSD dan HDD sekilas, dan jalankan TRIM pada SSD dengan satu klik."
+      },
+      {
+        "name": "Boot Lebih Cepat",
+        "description": "Ukur waktu startup sebenarnya dari catatan Windows sendiri, matikan aplikasi yang memperlambatnya, dan ikuti panduan bergambar untuk sisanya."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Rata-rata Ruang yang Dibebaskan"
+      },
+      { "value": "32", "suffix": "%", "label": "Peningkatan Kecepatan" },
+      { "value": "10000", "suffix": "+", "label": "Total Unduhan" },
+      { "value": "4.8", "suffix": "/5", "label": "Peringkat Pengguna" }
+    ]
+  },
+  "testimonials": {
+    "title": "Kata Pengguna Kami",
+    "subtitle": "Ribuan pengguna mempercepat komputer mereka dengan Disk Mop",
+    "items": [
+      {
+        "quote": "Menemukan lebih dari 50 GB file tidak perlu di komputer saya! Saya sama sekali tidak tahu ada file cache yang menumpuk bertahun-tahun. Sekarang disk saya lega.",
+        "name": "Ahmet Yılmaz",
+        "role": "Insinyur Perangkat Lunak",
+        "city": "Istanbul"
+      },
+      {
+        "quote": "Pencari duplikatnya penyelamat. Ia menemukan 4 salinan file PSD yang sama. Folder desain saya kini bersih sekali.",
+        "name": "Elif Demir",
+        "role": "Desainer Grafis",
+        "city": "Ankara"
+      },
+      {
+        "quote": "Laptop lama saya jadi secepat hari pertama. Waktu booting turun separuh berkat pengelola startup. Sangat direkomendasikan untuk mahasiswa.",
+        "name": "Mehmet Kaya",
+        "role": "Mahasiswa",
+        "city": "Izmir"
+      },
+      {
+        "quote": "Antarmukanya sangat sederhana sehingga orang yang tidak paham komputer pun bisa memakainya dengan mudah. Tahu bahwa aplikasinya aman adalah nilai tambah besar.",
+        "name": "Zeynep Arslan",
+        "role": "Akuntan",
+        "city": "Bursa"
+      },
+      {
+        "quote": "File render video dan cache browser memenuhi 40% disk saya. Disk Mop membersihkan semuanya dengan satu klik. Luar biasa!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "Kami memasangnya di semua 15 komputer kantor. Mengelola program startup kini sangat mudah. Beban kerja tim IT berkurang separuh.",
+        "name": "Ayşe Çelik",
+        "role": "Manajer Kantor",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Harga Sederhana & Transparan",
+    "subtitle": "Tanpa langganan, tanpa biaya tersembunyi. Bayar sekali, pakai selamanya.",
+    "badge": "Paling Populer",
+    "plan": {
+      "name": "Disk Mop Seumur Hidup",
+      "badge": "Paling Populer",
+      "price": "$19.90",
+      "period": "sekali bayar",
+      "cta": "Beli Sekarang",
+      "secure": "Pembayaran aman: Polar.sh",
+      "paymentTrust": "Pembayaran diproses dengan aman melalui Polar.sh"
+    },
+    "features": [
+      "Semua Fitur",
+      "Akses Seumur Hidup",
+      "Pembaruan Gratis",
+      "Lisensi 1 Komputer",
+      "Windows & macOS",
+      "Dukungan Email",
+      "Pembaruan Seumur Hidup",
+      "Tanpa Iklan & Tanpa Virus"
+    ]
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "subtitle": "Temukan jawaban atas pertanyaan Anda di sini",
+    "items": [
+      {
+        "question": "Apakah Disk Mop aman?",
+        "answer": "Ya, Disk Mop 100% aman. Tidak ada virus, malware, atau adware. Aplikasi ini tidak menyentuh file sistem, hanya mendeteksi dan membersihkan file yang tidak perlu (cache, file sementara, duplikat). Setiap file ditampilkan sebelum dihapus dan aplikasi menunggu konfirmasi Anda."
+      },
+      {
+        "question": "Sistem operasi apa yang didukung?",
+        "answer": "Disk Mop berjalan di Windows 10/11 (64-bit) dan macOS 12+ (Apple Silicon dan Intel) sebagai aplikasi native. Tersedia juga aplikasi seluler native: Disk Mop untuk Android 8.0+ di Google Play, dan DiskMop: Photo & Video Cleaner untuk iPhone (iOS 18+) di App Store."
+      },
+      {
+        "question": "Bagaimana cara kerja lisensinya?",
+        "answer": "Bayar $19.90 sekali untuk akses seumur hidup. 1 lisensi = 1 komputer. Tanpa langganan, tanpa biaya tambahan. Jika Anda berganti komputer, Anda bisa memindahkan lisensi ke komputer baru."
+      },
+      {
+        "question": "Bagaimana cara membayar?",
+        "answer": "Anda melakukan pembayaran satu kali melalui infrastruktur pembayaran aman Polar.sh. Kartu kredit dan metode pembayaran lainnya didukung."
+      },
+      {
+        "question": "Apakah pembaruan gratis?",
+        "answer": "Ya, semua pembaruan dan fitur baru gratis seumur hidup. Anda bisa menerima pembaruan otomatis dari dalam aplikasi."
+      },
+      {
+        "question": "Apakah data saya aman?",
+        "answer": "Disk Mop bekerja sepenuhnya secara lokal. File Anda tidak pernah dikirim ke server mana pun. Koneksi internet hanya dipakai untuk verifikasi lisensi dan pembaruan. Semua pemindaian dan pembersihan terjadi di komputer Anda."
+      },
+      {
+        "question": "Apakah bentrok dengan perangkat lunak antivirus?",
+        "answer": "Tidak, Disk Mop sepenuhnya kompatibel dengan semua perangkat lunak antivirus utama (Windows Defender, Avast, Kaspersky, Norton, dll.). Ini aplikasi aman yang bertanda tangan digital."
+      },
+      {
+        "question": "Apakah Linux didukung?",
+        "answer": "Belum. Disk Mop tersedia untuk Windows, macOS, Android, dan iPhone; dukungan Linux ada dalam peta jalan kami."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Bersihkan Komputer Anda Hari Ini",
+    "subtitle": "Rasakan bedanya dengan Disk Mop.",
+    "cta": "Unduh Sekarang",
+    "trust": "🔒 Unduhan Aman • ✓ Bebas Virus • 💰 Lisensi Seumur Hidup"
+  },
+  "footer": {
+    "slogan": "Satu pel, disk bersih.",
+    "product": {
+      "title": "Produk",
+      "features": "Fitur",
+      "pricing": "Harga",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "calculator": "Kalkulator Ruang Disk",
+      "changelog": "Catatan Perubahan",
+      "tools": "Alat"
+    },
+    "company": {
+      "title": "Perusahaan",
+      "about": "Tentang Kami",
+      "contact": "Kontak",
+      "careers": "Karier"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Kebijakan Privasi",
+      "terms": "Ketentuan Layanan",
+      "kvkk": "GDPR"
+    },
+    "support": {
+      "title": "Dukungan",
+      "help": "Pusat Bantuan",
+      "helpCenter": "Pusat Bantuan",
+      "email": "Dukungan Email",
+      "status": "Halaman Status"
+    },
+    "copyright": "© 2025 Disk Mop. Hak cipta dilindungi."
+  },
+  "cookie": {
+    "text": "Situs ini menggunakan cookie untuk meningkatkan pengalaman Anda.",
+    "privacy": "Kebijakan Privasi",
+    "accept": "Terima",
+    "reject": "Tolak"
+  },
+  "success": {
+    "title": "Pembelian Berhasil! 🎉",
+    "subtitle": "Lisensi Disk Mop Seumur Hidup Anda sudah siap.",
+    "licenseLabel": "Kunci Lisensi Anda",
+    "licenseNote": "Simpan kunci ini di tempat yang aman. Kunci ini juga sudah dikirim ke email Anda.",
+    "downloadTitle": "Unduh Sekarang",
+    "downloadSubtitle": "Pilih platform Anda dan mulai pemasangan.",
+    "backHome": "Kembali ke Beranda",
+    "loading": "Memuat lisensi Anda...",
+    "loadingSubtitle": "Mohon tunggu sementara kami mengambil kunci lisensi Anda.",
+    "error": "Terjadi kesalahan",
+    "errorDesc": "Kami tidak dapat memuat kunci lisensi Anda. Periksa email Anda untuk kuncinya atau hubungi dukungan.",
+    "retry": "Coba Lagi",
+    "stepsTitle": "Cara Mengaktifkan",
+    "step1": "Salin kunci lisensi di atas",
+    "step2": "Buka Disk Mop dan masuk ke Pengaturan",
+    "step3": "Tempel kunci Anda lalu klik Aktifkan",
+    "macIntel": "Mac Intel? Unduh versi Intel"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Bandingkan Disk Mop dengan para pesaingnya. Cari tahu mana yang tepat untuk Anda.",
+    "badge": "Perbandingan",
+    "readMore": "Baca Selengkapnya",
+    "readingTime": "menit baca",
+    "comparisonTable": "Tabel Perbandingan",
+    "feature": "Fitur",
+    "pros": "Kelebihan",
+    "cons": "Kekurangan",
+    "verdict": "Kesimpulan",
+    "downloadCta": "Unduh Disk Mop Sekarang",
+    "ctaSubtitle": "Bayar sekali untuk akses seumur hidup ke semua fitur. Tanpa langganan, tanpa biaya tersembunyi.",
+    "relatedArticles": "Artikel Terkait",
+    "backToBlog": "Kembali ke Blog",
+    "guide": "Panduan",
+    "keyTakeaways": "Poin Penting",
+    "faq": "Pertanyaan yang Sering Diajukan",
+    "inlineCtaBadge": "Solusi Otomatis 1 Klik",
+    "inlineCtaTitle": "Ingin memperbaikinya dengan 1 klik, bukan manual?",
+    "inlineCtaSubtitle": "DiskMop otomatis memindai, mengenali, dan membersihkan dengan aman cache tersembunyi, sisa aplikasi, dan sampah sistem.",
+    "downloadFor": "Unduh Gratis untuk {os}",
+    "downloadFree": "Unduh Gratis",
+    "trustFreeDeletions": "Termasuk 3 penghapusan gratis",
+    "trustNoCard": "Tanpa kartu kredit",
+    "trustSafe": "100% Aman & Bertanda Tangan",
+    "stickyBarTitle": "Bersihkan dan percepat PC Anda secara otomatis dengan DiskMop",
+    "stickyBarSubtitle": "Unduh gratis · Temukan dan bersihkan file sampah dalam hitungan detik",
+    "stickyBarButton": "Unduh Gratis untuk {os}",
+    "showcaseBadge": "Antarmuka DiskMop",
+    "showcaseTitle": "Cara DiskMop Mengatasinya: {feature}",
+    "showcaseCaption": "DiskMop mengotomatiskan seluruh proses ini, sehingga Anda bisa memindai dan membersihkan dengan aman dalam satu klik tanpa menyentuh pengaturan manual.",
+    "tableOfContents": "Daftar Isi",
+    "testedOn": "Diuji Pada",
+    "verifiedSafe": "Diverifikasi aman oleh Tim Rekayasa Sistem Disk Mop",
+    "lastUpdated": "Terakhir diperbarui",
+    "share": "Bagikan",
+    "copyLink": "Salin tautan",
+    "linkCopied": "Tersalin!",
+    "allPlatforms": "Semua",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "Perbandingan",
+    "searchArticles": "Cari artikel...",
+    "noArticlesFound": "Tidak ada artikel yang cocok dengan kriteria Anda.",
+    "clearSearch": "Hapus Pencarian",
+    "toolsBadge": "Alat Web Gratis",
+    "toolsTitle": "Kalkulator Disk & Penyimpanan Gratis",
+    "toolsSubtitle": "Hitung kebutuhan penyimpanan, umur SSD, dan perkiraan penghematan file sampah secara online.",
+    "iphoneCompanion": {
+      "badge": "Juga di iPhone",
+      "title": "Penyimpanan iPhone Anda juga hampir penuh?",
+      "subtitle": "DiskMop untuk iPhone menemukan duplikat, foto serupa, tangkapan layar, dan video besar di pustaka foto Anda. Pemindaian gratis dan foto dianalisis di perangkat.",
+      "cta": "Unduh di App Store"
+    }
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+    "home": "Beranda",
+    "back": "Kembali"
+  },
+  "common": {
+    "download": "Unduh",
+    "learnMore": "Pelajari Selengkapnya",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Direkomendasikan",
+    "signed": "Bertanda tangan",
+    "free": "Gratis",
+    "lifetime": "Seumur hidup",
+    "enlarge": "Perbesar",
+    "close": "Tutup"
+  },
+  "tools": {
+    "title": "Alat Web Gratis & Kalkulator Penyimpanan — Disk Mop",
+    "description": "Kalkulator ruang disk, perkiraan umur SSD, dan utilitas optimasi penyimpanan. 100% gratis, online, dan hasilnya instan.",
+    "badge": "Utilitas Online",
+    "heroTitle": "Alat Web Disk & Penyimpanan Gratis",
+    "heroSubtitle": "Hitung berapa gigabyte yang bisa dikembalikan, perkirakan kesehatan SSD, dan rencanakan kebutuhan penyimpanan Anda dalam hitungan detik.",
+    "openTool": "Buka Alat",
+    "featuredBadge": "Alat Unggulan",
+    "guideBadge": "Panduan",
+    "breadcrumb": "Alat",
+    "cardCalculatorTitle": "Kalkulator Ruang Disk & Penyimpanan",
+    "cardCalculatorDesc": "Pilih perangkat dan kapasitas untuk menghitung ruang yang bisa dikembalikan dari cache game, sisa alat pengembang, dan media, lengkap dengan peringatan kesehatan SSD interaktif.",
+    "cardSsdTitle": "Pemeriksaan Kesehatan & Umur SSD",
+    "cardSsdDesc": "Pahami mengapa SSD menurun di atas 80% kapasitas dan cara memantau wear leveling, efisiensi TRIM, dan metrik SMART.",
+    "cardIphoneTitle": "Rincian Penyimpanan Media iPhone",
+    "cardIphoneDesc": "Tabel tolok ukur rinci ukuran file video 4K, Live Photos, dan ProRAW dengan langkah pembersihan iOS yang terbukti aman.",
+    "cardLargeFilesTitle": "Pencari File Duplikat & Besar",
+    "cardLargeFilesDesc": "Temukan dengan aman unduhan berukuran beberapa gigabyte yang terlupakan, arsip duplikat, dan sisa aplikasi yang sudah dihapus."
+  },
+  "calculator": {
+    "title": "Kalkulator Ruang Disk & Penyimpanan Gratis — Berapa Banyak Ruang yang Bisa Dikosongkan?",
+    "description": "Hitung berapa banyak cache sampah yang bersembunyi di PC, Mac, iPhone, atau Android Anda. Periksa risiko kesehatan SSD dan lihat berapa gigabyte yang bisa dikembalikan dengan Disk Mop.",
+    "badge": "Alat Web Online Gratis",
+    "heroTitle": "Kalkulator Ruang Disk & Penyimpanan",
+    "heroSubtitle": "Pilih ukuran drive dan kebiasaan penggunaan Anda untuk menghitung berapa banyak ruang yang bisa dikembalikan dari cache sistem, game, dan media.",
+    "breadcrumb": "Kalkulator Ruang Disk",
+    "platformLabel": "1. Pilih Perangkat Anda",
+    "driveSizeLabel": "2. Total Kapasitas Drive",
+    "currentUsageLabel": "3. Perkiraan Penggunaan",
+    "activitiesLabel": "4. Aktivitas Utama & Jenis Data",
+    "estimatedSavings": "Perkiraan Ruang yang Bisa Dikosongkan",
+    "reclaimableNotice": "Berdasarkan rata-rata telemetri untuk log sistem, sisa penginstal, media duplikat, dan cache aplikasi.",
+    "ssdWarningTitle": "Risiko Performa Tulis SSD",
+    "ssdWarningDesc": "Drive melebihi 80% kapasitas. Efisiensi TRIM turun dan latensi tulis naik. Mengosongkan ruang mengembalikan kecepatan semula.",
+    "ssdGoodTitle": "Rentang Kapasitas Sehat",
+    "ssdGoodDesc": "Drive berada dalam batas sehat. Perawatan rutin mencegah macet mendadak akibat disk penuh.",
+    "breakdownTitle": "Perkiraan Rincian Ruang",
+    "systemCache": "Cache Sistem & Browser",
+    "gameJunk": "Cache Steam & Shader Game",
+    "devJunk": "Sisa Alat Pengembang & Paket",
+    "mediaJunk": "Video 4K & Media Duplikat",
+    "msgJunk": "Cache Media Pesan",
+    "downloadButton": "Unduh Disk Mop Gratis",
+    "freeTrialTrust": "Termasuk 3 penghapusan gratis · Tanpa kartu kredit · 100% Aman",
+    "sliderRelaxed": "30% (Ringan)",
+    "sliderWarning": "75% (Hampir Penuh)",
+    "sliderCritical": "90%+ (Kritis)",
+    "actGaming": "Steam / Epic / Paket Game",
+    "actDev": "Docker / Node / Cache Pengembang",
+    "actMedia": "Video 4K / Foto Serupa",
+    "actMessaging": "Cache WhatsApp / Discord / Telegram",
+    "barSystemTooltip": "File Sistem & Pengguna Penting",
+    "barReclaimableTooltip": "Sampah yang Bisa Dikembalikan dengan Disk Mop",
+    "barPersonalLegend": "File Pribadi",
+    "barReclaimableLegend": "Bisa dikembalikan",
+    "eduCard1Title": "Ambang 80% pada SSD",
+    "eduCard1Desc": "SSD harus menjalankan siklus baca-ubah-tulis saat blok kosong habis. Di atas 80% kapasitas, kecepatan tulis turun drastis akibat beban TRIM.",
+    "eduCard2Title": "Penumpukan File Tak Terlihat",
+    "eduCard2Desc": "Log pembaruan Windows, pra-cache shader, dan sisa aplikasi yang sudah dihapus menumpuk diam-diam dan lolos dari utilitas pembersih bawaan.",
+    "eduCard3Title": "Pemulihan Ruang Aman 1 Klik",
+    "eduCard3Desc": "Disk Mop memindai drive Anda untuk cache tidak esensial dan file yatim tanpa pernah membahayakan integritas sistem atau dokumen pengguna.",
+    "faqTitle": "Pertanyaan yang Sering Diajukan",
+    "faqQ1": "Mengapa SSD melambat saat penuh?",
+    "faqA1": "SSD menulis data dalam blok. Saat melampaui 80% kapasitas, mencari blok kosong untuk wear leveling dan TRIM jadi jauh lebih lambat, sehingga terjadi write amplification dan penurunan performa yang signifikan.",
+    "faqQ2": "File apa yang paling banyak memakan ruang disk tersembunyi?",
+    "faqA2": "Log pembaruan Windows (WinSxS), cache browser, pra-cache shader Steam, folder AppData yatim, dan media aplikasi pesan (WhatsApp, Discord, Telegram) menyumbang hingga 80% sampah tersembunyi.",
+    "faqQ3": "Apakah membersihkan dengan Disk Mop benar-benar aman?",
+    "faqA3": "Ya. Disk Mop berjalan sepenuhnya lokal tanpa mengumpulkan data pribadi. Aplikasi ini hanya menyasar cache yang bisa dibuat ulang, file log, dan sisa yatim dengan arsitektur yang mengutamakan keamanan. Anda mendapat 3 penghapusan gratis per perangkat untuk mencobanya."
+  },
+  "login": {
+    "title": "Masuk ke Disk Mop",
+    "subtitle": "Masukkan email Anda dan kami akan mengirim kode 6 digit. Tanpa kata sandi. Jika Anda baru, kode yang sama akan membuat akun Anda.",
+    "buyContext": "Masuk dulu, lalu Anda akan melanjutkan ke halaman pembayaran.",
+    "emailLabel": "Alamat email",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Kirim kode masuk",
+    "sending": "Mengirim...",
+    "codeTitle": "Periksa kotak masuk Anda",
+    "codeSent": "Kami mengirim kode 6 digit ke {email}. Kode kedaluwarsa dalam 10 menit.",
+    "codeLabel": "Kode 6 digit",
+    "verify": "Masuk",
+    "verifying": "Sedang masuk...",
+    "resend": "Kirim ulang kode",
+    "resent": "Kode baru telah dikirim.",
+    "otherEmail": "Gunakan email lain",
+    "errors": {
+      "invalidEmail": "Masukkan alamat email yang valid.",
+      "invalidCode": "Kode tidak valid atau kedaluwarsa. Silakan coba lagi.",
+      "tooMany": "Terlalu banyak percobaan. Tunggu beberapa menit.",
+      "mailFailed": "Tidak dapat mengirim email. Silakan coba lagi nanti.",
+      "generic": "Terjadi kesalahan. Silakan coba lagi.",
+      "provider": "Tidak dapat masuk dengan {provider}. Silakan coba lagi."
+    },
+    "or": "atau",
+    "google": "Lanjutkan dengan Google",
+    "apple": "Lanjutkan dengan Apple"
+  },
+  "account": {
+    "title": "Akun Anda",
+    "signedInAs": "Masuk sebagai {email}",
+    "signOut": "Keluar",
+    "licensesTitle": "Lisensi",
+    "licensesEmpty": "Anda belum punya lisensi. Disk Mop Pro memberi akses seumur hidup dan membuka semua fitur.",
+    "buyFirst": "Dapatkan Disk Mop Pro",
+    "buyMore": "Beli lisensi lain",
+    "keyLabel": "Kunci lisensi",
+    "copy": "Salin kunci",
+    "copied": "Tersalin",
+    "statusActive": "Aktif",
+    "statusRevoked": "Dicabut",
+    "activeDevice": "Perangkat aktif",
+    "unnamedDevice": "Perangkat",
+    "activatedAt": "Diaktifkan pada {date}",
+    "noDevice": "Belum diaktifkan di perangkat mana pun",
+    "activateHint": "Buka Disk Mop di PC atau Mac Anda, masuk ke Pengaturan > Lisensi, masukkan kunci ini lalu klik Aktifkan.",
+    "removeDevice": "Hapus perangkat",
+    "removingDevice": "Menghapus...",
+    "removeConfirm": "Hapus perangkat ini dari lisensi? Aplikasi di perangkat tersebut akan kembali ke versi gratis dan Anda bisa memakai lisensi di komputer lain.",
+    "removedDone": "Perangkat berhasil dihapus.",
+    "removeError": "Tidak dapat menghapus perangkat. Silakan coba lagi.",
+    "ordersTitle": "Riwayat Pesanan",
+    "ordersEmpty": "Tidak ada riwayat pembelian.",
+    "orderDate": "Tanggal",
+    "orderQty": "Jml",
+    "orderTotal": "Total",
+    "orderStatus": "Status",
+    "statusPaid": "Dibayar",
+    "statusRefunded": "Dikembalikan",
+    "homeLink": "Beranda"
+  }
+}

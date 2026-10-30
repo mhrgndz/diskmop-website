@@ -239,7 +239,7 @@ export function PlatterManifest() {
                     >
                       {f.name}
                     </span>
-                    <span className="ml-auto shrink-0 font-mono text-[13px] tabular-nums text-muted-foreground">
+                    <span className="ms-auto shrink-0 font-mono text-[13px] tabular-nums text-muted-foreground">
                       {f.gb} GB
                     </span>
                   </div>

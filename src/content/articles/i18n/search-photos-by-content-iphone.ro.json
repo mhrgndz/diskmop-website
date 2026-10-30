@@ -1,0 +1,146 @@
+{
+  "title": "Cum cauți în pozele de pe iPhone după ce conțin: mașină, plajă, Paris, mâncare",
+  "metaDescription": "Găsește orice poză de pe iPhone după ce arată sau după locul în care a fost făcută. Cum funcționează căutarea din Poze și cum caută DiskMop pe iPhone-ul tău, ca să poți verifica și șterge rezultatele.",
+  "subtitle": "Cuvinte în loc de derulare: obiecte, teme și locuri, potrivite chiar pe telefon",
+  "intro": [
+    "Pe scurt: scrie un cuvânt în fila Căutare din aplicația Poze și iPhone-ul găsește imagini după ce arată, unde au fost făcute, cine apare în ele și când. Ca să mergi un pas mai departe și să folosești rezultatul la curățenie, DiskMop pentru iPhone are propria căutare în fila Acasă: scrie un obiect (mașină, bebeluș, plajă), o temă (mâncare, animale, apusuri), un loc (Paris) sau două împreună (Paris mâncare), iar aplicația listează pozele potrivite cu numărul și dimensiunea aproximativă, gata de verificat.",
+    "Acest ghid acoperă ce caută deja bine aplicația Poze, de ce căutarea este și cel mai rapid mod de a găsi ce să ștergi dintr-o bibliotecă de mii de poze, cum funcționează căutarea DiskMop și ce rămâne pe telefonul tău, precum și limitele pe care merită să le cunoști: are nevoie ca prima scanare să se termine, căutarea de locuri are nevoie de locația unei poze, iar recunoașterea este o presupunere cât mai bună."
+  ],
+  "keyTakeaways": [
+    "Fila Căutare din aplicația Poze găsește poze după conținut, locuri, persoane și date; începe de acolo când vrei doar să te uiți la o imagine.",
+    "DiskMop pentru iPhone caută în aceeași bibliotecă obiecte (mașină, bebeluș, plajă), teme (mâncare, animale, apusuri) și locuri (Paris), iar poți combina două, de exemplu Paris mâncare.",
+    "Potrivirea rulează pe iPhone: folosește etichete din scanarea bibliotecii, locația proprie a fiecărei poze și o listă încorporată de aproximativ 34.000 de locuri. Cuvintele pe care le scrii nu sunt trimise unui serviciu de hărți sau altundeva.",
+    "O căutare de oraș acoperă pozele făcute pe o rază de aproximativ 8–25 km de centrul lui, în funcție de mărimea orașului.",
+    "Temele Mâncare și băuturi, Animale și Apusuri omit pozele cu oameni în ele și nimic nu este selectat pentru tine: tu alegi ce ștergi.",
+    "O poză fără locație nu poate fi găsită după loc, iar căutarea se deschide abia după ce prima scanare s-a terminat; o poți urmări în fila Acasă."
+  ],
+  "dataTable": {
+    "caption": "Ce poți scrie în căutarea DiskMop",
+    "columns": [
+      "Tip",
+      "Exemplu",
+      "Cum se potrivește",
+      "Ce acoperă"
+    ],
+    "rows": [
+      [
+        "Obiect sau scenă",
+        "mașină, plajă, bebeluș",
+        "Etichete din scanarea bibliotecii, folosite când aplicația este destul de sigură",
+        "Poze"
+      ],
+      [
+        "Temă",
+        "mâncare, animale, apusuri",
+        "Un grup de etichete înrudite; pozele cu oameni sunt omise",
+        "Poze"
+      ],
+      [
+        "Loc",
+        "Paris, Antalya, Franța",
+        "Locația proprie a pozei față de o listă încorporată de aproximativ 34.000 de locuri",
+        "Poze și videoclipuri"
+      ],
+      [
+        "Combinație",
+        "Paris mâncare",
+        "Ambele condiții împreună: poze cu mâncare făcute la Paris",
+        "Poze"
+      ]
+    ]
+  },
+  "howTo": {
+    "name": "Caută în pozele de pe iPhone după conținut sau loc și șterge ce nu ai nevoie",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Lasă prima scanare să se termine",
+        "text": "Deschide DiskMop și așteaptă să se încheie scanarea bibliotecii; o poți urmări în fila Acasă. Căutarea se deschide când scanarea s-a terminat, pentru că folosește ce găsește scanarea."
+      },
+      {
+        "name": "Scrie un obiect, o temă sau un loc",
+        "text": "Deschide Caută în poze din fila Acasă și scrie un cuvânt precum mașină, bebeluș, plajă, Paris sau Paris mâncare. Sugestiile apar sub Obiecte și teme și sub Locuri, cu numărul de potriviri."
+      },
+      {
+        "name": "Deschide o sugestie și uită-te la rezultate",
+        "text": "Rezultatele arată numărul de poze și dimensiunea lor aproximativă. Derulează prin ele și ține apăsat pe o poză ca s-o vezi mai mare înainte să decizi."
+      },
+      {
+        "name": "Alege ce vrei să elimini",
+        "text": "Bifează pozele pe care vrei să le elimini sau atinge Selectează tot dacă toată lista poate fi aruncată. Nimic nu este selectat pentru tine."
+      },
+      {
+        "name": "Verifică și șterge",
+        "text": "Atinge Șterge. Când ai ales două sau mai multe poze, Verifică înainte de ștergere arată exact ce va dispărea, apoi iOS îți cere confirmarea. Pozele șterse așteaptă 30 de zile în Șterse recent; golește acel album ca să recuperezi spațiul imediat."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "title": "Ce caută deja aplicația Poze",
+      "content": [
+        "Aplicația Poze încorporată are o filă Căutare. Scrii un cuvânt și găsește imagini după ce arată, după locul în care au fost făcute, după persoanele recunoscute în ele și după dată. Pentru a găsi o singură imagine, cum ar fi poza cu câinele de vara trecută, este instrumentul potrivit și funcționează fără nicio aplicație suplimentară.",
+        "Aplicația Poze este construită pentru a privi imagini, nu pentru a decide pe care să le ștergi. Nu-ți spune cât spațiu ocupă un set de rezultate și nu este organizată în jurul unei rutine de curățenie. Aici ajută o căutare făcută pentru curățare."
+      ]
+    },
+    {
+      "title": "De ce căutarea este și cel mai rapid mod de a face curat",
+      "content": [
+        "O bibliotecă de câteva mii de poze este greu de curățat prin derulare, pentru că cea mai mare parte nu e dezordine și nu poți spune după niște miniaturi mici care părți sunt. Căutarea inversează ordinea: mai întâi numești o categorie despre care bănuiești că e plină de gunoi, apoi te uiți doar la acele poze. Toate felurile de mâncare fotografiate la un restaurant, fiecare poză cu mașina pe care ai vândut-o, apusurile dintr-o vacanță în care ai făcut patruzeci din același.",
+        "Îți permite și să cureți în jurul unui eveniment sau al unui loc. Scrierea numelui unui oraș aduce tot ce a fost făcut acolo, așa că poți păstra cele mai bune poze din excursie și șterge restul în câteva minute. Pentru tipurile de dezordine care au propriile instrumente, cum ar fi [fotografiile aproape identice](/blog/find-duplicate-similar-photos-iphone), [capturile de ecran](/blog/delete-screenshots-iphone) sau [pozele neclare](/blog/delete-blurry-photos-iphone), folosește mai întâi acele liste și caută restul."
+      ]
+    },
+    {
+      "title": "Cum funcționează căutarea în DiskMop pentru iPhone",
+      "content": [
+        "În fila Acasă, deschide Caută în poze și scrie ce cauți: un obiect, un loc sau ambele. Pe măsură ce scrii, sugestiile apar în două grupuri, Obiecte și teme și Locuri, fiecare cu numărul de potriviri. Scrierea a două idei împreună, de exemplu Paris mâncare, găsește pozele cu mâncare făcute la Paris. Aceleași cuvinte funcționează și ca filtru în listele pe care le construiește DiskMop, de exemplu ca să restrângi un grup de poze asemănătoare la cele făcute pe o singură plajă.",
+        "Alege o sugestie și vezi pozele potrivite cu numărul și dimensiunea lor aproximativă. Bifează-le pe cele pe care vrei să le elimini sau atinge Selectează tot. Nimic nu este selectat pentru tine; temele Mâncare și băuturi, Animale și Apusuri omit chiar și pozele cu oameni în ele, ca o cină în familie să nu ajungă într-o listă de feluri de mâncare. Ștergerea trece prin același ecran de verificare și aceeași confirmare iOS ca oriunde altundeva în aplicație."
+      ]
+    },
+    {
+      "title": "Ce se potrivește pe iPhone-ul tău",
+      "content": [
+        "Nimic din ce scrii nu părăsește telefonul. Obiectele și temele provin din etichete pe care scanarea le produce deja pe iPhone, iar o poză este găsită după o etichetă doar când aplicația este destul de sigură de ea. Locurile provin din locația stocată în fiecare poză și dintr-o listă de aproximativ 34.000 de orașe și regiuni încorporată în aplicație, deci cuvântul pe care îl scrii nu este trimis niciodată unui serviciu de hărți. O căutare de oraș include pozele făcute pe o rază de aproximativ 8–25 km de centrul lui, în funcție de cât de mare este orașul.",
+        "DiskMop funcționează fără cont, iar eticheta de confidențialitate spune Datele nu sunt colectate. Căutarea respectă aceeași regulă ca restul aplicației: îți citește biblioteca pe dispozitiv și nu o încarcă."
+      ]
+    },
+    {
+      "title": "Limite pe care merită să le cunoști",
+      "content": [
+        "Căutarea se deschide după ce prima scanare se termină, deci la o bibliotecă foarte mare nu este disponibilă în primele minute. Recunoașterea este o presupunere cât mai bună: așteaptă-te la o poză greșită din când în când într-o listă, motiv pentru care nimic nu este selectat pentru tine și motiv pentru care există ecranul de verificare. Videoclipurile nu sunt clasificate după conținut, deci pot fi găsite după loc, dar nu după ce arată.",
+        "Căutarea de locuri are nevoie de poze care au locație. Dacă ai dezactivat locația în cameră sau [ai eliminat locația înainte de partajare](/blog/remove-location-from-photos-iphone) și ai păstrat doar copiile curate, acele copii nu pot fi găsite după loc. Iar dacă scrii ceva ce DiskMop nu recunoaște, spune asta și sugerează să scrii un loc, un obiect sau o temă. Pentru persoane după nume, folosește albumul Persoane din aplicația Poze."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Are nevoie căutarea de poze din DiskMop de conexiune la internet?",
+      "answer": "Nu. Potrivirea rulează pe iPhone-ul tău, folosind etichete din scanarea bibliotecii, locația proprie a fiecărei poze și o listă de locuri încorporată în aplicație. Cuvintele pe care le scrii nu sunt trimise nicăieri."
+    },
+    {
+      "question": "De ce nu pot căuta imediat după instalarea DiskMop?",
+      "answer": "Căutarea folosește ce găsește scanarea bibliotecii, deci se deschide când prima scanare s-a terminat. Poți urmări scanarea în fila Acasă; scanările ulterioare verifică doar pozele noi."
+    },
+    {
+      "question": "De ce nu este găsită o poză când caut un loc?",
+      "answer": "Căutarea de locuri se bazează pe locația stocată în poză. O poză făcută cu locația dezactivată sau o copie din care a fost eliminată locația nu are niciuna și nu poate fi potrivită cu un loc."
+    },
+    {
+      "question": "Pot căuta o persoană după nume?",
+      "answer": "DiskMop caută obiecte, teme și locuri. Pentru persoane după nume, folosește albumul Persoane și fila Căutare din aplicația Poze."
+    },
+    {
+      "question": "Șterge ceva căutarea?",
+      "answer": "Nu. Căutarea doar listează poze. Nimic nu este selectat pentru tine, iar ștergerea trece printr-un ecran de verificare și prin confirmarea proprie iOS. Pozele șterse așteaptă apoi 30 de zile în Șterse recent."
+    },
+    {
+      "question": "Este căutarea gratuită în DiskMop?",
+      "answer": "Căutarea și scanarea sunt gratuite. Fără abonament poți șterge până la zece poze pe zi, plus ștergeri suplimentare câștigate prin serii și trofee, iar DiskMop Pro elimină limita."
+    }
+  ],
+  "verdict": [
+    "Căutarea este cel mai rapid mod de a găsi o poză și, într-o bibliotecă mare, cel mai rapid mod de a decide ce să ștergi: numește o categorie, uită-te doar la acele poze și șterge-le pe cele de care nu ai nevoie. Căutarea din aplicația Poze este locul potrivit pentru a găsi o singură imagine.",
+    "DiskMop pentru iPhone adaugă o căutare făcută pentru curățare: obiecte, teme și locuri, potrivite pe telefon, cu numărul și dimensiunea aproximativă a fiecărui rezultat și o verificare înainte să se șteargă ceva. Scanarea și căutarea sunt gratuite, iar până la zece poze pe zi pot fi șterse gratuit."
+  ],
+  "ctaText": "Ia DiskMop pentru iPhone din App Store"
+}

@@ -1,0 +1,702 @@
+{
+  "meta": {
+    "title": "Disk Mop — Trình dọn dẹp ổ đĩa thông minh cho Windows và Mac",
+    "description": "Giải phóng hàng GB dung lượng chỉ trong vài phút. Disk Mop dọn tệp lớn, tệp trùng lặp và bộ nhớ đệm trên Windows, macOS và Android, đồng thời sắp xếp thư viện ảnh trên iPhone.",
+    "ogDescription": "Giải phóng hàng GB dung lượng và làm máy tính mượt như mới. Một cú nhấp, vài phút.",
+    "keywords": [
+      "dọn dẹp ổ đĩa",
+      "giải phóng dung lượng ổ đĩa",
+      "tìm tệp trùng lặp",
+      "tìm tệp lớn",
+      "dọn bộ nhớ đệm",
+      "dọn ổ đĩa Windows",
+      "dọn bộ nhớ Mac"
+    ],
+    "loginTitle": "Đăng nhập — Disk Mop",
+    "loginDescription": "Đăng nhập bằng email và mã dùng một lần để xem giấy phép và thiết bị Disk Mop của bạn.",
+    "accountTitle": "Tài khoản của bạn — Disk Mop",
+    "accountDescription": "Giấy phép Disk Mop Pro, thiết bị và các giao dịch mua của bạn."
+  },
+  "nav": {
+    "features": "Tính năng",
+    "pricing": "Giá",
+    "faq": "Câu hỏi thường gặp",
+    "blog": "Blog",
+    "tools": "Công cụ",
+    "download": "Tải xuống",
+    "signIn": "Đăng nhập",
+    "account": "Tài khoản của tôi"
+  },
+  "hero": {
+    "badge": "✨ Disk Mop cho Windows và macOS",
+    "title": "Để máy tính của bạn",
+    "titleHighlight": "được thở",
+    "subtitle": "Giải phóng hàng GB dung lượng với Disk Mop và đưa hệ thống nhanh như ngày đầu. Một cú nhấp, trong vài phút.",
+    "cta": "Tải xuống ngay",
+    "watchVideo": "Hoạt động thế nào?",
+    "users": "Hơn 10.000 người dùng tin tưởng",
+    "platforms": "Windows 10/11 và macOS 12+ • Không virus • Đã ký và công chứng",
+    "ios": {
+      "badge": "✨ Mới: DiskMop cho iPhone",
+      "title": "Sắp xếp lại",
+      "titleHighlight": "thư viện ảnh của bạn",
+      "subtitle": "Tìm ảnh trùng lặp, ảnh giống nhau, ảnh bị mờ, ảnh chụp màn hình và video lớn. Xem từng nhóm và giữ lại ảnh đẹp nhất. Ảnh được phân tích ngay trên iPhone của bạn.",
+      "cta": "Tải xuống trên App Store",
+      "platforms": "iOS 18.0+ • Quét miễn phí • Không cần tài khoản, không theo dõi"
+    }
+  },
+  "heroVisual": {
+    "aria": "Hoạt ảnh: Disk Mop thu hồi {gb} GB dung lượng ổ đĩa",
+    "freed": "đã thu hồi",
+    "cleaned": "Đã dọn"
+  },
+  "trustBar": {
+    "downloads": "Lượt tải",
+    "downloadsLabel": "Lượt tải",
+    "rating": "Đánh giá",
+    "ratingLabel": "Đánh giá",
+    "safe": "An toàn",
+    "safeLabel": "An toàn",
+    "guarantee": "Giấy phép trọn đời",
+    "guaranteeLabel": "Trọn đời"
+  },
+  "platformSelector": {
+    "title": "Chọn nền tảng của bạn",
+    "subtitle": "Ứng dụng gốc cho Windows, macOS, Android và iPhone",
+    "recommended": "Đề xuất",
+    "download": "Tải xuống",
+    "systemReqs": "Yêu cầu hệ thống",
+    "windows": {
+      "title": "Windows",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".exe",
+      "reqs": "Windows 10/11 (64-bit)",
+      "recommended": "Đề xuất cho bạn",
+      "download": "Tải xuống cho Windows",
+      "signed": "Đã ký mã và nhà phát hành đã xác minh",
+      "signedNote": "Windows hiển thị nhà phát hành đã xác minh, không phải “Nhà phát hành không xác định”"
+    },
+    "android": {
+      "title": "Android",
+      "reqs": "Android 8.0+",
+      "recommended": "Đề xuất cho bạn",
+      "download": "Tải trên Google Play",
+      "note": "Dọn bộ nhớ: tệp lớn, tệp tải xuống, phương tiện từ ứng dụng nhắn tin và ứng dụng không dùng"
+    },
+    "ios": {
+      "title": "iPhone",
+      "reqs": "iOS 18.0+",
+      "recommended": "Đề xuất cho bạn",
+      "download": "Tải xuống trên App Store",
+      "note": "Dọn ảnh và video: ảnh trùng lặp, ảnh giống nhau, ảnh chụp màn hình và video lớn"
+    },
+    "mac": {
+      "title": "macOS",
+      "version": "v1.1.0",
+      "size": "~80 MB",
+      "format": ".dmg",
+      "reqs": "macOS 12+ (Apple Silicon và Intel)",
+      "recommended": "Đề xuất cho bạn",
+      "download": "Tải xuống cho macOS",
+      "signed": "Đã được Apple công chứng và ký",
+      "signedNote": "Không có cảnh báo Gatekeeper — mở trực tiếp",
+      "intelLink": "Dùng Mac Intel? Tải bản dành cho Intel"
+    }
+  },
+  "features": {
+    "title": "Tính năng mạnh mẽ",
+    "subtitle": "Mọi thứ bạn cần để tăng tốc máy tính và giải phóng dung lượng, gói gọn trong một ứng dụng.",
+    "items": [
+      {
+        "title": "Phân tích ổ đĩa",
+        "description": "Phân tích trực quan mức sử dụng ổ đĩa. Thấy ngay thư mục nào chiếm nhiều dung lượng nhất."
+      },
+      {
+        "title": "Tìm tệp lớn",
+        "description": "Phát hiện tức thì các tệp trên 500 MB. Loại bỏ những tệp khổng lồ bị lãng quên."
+      },
+      {
+        "title": "Trình phát hiện trùng lặp",
+        "description": "Tìm các tệp giống hệt nhau bằng SHA-256. Dọn ảnh, video và tài liệu trùng lặp."
+      },
+      {
+        "title": "Tăng tốc",
+        "description": "Dọn tệp tải xuống cũ, bộ nhớ đệm hệ thống, bộ nhớ đệm trình duyệt và thùng rác chỉ với một cú nhấp. Tự động chạy mọi tác vụ dọn dẹp."
+      },
+      {
+        "title": "Dọn thư mục Tải xuống",
+        "description": "Phân loại và dọn các tệp cũ, không cần thiết trong thư mục Tải xuống một cách thông minh."
+      },
+      {
+        "title": "Dọn bộ nhớ đệm",
+        "description": "Dọn tệp bộ nhớ đệm của hệ thống và ứng dụng một cách an toàn. Thu về hàng GB dung lượng."
+      },
+      {
+        "title": "Dọn bộ nhớ đệm trình duyệt",
+        "description": "Dọn bộ nhớ đệm Chrome, Firefox, Edge và Safari chỉ với một cú nhấp."
+      },
+      {
+        "title": "Thùng rác",
+        "description": "Làm trống thùng rác để xóa vĩnh viễn tệp và giải phóng dung lượng ổ đĩa."
+      },
+      {
+        "title": "Dọn bộ nhớ đệm DNS",
+        "description": "Xóa bộ nhớ đệm DNS để khắc phục sự cố kết nối và duyệt web nhanh hơn."
+      },
+      {
+        "title": "Quản lý khởi động",
+        "description": "Quản lý các chương trình chạy cùng máy tính. Rút ngắn thời gian khởi động."
+      },
+      {
+        "title": "Điểm sức khỏe hệ thống",
+        "description": "Chấm điểm sức khỏe tổng thể của máy tính trên thang 100. Xem những gì có thể cải thiện."
+      },
+      {
+        "title": "Tìm thư mục trống",
+        "description": "Quét ổ đĩa để tìm các thư mục trống làm lộn xộn hệ thống tệp. Dọn chúng chỉ với một cú nhấp."
+      },
+      {
+        "title": "Hủy tệp",
+        "description": "Xóa an toàn các tệp nhạy cảm bằng cách ghi đè chuẩn quân sự (DoD 5220.22-M). Không thể khôi phục."
+      },
+      {
+        "title": "Bản đồ cây ổ đĩa",
+        "description": "Hiển thị toàn bộ ổ đĩa dưới dạng bản đồ cây tương tác. Biết chính xác thứ gì đang ngốn dung lượng."
+      },
+      {
+        "title": "Tối ưu RAM",
+        "description": "Giải phóng bộ nhớ bằng cách dọn các tiến trình không hoạt động. Tăng hiệu năng tức thì."
+      },
+      {
+        "title": "Quản lý dịch vụ",
+        "description": "Kiểm soát các dịch vụ Windows làm chậm hệ thống. Tắt những dịch vụ nền không cần thiết."
+      },
+      {
+        "title": "Dọn dẹp theo lịch",
+        "description": "Đặt lịch dọn dẹp tự động. Giữ hệ thống sạch sẽ mà không cần động tay."
+      },
+      {
+        "title": "Báo cáo quyền riêng tư",
+        "description": "Nhận điểm quyền riêng tư toàn diện. Xem trình duyệt và ứng dụng để lại dấu vết gì."
+      },
+      {
+        "title": "Phát hiện ứng dụng không dùng",
+        "description": "Liệt kê mọi ứng dụng đã cài theo dung lượng và gỡ những ứng dụng bạn không còn cần để giải phóng dung lượng."
+      },
+      {
+        "title": "Tìm ảnh giống nhau",
+        "description": "Tìm ảnh và hình trùng lặp trong bất kỳ thư mục nào, được nhóm theo chữ ký tệp."
+      },
+      {
+        "title": "Theo dõi sức khỏe ổ đĩa",
+        "description": "Xem tình trạng sức khỏe của SSD và HDD và chạy TRIM trên SSD."
+      },
+      {
+        "title": "Khởi động nhanh hơn",
+        "description": "Đo thời gian khởi động thực tế bằng chính nhật ký của Windows, tắt các ứng dụng làm chậm quá trình này, và làm theo hướng dẫn có hình cho phần còn lại."
+      }
+    ],
+    "new": "Mới"
+  },
+  "howItWorks": {
+    "title": "Hoạt động thế nào?",
+    "subtitle": "Dọn dẹp máy tính của bạn trong ba bước đơn giản",
+    "steps": [
+      {
+        "title": "Tải xuống và cài đặt",
+        "description": "Tải trình cài đặt và hoàn tất thiết lập trong vài phút. Không cần đăng ký."
+      },
+      {
+        "title": "Quét",
+        "description": "Bắt đầu phân tích ổ đĩa chỉ với một cú nhấp. Tệp không cần thiết, tệp trùng lặp và bộ nhớ đệm sẽ được phát hiện."
+      },
+      {
+        "title": "Dọn dẹp",
+        "description": "Chọn thứ muốn xóa rồi nhấn nút dọn dẹp. Hàng GB dung lượng được giải phóng ngay lập tức."
+      }
+    ]
+  },
+  "showcase": {
+    "title": "Khám phá ứng dụng",
+    "subtitle": "Xem kỹ hơn các tính năng mạnh mẽ của Disk Mop",
+    "tabs": [
+      {
+        "name": "Tổng quan",
+        "description": "Xem toàn bộ mức sử dụng ổ đĩa trên một màn hình. Nhận ra ngay những vùng có thể dọn dẹp."
+      },
+      {
+        "name": "Phân tích ổ đĩa",
+        "description": "Khám phá tệp nào chiếm bao nhiêu dung lượng nhờ phân tích chi tiết đến từng thư mục."
+      },
+      {
+        "name": "Tệp lớn",
+        "description": "Liệt kê các tệp trên 500 MB theo kích thước. Dọn những tệp không cần thiết chỉ với một cú nhấp."
+      },
+      {
+        "name": "Trùng lặp",
+        "description": "Tìm tệp giống hệt nhau bằng mã băm SHA-256. Xóa bản sao và giữ lại bản gốc."
+      },
+      {
+        "name": "Tăng tốc",
+        "description": "Chạy mọi tác vụ dọn dẹp chỉ với một cú nhấp. Tệp tải xuống cũ, bộ nhớ đệm, dữ liệu trình duyệt và thùng rác được dọn tự động."
+      },
+      {
+        "name": "Tải xuống",
+        "description": "Phân loại thư mục Tải xuống một cách thông minh. Dọn trình cài đặt và tệp nén cũ."
+      },
+      {
+        "name": "Bộ nhớ đệm",
+        "description": "Dọn tệp bộ nhớ đệm của hệ thống và ứng dụng một cách an toàn. Thu về hàng GB dung lượng."
+      },
+      {
+        "name": "Trình duyệt",
+        "description": "Dọn bộ nhớ đệm Chrome, Firefox, Edge và Safari chỉ với một cú nhấp."
+      },
+      {
+        "name": "Thùng rác",
+        "description": "Làm trống thùng rác để giải phóng dung lượng ổ đĩa vĩnh viễn."
+      },
+      {
+        "name": "Bộ nhớ đệm DNS",
+        "description": "Xóa bộ nhớ đệm DNS để khắc phục sự cố kết nối và duyệt web nhanh hơn."
+      },
+      {
+        "name": "Khởi động",
+        "description": "Quản lý các chương trình chạy cùng máy tính. Rút ngắn thời gian khởi động."
+      },
+      {
+        "name": "Thư mục trống",
+        "description": "Tìm và xóa các thư mục trống làm lộn xộn hệ thống tệp. Giữ cấu trúc thư mục gọn gàng."
+      },
+      {
+        "name": "Hủy tệp",
+        "description": "Hủy vĩnh viễn các tệp nhạy cảm bằng cách ghi đè chuẩn quân sự. Không thể khôi phục."
+      },
+      {
+        "name": "Bản đồ cây ổ đĩa",
+        "description": "Bản đồ trực quan tương tác về mức sử dụng ổ đĩa. Bấm vào thư mục để khám phá thứ đang chiếm dung lượng."
+      },
+      {
+        "name": "Dọn RAM",
+        "description": "Tối ưu việc dùng bộ nhớ bằng cách giải phóng RAM từ các tiến trình không hoạt động. Tăng hiệu năng tức thì."
+      },
+      {
+        "name": "Quản lý dịch vụ",
+        "description": "Xem và kiểm soát các dịch vụ Windows. Tắt những dịch vụ nền không cần thiết để tăng tốc hệ thống."
+      },
+      {
+        "name": "Tàn dư sau khi gỡ cài đặt",
+        "description": "Tìm các tệp và mục đăng ký mà ứng dụng đã gỡ để lại, rồi xóa chúng một cách an toàn."
+      },
+      {
+        "name": "Báo cáo quyền riêng tư",
+        "description": "Phân tích quyền riêng tư toàn diện. Xem dấu vết trình duyệt, cookie và dữ liệu ứng dụng làm lộ hoạt động của bạn."
+      },
+      {
+        "name": "Ứng dụng không dùng",
+        "description": "Xem mọi ứng dụng đã cài cùng dung lượng, lớn nhất trước, và gỡ những ứng dụng bạn không còn dùng mà không cần rời Disk Mop."
+      },
+      {
+        "name": "Ảnh giống nhau",
+        "description": "Quét một thư mục để tìm ảnh và hình trùng lặp. Các bản sao được nhóm theo chữ ký tệp, kèm dung lượng mà mỗi nhóm lãng phí."
+      },
+      {
+        "name": "Sức khỏe ổ đĩa",
+        "description": "Kiểm tra tình trạng sức khỏe của mọi SSD và HDD chỉ trong nháy mắt, và chạy TRIM trên SSD chỉ với một cú nhấp."
+      },
+      {
+        "name": "Khởi động nhanh hơn",
+        "description": "Đo thời gian khởi động thực tế bằng chính nhật ký của Windows, tắt các ứng dụng làm chậm quá trình này, và làm theo hướng dẫn có hình cho phần còn lại."
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "value": "47",
+        "suffix": " GB",
+        "label": "Dung lượng giải phóng trung bình"
+      },
+      { "value": "32", "suffix": "%", "label": "Tăng tốc độ" },
+      { "value": "10000", "suffix": "+", "label": "Tổng lượt tải" },
+      { "value": "4.8", "suffix": "/5", "label": "Đánh giá của người dùng" }
+    ]
+  },
+  "testimonials": {
+    "title": "Người dùng nói gì về chúng tôi",
+    "subtitle": "Hàng nghìn người dùng đã tăng tốc máy tính của họ bằng Disk Mop",
+    "items": [
+      {
+        "quote": "Tìm thấy hơn 50 GB tệp không cần thiết trên máy tính của tôi! Tôi hoàn toàn không biết có bao nhiêu tệp bộ nhớ đệm tích tụ suốt nhiều năm. Giờ ổ đĩa của tôi nhẹ nhõm hẳn.",
+        "name": "Ahmet Yılmaz",
+        "role": "Kỹ sư phần mềm",
+        "city": "Istanbul"
+      },
+      {
+        "quote": "Công cụ tìm tệp trùng lặp thật sự cứu tinh. Nó tìm ra 4 bản sao của cùng một tệp PSD. Các thư mục thiết kế của tôi giờ sạch bong.",
+        "name": "Elif Demir",
+        "role": "Nhà thiết kế đồ họa",
+        "city": "Ankara"
+      },
+      {
+        "quote": "Chiếc laptop cũ của tôi lại nhanh như ngày đầu. Thời gian khởi động giảm một nửa nhờ trình quản lý khởi động. Rất đáng giới thiệu cho sinh viên.",
+        "name": "Mehmet Kaya",
+        "role": "Sinh viên đại học",
+        "city": "Izmir"
+      },
+      {
+        "quote": "Giao diện đơn giản đến mức người không rành máy tính cũng dùng dễ dàng. Biết rằng nó an toàn là một điểm cộng lớn.",
+        "name": "Zeynep Arslan",
+        "role": "Kế toán",
+        "city": "Bursa"
+      },
+      {
+        "quote": "Tệp kết xuất video và bộ nhớ đệm trình duyệt chiếm 40% ổ đĩa của tôi. Disk Mop dọn sạch tất cả chỉ với một cú nhấp. Tuyệt vời!",
+        "name": "Can Öztürk",
+        "role": "YouTuber",
+        "city": "Antalya"
+      },
+      {
+        "quote": "Chúng tôi đã cài trên cả 15 máy tính trong văn phòng. Quản lý các chương trình khởi động giờ rất dễ. Khối lượng công việc của nhóm IT giảm một nửa.",
+        "name": "Ayşe Çelik",
+        "role": "Quản lý văn phòng",
+        "city": "Eskişehir"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Giá đơn giản và minh bạch",
+    "subtitle": "Không đăng ký, không phí ẩn. Trả một lần, dùng mãi mãi.",
+    "badge": "Phổ biến nhất",
+    "plan": {
+      "name": "Disk Mop Trọn đời",
+      "badge": "Phổ biến nhất",
+      "price": "$19.90",
+      "period": "trả một lần",
+      "cta": "Mua ngay",
+      "secure": "Thanh toán an toàn: Polar.sh",
+      "paymentTrust": "Thanh toán được xử lý an toàn qua Polar.sh"
+    },
+    "features": [
+      "Tất cả tính năng",
+      "Truy cập trọn đời",
+      "Cập nhật miễn phí",
+      "Giấy phép cho 1 máy tính",
+      "Windows và macOS",
+      "Hỗ trợ qua email",
+      "Cập nhật trọn đời",
+      "Không quảng cáo, không virus"
+    ]
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "subtitle": "Tìm câu trả lời cho thắc mắc của bạn tại đây",
+    "items": [
+      {
+        "question": "Disk Mop có an toàn không?",
+        "answer": "Có, Disk Mop an toàn 100%. Ứng dụng không chứa virus, phần mềm độc hại hay phần mềm quảng cáo. Nó không đụng đến tệp hệ thống, chỉ phát hiện và dọn các tệp không cần thiết (bộ nhớ đệm, tệp tạm, tệp trùng lặp). Nó hiển thị từng tệp trước khi xóa và chờ bạn xác nhận."
+      },
+      {
+        "question": "Hỗ trợ những hệ điều hành nào?",
+        "answer": "Disk Mop chạy dưới dạng ứng dụng gốc trên Windows 10/11 (64-bit) và macOS 12+ (Apple Silicon và Intel). Ngoài ra còn có các ứng dụng di động gốc: Disk Mop cho Android 8.0+ trên Google Play và DiskMop: Photo & Video Cleaner cho iPhone (iOS 18+) trên App Store."
+      },
+      {
+        "question": "Giấy phép hoạt động thế nào?",
+        "answer": "Trả $19.90 một lần để dùng trọn đời. 1 giấy phép = 1 máy tính. Không đăng ký, không phí phát sinh. Nếu đổi máy tính, bạn có thể chuyển giấy phép sang máy mới."
+      },
+      {
+        "question": "Thanh toán như thế nào?",
+        "answer": "Bạn thanh toán một lần qua hạ tầng thanh toán an toàn của Polar.sh. Hỗ trợ thẻ tín dụng và các phương thức thanh toán khác."
+      },
+      {
+        "question": "Cập nhật có miễn phí không?",
+        "answer": "Có, mọi bản cập nhật và tính năng mới đều miễn phí trọn đời. Bạn có thể nhận cập nhật tự động ngay trong ứng dụng."
+      },
+      {
+        "question": "Dữ liệu của tôi có an toàn không?",
+        "answer": "Disk Mop hoạt động hoàn toàn cục bộ. Tệp của bạn không bao giờ bị gửi tới bất kỳ máy chủ nào. Kết nối internet chỉ dùng để xác minh giấy phép và cập nhật. Mọi thao tác quét và dọn dẹp đều diễn ra trên máy tính của bạn."
+      },
+      {
+        "question": "Có xung đột với phần mềm diệt virus không?",
+        "answer": "Không, Disk Mop hoàn toàn tương thích với mọi phần mềm diệt virus lớn (Windows Defender, Avast, Kaspersky, Norton, v.v.). Đây là ứng dụng an toàn đã được ký số."
+      },
+      {
+        "question": "Có hỗ trợ Linux không?",
+        "answer": "Chưa. Disk Mop có sẵn cho Windows, macOS, Android và iPhone; hỗ trợ Linux nằm trong lộ trình của chúng tôi."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Dọn dẹp máy tính của bạn ngay hôm nay",
+    "subtitle": "Cảm nhận sự khác biệt với Disk Mop.",
+    "cta": "Tải xuống ngay",
+    "trust": "🔒 Tải xuống an toàn • ✓ Không virus • 💰 Giấy phép trọn đời"
+  },
+  "footer": {
+    "slogan": "Một cây lau, ổ đĩa sạch.",
+    "product": {
+      "title": "Sản phẩm",
+      "features": "Tính năng",
+      "pricing": "Giá",
+      "faq": "Câu hỏi thường gặp",
+      "blog": "Blog",
+      "calculator": "Máy tính dung lượng ổ đĩa",
+      "changelog": "Nhật ký thay đổi",
+      "tools": "Công cụ"
+    },
+    "company": {
+      "title": "Công ty",
+      "about": "Về chúng tôi",
+      "contact": "Liên hệ",
+      "careers": "Tuyển dụng"
+    },
+    "legal": {
+      "title": "Pháp lý",
+      "privacy": "Chính sách quyền riêng tư",
+      "terms": "Điều khoản dịch vụ",
+      "kvkk": "GDPR"
+    },
+    "support": {
+      "title": "Hỗ trợ",
+      "help": "Trung tâm trợ giúp",
+      "helpCenter": "Trung tâm trợ giúp",
+      "email": "Hỗ trợ qua email",
+      "status": "Trang trạng thái"
+    },
+    "copyright": "© 2025 Disk Mop. Bảo lưu mọi quyền."
+  },
+  "cookie": {
+    "text": "Trang web này dùng cookie để cải thiện trải nghiệm của bạn.",
+    "privacy": "Chính sách quyền riêng tư",
+    "accept": "Chấp nhận",
+    "reject": "Từ chối"
+  },
+  "success": {
+    "title": "Mua hàng thành công! 🎉",
+    "subtitle": "Giấy phép Disk Mop Trọn đời của bạn đã sẵn sàng.",
+    "licenseLabel": "Khóa giấy phép của bạn",
+    "licenseNote": "Hãy cất khóa này ở nơi an toàn. Khóa cũng đã được gửi tới email của bạn.",
+    "downloadTitle": "Tải xuống ngay",
+    "downloadSubtitle": "Chọn nền tảng của bạn và bắt đầu cài đặt.",
+    "backHome": "Về trang chủ",
+    "loading": "Đang tải giấy phép của bạn...",
+    "loadingSubtitle": "Vui lòng chờ trong khi chúng tôi lấy khóa giấy phép của bạn.",
+    "error": "Đã xảy ra lỗi",
+    "errorDesc": "Chúng tôi không thể tải khóa giấy phép của bạn. Hãy kiểm tra email để lấy khóa hoặc liên hệ bộ phận hỗ trợ.",
+    "retry": "Thử lại",
+    "stepsTitle": "Cách kích hoạt",
+    "step1": "Sao chép khóa giấy phép ở trên",
+    "step2": "Mở Disk Mop và vào Cài đặt",
+    "step3": "Dán khóa của bạn rồi bấm Kích hoạt",
+    "macIntel": "Mac Intel? Tải bản dành cho Intel"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "So sánh Disk Mop với các đối thủ. Tìm xem cái nào phù hợp với bạn.",
+    "badge": "So sánh",
+    "readMore": "Đọc thêm",
+    "readingTime": "phút đọc",
+    "comparisonTable": "Bảng so sánh",
+    "feature": "Tính năng",
+    "pros": "Ưu điểm",
+    "cons": "Nhược điểm",
+    "verdict": "Kết luận",
+    "downloadCta": "Tải Disk Mop ngay",
+    "ctaSubtitle": "Thanh toán một lần để dùng mọi tính năng trọn đời. Không đăng ký, không phí ẩn.",
+    "relatedArticles": "Bài viết liên quan",
+    "backToBlog": "Quay lại Blog",
+    "guide": "Hướng dẫn",
+    "keyTakeaways": "Điểm chính",
+    "faq": "Câu hỏi thường gặp",
+    "inlineCtaBadge": "Giải pháp tự động chỉ với 1 cú nhấp",
+    "inlineCtaTitle": "Muốn khắc phục chỉ với 1 cú nhấp thay vì làm thủ công?",
+    "inlineCtaSubtitle": "DiskMop tự động quét, nhận diện và dọn an toàn bộ nhớ đệm ẩn, tàn dư của ứng dụng và rác hệ thống.",
+    "downloadFor": "Tải miễn phí cho {os}",
+    "downloadFree": "Tải miễn phí",
+    "trustFreeDeletions": "Bao gồm 3 lần xóa miễn phí",
+    "trustNoCard": "Không cần thẻ tín dụng",
+    "trustSafe": "An toàn 100% và đã ký",
+    "stickyBarTitle": "Tự động dọn dẹp và tăng tốc PC của bạn với DiskMop",
+    "stickyBarSubtitle": "Tải miễn phí · Tìm và dọn tệp rác chỉ trong vài giây",
+    "stickyBarButton": "Tải miễn phí cho {os}",
+    "showcaseBadge": "Giao diện DiskMop",
+    "showcaseTitle": "Cách DiskMop giải quyết việc này: {feature}",
+    "showcaseCaption": "DiskMop tự động hóa toàn bộ quy trình này, giúp bạn quét và dọn an toàn chỉ với một cú nhấp mà không cần chạm vào cài đặt thủ công.",
+    "tableOfContents": "Mục lục",
+    "testedOn": "Đã kiểm tra trên",
+    "verifiedSafe": "Đã được nhóm Kỹ thuật Hệ thống Disk Mop xác minh an toàn",
+    "lastUpdated": "Cập nhật lần cuối",
+    "share": "Chia sẻ",
+    "copyLink": "Sao chép liên kết",
+    "linkCopied": "Đã sao chép!",
+    "allPlatforms": "Tất cả",
+    "categoryWindows": "Windows",
+    "categoryMac": "macOS",
+    "categoryIos": "iPhone / iOS",
+    "categoryAndroid": "Android",
+    "categoryComparisons": "So sánh",
+    "searchArticles": "Tìm bài viết...",
+    "noArticlesFound": "Không tìm thấy bài viết nào khớp với tiêu chí của bạn.",
+    "clearSearch": "Xóa tìm kiếm",
+    "toolsBadge": "Công cụ web miễn phí",
+    "toolsTitle": "Máy tính ổ đĩa và dung lượng miễn phí",
+    "toolsSubtitle": "Tính nhu cầu lưu trữ, tuổi thọ SSD và dung lượng ước tính tiết kiệm được từ tệp rác ngay trên mạng.",
+    "iphoneCompanion": {
+      "badge": "Cũng có trên iPhone",
+      "title": "iPhone của bạn cũng sắp hết dung lượng?",
+      "subtitle": "DiskMop cho iPhone tìm ảnh trùng lặp, ảnh giống nhau, ảnh chụp màn hình và video lớn trong thư viện ảnh của bạn. Quét miễn phí và ảnh được phân tích ngay trên thiết bị.",
+      "cta": "Tải xuống trên App Store"
+    }
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn tìm không tồn tại hoặc đã được chuyển đi.",
+    "home": "Trang chủ",
+    "back": "Quay lại"
+  },
+  "common": {
+    "download": "Tải xuống",
+    "learnMore": "Tìm hiểu thêm",
+    "windows": "Windows",
+    "macos": "macOS",
+    "appleSilicon": "Apple Silicon",
+    "intel": "Intel",
+    "recommended": "Đề xuất",
+    "signed": "Đã ký",
+    "free": "Miễn phí",
+    "lifetime": "Trọn đời",
+    "enlarge": "Phóng to",
+    "close": "Đóng"
+  },
+  "tools": {
+    "title": "Công cụ web miễn phí và máy tính dung lượng — Disk Mop",
+    "description": "Máy tính dung lượng ổ đĩa, ước tính tuổi thọ SSD và tiện ích tối ưu bộ nhớ. Miễn phí 100%, trực tuyến, cho kết quả tức thì.",
+    "badge": "Tiện ích trực tuyến",
+    "heroTitle": "Công cụ web miễn phí cho ổ đĩa và dung lượng",
+    "heroSubtitle": "Tính xem bạn có thể thu hồi bao nhiêu GB, ước tính sức khỏe SSD và lên kế hoạch nhu cầu lưu trữ chỉ trong vài giây.",
+    "openTool": "Mở công cụ",
+    "featuredBadge": "Công cụ nổi bật",
+    "guideBadge": "Hướng dẫn",
+    "breadcrumb": "Công cụ",
+    "cardCalculatorTitle": "Máy tính dung lượng ổ đĩa và bộ nhớ",
+    "cardCalculatorDesc": "Chọn thiết bị và dung lượng để tính dung lượng có thể thu hồi từ bộ nhớ đệm game, tàn dư của công cụ lập trình và phương tiện, kèm cảnh báo tương tác về sức khỏe SSD.",
+    "cardSsdTitle": "Kiểm tra sức khỏe và tuổi thọ SSD",
+    "cardSsdDesc": "Hiểu vì sao SSD xuống cấp khi vượt quá 80% dung lượng và cách theo dõi cân bằng hao mòn, hiệu quả TRIM và các chỉ số SMART.",
+    "cardIphoneTitle": "Phân tích dung lượng phương tiện trên iPhone",
+    "cardIphoneDesc": "Bảng đối chiếu chi tiết kích thước tệp video 4K, Live Photos và ProRAW, cùng các bước dọn dẹp an toàn đã được kiểm chứng cho iOS.",
+    "cardLargeFilesTitle": "Tìm tệp trùng lặp và tệp lớn",
+    "cardLargeFilesDesc": "Tìm an toàn các tệp tải xuống nhiều GB bị lãng quên, kho lưu trữ trùng lặp và tàn dư của ứng dụng đã gỡ."
+  },
+  "calculator": {
+    "title": "Máy tính dung lượng ổ đĩa và bộ nhớ miễn phí — Bạn có thể giải phóng bao nhiêu?",
+    "description": "Tính xem bao nhiêu bộ nhớ đệm rác đang ẩn trên PC, Mac, iPhone hoặc Android của bạn. Kiểm tra rủi ro sức khỏe SSD và xem bạn có thể thu hồi bao nhiêu GB với Disk Mop.",
+    "badge": "Công cụ web trực tuyến miễn phí",
+    "heroTitle": "Máy tính dung lượng ổ đĩa và bộ nhớ",
+    "heroSubtitle": "Chọn kích thước ổ đĩa và thói quen sử dụng để tính xem có bao nhiêu dung lượng có thể thu hồi đang ẩn trong bộ nhớ đệm hệ thống, game và phương tiện.",
+    "breadcrumb": "Máy tính dung lượng ổ đĩa",
+    "platformLabel": "1. Chọn thiết bị của bạn",
+    "driveSizeLabel": "2. Tổng dung lượng ổ đĩa",
+    "currentUsageLabel": "3. Mức sử dụng ước tính",
+    "activitiesLabel": "4. Hoạt động chính và loại dữ liệu",
+    "estimatedSavings": "Dung lượng ước tính bạn có thể giải phóng",
+    "reclaimableNotice": "Dựa trên số liệu đo từ xa trung bình về nhật ký hệ thống, tàn dư trình cài đặt, phương tiện trùng lặp và bộ nhớ đệm ứng dụng.",
+    "ssdWarningTitle": "Rủi ro hiệu năng ghi của SSD",
+    "ssdWarningDesc": "Ổ đĩa vượt quá 80% dung lượng. Hiệu quả TRIM giảm và độ trễ ghi tăng. Giải phóng dung lượng sẽ khôi phục tốc độ ban đầu.",
+    "ssdGoodTitle": "Mức dung lượng lành mạnh",
+    "ssdGoodDesc": "Ổ đĩa nằm trong ngưỡng lành mạnh. Bảo trì định kỳ giúp tránh tình trạng treo máy bất ngờ do đầy ổ đĩa.",
+    "breakdownTitle": "Phân bổ dung lượng dự kiến",
+    "systemCache": "Bộ nhớ đệm hệ thống và trình duyệt",
+    "gameJunk": "Bộ nhớ đệm Steam và shader game",
+    "devJunk": "Tàn dư công cụ lập trình và gói",
+    "mediaJunk": "Video 4K và phương tiện trùng lặp",
+    "msgJunk": "Bộ nhớ đệm phương tiện nhắn tin",
+    "downloadButton": "Tải Disk Mop miễn phí",
+    "freeTrialTrust": "Bao gồm 3 lần xóa miễn phí · Không cần thẻ tín dụng · An toàn 100%",
+    "sliderRelaxed": "30% (ít)",
+    "sliderWarning": "75% (gần giới hạn)",
+    "sliderCritical": "90%+ (nghiêm trọng)",
+    "actGaming": "Steam / Epic / Gói game",
+    "actDev": "Docker / Node / Bộ nhớ đệm lập trình",
+    "actMedia": "Video 4K / Ảnh giống nhau",
+    "actMessaging": "Bộ nhớ đệm WhatsApp / Discord / Telegram",
+    "barSystemTooltip": "Tệp hệ thống và người dùng thiết yếu",
+    "barReclaimableTooltip": "Đồ lộn xộn có thể thu hồi bằng Disk Mop",
+    "barPersonalLegend": "Tệp cá nhân",
+    "barReclaimableLegend": "Có thể thu hồi",
+    "eduCard1Title": "Ngưỡng 80% của SSD",
+    "eduCard1Desc": "SSD phải thực hiện các chu kỳ đọc-sửa-ghi khi hết khối trống. Trên 80% dung lượng, tốc độ ghi giảm đáng kể do chi phí xử lý của TRIM.",
+    "eduCard2Title": "Tệp phình to vô hình",
+    "eduCard2Desc": "Nhật ký cập nhật Windows, bộ nhớ đệm shader tạo trước và tàn dư của ứng dụng đã gỡ tích tụ âm thầm và lọt khỏi các tiện ích dọn dẹp có sẵn.",
+    "eduCard3Title": "Thu hồi an toàn chỉ với 1 cú nhấp",
+    "eduCard3Desc": "Disk Mop quét ổ đĩa của bạn để tìm bộ nhớ đệm không thiết yếu và tệp mồ côi mà không bao giờ gây nguy hiểm cho tính toàn vẹn hệ thống hay tài liệu của người dùng.",
+    "faqTitle": "Câu hỏi thường gặp",
+    "faqQ1": "Vì sao SSD chậm đi khi đầy?",
+    "faqA1": "SSD ghi dữ liệu theo từng khối. Khi vượt quá 80% dung lượng, việc tìm khối trống để cân bằng hao mòn và TRIM chậm hơn nhiều, gây ra khuếch đại ghi và giảm hiệu năng đáng kể.",
+    "faqQ2": "Những tệp nào chiếm nhiều dung lượng ổ đĩa ẩn nhất?",
+    "faqA2": "Nhật ký cập nhật Windows (WinSxS), bộ nhớ đệm trình duyệt, bộ nhớ đệm shader tạo trước của Steam, thư mục AppData mồ côi và phương tiện của ứng dụng nhắn tin (WhatsApp, Discord, Telegram) chiếm tới 80% đồ lộn xộn ẩn.",
+    "faqQ3": "Dọn dẹp bằng Disk Mop có hoàn toàn an toàn không?",
+    "faqA3": "Có. Disk Mop chạy hoàn toàn cục bộ và không thu thập dữ liệu cá nhân. Nó chỉ nhắm tới bộ nhớ đệm có thể tạo lại, tệp nhật ký và tàn dư mồ côi, với kiến trúc đặt an toàn lên hàng đầu. Bạn có 3 lần xóa miễn phí cho mỗi thiết bị để kiểm chứng."
+  },
+  "login": {
+    "title": "Đăng nhập vào Disk Mop",
+    "subtitle": "Nhập email của bạn và chúng tôi sẽ gửi mã 6 chữ số. Không có mật khẩu. Nếu bạn mới dùng, chính mã đó sẽ tạo tài khoản cho bạn.",
+    "buyContext": "Hãy đăng nhập trước, sau đó bạn sẽ tiếp tục tới trang thanh toán.",
+    "emailLabel": "Địa chỉ email",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Gửi mã đăng nhập",
+    "sending": "Đang gửi...",
+    "codeTitle": "Kiểm tra hộp thư của bạn",
+    "codeSent": "Chúng tôi đã gửi mã 6 chữ số tới {email}. Mã hết hạn sau 10 phút.",
+    "codeLabel": "Mã 6 chữ số",
+    "verify": "Đăng nhập",
+    "verifying": "Đang đăng nhập...",
+    "resend": "Gửi lại mã",
+    "resent": "Đã gửi mã mới.",
+    "otherEmail": "Dùng email khác",
+    "errors": {
+      "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+      "invalidCode": "Mã không hợp lệ hoặc đã hết hạn. Vui lòng thử lại.",
+      "tooMany": "Quá nhiều lần thử. Vui lòng chờ vài phút.",
+      "mailFailed": "Không thể gửi email. Vui lòng thử lại sau.",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại.",
+      "provider": "Không thể đăng nhập bằng {provider}. Vui lòng thử lại."
+    },
+    "or": "hoặc",
+    "google": "Tiếp tục với Google",
+    "apple": "Tiếp tục với Apple"
+  },
+  "account": {
+    "title": "Tài khoản của bạn",
+    "signedInAs": "Đã đăng nhập với tư cách {email}",
+    "signOut": "Đăng xuất",
+    "licensesTitle": "Giấy phép",
+    "licensesEmpty": "Bạn chưa có giấy phép nào. Disk Mop Pro cho bạn dùng trọn đời và mở khóa mọi tính năng.",
+    "buyFirst": "Nhận Disk Mop Pro",
+    "buyMore": "Mua thêm giấy phép",
+    "keyLabel": "Khóa giấy phép",
+    "copy": "Sao chép khóa",
+    "copied": "Đã sao chép",
+    "statusActive": "Đang hoạt động",
+    "statusRevoked": "Đã thu hồi",
+    "activeDevice": "Thiết bị đang dùng",
+    "unnamedDevice": "Thiết bị",
+    "activatedAt": "Kích hoạt vào {date}",
+    "noDevice": "Chưa kích hoạt trên thiết bị nào",
+    "activateHint": "Mở Disk Mop trên PC hoặc Mac của bạn, vào Cài đặt > Giấy phép, nhập khóa này rồi bấm Kích hoạt.",
+    "removeDevice": "Gỡ thiết bị",
+    "removingDevice": "Đang gỡ...",
+    "removeConfirm": "Gỡ thiết bị này khỏi giấy phép? Ứng dụng trên thiết bị đó sẽ trở về bản miễn phí và bạn có thể dùng giấy phép trên máy tính khác.",
+    "removedDone": "Đã gỡ thiết bị thành công.",
+    "removeError": "Không thể gỡ thiết bị. Vui lòng thử lại.",
+    "ordersTitle": "Lịch sử đơn hàng",
+    "ordersEmpty": "Không tìm thấy lịch sử mua hàng.",
+    "orderDate": "Ngày",
+    "orderQty": "SL",
+    "orderTotal": "Tổng",
+    "orderStatus": "Trạng thái",
+    "statusPaid": "Đã thanh toán",
+    "statusRefunded": "Đã hoàn tiền",
+    "homeLink": "Trang chủ"
+  }
+}
