@@ -6,15 +6,15 @@
  * ve JavaScript çalıştırmayan her okuyucu — Google'ın ilk taraması, ChatGPT,
  * Perplexity, paylaşım önizlemeleri — ürünü İLK SÜRÜMÜNDE sanıyordu.
  *
- * Buradaki değerler sunucuda basılır; canlı API yanıtı gelirse Windows sürümünü
- * günceller. Yeni sürüm çıktığında BURASI da güncellenmeli — mağaza sürümleri
- * (Android, iPhone) yalnızca buradan okunur, canlı API onları bilmez.
+ * Buradaki değerler sunucuda basılır (JavaScript çalıştırmayanlar için yedek); tarayıcıda
+ * `useAppInfo` canlı değerle değiştirir: Windows (API sürümü), macOS (API'deki DMG adı),
+ * iPhone (iTunes Lookup). Android kartında sürüm GÖSTERİLMEZ (Play'in herkese açık sürüm
+ * ucu yok; elle yazılan numara bayatlıyordu). Yedekler yine de zaman zaman güncellenmeli.
  */
 export const APP_VERSIONS = {
   windows: "1.0.33",
   mac: "1.0.31",
-  android: "1.0.9",
-  ios: "1.0",
+  ios: "1.1.10",
 } as const;
 
 /**

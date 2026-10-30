@@ -82,7 +82,8 @@ const platforms: PlatformCard[] = [
 export function PlatformSelector() {
   const t = useTranslations("platformSelector");
   const detectedOS = useOSDetection();
-  const { version, windowsSize, macSize } = useAppInfo();
+  const { version, macVersion, iosVersion, windowsSize, macSize } =
+    useAppInfo();
 
   const getSize = (key: string) =>
     (key === "windows" ? windowsSize : macSize) || "~80 MB";
@@ -90,13 +91,17 @@ export function PlatformSelector() {
   /**
    * Sürüm SUNUCUDA basılır. Eskiden burada sabit "v1.0.0" yedeği vardı ve
    * JavaScript çalıştırmayan okuyucular (arama motoru ilk taraması, ChatGPT,
-   * Perplexity) ürünü ilk sürümünde sanıyordu. Canlı API yanıtı `latest.yml`'den
-   * geldiği için yalnızca Windows sürümünü günceller; macOS ve mağaza
-   * platformları (Android, iPhone) sabitten okunur.
+   * Perplexity) ürünü ilk sürümünde sanıyordu. Sunucu çıktısı sabit yedeği basar,
+   * tarayıcıda canlı değer gelince değişir: Windows (API), macOS (API'deki DMG adı),
+   * iPhone (iTunes Lookup). Android'de sürüm gösterilmez: Play'in herkese açık sürüm
+   * ucu yok, elle yazılan numara bayatlıyordu.
    */
   const getVersion = (key: PlatformCard["key"]) => {
+    if (key === "android") return "";
     if (key === "windows") return version || `v${APP_VERSIONS.windows}`;
-    return `v${APP_VERSIONS[key]}`;
+    if (key === "mac")
+      return macVersion ? `v${macVersion}` : `v${APP_VERSIONS.mac}`;
+    return `v${iosVersion || APP_VERSIONS.ios}`;
   };
 
   return (
@@ -170,7 +175,9 @@ export function PlatformSelector() {
 
                 <p className="text-sm text-muted-foreground text-center mt-1">
                   {platform.store ? (
-                    `${platform.store} · ${getVersion(platform.key)}`
+                    [platform.store, getVersion(platform.key)]
+                      .filter(Boolean)
+                      .join(" · ")
                   ) : (
                     <>
                       {getVersion(platform.key)} &bull; {getSize(platform.key)}{" "}
