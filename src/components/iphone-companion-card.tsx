@@ -3,11 +3,12 @@
 import { useTranslations } from "next-intl";
 import { Smartphone, Download } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
-import { STORE_URLS } from "@/lib/app-version";
+import { iosStoreUrl } from "@/lib/app-version";
 import { trackDownload } from "@/lib/analytics";
 
 interface IphoneCompanionCardProps {
   articlePlatform: "ios" | "android" | "mac" | "windows";
+  articleSlug?: string;
 }
 
 /**
@@ -21,6 +22,7 @@ interface IphoneCompanionCardProps {
  */
 export function IphoneCompanionCard({
   articlePlatform,
+  articleSlug,
 }: IphoneCompanionCardProps) {
   const t = useTranslations("blog.iphoneCompanion");
   const detectedOS = useOSDetection();
@@ -46,7 +48,7 @@ export function IphoneCompanionCard({
           </p>
         </div>
         <a
-          href={STORE_URLS.ios}
+          href={iosStoreUrl(articleSlug)}
           onClick={() => trackDownload("ios", "blog_iphone_companion")}
           target="_blank"
           rel="noopener noreferrer"

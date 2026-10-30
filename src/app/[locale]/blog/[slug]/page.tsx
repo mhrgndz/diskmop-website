@@ -322,6 +322,7 @@ export default async function ArticlePage({
           customTitle={content.ctaText}
           customSubtitle={t("inlineCtaSubtitle")}
           articlePlatform={platform}
+          articleSlug={slug}
         />
 
         {/* Comparison Table (only for comparison articles) */}
@@ -616,10 +617,11 @@ export default async function ArticlePage({
           customTitle={content.ctaText}
           customSubtitle={t("inlineCtaSubtitle")}
           articlePlatform={platform}
+          articleSlug={slug}
         />
 
         {/* iPhone uygulaması köprüsü (Mac makaleleri + iPhone'dan okunan masaüstü makaleleri) */}
-        <IphoneCompanionCard articlePlatform={platform} />
+        <IphoneCompanionCard articlePlatform={platform} articleSlug={slug} />
 
         {/* Bottom Share Buttons */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
@@ -665,7 +667,11 @@ export default async function ArticlePage({
           </section>
         )}
       </main>
-      <BlogStickyBar customTitle={content.ctaText} articlePlatform={platform} />
+      <BlogStickyBar
+        customTitle={content.ctaText}
+        articlePlatform={platform}
+        articleSlug={slug}
+      />
       <Footer />
     </AvailableLocales>
   );

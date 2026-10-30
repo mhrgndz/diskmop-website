@@ -30,6 +30,29 @@ export const STORE_URLS = {
   ios: `https://apps.apple.com/app/diskmop-photo-video-cleaner/id${IOS_APP_ID}`,
 } as const;
 
+/**
+ * App Store özel ürün sayfaları (Custom Product Pages, 2026-10-27'de onaylandı). Makale konusuna uyan sayfa
+ * açılır: aynı uygulama, ilk görseller konuya göre sıralı. Eşleme ve kimlikler:
+ * claude-kit/araclar/diskmop-ios-magaza-gorselleri/etkinlik-2026-yil-sonu/README.md
+ */
+const IOS_PRODUCT_PAGES: Record<string, string> = {
+  "reduce-video-size-iphone": "294134c6-083c-4baa-b98e-2f199aef0b51",
+  "find-duplicate-videos-iphone": "294134c6-083c-4baa-b98e-2f199aef0b51",
+  "live-photos-storage-iphone": "294134c6-083c-4baa-b98e-2f199aef0b51",
+  "swipe-to-delete-photos-iphone": "be842aee-1f29-4fcd-aaf0-0c25439a10ec",
+  "delete-screenshots-iphone": "be842aee-1f29-4fcd-aaf0-0c25439a10ec",
+  "find-duplicate-similar-photos-iphone": "dc526bbc-3748-4bb4-bdbe-1fe49797b4e8",
+  "delete-blurry-photos-iphone": "dc526bbc-3748-4bb4-bdbe-1fe49797b4e8",
+  "delete-whatsapp-photos-iphone": "dc526bbc-3748-4bb4-bdbe-1fe49797b4e8",
+  "hide-photos-iphone": "560553e2-0a27-4d34-8faa-4b7d066b6cd8",
+};
+
+/** Makale adresine uyan özel ürün sayfasının App Store bağlantısı; eşleşme yoksa ana sayfa. */
+export function iosStoreUrl(articleSlug?: string): string {
+  const pageId = articleSlug ? IOS_PRODUCT_PAGES[articleSlug] : undefined;
+  return pageId ? `${STORE_URLS.ios}?ppid=${pageId}` : STORE_URLS.ios;
+}
+
 /** Şema ve metinlerde kullanılan "güncel sürüm". */
 export const LATEST_VERSION = APP_VERSIONS.windows;
 

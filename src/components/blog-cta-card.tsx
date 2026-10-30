@@ -12,7 +12,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
-import { STORE_URLS } from "@/lib/app-version";
+import { STORE_URLS, iosStoreUrl } from "@/lib/app-version";
 import { ClickHint } from "@/components/click-hint";
 import {
   trackDownload,
@@ -42,6 +42,7 @@ interface BlogCtaCardProps {
   customTitle?: string;
   customSubtitle?: string;
   articlePlatform?: "ios" | "android" | "mac" | "windows";
+  articleSlug?: string;
 }
 
 export function BlogCtaCard({
@@ -49,6 +50,7 @@ export function BlogCtaCard({
   customTitle,
   customSubtitle,
   articlePlatform,
+  articleSlug,
 }: BlogCtaCardProps) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
@@ -87,7 +89,7 @@ export function BlogCtaCard({
   } else if (targetOS === "ios") {
     primaryLabel = "iPhone";
     primaryPlatform = "ios";
-    primaryHref = STORE_URLS.ios;
+    primaryHref = iosStoreUrl(articleSlug);
     primarySublabel = "App Store";
     PrimaryIcon = Smartphone;
     isStore = true;
@@ -130,7 +132,7 @@ export function BlogCtaCard({
     {
       label: "iPhone",
       sub: "App Store",
-      href: STORE_URLS.ios,
+      href: iosStoreUrl(articleSlug),
       platform: "ios",
       icon: Smartphone,
       show: primaryPlatform !== "ios",

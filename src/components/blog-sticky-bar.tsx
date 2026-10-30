@@ -12,7 +12,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
-import { STORE_URLS } from "@/lib/app-version";
+import { STORE_URLS, iosStoreUrl } from "@/lib/app-version";
 import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 
@@ -20,12 +20,14 @@ interface BlogStickyBarProps {
   customTitle?: string;
   customSubtitle?: string;
   articlePlatform?: "ios" | "android" | "mac" | "windows";
+  articleSlug?: string;
 }
 
 export function BlogStickyBar({
   customTitle,
   customSubtitle,
   articlePlatform,
+  articleSlug,
 }: BlogStickyBarProps = {}) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
@@ -88,7 +90,7 @@ export function BlogStickyBar({
   } else if (targetOS === "ios") {
     osName = "iPhone";
     platform = "ios";
-    downloadHref = STORE_URLS.ios;
+    downloadHref = iosStoreUrl(articleSlug);
   }
 
   const showBar = visible && !dismissed;
