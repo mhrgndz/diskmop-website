@@ -518,6 +518,8 @@
     "stickyBarButton": "Скачать бесплатно для {os}",
     "showcaseBadge": "Интерфейс DiskMop",
     "showcaseTitle": "Как DiskMop решает эту задачу: {feature}",
+    "appdataMapName": "Карта AppData",
+    "appdataMapDescription": "Только для Windows: узнайте, какие приложения заполняют Local, LocalLow и Roaming, и очищайте только их папки кэша, временных файлов, аварийных дампов и журналов. Настройки и данные приложений не затрагиваются.",
     "showcaseCaption": "DiskMop автоматизирует весь процесс: вы безопасно сканируете и очищаете в один клик, не копаясь в ручных настройках.",
     "tableOfContents": "Содержание",
     "testedOn": "Проверено на",

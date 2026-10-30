@@ -518,6 +518,8 @@
     "stickyBarButton": "הורדה חינם ל-{os}",
     "showcaseBadge": "הממשק של DiskMop",
     "showcaseTitle": "איך DiskMop פותר את זה: {feature}",
+    "appdataMapName": "מפת AppData",
+    "appdataMapDescription": "ל-Windows בלבד: ראו אילו אפליקציות ממלאות את Local, ‏LocalLow ו-Roaming, ורוקנו רק את תיקיות המטמון, הקבצים הזמניים, קובצי קריסה והיומנים שלהן. ההגדרות ונתוני האפליקציות נשארים ללא שינוי.",
     "showcaseCaption": "DiskMop מבצע אוטומציה לכל התהליך, ומאפשר לסרוק ולנקות בבטחה בקליק אחד בלי לגעת בהגדרות ידניות.",
     "tableOfContents": "תוכן עניינים",
     "testedOn": "נבדק על",

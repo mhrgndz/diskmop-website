@@ -534,6 +534,8 @@
     "stickyBarButton": "Descarga gratis para {os}",
     "showcaseBadge": "Interfaz de DiskMop",
     "showcaseTitle": "Cómo lo soluciona DiskMop: {feature}",
+    "appdataMapName": "Mapa de AppData",
+    "appdataMapDescription": "Solo Windows: mira qué aplicaciones llenan Local, LocalLow y Roaming y vacía solo sus carpetas de caché, temporales, volcados de errores y registros. La configuración y los datos de las aplicaciones no se tocan.",
     "showcaseCaption": "DiskMop automatiza todo este proceso, permitiéndote escanear y limpiar de forma segura en un solo clic sin ajustes manuales.",
     "tableOfContents": "Índice de contenidos",
     "testedOn": "Probado en",

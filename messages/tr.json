@@ -534,6 +534,8 @@
     "stickyBarButton": "{os} için Ücretsiz İndir",
     "showcaseBadge": "DiskMop Arayüzü",
     "showcaseTitle": "DiskMop ile Çözüm: {feature}",
+    "appdataMapName": "AppData Haritası",
+    "appdataMapDescription": "Yalnız Windows: Local, LocalLow ve Roaming klasörlerini hangi uygulamaların doldurduğunu görün, yalnızca önbellek, geçici dosya, çökme dökümü ve günlük klasörlerini boşaltın. Ayarlar ve uygulama verileri olduğu gibi kalır.",
     "showcaseCaption": "DiskMop bu işlemi otomatikleştirir; karmaşık ayarlarla uğraşmadan tek tıkla güvenle temizlemenizi sağlar.",
     "tableOfContents": "İçindekiler",
     "testedOn": "Test Edildi",

@@ -518,6 +518,8 @@
     "stickyBarButton": "نزّل مجانًا لنظام {os}",
     "showcaseBadge": "واجهة DiskMop",
     "showcaseTitle": "كيف يحل DiskMop هذه المشكلة: {feature}",
+    "appdataMapName": "خريطة AppData",
+    "appdataMapDescription": "لنظام Windows فقط: اعرف التطبيقات التي تملأ Local وLocalLow وRoaming، وأفرغ مجلدات ذاكرة التخزين المؤقت والملفات المؤقتة وملفات تفريغ الأعطال والسجلات فقط. تبقى الإعدادات وبيانات التطبيقات كما هي.",
     "showcaseCaption": "يؤتمت DiskMop هذه العملية بالكامل، فتفحص وتنظّف بأمان بنقرة واحدة دون لمس الإعدادات اليدوية.",
     "tableOfContents": "المحتويات",
     "testedOn": "تم الاختبار على",

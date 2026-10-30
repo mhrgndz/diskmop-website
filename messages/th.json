@@ -518,6 +518,8 @@
     "stickyBarButton": "ดาวน์โหลดฟรีสำหรับ {os}",
     "showcaseBadge": "หน้าตา DiskMop",
     "showcaseTitle": "DiskMop แก้ปัญหานี้อย่างไร: {feature}",
+    "appdataMapName": "แผนที่ AppData",
+    "appdataMapDescription": "เฉพาะ Windows: ดูว่าแอปใดใช้พื้นที่ใน Local, LocalLow และ Roaming แล้วล้างเฉพาะโฟลเดอร์แคช ไฟล์ชั่วคราว ไฟล์ดัมพ์ข้อขัดข้อง และบันทึกของแอปเหล่านั้น การตั้งค่าและข้อมูลแอปจะไม่ถูกแตะต้อง",
     "showcaseCaption": "DiskMop ทำกระบวนการทั้งหมดนี้ให้เป็นอัตโนมัติ ให้คุณสแกนและล้างอย่างปลอดภัยด้วยคลิกเดียวโดยไม่ต้องแตะการตั้งค่าด้วยตนเอง",
     "tableOfContents": "สารบัญ",
     "testedOn": "ทดสอบบน",

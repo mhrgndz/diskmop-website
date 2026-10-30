@@ -534,6 +534,8 @@
     "stickyBarButton": "Download Free for {os}",
     "showcaseBadge": "DiskMop Interface",
     "showcaseTitle": "How DiskMop Solves This: {feature}",
+    "appdataMapName": "AppData Map",
+    "appdataMapDescription": "Windows only: see which apps fill Local, LocalLow and Roaming, and empty just their cache, temp, crash-dump and log folders. Settings and app data stay untouched.",
     "showcaseCaption": "DiskMop automates this entire process, letting you safely scan and clean in one click without touching manual settings.",
     "tableOfContents": "Table of Contents",
     "testedOn": "Tested On",

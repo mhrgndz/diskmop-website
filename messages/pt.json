@@ -534,6 +534,8 @@
     "stickyBarButton": "Baixar grátis para {os}",
     "showcaseBadge": "Interface do DiskMop",
     "showcaseTitle": "Como o DiskMop resolve isso: {feature}",
+    "appdataMapName": "Mapa do AppData",
+    "appdataMapDescription": "Só no Windows: veja quais aplicativos enchem Local, LocalLow e Roaming e esvazie apenas as pastas de cache, temporários, despejos de falha e logs. Configurações e dados dos aplicativos ficam intactos.",
     "showcaseCaption": "O DiskMop automatiza todo o processo, permitindo que você verifique e limpe com segurança em um clique, sem configurações manuais.",
     "tableOfContents": "Índice de conteúdo",
     "testedOn": "Testado em",

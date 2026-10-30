@@ -522,6 +522,8 @@
     "stickyBarButton": "Tải miễn phí cho {os}",
     "showcaseBadge": "Giao diện DiskMop",
     "showcaseTitle": "Cách DiskMop giải quyết việc này: {feature}",
+    "appdataMapName": "Bản đồ AppData",
+    "appdataMapDescription": "Chỉ dành cho Windows: xem ứng dụng nào đang chiếm Local, LocalLow và Roaming, rồi chỉ dọn các thư mục bộ nhớ đệm, tệp tạm, bản kết xuất lỗi và nhật ký của chúng. Cài đặt và dữ liệu ứng dụng được giữ nguyên.",
     "showcaseCaption": "DiskMop tự động hóa toàn bộ quy trình này, giúp bạn quét và dọn an toàn chỉ với một cú nhấp mà không cần chạm vào cài đặt thủ công.",
     "tableOfContents": "Mục lục",
     "testedOn": "Đã kiểm tra trên",

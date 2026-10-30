@@ -16,6 +16,8 @@ import {
 interface FeatureInfo {
   id: string;
   tabIndex: number;
+  /** Urun vitrininde sekmesi olmayan ozellik: ad ve aciklama blog.<key>Name / <key>Description'dan gelir. */
+  blogKey?: "appdataMap";
 }
 
 const MOBILE_SLUGS = new Set([
@@ -30,7 +32,7 @@ const MOBILE_SLUGS = new Set([
 
 const SLUG_FEATURE_MAP: Record<string, FeatureInfo> = {
   // En cok okunan 5 makale ve diger populer yazilar
-  "appdata-cleanup": { id: "cache", tabIndex: 6 },
+  "appdata-folder-cleanup": { id: "appdata", tabIndex: -1, blogKey: "appdataMap" },
   "delete-old-user-profiles-windows": { id: "large-files", tabIndex: 2 },
   "how-much-free-disk-space-do-i-need": { id: "disk-treemap", tabIndex: 13 },
   "steam-shader-cache-cleanup": { id: "cache", tabIndex: 6 },
@@ -120,10 +122,18 @@ export function BlogScreenshotShowcase({
     return null;
   }
 
+  // Ingilizce AppData makalesinde GSC baslik deneyi suruyor (olcum 2026-11-10): o tarihe
+  // kadar sayfa degismesin diye eski (genel bakis) videosunda kalir. Olcumden sonra sil.
+  const frozen = slug === "appdata-folder-cleanup" && locale === "en";
+
   // Ozellik tespiti (tanimli degilse varsayilan genel bakis)
-  const feature = SLUG_FEATURE_MAP[slug] || { id: "overview", tabIndex: 0 };
-  const featureName = tShowcase(`tabs.${feature.tabIndex}.name`);
-  const featureDescription = tShowcase(`tabs.${feature.tabIndex}.description`);
+  const feature = (!frozen && SLUG_FEATURE_MAP[slug]) || { id: "overview", tabIndex: 0 };
+  const featureName = feature.blogKey
+    ? tBlog(`${feature.blogKey}Name`)
+    : tShowcase(`tabs.${feature.tabIndex}.name`);
+  const featureDescription = feature.blogKey
+    ? tBlog(`${feature.blogKey}Description`)
+    : tShowcase(`tabs.${feature.tabIndex}.description`);
 
   // Hedef platform belirleme: makale platformu oncelikli
   const targetOS = articlePlatform || detectedOS;

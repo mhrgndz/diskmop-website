@@ -518,6 +518,8 @@
     "stickyBarButton": "Descarcă gratuit pentru {os}",
     "showcaseBadge": "Interfața DiskMop",
     "showcaseTitle": "Cum rezolvă DiskMop asta: {feature}",
+    "appdataMapName": "Harta AppData",
+    "appdataMapDescription": "Doar Windows: vezi ce aplicații umplu Local, LocalLow și Roaming și golește doar folderele lor de cache, fișiere temporare, dump-uri de eroare și jurnale. Setările și datele aplicațiilor rămân neatinse.",
     "showcaseCaption": "DiskMop automatizează tot acest proces, ca să scanezi și să cureți în siguranță cu un singur clic, fără să umbli la setări manuale.",
     "tableOfContents": "Cuprins",
     "testedOn": "Testat pe",

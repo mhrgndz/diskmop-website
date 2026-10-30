@@ -534,6 +534,8 @@
     "stickyBarButton": "{os} 向けに無料ダウンロード",
     "showcaseBadge": "DiskMop インターフェース",
     "showcaseTitle": "DiskMopで解決: {feature}",
+    "appdataMapName": "AppData マップ",
+    "appdataMapDescription": "Windows のみ：Local・LocalLow・Roaming を占めているアプリを確認し、キャッシュ、一時ファイル、クラッシュダンプ、ログのフォルダーだけを空にします。設定やアプリのデータには触れません。",
     "showcaseCaption": "DiskMopはこの処理を自動化し、複雑な手動設定を触ることなく1クリックで安全にスキャン・クリーンアップできます。",
     "tableOfContents": "目次",
     "testedOn": "検証環境",

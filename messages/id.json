@@ -522,6 +522,8 @@
     "stickyBarButton": "Unduh Gratis untuk {os}",
     "showcaseBadge": "Antarmuka DiskMop",
     "showcaseTitle": "Cara DiskMop Mengatasinya: {feature}",
+    "appdataMapName": "Peta AppData",
+    "appdataMapDescription": "Khusus Windows: lihat aplikasi mana yang memenuhi Local, LocalLow, dan Roaming, lalu kosongkan hanya folder cache, file sementara, crash dump, dan log-nya. Pengaturan dan data aplikasi tetap utuh.",
     "showcaseCaption": "DiskMop mengotomatiskan seluruh proses ini, sehingga Anda bisa memindai dan membersihkan dengan aman dalam satu klik tanpa menyentuh pengaturan manual.",
     "tableOfContents": "Daftar Isi",
     "testedOn": "Diuji Pada",

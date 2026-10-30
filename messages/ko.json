@@ -518,6 +518,8 @@
     "stickyBarButton": "{os}용 무료 다운로드",
     "showcaseBadge": "DiskMop 인터페이스",
     "showcaseTitle": "DiskMop이 해결하는 방법: {feature}",
+    "appdataMapName": "AppData 맵",
+    "appdataMapDescription": "Windows 전용: Local, LocalLow, Roaming을 채우는 앱을 확인하고 캐시, 임시 파일, 크래시 덤프, 로그 폴더만 비웁니다. 설정과 앱 데이터는 그대로 유지됩니다.",
     "showcaseCaption": "DiskMop은 이 모든 과정을 자동화하여, 수동 설정 없이 클릭 한 번으로 안전하게 스캔하고 정리할 수 있게 해 줍니다.",
     "tableOfContents": "목차",
     "testedOn": "테스트 환경",

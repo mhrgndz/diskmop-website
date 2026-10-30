@@ -534,6 +534,8 @@
     "stickyBarButton": "Kostenlos für {os} herunterladen",
     "showcaseBadge": "DiskMop-Benutzeroberfläche",
     "showcaseTitle": "So löst DiskMop das Problem: {feature}",
+    "appdataMapName": "AppData-Karte",
+    "appdataMapDescription": "Nur Windows: Sehen Sie, welche Apps Local, LocalLow und Roaming füllen, und leeren Sie nur deren Cache-, Temp-, Absturzabbild- und Protokollordner. Einstellungen und App-Daten bleiben unberührt.",
     "showcaseCaption": "DiskMop automatisiert diesen Vorgang vollständig: Scannen und bereinigen Sie sicher mit einem Klick ohne manuelle Einstellungen.",
     "tableOfContents": "Inhaltsverzeichnis",
     "testedOn": "Getestet auf",

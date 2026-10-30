@@ -534,6 +534,8 @@
     "stickyBarButton": "Télécharger gratuitement pour {os}",
     "showcaseBadge": "Interface DiskMop",
     "showcaseTitle": "Comment DiskMop résout ceci : {feature}",
+    "appdataMapName": "Carte AppData",
+    "appdataMapDescription": "Windows uniquement : voyez quelles applications remplissent Local, LocalLow et Roaming, et videz seulement leurs dossiers de cache, de fichiers temporaires, de vidages et de journaux. Les paramètres et données des applications restent intacts.",
     "showcaseCaption": "DiskMop automatise tout ce processus, vous permettant d'analyser et de nettoyer en un clic sans réglages manuels complexes.",
     "tableOfContents": "Sommaire",
     "testedOn": "Testé sur",

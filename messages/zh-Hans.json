@@ -515,6 +515,8 @@
     "stickyBarButton": "免费下载 {os} 版",
     "showcaseBadge": "DiskMop 界面",
     "showcaseTitle": "DiskMop 如何解决这个问题：{feature}",
+    "appdataMapName": "AppData 地图",
+    "appdataMapDescription": "仅限 Windows：查看哪些应用占满了 Local、LocalLow 和 Roaming，只清空它们的缓存、临时文件、崩溃转储和日志文件夹。设置和应用数据保持不变。",
     "showcaseCaption": "DiskMop 将整个过程自动化，让你无需手动设置，一键即可安全扫描和清理。",
     "tableOfContents": "目录",
     "testedOn": "测试环境",
