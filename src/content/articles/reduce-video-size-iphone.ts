@@ -134,7 +134,7 @@ export const reduceVideoSizeIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title: "How to Reduce Video Size on iPhone Without Deleting Your Videos",
+      title: "Reduce Video Size on iPhone Without Deleting Videos",
       metaDescription:
         "A minute of 4K/60 video is about 400 MB. How to shrink iPhone videos, keep new ones small, and find the screen recordings and Live Photos filling your storage.",
       subtitle:

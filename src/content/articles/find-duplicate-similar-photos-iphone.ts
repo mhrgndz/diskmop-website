@@ -140,8 +140,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Find Duplicate and Similar Photos on iPhone (Beyond Apple's Duplicates Album)",
+      title: "Find Similar and Duplicate Photos on iPhone",
       metaDescription:
         "Apple's Duplicates album finds only exact copies. Here is how to find bursts, retries and edited copies on iPhone and delete them without losing the best frame.",
       subtitle:
