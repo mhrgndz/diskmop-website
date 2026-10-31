@@ -6,7 +6,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
  * İndirme + kurulum paneli. Tek kaynak: api.diskmop.com/api/stats (günlük seri,
  * cihazlar, GitHub sayaçları). Günler İstanbul saatine göre.
  *
- * Üç sayı birbirinden farklıdır ve üçü de doğrudur — farklı şeyleri sayarlar:
+ * Üst bölümlerdeki indirme sayısı GERÇEK indirmedir (API ayıklar): bot, telefon, dosyanın
+ * sistemiyle uyuşmayan bilgisayar ve yarıda kesilen indirme girmez. Ham sayaçlar en altta,
+ * kapalı bölümde:
  *   - Site sayacı: İndir düğmesiyle dosyanın gönderilmeye başladığı her istek.
  *   - GitHub: dosyanın her indirilişi (site + otomatik güncelleme + doğrudan bağlantı).
  *   - Kurulum: uygulamanın bir cihazda İLK açılışı (ping). Gerçek kullanıcıya en yakın sayı.
@@ -19,6 +21,8 @@ type Counts = Record<string, number>;
 interface SeriesDay {
   date: string;
   downloads: Counts;
+  // Gerçek indirme (windows/mac). İstemci türü kaydedilmeden önceki günlerde null.
+  realDownloads?: Counts | null;
   newInstalls: Counts;
   active: Counts | null;
 }
@@ -112,9 +116,11 @@ const isMac = (k: string) => k === "mac" || k.startsWith("mac-");
 const sumWhere = (c: Counts | null | undefined, pred: (k: string) => boolean) =>
   Object.entries(c ?? {}).reduce((s, [k, n]) => (pred(k) ? s + n : s), 0);
 
-const dlWin = (d: SeriesDay) => sumWhere(d.downloads, isWin);
-const dlMac = (d: SeriesDay) => sumWhere(d.downloads, isMac);
-const dlBot = (d: SeriesDay) => d.downloads._bot ?? 0;
+// Gerçek indirme; ayrıştırılamayan eski günlerde ham sayaç (bot hariç).
+const dlWin = (d: SeriesDay) =>
+  d.realDownloads ? (d.realDownloads.windows ?? 0) : sumWhere(d.downloads, isWin);
+const dlMac = (d: SeriesDay) =>
+  d.realDownloads ? (d.realDownloads.mac ?? 0) : sumWhere(d.downloads, isMac);
 const newWin = (d: SeriesDay) => d.newInstalls.win32 ?? 0;
 const newMac = (d: SeriesDay) => d.newInstalls.darwin ?? 0;
 const newAndroid = (d: SeriesDay) => d.newInstalls.Android ?? 0;
@@ -280,7 +286,6 @@ function Dashboard({ stats }: { stats: Stats }) {
         {periods.map((p) => {
           const win = p.days.reduce((a, d) => a + dlWin(d), 0);
           const mac = p.days.reduce((a, d) => a + dlMac(d), 0);
-          const bot = p.days.reduce((a, d) => a + dlBot(d), 0);
           const iWin = p.days.reduce((a, d) => a + newWin(d), 0);
           const iMac = p.days.reduce((a, d) => a + newMac(d), 0);
           const iAnd = p.days.reduce((a, d) => a + newAndroid(d), 0);
@@ -297,9 +302,6 @@ function Dashboard({ stats }: { stats: Stats }) {
               </p>
               <p className="text-xs text-zinc-400">
                 indirme · Windows {fmt(win)} · Mac {fmt(mac)}
-                {bot > 0 && (
-                  <span className="text-zinc-600"> · +{fmt(bot)} bot</span>
-                )}
               </p>
               <div className="mt-3 border-t border-zinc-800 pt-3">
                 <p className="text-xl font-semibold tabular-nums text-emerald-400">
@@ -317,13 +319,12 @@ function Dashboard({ stats }: { stats: Stats }) {
 
       <DailyChart
         title="Günlük indirme"
-        hint="Sitedeki İndir düğmeleri (api.diskmop.com). Bot istekleri 19 Eylül'den beri ayrı sayılıyor ve buraya girmiyor."
+        hint="Gerçek indirmeler: dosyanın kendi sistemindeki bir tarayıcıdan başlayıp yarıda kesilmeyenler. Bot, telefon ve uyuşmayan sistem ayıklanır (20 Eylül öncesi ayrıştırılamıyor)."
         days={s}
         segments={[
           { label: "Windows", color: COLORS.windows, value: dlWin },
           { label: "Mac", color: COLORS.mac, value: dlMac },
         ]}
-        extra={(d) => (dlBot(d) ? `bot ${fmt(dlBot(d))}` : "")}
       />
 
       <DailyChart
@@ -343,15 +344,22 @@ function Dashboard({ stats }: { stats: Stats }) {
 
       <DailyTable days={s} activeSince={stats.installs.activeTrackedSince} />
 
-      <Reliability stats={stats} />
-
-      {/* min-w-0: ızgara öğesi içindeki tablo kadar genişleyip telefonda sayfayı taşırmasın */}
-      <div className="grid gap-6 lg:grid-cols-2 [&>*]:min-w-0">
-        <DevicesSummary stats={stats} />
-        <GithubReleases github={stats.github} />
-      </div>
+      <DevicesSummary stats={stats} />
 
       <DeviceList />
+
+      <details className="rounded-xl border border-zinc-800 bg-zinc-900">
+        <summary className="cursor-pointer px-5 py-4 font-semibold">
+          Ham sayaçlar{" "}
+          <span className="text-sm font-normal text-zinc-500">
+            · botlar ve ayıklanan istekler dahil
+          </span>
+        </summary>
+        <div className="space-y-6 border-t border-zinc-800 p-4">
+          <Reliability stats={stats} />
+          <GithubReleases github={stats.github} />
+        </div>
+      </details>
     </>
   );
 }
@@ -535,7 +543,7 @@ function FunnelSection({
       {hasFlow && (
         <>
           <h3 className="mt-5 text-sm font-medium text-zinc-300">
-            İndirme akışı (son 30 gün, bot hariç)
+            İndirme akışı (son 30 gün)
           </h3>
           <p className="mt-1 text-xs text-zinc-400">
             Başladı {fmt(flow.started)} · tamamlandı {fmt(flow.completed)} (
@@ -720,7 +728,7 @@ function DailyTable({
               </th>
               <th
                 className="px-3 pt-2 text-center font-medium text-zinc-300"
-                colSpan={4}
+                colSpan={3}
               >
                 İndirme
               </th>
@@ -740,7 +748,6 @@ function DailyTable({
               <th className="px-3 pb-2 text-right font-medium text-zinc-300">
                 Toplam
               </th>
-              <th className="px-3 pb-2 text-right font-medium">Bot</th>
               <th className="px-3 pb-2 text-right font-medium">Windows</th>
               <th className="px-3 pb-2 text-right font-medium">Mac</th>
               <th className="px-3 pb-2 text-right font-medium">Android</th>
@@ -771,9 +778,6 @@ function DailyTable({
                   <td className={td}>{mac || <Dim />}</td>
                   <td className={`${td} font-semibold text-zinc-100`}>
                     {win + mac || <Dim />}
-                  </td>
-                  <td className={`${td} text-zinc-500`}>
-                    {dlBot(d) || <Dim />}
                   </td>
                   <td className={`${td} text-emerald-300`}>
                     {newWin(d) || <Dim />}
