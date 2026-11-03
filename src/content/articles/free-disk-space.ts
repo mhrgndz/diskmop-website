@@ -5,6 +5,7 @@ export const freeDiskSpace: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2025-05-16",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -16,6 +17,82 @@ export const freeDiskSpace: Article = {
         'Bilgisayarınızda "Disk alanı yetersiz" uyarısı mı görüyorsunuz? [C diski sebepsiz doluyor](/blog/c-drive-full-for-no-reason) gibi göründüğünde sistem yavaşlar, güncellemeler başarısız olur ve yeni program yükleyemezsiniz. Neyse ki disk temizleme işlemi düşündüğünüz kadar zor değil.',
         "Bu rehberde disk alanı açmak için izlemeniz gereken 6 adımı sırasıyla anlatıyoruz. Her adımda Disk Mop'un bu işlemi nasıl kolaylaştırdığını da göreceksiniz. Hadi başlayalım.",
       ],
+      keyTakeaways: [
+        "Rastgele dosya silmek yerine interaktif bir treemap analiziyle en çok yer kaplayan klasörleri tespit etmek en hızlı yöntemdir.",
+        "Tarayıcı, Windows Update ve uygulama önbellekleri tek seferde 10 GB ile 30 GB arasında temizlenebilir alan sağlar.",
+        "500 MB üzerindeki eski ISO kalıpları, kurulum dosyaları ve ZIP arşivleri büyük dosya bulucuyla saniyeler içinde elenebilir.",
+        "SHA-256 karma karşılaştırması mükerrer dosyaları adları farklı olsa dahi yakalayarak diskte %15-20 kapasite tasarrufu sağlar.",
+        "DiskMop Zamanlanmış Temizlik ile diskin yeniden dolmasını engelleyerek haftalık otomatik süpürme gerçekleştirebilirsiniz.",
+      ],
+      dataTable: {
+        caption: "Disk alanı açma yöntemleri ve ortalama depolama kazanımları",
+        columns: [
+          "Temizleme Alanı",
+          "Uygulanan Yöntem",
+          "Ortalama Kazanım",
+          "Güvenlik Derecesi",
+          "Tavsiye",
+        ],
+        rows: [
+          [
+            "Sistem & Tarayıcı Önbelleği",
+            "Cache Cleaner / cleanmgr",
+            "5 GB – 25 GB",
+            "Tamamen Güvenli",
+            "Haftalık temizlik yapın",
+          ],
+          [
+            "Büyük Unutulmuş Dosyalar",
+            "Large File Finder (>500MB)",
+            "10 GB – 80 GB",
+            "Önizleme Gerekir",
+            "Eski ISO ve videoları harici diske alın",
+          ],
+          [
+            "Mükerrer Dosyalar & Medya",
+            "SHA-256 Duplicate Detector",
+            "5 GB – 30 GB",
+            "Tamamen Güvenli",
+            "Kopya fotoğrafları teke indirin",
+          ],
+          [
+            "Eski İndirmeler & Paketler",
+            "Downloads Cleaner",
+            "5 GB – 20 GB",
+            "Tamamen Güvenli",
+            "Yükleyicileri kurulum sonrası silin",
+          ],
+          [
+            "Önceki Windows Yüklemeleri",
+            "Disk Temizleme (Windows.old)",
+            "15 GB – 35 GB",
+            "Güvenli (Rollback yoksa)",
+            "Güncelleme stabilse derhal silin",
+          ],
+        ],
+      },
+      howTo: {
+        name: "C: Sürücüsünde Hızlı Disk Alanı Açma Adımları",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Treemap ile depolama haritasını çıkarın",
+            text: "DiskMop Görsel Disk Analizini başlatarak C: sürücüsündeki en devasa blokları ve klasörleri tek bakışta görün.",
+          },
+          {
+            name: "Önbellek ve geçici verileri süpürün",
+            text: "DiskMop Önbellek Temizleyicisi ile sistem, tarayıcı ve %temp% dizinlerini tek tıkla temizleyin.",
+          },
+          {
+            name: "Büyük dosyaları ayıklayın",
+            text: "500 MB üzerindeki unutulmuş arşivleri, disk imajlarını ve eski video dışa aktarımlarını silin veya harici sürücüye aktarın.",
+          },
+          {
+            name: "Yinelenen kopyaları teke indirin",
+            text: "Kopya tespit aracını çalıştırarak müzik, fotoğraf ve belge kopyalarını güvenle temizleyin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "1. Disk Kullanımını Analiz Edin",
@@ -66,6 +143,28 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "C sürücüsünde en az ne kadar boş alan bırakılmalıdır?",
+          answer:
+            "Windows'un sanal bellek (swap) oluşturabilmesi, güncelleştirmeleri kurabilmesi ve SSD yıpranmasını önlemek için en az %15–20 (minimum 20–30 GB) boş alan bırakılmalıdır.",
+        },
+        {
+          question: "Geçici dosyaları silmek Windows'u bozar mı?",
+          answer:
+            "Hayır. Geçici dosyalar ve önbellekler (%temp%, C:\\Windows\\Temp, tarayıcı verileri) güvenle silinebilir; aktif dosyalar zaten Windows tarafından kilitlenmiştir.",
+        },
+        {
+          question: "Fotoğraflarımı silmeden diskte nasıl yer açabilirim?",
+          answer:
+            "DiskMop ile aynı fotoğrafın mükerrer kopyalarını teke indirebilir, önbellekleri temizleyebilir ve eski kurulum dosyalarını (.exe, .msi) kaldırarak fotoğraflarınıza dokunmadan onlarca GB kazanabilirsiniz.",
+        },
+        {
+          question: "Açılan disk alanı sonradan tekrar dolar mı?",
+          answer:
+            "Evet, tarayıcılar ve sistem çalıştıkça önbellek biriktirir. DiskMop'un Zamanlanmış Temizlik özelliğini haftalık olarak kurarak bu birikintinin kalıcı olmasını önleyebilirsiniz.",
+        },
+      ],
       verdict: [
         "Disk alanı açmak için sistematik bir yaklaşım izlemek önemlidir. Önce analiz edin, sonra önbellek ve geçici dosyaları temizleyin, büyük dosyaları ve yinelenenleri bulun, boş klasörleri kaldırın ve son olarak temizlik rutininizi otomatikleştirin.",
         "Disk Mop, bu 6 adımın tamamını tek bir uygulama içinde sunar. Görsel disk analizi, akıllı önbellek temizliği, büyük dosya bulucu, SHA-256 tabanlı yinelenen dosya tespiti, boş klasör temizleyici ve zamanlanmış otomatik temizlik özellikleriyle disk alanı yönetimini kolaylaştırır.",
@@ -82,6 +181,83 @@ export const freeDiskSpace: Article = {
         "Running out of disk space is one of the most common and frustrating computer problems. When your [C drive is full for no reason](/blog/c-drive-full-for-no-reason), your system slows down, updates fail to install, and you can't save new files. But don't worry — freeing up disk space is easier than you might think.",
         "In this guide, we'll walk you through 6 effective steps to clean your disk and reclaim valuable storage space. Each step includes practical tips and shows how Disk Mop can simplify the process. Let's get started.",
       ],
+      keyTakeaways: [
+        "Interactive treemap visualization eliminates guesswork by immediately highlighting the exact directories consuming gigabytes.",
+        "Clearing system, browser, and Windows Update cache files safely frees between 10 GB and 30 GB on typical installations.",
+        "Pruning forgotten large files (>500 MB) like stale ISOs, uncompressed archives, and video exports produces immediate breathing room.",
+        "SHA-256 byte-matching reliably eradicates duplicate media and documents regardless of filename differences.",
+        "Automating weekly cleanup via DiskMop Scheduled Cleanup prevents recurring 'Low Disk Space' alerts permanently.",
+      ],
+      dataTable: {
+        caption:
+          "High-yield disk space cleanup targets and typical recovery potential",
+        columns: [
+          "Cleanup Target",
+          "Applied Method",
+          "Typical Space Reclaimed",
+          "Safety Profile",
+          "Recommendation",
+        ],
+        rows: [
+          [
+            "System & Browser Caches",
+            "Cache Cleaner / cleanmgr",
+            "5 GB – 25 GB",
+            "Completely Safe",
+            "Clear on a weekly basis",
+          ],
+          [
+            "Large Forgotten Files",
+            "Large File Finder (>500MB)",
+            "10 GB – 80 GB",
+            "Review Required",
+            "Offload obsolete ISOs to cloud / external drive",
+          ],
+          [
+            "Duplicate Media & Files",
+            "SHA-256 Duplicate Detector",
+            "5 GB – 30 GB",
+            "Completely Safe",
+            "Purge redundant photos and backup copies",
+          ],
+          [
+            "Old Downloads & Installers",
+            "Downloads Cleaner",
+            "5 GB – 20 GB",
+            "Completely Safe",
+            "Remove installers after software setup",
+          ],
+          [
+            "Previous Windows Installs",
+            "Disk Cleanup (Windows.old)",
+            "15 GB – 35 GB",
+            "Safe (If stable)",
+            "Purge via system files cleanup",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Free Up Disk Space on Drive C: Step by Step",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Inspect disk usage with a visual treemap",
+            text: "Launch DiskMop Visual Disk Analysis to instantly identify which folders and file types dominate storage.",
+          },
+          {
+            name: "Purge temporary and cache files",
+            text: "Use DiskMop Cache Cleaner to wipe browser caches, temporary files, and system logs in one click.",
+          },
+          {
+            name: "Remove large forgotten files",
+            text: "Filter files larger than 500 MB to find and delete obsolete virtual disk images, ISOs, and old video recordings.",
+          },
+          {
+            name: "Eradicate redundant duplicate files",
+            text: "Run byte-by-byte SHA-256 duplicate scanning to clean secondary photo downloads and duplicate folders.",
+          },
+        ],
+      },
       sections: [
         {
           title: "1. Analyze Your Disk Usage",
@@ -130,6 +306,28 @@ export const freeDiskSpace: Article = {
             "Automating your cleanup routine is the most effective way to permanently solve disk space problems. By setting up a weekly or monthly cleanup schedule, you prevent junk files from piling up and keep your system running smoothly at all times.",
             "Disk Mop's scheduled cleanup feature automatically performs cache cleaning, temp file removal, and system maintenance at intervals you define. It notifies you when cleanup runs and provides reports on what was removed. This way, your computer stays optimized without you ever having to think about disk space management again.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "How much free disk space should I maintain on drive C:?",
+          answer:
+            "Always maintain at least 15% to 20% free space (a minimum of 20–30 GB) to ensure smooth virtual memory paging and avoid SSD write penalties.",
+        },
+        {
+          question: "Will deleting cache files break my system?",
+          answer:
+            "No. Cache and temporary files (%temp%, browser caches) are safely rebuildable. Locked, active files cannot be deleted by design.",
+        },
+        {
+          question: "How can I free space without deleting my personal photos?",
+          answer:
+            "Use DiskMop to remove duplicate copies of the same photo, clear application caches, delete old installers, and clean system update remnants.",
+        },
+        {
+          question: "Why does my disk fill back up after cleaning?",
+          answer:
+            "Daily browsing, Windows updates, and background application caches steadily accumulate data. Setting up DiskMop Scheduled Cleanup automates ongoing maintenance.",
         },
       ],
       verdict: [

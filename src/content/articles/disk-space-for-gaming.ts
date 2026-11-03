@@ -5,6 +5,7 @@ export const diskSpaceForGaming: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-07-19",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -18,6 +19,83 @@ export const diskSpaceForGaming: Article = {
         "Modern oyunların 100 GB'ı aşan kurulum boyutları ve her yamada büyüyen güncellemeleriyle, Steam'in 'yeterli disk alanı yok' uyarısı neredeyse her oyuncunun karşılaştığı bir sorun haline geldi. Sorunun asıl kaynağı çoğu zaman oyunların kendisi değil; indirme artıkları, shader önbellekleri, unutulmuş mod dosyaları ve yarım kalan kurulum kalıntılarıdır.",
         "Bu rehberde önce diskinizi neyin doldurduğunu nasıl göreceğinizi, ardından Steam'i ve oyun klasörlerinizi adım adım nasıl temizleyeceğinizi anlatacağız. Her bölümde önce manuel yöntemi, sonra işi kolaylaştıran Disk Mop özelliklerini bulacaksınız.",
       ],
+      keyTakeaways: [
+        "Steam'in 'Yeterli disk alanı yok' hatası genellikle oyun dosyalarından değil, indirme önbelleği ve geçici indirme klasörlerinden kaynaklanır.",
+        "Steam Ayarları > İndirmeler > 'İndirme Önbelleğini Temizle' işlemi bozuk ve yarım kalmış güncelleme verilerini temizler.",
+        "steamapps\\shadercache ve steamapps\\workshop klasörlerindeki eski oyun kalıntılarını temizlemek onlarca GB alan kazandırır.",
+        "Kaldırılan oyunların steamapps\\common altındaki artık mod klasörleri ve AppData kalıntıları elle veya yazılımla silinmelidir.",
+        "DiskMop görsel treemap analizi ve SHA-256 kopya dedektörüyle oyun diskini tıkayan devasa kayıtları ve kopyaları anında ayıklar.",
+      ],
+      dataTable: {
+        caption:
+          "Oyun bilgisayarlarında en çok yer kaplayan veri türleri ve temizlik yöntemleri",
+        columns: [
+          "Veri Türü",
+          "Konum / Dizin",
+          "Tipik Boyut",
+          "Temizleme Güvenliği",
+          "Nasıl Temizlenir?",
+        ],
+        rows: [
+          [
+            "Steam İndirme Önbelleği",
+            "Steam / Ayarlar / İndirmeler",
+            "5 GB – 30 GB",
+            "Tamamen Güvenli",
+            "Steam > İndirme Önbelleğini Temizle",
+          ],
+          [
+            "Shader Önbelleği (Shadercache)",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Güvenli (İlk açılışta yenilenir)",
+            "Kullanılmayan oyun ID'li klasörleri silin",
+          ],
+          [
+            "Steam Workshop Modları",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Önizleme Gerekir",
+            "Oynamadığınız mod aboneliklerinden çıkın",
+          ],
+          [
+            "Kaldırılan Oyun Kalıntıları",
+            "steamapps\\common\\[OyunAdı]",
+            "10 GB – 50 GB",
+            "Tamamen Güvenli",
+            "Kaldırılmış oyunların boşta kalan klasörlerini silin",
+          ],
+          [
+            "Gameplay Video Kayıtları",
+            "Kullanıcı Videolar / ShadowPlay",
+            "20 GB – 100 GB+",
+            "Kullanıcı Kararı",
+            "DiskMop Büyük Dosya Bulucu ile arşivleyin",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Steam ve Oyunlar İçin Disk Alanı Açma Adımları",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Steam indirme önbelleğini temizleyin",
+            text: "Steam > Ayarlar > İndirmeler sekmesine gidin ve 'İndirme Önbelleğini Temizle' butonuna tıklayarak Steam'i yeniden başlatın.",
+          },
+          {
+            name: "Shader ve Workshop kalıntılarını silin",
+            text: "Steam kütüphanenizin kurulu olduğu diskte 'steamapps\\shadercache' klasöründeki eski klasörleri temizleyin.",
+          },
+          {
+            name: "Kaldırılmış oyunların kalıntılarını denetleyin",
+            text: "steamapps\\common dizinini açın; daha önce sildiğiniz oyunların geride bıraktığı mod veya config klasörlerini silin.",
+          },
+          {
+            name: "Görsel Treemap ile devasa kayıtları bulun",
+            text: "DiskMop ile oyun diskinizi taratıp unutulmuş devasa video kliplerini veya yedek ISO'ları ayıklayın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Modern Oyunlar Neden 100 GB'tan Fazla Yer Kaplıyor?",
@@ -77,6 +155,29 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question:
+            "Steam indirme önbelleğini temizlemek kayıtlı oyunlarımı siler mi?",
+          answer:
+            "Hayır. Steam indirme önbelleği yalnızca geçici güncelleme ve indirme dosyalarını temizler. Kayıtlı oyunlarınız (Save games) ve oyun dosyalarınız etkilenmez.",
+        },
+        {
+          question: "Shader önbelleğini silersem oyunlarım bozulur mu?",
+          answer:
+            "Hayır. Shader önbellekleri oyunu ilk açtığınızda grafik kartı sürücünüz tarafından otomatik olarak yeniden derlenir.",
+        },
+        {
+          question: "Steam oyunlarını başka bir diske nasıl taşırım?",
+          answer:
+            "Steam Ayarları > Depolama menüsünden yeni bir sürücü ekleyin, ardından taşımak istediğiniz oyunları seçip 'Taşı' butonuna tıklayın.",
+        },
+        {
+          question: "Steam 'Disk yazma hatası' veriyorsa ne yapmalıyım?",
+          answer:
+            "Diskinizde boş alan kalmamış olabilir veya bozuk sektörler bulunabilir. DiskMop ile önbelleği temizleyin ve sürücünüze chkdsk uygulayın.",
+        },
+      ],
       verdict: [
         "Steam'in disk alanı uyarısı, çoğu zaman tek bir büyük dosyanın değil birikmiş küçük kalıntıların sonucudur. Önce diski analiz edip gerçek tüketicileri görmek, ardından indirme önbelleğini, shader ve Workshop dosyalarını temizlemek, kalıntı klasörleri silmek, yinelenen kurulum dosyalarından kurtulmak ve büyük oyunları ikinci sürücüye taşımak — bu adımların tamamı uygulandığında, oynadığınız oyunlara dokunmadan onlarca gigabayt kazanırsınız.",
         "Disk Mop bu sürecin her adımında yanınızda: treemap disk analizi ve büyük dosya bulucu keşif aşamasını, yinelenen dosya dedektörü ile indirilenler temizleyicisi ayıklama aşamasını, hızlandırma ve zamanlanmış temizlik ise düzenli bakımı üstlenir. Ücretsiz sürümü indirip diskinizi hemen analiz edebilir, tüm özellikler için 19,90 dolarlık tek seferlik ömür boyu lisansa geçebilirsiniz.",
@@ -94,6 +195,83 @@ export const diskSpaceForGaming: Article = {
         "With modern releases regularly crossing 100 GB and patches growing with every update, Steam's 'not enough disk space' error has become something almost every PC gamer runs into. The real culprit usually is not the games themselves but the debris around them: stuck download data, shader caches, forgotten mods and half-removed installation leftovers.",
         "In this guide we will first show you how to see exactly what is filling your drive, then walk through cleaning Steam and your game folders step by step. Each section covers the manual method first, followed by the Disk Mop features that make the job faster.",
       ],
+      keyTakeaways: [
+        "The Steam 'Not enough disk space' error is frequently triggered by corrupt download caches and temporary staging folders rather than the game files themselves.",
+        "Clearing the Steam Download Cache (Settings > Downloads) flushes locked patch binaries without disturbing installed games or cloud saves.",
+        "Pruning legacy shader caches in 'steamapps\\shadercache' and abandoned Workshop mods frees up 10 to 40+ GB instantly.",
+        "Uninstalled games frequently abandon gigabytes of mod directories, config files, and crash dumps in 'steamapps\\common'.",
+        "DiskMop Visual Disk Analysis and Large File Finder highlight bloated gameplay capture archives (ShadowPlay, OBS) and duplicate game packages.",
+      ],
+      dataTable: {
+        caption:
+          "Top storage hogs on PC gaming drives and recommended mitigation strategies",
+        columns: [
+          "Data Category",
+          "Storage Location",
+          "Typical Footprint",
+          "Safety Profile",
+          "Mitigation Action",
+        ],
+        rows: [
+          [
+            "Steam Download Cache",
+            "Steam > Settings > Downloads",
+            "5 GB – 30 GB",
+            "Completely Safe",
+            "Clear download cache via Steam client",
+          ],
+          [
+            "Shader Caches",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Safe (Regenerated on boot)",
+            "Delete folders matching uninstalled app IDs",
+          ],
+          [
+            "Steam Workshop Mods",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Review Required",
+            "Unsubscribe from obsolete game mod collections",
+          ],
+          [
+            "Uninstalled Game Leftovers",
+            "steamapps\\common\\[GameTitle]",
+            "10 GB – 50 GB",
+            "Completely Safe",
+            "Manually purge orphaned folders of removed titles",
+          ],
+          [
+            "Gameplay Video Captures",
+            "User Videos / ShadowPlay / OBS",
+            "20 GB – 100 GB+",
+            "User Discretion",
+            "Detect and offload clips via DiskMop Large File Finder",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Free Up Disk Space for Steam and PC Games",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Flush Steam download cache",
+            text: "Open Steam Settings > Downloads and click 'Clear Download Cache', then log back into your Steam client.",
+          },
+          {
+            name: "Purge shader caches",
+            text: "Navigate to your SteamLibrary folder, open steamapps\\shadercache, and delete directories belonging to unplayed titles.",
+          },
+          {
+            name: "Inspect orphaned game directories",
+            text: "Check steamapps\\common for leftover folders of games you have uninstalled and delete abandoned mod files.",
+          },
+          {
+            name: "Run DiskMop interactive treemap",
+            text: "Scan your gaming drive with DiskMop to discover forgotten ISO images, installer downloads, and bloated gameplay capture files.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Why Modern Games Eat 100+ GB of Disk Space",
@@ -150,6 +328,29 @@ export const diskSpaceForGaming: Article = {
             "A simple routine is enough: clear the Steam download cache occasionally, check for shader and Workshop leftovers after uninstalling a game, and empty the recycle bin. Disk Mop's Speed Up feature handles most of this routine in one click, automatically cleaning old downloads, system cache, browser cache and the recycle bin. With Scheduled Cleanup you can turn it into an automatic weekly or monthly task.",
             "The System Health Score adds an at-a-glance indicator of your disk's overall state. Instead of discovering the 'not enough disk space' error in the middle of a preload, you notice the drive filling up early and act before it becomes a problem.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does clearing Steam download cache delete save games?",
+          answer:
+            "No. The download cache only stores temporary update fragments. Your game saves and library files are preserved intact.",
+        },
+        {
+          question: "Is it safe to delete the shadercache folder?",
+          answer:
+            "Yes. Deleting shader caches is completely safe. The GPU driver will automatically recompile necessary shaders when the game launches.",
+        },
+        {
+          question:
+            "How do I move Steam games to another SSD without re-downloading?",
+          answer:
+            "Go to Steam Settings > Storage, configure a secondary Steam library drive, select your desired games, and click 'Move'.",
+        },
+        {
+          question: "What causes the Steam 'Disk Write Error'?",
+          answer:
+            "This error occurs when the drive runs out of physical capacity, read-only permissions are enforced, or bad sectors block file writes.",
         },
       ],
       verdict: [

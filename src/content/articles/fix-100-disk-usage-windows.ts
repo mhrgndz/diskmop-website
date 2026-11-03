@@ -5,6 +5,7 @@ export const fix100DiskUsageWindows: Article = {
   type: "guide",
   category: "Performance",
   date: "2026-06-10",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -16,6 +17,83 @@ export const fix100DiskUsageWindows: Article = {
         "Windows 10 veya 11'de Görev Yöneticisi diskinizi sürekli %100'de gösteriyorsa, en yaygın nedenler SysMain ve Windows Search dizinleme gibi arka plan servisleri, çok sayıda başlangıç programı, dolmak üzere olan bir sistem sürücüsü, kötü amaçlı yazılım veya arızalanmakta olan bir disktir. Yüzde 100 disk kullanımı çözümü için önce Görev Yöneticisi'nde diski en çok meşgul eden işlemi bulun, ardından services.msc üzerinden SysMain ve arama dizinlemeyi devre dışı bırakın, başlangıç listesini sadeleştirin ve önbellek dosyalarını temizleyin. Çoğu durumda bu adımlar uygulandıktan birkaç dakika sonra disk kullanımı normale döner.",
         "Sürekli %100 disk kullanımı, bilgisayarın her tıklamada donmasına, programların açılmamasına ve fanların durmadan çalışmasına neden olur. Özellikle klasik sabit disk (HDD) kullanan sistemlerde bu sorun çok daha belirgindir, çünkü mekanik diskler aynı anda gelen onlarca okuma/yazma isteğini karşılayamaz. Bu rehberde her adımı önce Windows'un yerleşik araçlarıyla manuel olarak, ardından Disk Mop'un tek tıklamalı araçlarıyla nasıl uygulayacağınızı göstereceğiz.",
       ],
+      keyTakeaways: [
+        "Görev Yöneticisi'nde diskin sürekli %100 olması, okuma/yazma kuyruğunun kilitlendiğini ve yeni komutların işlenemediğini gösterir.",
+        "SysMain (eski adıyla Superfetch) ve Windows Search servislerini kapatmak özellikle mekanik HDD ve yavaş SSD'lerde sorunu anında çözer.",
+        "Kötü amaçlı yazılımlar veya arka planda takılan Windows Update işlemleri disk kuyruğunu tıkayan başlıca etkenlerdendir.",
+        "C: sürücüsünün %90 üzerinde dolu olması sanal bellek takasını felç ederek disk kullanımını %100'e kilitler.",
+        "DiskMop Servis Yöneticisi, Başlangıç Yöneticisi ve SMART disk sağlığı kontrolüyle darboğazı tek ekranda teşhis eder.",
+      ],
+      dataTable: {
+        caption:
+          "Windows %100 disk kullanımına yol açan ana nedenler ve çözüm adımları",
+        columns: [
+          "Tetikleyici Süreç",
+          "Neden Olduğu Sorun",
+          "Etkilenen Donanım",
+          "Hızlı Çözüm",
+          "Kalıcı Çözüm",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Uygulamaları sürekli RAM'e ön yüklemeye çalışır",
+            "Özellikle HDD & Düşük RAM",
+            "services.msc > SysMain Durdur",
+            "Başlangıç türünü 'Devre Dışı' yapın",
+          ],
+          [
+            "Windows Search (SearchIndexer)",
+            "Arka planda sürekli dosya indeksleme",
+            "Geniş dosya arşivli diskler",
+            "Dizin oluşturma seçeneklerini kısıtlayın",
+            "Servisi 'Manuel' moda alın",
+          ],
+          [
+            "Windows Update Döngüsü",
+            "Bozuk indirme dosyalarını sürekli unpack eder",
+            "Tüm sistemler",
+            "SoftwareDistribution klasörünü temizleyin",
+            "DISM /RestoreHealth çalıştırın",
+          ],
+          [
+            "Yetersiz Disk Alanı (<%10)",
+            "Sanal bellek (swap) parçalanması",
+            "Sistem C: sürücüsü",
+            "Geçici dosyaları ve önbelleği silin",
+            "DiskMop ile en az %20 boş alan açın",
+          ],
+          [
+            "Bozuk Sektör / Disk Arızası",
+            "Disk okuma hataları nedeniyle I/O kilitlenmesi",
+            "Eskiyen HDD ve SSD'ler",
+            "'chkdsk C: /f /r' komutunu çalıştırın",
+            "SMART raporu alıp diski yenileyin",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows 100% Disk Kullanımı Sorununu Çözme",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Sorunlu işlemi Görev Yöneticisinde bulun",
+            text: "Ctrl+Shift+Esc tuşlayıp 'Disk' sütununa tıklayarak en çok okuma/yazma yapan süreci tespit edin.",
+          },
+          {
+            name: "SysMain servisini devre dışı bırakın",
+            text: "Win+R tuşlayıp 'services.msc' yazın. 'SysMain' servisini bulup sağ tıklayın, Özellikler'den Başlangıç türünü 'Devre Dışı' yapıp 'Durdur'a basın.",
+          },
+          {
+            name: "Windows Search dizinlemeyi optimize edin",
+            text: "services.msc listesinde 'Windows Search' servisini bulup Başlangıç türünü 'Manuel' veya 'Devre Dışı' olarak değiştirin.",
+          },
+          {
+            name: "Sistem dosyalarını ve diski taratın",
+            text: "Yönetici CMD açıp 'sfc /scannow' ve 'chkdsk /f' komutlarını çalıştırarak bozuk dosya sistemini onarın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Görev Yöneticisi'nde %100 Disk Kullanımı Ne Anlama Gelir",
@@ -73,6 +151,29 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "SysMain servisini kapatmak bilgisayara zarar verir mi?",
+          answer:
+            "Hayır. SysMain özellikle SSD kullanan modern sistemlerde gereksizdir ve kapatılması Windows kararlılığına veya güvenliğine hiçbir zarar vermez.",
+        },
+        {
+          question: "%100 disk kullanımı SSD arızası belirtisi olabilir mi?",
+          answer:
+            "Evet. Arka planda hiçbir uygulama işlem yapmadığı halde disk %100'e kilitleniyorsa ve yanıt süresi >1000ms görünüyorsa, diskinizde donanımsal bozulma veya aşırı yıpranma olabilir.",
+        },
+        {
+          question: "Chkdsk komutu %100 disk kullanımını düzeltir mi?",
+          answer:
+            "Eğer sorun dosya sistemi bozulmasından veya bad sector (bozuk sektör) hatalarından kaynaklanıyorsa 'chkdsk C: /f /r' komutu genellikle sorunu onarır.",
+        },
+        {
+          question:
+            "Disk kullanımını düşürmek için sanal belleği kapatmalı mıyım?",
+          answer:
+            "Hayır, sanal belleği (pagefile) kapatmak oyun ve programların çökmesine yol açar. Bunun yerine C: sürücüsünde yer açmak doğru çözümdür.",
+        },
+      ],
       verdict: [
         "Windows 10 ve 11'de %100 disk kullanımı neredeyse her zaman çözülebilir bir sorundur. Önce Görev Yöneticisi ve Kaynak İzleyicisi ile suçlu işlemi bulun; ardından SysMain ve Windows Search dizinlemeyi devre dışı bırakın, başlangıç programlarını azaltın, önbellekleri temizleyip disk alanı açın ve son olarak kötü amaçlı yazılım ile donanım arızası ihtimallerini eleyin. Bu adımların tamamı Windows'un yerleşik araçlarıyla ücretsiz yapılabilir.",
         "Disk Mop, aynı düzeltmeleri services.msc ve komut satırıyla uğraşmadan uygulamak isteyenler için tasarlandı. Servis yöneticisi, başlangıç yöneticisi, tek tıklamalı hızlandırma, disk analizi ve zamanlanmış temizlik özellikleri tek uygulamada birleşir. Windows ve macOS'ta çalışır, tek seferlik $19.90 ödemeyle ömür boyu lisans sunar; ücretsiz sürümüyle indirip denedikten sonra karar verebilirsiniz.",
@@ -88,6 +189,83 @@ export const fix100DiskUsageWindows: Article = {
         "When Task Manager shows your disk at 100% in Windows 10 or 11, the usual causes are background services like SysMain and Windows Search indexing, too many startup programs, a nearly full system drive, malware, or a failing disk. To fix 100% disk usage, identify the busiest process in Task Manager, disable SysMain and Search indexing in services.msc, trim your startup list, and clear cached files. In most cases, disk usage drops back to normal within minutes of applying these changes.",
         "Constant 100% disk usage makes a PC feel broken: every click hangs, programs take forever to open, and the fans never stop. The problem is far worse on mechanical hard drives (HDDs), which simply cannot serve dozens of simultaneous read and write requests. In this guide, we'll walk through each fix manually using Windows' built-in tools first, then show how Disk Mop applies the same fixes with simple toggles.",
       ],
+      keyTakeaways: [
+        "A constant 100% disk usage reading in Task Manager means the I/O queue is saturated and Windows cannot process incoming requests.",
+        "Disabling SysMain (formerly Superfetch) and Windows Search indexing resolves over 60% of persistent disk usage spikes on HDDs and SATA SSDs.",
+        "Corrupted Windows Update caches and background malware often peg disk activity without consuming noticeable CPU cycles.",
+        "Drive C: capacity dropping below 10% severely fragments virtual memory swap files, locking storage at 100% activity.",
+        "DiskMop combines Service Management, Startup Optimization, and SMART hardware health monitoring to diagnose drive bottlenecks.",
+      ],
+      dataTable: {
+        caption:
+          "Common root causes of 100% disk usage in Windows and proven resolutions",
+        columns: [
+          "Culprit Process",
+          "Underlying Mechanism",
+          "Vulnerable Hardware",
+          "Quick Fix",
+          "Permanent Remedy",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Aggressive RAM pre-caching routines",
+            "HDDs & Budget SSDs",
+            "Stop SysMain in services.msc",
+            "Set startup type to 'Disabled'",
+          ],
+          [
+            "Windows Search",
+            "Continuous background file indexing",
+            "Drives with huge file counts",
+            "Narrow indexed locations",
+            "Switch service to 'Manual'",
+          ],
+          [
+            "Stuck Windows Update",
+            "Corrupt download unpacking loop",
+            "All systems",
+            "Purge SoftwareDistribution folder",
+            "Run DISM /RestoreHealth",
+          ],
+          [
+            "Low Disk Free Space (<10%)",
+            "Severe swap file fragmentation",
+            "System C: volume",
+            "Delete temp and cache files",
+            "Free up at least 20% space with DiskMop",
+          ],
+          [
+            "Failing Drive / Bad Sectors",
+            "Hardware retries freezing I/O bus",
+            "Aging HDDs and SSDs",
+            "Run 'chkdsk C: /f /r'",
+            "Check SMART health and replace drive",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Fix 100% Disk Usage on Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identify the culprit in Task Manager",
+            text: "Press Ctrl+Shift+Esc, sort by the Disk column, and locate the processes generating the highest read/write bandwidth.",
+          },
+          {
+            name: "Disable the SysMain service",
+            text: "Press Win+R, type 'services.msc', locate SysMain, right-click Properties, set Startup type to 'Disabled', and click 'Stop'.",
+          },
+          {
+            name: "Throttle Windows Search indexing",
+            text: "Find Windows Search in services.msc and switch Startup type to 'Manual' or 'Disabled'.",
+          },
+          {
+            name: "Run system filesystem repairs",
+            text: "Open an elevated Command Prompt and execute 'sfc /scannow' followed by 'chkdsk C: /f' to repair corrupted disk sectors.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What 100% Disk Usage Means in Task Manager",
@@ -143,6 +321,28 @@ export const fix100DiskUsageWindows: Article = {
             "High disk usage is not a fix-once-and-forget problem. Every newly installed program can add itself to the startup list, caches grow back, and temporary files pile up again. Checking Task Manager occasionally, reviewing your startup list after installing new software, and keeping enough free space on the system drive will stop the problem from creeping back.",
             "Disk Mop's Scheduled Cleanup lets you set up weekly or monthly maintenance tasks, so cache cleaning and temporary file removal happen automatically without you lifting a finger. The System Health Score shows the overall state of your system at a glance, so you can act before high disk usage on Windows 11 or 10 builds up again.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Is it safe to disable the SysMain service?",
+          answer:
+            "Yes, absolutely. On modern systems with SSD storage, SysMain provides negligible performance gains and disabling it will not affect stability.",
+        },
+        {
+          question: "Does 100% disk usage indicate a dying drive?",
+          answer:
+            "If your disk spikes to 100% with very low throughput (e.g., 0.1 MB/s) and response times exceed 1,000ms, your drive may have hardware defects or bad sectors.",
+        },
+        {
+          question: "Can running chkdsk fix 100% disk usage?",
+          answer:
+            "If the issue is caused by NTFS filesystem metadata errors or pending sector reallocations, running 'chkdsk C: /f /r' often restores normal performance.",
+        },
+        {
+          question: "Should I disable virtual memory to fix disk usage?",
+          answer:
+            "No. Disabling the pagefile causes system instability and crashes. The proper solution is to free up capacity on drive C:.",
         },
       ],
       verdict: [

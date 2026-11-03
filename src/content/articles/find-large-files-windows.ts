@@ -5,6 +5,7 @@ export const findLargeFilesWindows: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-06-29",
+  updated: "2026-11-03",
   readingTime: 6,
   content: {
     tr: {
@@ -13,6 +14,98 @@ export const findLargeFilesWindows: Article = {
         "Windows'ta büyük dosyaları bulma yöntemleri: Dosya Gezgini boyut filtreleri, treemap analizi ve otomatik 500 MB taraması ile disk alanınızı geri kazanın.",
       subtitle:
         "Dosya Gezgini filtrelerinden treemap analizine: diskinizi dolduran dosyaları dakikalar içinde bulun",
+      keyTakeaways: [
+        "Dosya Gezgini arama çubuğuna 'size:gigantic' yazarak 4 GB'tan büyük tüm dosyaları saniyeler içinde listeleyebilirsiniz.",
+        "Treemap görselleştirmesi, sabit diskinizde en çok alan kaplayan klasörleri ve derinlerde gizlenen büyük dosyaları haritalandırır.",
+        "Otomatik 500 MB taraması ve SHA-256 tabanlı yinelenen dosya tarayıcıları, elle arama yapmadan onlarca gigabayt yer kazandırır.",
+        "Sistem dosyaları (pagefile.sys, hiberfil.sys) ve Windows klasörü hariç; eski ISO'lar, video dışa aktarımları ve kurulum dosyaları güvenle silinebilir veya arşivlenebilir.",
+      ],
+      dataTable: {
+        caption: "Windows'ta Büyük Dosya Bulma Yöntemleri Karşılaştırması",
+        columns: [
+          "Yöntem",
+          "Hız",
+          "Görsellik",
+          "Derin Klasör Taraması",
+          "Otomasyon Seviyesi",
+        ],
+        rows: [
+          [
+            "Dosya Gezgini (size:gigantic)",
+            "Hızlı (1-2 dk)",
+            "Düz Liste",
+            "Sınırlı / Yavaş",
+            "Manuel",
+          ],
+          [
+            "Windows Depolama Ayarları",
+            "Anında",
+            "Kategori Çubukları",
+            "Yalnızca Kategori Düzeyinde",
+            "Yarı Otomatik",
+          ],
+          [
+            "Treemap Disk Analizi",
+            "Orta (1-3 dk)",
+            "İnteraktif Dikdörtgen Harita",
+            "Mükemmel (Tüm Dizin Ağacı)",
+            "Görsel Keşif",
+          ],
+          [
+            "Disk Mop Large File Finder (>500MB)",
+            "Çok Hızlı (<1 dk)",
+            "Boyuta Göre Sıralı Liste",
+            "Kapsamlı (Tüm Sürücüler)",
+            "Tam Otomatik & Güvenli",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows Dosya Gezgini ile 4 GB Üzeri Büyük Dosyaları Bulma",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Dosya Gezgini'ni Açın ve Konum Seçin",
+            text: "Win + E tuşlarına basarak Dosya Gezgini'ni açın ve sol menüden 'Bu Bilgisayar'ı veya C: sürücüsünü seçin.",
+          },
+          {
+            name: "Arama Çubuğuna Boyut Filtresi Yazın",
+            text: "Sağ üstteki arama kutusuna 'size:gigantic' yazın veya 1 GB üzeri için 'size:>1GB' girip Enter'a basın.",
+          },
+          {
+            name: "Sonuçları Boyuta Göre Sıralayın",
+            text: "Arama tamamlandığında Görünüm menüsünden 'Ayrıntılar'ı seçin ve 'Boyut' sütun başlığına tıklayarak büyükten küçüğe sıralayın.",
+          },
+          {
+            name: "Gereksiz Büyük Dosyaları Güvenle Temizleyin",
+            text: "Kişisel videolar, eski ISO kalıpları veya kurulum paketlerinden emin olduklarınızı silin; ardından Geri Dönüşüm Kutusu'nu boşaltın.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Dosya Gezgini'nde 'size:gigantic' komutu tam olarak ne yapar?",
+          answer:
+            "'size:gigantic' Windows'un yerleşik arama operatörüdür ve boyutu 4 GB'tan büyük olan tüm dosyaları filtreleyip listeler. Benzer şekilde 'size:huge' (1-4 GB) ve 'size:>500MB' gibi özel boyutlar da kullanılabilir.",
+        },
+        {
+          question: "Büyük dosyaları bulurken hangi dosyaları silmemeliyim?",
+          answer:
+            "C sürücüsü kökündeki 'pagefile.sys', 'hiberfil.sys', 'swapfile.sys' ve 'C:\\Windows' ya da 'C:\\Program Files' klasörleri içindeki sistem/uygulama dosyalarına dokunmamalısınız. Yalnızca İndirilenler, Masaüstü, Video ve kişisel arşivlerinizdeki dosyaları silmelisiniz.",
+        },
+        {
+          question: "Gizli büyük dosyaları nasıl görebilirim?",
+          answer:
+            "Dosya Gezgini'nde Görünüm sekmesine gidin, Windows 11'de 'Göster' altından 'Gizli öğeler'i, Windows 10'da ise doğrudan 'Gizli öğeler' kutucuğunu işaretleyin.",
+        },
+        {
+          question:
+            "Treemap disk analizi neden düz arama listesinden daha etkilidir?",
+          answer:
+            "Treemap, tüm sabit diski boyutlarıyla orantılı renkli dikdörtgenler şeklinde çizer. Böylece derin alt klasörlerde unutulmuş devasa dosyalar ve şişen klasörler tek bir bakışta hemen fark edilir.",
+        },
+      ],
       intro: [
         "Windows 10 ve 11'de büyük dosyaları bulmanın en hızlı yolu, Dosya Gezgini'ni açıp Bu Bilgisayar görünümündeyken arama kutusuna size:gigantic yazmaktır; bu komut 4 GB'ın üzerindeki tüm dosyaları listeler. Daha kapsamlı bir bakış için, treemap görünümlü bir disk analiz aracı sabit diskinizde neyin yer kapladığını tek bakışta gösterir. İki yöntem de beş dakikadan kısa sürer ve bu rehberde her adımı tek tek göreceksiniz.",
         "Diskler sessizce dolar: unutulmuş bir video dışa aktarımı, eski bir sanal makine diski veya artık oynamadığınız bir oyun onlarca gigabayt yutabilir. Bu rehber bir beceri merdiveni gibi ilerliyor: önce Dosya Gezgini'nin az bilinen boyut arama operatörleri, ardından görsel treemap analizi ve son olarak 500 MB üzerindeki dosyaları otomatik yakalayan bir tarama. Sonunda diskinizi dolduran her büyük dosyayı bulabilecek ve ne yapacağınıza güvenle karar verebileceksiniz.",
@@ -80,6 +173,99 @@ export const findLargeFilesWindows: Article = {
         "Learn how to find large files on Windows 10 and 11 using File Explorer size filters, treemap analysis, and an automatic 500 MB scan. Free up gigabytes today.",
       subtitle:
         "From hidden size: search operators to treemap analysis — track down the files eating your disk in minutes",
+      keyTakeaways: [
+        "Typing 'size:gigantic' in File Explorer instantly lists all files exceeding 4 GB across your PC.",
+        "Interactive treemap visualization maps your hard drive into proportional blocks, immediately revealing bloated folders buried deep in subdirectories.",
+        "Automated 500 MB scans and SHA-256 duplicate detection reclaim gigabytes without tedious manual directory browsing.",
+        "Avoid deleting core OS files (pagefile.sys, hiberfil.sys, C:\\Windows); safely target old ISOs, video exports, and forgotten download installers.",
+      ],
+      dataTable: {
+        caption: "Comparison of Large File Discovery Methods on Windows",
+        columns: [
+          "Method",
+          "Speed",
+          "Visual Clarity",
+          "Deep Directory Discovery",
+          "Automation",
+        ],
+        rows: [
+          [
+            "File Explorer (size:gigantic)",
+            "Fast (1-2 min)",
+            "Flat List",
+            "Limited / Slow",
+            "Manual",
+          ],
+          [
+            "Windows Storage Settings",
+            "Instant",
+            "Category Bars",
+            "Category Only (No Files)",
+            "Semi-Automated",
+          ],
+          [
+            "Treemap Disk Analysis",
+            "Moderate (1-3 min)",
+            "Interactive Nested Rectangles",
+            "Excellent (Full Tree)",
+            "Visual Discovery",
+          ],
+          [
+            "Disk Mop Large File Finder (>500MB)",
+            "Very Fast (<1 min)",
+            "Size-Sorted List with Paths",
+            "Comprehensive (All Drives)",
+            "Automated & Safe",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Find Large Files Over 4 GB in Windows File Explorer",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Open File Explorer and Target Location",
+            text: "Press Win + E to open File Explorer and select 'This PC' or your C: drive from the sidebar.",
+          },
+          {
+            name: "Enter the Size Filter in Search",
+            text: "Click the search box in the top right and enter 'size:gigantic' (or 'size:>1GB' for files over 1 GB) and press Enter.",
+          },
+          {
+            name: "Sort Results by File Size",
+            text: "Switch to 'Details' view from the View menu, then click the 'Size' column header to sort files from largest to smallest.",
+          },
+          {
+            name: "Inspect and Safely Delete Unneeded Files",
+            text: "Review video exports, obsolete installers, and disk images, delete what you no longer need, and empty your Recycle Bin.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "What does the 'size:gigantic' search filter do in Windows?",
+          answer:
+            "'size:gigantic' is a native Windows search operator that automatically filters for files larger than 4 GB. You can also use 'size:huge' (1-4 GB) or custom queries like 'size:>500MB'.",
+        },
+        {
+          question: "Which large files should I never delete on Windows?",
+          answer:
+            "Never delete system files in the root C:\\ directory like 'pagefile.sys', 'hiberfil.sys', or 'swapfile.sys', nor any files located inside 'C:\\Windows' or 'C:\\Program Files'. Only delete personal downloads, videos, and backups you recognize.",
+        },
+        {
+          question:
+            "How do I ensure hidden large files are shown in File Explorer?",
+          answer:
+            "In File Explorer, go to View > Show and check 'Hidden items' on Windows 11, or check the 'Hidden items' box on the View tab in Windows 10.",
+        },
+        {
+          question:
+            "Why is a treemap analyzer better than a simple search list?",
+          answer:
+            "A treemap renders nested colored rectangles proportional to file and folder sizes. This lets you immediately spot which subfolder tree has grown massive without scrolling through thousands of individual search rows.",
+        },
+      ],
       intro: [
         "The fastest way to find large files on Windows 10 and 11 is to open File Explorer, select This PC, and type size:gigantic in the search box — this lists every file over 4 GB. For a fuller picture, a disk analysis tool with a treemap view shows exactly what is taking up space on your hard drive at a glance. Both methods take under five minutes, and this guide walks through each one step by step.",
         "Drives fill up quietly. A forgotten video export, an old virtual machine disk, or a game you no longer play can swallow tens of gigabytes without ever crossing your screen. This guide is built as a skill progression: first File Explorer's little-known size search operators, then visual treemap analysis, and finally an automatic scan that catches every file over 500 MB. By the end, you'll be able to find the big files eating disk space and decide confidently what to do with each one.",

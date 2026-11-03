@@ -5,6 +5,7 @@ export const flushDnsCache: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-08",
+  updated: "2026-11-03",
   readingTime: 6,
   content: {
     tr: {
@@ -17,6 +18,76 @@ export const flushDnsCache: Article = {
         "Windows'ta DNS önbelleğini temizlemek için Komut İstemi'ni açıp ipconfig /flushdns komutunu çalıştırın. Mac'te ise Terminal'i açın ve sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder komutunu girin. Her iki komut da yaklaşık bir saniyede tamamlanır ve kayıtlı tüm DNS girdilerini silerek bilgisayarınızın bir sonraki ziyarette güncel adresleri sorgulamasını sağlar.",
         "Kısa cevap bu ve çoğu kullanıcı için gerçekten yeterli. Bu rehberde her iki komutu adım adım anlatacak, DNS temizlemenin tam olarak ne işe yaradığını açıklayacak, terminale hiç dokunmak istemeyenler için tek tıklık bir alternatif gösterecek ve DNS temizliğinin çözemeyeceği bağlantı sorunları konusunda dürüst olacağız.",
       ],
+      keyTakeaways: [
+        "DNS önbelleğini temizlemek bilgisayara hiçbir zarar vermez; yalnızca yerel IP eşleme tablosunu sıfırlayarak taze sorgu yapılmasını sağlar.",
+        "Windows'ta CMD veya PowerShell üzerinden 'ipconfig /flushdns' komutuyla 1 saniyede temizlenir (yönetici yetkisi gerektirmez).",
+        "macOS'te Terminal'e 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder' komutu yazılarak temizlenir.",
+        "Sunucu taşınmaları, 'DNS_PROBE_FINISHED_NXDOMAIN' hataları ve erişim sorunları DNS temizliğiyle anında düzelir.",
+        "DiskMop DNS Cache Cleaner ile komut ezberlemeden hem Windows hem de Mac'te tek tıkla DNS ve tarayıcı önbelleklerini temizleyebilirsiniz.",
+      ],
+      dataTable: {
+        caption:
+          "İşletim sistemlerine göre DNS temizleme komutları ve özellikleri",
+        columns: [
+          "İşletim Sistemi",
+          "Komut Satırı Yolu",
+          "Gereken İzin",
+          "Etkilenen Süreç",
+          "Tek Tık Alternatif",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Standart Kullanıcı",
+            "DNS Client Servisi (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Standart Kullanıcı",
+            "DnsClient Modülü",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Yönetici (sudo)",
+            "mDNSResponder Daemon",
+            "DiskMop for Mac",
+          ],
+          [
+            "Google Chrome Dahili DNS",
+            "chrome://net-internals/#dns",
+            "Tarayıcı İçi",
+            "Async DNS Resolver",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      howTo: {
+        name: "DNS Önbelleğini Temizleme Adımları",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Komut İstemi veya Terminali açın",
+            text: "Windows'ta Win+R basıp 'cmd' yazın; Mac'te Spotlight ile 'Terminal' uygulamasını başlatın.",
+          },
+          {
+            name: "Sisteme uygun komutu girin",
+            text: "Windows için 'ipconfig /flushdns', Mac için 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder' komutunu yazıp onaylayın.",
+          },
+          {
+            name: "Tarayıcı ana bilgisayar önbelleğini boşaltın",
+            text: "Chrome adres çubuğuna 'chrome://net-internals/#dns' yazarak 'Clear host cache' butonuna basın.",
+          },
+          {
+            name: "Web sitesini yeniden test edin",
+            text: "Açılmayan veya hatalı yönlenen web sayfasını Ctrl+F5 (Mac'te Cmd+Shift+R) ile tazeleyerek test edin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "DNS Önbelleği Ne İşe Yarar, Ne Zaman Temizlenmeli?",
@@ -68,6 +139,29 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "DNS önbelleğini temizlemek interneti hızlandırır mı?",
+          answer:
+            "Doğrudan indirme hızınızı artırmaz; ancak bayat veya yanıt vermeyen IP yönlendirmelerini silerek sitelerin anında açılmasını sağlar ve bağlantı hatalarını çözer.",
+        },
+        {
+          question: "DNS önbelleği ne sıklıkla temizlenmelidir?",
+          answer:
+            "Rutin olarak temizlenmesi zorunlu değildir. Bir web sitesine erişim sorunu yaşadığınızda, DNS sunucunuzu değiştirdiğinizde veya gizlilik amacıyla temizlenmesi yeterlidir.",
+        },
+        {
+          question: "ipconfig /flushdns komutu neden çalışmaz?",
+          answer:
+            "Windows'ta 'DNS Client' hizmeti devre dışı bırakılmışsa bu komut hata verebilir. services.msc üzerinden DNS İstemcisi servisinin çalıştığından emin olunmalıdır.",
+        },
+        {
+          question:
+            "DNS temizlemek şifrelerimi veya tarayıcı geçmişimi siler mi?",
+          answer:
+            "Hayır. DNS önbelleği yalnızca alan adlarının IP adreslerini tutar. Tarayıcı geçmişiniz, çerezleriniz ve kayıtlı şifreleriniz kesinlikle silinmez.",
+        },
+      ],
       verdict: [
         "DNS önbelleğini temizleme tek bir komuttan ibarettir: Windows'ta ipconfig /flushdns, Mac'te sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Güvenli ve anlıktır; bir site yanlış çözümlendiğinde, DNS hataları göründüğünde veya yalnızca tek bir makinede açılmadığında atılacak ilk doğru adımdır.",
         "Terminali hiç açmak istemiyorsanız, Disk Mop aynı işlemi tek tıklamaya indirir ve yanına Chrome, Firefox, Edge ve Safari için tarayıcı önbellek temizleyicisini ekler — genellikle birlikte ihtiyaç duyduğunuz iki araç. Windows 10/11 ve macOS 12+ üzerinde çalışır; ömür boyu Pro lisansı abonelik olmadan tek seferlik $19.90'dır.",
@@ -84,6 +178,76 @@ export const flushDnsCache: Article = {
         "To flush the DNS cache on Windows, open Command Prompt and run ipconfig /flushdns. On a Mac, open Terminal and run sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Both commands finish in about a second and clear every stored DNS entry, forcing your computer to look up fresh addresses the next time you open a website.",
         "That is the short answer, and for most people it is genuinely all you need. In this guide we'll walk through both commands step by step, explain what flushing DNS actually does, show a one-click alternative for anyone who would rather not touch a terminal, and be honest about which connection problems a DNS flush cannot solve.",
       ],
+      keyTakeaways: [
+        "Flushing the DNS cache is 100% safe; it only wipes the local hostname-to-IP lookup table and forces the OS to request fresh records.",
+        "On Windows, run 'ipconfig /flushdns' in Command Prompt or PowerShell (no administrator privileges required).",
+        "On macOS, open Terminal and execute 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'.",
+        "Clearing DNS resolves common browsing errors like 'DNS_PROBE_FINISHED_NXDOMAIN', stale CDN redirects, and server migration mismatches.",
+        "DiskMop DNS Cache Cleaner provides a unified one-click GUI solution across both Windows and macOS without command-line syntax.",
+      ],
+      dataTable: {
+        caption:
+          "Operating system DNS flush commands, permission requirements, and alternatives",
+        columns: [
+          "Operating System",
+          "Command String",
+          "Required Permission",
+          "Target Service",
+          "GUI Alternative",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Standard User",
+            "DNS Client Service (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Standard User",
+            "DnsClient Module",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Elevated (sudo)",
+            "mDNSResponder Daemon",
+            "DiskMop for Mac",
+          ],
+          [
+            "Google Chrome Internal DNS",
+            "chrome://net-internals/#dns",
+            "In-Browser",
+            "Async DNS Resolver",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Flush the DNS Cache on Windows and Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Launch Command Prompt or Terminal",
+            text: "On Windows, press Win+R and type 'cmd'; on Mac, launch Terminal via Spotlight search.",
+          },
+          {
+            name: "Execute the OS flush command",
+            text: "Enter 'ipconfig /flushdns' on Windows, or 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder' on macOS.",
+          },
+          {
+            name: "Clear browser socket pool",
+            text: "In Chrome, open 'chrome://net-internals/#dns' and click 'Clear host cache' to invalidate internal browser DNS entries.",
+          },
+          {
+            name: "Hard refresh your destination page",
+            text: "Reload the problematic website using Ctrl+F5 (Cmd+Shift+R on Mac) to bypass local static assets.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What the DNS Cache Does and When to Flush It",
@@ -132,6 +296,28 @@ export const flushDnsCache: Article = {
             "Your router keeps its own DNS cache too, one layer beyond your computer's reach. If a flush does not help, restart the router and see whether the problem clears. Persistent DNS_PROBE_FINISHED errors often mean the DNS server you are using is struggling; switching your network settings to a public resolver such as 1.1.1.1 or 8.8.8.8 fixes this more often than repeated flushing does.",
             "Finally, if a device works on one network but not another, or every browser fails while other apps stay online, the problem is more likely firewall, VPN, or proxy configuration than DNS caching. Flushing is a free, zero-risk first step — just do not stop there when the symptoms point elsewhere.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does flushing DNS increase internet speed?",
+          answer:
+            "It does not increase bandwidth capacity, but it eliminates connection timeouts and resolves latency caused by querying obsolete CDN edge servers.",
+        },
+        {
+          question: "How often should I flush my DNS cache?",
+          answer:
+            "Flushing is not required on a fixed schedule. Perform it whenever you encounter 404/NXDOMAIN errors, change DNS servers, or switch VPN profiles.",
+        },
+        {
+          question: "Why does 'ipconfig /flushdns' fail?",
+          answer:
+            "If the Windows 'DNS Client' service is stopped or disabled in services.msc, the flush command will return an RPC error.",
+        },
+        {
+          question: "Does flushing DNS delete browser history or cookies?",
+          answer:
+            "No. The DNS cache only contains IP mappings. Your bookmarks, browser history, cookies, and saved passwords remain untouched.",
         },
       ],
       verdict: [

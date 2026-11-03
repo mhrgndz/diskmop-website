@@ -5,6 +5,7 @@ export const slowStartupFix: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2025-05-15",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -16,6 +17,83 @@ export const slowStartupFix: Article = {
         "Bilgisayarınızın açılması dakikalar mı sürüyor? Windows'un yavaş açılması, günlük üretkenliğinizi ciddi şekilde etkileyen en yaygın sorunlardan biridir. Birçok kullanıcı bu durumu 'normal' olarak kabul eder, ancak doğru adımlarla açılış süresini önemli ölçüde kısaltmak mümkündür.",
         "Bu rehberde, Windows'un yavaş açılma nedenlerini tek tek inceleyecek ve her biri için pratik çözümler sunacağız. Gereksiz başlangıç programlarından disk alanı optimizasyonuna kadar 5 temel adımla bilgisayarınızı ilk günkü hızına kavuşturabilirsiniz.",
       ],
+      keyTakeaways: [
+        "Windows yavaş açılışının en yaygın sebebi arka planda otomatik başlayan 15-20 adet gereksiz üçüncü parti programdır.",
+        "Görev Yöneticisi > Başlangıç uygulamaları sekmesinden 'Başlangıç etkisi: Yüksek' olan uygulamaları kapatmak açılışı 30-40 saniye hızlandırabilir.",
+        "Kullanılmayan arka plan Windows servislerini 'Elle' (Manual) moduna almak CPU ve RAM üzerindeki açılış yükünü kaldırır.",
+        "C: sürücüsünde en az %15–20 boş alan bırakmak Windows sanal bellek (pagefile.sys) takasının gecikmesiz çalışması için şarttır.",
+        "DiskMop Başlangıç Yöneticisi ve Zamanlanmış Temizlik ile açılış yükünü tek tıkla optimize edebilirsiniz.",
+      ],
+      dataTable: {
+        caption:
+          "Windows açılış süresini uzatan faktörler ve iyileştirme yöntemleri",
+        columns: [
+          "Faktör",
+          "Açılışa Etkisi",
+          "Tipik Gecikme",
+          "Çözüm Yöntemi",
+          "Risk Seviyesi",
+        ],
+        rows: [
+          [
+            "Başlangıç Uygulamaları",
+            "Yüksek",
+            "15 – 45 saniye",
+            "Görev Yöneticisi veya DiskMop ile devre dışı bırakın",
+            "Yok (Güvenli)",
+          ],
+          [
+            "Gereksiz Arka Plan Servisleri",
+            "Orta - Yüksek",
+            "10 – 25 saniye",
+            "services.msc ile 'Elle' çalıştırmaya ayarlayın",
+            "Düşük (Sistem servislerine dokunmayın)",
+          ],
+          [
+            "Dolu C: Sürücüsü (>%85)",
+            "Yüksek",
+            "20 – 60 saniye",
+            "DiskMop ile önbellek, geçici dosya ve kopyaları silin",
+            "Yok",
+          ],
+          [
+            "Bozuk Hızlı Başlatma İmajı",
+            "Orta",
+            "10 – 20 saniye",
+            "'powercfg -h off' ve ardından 'on' yaparak sıfırlayın",
+            "Yok",
+          ],
+          [
+            "Mekanik HDD Kullanımı",
+            "Kritik",
+            "1 – 3 dakika",
+            "İşletim sistemini SATA/NVMe SSD'ye taşıyın",
+            "Donanım Yükseltmesi",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows Açılış Süresini Kısaltma Adımları",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Başlangıç programlarını kapatın",
+            text: "Ctrl+Shift+Esc ile Görev Yöneticisi'ni açın. 'Başlangıç uygulamaları' sekmesinde açılış etkisi yüksek olan programları (Steam, Spotify, Discord vb.) sağ tıklayıp 'Devre dışı bırak' deyin.",
+          },
+          {
+            name: "Gereksiz arka plan servislerini durdurun",
+            text: "Win+R tuşlayıp 'msconfig' yazın. 'Hizmetler' sekmesinde 'Tüm Microsoft hizmetlerini gizle' kutusunu işaretleyin, kalan gereksiz üçüncü parti servisleri devre dışı bırakın.",
+          },
+          {
+            name: "C: sürücüsünde yer açın",
+            text: "DiskMop ile sistem sürücünüzü taratarak geçici dosyaları, eski indirmeleri ve yinelenen dosyaları temizleyin.",
+          },
+          {
+            name: "Windows Hızlı Başlatmayı kontrol edin",
+            text: "Denetim Masası > Güç Seçenekleri > 'Güç düğmelerinin yapacaklarını seçin' ekranından 'Hızlı başlatmayı aç' seçeneğinin aktif olduğundan emin olun.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Gereksiz Başlangıç Programlarını Devre Dışı Bırakın",
@@ -58,9 +136,33 @@ export const slowStartupFix: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "Windows'un normal açılış süresi ne kadar olmalıdır?",
+          answer:
+            "Modern bir NVMe SSD'ye sahip Windows 11/10 bilgisayar genellikle 10 ila 20 saniye arasında açılmalıdır. Süre 45 saniyenin üzerindeyse başlangıç optimizasyonu gerekir.",
+        },
+        {
+          question: "Başlangıç programlarını kapatmak programı bozar mı?",
+          answer:
+            "Hayır. Başlangıçta devre dışı bırakmak yalnızca programın Windows ile birlikte kendiliğinden açılmasını engeller; kısayoluna tıkladığınızda normal çalışır.",
+        },
+        {
+          question:
+            "Hızlı Başlatma (Fast Startup) neden bazen açılışı yavaşlatır?",
+          answer:
+            "Hazırda bekletme dosyası (hiberfil.sys) zamanla bozulursa Windows açılırken donmalar veya uzun siyah ekran gecikmeleri yaşanabilir. Kapatılıp yeniden açılması sorunu çözer.",
+        },
+        {
+          question:
+            "Windows açılışında siyah ekranda bekleme sorunu nasıl çözülür?",
+          answer:
+            "Ekran kartı sürücüsünü güncelleyin, başlangıçtaki arka plan servislerini ayıklayın ve C: sürücüsündeki bozuk önbellek dosyalarını temizleyin.",
+        },
+      ],
       verdict: [
         "Windows'un yavaş açılması, genellikle birden fazla faktörün bir araya gelmesinden kaynaklanır. Başlangıç programlarını azaltmak, gereksiz servisleri devre dışı bırakmak, geçici dosyaları temizlemek, disk alanı açmak ve düzenli bakım yapmak — bu beş adımın hepsini uyguladığınızda açılış süreniz önemli ölçüde kısalacaktır.",
-        "Disk Mop, tüm bu işlemleri tek bir uygulama ü zerinden yapmanızı sağlar. Başlangıç yöneticisi, servis yöneticisi, önbellek temizleyici, disk analizi ve zamanlanmış temizlik özelliklerinin tamamı entegre bir şekilde çalışarak bilgisayarınızın her zaman en iyi performansta açılmasını sağlar.",
+        "Disk Mop, tüm bu işlemleri tek bir uygulama üzerinden yapmanızı sağlar. Başlangıç yöneticisi, servis yöneticisi, önbellek temizleyici, disk analizi ve zamanlanmış temizlik özelliklerinin tamamı entegre bir şekilde çalışarak bilgisayarınızın her zaman en iyi performansta açılmasını sağlar.",
       ],
       ctaText: "Disk Mop ile bilgisayarınızın açılış süresini kısaltın",
     },
@@ -73,6 +175,83 @@ export const slowStartupFix: Article = {
         "Does your computer take minutes to boot up? A slow Windows startup is one of the most common frustrations for PC users, yet many accept it as inevitable. The truth is that with the right steps, you can dramatically reduce your boot time and get to work faster.",
         "In this guide, we'll walk through the five most impactful optimizations you can make to fix slow boot times. From disabling unnecessary startup programs to scheduling automated maintenance, each step targets a specific cause of sluggish performance.",
       ],
+      keyTakeaways: [
+        "The leading cause of sluggish Windows boot times is an excess of third-party apps launching simultaneously at startup.",
+        "Disabling high-impact startup apps in Task Manager can instantly slash Windows boot times by 30 to 45 seconds.",
+        "Setting dormant third-party background services to 'Manual' alleviates severe early boot CPU and disk read bottlenecks.",
+        "Maintaining at least 15–20% free space on drive C: ensures virtual memory paging and filesystem scans initialize without stutter.",
+        "DiskMop Startup Manager and Scheduled Cleanup automate boot optimization without dangerous registry tampering.",
+      ],
+      dataTable: {
+        caption:
+          "Key factors causing slow Windows boot times and targeted resolutions",
+        columns: [
+          "Lag Source",
+          "Boot Impact",
+          "Typical Delay",
+          "Recommended Action",
+          "Risk Level",
+        ],
+        rows: [
+          [
+            "Third-Party Startup Apps",
+            "High",
+            "15 – 45 seconds",
+            "Disable via Task Manager or DiskMop Startup Manager",
+            "None (Safe)",
+          ],
+          [
+            "Dormant Background Services",
+            "Moderate - High",
+            "10 – 25 seconds",
+            "Configure to 'Manual' in services.msc",
+            "Low (Preserve Microsoft services)",
+          ],
+          [
+            "Low Drive C: Free Space (<15%)",
+            "High",
+            "20 – 60 seconds",
+            "Purge caches and duplicates with DiskMop",
+            "None",
+          ],
+          [
+            "Corrupt Fast Startup Hibernation",
+            "Moderate",
+            "10 – 20 seconds",
+            "Reset via 'powercfg -h off' followed by 'on'",
+            "None",
+          ],
+          [
+            "Legacy Mechanical HDD",
+            "Critical",
+            "1 – 3 minutes",
+            "Migrate operating system to a modern SSD",
+            "Hardware Upgrade",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Fix Slow Windows Startup Times",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Disable high-impact startup apps",
+            text: "Press Ctrl+Shift+Esc, select Startup apps, and disable non-essential high-impact entries like Spotify, Discord, or Steam.",
+          },
+          {
+            name: "Trim third-party startup services",
+            text: "Press Win+R, launch 'msconfig', check 'Hide all Microsoft services' on the Services tab, and uncheck unneeded startup services.",
+          },
+          {
+            name: "Reclaim drive C: capacity",
+            text: "Run DiskMop to delete bloated caches, temporary installers, and duplicates eating into OS virtual swap buffers.",
+          },
+          {
+            name: "Verify Windows Fast Startup",
+            text: "Navigate to Control Panel > Power Options > 'Choose what power buttons do' and ensure 'Turn on fast startup' is enabled.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Disable Unnecessary Startup Programs",
@@ -113,6 +292,29 @@ export const slowStartupFix: Article = {
             "Disk Mop's Scheduled Cleanup feature lets you set up weekly or monthly maintenance routines. It automatically performs cache cleaning, temporary file removal, and recycle bin emptying, keeping your system optimized without any manual effort.",
             "Establishing an automated maintenance routine is the most effective way to preserve your startup performance long-term. A weekly cleanup schedule ensures your system maintains its peak performance day after day.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "What is an acceptable Windows startup duration?",
+          answer:
+            "On a modern NVMe SSD, Windows 11 or 10 should reach the usable desktop within 10 to 20 seconds. Any duration over 45 seconds indicates startup bloat.",
+        },
+        {
+          question: "Does disabling startup programs uninstall them?",
+          answer:
+            "No. Disabling an app from startup merely stops it from booting automatically in the background; you can launch it normally anytime.",
+        },
+        {
+          question: "Can Fast Startup cause slow booting?",
+          answer:
+            "If the hibernation cache (hiberfil.sys) becomes corrupt, Fast Startup can cause black screen delays during boot. Resetting powercfg resolves it.",
+        },
+        {
+          question:
+            "Why does Windows get stuck on a black screen before login?",
+          answer:
+            "Black screen delays are typically caused by outdated graphics drivers, conflicting background services, or an overfilled drive C:.",
         },
       ],
       verdict: [

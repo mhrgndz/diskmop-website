@@ -5,6 +5,7 @@ export const autoEmptyRecycleBin: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-19",
+  updated: "2026-11-03",
   readingTime: 6,
   content: {
     tr: {
@@ -12,6 +13,99 @@ export const autoEmptyRecycleBin: Article = {
       metaDescription:
         "Geri dönüşüm kutusunu otomatik boşaltma için üç yöntem: Depolama Alanı Algılayıcısı, Görev Zamanlayıcısı ve haftalık temizlik zamanlaması. Adım adım öğrenin.",
       subtitle: "Kutuyu Bir Daha Elle Boşaltmamanız İçin Üç Yöntem",
+      keyTakeaways: [
+        "Dosyaları 'Sil' tuşuyla silmek disk alanı boşaltmaz; dosyalar boşaltılana kadar Geri Dönüşüm Kutusu'nda yer kaplamaya devam eder.",
+        "Depolama Alanı Algılayıcısı (Storage Sense) ile 1, 14, 30 veya 60 günden eski dosyaların otomatik silinmesi sağlanabilir.",
+        "Görev Zamanlayıcısı ve PowerShell komutu ('Clear-RecycleBin -Force') ile her hafta belirli gün ve saatte tam temizlik planlanabilir.",
+        "Kutuyu Shift+Delete ile tamamen atlamak yerine 14-30 günlük bir güvenlik payı bırakarak otomatikleştirmek veri kaybı riskini önler.",
+      ],
+      dataTable: {
+        caption:
+          "Windows 11 Geri Dönüşüm Kutusu Otomasyon Yöntemleri Karşılaştırması",
+        columns: [
+          "Yöntem",
+          "Tetikleme Mantığı",
+          "Kurulum Zorluğu",
+          "Esneklik",
+          "Kapsam",
+        ],
+        rows: [
+          [
+            "Depolama Alanı Algılayıcısı",
+            "Dosya Yaşı (örn. 30 gün)",
+            "Çok Kolay (Ayarlar)",
+            "Yüksek (Gün/Sıklık seçimi)",
+            "Kutu + Temp Dosyaları",
+          ],
+          [
+            "Görev Zamanlayıcısı (PowerShell)",
+            "Zaman Çizelgesi (Haftalık)",
+            "Orta (Komut girilir)",
+            "Tam Kontrol (Gün & Saat)",
+            "Yalnızca Geri Dönüşüm Kutusu",
+          ],
+          [
+            "Özel Boyut Sınırı (Kutu Özellikleri)",
+            "Kapasite Aşımı (MB)",
+            "Çok Kolay (Özellikler menüsü)",
+            "Düşük (Sadece boyut)",
+            "Sürücü Başına Kutu Kotası",
+          ],
+          [
+            "Disk Mop Scheduled Cleanup",
+            "Haftalık / Aylık Otomasyon",
+            "Çok Kolay (1 Tık)",
+            "Maksimum",
+            "Kutu + Tarayıcı & Sistem Önbelleği + İndirmeler",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows 11 Depolama Alanı Algılayıcısı ile Geri Dönüşüm Kutusunu Otomatik Boşaltma",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Depolama Ayarlarını Açın",
+            text: "Win + I tuşlarına basarak Ayarlar'ı açın, Sistem menüsünden 'Depolama' sekmesine tıklayın.",
+          },
+          {
+            name: "Depolama Alanı Algılayıcısı'nı Etkinleştirin",
+            text: "'Depolama Alanı Algılayıcısı' (Storage Sense) anahtarını açık konuma getirin ve yapılandırma sayfasına girmek için üzerine tıklayın.",
+          },
+          {
+            name: "Geri Dönüşüm Kutusu Süresini Ayarlayın",
+            text: "'Geri dönüşüm kutumdaki dosyaları şu süreden uzun süredir oradaysa sil' açılır menüsünden 14 gün veya 30 gün seçin.",
+          },
+          {
+            name: "Çalışma Sıklığını Belirleyin",
+            text: "'Depolama Alanı Algılayıcısını Çalıştır' menüsünden 'Her Hafta' veya 'Her Ay' seçeneğini işaretleyerek kaydı tamamlayın.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Geri dönüşüm kutusundaki dosyalar diskte gerçekten yer kaplar mı?",
+          answer:
+            "Evet. Bir dosyayı standart şekilde sildiğinizde dosya fiziksel olarak diskten silinmez, gizli '$Recycle.Bin' klasörüne taşınır. Kutu boşaltılana kadar depolama alanınız serbest kalmaz.",
+        },
+        {
+          question:
+            "Depolama Alanı Algılayıcısı yeni sildiğim dosyayı hemen siler mi?",
+          answer:
+            "Hayır. Depolama Alanı Algılayıcısı yaş filtresiyle çalışır. Örneğin 30 gün olarak seçtiyseniz, kutudaki bir dosya ancak 30 günü doldurduğunda otomatik olarak kalıcı silinir.",
+        },
+        {
+          question: "Shift + Delete ile dosyaları silmek neden risklidir?",
+          answer:
+            "Shift + Delete tuş kombinasyonu dosyayı Geri Dönüşüm Kutusu'na göndermeden doğrudan siler. Özellikle TRIM destekli hızlı SSD'lerde yanlışlıkla silinen dosyaları veri kurtarma yazılımlarıyla geri getirmek neredeyse imkansızdır.",
+        },
+        {
+          question: "Geri dönüşüm kutusunun boyutunu nasıl sınırlarım?",
+          answer:
+            "Masaüstündeki Geri Dönüşüm Kutusu simgesine sağ tıklayıp 'Özellikler'i seçin. İlgili sürücüyü seçip 'Özel boyut' alanına megabayt cinsinden sınır girin (örneğin 5 GB için 5120 MB).",
+        },
+      ],
       intro: [
         "Windows 11'de geri dönüşüm kutusunu otomatik boşaltmanın en hızlı yolu Depolama Alanı Algılayıcısı'dır: Ayarlar'ı açın, Sistem ve ardından Depolama bölümüne gidin, Depolama Alanı Algılayıcısı'nı etkinleştirin ve kutuda 30 günden uzun süredir bekleyen dosyaların silinmesini seçin. Sabit bir takvim isterseniz, Görev Zamanlayıcısı'nda Clear-RecycleBin -Force PowerShell komutunu çalıştıran haftalık bir görev aynı işi belirlediğiniz gün ve saatte yapar. İki yöntem de ücretsizdir, Windows'a yerleşiktir ve kurulumu beş dakikadan kısa sürer.",
         "Geri dönüşüm kutusu sessizce büyür: sildiğiniz her dosya aslında diskten gitmez, kutuya taşınır ve yer kaplamaya devam eder. Aylar sonra kutunun gigabaytlarca alan tuttuğunu fark eden kullanıcı sayısı hiç az değildir. Bu rehberde üç otomasyon yolunu yan yana koyacağız: Depolama Alanı Algılayıcısı, Görev Zamanlayıcısı ve kutunun yanı sıra önbellekleri ile eski indirmeleri de temizleyen Disk Mop'un zamanlanmış temizliği. Önce yerleşik yöntemlerin adımlarını eksiksiz göreceksiniz, ardından hangisinin size uyduğuna karar verebileceksiniz.",
@@ -77,6 +171,99 @@ export const autoEmptyRecycleBin: Article = {
       metaDescription:
         "Learn how to automatically empty the Recycle Bin in Windows 11 using Storage Sense, Task Scheduler or a scheduled cleanup app — and reclaim gigabytes of space.",
       subtitle: "Three Ways to Never Empty the Bin by Hand Again",
+      keyTakeaways: [
+        "Standard deletion merely moves files to the hidden '$Recycle.Bin' folder; storage is not freed until the bin is emptied.",
+        "Windows 11 Storage Sense automatically purges files older than 1, 14, 30, or 60 days on a scheduled background cadence.",
+        "Task Scheduler paired with PowerShell ('Clear-RecycleBin -Force') gives exact day and time automation without relying on file age.",
+        "Avoid using Shift+Delete universally; maintaining a 14-to-30-day recycling window prevents catastrophic accidental data loss on SSDs.",
+      ],
+      dataTable: {
+        caption: "Comparison of Recycle Bin Automation Methods on Windows 11",
+        columns: [
+          "Method",
+          "Trigger Mechanism",
+          "Setup Difficulty",
+          "Schedule Precision",
+          "Scope",
+        ],
+        rows: [
+          [
+            "Storage Sense",
+            "File Age Threshold (e.g. 30 days)",
+            "Very Easy (Settings GUI)",
+            "Medium (Daily / Weekly / Low Space)",
+            "Bin + System Temp Files",
+          ],
+          [
+            "Task Scheduler (PowerShell)",
+            "Calendar Schedule",
+            "Moderate (Command setup)",
+            "Exact (Specific day & hour)",
+            "Recycle Bin Only",
+          ],
+          [
+            "Custom Size Cap (Properties)",
+            "Disk Capacity Overflow (MB)",
+            "Very Easy (Right-click GUI)",
+            "Continuous (FIFO deletion)",
+            "Per-Drive Max Bin Size",
+          ],
+          [
+            "Disk Mop Scheduled Cleanup",
+            "Weekly / Monthly Automation",
+            "1-Click",
+            "High",
+            "Bin + Browser & App Caches + Downloads",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Enable Storage Sense to Auto-Empty the Recycle Bin on Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Open Windows Storage Settings",
+            text: "Press Win + I to open Settings, select 'System' in the left pane, and click 'Storage'.",
+          },
+          {
+            name: "Enable Storage Sense",
+            text: "Toggle 'Storage Sense' to On, then click the arrow or title to configure cleanup rules.",
+          },
+          {
+            name: "Configure Recycle Bin Age Limit",
+            text: "Under 'Delete files in my recycle bin if they have been there for over', choose 14 days or 30 days.",
+          },
+          {
+            name: "Set Execution Cadence",
+            text: "Under 'Run Storage Sense', select 'Every week' or 'Every month' to keep the background process running automatically.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Do files in the Windows Recycle Bin actually take up disk space?",
+          answer:
+            "Yes. Files in the Recycle Bin reside in a hidden system directory called '$Recycle.Bin' on each drive partition. Disk capacity is only reclaimed once those items are permanently emptied.",
+        },
+        {
+          question:
+            "Does Storage Sense empty recently deleted files immediately?",
+          answer:
+            "No. Storage Sense checks file age. If you configure a 30-day rule, a file will only be purged once it has remained inside the bin for more than 30 consecutive days.",
+        },
+        {
+          question:
+            "Why is Shift + Delete dangerous compared to automatic emptying?",
+          answer:
+            "Shift + Delete permanently erases files immediately, bypassing the Recycle Bin. Modern SSDs running TRIM permanently overwrite sectors quickly, making accidental file recovery nearly impossible.",
+        },
+        {
+          question: "How do I limit the maximum disk size of the Recycle Bin?",
+          answer:
+            "Right-click the Recycle Bin icon on your desktop, select 'Properties', choose the drive partition, check 'Custom size', and enter a maximum size in megabytes (e.g., 5120 MB for 5 GB).",
+        },
+      ],
       intro: [
         "The quickest way to automatically empty the Recycle Bin in Windows 11 is Storage Sense: open Settings, go to System and then Storage, turn on Storage Sense, and set it to delete files that have been in the bin for more than 30 days. If you prefer a fixed schedule, a weekly Task Scheduler job running the PowerShell command Clear-RecycleBin -Force does the same at an exact day and time. Both methods are free, built into Windows, and take under five minutes to set up.",
         "The Recycle Bin grows silently: deleting a file does not remove it from your drive, it just moves it into the bin, where it keeps taking up space. Plenty of users discover months later that the bin is holding onto gigabytes. In this guide we put the three automation routes side by side — Storage Sense, Task Scheduler, and Disk Mop's Scheduled Cleanup, which also covers caches and old downloads. You will see the complete steps for the built-in methods first, then decide which route fits you best.",

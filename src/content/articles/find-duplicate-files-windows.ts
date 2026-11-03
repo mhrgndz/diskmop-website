@@ -5,6 +5,7 @@ export const findDuplicateFilesWindows: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-14",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -13,6 +14,90 @@ export const findDuplicateFilesWindows: Article = {
         "Windows'ta yinelenen dosyaları bulma ve silme rehberi: Dosya Gezgini ile manuel arama, SHA-256 karma eşleştirme ve güvenli silme adımları. Hemen yer açın.",
       subtitle:
         "Fotoğraf, video ve belgelerdeki gereksiz kopyaları güvenle temizleyin",
+      keyTakeaways: [
+        "Dosya Gezgini yalnızca adında '(1)' veya 'Kopya' geçen bariz mükerrerleri yakalar; farklı isimli kopyaları göremez.",
+        "SHA-256 karma (hash) eşleştirmesi, dosyaların parmak izini çıkararak bayt bayt tam eşleşen kopyaları %100 güvenle tespit eder.",
+        "Fotoğraf, video ve indirilen belgelerdeki mükerrer dosyaların temizlenmesi diskte ortalama %15-30 yer kazandırır.",
+        "Windows ve Program Files klasörlerindeki dosyalara asla dokunulmamalıdır; silme işlemi yalnızca kullanıcı klasörleriyle sınırlandırılmalıdır.",
+      ],
+      dataTable: {
+        caption: "Yinelenen Dosya Bulma Yöntemleri Karşılaştırması",
+        columns: [
+          "Yöntem",
+          "Eşleştirme Türü",
+          "Güvenilirlik",
+          "Hız",
+          "Yanlış Pozitif Riski",
+        ],
+        rows: [
+          [
+            "Dosya Gezgini Arama ('(1)', 'Kopya')",
+            "Dosya Adı & Boyut",
+            "Çok Düşük",
+            "Hızlı (Klasör Bazlı)",
+            "Yüksek (Adlar yanıltabilir)",
+          ],
+          [
+            "CMD certutil SHA256",
+            "Bayt Bayt SHA-256",
+            "Mükemmel",
+            "Çok Yavaş (Manuel)",
+            "Sıfır",
+          ],
+          [
+            "Disk Mop Duplicate Detector",
+            "SHA-256 Hash + Görsel Önizleme",
+            "Mükemmel (%100 Kesin)",
+            "Çok Hızlı (Çok Çekirdekli)",
+            "Sıfır (Tek tıkla güvenli silme)",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows'ta Yinelenen Dosyaları Bulma ve Temizleme Adımları",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Yinelenen Dosya Taramasını Başlatın",
+            text: "Disk Mop'u açın, Yinelenen Dosya Dedektörü (Duplicate Detector) sekmesine gidin ve taranacak sürücüyü veya klasörü seçip Taramayı Başlatın.",
+          },
+          {
+            name: "SHA-256 Karma Gruplarını İnceleyin",
+            text: "Tarama bitiminde bayt bayt aynı olan dosyalar grup halinde listelenir. Dosya konumlarını ve önizlemeleri kontrol edin.",
+          },
+          {
+            name: "Tutulacak Ana Dosyayı Belirleyin",
+            text: "Düzenli arşiv veya Resimler klasöründeki orijinal kopyayı koruyup, İndirilenler veya Masaüstü'ndeki fazlalıkları işaretleyin.",
+          },
+          {
+            name: "Kopyaları Güvenle Silin",
+            text: "Seçili kopyaları Geri Dönüşüm Kutusu'na gönderin. Birkaç gün sistemi test ettikten sonra kutuyu boşaltarak alanı kalıcı geri kazanın.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windows 11 veya 10'da yerleşik bir yinelenen dosya bulucu var mı?",
+          answer:
+            "Hayır. Windows'ta dosya içeriğini karşılaştıran yerleşik bir araç yoktur. Yalnızca Dosya Gezgini'nde ada göre manuel arama yapılabilir veya üçüncü parti SHA-256 tabanlı güvenilir bir araç kullanılmalıdır.",
+        },
+        {
+          question: "İki dosyanın boyutu aynıysa kesinlikle kopya mıdır?",
+          answer:
+            "Hayır. Tamamen farklı metin belgeleri veya resimler tesadüfen aynı bayt boyutuna sahip olabilir. Dosyaların içeriklerinin aynı olduğunu kanıtlayan tek yöntem SHA-256 karma (hash) karşılaştırmasıdır.",
+        },
+        {
+          question: "Farklı ada sahip yinelenen fotoğraflar nasıl bulunur?",
+          answer:
+            "SHA-256 tabanlı yinelenen dosya dedektörü dosya adlarına değil dosyanın içeriğindeki ham baytlara bakar. Bu sayede 'IMG_01.jpg' ile 'tatil.jpg' aynı görselse anında kopya olarak eşleşir.",
+        },
+        {
+          question: "Yinelenen dosyaları silerken nelere dikkat edilmelidir?",
+          answer:
+            "Windows veya Program Files klasörlerindeki dosyalara asla dokunmayın. OneDrive veya Google Drive gibi bulut eşitlemeli klasörlerden sildiğinizde dosyanın buluttan da silineceğini unutmayın.",
+        },
+      ],
       intro: [
         "Windows'ta yinelenen dosyaları bulmanın iki yolu vardır: Dosya Gezgini'nde klasörleri boyuta ve ada göre sıralayarak bariz kopyaları elle tespit etmek ya da dosyaları SHA-256 karma (hash) değerine göre karşılaştıran bir yinelenen dosya bulucu ile sürücünüzü taramak. Güvenilir olan tek yöntem karma tabanlı taramadır, çünkü bir dosyayı silmeden önce iki kopyanın bayt bayt aynı olduğunu kanıtlar. Windows 10 ve 11'de yerleşik bir yinelenen dosya bulucu bulunmadığından, ya biraz el emeği ya da özel bir araç gerekir.",
         "Yinelenen dosyalar sinsi bir alan tüketicisidir: aynı tatil fotoğrafları iki farklı klasörde, aynı video hem masaüstünde hem İndirilenler'de, aynı PDF üç ayrı e-posta ekinde durabilir. Bu rehberde kopyaların nasıl biriktiğini, Dosya Gezgini ile neyin mümkün olup neyin olmadığını, karma eşleştirmenin neden tek güvenli yöntem olduğunu ve hangi kopyaları gönül rahatlığıyla silebileceğinizi adım adım göstereceğiz.",
@@ -79,6 +164,93 @@ export const findDuplicateFilesWindows: Article = {
         "Learn how to find duplicate files on Windows with File Explorer and SHA-256 hash matching, plus which copies are safe to delete. Free up gigabytes today.",
       subtitle:
         "Safely remove redundant copies of photos, videos and documents",
+      keyTakeaways: [
+        "File Explorer search only catches obvious duplicates with matching names or '(1)' suffixes; renamed identical files go undetected.",
+        "SHA-256 hash matching verifies byte-for-byte identical content regardless of file name or modified timestamp.",
+        "Removing duplicate media, downloads, and redundant photo imports can free up to 20-30% of user storage.",
+        "Never delete duplicates from Windows or Program Files directories; restrict deduplication strictly to user libraries and personal folders.",
+      ],
+      dataTable: {
+        caption: "Comparison of Duplicate File Finding Methods on Windows",
+        columns: [
+          "Method",
+          "Matching Criterion",
+          "Reliability",
+          "Scan Speed",
+          "False Positive Risk",
+        ],
+        rows: [
+          [
+            "File Explorer Name Search ('(1)', 'Copy')",
+            "Filename & File Size",
+            "Low",
+            "Fast (Folder-by-folder)",
+            "High (Names can mislead)",
+          ],
+          [
+            "Command Prompt (certutil SHA256)",
+            "Byte-level Hash",
+            "100% Accurate",
+            "Extremely Slow (Manual)",
+            "None",
+          ],
+          [
+            "Disk Mop Duplicate Detector",
+            "SHA-256 Hash + Visual Preview",
+            "100% Accurate",
+            "Blazing Fast (Multi-threaded)",
+            "Zero (Safe 1-click removal)",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Find and Safely Remove Duplicate Files on Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Launch Duplicate File Scan",
+            text: "Open Disk Mop, navigate to the Duplicate Detector tab, select the drives or folders to scan, and click Scan.",
+          },
+          {
+            name: "Review SHA-256 Hash Duplicate Groups",
+            text: "When the scan completes, examine duplicate groups containing identical files with matching checksums and visual previews.",
+          },
+          {
+            name: "Select the Master Copy to Retain",
+            text: "Keep the organized copy in your primary Photos or Documents library and mark stray copies in Downloads or Desktop for deletion.",
+          },
+          {
+            name: "Delete Redundant Copies",
+            text: "Send duplicates to the Recycle Bin. Verify your applications and files over a few days before emptying the bin permanently.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Does Windows 11 or 10 have a native duplicate file finder?",
+          answer:
+            "No. Windows does not include a built-in tool that compares file contents. Users must either manually inspect folders in File Explorer or use a third-party utility with SHA-256 hash matching.",
+        },
+        {
+          question:
+            "Can two files have identical sizes without being duplicates?",
+          answer:
+            "Yes. Different documents or photos can happen to share the exact same byte size. Only cryptographic hashing (like SHA-256) guarantees that two files are truly byte-for-byte duplicates.",
+        },
+        {
+          question:
+            "How does a hash-based scanner find renamed duplicate photos?",
+          answer:
+            "A hash scanner inspects the underlying data stream of the file rather than its label. If 'IMG_001.jpg' and 'vacation.jpg' contain identical pixel data, they generate the identical SHA-256 hash and are immediately grouped.",
+        },
+        {
+          question:
+            "Is it safe to delete duplicates from cloud storage folders?",
+          answer:
+            "Yes, but remember that deleting a local file inside a synced OneDrive or Google Drive folder will delete the file from your cloud backup as well. Ensure you keep the primary copy in place.",
+        },
+      ],
       intro: [
         "There are two ways to find duplicate files on Windows: sort folders by size and name in File Explorer to spot obvious copies manually, or scan your drive with a duplicate file finder that compares files by their SHA-256 hash. Hash-based scanning is the only reliable method, because it proves two files are byte-for-byte identical before you delete anything. Windows 10 and 11 have no built-in duplicate finder, so you either need a little manual work or a dedicated tool.",
         "Duplicates are a sneaky space hog: the same vacation photos in two folders, the same video on your desktop and in Downloads, the same PDF saved from three separate emails. In this guide we'll walk through how copies accumulate, what File Explorer can and can't do, why hash matching is the only safe approach, and which copies you can delete with confidence.",
