@@ -5,6 +5,7 @@ export const macStartupDiskFull: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-07-18",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -17,6 +18,83 @@ export const macStartupDiskFull: Article = {
         "macOS'in sorunsuz çalışması için boş disk alanına sürekli ihtiyacı vardır: RAM dolduğunda bellek takası yapar, uygulamalar için geçici dosyalar oluşturur ve gigabaytlarca yer kaplayan sistem güncellemelerini indirir. Disk dolduğunda uygulamalar yavaşlar, dosyalar kaydedilemez ve güncellemeler yarıda kalır.",
         "Bu rehberde önce macOS'in yerleşik depolama araçlarıyla adım adım alan açacağız, ardından aynı işi tek uygulamada toplayan Disk Mop'un macOS 12 ve üzeri için sunduğu özelliklere bakacağız.",
       ],
+      keyTakeaways: [
+        "'Başlangıç diskiniz neredeyse dolu' uyarısı, macOS'in sanal bellek (swap) ve arka plan işlemleri için kritik güvenlik payını kaybettiğini gösterir.",
+        "Macintosh HD biriminin kilitlenmesini veya takılmasını önlemek için diskin en az %10–15'inin daima boş tutulması gerekir.",
+        "Çöp Sepeti'ni boşaltmak ve İndirilenler klasöründeki eski .dmg / .pkg dosyalarını silmek anında 10 ila 30 GB alan kazandırabilir.",
+        "~/Library/Caches altındaki uygulama önbellekleri güvenle silinebilir; uygulamalar gerektiğinde bunları sıfırdan yeniden oluşturur.",
+        "DiskMop for Mac, görsel treemap ve SHA-256 kopya dedektörüyle diski tıkayan dosyaları tek ekranda bulup temizler.",
+      ],
+      dataTable: {
+        caption:
+          "Mac başlangıç diskini dolduran ana öğeler ve temizleme yöntemleri",
+        columns: [
+          "Alan Tüketici",
+          "Yol / Konum",
+          "Tipik Boyut",
+          "Güvenlik",
+          "Temizleme Yöntemi",
+        ],
+        rows: [
+          [
+            "Çöp Sepeti (.Trash)",
+            "Dock > Çöp Sepeti",
+            "5 GB – 30 GB",
+            "Tamamen Güvenli",
+            "Çöp Sepetine sağ tıklayıp 'Boşalt' seçin",
+          ],
+          [
+            "Eski Yükleyiciler ve İndirilenler",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Tamamen Güvenli",
+            "Kurulumu biten kalıp dosyalarını silin",
+          ],
+          [
+            "Uygulama Önbellekleri",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Güvenli",
+            "Uygulama klasörlerindeki Cache verilerini temizleyin",
+          ],
+          [
+            "Sistem Verileri ve Günlükler",
+            "Sistem Ayarları > Saklama Alanı",
+            "10 GB – 40 GB",
+            "Dikkatle İncelenmeli",
+            "Yeniden başlatın, Safari önbelleğini silin",
+          ],
+          [
+            "Yinelenen Fotoğraf ve Belgeler",
+            "Kullanıcı dizinleri",
+            "2 GB – 15 GB",
+            "Tamamen Güvenli",
+            "DiskMop SHA-256 kopya dedektörü ile teke indirin",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Mac Başlangıç Diskinde Güvenle Yer Açma Adımları",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Çöp Sepetini boşaltın",
+            text: "Dock'taki Çöp Sepeti simgesine sağ tıklayın ve 'Çöp Sepetini Boşalt' seçeneğini onaylayın.",
+          },
+          {
+            name: "İndirilenler klasörünü filtreleyin",
+            text: "Finder'da İndirilenler klasörünü açın. Dosyaları boyuta göre sıralayın ve eski .dmg ve .pkg dosyalarını silin.",
+          },
+          {
+            name: "Uygulama önbelleklerini temizleyin",
+            text: "Finder'da Shift+Command+G tuşlarına basıp ~/Library/Caches yazın. Bildiğiniz uygulamaların önbellek klasörlerini temizleyin.",
+          },
+          {
+            name: "Büyük ve gereksiz dosyaları ayıklayın",
+            text: "DiskMop for Mac ile diskinizi taratıp 500 MB üzerindeki devasa dosyaları ve kopyaları tespit edin.",
+          },
+        ],
+      },
       sections: [
         {
           title:
@@ -75,6 +153,30 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question:
+            "Mac başlangıç diski neredeyse dolu uyarısı ne zaman çıkar?",
+          answer:
+            "Macintosh HD birimindeki boş alan toplam kapasitenin yaklaşık %5 ila %10'unun altına düştüğünde macOS bu güvenlik uyarısını görüntüler.",
+        },
+        {
+          question: "Başlangıç diskinde güvenle ne kadar yer açabilirim?",
+          answer:
+            "Çöp Sepeti'ni boşaltarak, ~/Library/Caches altındaki önbellekleri silerek ve İndirilenler klasöründeki eski .dmg yükleyicilerini temizleyerek genelde 15 ila 40 GB arasında boş alan kazanabilirsiniz.",
+        },
+        {
+          question:
+            "Sistem Verileri (System Data) neden bu kadar çok yer kaplar?",
+          answer:
+            "Sistem Verileri; Time Machine yerel anlık görüntülerini (local snapshots), uygulama önbelleklerini, uyku modu imajlarını ve günlük dosyalarını barındırır. Mac'i yeniden başlatmak veya anlık görüntüleri temizlemek bu alanı küçültür.",
+        },
+        {
+          question: "Mac'te disk dolarsa ne olur?",
+          answer:
+            "macOS sanal bellek takası (swap memory) yapamaz hale gelir; uygulamalar kilitlenir, sistem donabilir veya bilgisayar yeniden başlatılırken açılış döngüsüne girebilir.",
+        },
+      ],
       verdict: [
         "Başlangıç diski neredeyse dolu uyarısı, aslında Macintosh HD'nin nefes alacak alana ihtiyacı olduğu anlamına gelir. Çöp Sepeti'ni boşaltmak, İndirilenler klasörünü temizlemek, büyük ve yinelenen dosyaları silmek, önbellekleri temizlemek ve az kullanılan verileri iCloud'a veya harici diske taşımak alanı geri kazandırır — bu adımların tamamı macOS'in yerleşik araçlarıyla ve biraz sabırla yapılabilir.",
         "Disk Mop, tüm bu kontrol listesini macOS 12 ve üzeri için tek uygulamada toplar: Disk Analizi, Büyük Dosya Bulucu, Yinelenen Dosya Dedektörü, İndirilenler Temizleyicisi, önbellek temizliği ve Zamanlanmış Temizlik birlikte çalışarak başlangıç diskinizi elle uğraşmadan temiz tutar. Uygulamayı sınırlı özelliklerle ücretsiz indirebilir, $19.90 tutarında tek seferlik ödemeyle ömür boyu lisansa ve tüm özelliklere sahip olabilirsiniz.",
@@ -91,6 +193,83 @@ export const macStartupDiskFull: Article = {
         "macOS constantly needs free disk space to run smoothly: it swaps memory to disk when your RAM fills up, writes temporary files for apps, and downloads system updates that weigh several gigabytes. When the disk fills up, apps slow down, files refuse to save, and updates fail halfway through.",
         "In this guide we will first free up space step by step with the storage tools built into macOS, then look at how Disk Mop bundles the same job into a single app for macOS 12 and later.",
       ],
+      keyTakeaways: [
+        "The 'Your startup disk is almost full' alert triggers when free storage drops below the critical 5-10% threshold required for macOS virtual memory swap.",
+        "Keeping at least 10–15% of Macintosh HD free prevents severe system slowdowns, app crashes, and update installation failures.",
+        "Emptying the Trash and deleting leftover .dmg / .pkg installers from Downloads immediately frees up 10 to 30 GB on average.",
+        "Application caches in ~/Library/Caches can be safely deleted; active apps recreate them automatically as needed.",
+        "DiskMop for Mac visualizes storage hogs using a live treemap and identifies duplicate media via byte-level SHA-256 hashing.",
+      ],
+      dataTable: {
+        caption:
+          "Main space consumers on Mac startup disk and cleaning methods",
+        columns: [
+          "Storage Consumer",
+          "Location / Path",
+          "Typical Size",
+          "Safety Level",
+          "Recommended Action",
+        ],
+        rows: [
+          [
+            "Trash (.Trash)",
+            "Dock > Trash",
+            "5 GB – 30 GB",
+            "Completely Safe",
+            "Right-click Trash in Dock and select 'Empty Trash'",
+          ],
+          [
+            "Old Installers & Downloads",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Completely Safe",
+            "Delete disk images after software installation",
+          ],
+          [
+            "App & System Caches",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Safe",
+            "Clear user cache folders without touching system binaries",
+          ],
+          [
+            "System Data & Logs",
+            "System Settings > General > Storage",
+            "10 GB – 40 GB",
+            "Review Carefully",
+            "Purge local Time Machine snapshots and reboot Mac",
+          ],
+          [
+            "Duplicate Photos & Files",
+            "User Home Directories",
+            "2 GB – 15 GB",
+            "Completely Safe",
+            "Use DiskMop SHA-256 duplicate scanner to keep only originals",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Free Up Storage on a Mac Startup Disk",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Empty the Mac Trash",
+            text: "Right-click the Trash icon in your Dock and click 'Empty Trash' to permanently reclaim disk blocks.",
+          },
+          {
+            name: "Prune the Downloads folder",
+            text: "Open Finder, go to Downloads, sort by size, and remove outdated .dmg disk images and .zip archives.",
+          },
+          {
+            name: "Clean application caches",
+            text: "Press Shift+Command+G in Finder, enter ~/Library/Caches, and purge cache directories for unneeded apps.",
+          },
+          {
+            name: "Detect large files and duplicates",
+            text: "Launch DiskMop for Mac to run an interactive treemap scan and remove redundant files over 500 MB.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What the Startup Disk Is Almost Full Warning Really Means",
@@ -146,6 +325,29 @@ export const macStartupDiskFull: Article = {
             "Disk Mop is built for exactly this kind of maintenance. Scheduled Cleanup runs weekly or monthly cleaning tasks automatically, clearing caches, old downloads, and the Trash before they pile up, while the System Health Score gives you an at-a-glance indicator of how your Mac is doing.",
             "With a routine in place, the 'startup disk almost full' warning becomes a thing of the past. Your Mac keeps a healthy buffer of free space for memory swapping and updates, and you never have to clear tens of gigabytes in a hurry again.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question:
+            "When does macOS display 'Your startup disk is almost full'?",
+          answer:
+            "macOS triggers this alert when available disk storage falls below approximately 5% to 10% of total drive capacity, threatening swap memory operations.",
+        },
+        {
+          question: "How much free disk space should I maintain on Mac?",
+          answer:
+            "It is best practice to keep at least 15% to 20% of your startup disk free to allow macOS to swap RAM, download OS updates, and avoid filesystem fragmentation.",
+        },
+        {
+          question: "What causes 'System Data' to take up so much Mac storage?",
+          answer:
+            "System Data includes local Time Machine APFS snapshots, Xcode caches, browser databases, virtual memory swap files, and application caches.",
+        },
+        {
+          question: "Will deleting cache files harm my Mac?",
+          answer:
+            "No. Deleting user caches in ~/Library/Caches is safe. Applications will regenerate fresh cache files automatically when launched.",
         },
       ],
       verdict: [

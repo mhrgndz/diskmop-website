@@ -5,18 +5,89 @@ export const winsxsCleanup: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-17",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
       title: "WinSxS Klasörü Temizleme: Güvenli Yöntem (Windows 11/10)",
       metaDescription:
-        "WinSxS klasörü temizleme rehberi: klasörün neden büyük göründüğünü, DISM StartComponentCleanup komutunu ve güvenli küçültme adımlarını öğrenin.",
+        "WinSxS klasörü temizleme rehberi: klasörün neden büyük göründüğünü, DISM StartComponentCleanup komutunu ve güvenli küçültme adımların öğrenin.",
       subtitle: "WinSxS Klasörünü Silmeden Güvenle Küçültme Rehberi",
       intro: [
         "WinSxS klasörü aslında göründüğünden çok daha küçüktür: Windows, sistem dosyalarının çoğunu WinSxS'e işaret eden sabit bağlantılar (hard link) olarak tutar ve Dosya Gezgini aynı dosyayı birden fazla kez sayar. Bu klasörü asla elle silmemelisiniz; Windows'un açılması, güncellenmesi ve kendini onarması için gereken bileşenler burada durur. Güvenli WinSxS klasörü temizleme yolu, yerleşik Dism.exe /Online /Cleanup-Image /StartComponentCleanup komutu ve Disk Temizleme aracındaki Windows Update Temizliği seçeneğidir.",
         "Bu rehberde önce WinSxS'in ne olduğunu ve boyutunun neden yanıltıcı olduğunu açıklayacağız. Ardından gerçek boyutu DISM ile nasıl ölçeceğinizi, klasörü hangi komutlarla güvenle küçülteceğinizi ve güncelleme kalıntılarının birikmesini nasıl önleyeceğinizi adım adım göstereceğiz.",
         "İnternette dolaşan 'WinSxS'i silin, 10 GB kazanın' tarzı tavsiyelerin aksine, buradaki her adım Microsoft'un desteklediği yöntemlere dayanır. Amacımız disk alanı kazanırken sisteminizin güncellenebilir ve onarılabilir kalmasını sağlamaktır.",
       ],
+      keyTakeaways: [
+        "WinSxS (Windows Side-by-Side) klasörü işletim sisteminin bileşen deposudur; asla elle veya Dosya Gezgini'nden silinmemelidir.",
+        "Dosya Gezgini'nin gösterdiği boyut yanıltıcıdır; sabit bağlantılar (hard links) nedeniyle dosyalar mükerrer sayılır.",
+        "Gerçek boyutu görmek için yönetici terminalinde 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' komutu çalıştırılmalıdır.",
+        "Resmi ve güvenli küçültme komutu 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' ile eski güncelleme bileşenleri temizlenir.",
+        "Disk Temizleme (cleanmgr) veya Ayarlar > Depolama üzerinden 'Windows Update Temizliği' yapılarak 4–10 GB alan açılabilir.",
+      ],
+      dataTable: {
+        caption:
+          "WinSxS temizleme yöntemleri, komutları ve güvenlik seviyeleri",
+        columns: [
+          "Temizleme Yöntemi",
+          "Komut / Araç",
+          "Geri Alınabilirlik",
+          "Güvenlik",
+          "Etki",
+        ],
+        rows: [
+          [
+            "DISM Standart Temizlik",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Güncellemeler kaldırılabilir",
+            "Tamamen Güvenli",
+            "Eski bileşen sürümlerini temizler (2-8 GB)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Güncelleme geri alınamaz",
+            "Dikkatle Kullanılmalı",
+            "Mevcut tüm yamaları kalıcı kılar, maksimum alan açar",
+          ],
+          [
+            "Disk Temizleme",
+            "cleanmgr.exe (Sistem Dosyaları)",
+            "Güncellemeler kaldırılabilir",
+            "Tamamen Güvenli",
+            "GUI üzerinden Windows Update kalıntılarını siler",
+          ],
+          [
+            "Elle Dosya Silme",
+            "C:\\Windows\\WinSxS elle silme",
+            "Geri dönüşü yok (Sistem çöker)",
+            "KESİNLİKLE YASAK",
+            "Windows açılışını bozar, SFC/DISM çalışmaz",
+          ],
+        ],
+      },
+      howTo: {
+        name: "WinSxS Klasörünü DISM ile Güvenle Küçültme",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Yönetici Komut İstemi açın",
+            text: "Başlat menüsüne 'cmd' veya 'PowerShell' yazıp sağ tıklayarak 'Yönetici olarak çalıştır'ı seçin.",
+          },
+          {
+            name: "Bileşen deposunu analiz edin",
+            text: "'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' komutunu girip gerçek boyutu ve temizlik önerisini görün.",
+          },
+          {
+            name: "Bileşen temizleme komutunu çalıştırın",
+            text: "'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' komutunu girin ve işlemin %100 tamamlanmasını bekleyin.",
+          },
+          {
+            name: "Bilgisayarı yeniden başlatın",
+            text: "İşlem bittiğinde bilgisayarınızı yeniden başlatarak silinen bileşenlerin disk alanını serbest bırakmasını sağlayın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "WinSxS Klasörü Nedir ve Neden Bu Kadar Büyük Görünür?",
@@ -69,6 +140,28 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "WinSxS klasöründeki dosyaları elle silersem ne olur?",
+          answer:
+            "Windows'un açılışı bozulabilir, sistem güncellemeleri yüklenemez ve sfc /scannow gibi onarım araçları çalışmaz hale gelir. Asla elle silinmemelidir.",
+        },
+        {
+          question: "WinSxS klasörü neden 15-20 GB gibi devasa görünüyor?",
+          answer:
+            "Dosya Gezgini NTFS sabit bağlantılarını (hard links) ayrı dosyalar gibi hesaplar. Gerçek disk kullanımı genellikle görünenin yarısı kadardır.",
+        },
+        {
+          question: "/ResetBase parametresi ne işe yarar?",
+          answer:
+            "/ResetBase bayrağı, güncellenmiş bileşenlerin önceki tüm sürümlerini silerek maksimum alan açar; ancak yüklü güncellemeleri kaldırma yeteneğini devre dışı bırakır.",
+        },
+        {
+          question: "WinSxS temizliği ne kadar sürer?",
+          answer:
+            "İşlemcinizin ve SSD/HDD sürücünüzün hızına bağlı olarak StartComponentCleanup işlemi genellikle 5 ila 25 dakika arasında sürer.",
+        },
+      ],
       verdict: [
         "WinSxS klasörünün korkutucu boyutu büyük ölçüde bir yanılsamadır: sabit bağlantılar Dosya Gezgini'nin rakamını şişirir ve klasörü elle silmek Windows'u kullanılamaz hale getirebilir. Gerçek boyutu Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore ile ölçüp, temizliği StartComponentCleanup komutuna ve Disk Temizleme'deki Windows Update Temizleme seçeneğine bırakmak hem güvenli hem de yeterlidir.",
         "Bileşen deposu dışında kalan her şey için Disk Mop devreye girer: disk analizi alanı neyin yediğini görselleştirir, önbellek ve indirme temizleyicileri birikintileri kaldırır, zamanlanmış temizlik ise bakımı otomatiğe bağlar. 19,90 dolarlık tek seferlik lisansla Windows ve macOS'te ömür boyu kullanabilirsiniz; ücretsiz sürümle denemeye hemen başlayabilirsiniz.",
@@ -85,6 +178,76 @@ export const winsxsCleanup: Article = {
         "In this guide we'll first explain what WinSxS actually is and why its reported size is misleading. Then we'll show you how to measure its real footprint with DISM, which exact commands shrink it safely, and how to keep update leftovers from piling up again.",
         "Unlike the 'delete WinSxS and reclaim 10 GB' advice floating around the internet, every step here relies on methods Microsoft supports. The goal is to free disk space while keeping your system updatable and repairable.",
       ],
+      keyTakeaways: [
+        "The WinSxS folder is the central Windows component store; never attempt to delete it manually from File Explorer.",
+        "Reported folder size in File Explorer is deceptive due to NTFS hard links that cause system binaries to be counted multiple times.",
+        "Check actual disk footprint with the elevated command 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Shrink superseded update packages safely using 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "Disk Cleanup (cleanmgr) under 'Windows Update Cleanup' accomplishes safe component cleanup through a graphical interface.",
+      ],
+      dataTable: {
+        caption:
+          "WinSxS component store reduction techniques, commands, and risk profiles",
+        columns: [
+          "Method",
+          "Command / Utility",
+          "Rollback Capability",
+          "Safety Level",
+          "Storage Impact",
+        ],
+        rows: [
+          [
+            "DISM Standard Cleanup",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Retained",
+            "Completely Safe",
+            "Removes superseded components (2-8 GB reclaimed)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Disabled",
+            "Use with Caution",
+            "Commits installed updates permanently; maximizes space",
+          ],
+          [
+            "Windows Disk Cleanup",
+            "cleanmgr.exe (Clean up system files)",
+            "Retained",
+            "Completely Safe",
+            "Purges update caches via native GUI",
+          ],
+          [
+            "Manual Deletion",
+            "Deleting C:\\Windows\\WinSxS",
+            "None (Critical Failure)",
+            "PROHIBITED",
+            "Breaks OS boot, renders SFC / DISM unusable",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Shrink the WinSxS Folder with DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Launch elevated Terminal",
+            text: "Right-click the Start menu button and select 'Terminal (Admin)' or 'Command Prompt (Admin)'.",
+          },
+          {
+            name: "Analyze Component Store",
+            text: "Execute 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' to inspect true disk usage and cleanup flags.",
+          },
+          {
+            name: "Run StartComponentCleanup",
+            text: "Execute 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' and wait until the progress reaches 100%.",
+          },
+          {
+            name: "Reboot your computer",
+            text: "Restart Windows to finalize file de-allocations and reclaim your storage capacity.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What Is the WinSxS Folder and Why It Looks Huge",
@@ -133,6 +296,28 @@ export const winsxsCleanup: Article = {
             "The rest of your drive isn't so lucky: downloaded installers, application caches, and the recycle bin keep growing quietly. Disk Mop's Scheduled Cleanup feature sweeps that buildup on a weekly or monthly schedule, while the one-click Speed Up feature clears old downloads, system and browser caches, and the recycle bin in a single pass.",
             "The System Health Score gives you an at-a-glance view of your disk's overall condition, so a dropping score tells you it's time to clean. With DISM keeping the component store in check and Disk Mop covering everything else, your C: drive won't silently fill up again.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Can I manually delete the WinSxS folder?",
+          answer:
+            "No, never delete it manually. Doing so breaks Windows Update, corrupts system dependencies, and can prevent Windows from booting.",
+        },
+        {
+          question: "Why does WinSxS show up as 15 GB+ in File Explorer?",
+          answer:
+            "File Explorer cannot distinguish NTFS hard links from independent files, counting the same physical storage blocks multiple times.",
+        },
+        {
+          question: "What does the /ResetBase parameter do in DISM?",
+          answer:
+            "It permanently commits installed patches and discards all rollback binaries, freeing maximum storage at the cost of being unable to uninstall recent updates.",
+        },
+        {
+          question: "How long does StartComponentCleanup take?",
+          answer:
+            "Depending on CPU speed and drive performance (SSD vs HDD), component cleanup usually takes between 5 and 20 minutes.",
         },
       ],
       verdict: [

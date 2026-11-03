@@ -5,6 +5,7 @@ export const pagefileHiberfil: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-17",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -17,6 +18,68 @@ export const pagefileHiberfil: Article = {
         "Pagefile.sys ve hiberfil.sys silinir mi? Kısa cevap: hiberfil.sys'i, yönetici olarak açtığınız bir terminalde powercfg -h off komutunu çalıştırarak güvenle kaldırabilirsiniz; Windows dosyayı anında siler. Pagefile.sys ise Windows'un sanal bellek dosyasıdır ve silinmesi önerilmez; onu sistem yönetimine bırakmak en güvenli seçenektir.",
         "Bu iki dosya birçok bilgisayarda toplamda 10-20 GB'tan fazla yer kaplar ve normal dosyalar gibi silinemez: Windows çalışırken ikisini de kilitler. Bu rehberde bu dosyaların ne işe yaradığını, hiberfil.sys'in hazırda bekletmeyi kapatarak nasıl güvenle kaldırılacağını, pagefile.sys'e neden dokunmamanız gerektiğini ve aynı gigabaytları çok daha az riskle nasıl geri kazanabileceğinizi adım adım anlatacağız.",
       ],
+      keyTakeaways: [
+        "hiberfil.sys, yönetici terminalinde 'powercfg -h off' komutu çalıştırılarak güvenle ve anında silinebilir (6-16 GB alan açar).",
+        "pagefile.sys, Windows'un sanal bellek (RAM swap) dosyasıdır; asla tamamen kapatılmamalıdır (uygulama çökmelerine ve mavi ekrana yol açabilir).",
+        "Dizüstü bilgisayarlarda hazırda bekletmeyi kapatmak pil tasarrufunu ve 'Hızlı Başlangıç'ı devre dışı bırakır; alternatif olarak 'powercfg /h /type reduced' kullanılabilir.",
+        "Pagefile dosyasını silmek yerine boyutu küçültülebilir veya ikinci bir SSD/HDD sürücüsüne taşınabilir.",
+        "DiskMop ile diskinizi taratarak sistem dosyalarını riske atmadan önbellek, kopya ve büyük indirmeleri temizleyebilirsiniz.",
+      ],
+      dataTable: {
+        caption: "Windows sanal bellek ve uyku dosyaları karşılaştırması",
+        columns: [
+          "Dosya Adı",
+          "İşlevi",
+          "Tipik Boyut",
+          "Güvenle Silinir mi?",
+          "Kaldırma / Yönetim Yöntemi",
+        ],
+        rows: [
+          [
+            "hiberfil.sys",
+            "Hazırda Bekletme ve Hızlı Başlangıç imajı",
+            "RAM'in %40–%100'ü (6–32 GB)",
+            "Evet (Güvenli)",
+            "CMD'de 'powercfg -h off' komutuyla",
+          ],
+          [
+            "pagefile.sys",
+            "Sanal Bellek (RAM takas alanı)",
+            "4 GB – 16 GB+",
+            "HAYIR (Önerilmez)",
+            "sysdm.cpl > Sanal Bellek ayarlarından yeniden boyutlandırın",
+          ],
+          [
+            "swapfile.sys",
+            "UWP ve Microsoft Store uygulamaları",
+            "256 MB – 512 MB",
+            "Hayır (Önemsiz Boyut)",
+            "Pagefile ile birlikte sistem tarafından yönetilir",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Hiberfil.sys Dosyasını Kaldırarak Disk Alanı Açma",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Yönetici Komut İstemi açın",
+            text: "Win+X tuşlarına basıp 'Terminal (Yönetici)' veya 'Komut İstemi (Yönetici)' seçeneğini seçin.",
+          },
+          {
+            name: "Hazırda bekletmeyi kapatın",
+            text: "'powercfg -h off' yazıp Enter tuşuna basın. Komut sessizce tamamlanacak ve hiberfil.sys anında silinecektir.",
+          },
+          {
+            name: "Alternatif: Dosyayı küçültün (Dizüstü kullanıcıları için)",
+            text: "Hızlı başlangıcı korumak istiyorsanız 'powercfg /h /type reduced' komutuyla dosya boyutunu yarıya indirebilirsiniz.",
+          },
+          {
+            name: "Açılan disk alanını doğrulayın",
+            text: "Bu Bilgisayar > C: sürücüsüne bakarak 6 ila 16 GB boş alanın hemen eklendiğini kontrol edin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Pagefile.sys, Hiberfil.sys ve Swapfile.sys Nedir?",
@@ -68,6 +131,30 @@ export const pagefileHiberfil: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question:
+            "hiberfil.sys dosyasını silmek bilgisayarıma zarar verir mi?",
+          answer:
+            "Hayır, bilgisayarınıza zarar vermez. Yalnızca 'Hazırda Beklet' seçeneği ve Windows 'Hızlı Başlatma' (Fast Startup) özelliği devre dışı kalır.",
+        },
+        {
+          question:
+            "pagefile.sys dosyasını tamamen devre dışı bırakırsam ne olur?",
+          answer:
+            "32 GB RAM'iniz olsa dahi bazı oyunlar ve profesyonel yazılımlar belleğe ayrılmış alan yetersizliği vererek aniden çökebilir veya Windows mavi ekran dökümü alamaz.",
+        },
+        {
+          question: "powercfg -h off komutunu geri almak mümkün mü?",
+          answer:
+            "Evet, fikrinizi değiştirirseniz yönetici terminalinde 'powercfg -h on' yazarak hazırda bekletmeyi ve hiberfil.sys dosyasını anında geri getirebilirsiniz.",
+        },
+        {
+          question: "Pagefile dosyasını D: sürücüsüne taşıyabilir miyim?",
+          answer:
+            "Evet. Gelişmiş Sistem Ayarları > Performans > Gelişmiş > Sanal Bellek menüsünden C: sürücüsündeki disk belleğini kapatıp D: sürücüsü için açabilirsiniz.",
+        },
+      ],
       verdict: [
         "Özetle: hiberfil.sys, powercfg -h off komutuyla güvenle kaldırılabilir; karşılığında hazırda bekletme ve hızlı başlangıç özelliklerinden vazgeçersiniz. Pagefile.sys silinmemeli, çoğu durumda sistem yönetimli boyutta bırakılmalıdır; swapfile.sys ise zaten o kadar küçüktür ki uğraşmaya değmez. Bu dosyalara dokunmadan önce asıl alan kaybının nerede olduğunu görmek her zaman daha akıllıcadır.",
         "Disk Mop tam bu noktada devreye girer: disk analizi ve büyük dosya bulucu diskinizi gerçekte neyin doldurduğunu gösterir, Speed Up eski indirmeleri, önbellekleri ve geri dönüşüm kutusunu tek tıkla temizler, zamanlanmış temizlik ise kazandığınız alanın kalıcı olmasını sağlar. Sistem dosyalarını riske atmadan aynı gigabaytları geri kazanmanın en kolay yolu budur.",
@@ -83,6 +170,68 @@ export const pagefileHiberfil: Article = {
         "Can you delete pagefile.sys and hiberfil.sys? The short answer: you can safely remove hiberfil.sys by running powercfg -h off in an administrator terminal, and Windows will delete the file instantly. Pagefile.sys, however, is Windows' virtual memory file and should not be deleted — leaving it system managed is the safe choice.",
         "Together these two files often occupy well over 10-20 GB, and you cannot delete them like normal files because Windows keeps both locked while it is running. In this guide we'll explain what each file actually does, show the safe way to remove hiberfil.sys by disabling hibernation, explain why pagefile.sys deserves to stay, and walk through lower-risk ways to reclaim the same gigabytes of disk space.",
       ],
+      keyTakeaways: [
+        "hiberfil.sys can be safely removed by running 'powercfg -h off' in an elevated terminal, immediately reclaiming 6 to 16+ GB.",
+        "pagefile.sys provides critical virtual memory swapping; disabling it entirely triggers program crashes, out-of-memory errors, and broken crash dumps.",
+        "On laptops, disabling hibernation turns off Fast Startup and low-battery auto-hibernate; consider 'powercfg /h /type reduced' as a balanced compromise.",
+        "Rather than deleting pagefile.sys, configure a custom fixed size or relocate it to a secondary SSD volume.",
+        "DiskMop safely scans and reclaims space from caches, downloads, and duplicate media without touching sensitive system files.",
+      ],
+      dataTable: {
+        caption: "Windows virtual memory and hibernation system files overview",
+        columns: [
+          "File Name",
+          "Primary Function",
+          "Typical Size",
+          "Safe to Delete?",
+          "Management Method",
+        ],
+        rows: [
+          [
+            "hiberfil.sys",
+            "Hibernation and Fast Startup memory dump",
+            "40%–100% of RAM (6–32 GB)",
+            "Yes (Safe)",
+            "Run 'powercfg -h off' in admin terminal",
+          ],
+          [
+            "pagefile.sys",
+            "Virtual memory paging file (RAM overflow)",
+            "4 GB – 16 GB+",
+            "NO (Not Recommended)",
+            "Resize or relocate via sysdm.cpl Virtual Memory dialog",
+          ],
+          [
+            "swapfile.sys",
+            "Suspension data for UWP & Store apps",
+            "256 MB – 512 MB",
+            "No (Negligible size)",
+            "Managed automatically alongside pagefile.sys",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Remove Hiberfil.sys to Free Disk Space",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Open elevated Terminal",
+            text: "Press Win+X and choose 'Terminal (Admin)' or 'Command Prompt (Admin)'.",
+          },
+          {
+            name: "Disable hibernation",
+            text: "Type 'powercfg -h off' and press Enter. The command completes silently and deletes hiberfil.sys instantly.",
+          },
+          {
+            name: "Alternative: Reduce file size",
+            text: "To preserve Fast Startup, execute 'powercfg /h /type reduced' to shrink hiberfil.sys to roughly 50% capacity.",
+          },
+          {
+            name: "Verify recovered storage",
+            text: "Open File Explorer and check drive C: to see the freed storage immediately available.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What Are Pagefile.sys, Hiberfil.sys and Swapfile.sys?",
@@ -131,6 +280,28 @@ export const pagefileHiberfil: Article = {
             "Disk Mop's Disk Analysis scans your drive into a visual treemap that shows the largest folders at a glance. The Large File Finder lists every file over 500 MB, and the Duplicate Detector compares files with SHA-256 hashes, so identical photos, videos and documents are identified with certainty rather than guesswork — no risk of deleting a file that merely looks similar.",
             "You can download Disk Mop for free with limited features; the Pro version is a one-time $19.90 payment for a lifetime license. Disabling hibernation saves you a few gigabytes exactly once — seeing what really fills your drive keeps paying off month after month.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Will deleting hiberfil.sys harm my computer?",
+          answer:
+            "No. It does not harm Windows in any way; it simply disables the Hibernate power state and the Windows Fast Startup feature.",
+        },
+        {
+          question: "What happens if I disable pagefile.sys completely?",
+          answer:
+            "Even systems with 32 GB or 64 GB of RAM will experience out-of-memory crashes in modern games and creativity suites that require a virtual commit charge.",
+        },
+        {
+          question: "Can I reverse the 'powercfg -h off' command?",
+          answer:
+            "Yes, you can re-enable hibernation at any time by running 'powercfg -h on' in an elevated terminal.",
+        },
+        {
+          question: "Can I move pagefile.sys to another drive?",
+          answer:
+            "Yes. Open Advanced System Settings (sysdm.cpl) > Performance Settings > Advanced > Virtual Memory, disable paging on drive C:, and enable it on drive D:.",
         },
       ],
       verdict: [

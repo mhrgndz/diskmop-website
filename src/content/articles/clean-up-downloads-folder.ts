@@ -5,6 +5,7 @@ export const cleanUpDownloadsFolder: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-07-16",
+  updated: "2026-11-03",
   readingTime: 6,
   content: {
     tr: {
@@ -17,6 +18,83 @@ export const cleanUpDownloadsFolder: Article = {
         "İndirilenler klasörünü temizlemek için klasörü Dosya Gezgini veya Finder'da açın, dosyaları tarihe ve boyuta göre sıralayın, artık ihtiyaç duymadığınız kurulum dosyalarını ve eski indirmeleri silin, ardından alanı gerçekten boşaltmak için Geri Dönüşüm Kutusu'nu boşaltın. İndirilenler'deki hemen her dosya başka bir yerden gelen bir kopya olduğu için burası bilgisayarınızda en güvenle temizlenebilecek klasörlerden biridir.",
         "Çoğu bilgisayarda İndirilenler, farkında olunmadan en çok yer kaplayan tek klasör haline gelir: yıllar içinde biriken kurulum dosyaları, ZIP arşivleri, PDF'ler ve e-posta ekleri sessizce gigabaytlarca alan kaplar. Bu rehberde, dosyaları tek tek gözden geçirmek yerine önce kategorilere ayırıp sonra silen bir iş akışını hem Windows hem de Mac için adım adım anlatacağız.",
       ],
+      keyTakeaways: [
+        "İndirilenler klasörü içeriğini silmek %100 güvenlidir çünkü dosyalar internetten, e-postalardan veya harici kaynaklardan gelen ikincil kopyalardır.",
+        "Kurulum dosyaları (.exe, .msi, .dmg, .pkg) ve içeriği çıkarılmış ZIP arşivleri program kurulduktan sonra diskte gereksizce gigabaytlarca yer tutar.",
+        "Aynı dosyanın birden çok kez indirilmesiyle oluşan kopyalar ('dosya (1).pdf') SHA-256 algoritmasıyla taranarak teke indirilmelidir.",
+        "Dosyaları sildikten sonra diskin boşalması için Windows'ta Geri Dönüşüm Kutusu'nu, Mac'te Çöp Sepeti'ni boşaltmak şarttır.",
+        "DiskMop Downloads Cleaner, indirmeleri kurulum dosyaları, arşivler, belgeler ve medya olarak gruplayıp toplu temizlik imkanı sunar.",
+      ],
+      dataTable: {
+        caption:
+          "İndirilenler klasöründe en çok yer kaplayan dosya türleri ve temizlik kuralları",
+        columns: [
+          "Dosya Türü",
+          "Uzantılar",
+          "Tipik Boyut",
+          "Güvenlik Derecesi",
+          "Önerilen Eylem",
+        ],
+        rows: [
+          [
+            "Yazılım Kurulum Paketleri",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Tamamen Güvenli",
+            "Kurulum biter bitmez silin",
+          ],
+          [
+            "Sıkıştırılmış Arşivler",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Tamamen Güvenli",
+            "İçeriği çıkarıldıktan sonra arşiv dosyasını silin",
+          ],
+          [
+            "Yinelenen İndirmeler",
+            "*(1).*, *(2).* adlandırmaları",
+            "2 GB – 10 GB",
+            "Tamamen Güvenli",
+            "SHA-256 kopya dedektörüyle gereksiz kopyaları silin",
+          ],
+          [
+            "Eski PDF ve Belgeler",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Önizleme Gerekir",
+            "Önemli belgeleri Belgeler klasörüne taşıyıp kalanı silin",
+          ],
+          [
+            "Disk İmajları ve ISO'lar",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Tamamen Güvenli",
+            "Kullanımı biten kalıp dosyalarını kaldırın",
+          ],
+        ],
+      },
+      howTo: {
+        name: "İndirilenler Klasörünü Adım Adım Temizleme",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Boyuta ve tarihe göre sıralayın",
+            text: "Dosya Gezgini veya Finder'da İndirilenler'i açın. Ayrıntılar görünümünde 'Boyut' ve 'Değiştirilme Tarihi' sütununa tıklayarak sıralayın.",
+          },
+          {
+            name: "Eski kurulum kalıplarını ayıklayın",
+            text: ".exe, .msi, .dmg ve .pkg uzantılı yükleyicileri topluca seçip silin.",
+          },
+          {
+            name: "Yinelenen dosyaları bulun",
+            text: "DiskMop Yinelenen Dosya Dedektörü ile Downloads klasörünü taratarak mükerrer indirilmiş aynı dosyaları kaldırın.",
+          },
+          {
+            name: "Geri Dönüşüm Kutusunu boşaltın",
+            text: "Masaüstünde Geri Dönüşüm Kutusuna (Mac'te Çöp Sepetine) sağ tıklayıp 'Boşalt' seçeneğini kullanarak disk alanını geri kazanın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "İndirilenler Klasörü Neden Dijital Bir Çöplüğe Dönüşür",
@@ -68,6 +146,31 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question:
+            "İndirilenler klasöründeki her şeyi silersem kurulu programlarım bozulur mu?",
+          answer:
+            "Hayır. İndirilen .exe, .msi veya .dmg dosyaları yalnızca kurulum aracıdır; program bilgisayarınıza bir kez kurulduktan sonra bu kurulum dosyalarına ihtiyaç duymaz.",
+        },
+        {
+          question: "İndirilenler klasörünün kendisini silebilir miyim?",
+          answer:
+            "Hayır, klasörün kendisini silmemelisiniz. Windows ve macOS sistem dizinleri bu klasöre bağımlıdır; yalnızca içindeki dosyaları temizlemelisiniz.",
+        },
+        {
+          question:
+            "İndirilen dosyaları sildim ama disk alanı açılmadı, neden?",
+          answer:
+            "Sildiğiniz dosyalar Geri Dönüşüm Kutusu'na (Mac'te Çöp Sepeti) taşınmıştır. Disk alanını geri kazanmak için kutuyu sağ tıklayıp tamamen boşaltmanız gerekir.",
+        },
+        {
+          question:
+            "İndirilenler klasörünün otomatik temizlenmesini nasıl sağlarım?",
+          answer:
+            "Windows'ta Ayarlar > Sistem > Depolama > Depolama Algılayıcısı ile belirli gün sonra otomatik silme ayarlayabilir veya DiskMop Zamanlanmış Temizlik ile periyodik temizlik kurabilirsiniz.",
+        },
+      ],
       verdict: [
         "İndirilenler klasörünü temizlemenin en etkili yolu düzenli bir akış izlemektir: dosyaları tarihe ve boyuta göre sıralayın, türlerine göre kategorilere ayırıp eski olanları toplu silin, yinelenen kopyaları yakalayın, ardından alanı gerçekten kazanmak için Geri Dönüşüm Kutusu'nu boşaltın. Son olarak bir zamanlama kurarak aynı yığının bir daha oluşmasını engelleyin.",
         "Disk Mop bu akışın her adımını tek uygulamada toplar: neredeyse hiçbir rakipte bulunmayan İndirilenler Temizleyicisi dosyaları kategorilere ayırır, SHA-256 tabanlı Yinelenen Dosya Dedektörü kopyaları bulur, Zamanlanmış Temizlik ise düzeni kalıcı hale getirir. Uygulamayı ücretsiz indirip deneyebilir, tüm özellikleri tek seferlik $19.90 ödemeyle ömür boyu açabilirsiniz.",
@@ -84,6 +187,83 @@ export const cleanUpDownloadsFolder: Article = {
         "To clean up your Downloads folder, open it in File Explorer or Finder, sort the files by date and size, delete old installers and files you no longer need, then empty the Recycle Bin or Trash to actually reclaim the space. Because almost everything in Downloads is a copy of a file that exists somewhere else, it is one of the safest folders on your computer to clean.",
         "On most computers, Downloads quietly becomes the single biggest junk drawer on the disk: years of installers, ZIP archives, PDFs, and email attachments pile up into gigabytes of wasted space. In this guide, we'll walk through a categorize-then-delete workflow for both Windows and Mac — a far faster approach than scrolling through hundreds of mixed files one by one.",
       ],
+      keyTakeaways: [
+        "Deleting the contents of your Downloads folder is 100% safe as files are secondary copies fetched from web browsers and email clients.",
+        "Installer packages (.exe, .msi, .dmg, .pkg) and extracted ZIP archives waste gigabytes of SSD space once software is installed.",
+        "Repeated downloads created with duplicate suffixes ('file (1).pdf') can be purged using SHA-256 byte-level hash verification.",
+        "Deleted files stay in the Recycle Bin or Trash until manually emptied, occupying drive capacity until purged.",
+        "DiskMop Downloads Cleaner groups items by category (installers, archives, media, documents) for selective one-click pruning.",
+      ],
+      dataTable: {
+        caption:
+          "Top storage consumers in Downloads folder and recommended cleanup policy",
+        columns: [
+          "File Category",
+          "File Extensions",
+          "Typical Footprint",
+          "Safety Level",
+          "Recommended Action",
+        ],
+        rows: [
+          [
+            "Software Installers",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Completely Safe",
+            "Delete immediately after installation",
+          ],
+          [
+            "Compressed Archives",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Completely Safe",
+            "Delete archive once contents are extracted",
+          ],
+          [
+            "Duplicate Downloads",
+            "*(1).*, *(2).* filename patterns",
+            "2 GB – 10 GB",
+            "Completely Safe",
+            "Use SHA-256 duplicate scanner to keep one copy",
+          ],
+          [
+            "Old PDFs & Docs",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Review Required",
+            "Relocate critical docs to Documents, purge rest",
+          ],
+          [
+            "Disk Images & ISOs",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Completely Safe",
+            "Eject and delete obsolete operating system images",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Clean Up the Downloads Folder",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Sort by size and date",
+            text: "Open Downloads in File Explorer or Finder. Switch to Details list view and click the 'Size' or 'Date Modified' header.",
+          },
+          {
+            name: "Delete old installer packages",
+            text: "Select and remove obsolete setup executables and disk images (.exe, .msi, .dmg, .pkg).",
+          },
+          {
+            name: "Scan for duplicate downloads",
+            text: "Run DiskMop Duplicate Detector to identify redundant copies of photos, media, and documents.",
+          },
+          {
+            name: "Empty Recycle Bin / Trash",
+            text: "Right-click the Recycle Bin in Windows (or Trash in macOS) and choose 'Empty' to commit freed blocks to the drive.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Why the Downloads Folder Becomes a Junk Drawer",
@@ -132,6 +312,28 @@ export const cleanUpDownloadsFolder: Article = {
             "Disk Mop's Scheduled Cleanup automates the routine entirely: set up weekly or monthly tasks and it will regularly clear old downloads, system and browser caches, and the recycle bin without you thinking about it. And when you want a quick refresh between schedules, the Speed Up feature cleans old downloads, caches, and the recycle bin in a single click.",
             "With a schedule in place, Downloads stops being an archive and becomes what it should have been all along: a temporary inbox where files arrive, get handled, and move on.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Will deleting Downloads break installed applications?",
+          answer:
+            "No. Downloaded .exe, .msi, or .dmg files are installation media. Once installed, programs run from Program Files or Applications independently.",
+        },
+        {
+          question: "Should I delete the Downloads folder itself?",
+          answer:
+            "No, never delete the system Downloads folder directory. Only clean the files and subfolders residing inside it.",
+        },
+        {
+          question: "Why didn't my disk space increase after deleting files?",
+          answer:
+            "Deleted items are stored in your Recycle Bin (Windows) or Trash (Mac). You must empty the bin to physically reclaim the storage.",
+        },
+        {
+          question: "How do I automate Downloads folder cleaning?",
+          answer:
+            "On Windows, enable Storage Sense under Settings > System > Storage. On Mac or PC, configure DiskMop Scheduled Cleanup for automated weekly maintenance.",
         },
       ],
       verdict: [

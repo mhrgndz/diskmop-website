@@ -5,6 +5,7 @@ export const deleteTemporaryFilesWindows: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-24",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -16,6 +17,83 @@ export const deleteTemporaryFilesWindows: Article = {
         "Evet, Windows'ta geçici dosyaları silmek güvenlidir; sistem ihtiyaç duyduğu dosyaları gerektiğinde yeniden oluşturur. En hızlı yöntem, Ayarlar > Sistem > Depolama yolunu izleyip Geçici dosyalar bölümünü açmak ve Dosyaları kaldır düğmesine basmaktır. Ayrıca Win+R tuşlarına basıp %temp% yazarak geçici dosya klasörünü elle de temizleyebilirsiniz.",
         "Yine de tereddüt anlaşılabilir: Temp klasörü anlamsız görünen dosya adlarıyla doludur ve kimse yanlışlıkla önemli bir şey silmek istemez. Bu rehberde hangi geçici dosyaların güvenle silinebileceğini tek tek açıklıyor, manuel temizlik adımlarını ekran yolu ve komutlarıyla gösteriyor ve tüm süreci otomatikleştirmenin yolunu anlatıyoruz. Amaç, diskinizde yer açarken içinizin tamamen rahat olması.",
       ],
+      keyTakeaways: [
+        "Windows'ta geçici dosyaları (%temp% ve C:\\Windows\\Temp) silmek %100 güvenlidir; sistem gerekli verileri gerektiğinde yeniden oluşturur.",
+        "Kullanımda olan kilitli dosyalar silinmez, Windows otomatik koruma sağlar ('Atla' demeniz yeterlidir).",
+        "Ayarlar > Sistem > Depolama > Geçici Dosyalar ekranı ve 'cleanmgr' (Disk Temizleme) tek seferde 10–30 GB alan kazandırabilir.",
+        "Temizlik yaparken 'İndirilenler' (Downloads) seçeneğini işaretlememeye dikkat edin; kişisel indirmeleriniz silinmesin.",
+        "DiskMop Cache Cleaner ve Zamanlanmış Temizlik ile temp ve önbellek birikintilerini otomatik olarak temizleyebilirsiniz.",
+      ],
+      dataTable: {
+        caption:
+          "Windows geçici dosya türleri, konumları ve temizleme güvenliği",
+        columns: [
+          "Dosya Türü",
+          "Konum / Kısayol",
+          "Tipik Boyut",
+          "Güvenlik Derecesi",
+          "Önerilen Eylem",
+        ],
+        rows: [
+          [
+            "Kullanıcı Temp Klasörü",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Tamamen Güvenli",
+            "Tümünü seçip silin; kilitli olanları Atla diyerek geçin",
+          ],
+          [
+            "Windows Sistem Temp",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Tamamen Güvenli",
+            "Yönetici yetkisiyle içeriğini temizleyin",
+          ],
+          [
+            "Windows Update Temizleme",
+            "cleanmgr / Depolama Ayarları",
+            "3 GB – 12 GB",
+            "Tamamen Güvenli",
+            "Eski güncelleme yükleme dosyalarını kaldırın",
+          ],
+          [
+            "Küçük Resim Önbelleği (Thumbnails)",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Tamamen Güvenli",
+            "Disk Temizleme ile silin, Explorer yeniden üretir",
+          ],
+          [
+            "Teslimat İyileştirme Dosyaları",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Tamamen Güvenli",
+            "Ayarlar > Geçici dosyalar üzerinden kaldırın",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows 11'de Geçici Dosyaları Temizleme Adımları",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Ayarlar üzerinden Geçici Dosyaları açın",
+            text: "Win+I tuşlarına basarak Ayarlar'ı açın. Sistem > Depolama > Geçici dosyalar yolunu izleyin.",
+          },
+          {
+            name: "Silinecek öğeleri seçin",
+            text: "Geçici dosyalar, Windows Update Temizleme ve Küçük resimler kutularını işaretleyin. İndirilenler kutusunun işaretini kaldırın.",
+          },
+          {
+            name: "Dosyaları kaldır düğmesine basın",
+            text: "'Dosyaları kaldır' butonuna basarak seçilen tüm geçici artıkların silinmesini onaylayın.",
+          },
+          {
+            name: "%temp% klasörünü manuel boşaltın",
+            text: "Win+R tuşlayıp %temp% yazın. Klasördeki tüm dosyaları (Ctrl+A) seçip silin; kilitli olanlar için 'Atla' seçeneğini tıklayın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Geçici Dosyalar Nedir ve Neden Birikir?",
@@ -67,6 +145,28 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "%temp% klasöründeki her şeyi silmek güvenli mi?",
+          answer:
+            "Evet, tamamen güvenlidir. Windows o anda açık olan veya sistemin ihtiyaç duyduğu dosyaları kilitleyerek korur, bu dosyalarda 'Atla' demeniz yeterlidir.",
+        },
+        {
+          question: "Geçici dosyaları silmek bilgisayarı hızlandırır mı?",
+          answer:
+            "Özellikle C: sürücünüzün doluluk oranı %85'in üzerindeyse, geçici dosyaları silerek alan açmak sanal bellek (pagefile) performansını ve sistem tepkiselliğini artırır.",
+        },
+        {
+          question: "Windows Update temizleme dosyaları silinmeli mi?",
+          answer:
+            "Son Windows güncellemesinden sonra sisteminiz kararlı çalışıyorsa bu dosyaları silmek güvenlidir ve genellikle 3 ila 10 GB disk alanı kazandırır.",
+        },
+        {
+          question: "Geçici dosyalar ne sıklıkla temizlenmeli?",
+          answer:
+            "Ayda bir kez veya C: sürücünüzde boş alan azaldığında temizlik yapılması önerilir. Windows Depolama Algılayıcısı veya DiskMop ile bu süreci otomatikleştirebilirsiniz.",
+        },
+      ],
       verdict: [
         "Geçici dosyaları silme konusundaki korku çoğunlukla yersizdir: Windows kullanımdaki dosyaları zaten kilitler ve ihtiyaç duyduğu her şeyi yeniden oluşturur. Ayarlar üzerinden geçici dosyaları kaldırmak, %temp% ve C:\\Windows\\Temp klasörlerini boşaltmak, Disk Temizleme'yi çalıştırmak, tarayıcı önbelleğini ve geri dönüşüm kutusunu temizlemek — bunların hepsi herkesin uygulayabileceği güvenli bakım işlemleridir.",
         "Bu kontrol listesini her ay elle tekrarlamak istemeyenler için Disk Mop, önbellek temizleyici, tarayıcı önbelleği temizleyici, geri dönüşüm kutusu boşaltma, tek tık Speed Up ve zamanlanmış temizlik özelliklerini tek uygulamada birleştirir. Tek seferlik $19.90 ödemeyle ömür boyu lisans sunar ve hem Windows 10/11 hem macOS üzerinde çalışır.",
@@ -83,6 +183,83 @@ export const deleteTemporaryFilesWindows: Article = {
         "Yes — it is safe to delete temporary files in Windows, and doing so can free up several gigabytes of space. Windows and your apps only use temp files as short-term scratch space, and the system automatically recreates anything it still needs. The fastest method is to open Settings > System > Storage, select Temporary files, and click Remove files.",
         "Still, the hesitation is understandable: the temp folder in Windows is full of cryptic file names, and nobody wants to delete something important by accident. In this guide we explain exactly which temporary files are safe to remove, walk through every manual cleanup step with real menu paths and commands, and show how to automate the whole routine so you never have to think about it again.",
       ],
+      keyTakeaways: [
+        "Deleting temporary files in Windows (%temp% and C:\\Windows\\Temp) is 100% safe; applications rebuild required data on demand.",
+        "Windows features an automatic safety lock: files currently in use by active processes cannot be deleted (simply click 'Skip').",
+        "Using Settings > System > Storage > Temporary files and 'cleanmgr' routinely recovers 10 to 30 GB of drive space.",
+        "Never check the 'Downloads' folder checkbox blindly during cleanup to avoid losing important personal downloads.",
+        "DiskMop Cache Cleaner and Scheduled Cleanup automate temp file removal on a weekly or monthly cadence without manual commands.",
+      ],
+      dataTable: {
+        caption:
+          "Windows temporary file categories, file paths, and cleaning safety",
+        columns: [
+          "File Category",
+          "Location / Shortcut",
+          "Typical Size",
+          "Safety Level",
+          "Recommended Action",
+        ],
+        rows: [
+          [
+            "User Temp Folder",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Completely Safe",
+            "Select all (Ctrl+A) and delete; skip locked files",
+          ],
+          [
+            "System Temp Folder",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Completely Safe",
+            "Clear directory contents using Administrator rights",
+          ],
+          [
+            "Windows Update Cleanup",
+            "cleanmgr / Storage Settings",
+            "3 GB – 12 GB",
+            "Completely Safe",
+            "Safely delete leftover previous update installation files",
+          ],
+          [
+            "Thumbnail Cache",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Completely Safe",
+            "Remove via Disk Cleanup; File Explorer regenerates on demand",
+          ],
+          [
+            "Delivery Optimization",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Completely Safe",
+            "Purge using Windows Storage Settings or DiskMop",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Delete Temporary Files in Windows 11",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Open Storage Settings",
+            text: "Press Win+I to launch Settings, then navigate to System > Storage > Temporary files.",
+          },
+          {
+            name: "Select safe categories",
+            text: "Check Temporary files, Windows Update Cleanup, and Thumbnails. Ensure Downloads is unchecked.",
+          },
+          {
+            name: "Click Remove files",
+            text: "Click 'Remove files' at the top of the menu to trigger system-level deletion.",
+          },
+          {
+            name: "Purge the %temp% folder manually",
+            text: "Press Win+R, enter %temp%, press Enter, select all files with Ctrl+A, and press Delete (skip in-use files).",
+          },
+        ],
+      },
       sections: [
         {
           title: "What Temporary Files Are and Why They Pile Up",
@@ -132,6 +309,29 @@ export const deleteTemporaryFilesWindows: Article = {
             "For broader automation, Disk Mop's Scheduled Cleanup lets you create weekly or monthly tasks: cache cleaning, temp file removal, and recycle bin emptying all run on their own. The System Health Score then shows your machine's overall condition at a glance, so you can confirm the routine is working.",
             "Our recommendation is simple: do one manual pass today, then set up a weekly or monthly schedule. Done that way, temporary files stop being something you ever have to think about.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Is it safe to delete everything in the %temp% folder?",
+          answer:
+            "Yes, it is entirely safe. Windows prevents in-use files from being removed; when prompted, just click 'Skip' for active processes.",
+        },
+        {
+          question: "Does deleting temporary files improve PC speed?",
+          answer:
+            "Yes, especially if your C: drive has less than 15% free space remaining. Cleaning temp files prevents disk thrashing and gives the virtual pagefile room to breathe.",
+        },
+        {
+          question: "Should I remove Windows Update Cleanup files?",
+          answer:
+            "If your system is stable after the latest Windows patch, removing update cleanup files is completely safe and typically frees up 3 to 10 GB.",
+        },
+        {
+          question:
+            "How frequently should I delete temporary files in Windows?",
+          answer:
+            "Once every month is generally sufficient, or automatically via Storage Sense or DiskMop's Scheduled Cleanup.",
         },
       ],
       verdict: [

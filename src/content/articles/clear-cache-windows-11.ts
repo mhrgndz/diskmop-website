@@ -5,6 +5,7 @@ export const clearCacheWindows11: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-07-18",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -16,6 +17,82 @@ export const clearCacheWindows11: Article = {
         "Windows 11'de önbellek temizlemek için Windows tuşu + I ile Ayarlar'ı açın, Sistem ve ardından Depolama bölümüne girin, Geçici dosyalar seçeneğine tıklayın, silmek istediğiniz kategorileri işaretleyip Dosyaları kaldır düğmesine basın. Tarayıcı önbelleği için Chrome, Edge veya Firefox içinde Ctrl+Shift+Delete kısayolunu kullanın; Microsoft Store önbelleği için wsreset.exe komutunu çalıştırın; DNS önbelleği için Komut İstemi'ne ipconfig /flushdns yazın. Bu dört adım, bir Windows 11 bilgisayardaki tüm önemli önbellek türlerini kapsar.",
         "Önbellekler bilgisayarınızı hızlandırmak için vardır; ancak aylar içinde sessizce gigabaytlarca geçici veriye dönüşür ve zaman zaman kendi sorunlarını da yaratır. Bu rehberde sistem, tarayıcı, Microsoft Store ve DNS önbelleklerini tek tek, net adımlarla temizleyeceğiz ve son bölümde hepsini tek tıkla halletmenin yolunu göstereceğiz.",
       ],
+      keyTakeaways: [
+        "Windows 11'de önbellek temizlemek tamamen güvenlidir; silinen dosyalar gerektiğinde sistem tarafından otomatik olarak yeniden oluşturulur.",
+        "Sistem önbellekleri ve güncelleme artıkları için Ayarlar > Sistem > Depolama > Geçici Dosyalar en etkili başlangıç noktasıdır.",
+        "Tüm tarayıcılarda (Chrome, Edge, Firefox) 'Ctrl+Shift+Delete' kısayolu doğrudan önbellek temizleme ekranını açar.",
+        "Açılmayan veya takılan Microsoft Store, 'wsreset.exe' komutuyla saniyeler içinde sıfırlanabilir.",
+        "Web sitelerine erişim sorunlarında 'ipconfig /flushdns' komutu bayat DNS kayıtlarını anında yeniler.",
+      ],
+      dataTable: {
+        caption: "Windows 11 önbellek türleri ve temizleme yöntemleri",
+        columns: [
+          "Önbellek Türü",
+          "Konum / Komut",
+          "Tipik Boyut",
+          "Güvenlik",
+          "Temizleme Nedeni",
+        ],
+        rows: [
+          [
+            "Sistem Geçici Dosyaları (%temp%)",
+            "Ayarlar > Depolama veya %temp%",
+            "2 GB – 15 GB",
+            "Tamamen Güvenli",
+            "Disk doluluğunu gidermek",
+          ],
+          [
+            "Web Tarayıcı Önbelleği",
+            "Ctrl + Shift + Delete (Tarayıcıda)",
+            "1 GB – 5 GB",
+            "Tamamen Güvenli",
+            "Bozuk sayfa görselleri ve profil şişmesi",
+          ],
+          [
+            "Microsoft Store Önbelleği",
+            "wsreset.exe (Çalıştır penceresi)",
+            "100 MB – 500 MB",
+            "Tamamen Güvenli",
+            "İndirme takılmaları ve açılmama hatası",
+          ],
+          [
+            "DNS Çözümleyici Önbelleği",
+            "ipconfig /flushdns (Terminal)",
+            "< 10 MB",
+            "Tamamen Güvenli",
+            "Taşınan sitelere erişim hataları",
+          ],
+          [
+            "Windows Küçük Resim (Thumbnail) Önbelleği",
+            "cleanmgr (Disk Temizleme)",
+            "500 MB – 2 GB",
+            "Tamamen Güvenli",
+            "Bozuk simgeler ve klasör yavaşlığı",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows 11'de Tüm Önbellekleri Adım Adım Temizleme",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Sistem geçici önbelleğini temizleyin",
+            text: "Win+I ile Ayarlar'ı açın > Sistem > Depolama > Geçici dosyalar yolunu izleyin. Listelenen geçici dosyaları seçip 'Dosyaları kaldır'a basın.",
+          },
+          {
+            name: "Tarayıcı önbelleklerini boşaltın",
+            text: "Tarayıcınızda (Chrome, Edge veya Firefox) Ctrl+Shift+Delete tuşlarına basın. 'Tüm zamanlar'ı seçip 'Önbelleğe alınan resimler ve dosyalar' kutusunu işaretleyerek temizleyin.",
+          },
+          {
+            name: "Microsoft Store önbelleğini sıfırlayın",
+            text: "Win+R tuşlarına basıp wsreset.exe yazın ve Enter'a basın. Siyah konsol penceresi kapanıp Mağaza açılana kadar bekleyin.",
+          },
+          {
+            name: "DNS önbelleğini temizleyin",
+            text: "Başlat menüsüne cmd yazıp Komut İstemi'ni açın. 'ipconfig /flushdns' yazıp Enter'a basarak ağ kayıtlarını yenileyin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Windows 11'de Önbellekler Zamanla Neden Birikir?",
@@ -67,6 +144,29 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "Windows 11'de önbellek temizlemek güvenli midir?",
+          answer:
+            "Evet, önbellek temizliği tamamen güvenlidir. Silinen dosyalar yalnızca geçici verilerdir; işletim sistemi ve uygulamalar ihtiyaç duyduklarında bu dosyaları otomatik olarak baştan oluşturur.",
+        },
+        {
+          question: "Önbellek temizliği bilgisayarı hızlandırır mı?",
+          answer:
+            "Evet. Şişmiş tarayıcı önbellekleri, devasa geçici sistem dosyaları ve bozuk küçük resim indeksleri temizlendiğinde disk alanı rahatlar ve uygulamaların takılma/yanıt vermeme sorunları çözülür.",
+        },
+        {
+          question:
+            "Önbellek temizlerken şifrelerim veya indirilen dosyalarım silinir mi?",
+          answer:
+            "Hayır. Tarayıcıda 'Şifreler' ve 'Çerezler' kutucuklarını işaretlemediğiniz sürece yalnızca 'Önbelleğe Alınan Resimler ve Dosyalar' silinir; oturumlarınız ve parolalarınız korunur.",
+        },
+        {
+          question: "Windows 11 önbelleği ne sıklıkla temizlenmelidir?",
+          answer:
+            "Ayda bir kez veya sistemde yavaşlama, disk doluluğu ya da web sitelerinde yükleme hataları yaşandığında önbellekleri temizlemek idealdir.",
+        },
+      ],
       verdict: [
         "Windows 11 önbellek temizleme aslında dört temel adımdan oluşur: Ayarlar üzerinden geçici dosyaları silmek, tarayıcılarda Ctrl+Shift+Delete ile önbelleği temizlemek, wsreset.exe ile Microsoft Store önbelleğini sıfırlamak ve ipconfig /flushdns ile DNS önbelleğini boşaltmak. Bu adımları düzenli uyguladığınızda hem gerçek disk alanı kazanır hem de gündelik birçok küçük sorunu daha oluşmadan önlersiniz.",
         "Disk Mop bu dört işlemi tek uygulamada toplar. Hızlandır düğmesi tüm rutini tek tıka çevirir, zamanlanmış temizlik özelliği ise bakımı bundan sonrası için tamamen otomatikleştirir. Önbelleklerle bir daha hiç uğraşmak istemiyorsanız, Disk Mop Windows 11'i temiz ve hızlı tutmanın en zahmetsiz yoludur.",
@@ -82,6 +182,82 @@ export const clearCacheWindows11: Article = {
         "To clear cache in Windows 11, open Settings with the Windows key + I, go to System, then Storage, click Temporary files, select the categories you want to remove and press Remove files. For browser cache, press Ctrl+Shift+Delete inside Chrome, Edge or Firefox; for the Microsoft Store cache, run wsreset.exe; and for the DNS cache, type ipconfig /flushdns in Command Prompt. Those four steps cover every major cache type on a Windows 11 PC.",
         "Caches exist to make your computer faster, but over months they quietly grow into gigabytes of temporary data and occasionally cause glitches of their own. In this guide, we'll walk through each cache type one by one with exact steps — system, browser, Microsoft Store and DNS — and finish with a way to clear all of them in a single click.",
       ],
+      keyTakeaways: [
+        "Clearing cache in Windows 11 is completely safe; deleted files are rebuilt automatically by the system and apps as needed.",
+        "System temporary files and Windows Update leftovers are best cleared via Settings > System > Storage > Temporary files.",
+        "The universal shortcut 'Ctrl+Shift+Delete' opens the cache-clearing dialog across Chrome, Edge, and Firefox.",
+        "Running 'wsreset.exe' in the Run dialog quickly resets the Microsoft Store cache when downloads get stuck or pages fail to load.",
+        "Flushing the DNS cache with 'ipconfig /flushdns' fixes stale domain records and website loading errors instantly.",
+      ],
+      dataTable: {
+        caption: "Windows 11 cache types, locations, and cleanup procedures",
+        columns: [
+          "Cache Type",
+          "Location / Shortcut",
+          "Typical Size",
+          "Safety Level",
+          "Why Clear It",
+        ],
+        rows: [
+          [
+            "System Temporary Files",
+            "Settings > Storage or %temp%",
+            "2 GB – 15 GB",
+            "Completely Safe",
+            "Reclaim drive space",
+          ],
+          [
+            "Web Browser Cache",
+            "Ctrl + Shift + Delete (in-browser)",
+            "1 GB – 5 GB",
+            "Completely Safe",
+            "Fix broken website layouts and bloated profiles",
+          ],
+          [
+            "Microsoft Store Cache",
+            "wsreset.exe (Run dialog)",
+            "100 MB – 500 MB",
+            "Completely Safe",
+            "Fix stuck downloads and launching crashes",
+          ],
+          [
+            "DNS Resolver Cache",
+            "ipconfig /flushdns (Command Prompt)",
+            "< 10 MB",
+            "Completely Safe",
+            "Resolve website connection and DNS resolution errors",
+          ],
+          [
+            "Thumbnail Cache",
+            "Disk Cleanup (cleanmgr)",
+            "500 MB – 2 GB",
+            "Completely Safe",
+            "Fix corrupted icon previews and slow folder loading",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Clear All Caches in Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Clear system temporary files",
+            text: "Press Win+I to open Settings > System > Storage > Temporary files. Select the categories you wish to purge and click 'Remove files'.",
+          },
+          {
+            name: "Purge web browser caches",
+            text: "Inside Chrome, Edge, or Firefox, press Ctrl+Shift+Delete. Set the time range to 'All time', check 'Cached images and files', and click 'Clear data'.",
+          },
+          {
+            name: "Reset Microsoft Store cache",
+            text: "Press Win+R, type wsreset.exe, and press Enter. Wait for the blank Command Prompt window to close automatically and relaunch the Store.",
+          },
+          {
+            name: "Flush DNS cache",
+            text: "Open Command Prompt and run 'ipconfig /flushdns' to clear and reset the client resolver cache.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Why Windows 11 Caches Pile Up Over Time",
@@ -130,6 +306,28 @@ export const clearCacheWindows11: Article = {
             "Disk Mop condenses the whole routine into one click. Its Speed Up feature cleans the system cache, browser caches, old downloads and the recycle bin in a single pass, while the dedicated Cache Cleaner, Browser Cache Cleaner and DNS Cache Cleaner cover each type individually when you want finer control. Scheduled Cleanup runs everything weekly or monthly automatically, and the System Health Score shows at a glance when your PC needs attention.",
             "Disk Mop is free to download with limited features, and the Pro version is a one-time $19.90 payment with a lifetime license — no subscription. The app runs on Windows 10 and 11 as well as macOS.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Is it safe to clear cache in Windows 11?",
+          answer:
+            "Yes, clearing cache files is completely safe. Cache files are temporary working data; the operating system and installed apps will rebuild fresh copies as needed.",
+        },
+        {
+          question: "Does clearing cache improve PC performance?",
+          answer:
+            "Yes. Deleting bloated browser caches, corrupt thumbnail databases, and massive Windows Update temporary files frees up drive capacity and resolves strange lag and freeze issues.",
+        },
+        {
+          question: "Will clearing my browser cache delete my passwords?",
+          answer:
+            "No, as long as you do not check the 'Cookies and other site data' or 'Passwords' checkboxes. Selecting only 'Cached images and files' keeps your logins intact.",
+        },
+        {
+          question: "How often should I clear cache on Windows 11?",
+          answer:
+            "Once a month is generally sufficient, or immediately whenever you experience unexplained disk fullness, network connection glitches, or crashing apps.",
         },
       ],
       verdict: [

@@ -5,6 +5,7 @@ export const windowsOldFolder: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-17",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -17,6 +18,72 @@ export const windowsOldFolder: Article = {
         "Bu rehberde önce Windows.old'un ne olduğunu ve neden var olduğunu açıklayacağız, ardından hem Disk Temizleme hem de Depolama Algılayıcısı üzerinden adım adım silme yollarını göstereceğiz. Klasör inatla silinmiyorsa kullanabileceğiniz komut satırı çözümünü de bulacaksınız.",
         "Son olarak, yükseltmenin geride bıraktığı diğer gizli dosyalara bakacak ve her büyük güncellemeden sonra C: sürücünüzü nasıl temiz tutacağınızı anlatacağız.",
       ],
+      keyTakeaways: [
+        "Windows.old klasörü, sistem yükseltmesi veya sürüm güncellemesi sonrasında eski işletim sistemini yedekleyen korumalı bir klasördür.",
+        "Yeni Windows sürümünden memnunsanız ve eski sürüme geri dönmeyecekseniz Windows.old klasörünü silmek %100 güvenlidir.",
+        "Dosya Gezgini'nden silmek yerine 'Disk Temizleme' (Sistem dosyalarını temizle > Önceki Windows yüklemeleri) veya Ayarlar > Depolama kullanılmalıdır.",
+        "Windows.old silinerek tek seferde 10 GB ile 35 GB arasında devasa bir disk alanı anında geri kazanılır.",
+        "Silme işlemine izin verilmiyorsa CMD üzerinden 'takeown' ve 'icacls' komutlarıyla sahiplik alınıp klasör kaldırılabilir.",
+      ],
+      dataTable: {
+        caption:
+          "Windows.old klasörü özellikleri, boyutları ve silme yöntemleri",
+        columns: ["Özellik", "Ayrıntı", "Önemi", "Tavsiye"],
+        rows: [
+          [
+            "Klasör Konumu",
+            "C:\\Windows.old",
+            "Kritik Sistem Sürücüsü",
+            "Elle çöp kutusuna atmayın; cleanmgr kullanın",
+          ],
+          [
+            "Tipik Boyut",
+            "10 GB – 35 GB",
+            "C: sürücüsünün en büyük tüketicilerinden",
+            "Sistem stabilse hemen temizlenebilir",
+          ],
+          [
+            "Varsayılan Saklama Süresi",
+            "10 Gün (Windows otomatik siler)",
+            "Geri dönüş süresi",
+            "10 gün beklemek istemiyorsanız manuel silin",
+          ],
+          [
+            "Kişisel Dosya Erişimi",
+            "C:\\Windows.old\\Users",
+            "Yükseltmede unutulan belgeler",
+            "Silmeden önce kişisel dosyaları kontrol edin",
+          ],
+          [
+            "Geri Alma Yeteneği",
+            "Ayarlar > Sistem > Kurtarma",
+            "Eski Windows'a tek tıkla dönüş",
+            "Klasör silinirse geri dönüş hakkı kaybolur",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows.old Klasörünü Güvenle Silme Adımları",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Disk Temizleme'yi açın",
+            text: "Başlat menüsüne 'Disk Temizleme' (cleanmgr) yazıp yönetici olarak çalıştırın ve C: sürücüsünü seçin.",
+          },
+          {
+            name: "Sistem dosyalarını temizle seçeneğine tıklayın",
+            text: "Açılan pencerenin sol altındaki 'Sistem dosyalarını temizle' düğmesine basın.",
+          },
+          {
+            name: "Önceki Windows yüklemelerini işaretleyin",
+            text: "Listeden 'Önceki Windows yüklemeleri' ve 'Geçici Windows yükleme dosyaları' kutularını seçin.",
+          },
+          {
+            name: "Temizliği onaylayın",
+            text: "'Tamam' ve ardından 'Dosyaları Sil' butonuna tıklayarak klasörün tamamen kaldırılmasını sağlayın.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Windows.old Klasörü Nedir ve Neden Var?",
@@ -76,6 +143,30 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "Windows.old klasörünü silmek bilgisayara zarar verir mi?",
+          answer:
+            "Hayır, mevcut çalışan Windows 11 sisteminize hiçbir zarar vermez. Yalnızca önceki sürüme geri dönme (Rollback) imkanını kapatır.",
+        },
+        {
+          question: "Windows.old kendiliğinden silinir mi?",
+          answer:
+            "Evet, Windows yükseltme tarihinden itibaren 10 gün sonra Windows.old klasörünü otomatik olarak siler.",
+        },
+        {
+          question:
+            "Windows.old silinmiyor veya erişim engellendi hatası veriyor, ne yapmalıyım?",
+          answer:
+            "Yönetici olarak Komut İstemi (CMD) açıp takeown /F C:\\Windows.old /R /A /D Y ve rd /S /Q C:\\Windows.old komutlarıyla klasörü zorla silebilirsiniz.",
+        },
+        {
+          question:
+            "Windows.old içindeki fotoğraflarımı ve belgelerimi kurtarabilir miyim?",
+          answer:
+            "Evet, klasörü silmeden önce C:\\Windows.old\\Users\\[KullanıcıAdınız] dizinine giderek Masaüstü, Belgeler ve İndirilenler içindeki dosyalarınızı yeni sürücünüze kopyalayabilirsiniz.",
+        },
+      ],
       verdict: [
         "Windows.old klasörünü silmek, geri dönüş yapmayacağınızdan eminseniz güvenli ve mantıklıdır. Disk Temizleme veya Ayarlar'daki depolama seçenekleri işin çoğunu halleder; inatçı kalıntılar için takeown, icacls ve rd komutlarıyla ilerleyen komut satırı yöntemi her zaman elinizin altındadır. Tek başına bu adım bile C: sürücünüzde onlarca gigabaytlık alan açabilir.",
         "Yükseltmenin geride bıraktığı diğer dosyaları bulmak ve diskinizi uzun vadede temiz tutmak içinse Disk Mop pratik bir yardımcıdır. Disk analizi, büyük dosya bulucu, önbellek temizleyici ve zamanlanmış temizlik özelliklerinin tamamı, $19.90'lık tek seferlik ömür boyu lisansla sunulur — abonelik yoktur.",
@@ -93,6 +184,72 @@ export const windowsOldFolder: Article = {
         "In this guide, we'll first explain what Windows.old is and why it exists, then walk through both removal paths step by step: Disk Cleanup and Storage Sense. You'll also find the command-line fix for the stubborn case where Windows.old won't delete no matter what you try.",
         "Finally, we'll look at the other hidden files an upgrade leaves behind and how to keep your C: drive lean after every major update going forward.",
       ],
+      keyTakeaways: [
+        "The Windows.old folder is a full backup snapshot of your prior operating system created during major Windows feature updates.",
+        "Deleting Windows.old is 100% safe if your current Windows 11 installation is running stably and you do not plan to rollback.",
+        "Never drag Windows.old to the Recycle Bin in File Explorer; use Disk Cleanup ('Clean up system files') or Storage Sense instead.",
+        "Removing Windows.old instantly reclaims between 10 GB and 35+ GB of valuable solid-state drive space on drive C:.",
+        "If Windows refuses to delete it due to permission locks, elevated CMD takeown and icacls commands override system permissions.",
+      ],
+      dataTable: {
+        caption:
+          "Windows.old directory specifications, storage footprint, and removal methods",
+        columns: ["Parameter", "Detail", "Significance", "Recommended Action"],
+        rows: [
+          [
+            "Folder Path",
+            "C:\\Windows.old",
+            "Internal OS System Backup",
+            "Purge via cleanmgr or Storage Sense",
+          ],
+          [
+            "Typical Footprint",
+            "10 GB – 35+ GB",
+            "Major C: drive consumer",
+            "Safely delete if OS runs smoothly",
+          ],
+          [
+            "Automated Deletion Window",
+            "10 Days post-upgrade",
+            "Rollback availability timeline",
+            "Delete immediately if short on disk space",
+          ],
+          [
+            "User File Recovery",
+            "C:\\Windows.old\\Users",
+            "Legacy Desktop & Documents",
+            "Inspect and salvage personal files before deletion",
+          ],
+          [
+            "Rollback Capability",
+            "Settings > System > Recovery",
+            "One-click OS downgrade option",
+            "Permanently disabled once folder is removed",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Safely Delete the Windows.old Folder",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Launch Disk Cleanup",
+            text: "Press Win+R, type 'cleanmgr', hit Enter, and select drive C:.",
+          },
+          {
+            name: "Click Clean up system files",
+            text: "Click the 'Clean up system files' button in the lower left corner and re-select drive C: if prompted.",
+          },
+          {
+            name: "Check Previous Windows installations",
+            text: "Scroll through the list and check 'Previous Windows installation(s)' and 'Temporary Windows installation files'.",
+          },
+          {
+            name: "Execute cleanup",
+            text: "Click OK and confirm 'Delete Files' to permanently remove the Windows.old folder.",
+          },
+        ],
+      },
       sections: [
         {
           title: "What Is the Windows.old Folder and Why It Exists",
@@ -149,6 +306,28 @@ export const windowsOldFolder: Article = {
             "Disk Mop makes that routine effortless: the Speed Up feature cleans old downloads, system cache, browser cache, and the recycle bin in a single click. With Scheduled Cleanup you can set up weekly or monthly automatic maintenance tasks, and the System Health Score gives you an at-a-glance view of how your disk is doing.",
             "The best approach combines both worlds: use Windows' built-in tools for protected system folders like Windows.old, and let a regular Disk Mop routine handle everything else — caches, downloads, duplicates, and large forgotten files.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Will deleting Windows.old damage my computer?",
+          answer:
+            "No. It will not harm your current operating system in any way. It only removes the ability to roll back to your previous Windows version.",
+        },
+        {
+          question: "Does Windows automatically delete the Windows.old folder?",
+          answer:
+            "Yes, Windows 11 will automatically delete Windows.old after 10 days via built-in maintenance tasks.",
+        },
+        {
+          question: "What should I do if Windows.old won't delete?",
+          answer:
+            "Open Command Prompt as Administrator and run 'takeown /F C:\\Windows.old /R /A /D Y' followed by 'rd /S /Q C:\\Windows.old'.",
+        },
+        {
+          question: "Can I recover personal files from Windows.old?",
+          answer:
+            "Yes. Before deleting the folder, browse to C:\\Windows.old\\Users\\[YourUsername] to copy your Desktop, Documents, or Downloads folders.",
         },
       ],
       verdict: [

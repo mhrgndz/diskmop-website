@@ -5,6 +5,7 @@ export const uninstallLeftovers: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-18",
+  updated: "2026-11-03",
   readingTime: 6,
   content: {
     tr: {
@@ -18,6 +19,76 @@ export const uninstallLeftovers: Article = {
         'Windows\'ta bir programı kaldırdığınızda, gerçekten tamamen silindiğini düşünürsünüz. Ancak çoğu durumda geride dosyalar, klasörler ve registry kayıtları kalır. Bu "kaldırma artıkları" zamanla birikir, disk alanı kaplar ve sisteminizi yavaşlatır.',
         "Revo Uninstaller gibi araçlar bu sorunu çözmek için var, ancak Disk Mop v1.0.15 ile artık ayrı bir program kurmanıza gerek yok. Yeni Kaldırma Artıkları Temizleyici özelliği, yetim klasörleri ve registry kayıtlarını otomatik olarak tespit eder.",
       ],
+      keyTakeaways: [
+        "Windows'ta Denetim Masası üzerinden program kaldırmak, AppData ve ProgramData altındaki tüm yapılandırma dosyalarını ve kayıt kütüğü (registry) anahtarlarını silmez.",
+        "Kaldırma artıkları zamanla 5 GB ile 50 GB arasında gereksiz disk alanı işgal eder.",
+        "Program artıkları başlıca AppData\\Local, AppData\\Roaming, ProgramData ve Registry (HKCU\\Software, HKLM\\SOFTWARE) dizinlerinde saklanır.",
+        "DiskMop Uninstall Leftovers Cleaner, yüklü uygulamalar listesini referans alarak yetim (orphan) klasörleri ve sahipsiz kayıtları tespit eder.",
+        "Akıllı beyaz liste koruması Microsoft, Intel, NVIDIA ve donanım sürücüsü anahtarlarının yanlışlıkla silinmesini engeller.",
+      ],
+      dataTable: {
+        caption:
+          "Program kaldırma artıklarının yaygın saklandığı dizinler ve disk etkileri",
+        columns: [
+          "Konum / Dizin",
+          "Artık Türü",
+          "Tipik Boyut",
+          "Elle Silme Zorluğu",
+          "DiskMop Koruması",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Önbellek, geçici indirmeler, oturum verileri",
+            "2 GB – 20 GB",
+            "Orta (Gizli klasör)",
+            "Yetim klasör otomatik tespiti",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Kullanıcı ayarları, eklentiler, profiller",
+            "1 GB – 10 GB",
+            "Orta",
+            "Kaldırılan uygulama eşleşmesi",
+          ],
+          [
+            "C:\\ProgramData",
+            "Tüm kullanıcılar için paylaşılan uygulama dosyaları",
+            "2 GB – 15 GB",
+            "Yüksek (Yönetici izni gerektirir)",
+            "Sistem beyaz listesi ile filtrelenir",
+          ],
+          [
+            "Windows Registry (Kayıt Defteri)",
+            "HKCU\\Software ve HKLM\\SOFTWARE anahtarları",
+            "< 100 MB",
+            "Çok Yüksek (Sistem riski taşır)",
+            "Geçersiz kayıtları güvenle ayıklar",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Windows'ta Kaldırma Artıklarını Temizleme",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "DiskMop'u açın ve Artık Temizleyiciye gidin",
+            text: "DiskMop uygulamasını başlatın ve yan menüden 'Kaldırma Artıkları Temizleyici' (Uninstall Leftovers) sekmesini seçin.",
+          },
+          {
+            name: "Yetim klasör ve kayıt taraması yapın",
+            text: "'Taramayı Başlat' düğmesine basarak AppData, ProgramData ve Registry dizinlerindeki yetim kalıntıların listelenmesini sağlayın.",
+          },
+          {
+            name: "Bulunan artıkları inceleyin",
+            text: "Listelenen program adlarını kontrol edin, silinmesini istediğiniz yetim klasörleri işaretleyin.",
+          },
+          {
+            name: "Güvenli temizliği onaylayın",
+            text: "'Seçilenleri Temizle' düğmesine basıp onay kutusunu kabul ederek tüm kaldırma artıklarını kalıcı olarak silin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Kaldırma Artıkları Neden Oluşur?",
@@ -52,6 +123,30 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question:
+            "Kaldırılan programların dosyaları neden bilgisayarda kalır?",
+          answer:
+            "Standart kaldırıcılar (uninstallers) kullanıcı ayarlarını ve verilerini korumak amacıyla veya yetersiz yazıldıkları için AppData ve Kayıt Defteri girişlerini arkalarında bırakırlar.",
+        },
+        {
+          question:
+            "AppData klasöründeki artık klasörleri elle silmek güvenli mi?",
+          answer:
+            "Yalnızca artık kullanmadığınız ve bilgisayardan kaldırdığınız programlara ait klasörleri silmek güvenlidir. Sistem klasörlerine dokunulmamalıdır.",
+        },
+        {
+          question: "Kaldırma artıkları bilgisayarı yavaşlatır mı?",
+          answer:
+            "Dosyalar doğrudan işlemciyi yormasa da SSD'nizi doldurarak sistemin yavaşlamasına, güncelleme hatalarına ve kayıt defteri şişmesine neden olur.",
+        },
+        {
+          question: "DiskMop sistem dosyalarını yanlışlıkla siler mi?",
+          answer:
+            "Hayır. DiskMop'ta Microsoft, Windows, NVIDIA, Intel ve OEM üreticilerini koruyan katı bir 'Smart Whitelist' (akıllı beyaz liste) koruması bulunur.",
+        },
+      ],
       verdict: [
         "Kaldırma artıkları, Windows kullanıcılarının en sık görmezden geldiği disk alanı sorunlarından biridir. Program kaldırmak, o programın tüm izlerini silmek anlamına gelmez.",
         "Disk Mop v1.0.15 ile gelen Kaldırma Artıkları Temizleyici, bu sorunu tek tıkla çözer. Akıllı beyaz liste ile sistem dosyalarını korurken, yetim klasörleri ve registry kayıtlarını güvenle temizler. 8 dilde kullanılabilir ve PRO lisans ile aktif edilir.",
@@ -69,6 +164,76 @@ export const uninstallLeftovers: Article = {
         'When you uninstall a program on Windows, you assume it\'s completely gone. But in most cases, files, folders, and registry entries are left behind. These "uninstall leftovers" accumulate over time, consume disk space, and slow down your system.',
         "Tools like Revo Uninstaller exist to solve this problem, but with Disk Mop v1.0.15, you no longer need a separate program. The new Uninstall Leftovers Cleaner automatically detects orphan folders and registry entries.",
       ],
+      keyTakeaways: [
+        "Uninstalling apps via Windows Control Panel frequently leaves behind gigabytes of orphan files in AppData, ProgramData, and Registry keys.",
+        "Leftover residual data can consume anywhere between 5 GB and 50+ GB of storage across typical PC installations.",
+        "Primary residual hotspots include %localappdata%, %appdata%, C:\\ProgramData, and the HKCU\\Software registry hive.",
+        "DiskMop Uninstall Leftovers Cleaner cross-references the Windows Registry to automatically locate orphaned directories belonging to removed software.",
+        "A smart whitelist safeguards critical system files and drivers from Microsoft, Intel, NVIDIA, AMD, and OEM manufacturers.",
+      ],
+      dataTable: {
+        caption:
+          "Common uninstall leftover file locations and storage footprint",
+        columns: [
+          "Directory Location",
+          "Residual Data Type",
+          "Typical Size",
+          "Manual Removal Difficulty",
+          "DiskMop Safeguard",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Caches, temp downloads, local runtime states",
+            "2 GB – 20 GB",
+            "Moderate (Hidden folder)",
+            "Automatic orphan folder mapping",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "User profiles, custom templates, plugin data",
+            "1 GB – 10 GB",
+            "Moderate",
+            "Uninstalled vendor cross-matching",
+          ],
+          [
+            "C:\\ProgramData",
+            "Shared machine-wide program settings",
+            "2 GB – 15 GB",
+            "High (Requires Administrator permissions)",
+            "Filtered against system whitelist",
+          ],
+          [
+            "Windows Registry",
+            "Stale keys in HKCU\\Software & HKLM\\SOFTWARE",
+            "< 100 MB",
+            "Very High (Registry corruption risk)",
+            "Safe orphaned key pruning",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to Clean Uninstall Leftovers in Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Open DiskMop Leftovers Cleaner",
+            text: "Launch DiskMop and navigate to the 'Uninstall Leftovers Cleaner' tool from the sidebar.",
+          },
+          {
+            name: "Scan for orphaned files and keys",
+            text: "Click 'Scan' to inspect AppData, ProgramData, and the Windows Registry for uninstalled software remnants.",
+          },
+          {
+            name: "Review flagged folders",
+            text: "Examine the scan results grouped by Files and Registry, using search filters to narrow down specific apps.",
+          },
+          {
+            name: "Execute safe deletion",
+            text: "Select unneeded remnants and confirm the removal dialog to reclaim disk space instantly.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Why Do Uninstall Leftovers Exist?",
@@ -101,6 +266,28 @@ export const uninstallLeftovers: Article = {
             "While registry leftovers are small in terms of disk space, a clean registry is important for your system's overall health. Leftover registry keys can sometimes cause software conflicts.",
             "Disk Mop's summary card shows the total number of orphan folders, registry entries, and total size at a glance. This makes it easy to track how much space you've recovered before and after cleanup.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Why do programs leave files behind after uninstalling?",
+          answer:
+            "Standard program uninstallers often preserve user preferences, license keys, and caches in AppData intentionally or due to sloppy uninstaller scripts.",
+        },
+        {
+          question: "Is it safe to delete folders in AppData?",
+          answer:
+            "Yes, provided those folders belong to software you have already uninstalled and no longer use. Never delete folders belonging to active applications.",
+        },
+        {
+          question: "Can leftover files slow down Windows?",
+          answer:
+            "While dormant files don't consume CPU cycles, filling up drive C: degrades SSD write performance, increases fragmentation, and clutters startup routines.",
+        },
+        {
+          question: "How does DiskMop prevent deleting important system files?",
+          answer:
+            "DiskMop utilizes a smart whitelist system protecting vital directories and registry entries from Microsoft, Windows, NVIDIA, Intel, and hardware OEMs.",
         },
       ],
       verdict: [

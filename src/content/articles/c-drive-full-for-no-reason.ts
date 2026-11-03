@@ -5,6 +5,7 @@ export const cDriveFullForNoReason: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-06-05",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -17,6 +18,81 @@ export const cDriveFullForNoReason: Article = {
         "C diski sebepsiz doluyor gibi görünüyorsa, alanı neredeyse her zaman Windows'un sizden gizlediği dosyalar kaplıyordur: hazırda bekletme dosyası hiberfil.sys, sayfa dosyası pagefile.sys, sistem geri yükleme noktaları ve AppData klasöründeki gigabaytlarca uygulama önbelleği. Dosya Gezgini bu korumalı sistem dosyalarını varsayılan olarak göstermez; bu yüzden görünen klasörlerin toplamı, Windows'un dolu gösterdiği alandan çok daha az çıkar. Çözüm, önce teşhis koymak — diski gerçekte neyin kapladığını görmek — ve ancak ondan sonra silmeye başlamaktır.",
         "C diskinin sürekli dolması sinir bozucudur çünkü suçlular sessizce büyür: Windows güncellemeleri artık dosyalar bırakır, uygulamalar önbelleklerini şişirir ve tek başına hazırda bekletme dosyası, takılı RAM'inizin önemli bir bölümü kadar yer kaplayabilir. Bu rehberde sekiz pratik çözüm bulacaksınız: gizli dosyaları görünür yapmak, disk kullanımını görsel olarak haritalamak, hiberfil.sys'i küçültmek veya kaldırmak, sayfa dosyasını doğru boyutlandırmak, geri yükleme noktalarını sınırlamak, geçici dosyaları ve önbellekleri temizlemek, AppData ile İndirilenler klasörlerini düzenlemek ve son olarak tüm rutini otomatikleştirmek.",
       ],
+      keyTakeaways: [
+        "C diski asla sebepsiz dolmaz; alanı gizlice kaplayanlar çoğunlukla hiberfil.sys, pagefile.sys, geri yükleme noktaları ve AppData önbellekleridir.",
+        "Hazırda bekletmeyi kullanmıyorsanız yönetici Komut İstemi'nde 'powercfg /h off' çalıştırmak RAM boyutunuz kadar (8–32 GB) alanı anında geri kazandırır.",
+        "pagefile.sys dosyasını tamamen silmeyin; Windows kararlılığı için gereklidir ancak boyutunu Windows yönetimine bırakmak şişmeyi önler.",
+        "Sistem Geri Yükleme noktaları sınırlandırılmadığında onlarca gigabayt tüketebilir; eski noktaları temizlemek tek tıkla büyük yer açar.",
+        "DiskMop Disk Analizi görsel treemap ile C diskinizdeki devasa gizli klasörleri saniyeler içinde tespit eder.",
+      ],
+      dataTable: {
+        caption:
+          "C diskini sebepsiz dolduran gizli alan tüketicileri ve çözümleri",
+        columns: [
+          "Gizli Öğe",
+          "Tipik Boyut",
+          "Güvenlik Seviyesi",
+          "Nasıl Temizlenir?",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Hazırda Bekletme)",
+            "8 GB – 32 GB (RAM ile orantılı)",
+            "Güvenli (Kullanılmıyorsa)",
+            "Komut İstemi'nde 'powercfg /h off' çalıştırın",
+          ],
+          [
+            "Sistem Geri Yükleme Noktaları",
+            "5 GB – 25 GB",
+            "Güvenli (Son nokta hariç)",
+            "Disk Temizleme > Diğer Seçenekler > Gölge Kopyaları Temizle",
+          ],
+          [
+            "AppData ve Temp Önbellekleri",
+            "5 GB – 30 GB",
+            "Tamamen Güvenli",
+            "%temp% boşaltın ve DiskMop Önbellek Temizleyici çalıştırın",
+          ],
+          [
+            "Windows Update Artıkları",
+            "2 GB – 10 GB",
+            "Tamamen Güvenli",
+            "Ayarlar > Depolama > Geçici Dosyalar > Güncelleme Temizliği",
+          ],
+          [
+            "pagefile.sys (Sanal Bellek)",
+            "4 GB – 16 GB",
+            "Silinmemeli (Yönetilmeli)",
+            "Boyutunu 'Sistem tarafından yönetilen' olarak ayarlayın",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Dolan C Diskinde Hızlıca Yer Açma Adımları",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Gizli dosyaları görünür yapın",
+            text: "Dosya Gezgini > Görünüm menüsünden 'Gizli öğeler' seçeneğini işaretleyin. Klasör Seçenekleri'nden korumalı sistem dosyalarını açarak asıl yükü görün.",
+          },
+          {
+            name: "Gereksizse hazırda bekletmeyi kapatın",
+            text: "Başlat'a sağ tıklayıp Terminal (Yönetici) açın. 'powercfg /h off' yazıp Enter'a basın; hiberfil.sys anında silinir ve GB'larca alan açılır.",
+          },
+          {
+            name: "Eski sistem geri yükleme noktalarını silin",
+            text: "Disk Temizleme'yi yönetici olarak açın, C: diskini seçin, 'Diğer Seçenekler' sekmesinden Sistem Geri Yükleme altındaki 'Temizle'ye basın.",
+          },
+          {
+            name: "Geçici dosyaları ve Temp klasörünü boşaltın",
+            text: "Win+R ile %temp% klasörünü açın, her şeyi seçip silin. Ayarlar > Sistem > Depolama altındaki Geçici Dosyaları temizleyin.",
+          },
+          {
+            name: "Geri Dönüşüm Kutusu'nu boşaltın",
+            text: "Masaüstündeki Geri Dönüşüm Kutusu'na sağ tıklayıp 'Boşalt' diyerek silinen dosyaların alanını sisteme geri verin.",
+          },
+        ],
+      },
       sections: [
         {
           title: "C Diski Neden Sebepsiz Doluyor?",
@@ -67,6 +143,28 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      faq: [
+        {
+          question: "C diski neden sebepsiz yere dolar?",
+          answer:
+            "C diski asla sebepsiz dolmaz. Genellikle hazırda bekletme dosyası (hiberfil.sys), sanal bellek (pagefile.sys), sistem geri yükleme gölge kopyaları ve AppData içindeki gizli önbellekler kullanıcıdan gizlendiği için sebepsiz doluyormuş gibi görünür.",
+        },
+        {
+          question: "hiberfil.sys dosyasını silmek zararlı mıdır?",
+          answer:
+            "Hayır, bilgisayarınızı 'Hazırda Beklet' moduna almıyorsanız bu dosyayı silmek tamamen güvenlidir. Yönetici Komut İstemi'nde 'powercfg /h off' yazarak dosyayı güvenle kaldırabilirsiniz.",
+        },
+        {
+          question: "pagefile.sys dosyasını silebilir miyim?",
+          answer:
+            "Hayır, pagefile.sys dosyasını silmemelisiniz. Windows fiziksel RAM yetmediğinde veya çökmeleri önlemek için bu sanal bellek dosyasına ihtiyaç duyar. Boyutunu Windows'un yönetmesine izin vermek en güvenli yoldur.",
+        },
+        {
+          question: "C diskinde ne kadar boş alan bırakılmalıdır?",
+          answer:
+            "Windows'un ve SSD sürücünüzün takılmadan çalışması için C diskinde en az %15 ila %20 oranında (veya en az 20–30 GB) boş alan bırakılması önerilir.",
+        },
+      ],
       verdict: [
         "Sebepsiz doluyor gibi görünen bir C diski aslında görünmez dosyalarla dolu bir disktir: hiberfil.sys, sayfa dosyası, geri yükleme noktaları, geçici dosyalar ve AppData önbellekleri. Sekiz çözümü sırayla uygulayın — gizli dosyaları gösterin, alanı görsel olarak haritalayın, hazırda bekletme dosyasını küçültün, sayfa dosyasını Windows'a bırakın, geri yükleme noktalarını sınırlayın, geçici dosyaları ve önbellekleri temizleyin, AppData ile İndirilenler'i düzenleyin ve rutini otomatikleştirin — gizem, dağınıklıkla birlikte ortadan kalkacaktır.",
         "Disk Mop tüm bu iş akışını tek uygulamada toplar: disk analizi alanın nereye gittiğini gösterir, önbellek temizleyici ve Speed Up alanı geri kazanır, indirilenler temizleyici ve yinelenen dosya dedektörü unuttuğunuz klasörlerle ilgilenir, zamanlanmış temizlik de diski o günden sonra temiz tutar. $19.90 karşılığında tek seferlik ödemeyle ömür boyu lisans sunar; ücretsiz sürümle yükseltmeden önce deneyebilirsiniz.",
@@ -83,6 +181,81 @@ export const cDriveFullForNoReason: Article = {
         "If your C drive is full for no reason, the space is almost always being used by files Windows hides from you: the hibernation file hiberfil.sys, the page file pagefile.sys, System Restore points and gigabytes of application caches inside the AppData folder. File Explorer does not show these protected system files by default, so your visible folders add up to far less than what Windows reports as used. The solution is to diagnose first — see exactly what occupies the drive — and only then start deleting.",
         "A C drive that keeps filling up is frustrating because the culprits grow silently: Windows updates leave leftovers behind, apps expand their caches and the hibernation file alone can consume a sizeable share of your installed RAM. In this guide you will find eight practical fixes: reveal hidden files, map your disk usage visually, shrink or remove hiberfil.sys, right-size the page file, limit restore points, clear temporary files and caches, tidy up AppData and Downloads, and finally automate the whole routine so the problem never comes back.",
       ],
+      keyTakeaways: [
+        "A C drive is never full for no reason; the consumed space almost always stems from hidden system files like hiberfil.sys, pagefile.sys, restore points, and AppData caches.",
+        "Disabling hibernation with 'powercfg /h off' in an admin command prompt instantly frees up disk space equal to your RAM capacity (8–32 GB).",
+        "Never delete pagefile.sys outright; Windows relies on it for stability, but letting Windows manage its size automatically prevents ballooning.",
+        "Unrestricted System Restore points can hoard 20+ GB of shadow copies; pruning older points recovers space in seconds.",
+        "DiskMop Disk Analysis uses visual treemaps to expose hidden disk hogs on your C drive instantly.",
+      ],
+      dataTable: {
+        caption:
+          "Hidden space hogs causing C drive fullness and their solutions",
+        columns: [
+          "Hidden Component",
+          "Typical Size",
+          "Safety Level",
+          "How to Fix",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Hibernation file)",
+            "8 GB – 32 GB (matches RAM)",
+            "Safe (If not using hibernation)",
+            "Run 'powercfg /h off' in admin terminal",
+          ],
+          [
+            "System Restore Points",
+            "5 GB – 25 GB",
+            "Safe (Keep newest point)",
+            "Disk Cleanup > More Options > Clean up System Restore",
+          ],
+          [
+            "AppData & Temp Caches",
+            "5 GB – 30 GB",
+            "Completely Safe",
+            "Empty %temp% and run DiskMop Cache Cleaner",
+          ],
+          [
+            "Windows Update Leftovers",
+            "2 GB – 10 GB",
+            "Completely Safe",
+            "Settings > Storage > Temporary files > Cleanup",
+          ],
+          [
+            "pagefile.sys (Virtual memory)",
+            "4 GB – 16 GB",
+            "Manage Only (Do not delete)",
+            "Set to 'System managed size' in Virtual Memory settings",
+          ],
+        ],
+      },
+      howTo: {
+        name: "How to quickly free space on a full C drive",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Reveal hidden operating system files",
+            text: "Open File Explorer, go to View > Show > Hidden items. In Folder Options, temporarily untick 'Hide protected operating system files' to see what is eating space.",
+          },
+          {
+            name: "Disable hibernation to reclaim RAM-sized space",
+            text: "Open Terminal as Administrator and run 'powercfg /h off'. This immediately deletes hiberfil.sys, reclaiming 8 to 32 GB.",
+          },
+          {
+            name: "Delete old System Restore points",
+            text: "Launch Disk Cleanup as Administrator on drive C:, open the More Options tab, and click Clean up under System Restore and Shadow Copies.",
+          },
+          {
+            name: "Empty temporary folders",
+            text: "Press Win+R, type %temp%, and delete the contents. Clear Windows temporary files in Settings > System > Storage.",
+          },
+          {
+            name: "Empty the Recycle Bin",
+            text: "Right-click the Recycle Bin and choose Empty Recycle Bin to release deleted gigabytes back to the operating system.",
+          },
+        ],
+      },
       sections: [
         {
           title: "Why Your C Drive Fills Up for No Reason",
@@ -131,6 +304,28 @@ export const cDriveFullForNoReason: Article = {
             "Every fix above is temporary if nothing prevents the drive from filling up again. Windows offers [Storage Sense](/blog/disk-mop-vs-storage-sense) for this: under Settings, System, Storage you can enable it to delete temporary files automatically, empty the Recycle Bin on a schedule and optionally clean up old files in Downloads. It is worth switching on, though it does not touch application or browser caches.",
             "Disk Mop's Scheduled Cleanup goes further: set up a weekly or monthly task and it clears caches, temporary files and the Recycle Bin automatically, while the System Health Score shows at a glance when the drive needs attention. Aim to keep roughly 15-20% of the C drive free — with enough headroom for updates and virtual memory, Windows stays responsive and the drive stops feeling like it fills up for no reason.",
           ],
+        },
+      ],
+      faq: [
+        {
+          question: "Why is my C drive filling up automatically for no reason?",
+          answer:
+            "A C drive never fills up on its own without cause. In almost all cases, hidden OS files like hiberfil.sys, the page file (pagefile.sys), system restore shadow copies, or unpurged AppData caches are silently consuming space in the background.",
+        },
+        {
+          question: "Is it safe to delete hiberfil.sys?",
+          answer:
+            "Yes, if you do not use Windows Hibernation. Running 'powercfg /h off' in an elevated command prompt immediately and safely removes hiberfil.sys and frees up several gigabytes.",
+        },
+        {
+          question: "Can I remove pagefile.sys to save space?",
+          answer:
+            "No, you should not disable or delete pagefile.sys. Windows requires this virtual memory file to prevent program crashes when physical RAM is exhausted. Setting its size to be automatically managed by Windows is best.",
+        },
+        {
+          question: "How much free space should I keep on my C drive?",
+          answer:
+            "You should aim to keep at least 15% to 20% (or roughly 20 to 30 GB) of free space on your C drive to allow Windows updates, virtual memory expansion, and SSD wear-leveling algorithms to function smoothly.",
         },
       ],
       verdict: [
