@@ -72,8 +72,15 @@ import { livePhotosStorageIphone } from "./live-photos-storage-iphone";
 import { bestIphoneCleanerApps } from "./best-iphone-cleaner-apps";
 import { removeLocationFromPhotosIphone } from "./remove-location-from-photos-iphone";
 import { searchPhotosByContentIphone } from "./search-photos-by-content-iphone";
+import { clearSystemDataIphone } from "./clear-system-data-iphone";
+import { iphonePhotoCleanupGuide } from "./iphone-photo-cleanup-guide";
+import { howToCleanIphoneStorage } from "./how-to-clean-iphone-storage";
 
 export const articles: Article[] = [
+  // 2026-11-03 eklenenler — iOS GEO SEO uyumlu Sistem Verileri, Fotoğraf Temizleme Haritası ve Telefon Temizleme rehberleri. 8 dil.
+  clearSystemDataIphone,
+  iphonePhotoCleanupGuide,
+  howToCleanIphoneStorage,
   // 2026-10-30 eklenenler — iPhone 1.1.10 (Konumu ve bilgileri sil) ve 1.1.2 (içeriğe/yere göre arama)
   // özelliklerine dayanan iki rehber. 8 dil, keyTakeaways + FAQ + HowTo + tablo.
   removeLocationFromPhotosIphone,

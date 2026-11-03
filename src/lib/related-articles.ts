@@ -15,6 +15,11 @@ const IOS_SLUGS = new Set([
   "find-duplicate-videos-iphone",
   "live-photos-storage-iphone",
   "best-iphone-cleaner-apps",
+  "remove-location-from-photos-iphone",
+  "search-photos-by-content-iphone",
+  "clear-system-data-iphone",
+  "iphone-photo-cleanup-guide",
+  "how-to-clean-iphone-storage",
 ]);
 
 const ANDROID_SLUGS = new Set([
