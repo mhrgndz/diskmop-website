@@ -3,6 +3,7 @@ import type { Article } from "../types";
 export const treesize: Article = {
   slug: "disk-mop-vs-treesize",
   date: "2025-04-18",
+  updated: "2026-11-03",
   readingTime: 5,
   competitorName: "TreeSize",
   comparison: [
@@ -371,6 +372,29 @@ export const treesize: Article = {
         "Disk Mop ve TreeSize karşılaştırması. Disk analizi aracı mı, tam kapsamlı temizleyici mi? Hangisi ihtiyaçlarınıza uygun?",
       subtitle:
         "TreeSize mükemmel bir disk analiz aracı ama sadece o — temizleme yapamıyor. Disk Mop hem analiz ediyor hem temizliyor.",
+      keyTakeaways: [
+        "TreeSize yalnızca disk alanı analizine odaklanan bir araçtır; otomatik önbellek, çöp dosya temizleme ve RAM optimizasyonu yapmaz.",
+        "Disk Mop, TreeSize benzeri görsel disk analizi ve treemap sunarken, tek tıkla sistem hızlandırma ve temizlik araçlarını da içerir.",
+        "TreeSize yalnızca Windows'ta çalışır; Disk Mop hem macOS hem Windows'u destekler.",
+        "TreeSize Pro yıllık/lisans başı yüksek maliyetliyken, Disk Mop tek seferlik 19.90$ ile eksiksiz bir sistem bakım paketi sağlar.",
+      ],
+      faq: [
+        {
+          question: "TreeSize ile Disk Mop arasındaki temel fark nedir?",
+          answer:
+            "TreeSize salt bir disk alanı analiz aracıdır (neyin yer kapladığını gösterir ama otomatik temizlemez). Disk Mop ise hem görsel disk analizi yapar hem de önbellek temizliği, kopya tespiti ve sistem optimizasyonu sunar.",
+        },
+        {
+          question: "TreeSize Mac bilgisayarlarda çalışır mı?",
+          answer:
+            "Hayır. TreeSize yalnızca Windows işletim sistemini destekler. Disk Mop ise macOS ve Windows üzerinde yerel olarak çalışır.",
+        },
+        {
+          question: "Disk Mop'un disk analizi TreeSize kadar ayrıntılı mı?",
+          answer:
+            "Evet. Disk Mop interaktif treemap görünümü ile sürücünüzdeki her klasörün boyutunu hiyerarşik olarak görselleştirir ve 500 MB üzeri dosyaları anında listeler.",
+        },
+      ],
       intro: [
         "TreeSize, JAM Software tarafından geliştirilen ve Windows'ta disk alanı kullanımını analiz etmek için kullanılan popüler bir araç. Treemap görselleştirmesi ile hangi klasörlerin ne kadar yer kapladığını detaylı şekilde gösteriyor.",
         "Ancak TreeSize bir analiz aracıdır, temizlik aracı değil. Dosyaları gösterir ama otomatik temizleme, cache silme veya tarayıcı verisi temizleme gibi özellikler sunmaz. Disk Mop ise hem analiz hem temizlik yapan komple bir çözüm.",
@@ -440,6 +464,29 @@ export const treesize: Article = {
         "Compare Disk Mop and TreeSize. Disk analysis tool or full-featured cleaner? Find out which fits your needs.",
       subtitle:
         "TreeSize is an excellent disk analysis tool, but that's all it does — it can't clean. Disk Mop both analyzes and cleans.",
+      keyTakeaways: [
+        "TreeSize is strictly a disk space analyzer; it does not clean junk files, clear caches, or optimize system memory.",
+        "Disk Mop combines visual treemap disk exploration with automated cache clearing, duplicate removal, and RAM optimization.",
+        "TreeSize is Windows-only, whereas Disk Mop delivers full native macOS and Windows compatibility.",
+        "TreeSize Professional costs €24.50+ for analysis alone, while Disk Mop offers a comprehensive maintenance suite for $19.90 one-time.",
+      ],
+      faq: [
+        {
+          question: "What is the key difference between Disk Mop and TreeSize?",
+          answer:
+            "TreeSize only visualizes folder sizes (read-only inventory). Disk Mop visualizes your disk via treemaps AND actively purges junk, eliminates duplicate files, and cleans system caches.",
+        },
+        {
+          question: "Is there a TreeSize version for Mac?",
+          answer:
+            "No. TreeSize is exclusively built for Windows. Mac users looking for treemap visual disk analysis and cleanup should choose Disk Mop.",
+        },
+        {
+          question: "Does Disk Mop show file sizes as accurately as TreeSize?",
+          answer:
+            "Yes. Disk Mop scans drive partition tables to generate precise byte-accurate visual hierarchies and surfaces files larger than 500 MB in seconds.",
+        },
+      ],
       intro: [
         "TreeSize by JAM Software is a popular Windows tool for analyzing disk space usage. Its treemap visualization shows exactly which folders consume the most space.",
         "However, TreeSize is an analysis tool, not a cleaning tool. It shows files but doesn't offer automatic cleaning, cache clearing, or browser data removal. Disk Mop is a complete solution that does both.",

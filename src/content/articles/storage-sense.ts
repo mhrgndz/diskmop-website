@@ -4,6 +4,7 @@ export const storageSense: Article = {
   slug: "disk-mop-vs-storage-sense",
   type: "comparison",
   date: "2026-07-12",
+  updated: "2026-11-03",
   readingTime: 7,
   competitorName: "Storage Sense",
   comparison: [
@@ -246,6 +247,31 @@ export const storageSense: Article = {
         "Depolama Algılayıcısı geçici dosyaları ücretsiz ve otomatik temizler ama yinelenen ve büyük dosyaları asla görmez. Disk Mop'un eklediklerini keşfedin.",
       subtitle:
         "Windows'un ücretsiz temizlik otomatiği temel işleri iyi yapıyor — peki neye hiç dokunmuyor ve $19.90'lık yükseltme ne zaman mantıklı?",
+      keyTakeaways: [
+        "Storage Sense (Depolama Alanı Algılayıcısı) Windows'un yerleşik temel otomasyonudur; ücretsizdir ve açık bırakılmalıdır.",
+        "Ancak Storage Sense yinelenen dosyaları (duplicate), büyük dosyaları (>500MB) veya üçüncü parti tarayıcı önbelleklerini temizlemez.",
+        "Storage Sense görsel treemap analizi sunmaz, yalnızca kaba kategori çubukları gösterir.",
+        "Disk Mop, Storage Sense'in temizleyemediği alanları (SHA-256 kopya dedektörü, treemap, RAM temizleyici) tamamlar.",
+      ],
+      faq: [
+        {
+          question:
+            "Windows'ta Storage Sense varken Disk Mop'a neden ihtiyaç duyulur?",
+          answer:
+            "Storage Sense yalnızca yerleşik Windows geçici dosyalarını ve Geri Dönüşüm Kutusu'nu siler. Görsel treemap disk analizi, SHA-256 kopya tespiti, büyük dosya bulucu, Chrome/Firefox önbellek temizliği ve macOS desteği sunmaz.",
+        },
+        {
+          question: "Storage Sense ile Disk Mop aynı anda kullanılabilir mi?",
+          answer:
+            "Evet, bu mükemmel bir kombinasyondur. Storage Sense arka planda temel sistem geçici dosyalarını temizlerken, Disk Mop derinlemesine disk analizi, yinelenen dosya ayıklama ve hızlandırma sağlar.",
+        },
+        {
+          question:
+            "Storage Sense fotoğraflardaki veya dosyalardaki kopyaları bulabilir mi?",
+          answer:
+            "Hayır. Storage Sense dosya içeriklerini analiz etmez ve yinelenen dosya bulma özelliği bulunmaz.",
+        },
+      ],
       intro: [
         "Depolama Algılayıcısı, Windows 10 ve 11'e yerleşik ücretsiz bir temizlik otomatiğidir: geçici dosyaları siler, eski geri dönüşüm kutusu öğelerini boşaltır ve isterseniz uzun süredir açılmamış indirmeleri zamanlanmış olarak temizler. Açmaya kesinlikle değer — ama diskinizi neyin doldurduğunu asla göstermez; yinelenen dosyaları, büyük dosyaları, tarayıcı önbelleklerini ve başlangıç programlarını hiç görmez. Disk Mop tam da bu boşlukları görsel disk analizi, SHA-256 yinelenen dosya tespiti ve başlangıç yöneticisiyle tek seferlik $19.90'a dolduruyor.",
         "Bu karşılaştırmada önce Depolama Algılayıcısı'nın gerçekte ne yaptığını ve nasıl doğru ayarlanacağını adım adım anlatacağız; ücretsiz araç, karardan önce adil bir kurulumu hak ediyor. Ardından yetersiz kaldığı noktaları dürüstçe ortaya koyup Disk Mop'un nerede devreye girdiğini göstereceğiz.",
@@ -342,6 +368,30 @@ export const storageSense: Article = {
         "Windows Storage Sense automates temp file cleanup for free, but it never touches duplicates, large files or startup apps. See what Disk Mop adds for $19.90.",
       subtitle:
         "Windows' free cleanup autopilot handles the basics well — here is exactly what it never touches, and when the $19.90 upgrade pays off.",
+      keyTakeaways: [
+        "Storage Sense is a great native Windows baseline that should remain enabled for basic temp file purging.",
+        "Storage Sense never touches duplicate files, files over 500 MB, or third-party browser caches (Chrome, Firefox).",
+        "Storage Sense lacks interactive treemap visualizations, presenting only high-level category buckets.",
+        "Disk Mop acts as the advanced companion to Storage Sense, handling deep deduplication, treemaps, and cross-platform cleanup.",
+      ],
+      faq: [
+        {
+          question:
+            "Why do I need Disk Mop if Windows 11 already includes Storage Sense?",
+          answer:
+            "Storage Sense only manages Windows temporary files and Recycle Bin age limits. It cannot detect duplicate photos/documents, provide interactive treemap disk exploration, or clean multi-browser caches.",
+        },
+        {
+          question: "Can I run Storage Sense and Disk Mop together?",
+          answer:
+            "Yes, they complement each other seamlessly. Storage Sense acts as an automated passive background baseline, while Disk Mop gives you proactive deep cleaning and storage visualization.",
+        },
+        {
+          question: "Does Storage Sense find duplicate files on Windows?",
+          answer:
+            "No. Storage Sense does not inspect file checksums or contents and offers zero duplicate detection functionality.",
+        },
+      ],
       intro: [
         "Windows Storage Sense is a free cleanup autopilot built into Windows 10 and 11: it automatically deletes temporary files, empties old Recycle Bin items and can clear long-unopened downloads on a schedule. It is absolutely worth turning on — but it never shows you what fills your drive, and it cannot find duplicate files, large files, browser caches or startup bloat. Disk Mop covers exactly those gaps with visual disk analysis, a SHA-256 duplicate detector and a startup manager for a one-time $19.90.",
         "In this comparison we first walk through what Storage Sense actually does and how to configure it step by step, because the free tool deserves a fair setup before any verdict. Then we look honestly at its blind spots and show where Disk Mop picks up.",

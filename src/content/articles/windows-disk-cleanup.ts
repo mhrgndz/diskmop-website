@@ -3,6 +3,7 @@ import type { Article } from "../types";
 export const windowsDiskCleanup: Article = {
   slug: "disk-mop-vs-windows-disk-cleanup",
   date: "2025-05-15",
+  updated: "2026-11-03",
   readingTime: 7,
   competitorName: "Windows Disk Cleanup",
   comparison: [
@@ -377,6 +378,31 @@ export const windowsDiskCleanup: Article = {
         "Disk Mop ve Windows dahili Disk Cleanup aracını karşılaştırın. 21+ özellik vs temel temizlik. Neden dahili araç yeterli değil? Detaylı analiz.",
       subtitle:
         "Windows'un dahili Disk Cleanup aracı ücretsiz ve kurulum gerektirmiyor — ama 2025'te bilgisayarınızı gerçekten temiz tutmak için yeterli mi?",
+      keyTakeaways: [
+        "Klasik Windows Disk Temizleme (cleanmgr.exe) 1998'den kalma bir araçtır ve Microsoft tarafından kullanım dışı (deprecated) ilan edilmiştir.",
+        "Disk Temizleme treemap analizi yapamaz, kopya dosyaları bulamaz ve üçüncü parti tarayıcı (Chrome, Firefox) önbelleklerine dokunamaz.",
+        "Disk Mop, eski cleanmgr.exe'nin yapamadığı görsel disk analizi, SHA-256 yinelenen tespiti ve tek tık optimizasyonu modern bir arayüzle sunar.",
+        "Disk Mop hem Windows hem de macOS'u desteklerken, Disk Temizleme yalnızca Windows'a özeldir.",
+      ],
+      faq: [
+        {
+          question:
+            "Windows Disk Temizleme (cleanmgr) neden kullanımdan kaldırılıyor?",
+          answer:
+            "Microsoft, klasik Disk Temizleme aracını Windows 10 sürüm 1803'ten itibaren 'deprecated' ilan etmiş ve geliştirmeyi durdurmuştur. Yerine modern Ayarlar altındaki Depolama Algılayıcısı önerilmektedir.",
+        },
+        {
+          question:
+            "Disk Mop, Windows Disk Temizleme'ye göre ne kadar daha fazla yer açar?",
+          answer:
+            "cleanmgr yalnızca Windows geçici dosyalarını siler. Disk Mop ise Chrome/Firefox/Edge önbellekleri, 500 MB üzeri unutulmuş büyük dosyalar ve SHA-256 tabanlı kopya dosyaları da temizleyerek ortalama 2 ila 5 kat daha fazla alan kazandırabilir.",
+        },
+        {
+          question: "Windows Disk Temizleme Mac'te var mı?",
+          answer:
+            "Hayır. Disk Temizleme bir Windows aracıdır. Disk Mop ise tek bir lisansla hem Windows hem Mac bilgisayarlarınızda çalışır.",
+        },
+      ],
       intro: [
         "Windows Disk Cleanup, Windows 98'den beri işletim sisteminin parçası olan basit bir disk temizleme aracıdır. Geçici dosyaları, güncelleme önbelleğini ve geri dönüşüm kutusunu temizleyebilir. Ancak modern bilgisayar kullanımının gerektirdiği kapsamlı disk yönetimi, görsel analiz ve otomatik bakım özelliklerinden tamamen yoksundur.",
         "Disk Mop, 21'den fazla özelliğiyle disk temizliğini çok ötesine taşıyan modern bir sistem bakım aracıdır. Görsel disk analizi, yinelenen dosya tespiti, RAM optimizasyonu, disk sağlığı izleme ve çok daha fazlasını tek bir uygulamada sunar. Peki Windows'un dahili aracı yerine neden Disk Mop'u tercih etmelisiniz?",
@@ -462,6 +488,30 @@ export const windowsDiskCleanup: Article = {
         "Compare Disk Mop vs Windows built-in Disk Cleanup. 21+ features vs basic temp file cleaning. Why the built-in tool isn't enough in 2025.",
       subtitle:
         "Windows Disk Cleanup is free and requires no installation — but is it really enough to keep your computer clean in 2025?",
+      keyTakeaways: [
+        "Windows Disk Cleanup (cleanmgr.exe) is a 1998 legacy utility officially deprecated by Microsoft.",
+        "Disk Cleanup lacks visual treemaps, duplicate file detection, and third-party browser cache cleaning (Chrome, Firefox).",
+        "Disk Mop provides a modern replacement with interactive treemap exploration, cryptographic SHA-256 deduplication, and 1-click optimization.",
+        "Disk Mop supports both macOS and Windows natively, whereas Disk Cleanup is Windows-only.",
+      ],
+      faq: [
+        {
+          question: "Is Windows Disk Cleanup (cleanmgr.exe) deprecated?",
+          answer:
+            "Yes. Microsoft officially deprecated cleanmgr starting in Windows 10 build 1803, retaining it solely for backwards compatibility while freezing all feature development.",
+        },
+        {
+          question:
+            "Does Disk Mop free up more space than Windows Disk Cleanup?",
+          answer:
+            "Yes. While cleanmgr only checks basic Windows temp folders, Disk Mop scans third-party browser caches, uncovers 500 MB+ buried downloads, and detects identical duplicate files across all directories.",
+        },
+        {
+          question: "Can I use Windows Disk Cleanup on macOS?",
+          answer:
+            "No. Cleanmgr is strictly a Windows executable. Mac users need Disk Mop to purge System Data, user caches, and visual drive bloat.",
+        },
+      ],
       intro: [
         "Windows Disk Cleanup has been part of the operating system since Windows 98. It can clear temporary files, update caches, and empty the Recycle Bin. However, it completely lacks the comprehensive disk management, visual analysis, and automated maintenance features that modern computer usage demands.",
         "Disk Mop is a modern system maintenance tool with 21+ features that go far beyond simple disk cleaning. Visual disk analysis, duplicate file detection, RAM optimization, disk health monitoring, and much more — all in a single application. Here's why you should consider Disk Mop over Windows' built-in tool.",
