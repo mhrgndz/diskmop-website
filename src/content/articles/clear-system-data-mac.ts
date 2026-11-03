@@ -5,7 +5,7 @@ export const clearSystemDataMac: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-07-03",
-  updated: "2026-11-03",
+  updated: "2026-11-04",
   readingTime: 8,
   content: {
     tr: {
@@ -18,6 +18,68 @@ export const clearSystemDataMac: Article = {
         "Mac'te Sistem Verisi; önbellekler, günlük dosyaları, sanal bellek takas dosyaları, yerel Time Machine anlık görüntüleri ve macOS'in Uygulamalar ya da Belgeler gibi kategorilere yerleştiremediği diğer her şeyi kapsayan toplama kategorisidir. Bu alanı güvenle temizlemek için önbellekleri ve eski indirmeleri silmeniz, eski yedekleri kaldırmanız, çöp sepetini boşaltmanız ve yinelenen dosyaları temizlemeniz yeterlidir — riskli sistem klasörü silme işlemlerine gerek yoktur.",
         "Sistem Verisi kategorisi birçok Mac'te onlarca gigabayta ulaşabilir ve Apple bu alanın içinde tam olarak ne olduğunu göstermez. Forumlarda sık rastlanan tavsiye, Library klasörünün içeriğini topluca silmektir; ancak bu yaklaşım uygulamaların bozulmasına ve veri kaybına yol açabilir. Bu rehberde bunun yerine tamamen güvenli ve geri alınabilir altı yöntem bulacaksınız.",
         "Önce macOS'in yerleşik araçlarıyla yapılabilecek manuel adımları anlatacağız, ardından tüm bu işlemleri tek uygulamada toplayan Disk Mop'un macOS sürümünün süreci nasıl hızlandırdığını göstereceğiz. Adımları sırayla uygulayarak diskinizde gözle görülür bir alan açabilirsiniz.",
+      ],
+      keyTakeaways: [
+        "Sistem Verisi; önbellekler, sistem günlükleri, sanal bellek takas dosyaları ve Time Machine anlık görüntülerini içeren dinamik bir kategoridir.",
+        "Library klasörünü toptan silmek sistem stabilitesini bozar; yalnızca ~/Library/Caches ve ~/Library/Logs içerikleri seçici temizlenmelidir.",
+        "Eski iOS aygıt yedekleri ve yerel Time Machine anlık görüntüleri tek başına 20-50 GB Sistem Verisi işgal edebilir.",
+        "Mac'i yeniden başlatmak (restart), biriken takas (swap) ve geçici çalışma dosyalarını otomatik olarak sıfırlar.",
+        "DiskMop görsel treemap analiziyle devasa önbellek ve gizli sistem kalıntılarını saniyeler içinde tespit eder.",
+      ],
+      dataTable: {
+        caption: "Mac Sistem Verisini (System Data) oluşturan ana bileşenler ve güvenli temizleme yolları",
+        columns: ["Bileşen", "Tipik Boyut", "Nerede Saklanır?", "Güvenli Temizleme Yolu"],
+        rows: [
+          ["Kullanıcı ve Uygulama Önbellekleri", "5 – 25 GB", "~/Library/Caches", "Finder ile seçerek temizleme veya DiskMop Önbellek Temizleyici"],
+          ["Sistem ve Uygulama Günlükleri", "1 – 5 GB", "~/Library/Logs", "Eski .log dosyalarını temizleme"],
+          ["Yerel Time Machine Anlık Görüntüleri", "10 – 50 GB", "/Volumes/Data/.MobileBackups", "Terminal 'tmutil deletelocalsnapshots' komutu"],
+          ["Eski iPhone & iPad Yedekleri", "10 – 80 GB", "~/Library/Application Support/MobileSync", "Finder > Genel > Yedekleri Yönet menüsünden silme"],
+          ["Sanal Bellek Takas Dosyaları", "2 – 16 GB", "/private/var/vm", "Mac'i normal şekilde yeniden başlatma"],
+        ],
+      },
+      howTo: {
+        name: "Mac Sistem Verisi Nasıl Güvenle Temizlenir?",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Depolama dağılımını kontrol edin",
+            text: "Apple menüsü > Sistem Ayarları > Genel > Depolama yolunu izleyerek Sistem Verisi boyutunu ölçün.",
+          },
+          {
+            name: "Kullanıcı önbelleklerini temizleyin",
+            text: "Finder'da Shift-Command-G ile ~/Library/Caches klasörüne gidin ve eski uygulama önbelleklerini temizleyin.",
+          },
+          {
+            name: "Eski cihaz yedeklerini silin",
+            text: "Finder'da iPhone/iPad aygıt yönetiminden veya MobileSync klasöründen artık kullanılmayan yedekleri kaldırın.",
+          },
+          {
+            name: "Time Machine yerel anlık görüntülerini inceltin",
+            text: "Terminal'de 'tmutil listlocalsnapshots /' ile listelenen gereksiz anlık görüntüleri silin.",
+          },
+          {
+            name: "Mac'inizi yeniden başlatın",
+            text: "Sanal bellek takas dosyalarının ve geçici bellek kütlelerinin sıfırlanması için bilgisayarı yeniden başlatın.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question: "Mac'te Sistem Verisi neden 50-100 GB gibi devasa boyutlara ulaşır?",
+          answer: "Time Machine'in harici disk bağlı değilken aldığı yerel anlık görüntüler, Adobe ve Xcode gibi dev araçların render önbellekleri ve eski iPhone yedekleri Sistem Verisi'ni onlarca gigabayt şişirebilir.",
+        },
+        {
+          question: "Library klasörünü tamamen silmek güvenli midir?",
+          answer: "Kesinlikle hayır. Library klasörünün kendisini silmek macOS uygulamalarının çökmesine ve kişisel ayarların kaybolmasına yol açar. Yalnızca Caches ve Logs klasörlerinin içi seçici temizlenmelidir.",
+        },
+        {
+          question: "Mac'i yeniden başlatmak Sistem Verisini azaltır mı?",
+          answer: "Evet. macOS'in RAM yetmediğinde diske yazdığı sanal bellek (swap / sleepimage) takas dosyaları yeniden başlatma esnasında otomatik olarak temizlenir.",
+        },
+        {
+          question: "Sistem Verisini tamamen sıfırlamak mümkün müdür?",
+          answer: "Hayır. macOS temel işletim işlevlerini yürütmek için her zaman birkaç gigabaytlık aktif sistem önbelleğine ihtiyaç duyar. Sağlıklı bir Sistem Verisi boyutu 10–20 GB civarıdır.",
+        },
       ],
       sections: [
         {
@@ -87,6 +149,68 @@ export const clearSystemDataMac: Article = {
         "System Data on a Mac is the catch-all storage category that holds caches, log files, virtual memory swap files, local Time Machine snapshots and everything else macOS cannot assign to categories like Apps or Documents. To clear System Data storage on Mac safely, you clean caches and old downloads, remove outdated backups, empty the Trash and delete duplicate files — no risky system-folder deletions required.",
         "On many Macs, System Data grows to tens of gigabytes, and Apple never shows you what is actually inside it. The advice you often find in forums is to bulk-delete the contents of the Library folder, which can break applications and cause data loss. This guide takes the opposite approach: six methods that are safe, reversible and fully under your control.",
         "We will start with the manual steps you can do with macOS's built-in tools, then show how the macOS version of Disk Mop bundles the same cleanup into a few clicks. Work through the steps in order and you should see a noticeable amount of space come back.",
+      ],
+      keyTakeaways: [
+        "System Data is a dynamic catch-all category holding caches, system logs, virtual memory swap files, and Time Machine snapshots.",
+        "Bulk-deleting the Library folder risks breaking apps; only contents in ~/Library/Caches and ~/Library/Logs should be selectively pruned.",
+        "Outdated iOS device backups and local Time Machine snapshots alone can consume 20–50 GB of System Data.",
+        "Restarting your Mac automatically flushes virtual memory swap files and temporary runtime allocations.",
+        "DiskMop's visual treemap locates bloated caches and hidden system clutter within seconds.",
+      ],
+      dataTable: {
+        caption: "Main components of Mac System Data and how to clean them safely",
+        columns: ["Component", "Typical Size", "Storage Location", "Safe Cleaning Method"],
+        rows: [
+          ["User & App Caches", "5 – 25 GB", "~/Library/Caches", "Selective removal via Finder or DiskMop Cache Cleaner"],
+          ["System & App Logs", "1 – 5 GB", "~/Library/Logs", "Prune outdated .log files"],
+          ["Local Time Machine Snapshots", "10 – 50 GB", "/Volumes/Data/.MobileBackups", "Terminal 'tmutil deletelocalsnapshots' command"],
+          ["Old iPhone & iPad Backups", "10 – 80 GB", "~/Library/Application Support/MobileSync", "Finder > General > Manage Backups"],
+          ["Virtual Memory Swap Files", "2 – 16 GB", "/private/var/vm", "Standard Mac restart"],
+        ],
+      },
+      howTo: {
+        name: "How to Clear System Data on Mac Safely",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Inspect storage breakdown",
+            text: "Open Apple menu > System Settings > General > Storage to check your current System Data footprint.",
+          },
+          {
+            name: "Clear user caches",
+            text: "Press Shift-Command-G in Finder, navigate to ~/Library/Caches, and clear obsolete app caches.",
+          },
+          {
+            name: "Delete old device backups",
+            text: "Manage and delete obsolete iPhone/iPad backups in Finder to free tens of gigabytes.",
+          },
+          {
+            name: "Thin local Time Machine snapshots",
+            text: "Run 'tmutil listlocalsnapshots /' in Terminal and prune accumulated snapshots.",
+          },
+          {
+            name: "Restart your Mac",
+            text: "Reboot your computer to automatically purge virtual memory swap and temporary runtime caches.",
+          },
+        ],
+      },
+      faq: [
+        {
+          question: "Why does System Data take up 50 to 100 GB on my Mac?",
+          answer: "Local Time Machine snapshots created when backup drives are disconnected, massive render caches from apps like Adobe and Xcode, and old iOS device backups are the most common culprits.",
+        },
+        {
+          question: "Is it safe to delete the Library folder on Mac?",
+          answer: "No. Deleting the entire Library folder will corrupt user profiles and break applications. Only contents inside Caches and Logs should ever be selectively removed.",
+        },
+        {
+          question: "Does restarting a Mac reduce System Data storage?",
+          answer: "Yes. macOS automatically flushes virtual memory swap files and sleepimage cache files during a clean system reboot.",
+        },
+        {
+          question: "Can System Data ever be reduced to zero?",
+          answer: "No. macOS requires active runtime caches and fonts to operate properly. A normal, healthy System Data allocation ranges between 10 and 20 GB.",
+        },
       ],
       sections: [
         {
