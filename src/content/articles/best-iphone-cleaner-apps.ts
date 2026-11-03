@@ -5,7 +5,7 @@ export const bestIphoneCleanerApps: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -100,8 +100,8 @@ export const bestIphoneCleanerApps: Article = {
           title: "Bir iPhone Temizleyicisi Neyi Yapabilir, Neyi Yapamaz",
           content: [
             "Her iPhone uygulaması kendi kum havuzunda çalışır. Kendi dosyalarını ve fotoğraf kitaplığı ya da kişiler gibi açıkça paylaştığınız verileri okuyabilir, ama diğer uygulamaların ya da sistemin içine bakamaz. Gerçek her iPhone temizleyicisinin sonunda bir fotoğraf, video ve kişi aracı olmasının sebebi budur. Büyük temizleyici markaları bile App Store sayfalarında iOS kısıtlarının onları diğer uygulamaların depolamasından uzak tuttuğunu yazar.",
-            "Bu, bütün bir vaat kategorisini dışarıda bırakır. Bir uygulama Safari'nin önbelleğini, WhatsApp'ın medya klasörünü ya da iOS sistem verilerini temizleyemez; uygulamaları kapatmak ya da belleği boşaltmak da depolama alanı yaratmaz. Bir temizleyicinin iyi yapabileceği şey elle bulunması zor olanı bulmaktır: neredeyse aynı kareler, bulanık fotoğraflar, büyük ve tekrarlanan videolar, eski ekran görüntüleri ve kopya kişiler.",
-            "Apple'ın zaten sunduklarıyla başlamaya değer. Kopyalar albümü birebir kopyaları birleştirir, Son Silinenler silinen öğeleri 30 gün tutar, Ayarlar > Genel > iPhone Depolama Alanı da uygulamaları boyuta göre listeler ve kullanmadıklarınızı kaldırmayı önerir. [Fotoğraf silmenin iPhone'da neden yer açmadığı](/blog/iphone-storage-full) rehberimiz bu adımları anlatıyor.",
+            "Bu, bütün bir vaat kategorisini dışarıda bırakır. Bir uygulama Safari'nin önbelleğini, WhatsApp'ın medya klasörünü ya da iOS sistem verilerini temizleyemez (bu alanları elden geçirmek için [iPhone Sistem Verilerini temizleme](/blog/clear-system-data-iphone) ve genel [iPhone telefon temizleme](/blog/how-to-clean-iphone-storage) rehberlerimize bakabilirsiniz); uygulamaları kapatmak ya da belleği boşaltmak da depolama alanı yaratmaz. Bir temizleyicinin iyi yapabileceği şey elle bulunması zor olanı bulmaktır: neredeyse aynı kareler, [bulanık fotoğraflar](/blog/delete-blurry-photos-iphone), büyük ve tekrarlanan videolar, eski ekran görüntüleri ve kopya kişiler.",
+            "Apple'ın zaten sunduklarıyla başlamaya değer. Kopyalar albümü birebir kopyaları birleştirir, Son Silinenler silinen öğeleri 30 gün tutar, Ayarlar > Genel > iPhone Depolama Alanı da uygulamaları boyuta göre listeler ve kullanmadıklarınızı kaldırmayı önerir. Fotoğraflarınızı güvende tutmak için [iPhone fotoğraf temizleme rehberi](/blog/iphone-photo-cleanup-guide) ve [fotoğraf silmenin iPhone'da neden yer açmadığı](/blog/iphone-storage-full) yazılarımız bu adımları anlatıyor.",
           ],
         },
         {
@@ -256,8 +256,8 @@ export const bestIphoneCleanerApps: Article = {
           title: "What an iPhone Cleaner Can and Cannot Do",
           content: [
             "Every iPhone app runs in its own sandbox. It can read its own files and the data you explicitly share with it, such as the photo library or contacts, but it cannot look inside other apps or the system. That is why every genuine iPhone cleaner is, in the end, a photo, video and contact tool. Even large cleaner brands state on their App Store pages that iOS restrictions keep them out of other apps' storage.",
-            "This rules out a whole category of promises. An app cannot clear Safari's cache, WhatsApp's media folder or iOS system data, and closing apps or freeing memory does not create storage space. What a cleaner can do well is find what is hard to find by hand: near-identical shots, blurry photos, large and repeated videos, old screenshots and duplicate contacts.",
-            "It is worth starting with what Apple already provides. The Duplicates album merges exact copies, Recently Deleted holds deleted items for 30 days, and Settings > General > iPhone Storage lists apps by size and suggests offloading those you do not use. Our guide on [why deleting photos does not free up iPhone storage](/blog/iphone-storage-full) covers these steps.",
+            "This rules out a whole category of promises. An app cannot clear Safari's cache, WhatsApp's media folder or iOS system data (to tackle those areas, see our guides on [how to clear System Data on iPhone](/blog/clear-system-data-iphone) and [how to clean up iPhone storage](/blog/how-to-clean-iphone-storage)), and closing apps or freeing memory does not create storage space. What a cleaner can do well is find what is hard to find by hand: near-identical shots, [blurry photos](/blog/delete-blurry-photos-iphone), large and repeated videos, old screenshots and duplicate contacts.",
+            "It is worth starting with what Apple already provides. The Duplicates album merges exact copies, Recently Deleted holds deleted items for 30 days, and Settings > General > iPhone Storage lists apps by size and suggests offloading those you do not use. To avoid accidental data loss, our [iPhone photo cleanup guide](/blog/iphone-photo-cleanup-guide) and guide on [why deleting photos does not free up iPhone storage](/blog/iphone-storage-full) cover these steps in detail.",
           ],
         },
         {

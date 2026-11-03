@@ -5,7 +5,7 @@ export const deleteBlurryPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-03",
   readingTime: 7,
   content: {
     tr: {
@@ -100,7 +100,7 @@ export const deleteBlurryPhotosIphone: Article = {
           title: "Silmeden Önce Gözden Geçirin",
           content: [
             "Yazılım yumuşaklığı ölçebilir, ama bir fotoğrafın sizin için ne anlama geldiğini bilemez. Büyükannenizin son doğum gününün tek fotoğrafı biraz odaksız olabilir; bulanık bir konser karesi yine de istediğiniz anı olabilir. DiskMop listeyi açtığınızda bunu size hatırlatır ve sizin yerinize asla bir şey seçmez.",
-            "Tam ekran görmek ve yüzlere yakınlaşmak için herhangi bir fotoğrafa basılı tutun. Her seferinde tek fotoğrafa karar vermeyi tercih ederseniz Bulanık fotoğraflar'ı Kaydır sekmesinde açın: tutmak için sağa, sepete atmak için sola kaydırın; sepeti boşaltıp onaylayana kadar hiçbir şey silinmez. Bir avuç neredeyse aynı deneme için benzer fotoğraf grupları çoğu zaman daha iyi bir araçtır; [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) rehberimiz bunu anlatıyor.",
+            "Tam ekran görmek ve yüzlere yakınlaşmak için herhangi bir fotoğrafa basılı tutun. Her seferinde tek fotoğrafa karar vermeyi tercih ederseniz Bulanık fotoğraflar'ı Kaydır sekmesinde açın: tutmak için sağa, sepete atmak için sola kaydırın; sepeti boşaltıp onaylayana kadar hiçbir şey silinmez. Bir avuç neredeyse aynı deneme için benzer fotoğraf grupları çoğu zaman daha iyi bir araçtır; [iPhone'da kopya ve benzer fotoğrafları bulma](/blog/find-duplicate-similar-photos-iphone) ve genel [iPhone fotoğraf temizleme rehberi](/blog/iphone-photo-cleanup-guide) yazılarımız bunu anlatıyor.",
             "Bulanık bir Live Photo'yu silmeden önce içinde daha iyi bir kare saklanıp saklanmadığına bakın. Fotoğrafı açın, Düzenle'ye, ardından Live Photo düğmesine dokunun ve kareler arasında sürükleyin; biri daha netse Anahtar Fotoğraf Yap'ı seçin. Fotoğraf Live Photo olarak kalır, artık daha net bir durağan kareyle.",
           ],
         },
@@ -109,7 +109,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "Bulanıklığın çoğu dört sebepten gelir: sarsıntı, kaçan odak, hareket eden konular ve kirli bir lens. Lensi hızla silmek bulanıklığa benzeyen pusu giderir. Çekmeden önce konuya dokunmak kameraya neye odaklanacağını söyler; basılı tutmak ise kadrajı ayarlarken odağın ve pozlamanın kaymaması için ikisini kilitler.",
             "Az ışıkta iPhone Gece moduna geçer ve deklanşörü bir saniye ya da daha uzun süre açık tutar; çekim bitene kadar kıpırdamamak her şeyden önemlidir. Çocuklar, evcil hayvanlar ve spor için deklanşörü Seri Çekim'de basılı tutun ya da kısa bir video çekip sonra en iyi kareyi seçin, ardından gerisini silin.",
-            "Temizlik yaptığınızda Son Silinenler'de bitirin: siz onu boşaltana kadar silinen fotoğraflar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde on fotoğrafa kadar silebilirsiniz, 7 günlük ücretsiz denemesi olan aylık abonelik DiskMop Pro ise sınırı kaldırır. Bulanık kareler sorunun yalnızca bir parçasıysa [iPhone fotoğraflarını kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) kitaplığın geri kalanını kapsar.",
+            "Temizlik yaptığınızda Son Silinenler'de bitirin: siz onu boşaltana kadar silinen fotoğraflar depolama alanınızdan sayılmaya devam eder. DiskMop'ta tarama ücretsizdir; abonelik olmadan günde on fotoğrafa kadar silebilirsiniz. Bulanık kareler sorunun yalnızca bir parçasıysa [iPhone fotoğraf temizleme rehberi](/blog/iphone-photo-cleanup-guide) ve [fotoğrafları kaydırarak temizleme](/blog/swipe-to-delete-photos-iphone) kitaplığın geri kalanını güvenle kapsar.",
           ],
         },
       ],
@@ -240,7 +240,7 @@ export const deleteBlurryPhotosIphone: Article = {
           title: "Review Before You Delete",
           content: [
             "Software can measure softness, but it cannot know what a photo means to you. The only picture of a grandparent's last birthday may be slightly out of focus; a blurry shot of a concert can still be the memory you want. DiskMop reminds you of this when you open the list, and it never selects anything for you.",
-            "Press and hold any photo to see it full screen and zoom in on the faces. If you prefer to decide one photo at a time, open Blurry & badly shot in the Swipe tab: swipe right to keep, left to put it in the basket, and nothing is deleted until you empty the basket and confirm. For a handful of near-identical attempts, the similar-photo groups are often the better tool, as our guide on [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone) explains.",
+            "Press and hold any photo to see it full screen and zoom in on the faces. If you prefer to decide one photo at a time, open Blurry & badly shot in the Swipe tab: swipe right to keep, left to put it in the basket, and nothing is deleted until you empty the basket and confirm. For a handful of near-identical attempts, the similar-photo groups are often the better tool, as our guides on [finding duplicate and similar photos on iPhone](/blog/find-duplicate-similar-photos-iphone) and the [complete iPhone photo cleanup guide](/blog/iphone-photo-cleanup-guide) explain.",
             "Before deleting a blurry Live Photo, check whether a better frame is hidden inside it. Open the photo, tap Edit, then the Live Photo button, and drag through the frames; if one is sharper, choose Make Key Photo. The photo stays a Live Photo, now with a sharper still.",
           ],
         },
@@ -249,7 +249,7 @@ export const deleteBlurryPhotosIphone: Article = {
           content: [
             "Most blur comes from four causes: shake, missed focus, moving subjects and a dirty lens. A quick wipe of the lens fixes haze that looks like blur. Tapping the subject before you shoot tells the camera what to focus on, and touching and holding locks focus and exposure so they do not jump while you frame.",
             "In low light, the iPhone switches to Night mode and keeps the shutter open for a second or more; holding still until the capture finishes matters more than anything else. For children, pets and sports, hold the shutter in Burst mode or shoot a short video and pick the best frame later, then delete the rest.",
-            "When you do clean up, finish in Recently Deleted: until you empty it, deleted photos still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to ten photos a day, and DiskMop Pro, a monthly subscription with a 7-day free trial, removes the limit. If the blurry shots are only part of the problem, [cleaning up iPhone photos by swiping](/blog/swipe-to-delete-photos-iphone) covers the rest of the library.",
+            "When you do clean up, finish in Recently Deleted: until you empty it, deleted photos still count against your storage. Scanning is free in DiskMop; without a subscription you can delete up to ten photos a day. If blurry shots are only part of the puzzle, our [iPhone photo cleanup guide](/blog/iphone-photo-cleanup-guide) and [swiping through iPhone photos](/blog/swipe-to-delete-photos-iphone) cover the rest of your library.",
           ],
         },
       ],

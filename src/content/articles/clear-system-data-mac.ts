@@ -5,6 +5,7 @@ export const clearSystemDataMac: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-07-03",
+  updated: "2026-11-03",
   readingTime: 8,
   content: {
     tr: {
@@ -22,7 +23,7 @@ export const clearSystemDataMac: Article = {
         {
           title: "Mac'te Sistem Verisi Nelerden Oluşur?",
           content: [
-            "Sistem Verisi, eski macOS sürümlerinde Diğer olarak adlandırılan kategorinin devamıdır. İçinde uygulama önbellekleri ve geçici dosyalar, sistem ve uygulama günlükleri, sanal bellek takas dosyaları, yerel Time Machine anlık görüntüleri, uygulama destek dosyaları, eklentiler, disk imajları ve arşivler ile Finder'ın sakladığı eski iPhone ve iPad yedekleri gibi çok farklı öğeler bulunur.",
+            "Sistem Verisi, eski macOS sürümlerinde Diğer olarak adlandırılan kategorinin devamıdır. İçinde uygulama önbellekleri ve geçici dosyalar, sistem ve uygulama günlükleri, sanal bellek takas dosyaları, yerel Time Machine anlık görüntüleri, uygulama destek dosyaları, eklentiler, disk imajları ve arşivler ile Finder'ın sakladığı eski iPhone ve iPad yedekleri gibi çok farklı öğeler bulunur (iPhone tarafındaki benzer durum için [iPhone Sistem Verilerini temizleme](/blog/clear-system-data-iphone) rehberimize bakabilirsiniz).",
             "Kategorinin bu kadar belirsiz olmasının nedeni basittir: macOS, Uygulamalar, Fotoğraflar veya Belgeler gibi net kategorilere sığmayan her şeyi buraya toplar. Bu yüzden boyutu gün içinde bile dalgalanabilir; sistem takas dosyası büyüdükçe veya Time Machine yeni bir anlık görüntü aldıkça rakam artar. Birçok kullanıcının bu kategoriyi onlarca gigabayt boyutunda görmesi olağandır.",
             "Önemli bir not: Sistem Verisi'nin tamamı çöp değildir. Takas dosyalarını macOS kendisi yönetir ve yerel anlık görüntüleri disk dolmaya başladığında otomatik olarak inceltir. Hedefimiz bu kategorinin tamamını sıfırlamak değil, güvenle silinebilecek bayat kısmı — eski önbellekler, günlükler, kullanılmayan yedekler ve unutulmuş büyük dosyalar — ortadan kaldırmaktır.",
           ],
@@ -91,7 +92,7 @@ export const clearSystemDataMac: Article = {
         {
           title: "What Counts as System Data on a Mac?",
           content: [
-            "System Data is the successor to the category older macOS versions called Other. It contains a wide mix of items: application caches and temporary files, system and app logs, virtual memory swap files, local Time Machine snapshots, app support files, plug-ins and extensions, disk images and archives, and the old iPhone and iPad backups that Finder stores on your drive.",
+            "System Data is the successor to the category older macOS versions called Other. It contains a wide mix of items: application caches and temporary files, system and app logs, virtual memory swap files, local Time Machine snapshots, app support files, plug-ins and extensions, disk images and archives, and the old iPhone and iPad backups that Finder stores on your drive (for the iOS equivalent, see our guide on [how to clear System Data on iPhone](/blog/clear-system-data-iphone)).",
             "The reason the category feels so vague is simple: macOS lumps together everything that does not fit a clean bucket like Apps, Photos or Documents. That is also why the number fluctuates, sometimes within a single day — the swap file grows under memory pressure, and Time Machine quietly takes new local snapshots. Seeing this category reach tens of gigabytes is completely normal.",
             "One important reassurance before you start deleting: not all System Data is junk. macOS manages swap files itself and automatically thins local snapshots when the disk starts filling up. The goal is not to force the category to zero, but to remove the stale part that is safe to delete — old caches, logs, unused backups and forgotten large files.",
           ],
