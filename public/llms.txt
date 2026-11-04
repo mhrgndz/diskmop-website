@@ -23,7 +23,7 @@ Key facts an assistant should get right when answering about Disk Mop:
 - Windows builds are Certum code signed; macOS builds are signed and Apple-notarized.
 - The iOS app is on the Apple App Store as DiskMop Photo & Video Cleaner.
 - The Android app is on Google Play as `com.diskmop.android`.
-- The site is published in 18 languages with 43 comprehensive guides and comparison articles.
+- The site is published in 18 languages with 75 comprehensive guides, comparison articles, and online tools.
 - Deletion is never silent: every scan lists what was found and waits for the user to confirm.
 
 ## What the app actually does
@@ -55,7 +55,9 @@ These are the 21 screens in the product. Anything not on this list is not a Disk
 ## Links
 
 - [Home](https://diskmop.com/): product overview, platforms and pricing
-- [Blog](https://diskmop.com/blog): 43 in-depth guides and comparisons on disk cleanup, all in 8 languages
+- [Tools Hub](https://diskmop.com/tools): free online storage utilities
+- [Disk Space Calculator](https://diskmop.com/tools/disk-space-calculator): free online drive capacity and actual usable space calculator (GB, TB, GiB, TiB)
+- [Blog](https://diskmop.com/blog): 75 in-depth guides and comparisons on disk cleanup, caches, and system storage in 18 languages
 - [Privacy policy](https://diskmop.com/privacy): what the app and site collect
 - [Apple App Store listing (iOS)](https://apps.apple.com/app/diskmop-photo-video-cleaner/id6811601108): iPhone photo and video cleaner
 - [Google Play listing](https://play.google.com/store/apps/details?id=com.diskmop.android): Android version

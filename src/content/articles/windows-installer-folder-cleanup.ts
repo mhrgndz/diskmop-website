@@ -9,9 +9,9 @@ export const windowsInstallerFolderCleanup: Article = {
   readingTime: 8,
   content: {
     tr: {
-      title: "C:\\Windows\\Installer Klasörü 30 GB: Nedir, Silinir mi?",
+      title: "C:\\Windows\\Installer Klasörü Temizleme: Nedir, Silinir mi?",
       metaDescription:
-        "C:\\Windows\\Installer klasörü onlarca gigabayta çıkabilir ama silinmesi programların onarım ve kaldırma özelliğini bozar. Neyin güvenle temizlenebileceği ve nasıl.",
+        "C:\\Windows\\Installer klasörü nedir, nasıl temizlenir ve silinir mi? 20-40 GB yer kaplayan yükleyici dosyalarını güvenle temizleme rehberi.",
       subtitle: "Diskteki En Büyük Gizli Klasör ve Neden Silinemez",
       intro: [
         "Kısa cevap: `C:\\Windows\\Installer`, Windows'un kurulu programların yükleyici (MSI) ve yama (MSP) dosyalarını sakladığı gizli sistem klasörüdür. Windows bu dosyaları bir programı onarmak, değiştirmek veya kaldırmak için kullanır. Klasörü ya da içeriğini toptan silmek onarım ve kaldırma işlevlerini kalıcı olarak bozar, bazı durumlarda Windows güncellemelerini de başarısız kılar. Yıllar içinde 20-40 GB'a ulaşması normaldir ve bunun büyük bölümü artık hiçbir kurulu ürüne ait olmayan öksüz yamalardır. Güvenli yol, klasörü silmek değil, hangi dosyaların gerçekten öksüz kaldığını yükleyici veritabanıyla karşılaştırarak tespit etmek ve yalnızca onları kaldırmaktır. Office ve Visual Studio gibi sık yama alan ürünlerin eski sürümlerini düzgün biçimde kaldırmak da bu klasörü kendiliğinden küçültür.",
