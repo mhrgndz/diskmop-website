@@ -5,14 +5,13 @@ export const swipeToDeletePhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone Fotoğraflarını Kaydırarak Temizleme: Sağa Tut, Sola Sil (Pişman Olmadan)",
+      title: "iPhone Fotoğraflarını Kaydırarak Hızlıca Temizleme",
       metaDescription:
-        "Fotoğraflar'da tek tek seçmek ellinci fotoğrafta yorar. Tutmak için sağa, silmek için sola kaydırmak binlercesini bitirir; erken hiçbir şey kaybolmaz.",
+        "Fotoğrafları tek tek seçmekten yoruldunuz mu? Sağa kaydırarak saklayın, sola kaydırarak silin; binlerce fotoğrafı pişman olmadan hızla temizleyin.",
       subtitle:
         "Her seferinde tek fotoğraf, anında silme yerine bir sepet ve gerçekten biten bir kitaplık",
       intro: [
@@ -152,10 +151,9 @@ export const swipeToDeletePhotosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "Swipe to Clean Up iPhone Photos: Keep Right, Delete Left (Without Regrets)",
+      title: "Swipe to Clean Up iPhone Photos: Keep Right, Delete Left",
       metaDescription:
-        "Selecting photos one by one in the Photos app wears you out after fifty. Swiping right to keep and left to delete gets through thousands, with nothing lost early.",
+        "Tired of checking photos one by one? Swipe right to keep and left to delete thousands of photos quickly and review safely before permanent deletion.",
       subtitle:
         "One photo at a time, a basket instead of instant deletion, and a library you actually finish",
       intro: [

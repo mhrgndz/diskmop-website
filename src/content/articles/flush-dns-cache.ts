@@ -5,7 +5,7 @@ export const flushDnsCache: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-08",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 6,
   content: {
     tr: {
@@ -336,6 +336,13 @@ export const flushDnsCache: Article = {
         "Um den DNS-Cache unter Windows zu leeren, öffnen Sie die Eingabeaufforderung und führen ipconfig /flushdns aus. Am Mac öffnen Sie das Terminal und geben sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder ein. Beide Befehle sind in etwa einer Sekunde erledigt und löschen alle gespeicherten DNS-Einträge, sodass Ihr Computer beim nächsten Seitenaufruf frische Adressen abfragt.",
         "Das ist die kurze Antwort — und für die meisten völlig ausreichend. In diesem Leitfaden gehen wir beide Befehle Schritt für Schritt durch, erklären, was das Leeren des DNS-Cache tatsächlich bewirkt, zeigen eine Ein-Klick-Alternative für alle, die kein Terminal öffnen möchten, und sagen ehrlich, welche Verbindungsprobleme ein DNS-Flush nicht löst.",
       ],
+      keyTakeaways: [
+        "Das Leeren des DNS-Caches ist zu 100 % sicher; es löscht lediglich die lokale Namensauflösungstabelle und zwingt das Betriebssystem, frische IP-Adressen abzufragen.",
+        "Unter Windows führen Sie einfach „ipconfig /flushdns“ in der Eingabeaufforderung oder PowerShell aus (keine Administratorrechte erforderlich).",
+        "Auf dem Mac öffnen Sie das Terminal und führen „sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder“ aus.",
+        "Das Bereinigen des DNS behebt gängige Verbindungsfehler wie „DNS_PROBE_FINISHED_NXDOMAIN“, veraltete CDN-Weiterleitungen und IP-Konflikte nach Serverumzügen.",
+        "Der DiskMop DNS Cache Cleaner bietet eine intuitive 1-Klick-Lösung für Windows und macOS, ganz ohne Terminal-Befehle.",
+      ],
       sections: [
         {
           title: "Was der DNS-Cache tut und wann Sie ihn leeren sollten",
@@ -386,6 +393,92 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So leeren Sie den DNS-Cache unter Windows und Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Eingabeaufforderung oder Terminal öffnen",
+            text: "Unter Windows drücken Sie Win+R und geben „cmd“ ein; auf dem Mac öffnen Sie das Terminal über die Spotlight-Suche.",
+          },
+          {
+            name: "DNS-Flush-Befehl ausführen",
+            text: "Geben Sie unter Windows „ipconfig /flushdns“ ein oder auf dem Mac „sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder“.",
+          },
+          {
+            name: "Browser-Socket-Pool leeren",
+            text: "Öffnen Sie in Google Chrome „chrome://net-internals/#dns“ und klicken Sie auf „Clear host cache“, um den internen Browser-DNS-Cache zu leeren.",
+          },
+          {
+            name: "Zielseite neu laden",
+            text: "Laden Sie die fehlerhafte Website mit Strg+F5 (Cmd+Umschalt+R auf dem Mac) neu, um lokale Zwischenspeicher zu umgehen.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Befehle zum Leeren des DNS-Caches nach Betriebssystem, Rechten und Alternativen",
+        columns: [
+          "Betriebssystem",
+          "Befehlszeile",
+          "Erforderliche Rechte",
+          "Ziel-Dienst",
+          "Grafische Alternative",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Standard-Benutzer",
+            "DNS-Client-Dienst (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Standard-Benutzer",
+            "DnsClient-Modul",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Administrator (sudo)",
+            "mDNSResponder Daemon",
+            "DiskMop für Mac",
+          ],
+          [
+            "Google Chrome Interner DNS",
+            "chrome://net-internals/#dns",
+            "Im Browser",
+            "Asynchroner DNS-Resolver",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Erhöht das Leeren des DNS-Caches die Internetgeschwindigkeit?",
+          answer:
+            "Die Bandbreite wird nicht vergrößert, aber Verbindungsabbrüche und Ladeverzögerungen durch Anfragen an veraltete CDN-Knoten werden sofort beseitigt.",
+        },
+        {
+          question: "Wie oft sollte man den DNS-Cache leeren?",
+          answer:
+            "Ein fester Zeitplan ist nicht nötig. Führen Sie den Befehl aus, wenn Websites Fehler wie 404/NXDOMAIN melden, Sie DNS-Server ändern oder nach dem Wechsel eines VPNs.",
+        },
+        {
+          question: "Warum schlägt „ipconfig /flushdns“ manchmal fehl?",
+          answer:
+            "Wenn der Windows-Dienst „DNS-Client“ in services.msc deaktiviert oder angehalten ist, quittiert der Befehl den Versuch mit einem RPC-Fehler.",
+        },
+        {
+          question: "Löscht das DNS-Leeren den Browserverlauf oder Cookies?",
+          answer:
+            "Nein. Der DNS-Cache enthält lediglich IP-Zuordnungen. Lesezeichen, Chronik, Cookies und gespeicherte Kennwörter bleiben vollständig erhalten.",
+        },
+      ],
       verdict: [
         "Den DNS-Cache zu leeren ist ein einziger Befehl: ipconfig /flushdns unter Windows oder sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder am Mac. Sicher, sofort erledigt und der richtige erste Schritt, wenn eine Website falsch aufgelöst wird, DNS-Fehler zeigt oder nur auf einem Rechner nicht lädt.",
         "Wer nie ein Terminal öffnen möchte, bekommt mit Disk Mop dieselbe Operation als einen einzigen Klick — ergänzt um einen Browser-Cache-Bereiniger für Chrome, Firefox, Edge und Safari, die beiden Werkzeuge, die man meist zusammen braucht. Läuft unter Windows 10/11 und macOS 12+; die Pro-Lizenz kostet einmalig $19.90, ohne Abo.",
@@ -401,6 +494,13 @@ export const flushDnsCache: Article = {
       intro: [
         "Pour vider le cache DNS sous Windows, ouvrez l'Invite de commandes et lancez ipconfig /flushdns. Sur un Mac, ouvrez Terminal et saisissez sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Les deux commandes s'exécutent en une seconde environ et suppriment toutes les entrées DNS enregistrées : votre ordinateur ira chercher des adresses à jour dès la prochaine visite d'un site.",
         "C'est la réponse courte, et elle suffit largement dans la plupart des cas. Dans ce guide, nous détaillons les deux commandes étape par étape, expliquons ce que vide réellement une purge DNS, montrons une alternative en un clic pour ceux qui préfèrent éviter le terminal, et disons franchement quels problèmes de connexion cette manipulation ne résoudra pas.",
+      ],
+      keyTakeaways: [
+        "Vider le cache DNS est totalement sûr : cela efface simplement la table locale de correspondance nom d'hôte/IP et force l'OS à interroger les serveurs récents.",
+        "Sur Windows, tapez simplement « ipconfig /flushdns » dans l'Invite de commandes ou PowerShell (aucun privilège administrateur requis).",
+        "Sur macOS, ouvrez le Terminal et exécutez « sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder ».",
+        "Nettoyer le DNS résout les erreurs courantes comme « DNS_PROBE_FINISHED_NXDOMAIN », les redirections CDN obsolètes et les problèmes de migration de serveur.",
+        "DiskMop DNS Cache Cleaner propose une interface graphique en 1 clic pour Windows et Mac, évitant toute ligne de commande.",
       ],
       sections: [
         {
@@ -452,6 +552,93 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment vider le cache DNS sur Windows et Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Ouvrir l'Invite de commandes ou le Terminal",
+            text: "Sous Windows, faites Win+R et tapez « cmd » ; sur Mac, ouvrez le Terminal via la recherche Spotlight.",
+          },
+          {
+            name: "Exécuter la commande de vidage DNS",
+            text: "Saisissez « ipconfig /flushdns » sous Windows, ou « sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder » sur macOS.",
+          },
+          {
+            name: "Purger le pool de sockets du navigateur",
+            text: "Dans Chrome, accédez à « chrome://net-internals/#dns » et cliquez sur « Clear host cache » pour vider le cache interne du navigateur.",
+          },
+          {
+            name: "Actualiser la page Web récalcitrante",
+            text: "Rechargez le site problématique avec Ctrl+F5 (Cmd+Maj+R sur Mac) pour ignorer les ressources locales en cache.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Commandes de vidage DNS par système d'exploitation, autorisations et alternatives",
+        columns: [
+          "Système d'exploitation",
+          "Commande",
+          "Autorisation requise",
+          "Service ciblé",
+          "Alternative avec interface",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Utilisateur standard",
+            "Service Client DNS (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Utilisateur standard",
+            "Module DnsClient",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Administrateur (sudo)",
+            "Démon mDNSResponder",
+            "DiskMop pour Mac",
+          ],
+          [
+            "DNS interne Google Chrome",
+            "chrome://net-internals/#dns",
+            "Dans le navigateur",
+            "Résolveur DNS asynchrone",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Le vidage du cache DNS améliore-t-il le débit internet ?",
+          answer:
+            "Il n'augmente pas la bande passante brute, mais élimine les temps d'attente et la latence liés aux requêtes envoyées vers des serveurs CDN obsolètes.",
+        },
+        {
+          question: "À quelle fréquence faut-il vider son cache DNS ?",
+          answer:
+            "Aucune fréquence régulière n'est requise. Faites-le en cas d'erreurs 404/NXDOMAIN, après un changement de serveur DNS ou de profil VPN.",
+        },
+        {
+          question:
+            "Pourquoi la commande « ipconfig /flushdns » échoue-t-elle parfois ?",
+          answer:
+            "Si le service Windows « Client DNS » est arrêté ou désactivé dans services.msc, la commande renvoie une erreur RPC.",
+        },
+        {
+          question:
+            "Le vidage DNS supprime-t-il l'historique de navigation ou les cookies ?",
+          answer:
+            "Non. Le cache DNS ne contient que des correspondances d'adresses IP. Vos favoris, mots de passe, cookies et historique restent intacts.",
+        },
+      ],
       verdict: [
         "Vider son cache DNS tient en une seule commande : ipconfig /flushdns sous Windows, ou sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder sur un Mac. C'est sûr, immédiat, et c'est le bon premier réflexe quand un site est mal résolu, affiche des erreurs DNS ou refuse de se charger sur une seule machine.",
         "Si vous préférez ne jamais ouvrir de terminal, Disk Mop ramène la même opération à un clic et l'accompagne d'un nettoyeur de cache pour Chrome, Firefox, Edge et Safari : les deux outils dont on a généralement besoin ensemble. L'application tourne sous Windows 10/11 et macOS 12+, et la licence Pro à vie coûte 19,90 $ en une seule fois, sans abonnement.",
@@ -467,6 +654,13 @@ export const flushDnsCache: Article = {
       intro: [
         "Para vaciar la caché DNS en Windows, abre el Símbolo del sistema y ejecuta ipconfig /flushdns. En un Mac, abre Terminal y ejecuta sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Ambos comandos terminan en aproximadamente un segundo y borran todas las entradas DNS guardadas, de modo que el equipo consultará direcciones actualizadas la próxima vez que abras una página.",
         "Esa es la respuesta corta y, para la mayoría de la gente, es realmente todo lo que hace falta. En esta guía repasamos ambos comandos paso a paso, explicamos qué hace exactamente vaciar la caché DNS, mostramos una alternativa de un solo clic para quien prefiera no abrir Terminal y decimos con franqueza qué problemas de conexión no se solucionan así.",
+      ],
+      keyTakeaways: [
+        "Vaciar la caché DNS es 100 % seguro; solo borra la tabla local de asignación de nombres a IP y fuerza al sistema a solicitar registros actualizados.",
+        "En Windows, ejecuta 'ipconfig /flushdns' en el Símbolo del sistema o en PowerShell (no requiere permisos de administrador).",
+        "En macOS, abre Terminal y ejecuta 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'.",
+        "Limpiar la DNS soluciona fallos de navegación habituales como 'DNS_PROBE_FINISHED_NXDOMAIN', redirecciones erróneas y cambios de servidor.",
+        "DiskMop DNS Cache Cleaner proporciona una solución gráfica con un solo clic para Windows y Mac sin necesidad de usar la consola.",
       ],
       sections: [
         {
@@ -518,6 +712,92 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo vaciar la caché DNS en Windows y Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Abrir el Símbolo del sistema o Terminal",
+            text: "En Windows, pulsa Win+R y escribe 'cmd'; en Mac, abre Terminal mediante la búsqueda de Spotlight.",
+          },
+          {
+            name: "Ejecutar el comando de vaciado DNS",
+            text: "Escribe 'ipconfig /flushdns' en Windows, o 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder' en macOS.",
+          },
+          {
+            name: "Limpiar sockets del navegador",
+            text: "En Chrome, ve a 'chrome://net-internals/#dns' y haz clic en 'Clear host cache' para renovar las direcciones guardadas en el navegador.",
+          },
+          {
+            name: "Refrescar la página de destino",
+            text: "Recarga el sitio web que daba problemas pulsando Ctrl+F5 (Cmd+Mayús+R en Mac) para ignorar los elementos locales en caché.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comandos de vaciado de DNS según sistema operativo, permisos y alternativas",
+        columns: [
+          "Sistema operativo",
+          "Comando",
+          "Permisos necesarios",
+          "Servicio de destino",
+          "Alternativa visual (GUI)",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Usuario estándar",
+            "Servicio Cliente DNS (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Usuario estándar",
+            "Módulo DnsClient",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Administrador (sudo)",
+            "Demonio mDNSResponder",
+            "DiskMop para Mac",
+          ],
+          [
+            "DNS interno de Google Chrome",
+            "chrome://net-internals/#dns",
+            "En el navegador",
+            "Resolutor DNS asíncrono",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Vaciar la caché DNS mejora la velocidad de internet?",
+          answer:
+            "No aumenta el ancho de banda contratado, pero elimina bloqueos de conexión y latencias causadas por peticiones a nodos CDN obsoletos.",
+        },
+        {
+          question: "¿Con qué frecuencia se debe vaciar la caché DNS?",
+          answer:
+            "No hace falta hacerlo periódicamente. Es útil cuando encuentres errores 404/NXDOMAIN, cambies de servidores DNS o tras desconectar una VPN.",
+        },
+        {
+          question: "¿Por qué puede fallar 'ipconfig /flushdns'?",
+          answer:
+            "Si el servicio de Windows 'Cliente DNS' está deshabilitado o detenido en services.msc, el comando mostrará un error de llamada a procedimiento (RPC).",
+        },
+        {
+          question:
+            "¿Vaciar la DNS borra el historial o las cookies del navegador?",
+          answer:
+            "No. La caché DNS almacena únicamente resoluciones de direcciones IP. Tus marcadores, historial de páginas, cookies y contraseñas quedan intactos.",
+        },
+      ],
       verdict: [
         "Vaciar la caché DNS es cuestión de un solo comando: ipconfig /flushdns en Windows o sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder en un Mac. Es seguro, instantáneo y es el primer movimiento correcto cuando una web se resuelve mal, muestra errores DNS o se niega a cargar solo en un equipo.",
         "Si prefieres no abrir nunca un terminal, Disk Mop reduce la misma operación a un clic y la acompaña de un limpiador de caché del navegador para Chrome, Firefox, Edge y Safari: las dos herramientas que suelen hacer falta a la vez. Funciona en Windows 10/11 y macOS 12+, y la licencia Pro de por vida es un pago único de 19,90 $ sin suscripción.",
@@ -533,6 +813,13 @@ export const flushDnsCache: Article = {
       intro: [
         "Per svuotare la cache DNS su Windows, apri il Prompt dei comandi ed esegui ipconfig /flushdns. Su un Mac apri Terminal ed esegui sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Entrambi i comandi si concludono in circa un secondo e cancellano tutte le voci DNS memorizzate, così il computer richiede indirizzi aggiornati alla prima apertura di un sito.",
         "Questa è la risposta breve e, per la maggior parte delle persone, è davvero tutto ciò che serve. In questa guida vediamo i due comandi passo dopo passo, spieghiamo che cosa fa davvero lo svuotamento della cache DNS, mostriamo un'alternativa in un clic per chi preferisce non aprire Terminal e diciamo con franchezza quali problemi di connessione questa operazione non risolve.",
+      ],
+      keyTakeaways: [
+        "Svuotare la cache DNS è un'operazione sicura al 100%: cancella solo la tabella locale degli indirizzi IP memorizzati e forza il sistema a richiedere dati aggiornati.",
+        "Su Windows basta eseguire «ipconfig /flushdns» nel Prompt dei comandi o in PowerShell (senza necessità di privilegi di amministratore).",
+        "Su macOS apri il Terminale ed esegui «sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder».",
+        "La pulizia del DNS risolve errori di navigazione frequenti come «DNS_PROBE_FINISHED_NXDOMAIN», vecchi reindirizzamenti CDN e disallineamenti dopo cambi di server.",
+        "DiskMop DNS Cache Cleaner offre una comoda interfaccia grafica con un clic per Windows e macOS evitando l'uso della riga di comando.",
       ],
       sections: [
         {
@@ -585,6 +872,94 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come svuotare la cache DNS su Windows e Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Aprire il Prompt dei comandi o il Terminale",
+            text: "Su Windows premi Win+R e digita «cmd»; su Mac avvia il Terminale cercando con Spotlight.",
+          },
+          {
+            name: "Eseguire il comando di svuotamento DNS",
+            text: "Digita «ipconfig /flushdns» su Windows oppure «sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder» su macOS.",
+          },
+          {
+            name: "Svuotare il pool di socket del browser",
+            text: "In Google Chrome apri «chrome://net-internals/#dns» e clicca su «Clear host cache» per cancellare la cache DNS interna del browser.",
+          },
+          {
+            name: "Ricaricare la pagina web interessata",
+            text: "Ricarica la pagina con Ctrl+F5 (Cmd+Maiusc+R su Mac) per bypassare i file memorizzati nella cache locale.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comandi per lo svuotamento della cache DNS per sistema operativo, permessi e alternative",
+        columns: [
+          "Sistema operativo",
+          "Comando",
+          "Permesso richiesto",
+          "Servizio interessato",
+          "Alternativa con interfaccia grafica",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Utente standard",
+            "Servizio Client DNS (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Utente standard",
+            "Modulo DnsClient",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Amministratore (sudo)",
+            "Demone mDNSResponder",
+            "DiskMop per Mac",
+          ],
+          [
+            "DNS interno di Google Chrome",
+            "chrome://net-internals/#dns",
+            "Nel browser",
+            "Risolutore DNS asincrono",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Svuotare la cache DNS velocizza la connessione a internet?",
+          answer:
+            "Non aumenta la larghezza di banda complessiva, ma elimina i timeout di connessione e i ritardi dovuti a richieste verso nodi CDN ormai dismessi.",
+        },
+        {
+          question: "Ogni quanto tempo è necessario svuotare la cache DNS?",
+          answer:
+            "Non serve farlo regolarmente. Esegui la pulizia quando riscontri errori 404/NXDOMAIN, cambi provider DNS o dopo aver disattivato una connessione VPN.",
+        },
+        {
+          question:
+            "Per quale motivo il comando «ipconfig /flushdns» potrebbe non funzionare?",
+          answer:
+            "Se il servizio di sistema «Client DNS» è arrestato o disabilitato in services.msc, il comando restituirà un errore di comunicazione RPC.",
+        },
+        {
+          question:
+            "Svuotare il DNS cancella la cronologia o i cookie del browser?",
+          answer:
+            "No. La cache DNS memorizza unicamente indirizzi IP. Segnalibri, cronologia di navigazione, cookie e password rimangono completamente invariati.",
+        },
+      ],
       verdict: [
         "Svuotare la cache DNS richiede un solo comando: ipconfig /flushdns su Windows oppure sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder su Mac. È sicuro, immediato ed è la prima mossa giusta quando un sito viene risolto in modo sbagliato, mostra errori DNS o si rifiuta di caricarsi solo su una macchina.",
         "Se preferisci non aprire mai un terminale, Disk Mop racchiude la stessa operazione in un clic e la affianca a un pulitore della cache per Chrome, Firefox, Edge e Safari: i due strumenti che di solito servono insieme. Funziona su Windows 10/11 e macOS 12+, e la licenza Pro a vita costa 19,90 $ una tantum, senza abbonamento.",
@@ -600,6 +975,13 @@ export const flushDnsCache: Article = {
       intro: [
         "Para limpar o cache DNS no Windows, abra o Prompt de Comando e execute ipconfig /flushdns. No Mac, abra o Terminal e execute sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder. Os dois comandos terminam em cerca de um segundo e apagam todas as entradas DNS guardadas, fazendo o computador buscar endereços atualizados na próxima vez que você abrir um site.",
         "Essa é a resposta curta e, para a maioria das pessoas, ela realmente basta. Neste guia mostramos os dois comandos passo a passo, explicamos o que a limpeza do DNS faz de verdade, apresentamos uma alternativa em um clique para quem prefere não abrir o Terminal e falamos com sinceridade sobre os problemas de conexão que ela não resolve.",
+      ],
+      keyTakeaways: [
+        "Limpar o cache DNS é um procedimento 100% seguro; apenas descarta a tabela local de resoluções de IP e obriga o sistema a buscar registros atualizados.",
+        "No Windows, execute 'ipconfig /flushdns' no Prompt de Comando ou PowerShell (não requer direitos de administrador).",
+        "No macOS, abra o Terminal e execute 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'.",
+        "A limpeza de DNS soluciona erros clássicos como 'DNS_PROBE_FINISHED_NXDOMAIN', redirecionamentos de CDN obsoletos e problemas após migração de servidores.",
+        "O DiskMop DNS Cache Cleaner disponibiliza uma interface gráfica prática em 1 clique para Windows e Mac sem necessidade de comandos de terminal.",
       ],
       sections: [
         {
@@ -652,6 +1034,92 @@ export const flushDnsCache: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar o cache DNS no Windows e Mac",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "Abrir o Prompt de Comando ou Terminal",
+            text: "No Windows, pressione Win+R e digite 'cmd'; no Mac, abra o Terminal usando a busca do Spotlight.",
+          },
+          {
+            name: "Executar o comando de liberação de DNS",
+            text: "Digite 'ipconfig /flushdns' no Windows, ou 'sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder' no macOS.",
+          },
+          {
+            name: "Limpar conexões do navegador",
+            text: "No Chrome, abra 'chrome://net-internals/#dns' e clique em 'Clear host cache' para zerar o cache interno de DNS do navegador.",
+          },
+          {
+            name: "Recarregar a página com erro",
+            text: "Atualize o site problemático usando Ctrl+F5 (Cmd+Shift+R no Mac) para ignorar os arquivos estáticos salvos no disco local.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comandos de limpeza de DNS por sistema operacional, permissões e alternativas",
+        columns: [
+          "Sistema operacional",
+          "Linha de comando",
+          "Permissão necessária",
+          "Serviço de destino",
+          "Alternativa gráfica (GUI)",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "Usuário padrão",
+            "Serviço Cliente DNS (dnscache)",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "Usuário padrão",
+            "Módulo DnsClient",
+            "DiskMop DNS Cache Cleaner",
+          ],
+          [
+            "macOS 12+ (Monterey - Sequoia)",
+            "sudo dscacheutil -flushcache; ...",
+            "Administrador (sudo)",
+            "Daemon mDNSResponder",
+            "DiskMop para Mac",
+          ],
+          [
+            "DNS interno do Google Chrome",
+            "chrome://net-internals/#dns",
+            "No navegador",
+            "Resolvedor DNS assíncrono",
+            "DiskMop Browser Cleaner",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Limpar o DNS aumenta a velocidade da minha internet?",
+          answer:
+            "Não altera a largura de banda contratada, mas elimina falhas de conexão e lentidão causadas por consultas direcionadas a servidores desatualizados.",
+        },
+        {
+          question: "Com que frequência devo limpar o cache DNS?",
+          answer:
+            "Não há necessidade de fazer isso de forma contínua. Faça a limpeza quando encontrar erros 404/NXDOMAIN, trocar servidores DNS ou desligar uma VPN.",
+        },
+        {
+          question: "Por que o comando 'ipconfig /flushdns' pode falhar?",
+          answer:
+            "Se o serviço 'Cliente DNS' do Windows estiver parado ou desabilitado em services.msc, o comando retornará um erro de falha na chamada RPC.",
+        },
+        {
+          question:
+            "A limpeza do DNS apaga o histórico do navegador ou cookies?",
+          answer:
+            "Não. O cache DNS armazena unicamente mapeamentos de IP. Seus favoritos, histórico de navegação, cookies e senhas permanecem totalmente seguros.",
+        },
+      ],
       verdict: [
         "Limpar o cache DNS é um comando só: ipconfig /flushdns no Windows ou sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder no Mac. É seguro, instantâneo e é o primeiro passo certo quando um site é resolvido de forma errada, mostra erros de DNS ou se recusa a carregar em apenas uma máquina.",
         "Se você prefere nunca abrir um terminal, o Disk Mop resume a mesma operação a um clique e ainda traz um limpador de cache de navegadores para Chrome, Firefox, Edge e Safari: as duas ferramentas que costumam ser usadas juntas. Ele roda no Windows 10/11 e no macOS 12+, e a licença Pro vitalícia é um pagamento único de 19,90 $, sem assinatura.",
@@ -666,6 +1134,13 @@ export const flushDnsCache: Article = {
       intro: [
         "WindowsでDNSキャッシュをクリアするには、コマンド プロンプトを開いて ipconfig /flushdns を実行します。Macの場合はTerminalを開き、sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder を実行してください。どちらのコマンドも1秒ほどで完了し、保存されているDNSの記録をすべて削除します。次にサイトを開いたときには、最新のアドレスが改めて問い合わせられます。",
         "答えとしてはこれで十分で、実際ほとんどの方はここまでで解決します。この記事では両方のコマンドを手順ごとに説明し、DNSキャッシュのクリアが実際に何をしているのかを解き明かします。さらに、ターミナル操作を避けたい方に向けてワンクリックで済ませる方法を紹介し、この操作では解決できない接続トラブルについても正直にお伝えします。",
+      ],
+      keyTakeaways: [
+        "DNSキャッシュのフラッシュ（消去）は100%安全な操作です。ローカルに保持された古いホスト名とIPアドレスの対照表をクリアし、OSに最新のレコードを再取得させます。",
+        "WindowsではコマンドプロンプトまたはPowerShellで「ipconfig /flushdns」を実行するだけです（管理者権限は不要です）。",
+        "macOSではターミナルを開き、「sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder」を実行します。",
+        "DNSのクリアにより、「DNS_PROBE_FINISHED_NXDOMAIN」エラーや古いCDNキャッシュへの誤アクセス、サーバー移転後の接続不具合が解消されます。",
+        "DiskMopのDNSキャッシュクリーナーを使えば、コマンド操作なしでWindowsとMac双方で1クリックのGUIクリアが可能です。",
       ],
       sections: [
         {
@@ -715,6 +1190,90 @@ export const flushDnsCache: Article = {
             "ルーターもまた独自のDNSキャッシュを保持しており、この層はコンピューターからは操作できません。クリアしても改善しない場合は、ルーターを再起動して様子を見てください。DNS_PROBE_FINISHED 系のエラーが続くときは、利用中のDNSサーバー自体が不安定なことが多く、ネットワーク設定を 1.1.1.1 や 8.8.8.8 のようなパブリックDNSに切り替えるほうが、クリアを繰り返すよりもはるかに高い確率で解決します。",
             "最後に、ある機器が特定のネットワークでは使えるのに別のネットワークでは使えない場合や、他のアプリは通信できているのにブラウザーだけがすべて失敗する場合は、DNSキャッシュよりもファイアウォール、VPN、プロキシの設定が原因である可能性が高いです。クリアは無料でリスクのない最初の一手ですが、症状が別の方向を指しているときは、そこで止まらないでください。",
           ],
+        },
+      ],
+      howTo: {
+        name: "WindowsとMacでDNSキャッシュをフラッシュする手順",
+        totalTime: "PT2M",
+        steps: [
+          {
+            name: "コマンドプロンプトまたはターミナルを開く",
+            text: "WindowsではWin+Rキーを押して「cmd」と入力し、MacではSpotlight検索からターミナルを起動します。",
+          },
+          {
+            name: "OS用のフラッシュコマンドを実行する",
+            text: "Windowsでは「ipconfig /flushdns」、macOSでは「sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder」を入力して実行します。",
+          },
+          {
+            name: "ブラウザのホストキャッシュを消去する",
+            text: "Google Chromeのアドレスバーに「chrome://net-internals/#dns」と入力し、「Clear host cache」をクリックして内部キャッシュを破棄します。",
+          },
+          {
+            name: "接続先のウェブページを強力再読み込みする",
+            text: "Ctrl+F5（MacではCmd+Shift+R）を押して問題のページをハードリフレッシュし、最新のコンテンツを取得します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "OS別のDNSフラッシュコマンド・必要権限・代替GUIツール一覧",
+        columns: [
+          "オペレーティングシステム",
+          "実行コマンド",
+          "必要な実行権限",
+          "対象サービス",
+          "GUI代替ツール",
+        ],
+        rows: [
+          [
+            "Windows 11 / 10",
+            "ipconfig /flushdns",
+            "一般ユーザー権限",
+            "DNS Client サービス（dnscache）",
+            "DiskMop DNS キャッシュクリーナー",
+          ],
+          [
+            "Windows PowerShell",
+            "Clear-DnsClientCache",
+            "一般ユーザー権限",
+            "DnsClient モジュール",
+            "DiskMop DNS キャッシュクリーナー",
+          ],
+          [
+            "macOS 12以降（Monterey〜Sequoia）",
+            "sudo dscacheutil -flushcache; ...",
+            "管理者権限（sudo）",
+            "mDNSResponder デーモン",
+            "DiskMop for Mac",
+          ],
+          [
+            "Google Chrome 内部DNS",
+            "chrome://net-internals/#dns",
+            "ブラウザ内操作",
+            "非同期DNSリゾルバ",
+            "DiskMop ブラウザクリーナー",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "DNSキャッシュをクリアすると通信速度は速くなりますか？",
+          answer:
+            "回線自体の最大速度は変わりませんが、無効なCDNサーバーへの問い合わせによるタイムアウトや待機遅延が解消され、ページの表示レスポンスが改善します。",
+        },
+        {
+          question: "DNSキャッシュはどのくらいの頻度でクリアすべきですか？",
+          answer:
+            "定期的な実行は不要です。404やNXDOMAINエラーが発生した際や、DNS設定の変更後、VPN接続の切断時に実行するのが最適です。",
+        },
+        {
+          question: "「ipconfig /flushdns」が失敗する原因は何ですか？",
+          answer:
+            "Windowsの「DNS Client」サービスがservices.mscで無効または停止している場合、RPCエラーが返されてフラッシュに失敗します。",
+        },
+        {
+          question: "DNSフラッシュで閲覧履歴やCookieは削除されますか？",
+          answer:
+            "いいえ、削除されません。DNSキャッシュにはIPアドレスの対照情報のみが保持されているため、ブックマークやCookie、保存したパスワードはそのまま保たれます。",
         },
       ],
       verdict: [

@@ -5,12 +5,11 @@ export const deleteBlurryPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone'da Bulanık Fotoğrafları Bulma ve Silme (Yumuşak Bir Anıyı Kaybetmeden)",
+      title: "iPhone'da Bulanık Fotoğrafları Bulma ve Güvenle Silme",
       metaDescription:
         "Fotoğraflar'da bulanık kareler için albüm yok. Aygıttaki netlik taraması titrek ve odaksız fotoğrafları nasıl bulur, güvenle nasıl gözden geçirilir?",
       subtitle:
@@ -149,10 +148,9 @@ export const deleteBlurryPhotosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Find and Delete Blurry Photos on iPhone (Without Losing a Soft Memory)",
+      title: "How to Find and Delete Blurry Photos on Your iPhone",
       metaDescription:
-        "The Photos app has no album for blurry shots. How an on-device sharpness scan finds out-of-focus and shaky photos, how to review them safely and how to take fewer.",
+        "The Photos app has no blurry album. Learn how on-device sharpness scanning detects out-of-focus and shaky shots so you can delete them safely.",
       subtitle:
         "Why Photos cannot sort blur for you, how a sharpness measurement works, and what to check before you delete",
       intro: [

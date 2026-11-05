@@ -6,13 +6,13 @@ export const searchPhotosByContentIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     en: {
-      title:
-        "How to Search iPhone Photos by What Is in Them: Car, Beach, Paris, Food",
+      title: "How to Search iPhone Photos by Content, Objects & Places",
       metaDescription:
-        "Find any iPhone photo by what it shows or where it was taken. How Photos search works, and how DiskMop searches on your iPhone so you can review and clear results.",
+        "Find any iPhone photo by what it shows or where it was taken. How Photos search works, and how DiskMop searches on-device to review and clean matches.",
       subtitle:
         "Words instead of scrolling: things, topics and places, matched on the phone itself",
       intro: [
@@ -159,10 +159,9 @@ export const searchPhotosByContentIphone: Article = {
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
     tr: {
-      title:
-        "iPhone Fotoğraflarını İçeriğine Göre Arama: Araba, Plaj, Paris, Yemek",
+      title: "iPhone Fotoğraflarını İçeriğine ve Konumuna Göre Arama",
       metaDescription:
-        "Herhangi bir iPhone fotoğrafını gösterdiği şeye ya da çekildiği yere göre bulun. Fotoğraflar aramasının nasıl çalıştığını ve DiskMop'un iPhone'da nasıl aradığını anlatıyoruz.",
+        "iPhone fotoğraflarını içeriğe ve yere göre bulun. Apple Fotoğraflar aramasının incelikleri ve DiskMop ile fotoğrafları kolayca filtreleme rehberi.",
       subtitle:
         "Kaydırmak yerine kelimeler: nesneler, konular ve yerler, telefonun kendisinde eşleşir",
       intro: [

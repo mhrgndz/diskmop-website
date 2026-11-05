@@ -5,7 +5,7 @@ export const windowsInstallerFolderCleanup: Article = {
   type: "guide",
   category: "Windows",
   date: "2026-09-04",
-  updated: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -148,7 +148,7 @@ export const windowsInstallerFolderCleanup: Article = {
       title:
         "C:\\Windows\\Installer Is 30 GB: What Is It, and Can You Delete It?",
       metaDescription:
-        "The C:\\Windows\\Installer folder can grow to tens of gigabytes, but deleting it breaks repair and uninstall for installed programs. What can safely be cleared, and how.",
+        "C:\\Windows\\Installer can grow huge, but deleting it breaks program repair. Learn what can be safely cleared and how to reclaim gigabytes properly.",
       subtitle:
         "The Biggest Hidden Folder on Your Disk, and Why You Cannot Delete It",
       intro: [

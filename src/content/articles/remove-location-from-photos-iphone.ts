@@ -6,13 +6,13 @@ export const removeLocationFromPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     en: {
-      title:
-        "How to Remove Location and Metadata From iPhone Photos Before You Share Them",
+      title: "How to Remove Location and EXIF Data From iPhone Photos",
       metaDescription:
-        "Every iPhone photo can carry GPS coordinates, the date and the phone model. Here is what it reveals and how to strip it from photos and videos, in bulk or one by one.",
+        "iPhone photos can leak GPS coordinates and metadata. Learn how to inspect and strip location and EXIF data in bulk before sharing photos or videos.",
       subtitle:
         "What is hidden inside each file, the built-in switch, and clean copies that leave your originals untouched",
       intro: [
@@ -167,10 +167,9 @@ export const removeLocationFromPhotosIphone: Article = {
       ctaText: "Get DiskMop for iPhone on the App Store",
     },
     tr: {
-      title:
-        "iPhone Fotoğraflarından Konum ve Üstveriyi Paylaşmadan Önce Silme",
+      title: "iPhone Fotoğraflarından Konum ve EXIF Bilgisi Silme",
       metaDescription:
-        "Her iPhone fotoğrafı GPS konumunu, tarihi ve telefon modelini taşıyabilir. Neyi ele verdiğini ve fotoğraf ile videolardan toplu ya da tek tek nasıl sileceğinizi anlatıyoruz.",
+        "iPhone fotoğrafları GPS konumu ve EXIF verisi taşıyabilir. Paylaşmadan önce konum bilgilerini tek tek veya topluca nasıl sileceğinizi öğrenin.",
       subtitle:
         "Her dosyanın içinde saklı olanlar, yerleşik anahtar ve orijinallerinize dokunmayan temiz kopyalar",
       intro: [

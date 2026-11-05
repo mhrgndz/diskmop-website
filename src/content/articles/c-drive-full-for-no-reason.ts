@@ -5,7 +5,7 @@ export const cDriveFullForNoReason: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-06-05",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -344,6 +344,13 @@ export const cDriveFullForNoReason: Article = {
         "Wenn Laufwerk C scheinbar ohne Grund voll ist, belegen fast immer versteckte Dateien den Platz: die Ruhezustandsdatei hiberfil.sys, die Auslagerungsdatei pagefile.sys, Systemwiederherstellungspunkte und gigabyteweise App-Caches im AppData-Ordner. Der Datei-Explorer blendet diese geschützten Systemdateien standardmäßig aus, weshalb Ihre sichtbaren Ordner deutlich weniger ergeben, als Windows als belegt anzeigt. Die Lösung: erst diagnostizieren, was den Platz wirklich belegt — und erst dann löschen.",
         "In diesem Leitfaden finden Sie acht praktische Lösungen: versteckte Dateien einblenden, die Belegung visuell kartieren, hiberfil.sys verkleinern oder entfernen, die Auslagerungsdatei richtig dimensionieren, Wiederherstellungspunkte begrenzen, temporäre Dateien und Caches bereinigen, AppData und Downloads aufräumen und die Routine schließlich automatisieren, damit das Problem nicht zurückkehrt.",
       ],
+      keyTakeaways: [
+        "Das Laufwerk C: ist nie ohne Grund voll; der belegte Speicherplatz stammt fast immer von versteckten Systemdateien wie hiberfil.sys, pagefile.sys, Wiederherstellungspunkten und AppData-Caches.",
+        "Das Deaktivieren des Ruhezustands mit 'powercfg /h off' in einer Administrator-Eingabeaufforderung gibt sofort Speicherplatz in Höhe Ihrer RAM-Kapazität frei (8–32 GB).",
+        "Löschen Sie pagefile.sys keinesfalls direkt; Windows benötigt die Auslagerungsdatei für Systemstabilität. Überlassen Sie die Größenverwaltung am besten automatisch Windows.",
+        "Unbegrenzte Systemwiederherstellungspunkte können über 20 GB an Schattenkopien anhäufen; das Bereinigen alter Punkte bringt in Sekunden massiv Speicher zurück.",
+        "Die DiskMop-Festplattenanalyse deckt versteckte Speicherfresser auf Laufwerk C: mithilfe visueller Treemaps sofort auf.",
+      ],
       sections: [
         {
           title: "Warum sich Laufwerk C scheinbar ohne Grund füllt",
@@ -394,6 +401,99 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So geben Sie schnell Speicherplatz auf einem vollen C-Laufwerk frei",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Versteckte Systemdateien einblenden",
+            text: "Öffnen Sie den Datei-Explorer, klicken Sie auf Anzeigen > Einblenden > Ausgeblendete Elemente. Deaktivieren Sie in den Ordneroptionen vorübergehend 'Geschützte Systemdateien ausblenden', um die Speicherbelegung zu sehen.",
+          },
+          {
+            name: "Ruhezustand deaktivieren, um RAM-großen Speicherplatz freizugeben",
+            text: "Öffnen Sie das Terminal als Administrator und führen Sie 'powercfg /h off' aus. Dies löscht hiberfil.sys sofort und gibt 8 bis 32 GB frei.",
+          },
+          {
+            name: "Alte Systemwiederherstellungspunkte löschen",
+            text: "Starten Sie die Datenträgerbereinigung als Administrator für Laufwerk C:, wechseln Sie zum Reiter 'Weitere Optionen' und klicken Sie unter 'Systemwiederherstellung und Schattenkopien' auf 'Bereinigen'.",
+          },
+          {
+            name: "Temporäre Ordner leeren",
+            text: "Drücken Sie Win+R, geben Sie %temp% ein und löschen Sie den Inhalt. Bereinigen Sie zudem die temporären Windows-Dateien unter Einstellungen > System > Speicher.",
+          },
+          {
+            name: "Papierkorb leeren",
+            text: "Klicken Sie mit der rechten Maustaste auf den Papierkorb und wählen Sie 'Papierkorb leeren', um die gelöschten Gigabytes wieder an das Betriebssystem freizugeben.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Versteckte Speicherfresser auf Laufwerk C: und deren Lösungen",
+        columns: [
+          "Versteckte Komponente",
+          "Typische Größe",
+          "Sicherheitsstufe",
+          "Lösungsmethode",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Ruhezustandsdatei)",
+            "8 GB – 32 GB (entspricht RAM)",
+            "Sicher (ohne Ruhezustand)",
+            "'powercfg /h off' im Admin-Terminal ausführen",
+          ],
+          [
+            "Systemwiederherstellungspunkte",
+            "5 GB – 25 GB",
+            "Sicher (neuesten Punkt behalten)",
+            "Datenträgerbereinigung > Weitere Optionen > Wiederherstellung bereinigen",
+          ],
+          [
+            "AppData & Temp-Caches",
+            "5 GB – 30 GB",
+            "Vollständig sicher",
+            "%temp% leeren und DiskMop Cache-Cleaner ausführen",
+          ],
+          [
+            "Windows Update-Reste",
+            "2 GB – 10 GB",
+            "Vollständig sicher",
+            "Einstellungen > Speicher > Temporäre Dateien > Bereinigen",
+          ],
+          [
+            "pagefile.sys (Virtueller Speicher)",
+            "4 GB – 16 GB",
+            "Nur verwalten (nicht löschen)",
+            "Auf 'Größe wird vom System verwaltet' belassen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Warum füllt sich mein Laufwerk C: scheinbar grundlos von alleine?",
+          answer:
+            "Ein C-Laufwerk füllt sich niemals ohne konkrete Ursache. In den allermeisten Fällen belegen versteckte Betriebssystemdateien wie hiberfil.sys, die Auslagerungsdatei (pagefile.sys), Volumeschattenkopien der Systemwiederherstellung oder unbereinigte AppData-Caches unbemerkt im Hintergrund den Speicher.",
+        },
+        {
+          question: "Ist es sicher, die Datei hiberfil.sys zu löschen?",
+          answer:
+            "Ja, sofern Sie den Ruhezustand (Hibernation) von Windows nicht verwenden. Der Befehl 'powercfg /h off' in einem Administrator-Terminal entfernt hiberfil.sys sofort und sicher und gibt mehrere Gigabyte frei.",
+        },
+        {
+          question:
+            "Kann ich pagefile.sys löschen, um Speicherplatz zu sparen?",
+          answer:
+            "Nein, Sie sollten die Auslagerungsdatei pagefile.sys weder deaktivieren noch manuell löschen. Windows benötigt diesen virtuellen Arbeitsspeicher, um Abstürze bei voller RAM-Auslastung zu verhindern. Die Option 'Größe wird vom System verwaltet' ist optimal.",
+        },
+        {
+          question:
+            "Wie viel freien Speicherplatz sollte ich auf Laufwerk C: behalten?",
+          answer:
+            "Sie sollten stets mindestens 15 % bis 20 % (oder etwa 20 bis 30 GB) freien Speicherplatz auf Laufwerk C: behalten, damit Windows-Updates, dynamischer virtueller Speicher und SSD-Wear-Leveling reibungslos funktionieren.",
+        },
+      ],
       verdict: [
         "Ein scheinbar grundlos volles Laufwerk C ist in Wahrheit voller unsichtbarer Dateien: hiberfil.sys, Auslagerungsdatei, Wiederherstellungspunkte, temporäre Dateien und AppData-Caches. Arbeiten Sie die acht Lösungen der Reihe nach durch — versteckte Dateien einblenden, Belegung kartieren, Ruhezustandsdatei verkleinern, Auslagerungsdatei Windows überlassen, Wiederherstellungspunkte begrenzen, Caches bereinigen, AppData und Downloads aufräumen, Routine automatisieren — und das Rätsel verschwindet zusammen mit dem Ballast.",
         "Disk Mop bündelt den gesamten Ablauf in einer App: Die Festplattenanalyse zeigt, wohin der Platz verschwunden ist, Cache-Bereiniger und Speed Up holen ihn zurück, Downloads-Bereiniger und Duplikatfinder kümmern sich um die vergessenen Ordner, und die geplante Bereinigung hält das Laufwerk dauerhaft sauber. Einmalig 19,90 $, lebenslange Lizenz — die kostenlose Version können Sie vorab testen.",
@@ -410,6 +510,13 @@ export const cDriveFullForNoReason: Article = {
       intro: [
         "Si votre disque C est plein sans raison apparente, l'espace est presque toujours occupé par des fichiers que Windows vous cache : le fichier de mise en veille prolongée hiberfil.sys, le fichier d'échange pagefile.sys, les points de restauration système et plusieurs gigaoctets de caches applicatifs dans le dossier AppData. L'Explorateur de fichiers n'affiche pas ces fichiers système protégés par défaut : la somme de vos dossiers visibles est donc bien inférieure à ce que Windows annonce comme occupé. La bonne méthode consiste à diagnostiquer d'abord — voir exactement ce qui remplit le disque — et à ne supprimer qu'ensuite.",
         "Un disque C qui se remplit sans cesse est agaçant parce que les coupables grossissent en silence : les mises à jour de Windows laissent des résidus, les applications gonflent leurs caches et le seul fichier de mise en veille prolongée peut occuper une part non négligeable de votre mémoire vive installée. Ce guide rassemble huit solutions concrètes : afficher les fichiers cachés, cartographier visuellement l'occupation du disque, réduire ou supprimer hiberfil.sys, dimensionner correctement le fichier d'échange, limiter les points de restauration, vider les fichiers temporaires et les caches, faire le tri dans AppData et Téléchargements, et enfin automatiser toute la routine pour que le problème ne revienne pas.",
+      ],
+      keyTakeaways: [
+        "Le disque C: n'est jamais plein sans raison ; l'espace occupé provient presque toujours de fichiers système cachés comme hiberfil.sys, pagefile.sys, les points de restauration et les caches AppData.",
+        "Désactiver la mise en veille prolongée via 'powercfg /h off' dans une invite administrateur libère immédiatement un espace équivalent à votre RAM (8 à 32 Go).",
+        "Ne supprimez jamais pagefile.sys directement ; Windows en a besoin pour sa stabilité, mais laisser Windows gérer automatiquement sa taille évite les débordements.",
+        "Les points de restauration système non limités peuvent accaparer plus de 20 Go d'instantanés ; purger les anciens points récupère de l'espace en quelques secondes.",
+        "L'analyse de disque DiskMop localise instantanément les fichiers volumineux masqués sur votre lecteur C: grâce à ses cartes arborescentes.",
       ],
       sections: [
         {
@@ -461,6 +568,98 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment libérer rapidement de l'espace sur un disque C: plein",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Afficher les fichiers système masqués",
+            text: "Ouvrez l'Explorateur de fichiers, cliquez sur Affichage > Afficher > Éléments masqués. Dans les options des dossiers, décochez temporairement 'Masquer les fichiers protégés du système'.",
+          },
+          {
+            name: "Désactiver la veille prolongée pour récupérer l'équivalent de la RAM",
+            text: "Ouvrez le Terminal en tant qu'administrateur et tapez 'powercfg /h off'. Cela supprime immédiatement hiberfil.sys et libère 8 à 32 Go.",
+          },
+          {
+            name: "Supprimer les anciens points de restauration système",
+            text: "Lancez le Nettoyage de disque en mode administrateur sur le lecteur C:, allez dans l'onglet 'Autres options' et cliquez sur Nettoyer sous 'Restauration du système et clichés instantanés'.",
+          },
+          {
+            name: "Vider les dossiers temporaires",
+            text: "Appuyez sur Win+R, tapez %temp% et supprimez le contenu. Nettoyez également les fichiers temporaires dans Paramètres > Système > Stockage.",
+          },
+          {
+            name: "Vider la Corbeille",
+            text: "Faites un clic droit sur la Corbeille et choisissez 'Vider la corbeille' pour réattribuer définitivement les gigaoctets libérés au système.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Fichiers cachés responsables de la saturation du disque C: et solutions",
+        columns: [
+          "Composant masqué",
+          "Taille typique",
+          "Niveau de sécurité",
+          "Comment résoudre",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Fichier de veille prolongée)",
+            "8 Go – 32 Go (égal à la RAM)",
+            "Sûr (si veille prolongée inutile)",
+            "Exécuter 'powercfg /h off' dans un terminal admin",
+          ],
+          [
+            "Points de restauration système",
+            "5 Go – 25 Go",
+            "Sûr (en conservant le dernier)",
+            "Nettoyage de disque > Autres options > Nettoyer la restauration",
+          ],
+          [
+            "AppData & Caches temporaires",
+            "5 Go – 30 Go",
+            "Totalement sûr",
+            "Vider %temp% et lancer le nettoyeur de cache DiskMop",
+          ],
+          [
+            "Résidus de Windows Update",
+            "2 Go – 10 Go",
+            "Totalement sûr",
+            "Paramètres > Stockage > Fichiers temporaires > Nettoyer",
+          ],
+          [
+            "pagefile.sys (Mémoire virtuelle)",
+            "4 Go – 16 Go",
+            "Gérer uniquement (ne pas supprimer)",
+            "Conserver l'option 'Taille gérée par le système'",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Pourquoi mon disque C: se remplit-il tout seul sans raison apparente ?",
+          answer:
+            "Un lecteur C: ne se remplit jamais sans cause. Dans la majorité des cas, des fichiers système masqués comme hiberfil.sys, le fichier d'échange (pagefile.sys), les clichés instantanés de restauration ou les caches AppData occupent silencieusement l'espace en arrière-plan.",
+        },
+        {
+          question: "Peut-on supprimer hiberfil.sys en toute sécurité ?",
+          answer:
+            "Oui, si vous n'utilisez pas la mise en veille prolongée de Windows. Exécuter 'powercfg /h off' dans une invite de commandes avec privilèges administrateur supprime immédiatement et sans danger hiberfil.sys, libérant plusieurs gigaoctets.",
+        },
+        {
+          question: "Puis-je supprimer pagefile.sys pour libérer de l'espace ?",
+          answer:
+            "Non, il ne faut ni désactiver ni supprimer pagefile.sys. Windows requiert cette mémoire virtuelle pour éviter les plantages d'applications quand la RAM physique est saturée. Laissez plutôt Windows gérer automatiquement sa taille.",
+        },
+        {
+          question:
+            "Combien d'espace libre faut-il conserver sur le lecteur C: ?",
+          answer:
+            "Il est conseillé de conserver au moins 15 % à 20 % (soit environ 20 à 30 Go) d'espace libre sur votre disque C: afin de permettre les mises à jour Windows, l'expansion de la mémoire virtuelle et l'usure équilibrée du SSD (wear-leveling).",
+        },
+      ],
       verdict: [
         "Un disque C qui semble plein sans raison est en réalité un disque rempli de fichiers invisibles : hiberfil.sys, le fichier d'échange, les points de restauration, les fichiers temporaires et les caches d'AppData. Déroulez les huit solutions dans l'ordre — afficher les fichiers cachés, cartographier l'espace, réduire le fichier de mise en veille prolongée, laisser Windows gérer le fichier d'échange, plafonner les points de restauration, vider les fichiers temporaires et les caches, faire le tri dans AppData et Téléchargements, automatiser la routine — et le mystère disparaîtra en même temps que l'encombrement.",
         "Disk Mop réunit tout ce déroulé dans une seule application : l'analyse de disque montre où l'espace est passé, le nettoyeur de cache et Speed Up le récupèrent, le nettoyeur de téléchargements et le détecteur de doublons s'occupent des dossiers que l'on oublie, et le nettoyage planifié garde le disque propre ensuite. C'est un achat unique de 19,90 $ avec licence à vie, et la version gratuite permet de l'essayer avant de passer à la version complète.",
@@ -476,6 +675,13 @@ export const cDriveFullForNoReason: Article = {
       intro: [
         "Si tu disco C está lleno sin motivo aparente, el espacio casi siempre lo ocupan archivos que Windows te oculta: el archivo de hibernación hiberfil.sys, el archivo de paginación pagefile.sys, los puntos de restauración del sistema y varios gigabytes de cachés de aplicaciones dentro de la carpeta AppData. El Explorador de archivos no muestra estos archivos protegidos del sistema operativo de forma predeterminada, así que la suma de tus carpetas visibles queda muy por debajo de lo que Windows marca como ocupado. La solución pasa por diagnosticar primero — ver exactamente qué llena la unidad — y borrar solo después.",
         "Un disco C que se llena una y otra vez resulta exasperante porque los culpables crecen en silencio: las actualizaciones de Windows dejan restos, las aplicaciones engordan sus cachés y el archivo de hibernación por sí solo puede ocupar una parte considerable de la memoria RAM instalada. En esta guía encontrarás ocho soluciones prácticas: mostrar los archivos ocultos, cartografiar visualmente el uso del disco, reducir o eliminar hiberfil.sys, ajustar el tamaño del archivo de paginación, limitar los puntos de restauración, borrar archivos temporales y cachés, ordenar AppData y Descargas y, por último, automatizar toda la rutina para que el problema no vuelva.",
+      ],
+      keyTakeaways: [
+        "La unidad C: nunca se llena sin razón; el espacio ocupado casi siempre proviene de archivos ocultos del sistema como hiberfil.sys, pagefile.sys, puntos de restauración y cachés de AppData.",
+        "Desactivar la hibernación con 'powercfg /h off' en un símbolo del sistema de administrador libera al instante un espacio igual a la memoria RAM (8 a 32 GB).",
+        "Nunca elimines pagefile.sys directamente; Windows lo necesita para su estabilidad, pero permitir que Windows administre su tamaño automáticamente evita que se dispare.",
+        "Los puntos de restauración sin límite pueden acumular más de 20 GB de instantáneas; purgar los puntos antiguos recupera gigabytes en segundos.",
+        "El análisis de disco de DiskMop utiliza mapas de árbol visuales para revelar de inmediato los archivos gigantes ocultos en tu unidad C:.",
       ],
       sections: [
         {
@@ -528,6 +734,96 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo liberar espacio rápidamente en un disco C: lleno",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Mostrar archivos protegidos del sistema",
+            text: "Abre el Explorador de archivos, ve a Ver > Mostrar > Elementos ocultos. En Opciones de carpeta, desmarca temporalmente 'Ocultar archivos protegidos del sistema operativo'.",
+          },
+          {
+            name: "Desactivar la hibernación para recuperar espacio equivalente a la RAM",
+            text: "Abre la Terminal como Administrador y ejecuta 'powercfg /h off'. Esto eliminará de inmediato hiberfil.sys, liberando de 8 a 32 GB.",
+          },
+          {
+            name: "Eliminar puntos de restauración antiguos",
+            text: "Abre el Liberador de espacio en disco como Administrador en C:, ve a la pestaña 'Más opciones' y haz clic en Liberar en 'Restaurar sistema e instantáneas'.",
+          },
+          {
+            name: "Vaciar carpetas temporales",
+            text: "Pulsa Win+R, escribe %temp% y borra todo su contenido. Limpia también los archivos temporales en Configuración > Sistema > Almacenamiento.",
+          },
+          {
+            name: "Vaciar la Papelera de reciclaje",
+            text: "Haz clic derecho en la Papelera de reciclaje y selecciona 'Vaciar papelera de reciclaje' para devolver los gigabytes borrados al sistema operativo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Elementos ocultos que saturan la unidad C: y sus soluciones",
+        columns: [
+          "Componente oculto",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Cómo solucionarlo",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Archivo de hibernación)",
+            "8 GB – 32 GB (igual a la RAM)",
+            "Seguro (si no se usa hibernación)",
+            "Ejecutar 'powercfg /h off' en consola admin",
+          ],
+          [
+            "Puntos de restauración del sistema",
+            "5 GB – 25 GB",
+            "Seguro (conservando el último)",
+            "Liberador de espacio > Más opciones > Limpiar Restauración",
+          ],
+          [
+            "Cachés de AppData y temporales",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Vaciar %temp% y ejecutar el Limpiador de Caché de DiskMop",
+          ],
+          [
+            "Restos de Windows Update",
+            "2 GB – 10 GB",
+            "Totalmente seguro",
+            "Configuración > Almacenamiento > Archivos temporales > Limpiar",
+          ],
+          [
+            "pagefile.sys (Memoria virtual)",
+            "4 GB – 16 GB",
+            "Solo administrar (no eliminar)",
+            "Mantener en 'Tamaño administrado por el sistema'",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Por qué mi disco C: se llena solo sin ninguna razón aparente?",
+          answer:
+            "Un disco C: jamás se llena de forma espontánea sin motivo. En la gran mayoría de los casos, archivos ocultos del sistema como hiberfil.sys, el archivo de paginación (pagefile.sys), copias de seguridad de restauración o cachés de AppData consumen espacio silenciosamente en segundo plano.",
+        },
+        {
+          question: "¿Es seguro eliminar hiberfil.sys?",
+          answer:
+            "Sí, siempre que no utilices la función de hibernación de Windows. Ejecutar 'powercfg /h off' en una consola con permisos de administrador elimina hiberfil.sys de forma inmediata y segura, liberando varios gigabytes.",
+        },
+        {
+          question: "¿Puedo borrar pagefile.sys para ganar espacio?",
+          answer:
+            "No, no debes deshabilitar ni borrar pagefile.sys. Windows requiere este archivo de memoria virtual para evitar cierres imprevistos cuando se agota la memoria RAM física. Lo más recomendable es dejar que Windows gestione su tamaño automáticamente.",
+        },
+        {
+          question: "¿Cuánto espacio libre debería mantener en el disco C:?",
+          answer:
+            "Es aconsejable mantener al menos entre un 15 % y un 20 % (o unos 20 a 30 GB) de espacio libre en la unidad C: para que las actualizaciones de Windows, la expansión de memoria virtual y la nivelación de desgaste del SSD funcionen con normalidad.",
+        },
+      ],
       verdict: [
         "Un disco C que parece lleno sin motivo es en realidad un disco lleno de archivos invisibles: hiberfil.sys, el archivo de paginación, los puntos de restauración, los archivos temporales y las cachés de AppData. Aplica las ocho soluciones en orden — mostrar los archivos ocultos, cartografiar el espacio, reducir el archivo de hibernación, dejar el archivo de paginación en manos de Windows, limitar los puntos de restauración, borrar archivos temporales y cachés, ordenar AppData y Descargas y automatizar la rutina — y el misterio desaparecerá junto con el desorden.",
         "Disk Mop reúne todo el flujo de trabajo en una sola aplicación: el análisis de disco enseña adónde fue el espacio, el limpiador de caché y Speed Up lo recuperan, el limpiador de descargas y el detector de duplicados se ocupan de las carpetas que sueles olvidar, y la limpieza programada mantiene la unidad limpia a partir de ahí. Es un pago único de 19,90 $ con licencia de por vida, y la versión gratuita te permite probarlo antes de dar el salto.",
@@ -544,6 +840,13 @@ export const cDriveFullForNoReason: Article = {
       intro: [
         "Se il disco C è pieno senza motivo apparente, lo spazio è quasi sempre occupato da file che Windows tiene nascosti: il file di ibernazione hiberfil.sys, il file di paging pagefile.sys, i punti di ripristino del sistema e diversi gigabyte di cache delle applicazioni dentro la cartella AppData. Esplora file non mostra questi file di sistema protetti per impostazione predefinita, quindi la somma delle cartelle visibili è molto inferiore a quanto Windows indica come occupato. La strada giusta è diagnosticare prima — vedere esattamente che cosa riempie il disco — e solo dopo iniziare a cancellare.",
         "Un disco C che continua a riempirsi è frustrante perché i responsabili crescono in silenzio: gli aggiornamenti di Windows lasciano residui, le applicazioni gonfiano le proprie cache e il solo file di ibernazione può occupare una fetta consistente della RAM installata. In questa guida trovi otto soluzioni concrete: mostrare i file nascosti, mappare visivamente l'occupazione del disco, ridurre o rimuovere hiberfil.sys, dimensionare correttamente il file di paging, limitare i punti di ripristino, svuotare file temporanei e cache, mettere ordine in AppData e Download e, infine, automatizzare tutta la routine perché il problema non si ripresenti.",
+      ],
+      keyTakeaways: [
+        "Il disco C: non si riempie mai senza motivo: lo spazio occupato proviene quasi sempre da file di sistema nascosti come hiberfil.sys, pagefile.sys, punti di ripristino e cache di AppData.",
+        "Disattivare l'ibernazione con 'powercfg /h off' in un prompt amministratore libera immediatamente uno spazio pari alla memoria RAM installata (8–32 GB).",
+        "Non eliminare mai direttamente pagefile.sys; Windows ne ha bisogno per la stabilità, ma lasciare che Windows ne gestisca le dimensioni in automatico ne evita l'ingrossamento anomalo.",
+        "I punti di ripristino del sistema non regolati possono accumulare oltre 20 GB di copie shadow; eliminare i punti meno recenti recupera gigabyte in pochi istanti.",
+        "L'Analisi Disco di DiskMop usa mappe ad albero visive per individuare immediatamente i file giganti nascosti nell'unità C:.",
       ],
       sections: [
         {
@@ -595,6 +898,96 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come liberare rapidamente spazio su un disco C: pieno",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Rendere visibili i file di sistema protetti",
+            text: "Apri Esplora file, vai su Visualizza > Mostra > Elementi nascosti. Nelle Opzioni cartella, deseleziona temporaneamente 'Nascondi i file protetti di sistema'.",
+          },
+          {
+            name: "Disattivare l'ibernazione per recuperare la dimensione della RAM",
+            text: "Apri il Terminale come amministratore ed esegui 'powercfg /h off'. Questo comando cancella immediatamente hiberfil.sys liberando da 8 a 32 GB.",
+          },
+          {
+            name: "Eliminare i vecchi punti di ripristino",
+            text: "Avvia Pulizia disco come amministratore sull'unità C:, apri la scheda 'Altre opzioni' e clicca su Esegui pulizia sotto 'Ripristino configurazione di sistema e copie shadow'.",
+          },
+          {
+            name: "Svuotare le cartelle temporanee",
+            text: "Premi Win+R, digita %temp% ed elimina il contenuto. Pulisci anche i file temporanei in Impostazioni > Sistema > Archiviazione.",
+          },
+          {
+            name: "Svuotare il Cestino",
+            text: "Fai clic destro sul Cestino e scegli 'Svuota cestino' per restituire definitivamente i gigabyte eliminati al sistema operativo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "File nascosti che saturano l'unità C: e relative soluzioni",
+        columns: [
+          "Componente nascosto",
+          "Dimensione tipica",
+          "Livello di sicurezza",
+          "Come intervenire",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (File di ibernazione)",
+            "8 GB – 32 GB (pari alla RAM)",
+            "Sicuro (se non si usa l'ibernazione)",
+            "Eseguire 'powercfg /h off' nel terminale admin",
+          ],
+          [
+            "Punti di ripristino del sistema",
+            "5 GB – 25 GB",
+            "Sicuro (mantenendo l'ultimo)",
+            "Pulizia disco > Altre opzioni > Pulisci Ripristino",
+          ],
+          [
+            "Cache di AppData e temporanei",
+            "5 GB – 30 GB",
+            "Completamente sicuro",
+            "Svuotare %temp% e avviare Pulizia Cache di DiskMop",
+          ],
+          [
+            "Residui di Windows Update",
+            "2 GB – 10 GB",
+            "Completamente sicuro",
+            "Impostazioni > Archiviazione > File temporanei > Pulisci",
+          ],
+          [
+            "pagefile.sys (Memoria virtuale)",
+            "4 GB – 16 GB",
+            "Solo gestire (non eliminare)",
+            "Impostare su 'Dimensioni gestite dal sistema'",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Perché l'unità C: si riempie automaticamente senza motivo apparente?",
+          answer:
+            "Un disco C: non si satura mai da solo per caso. Nella quasi totalità dei casi, file nascosti del sistema operativo come hiberfil.sys, il file di paging (pagefile.sys), le copie shadow di ripristino o le cache accumulate in AppData consumano spazio silenziosamente in background.",
+        },
+        {
+          question: "È sicuro eliminare il file hiberfil.sys?",
+          answer:
+            "Sì, a patto di non utilizzare l'Ibernazione di Windows. Eseguendo 'powercfg /h off' in un prompt dei comandi con privilegi di amministratore, il file hiberfil.sys viene rimosso istantaneamente in tutta sicurezza, liberando svariati gigabyte.",
+        },
+        {
+          question: "Posso rimuovere pagefile.sys per recuperare spazio?",
+          answer:
+            "No, non dovresti disabilitare né cancellare pagefile.sys. Windows richiede questo file di memoria virtuale per prevenire crash improvvisi quando la RAM fisica si esaurisce. L'impostazione consigliata è 'Dimensioni gestite dal sistema'.",
+        },
+        {
+          question: "Quanto spazio libero dovrei mantenere sull'unità C:?",
+          answer:
+            "È opportuno conservare almeno il 15-20% di spazio libero (o circa 20-30 GB) sull'unità C: per consentire agli aggiornamenti di Windows, all'espansione della memoria virtuale e agli algoritmi di wear-leveling dell'SSD di funzionare in modo ottimale.",
+        },
+      ],
       verdict: [
         "Un disco C che sembra pieno senza motivo è in realtà un disco pieno di file invisibili: hiberfil.sys, il file di paging, i punti di ripristino, i file temporanei e le cache di AppData. Applica le otto soluzioni nell'ordine — mostrare i file nascosti, mappare lo spazio, ridurre il file di ibernazione, lasciare il file di paging a Windows, limitare i punti di ripristino, svuotare file temporanei e cache, mettere ordine in AppData e Download, automatizzare la routine — e il mistero sparirà insieme al disordine.",
         "Disk Mop raccoglie l'intero flusso di lavoro in un'unica app: l'analisi del disco mostra dove è finito lo spazio, il pulitore della cache e Speed Up lo recuperano, il pulitore dei download e il ricercatore di duplicati si occupano delle cartelle che dimentichi, e la pulizia pianificata mantiene il disco pulito da lì in avanti. Si acquista una volta sola a 19,90 $ con licenza a vita, e la versione gratuita permette di provarlo prima di passare alla Pro.",
@@ -610,6 +1003,13 @@ export const cDriveFullForNoReason: Article = {
       intro: [
         "Se o seu disco C está cheio sem motivo aparente, o espaço quase sempre está sendo usado por arquivos que o Windows esconde de você: o arquivo de hibernação hiberfil.sys, o arquivo de paginação pagefile.sys, os pontos de restauração do sistema e vários gigabytes de caches de aplicativos dentro da pasta AppData. O Explorador de Arquivos não mostra esses arquivos protegidos do sistema operacional por padrão, então a soma das suas pastas visíveis fica bem abaixo do que o Windows aponta como ocupado. O caminho certo é diagnosticar primeiro — ver exatamente o que ocupa a unidade — e só depois começar a apagar.",
         "Um disco C que vive enchendo é irritante porque os culpados crescem em silêncio: as atualizações do Windows deixam resíduos, os aplicativos engordam seus caches e só o arquivo de hibernação já consome uma fatia considerável da memória RAM instalada. Neste guia você encontra oito soluções práticas: exibir os arquivos ocultos, mapear visualmente o uso do disco, reduzir ou remover o hiberfil.sys, dimensionar corretamente o arquivo de paginação, limitar os pontos de restauração, apagar arquivos temporários e caches, organizar AppData e Downloads e, por fim, automatizar toda a rotina para que o problema não volte.",
+      ],
+      keyTakeaways: [
+        "A unidade C: nunca fica cheia sem motivo; o espaço ocupado quase sempre se deve a arquivos ocultos do sistema como hiberfil.sys, pagefile.sys, pontos de restauração e caches do AppData.",
+        "Desativar a hibernação com 'powercfg /h off' no prompt de comando como administrador libera na hora uma quantidade de espaço equivalente à sua RAM (8–32 GB).",
+        "Nunca exclua o pagefile.sys diretamente; o Windows precisa dele para manter a estabilidade, mas deixar o Windows gerenciar seu tamanho automaticamente previne inchaço excessivo.",
+        "Pontos de Restauração sem limites podem acumular mais de 20 GB de cópias de sombra; descartar pontos antigos recupera espaço em poucos segundos.",
+        "A Análise de Disco do DiskMop emprega mapas em árvore visuais para revelar instantaneamente grandes consumidores ocultos de espaço no seu disco C:.",
       ],
       sections: [
         {
@@ -661,6 +1061,97 @@ export const cDriveFullForNoReason: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como liberar espaço rapidamente em um disco C: cheio",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Exibir arquivos ocultos e do sistema",
+            text: "Abra o Explorador de Arquivos, vá em Visualizar > Mostrar > Itens ocultos. Nas Opções de Pasta, desmarque temporariamente 'Ocultar arquivos protegidos do sistema operacional'.",
+          },
+          {
+            name: "Desativar a hibernação para liberar o espaço equivalente à RAM",
+            text: "Abra o Terminal como Administrador e execute 'powercfg /h off'. Isso apaga imediatamente o hiberfil.sys, liberando de 8 a 32 GB.",
+          },
+          {
+            name: "Excluir pontos de restauração antigos",
+            text: "Abra a Limpeza de Disco como Administrador na unidade C:, vá para a aba 'Mais Opções' e clique em Limpar sob 'Restauração do Sistema e Cópias de Sombra'.",
+          },
+          {
+            name: "Esvaziar pastas temporárias",
+            text: "Pressione Win+R, digite %temp% e apague todo o conteúdo. Limpe também os temporários do Windows em Configurações > Sistema > Armazenamento.",
+          },
+          {
+            name: "Esvaziar a Lixeira",
+            text: "Clique com o botão direito na Lixeira e selecione 'Esvaziar Lixeira' para devolver em definitivo os gigabytes liberados ao sistema.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Consumidores ocultos de espaço na unidade C: e como resolvê-los",
+        columns: [
+          "Componente oculto",
+          "Tamanho típico",
+          "Nível de segurança",
+          "Como resolver",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Arquivo de hibernação)",
+            "8 GB – 32 GB (igual à RAM)",
+            "Seguro (se não usa hibernação)",
+            "Executar 'powercfg /h off' no terminal admin",
+          ],
+          [
+            "Pontos de Restauração do Sistema",
+            "5 GB – 25 GB",
+            "Seguro (mantendo o mais recente)",
+            "Limpeza de Disco > Mais Opções > Limpar Restauração",
+          ],
+          [
+            "Caches do AppData e temporários",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Esvaziar %temp% e rodar o Limpador de Cache do DiskMop",
+          ],
+          [
+            "Sobras do Windows Update",
+            "2 GB – 10 GB",
+            "Totalmente seguro",
+            "Configurações > Armazenamento > Temporários > Limpar",
+          ],
+          [
+            "pagefile.sys (Memória virtual)",
+            "4 GB – 16 GB",
+            "Apenas gerenciar (não excluir)",
+            "Deixar como 'Tamanho gerenciado pelo sistema'",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Por que meu disco C: fica enchendo sozinho sem nenhum motivo aparente?",
+          answer:
+            "A unidade C: nunca se enche sem causa concreta. Na imensa maioria das vezes, arquivos ocultos do sistema operacional como hiberfil.sys, o arquivo de paginação (pagefile.sys), cópias de segurança da restauração do sistema ou caches não limpos no AppData estão ocupando espaço silenciosamente em segundo plano.",
+        },
+        {
+          question: "É seguro excluir o arquivo hiberfil.sys?",
+          answer:
+            "Sim, desde que você não utilize o recurso de Hibernação do Windows. Executar 'powercfg /h off' em um prompt com privilégios de administrador remove o hiberfil.sys na hora com total segurança, liberando vários gigabytes.",
+        },
+        {
+          question: "Posso apagar o pagefile.sys para economizar espaço?",
+          answer:
+            "Não, você não deve desativar nem deletar o pagefile.sys. O Windows necessita dessa memória virtual para evitar falhas e travamentos de programas quando a RAM física se esgota. O recomendável é manter a opção de 'Tamanho gerenciado pelo sistema'.",
+        },
+        {
+          question: "Quanto espaço livre devo manter na unidade C:?",
+          answer:
+            "O ideal é manter pelo menos 15% a 20% (ou cerca de 20 a 30 GB) de espaço livre na unidade C: para que as atualizações do Windows, a alocação de memória virtual e os algoritmos de nivelamento de desgaste do SSD operem com total fluidez.",
+        },
+      ],
       verdict: [
         "Um disco C que parece cheio sem motivo é, na verdade, um disco cheio de arquivos invisíveis: hiberfil.sys, arquivo de paginação, pontos de restauração, arquivos temporários e caches do AppData. Percorra as oito soluções na ordem — exibir os arquivos ocultos, mapear o espaço visualmente, encolher o arquivo de hibernação, deixar o arquivo de paginação com o Windows, limitar os pontos de restauração, apagar temporários e caches, organizar AppData e Downloads e automatizar a rotina — e o mistério desaparece junto com a bagunça.",
         "O Disk Mop reúne todo esse fluxo em um único aplicativo: a análise de disco mostra para onde o espaço foi, o limpador de cache e o Speed Up recuperam esse espaço, o limpador de downloads e o detector de duplicados cuidam das pastas que você esquece, e a limpeza agendada mantém a unidade limpa daí em diante. É uma compra única de 19,90 $ com licença vitalícia, e a versão gratuita permite testar antes de fazer o upgrade.",
@@ -676,6 +1167,13 @@ export const cDriveFullForNoReason: Article = {
       intro: [
         "Cドライブが理由もなくいっぱいになっているように見えるとき、その容量はほとんどの場合、Windowsが利用者から隠しているファイルが使っています。休止状態ファイルの hiberfil.sys、ページ ファイルの pagefile.sys、システムの復元ポイント、そしてAppDataフォルダーの中に積み上がった数ギガバイト規模のアプリのキャッシュです。エクスプローラーはこれらの保護されたシステム ファイルを既定では表示しないため、目に見えるフォルダーを合計しても、Windowsが使用済みとして示す容量にはまるで届きません。正しい進め方は、まず診断すること、つまり何が容量を使っているのかを正確に把握してから、削除に取りかかることです。",
         "Cドライブが何度も満杯になるのが厄介なのは、原因が静かに大きくなっていくからです。Windows Updateは残骸を残し、アプリはキャッシュを膨らませ、休止状態ファイルだけでも搭載メモリのかなりの割合に相当する容量を占めることがあります。この記事では、実践的な8つの対処法を紹介します。隠しファイルを表示する、ディスクの使用状況を視覚的に把握する、hiberfil.sysを縮小または削除する、ページ ファイルを適切なサイズにする、復元ポイントの上限を下げる、一時ファイルとキャッシュを削除する、AppDataとダウンロード フォルダーを整理する、そして最後に一連の作業を自動化して同じ問題が再発しないようにする、という流れです。",
+      ],
+      keyTakeaways: [
+        "Cドライブが理由もなく満杯になることはありません。消費されている領域の正体は、hiberfil.sys、pagefile.sys、復元ポイント、AppDataキャッシュなどの隠しシステムファイルです。",
+        "管理者コマンドプロンプトで「powercfg /h off」を実行して休止状態を無効にすると、搭載RAMと同容量（8〜32 GB）の空き容量が即座に解放されます。",
+        "pagefile.sysを不用意に削除しないでください。Windowsの安定性に必須ですが、システムによる自動管理に設定することで肥大化を防止できます。",
+        "無制限のシステムの復元ポイントは20 GB以上のシャドウコピーを溜め込むことがあります。古いポイントを削除することで瞬時に容量を回復できます。",
+        "DiskMopのディスク分析は、視覚的なツリーマップによりCドライブの隠れた大容量ファイルを瞬時に特定します。",
       ],
       sections: [
         {
@@ -725,6 +1223,97 @@ export const cDriveFullForNoReason: Article = {
             "ドライブが再び埋まるのを防ぐ仕組みがなければ、ここまでの対処はどれも一時的なものにとどまります。Windowsにはそのための「ストレージ センサー」があり、「設定」→「システム」→「ストレージ」で有効にすると、一時ファイルを自動で削除し、決めた間隔でごみ箱を空にし、必要に応じてダウンロード フォルダーの古いファイルも整理します。有効にしておく価値は十分にありますが、アプリやブラウザーのキャッシュには手を付けません。",
             "Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）はもう一歩進んでいます。週次または月次のタスクを設定しておけば、キャッシュ、一時ファイル、ごみ箱が自動で整理され、システム健全性スコア（System Health Score）を見れば、ドライブに手入れが必要な時期が一目で分かります。Cドライブは常に15〜20%程度の空きを保つことを目安にしてください。更新プログラムと仮想メモリに十分な余裕があれば、Windowsは軽快なまま動き続け、ドライブが理由もなくいっぱいになるように感じることもなくなります。",
           ],
+        },
+      ],
+      howTo: {
+        name: "満杯になったCドライブの空き容量を素早く確保する方法",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "隠しシステムファイルを表示する",
+            text: "エクスプローラーを開き、「表示」>「表示」>「隠しファイル」にチェックを入れます。フォルダーオプションで「保護されたオペレーティング システム ファイルを表示しない」のチェックを一時的に外して原因を確認します。",
+          },
+          {
+            name: "休止状態を無効化してRAMサイズの容量を解放する",
+            text: "管理者としてターミナルを開き、「powercfg /h off」を実行します。これによりhiberfil.sysが直ちに削除され、8〜32 GBが解放されます。",
+          },
+          {
+            name: "古いシステムの復元ポイントを削除する",
+            text: "Cドライブの「ディスク クリーンアップ」を管理者として実行し、「詳細オプション」タブを開いて「システムの復元とシャドウ コピー」の「クリーンアップ」をクリックします。",
+          },
+          {
+            name: "一時フォルダーを空にする",
+            text: "Win+Rを押し、「%temp%」と入力して中身を削除します。また「設定」>「システム」>「ストレージ」からもWindowsの一時ファイルを削除します。",
+          },
+          {
+            name: "ごみ箱を空にする",
+            text: "デスクトップのごみ箱アイコンを右クリックし、「ごみ箱を空にする」を選択して消去した領域をOSに完全に返還します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Cドライブを圧迫する隠しファイルとそれぞれの解決策",
+        columns: [
+          "隠れたコンポーネント",
+          "典型的なサイズ",
+          "安全性レベル",
+          "解決方法",
+        ],
+        rows: [
+          [
+            "hiberfil.sys（休止状態ファイル）",
+            "8 GB – 32 GB（RAM同等）",
+            "安全（休止状態不使用時）",
+            "管理者端末で「powercfg /h off」を実行",
+          ],
+          [
+            "システムの復元ポイント",
+            "5 GB – 25 GB",
+            "安全（最新ポイントは保持）",
+            "ディスク クリーンアップ > 詳細オプション > 復元のクリーンアップ",
+          ],
+          [
+            "AppData＆一時キャッシュ",
+            "5 GB – 30 GB",
+            "完全に安全",
+            "%temp%を削除しDiskMopキャッシュクリーナーを実行",
+          ],
+          [
+            "Windows Updateの残骸",
+            "2 GB – 10 GB",
+            "完全に安全",
+            "設定 > ストレージ > 一時ファイル > 削除を実行",
+          ],
+          [
+            "pagefile.sys（仮想メモリ）",
+            "4 GB – 16 GB",
+            "管理のみ（削除非推奨）",
+            "仮想メモリ設定で「システム管理サイズ」に設定",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "なぜCドライブは何もしないのに勝手に容量がいっぱいになるのですか？",
+          answer:
+            "Cドライブが原因もなく自然に満杯になることはありません。ほとんどの場合、休止状態ファイル（hiberfil.sys）、仮想メモリ（pagefile.sys）、システムの復元のシャドウコピー、または肥大化したAppDataキャッシュがバックグラウンドで気付かぬうちに領域を消費しています。",
+        },
+        {
+          question: "hiberfil.sysファイルを削除しても安全ですか？",
+          answer:
+            "はい、Windowsの休止状態（ハイバネーション）機能を使用しないのであれば完全に安全です。管理者権限のコマンドプロンプトで「powercfg /h off」を実行するだけで、hiberfil.sysが安全に即時消去され、数ギガバイト以上の空き容量が生まれます。",
+        },
+        {
+          question:
+            "容量確保のためにpagefile.sysを無効化・削除してもいいですか？",
+          answer:
+            "いいえ、pagefile.sysを無効化または削除するべきではありません。物理メモリが不足した際やクラッシュダンプ生成時にシステムが必要とするため、完全に切るとアプリの強制終了が発生します。「システム管理サイズ」にしておくのが最善です。",
+        },
+        {
+          question: "Cドライブには最低どれくらいの空き容量を残すべきですか？",
+          answer:
+            "Windows Updateの正常な適用、仮想メモリの動的拡張、SSDのウェアレベリングを円滑に行うため、Cドライブには常に最低15〜20%（約20〜30 GB）の空き容量を確保しておくことが推奨されます。",
         },
       ],
       verdict: [

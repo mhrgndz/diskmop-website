@@ -5,12 +5,13 @@ export const androidStorageFull: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
       title: "Android Telefonda Depolama Dolu: Yeri Gerçekte Ne Kaplıyor?",
       metaDescription:
-        "Android depolama dolu uyarısı alıyorsanız yeri kaplayan genelde fotoğraf değil: WhatsApp medyası, uygulama önbelleği ve kaldırılan uygulamaların artıkları. Sırayla ne temizlenir?",
+        "Android depolama dolu uyarısı alıyorsanız sebep genelde WhatsApp medyası ve önbelleklerdir. Cihazınızı yavaşlatmadan yer açma rehberi.",
       subtitle: "Fotoğrafları Silmeden Önce Bakılacak Dört Yer",
       intro: [
         'Kısa cevap: Android\'de yeri kaplayan ilk üç şey neredeyse her zaman mesajlaşma medyası (WhatsApp/Telegram), uygulama önbelleği ve İndirilenler klasörüdür. Ayarlar > Depolama ekranındaki "Diğer" kalemi ise çoğunlukla kaldırılmış uygulamaların geride bıraktığı klasörlerdir. Fotoğraflarınızı silmeye başlamadan önce bu dördünü temizleyin.',
@@ -108,6 +109,54 @@ export const androidStorageFull: Article = {
             "En radikal çözümdür ama nadiren gereklidir. Yukarıdaki dört adım (mesajlaşma medyası, önbellek, indirilenler, kullanılmayan uygulamalar) tipik bir telefonda 10-20 GB açar. Fabrika ayarı yalnızca sistem gerçekten bozulduğunda mantıklıdır.",
         },
       ],
+      dataTable: {
+        caption:
+          "Android Dahili Depolama Alanı ve Güvenli Temizlik Öncelik Haritası",
+        columns: [
+          "Kategori",
+          "Tipik Boyut",
+          "Depolama Konumu",
+          "Güvenlik Seviyesi",
+          "Nasıl Temizlenir",
+        ],
+        rows: [
+          [
+            "WhatsApp & Telegram Medyası",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Yüksek Güvenlik",
+            "Sesli notları, iletilen videoları ve giden medyayı silin",
+          ],
+          [
+            "Uygulama Önbellekleri",
+            "3 - 15 GB",
+            "Ayarlar > Uygulamalar > Önbelleği Temizle",
+            "Tamamen Güvenli",
+            "Önbellek temizliği girişleri korur, anında GB kazandırır",
+          ],
+          [
+            "Galeri ve Dosya Çöp Kutuları",
+            "2 - 10 GB",
+            "Galeri ve Dosyalar Çöp Kutusu",
+            "Tamamen Güvenli",
+            "30 gün beklemeden çöp kutusunu boşaltarak yer açın",
+          ],
+          [
+            "Eski APK ve İndirilenler",
+            "1 - 8 GB",
+            "Download klasörü",
+            "Tamamen Güvenli",
+            "Kurulumu bitmiş APK dosyalarını ve eski ekleri temizleyin",
+          ],
+          [
+            "Kaldırılmış Uygulama Artıkları",
+            "2 - 10 GB",
+            "Android/data altındaki artık klasörler",
+            "Güvenli (İsim kontrolü)",
+            "Çoktan sildiğiniz uygulamaların klasörlerini silin",
+          ],
+        ],
+      },
       verdict: [
         'Android\'de "depolama dolu" sorununun çözümü fotoğraf silmek değil, doğru sırayla ilerlemektir: önce mesajlaşma medyası, sonra uygulama önbelleği, ardından indirilenler ve kullanılmayan uygulamalar. Bu dördü tipik bir telefonda 10-20 GB açar ve hiçbir anınızı kaybettirmez.',
         "Disk Mop'un Android sürümü bu adımları tek uygulamada toplar: çöp temizliği, fotoğraf ayıklama (eski, büyük, bulanık, benzer, ekran görüntüsü), WhatsApp ve Telegram medyası, indirilenler ve uygulama yönetimi. Her adımda ne silineceğini önce gösterir, onayınızı bekler.",
@@ -117,7 +166,7 @@ export const androidStorageFull: Article = {
     en: {
       title: "Android Storage Full: What Is Actually Taking Up the Space?",
       metaDescription:
-        "When Android says storage is full, the culprit is rarely your photos: it is messaging media, app cache and leftovers from uninstalled apps. Here is what to clear, in order.",
+        "When Android storage is full, the culprit is usually messaging media, app cache, and uninstalled app leftovers. Learn what to clear step by step.",
       subtitle: "Four Places to Look Before You Delete a Single Photo",
       intro: [
         'Short answer: the top three space consumers on Android are almost always messaging media (WhatsApp/Telegram), app cache and the Downloads folder. The "Other" line in Settings > Storage is usually folders left behind by apps you already uninstalled. Clear those four before you start deleting photos.',
@@ -213,6 +262,53 @@ export const androidStorageFull: Article = {
             "It is the most drastic one and rarely necessary. The four steps above (messaging media, cache, downloads, unused apps) free 10-20 GB on a typical phone. A reset only makes sense when the system itself is genuinely broken.",
         },
       ],
+      dataTable: {
+        caption: "Android internal storage breakdown and safe cleanup priority",
+        columns: [
+          "Category",
+          "Typical Size",
+          "Location / Storage",
+          "Safety Level",
+          "How to Clean",
+        ],
+        rows: [
+          [
+            "WhatsApp & Telegram Media",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "High Safety",
+            "Delete voice notes, forwarded videos, sent media",
+          ],
+          [
+            "App Caches",
+            "3 - 15 GB",
+            "Settings > Apps > Storage > Clear Cache",
+            "Completely Safe",
+            "Clearing cache preserves logins, frees instant GBs",
+          ],
+          [
+            "Trash Bins (Gallery/Files)",
+            "2 - 10 GB",
+            "Recently Deleted in Gallery & Files",
+            "Completely Safe",
+            "Empty 30-day trash bins to reclaim disk space",
+          ],
+          [
+            "Obsolete APKs & Downloads",
+            "1 - 8 GB",
+            "Download folder",
+            "Completely Safe",
+            "Remove installer APKs and old email attachments",
+          ],
+          [
+            "Uninstalled App Leftovers",
+            "2 - 10 GB",
+            "Android/data (residual folders)",
+            "Safe (Check name)",
+            "Delete folders of apps that are no longer installed",
+          ],
+        ],
+      },
       verdict: [
         'Fixing "storage full" on Android is not about deleting photos, it is about working in the right order: messaging media first, then app cache, then downloads and unused apps. Those four free 10-20 GB on a typical phone without costing you a single memory.',
         "The Android version of Disk Mop brings those steps into one app: junk cleanup, photo triage (old, large, blurry, similar, screenshots), WhatsApp and Telegram media, downloads and app management. Every step shows what will be deleted first and waits for your confirmation.",
@@ -320,6 +416,54 @@ export const androidStorageFull: Article = {
             "Es ist die drastischste und selten nötig. Die vier Schritte oben (Messenger-Medien, Cache, Downloads, ungenutzte Apps) geben auf einem typischen Telefon 10-20 GB frei. Ein Zurücksetzen lohnt nur, wenn das System tatsächlich defekt ist.",
         },
       ],
+      dataTable: {
+        caption:
+          "Android-Speicheraufteilung und sichere Bereinigungsprioritäten",
+        columns: [
+          "Kategorie",
+          "Typische Größe",
+          "Speicherort",
+          "Sicherheitsstufe",
+          "So bereinigen Sie",
+        ],
+        rows: [
+          [
+            "WhatsApp & Telegram Medien",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Sehr sicher",
+            "Sprachnachrichten, weitergeleitete Videos und gesendete Medien löschen",
+          ],
+          [
+            "App-Caches",
+            "3 - 15 GB",
+            "Einstellungen > Apps > Speicher > Cache leeren",
+            "Völlig sicher",
+            "Logins bleiben erhalten; gibt sofort Gigabytes frei",
+          ],
+          [
+            "Papierkörbe (Galerie/Dateien)",
+            "2 - 10 GB",
+            "Zuletzt gelöscht in Galerie & Dateien",
+            "Völlig sicher",
+            "Papierkorb manuell leeren, statt 30 Tage zu warten",
+          ],
+          [
+            "Veraltete APKs & Downloads",
+            "1 - 8 GB",
+            "Download-Ordner",
+            "Völlig sicher",
+            "Installations-APKs und alte Dateianhänge löschen",
+          ],
+          [
+            "Reste gelöschter Apps",
+            "2 - 10 GB",
+            "Android/data (Restordner)",
+            "Sicher (Namen prüfen)",
+            "Verwaiste Ordner deinstallierter Apps entfernen",
+          ],
+        ],
+      },
       verdict: [
         'Bei "Speicher voll" unter Android geht es nicht ums Löschen von Fotos, sondern um die richtige Reihenfolge: zuerst Messenger-Medien, dann App-Cache, dann Downloads und ungenutzte Apps. Diese vier geben auf einem typischen Telefon 10-20 GB frei, ohne eine einzige Erinnerung zu kosten.',
         "Die Android-Version von Disk Mop bündelt diese Schritte in einer App: Junk-Bereinigung, Foto-Sortierung (alt, groß, unscharf, ähnlich, Screenshots), WhatsApp- und Telegram-Medien, Downloads und App-Verwaltung. Jeder Schritt zeigt zuerst, was gelöscht wird, und wartet auf Ihre Bestätigung.",
@@ -429,6 +573,53 @@ export const androidStorageFull: Article = {
             "C'est la plus radicale, et rarement nécessaire. Les quatre étapes ci-dessus (médias de messagerie, cache, téléchargements, applis inutilisées) libèrent 10 à 20 Go sur un téléphone typique. Une réinitialisation ne se justifie que si le système est réellement défaillant.",
         },
       ],
+      dataTable: {
+        caption: "Répartition du stockage Android et priorités de nettoyage",
+        columns: [
+          "Catégorie",
+          "Taille typique",
+          "Emplacement",
+          "Niveau de sécurité",
+          "Comment nettoyer",
+        ],
+        rows: [
+          [
+            "Médias WhatsApp et Telegram",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Très sûr",
+            "Supprimer les notes vocales, vidéos transférées et fichiers envoyés",
+          ],
+          [
+            "Caches d'applications",
+            "3 - 15 GB",
+            "Paramètres > Applications > Stockage > Vider le cache",
+            "Totalement sûr",
+            "Conserve les comptes et libère instantanément des gigas",
+          ],
+          [
+            "Corbeilles (Galerie/Fichiers)",
+            "2 - 10 GB",
+            "Supprimés récemment dans Galerie et Fichiers",
+            "Totalement sûr",
+            "Vider la corbeille sans attendre les 30 jours automatiques",
+          ],
+          [
+            "Fichiers APK et téléchargements",
+            "1 - 8 GB",
+            "Dossier Téléchargements",
+            "Totalement sûr",
+            "Supprimer les installateurs APK et pièces jointes oubliées",
+          ],
+          [
+            "Résidus d'applications désinstallées",
+            "2 - 10 GB",
+            "Android/data (dossiers orphelins)",
+            "Sûr (vérifier le nom)",
+            "Effacer les dossiers des logiciels qui ne sont plus installés",
+          ],
+        ],
+      },
       verdict: [
         "Régler un « stockage plein » sous Android ne passe pas par la suppression de photos, mais par le bon ordre : d'abord les médias de messagerie, puis le cache des applis, puis les téléchargements et les applis inutilisées. Ces quatre postes libèrent 10 à 20 Go sur un téléphone typique sans coûter un seul souvenir.",
         "La version Android de Disk Mop réunit ces étapes dans une seule appli : nettoyage des fichiers inutiles, tri des photos (anciennes, volumineuses, floues, similaires, captures), médias WhatsApp et Telegram, téléchargements et gestion des applications. Chaque étape montre d'abord ce qui sera supprimé et attend votre confirmation.",
@@ -536,6 +727,54 @@ export const androidStorageFull: Article = {
             "Es la más drástica y rara vez necesaria. Los cuatro pasos anteriores (medios de mensajería, caché, descargas, apps sin usar) liberan 10-20 GB en un teléfono típico. Un restablecimiento solo tiene sentido si el sistema está realmente dañado.",
         },
       ],
+      dataTable: {
+        caption:
+          "Desglose del almacenamiento interno de Android y orden de limpieza",
+        columns: [
+          "Categoría",
+          "Tamaño típico",
+          "Ubicación",
+          "Nivel de seguridad",
+          "Cómo limpiar",
+        ],
+        rows: [
+          [
+            "Archivos de WhatsApp y Telegram",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Muy seguro",
+            "Borrar notas de voz, vídeos reenviados y archivos enviados",
+          ],
+          [
+            "Caché de aplicaciones",
+            "3 - 15 GB",
+            "Ajustes > Aplicaciones > Almacenamiento > Borrar caché",
+            "Completamente seguro",
+            "Conserva los inicios de sesión y libera gigas al instante",
+          ],
+          [
+            "Papelera (Galería/Archivos)",
+            "2 - 10 GB",
+            "Eliminados recientemente en Galería y Archivos",
+            "Completamente seguro",
+            "Vaciar las papeleras sin esperar a los 30 días",
+          ],
+          [
+            "Archivos APK y descargas viejas",
+            "1 - 8 GB",
+            "Carpeta Downloads",
+            "Completamente seguro",
+            "Eliminar paquetes APK antiguos y adjuntos descargados",
+          ],
+          [
+            "Restos de apps desinstaladas",
+            "2 - 10 GB",
+            "Android/data (carpetas residuales)",
+            "Seguro (revisar nombre)",
+            "Borrar carpetas de aplicaciones que ya no utiliza",
+          ],
+        ],
+      },
       verdict: [
         "Resolver el «almacenamiento lleno» en Android no consiste en borrar fotos, sino en seguir el orden correcto: primero medios de mensajería, luego caché de apps, después descargas y apps sin usar. Esos cuatro liberan 10-20 GB en un teléfono típico sin costarte un solo recuerdo.",
         "La versión Android de Disk Mop reúne esos pasos en una sola app: limpieza de basura, clasificación de fotos (antiguas, grandes, borrosas, similares, capturas), medios de WhatsApp y Telegram, descargas y gestión de aplicaciones. Cada paso muestra antes qué se va a borrar y espera tu confirmación.",
@@ -643,6 +882,54 @@ export const androidStorageFull: Article = {
             "È la più drastica e raramente necessaria. I quattro passaggi qui sopra (media di messaggistica, cache, download, app inutilizzate) liberano 10-20 GB su un telefono tipico. Un ripristino ha senso solo se il sistema è davvero compromesso.",
         },
       ],
+      dataTable: {
+        caption:
+          "Ripartizione della memoria interna Android e priorità di pulizia",
+        columns: [
+          "Categoria",
+          "Dimensione tipica",
+          "Posizione",
+          "Livello di sicurezza",
+          "Come pulire",
+        ],
+        rows: [
+          [
+            "Media WhatsApp e Telegram",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Molto sicuro",
+            "Elimina note vocali, video inoltrati e file inviati",
+          ],
+          [
+            "Cache delle applicazioni",
+            "3 - 15 GB",
+            "Impostazioni > App > Archiviazione > Svuota cache",
+            "Completamente sicuro",
+            "Mantiene gli accessi e libera giga all'istante",
+          ],
+          [
+            "Cestino (Galleria/File)",
+            "2 - 10 GB",
+            "Eliminati di recente in Galleria e Gestione file",
+            "Completamente sicuro",
+            "Svuota il cestino senza attendere la scadenza di 30 giorni",
+          ],
+          [
+            "APK obsoleti e download vecchi",
+            "1 - 8 GB",
+            "Cartella Download",
+            "Completamente sicuro",
+            "Rimuovi installer APK e vecchi allegati salvati",
+          ],
+          [
+            "Residui di app disinstallate",
+            "2 - 10 GB",
+            "Android/data (cartelle orfane)",
+            "Sicuro (controlla nome)",
+            "Elimina le cartelle delle app già disinstallate",
+          ],
+        ],
+      },
       verdict: [
         "Risolvere la «memoria piena» su Android non significa cancellare foto, ma procedere nell'ordine giusto: prima i media di messaggistica, poi la cache delle app, quindi i download e le app inutilizzate. Questi quattro liberano 10-20 GB su un telefono tipico senza costarti un solo ricordo.",
         "La versione Android di Disk Mop riunisce questi passaggi in un'unica app: pulizia dei file inutili, selezione delle foto (vecchie, grandi, sfocate, simili, screenshot), media di WhatsApp e Telegram, download e gestione delle app. Ogni passaggio mostra prima cosa verrà eliminato e attende la tua conferma.",
@@ -749,6 +1036,54 @@ export const androidStorageFull: Article = {
             "É a mais drástica e raramente necessária. Os quatro passos acima (mídias de mensagens, cache, downloads, apps sem uso) liberam 10-20 GB num celular típico. Uma restauração só faz sentido se o sistema estiver de fato comprometido.",
         },
       ],
+      dataTable: {
+        caption:
+          "Divisão do armazenamento interno do Android e prioridade de limpeza",
+        columns: [
+          "Categoria",
+          "Tamanho típico",
+          "Localização",
+          "Nível de segurança",
+          "Como limpar",
+        ],
+        rows: [
+          [
+            "Ficheiros WhatsApp e Telegram",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "Muito seguro",
+            "Apagar mensagens de voz, vídeos reencaminhados e enviados",
+          ],
+          [
+            "Cache de aplicações",
+            "3 - 15 GB",
+            "Definições > Aplicações > Armazenamento > Limpar cache",
+            "Completamente seguro",
+            "Mantém as sessões ativas e liberta gigas na hora",
+          ],
+          [
+            "Lixeira (Galeria/Ficheiros)",
+            "2 - 10 GB",
+            "Apagados recentemente na Galeria e Ficheiros",
+            "Completamente seguro",
+            "Esvaziar a lixeira sem esperar pelo prazo de 30 dias",
+          ],
+          [
+            "APKs obsoletos e transferências",
+            "1 - 8 GB",
+            "Pasta Transferências",
+            "Completamente seguro",
+            "Remover instaladores APK e anexos guardados",
+          ],
+          [
+            "Restos de apps desinstaladas",
+            "2 - 10 GB",
+            "Android/data (pastas residuais)",
+            "Seguro (verificar nome)",
+            "Eliminar pastas de aplicações que já não utiliza",
+          ],
+        ],
+      },
       verdict: [
         "Resolver o «armazenamento cheio» no Android não é apagar fotos, é seguir a ordem certa: primeiro mídias de mensagens, depois cache dos apps, então downloads e apps sem uso. Esses quatro liberam 10-20 GB num celular típico sem custar uma única lembrança.",
         "A versão Android do Disk Mop reúne essas etapas em um app só: limpeza de lixo, triagem de fotos (antigas, grandes, desfocadas, semelhantes, capturas), mídias de WhatsApp e Telegram, downloads e gerenciamento de apps. Cada etapa mostra antes o que será apagado e espera sua confirmação.",
@@ -855,6 +1190,53 @@ export const androidStorageFull: Article = {
             "最も極端な方法ですが、必要になることはまれです。上記の 4 手順（メッセージのメディア、キャッシュ、ダウンロード、未使用アプリ）で一般的な端末なら 10〜20 GB 空きます。初期化はシステム自体が本当に壊れている場合にのみ意味があります。",
         },
       ],
+      dataTable: {
+        caption: "Android内部ストレージの内訳と安全な削除優先順位マップ",
+        columns: [
+          "カテゴリ",
+          "典型的なサイズ",
+          "保存場所",
+          "安全性レベル",
+          "安全な整理手順",
+        ],
+        rows: [
+          [
+            "WhatsApp / Telegram メディア",
+            "5 - 25 GB",
+            "Android/media/com.whatsapp",
+            "極めて安全",
+            "ボイスメッセージ、転送動画、送信済みメディアを整理",
+          ],
+          [
+            "アプリのキャッシュ",
+            "3 - 15 GB",
+            "設定 > アプリ > ストレージ > キャッシュを消去",
+            "完全に安全",
+            "ログイン状態は保持され、即座に空き容量を回復",
+          ],
+          [
+            "ゴミ箱 (ギャラリー・ファイル)",
+            "2 - 10 GB",
+            "「最近削除した項目」",
+            "完全に安全",
+            "30日の自動消去を待たずに今すぐゴミ箱を空にする",
+          ],
+          [
+            "不要なAPKとダウンロード",
+            "1 - 8 GB",
+            "Downloadフォルダー",
+            "完全に安全",
+            "インストール済みのAPKや古いメール添付ファイルを削除",
+          ],
+          [
+            "アンインストール済みアプリの残骸",
+            "2 - 10 GB",
+            "Android/data 内の残存フォルダー",
+            "安全（名前を確認）",
+            "すでに削除したアプリの空フォルダーを手動整理",
+          ],
+        ],
+      },
       verdict: [
         "Android の「ストレージがいっぱい」を解決する鍵は写真を消すことではなく、正しい順序で進めることです。まずメッセージアプリのメディア、次にアプリのキャッシュ、続いてダウンロードと未使用アプリ。この 4 つで一般的な端末なら 10〜20 GB が空き、思い出は 1 つも失われません。",
         "Disk Mop の Android 版はこれらの手順を 1 つのアプリにまとめています。不要ファイルの削除、写真の仕分け（古い・大きい・ぶれ・類似・スクリーンショット）、WhatsApp と Telegram のメディア、ダウンロード、アプリ管理。各手順で何を削除するかを先に表示し、確認を待ちます。",

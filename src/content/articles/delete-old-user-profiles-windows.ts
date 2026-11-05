@@ -5,13 +5,13 @@ export const deleteOldUserProfilesWindows: Article = {
   type: "guide",
   category: "Windows",
   date: "2026-09-04",
-  updated: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
       title: "Windows'ta Eski Kullanıcı Profillerini Silme: Doğru Yöntem",
       metaDescription:
-        "C:\\Users altındaki eski hesaplar 50 GB'ı geçebilir. Klasörü Gezgin'den silmek kayıt defterinde artık bırakır. Sistem Özellikleri üzerinden doğru kaldırma adımları.",
+        "C:\\Users altındaki eski hesaplar 50 GB'ı aşabilir. Klasörü elle silmek artık bırakır; Sistem Özellikleri üzerinden doğru kaldırma adımlarını görün.",
       subtitle: "Klasörü Silmek Yetmez, Hatta Zarar Verir",
       intro: [
         "Kısa cevap: Eski bir kullanıcı profilini silmek için `C:\\Users\\ad` klasörünü Gezgin'den silmeyin. Doğru yol, Windows tuşu + R ile `sysdm.cpl` çalıştırıp Gelişmiş sekmesindeki Kullanıcı Profilleri > Ayarlar penceresinden profili seçip Sil demektir. Bu yöntem hem klasörü hem de kayıt defterindeki `ProfileList` girdisini birlikte kaldırır. Klasörü elle sildiğinizde kayıt defteri girdisi geride kalır; kullanıcı bir daha oturum açarsa Windows ona geçici profil verir veya bozuk profil hatası üretir, üstelik kilitli dosyalar yüzünden klasörün bir kısmı zaten silinemez. Eski profiller genellikle diskteki en büyük tek kalemdir: uzun süre kullanılmış bir hesap indirilenler, tarayıcı önbelleği, OneDrive kopyaları ve uygulama verileriyle 20-100 GB tutabilir.",
@@ -154,7 +154,7 @@ export const deleteOldUserProfilesWindows: Article = {
     en: {
       title: "Deleting Old User Profiles in Windows: The Correct Way",
       metaDescription:
-        "Old accounts under C:\\Users can exceed 50 GB. Deleting the folder in Explorer leaves registry leftovers. Here are the correct removal steps via System Properties.",
+        "Old accounts in C:\\Users can exceed 50 GB. Deleting folders in Explorer leaves registry leftovers. Here is the correct removal via System Properties.",
       subtitle: "Deleting the Folder Is Not Enough — and It Causes Damage",
       intro: [
         "Short answer: to remove an old user profile, do not delete the `C:\\Users\\name` folder in Explorer. The correct route is Windows key + R, run `sysdm.cpl`, open the Advanced tab, click Settings under User Profiles, select the profile and choose Delete. That removes both the folder and the `ProfileList` entry in the registry together. Delete the folder by hand and the registry entry stays behind; if that user signs in again Windows gives them a temporary profile or throws a corrupt-profile error, and part of the folder cannot be deleted anyway because of locked files. Old profiles are often the single largest item on a disk: a long-used account can hold 20-100 GB of downloads, browser caches, OneDrive copies and application data.",

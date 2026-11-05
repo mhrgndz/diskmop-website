@@ -5,13 +5,13 @@ export const windowsSearchIndexSlow: Article = {
   type: "guide",
   category: "Performance",
   date: "2026-09-04",
-  updated: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
       title: "SearchIndexer.exe Diski ve İşlemciyi Yiyor: Windows.edb Rehberi",
       metaDescription:
-        'Microsoft Windows Search Indexer sürekli çalışıyorsa ve Windows.edb dosyası gigabaytlarca yer kapladıysa sebebi genelde "Gelişmiş" indeksleme modudur. Kapsamı daraltma ve yeniden oluşturma adımları.',
+        "Windows Search Indexer sürekli çalışıyor ve Windows.edb şişiyorsa sebep gelişmiş moddur. Arama kapsamını daraltma ve indeksi sıfırlama adımları.",
       subtitle: "Arka Planda Çalışan En Sinsi Yavaşlatıcı",
       intro: [
         "Kısa cevap: `SearchIndexer.exe`, Windows'un dosya adlarını ve içeriklerini önceden tarayıp `Windows.edb` adlı bir veritabanına yazan hizmetidir. Sürekli yüksek işlemci veya disk kullanıyorsa genellikle iki sebepten biridir: Windows 11'deki \"Gelişmiş\" indeksleme modu açıktır ve tüm diski tarıyordur, ya da indeks bozulmuş ve baştan kuruluyordur. `Windows.edb` dosyası `C:\\ProgramData\\Microsoft\\Search\\Data\\Applications\\Windows\\` altındadır ve büyük posta kutuları veya yüz binlerce dosya indekslendiğinde 5-10 GB'ı geçebilir. Doğru çözüm hizmeti körü körüne kapatmak değil, İndeksleme Seçenekleri'nden kapsamı daraltmaktır; bu hem işlemci yükünü düşürür hem de veritabanını küçültür. Kapsamı daralttıktan sonra dosya kendiliğinden küçülmez, indeksin yeniden oluşturulması gerekir.",
@@ -157,7 +157,7 @@ export const windowsSearchIndexSlow: Article = {
     en: {
       title: "SearchIndexer.exe Is Eating Disk and CPU: The Windows.edb Guide",
       metaDescription:
-        'If Microsoft Windows Search Indexer runs constantly and Windows.edb has grown to gigabytes, the usual cause is "Enhanced" indexing mode. How to narrow the scope and rebuild.',
+        "If Windows Search Indexer runs constantly and Windows.edb is huge, Enhanced indexing is usually why. How to scope folders and rebuild the index safely.",
       subtitle: "The Sneakiest Background Slowdown",
       intro: [
         'Short answer: `SearchIndexer.exe` is the Windows service that scans file names and contents ahead of time and writes them into a database called `Windows.edb`. If it constantly uses high CPU or disk, it is usually one of two things: the "Enhanced" indexing mode in Windows 11 is on and indexing your entire drive, or the index is corrupted and rebuilding endlessly. `Windows.edb` lives under `C:\\ProgramData\\Microsoft\\Search\\Data\\Applications\\Windows\\` and can pass 5-10 GB when large mailboxes or hundreds of thousands of files are indexed. The right fix is not to disable the service blindly but to narrow the scope in Indexing Options; that lowers CPU load and shrinks the database. Note that the file does not shrink on its own after narrowing the scope — the index has to be rebuilt.',

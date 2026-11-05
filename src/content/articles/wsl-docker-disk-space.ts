@@ -5,6 +5,7 @@ export const wslDockerDiskSpace: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 9,
   content: {
     tr: {
@@ -106,6 +107,46 @@ export const wslDockerDiskSpace: Article = {
             "Çoğu zaman gerekmez, ama seyrek disk anlık değil kademeli çalışır. Tek seferde çok büyük bir silme yaptıysanız elle sıkıştırma hâlâ daha hızlı sonuç verir. Ayrıca `sparseVhd` yalnızca ayar açıldıktan sonra oluşturulan disklerde otomatik geçerlidir.",
         },
       ],
+      dataTable: {
+        caption: "WSL2 ve Docker Disk Alanı Geri Kazanım Yöntemleri",
+        columns: [
+          "Bileşen",
+          "Varsayılan Konum",
+          "Tipik Boyut",
+          "Temizlik Komutu",
+          "Kazanılacak Alan",
+        ],
+        rows: [
+          [
+            "WSL2 Sanal Diski",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Docker Build Cache",
+            "Docker dahili depolaması",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Tüm kullanılmayan önbellek",
+          ],
+          [
+            "Askıda Kalan İmajlar (Dangling)",
+            "Docker katmanları",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Sahipsiz Volume Verileri",
+            "Docker volumes dizini",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Tüm sahipsiz birimler",
+          ],
+        ],
+      },
       verdict: [
         "WSL2 ve Docker'ın diski şişirmesi bir hata değil, sanal disklerin doğası. Kural basit: içeriyi temizle, WSL'i kapat, diski sıkıştır. Bu üç adım çoğu geliştirme makinesinde tek seferde 20-60 GB geri kazandırır.",
         "Kalıcı çözüm için `sparseVhd=true` ayarını açın ve derleme önbelleğini düzenli temizleyin. Diskinizde başka nelerin biriktiğini görmek isterseniz Disk Mop'un Büyük Dosyalar ve Disk Haritası modülleri bu tür tek-büyük-dosya durumlarını saniyeler içinde ortaya çıkarır.",
@@ -211,6 +252,47 @@ export const wslDockerDiskSpace: Article = {
             "Usually not, but sparse disks reclaim gradually rather than instantly. After one very large deletion, a manual compact still gets you the space faster. Note also that `sparseVhd` applies automatically only to disks created after you enable it.",
         },
       ],
+      dataTable: {
+        caption:
+          "WSL2 and Docker disk reclamation methods and typical space savings",
+        columns: [
+          "Component",
+          "Default Path",
+          "Typical Size",
+          "Cleanup Command",
+          "Reclaimable Space",
+        ],
+        rows: [
+          [
+            "WSL2 Virtual Disk",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Docker Build Cache",
+            "Docker internal storage",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "All unused cache",
+          ],
+          [
+            "Dangling Images & Containers",
+            "Docker runtime layers",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Unused Volume Data",
+            "Docker volumes directory",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "All orphaned volumes",
+          ],
+        ],
+      },
       verdict: [
         "WSL2 and Docker inflating your disk is not a bug, it is how virtual disks behave. The rule is simple: clean the inside, shut WSL down, compact the disk. Those three steps reclaim 20-60 GB in one go on most development machines.",
         "For a lasting fix, turn on `sparseVhd=true` and prune the build cache regularly. If you want to see what else has quietly accumulated on the drive, Disk Mop's Large Files and Disk Treemap modules surface this kind of single-huge-file situation in seconds.",
@@ -317,6 +399,47 @@ export const wslDockerDiskSpace: Article = {
             "Meist nicht, aber sparse-Datenträger geben Platz schrittweise frei, nicht sofort. Nach einer sehr großen Löschaktion führt manuelles Komprimieren schneller zum Ziel. Zudem gilt `sparseVhd` automatisch nur für Datenträger, die nach dem Aktivieren angelegt wurden.",
         },
       ],
+      dataTable: {
+        caption:
+          "WSL2 und Docker Speicherbereinigung und typische Einsparungen",
+        columns: [
+          "Komponente",
+          "Standardpfad",
+          "Typische Größe",
+          "Bereinigungsbefehl",
+          "Gewinnbarer Speicher",
+        ],
+        rows: [
+          [
+            "WSL2 Virtuelle Festplatte",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Docker Build-Cache",
+            "Interner Docker-Speicher",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Gesamter ungenutzter Cache",
+          ],
+          [
+            "Verwaiste Images & Container",
+            "Docker Runtime-Layer",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Ungenutzte Docker-Volumes",
+            "Docker-Volumes-Ordner",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Alle verwaisten Volumes",
+          ],
+        ],
+      },
       verdict: [
         "Dass WSL2 und Docker die Festplatte füllen, ist kein Fehler, sondern das Verhalten virtueller Datenträger. Die Regel ist einfach: innen aufräumen, WSL beenden, Datenträger komprimieren. Diese drei Schritte holen auf den meisten Entwicklungsrechnern 20-60 GB auf einmal zurück.",
         "Dauerhaft hilft `sparseVhd=true` zusammen mit regelmäßigem Leeren des Build-Cache. Wenn Sie sehen möchten, was sich sonst noch angesammelt hat: Die Module Große Dateien und Disk Treemap von Disk Mop bringen genau solche Einzeldatei-Fälle in Sekunden ans Licht.",
@@ -423,6 +546,46 @@ export const wslDockerDiskSpace: Article = {
             "Le plus souvent non, mais les disques creux récupèrent l'espace progressivement et non instantanément. Après une suppression très volumineuse, un compactage manuel reste plus rapide. Notez aussi que `sparseVhd` ne s'applique automatiquement qu'aux disques créés après son activation.",
         },
       ],
+      dataTable: {
+        caption: "Méthodes de récupération d'espace disque pour WSL2 et Docker",
+        columns: [
+          "Composant",
+          "Emplacement par défaut",
+          "Taille typique",
+          "Commande de nettoyage",
+          "Espace récupérable",
+        ],
+        rows: [
+          [
+            "Disque virtuel WSL2",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Cache de build Docker",
+            "Stockage interne Docker",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Tout le cache inutilisé",
+          ],
+          [
+            "Images et conteneurs orphelins",
+            "Couches runtime Docker",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Volumes Docker inutilisés",
+            "Répertoire des volumes",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Tous les volumes orphelins",
+          ],
+        ],
+      },
       verdict: [
         "Que WSL2 et Docker remplissent le disque n'est pas un défaut : c'est le comportement des disques virtuels. La règle est simple : nettoyer l'intérieur, arrêter WSL, compacter le disque. Ces trois étapes récupèrent 20 à 60 Go d'un coup sur la plupart des machines de développement.",
         "Pour une solution durable, activez `sparseVhd=true` et purgez régulièrement le cache de construction. Si vous voulez voir ce qui s'est accumulé ailleurs, les modules Gros fichiers et Disk Treemap de Disk Mop révèlent ce genre de situation en quelques secondes.",
@@ -528,6 +691,47 @@ export const wslDockerDiskSpace: Article = {
             "Normalmente no, pero los discos dispersos recuperan espacio de forma gradual, no instantánea. Tras un borrado muy grande, compactar a mano sigue siendo más rápido. Además, `sparseVhd` se aplica automáticamente solo a los discos creados después de activarlo.",
         },
       ],
+      dataTable: {
+        caption:
+          "Métodos de recuperación de espacio en disco para WSL2 y Docker",
+        columns: [
+          "Componente",
+          "Ruta predeterminada",
+          "Tamaño típico",
+          "Comando de limpieza",
+          "Espacio recuperable",
+        ],
+        rows: [
+          [
+            "Disco virtual WSL2",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Caché de compilación Docker",
+            "Almacenamiento interno Docker",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Toda la caché no usada",
+          ],
+          [
+            "Imágenes y contenedores huérfanos",
+            "Capas de Docker runtime",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Volúmenes Docker no utilizados",
+            "Directorio de volúmenes",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Todos los volúmenes huérfanos",
+          ],
+        ],
+      },
       verdict: [
         "Que WSL2 y Docker llenen el disco no es un fallo: es el comportamiento de los discos virtuales. La regla es simple: limpia por dentro, detén WSL, compacta el disco. Esos tres pasos recuperan de 20 a 60 GB de una vez en la mayoría de equipos de desarrollo.",
         "Como solución duradera, activa `sparseVhd=true` y purga la caché de compilación con regularidad. Si quieres ver qué más se ha acumulado, los módulos Archivos grandes y Disk Treemap de Disk Mop sacan a la luz este tipo de casos en segundos.",
@@ -633,6 +837,46 @@ export const wslDockerDiskSpace: Article = {
             "Di solito no, ma i dischi sparsi recuperano spazio gradualmente, non all'istante. Dopo una cancellazione molto grande, compattare a mano resta più rapido. Inoltre `sparseVhd` si applica automaticamente solo ai dischi creati dopo averlo attivato.",
         },
       ],
+      dataTable: {
+        caption: "Metodi di recupero dello spazio su disco per WSL2 e Docker",
+        columns: [
+          "Componente",
+          "Percorso predefinito",
+          "Dimensione tipica",
+          "Comando di pulizia",
+          "Spazio recuperabile",
+        ],
+        rows: [
+          [
+            "Disco virtuale WSL2",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Cache di build Docker",
+            "Archivio interno Docker",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Tutta la cache inutilizzata",
+          ],
+          [
+            "Immagini e container orfani",
+            "Layer runtime di Docker",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Volumi Docker inutilizzati",
+            "Cartella dei volumi",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Tutti i volumi orfani",
+          ],
+        ],
+      },
       verdict: [
         "Che WSL2 e Docker riempiano il disco non è un difetto: è il comportamento dei dischi virtuali. La regola è semplice: pulisci l'interno, arresta WSL, compatta il disco. Questi tre passaggi recuperano 20-60 GB in una volta sola sulla maggior parte delle macchine di sviluppo.",
         "Per una soluzione duratura attiva `sparseVhd=true` e svuota regolarmente la cache di build. Se vuoi vedere cos'altro si è accumulato, i moduli File di grandi dimensioni e Disk Treemap di Disk Mop fanno emergere questo tipo di casi in pochi secondi.",
@@ -738,6 +982,46 @@ export const wslDockerDiskSpace: Article = {
             "Normalmente não, mas discos esparsos recuperam espaço de forma gradual, não instantânea. Depois de uma exclusão muito grande, compactar manualmente ainda é mais rápido. Além disso, o `sparseVhd` vale automaticamente apenas para discos criados após a ativação.",
         },
       ],
+      dataTable: {
+        caption: "Métodos de recuperação de espaço em disco para WSL2 e Docker",
+        columns: [
+          "Componente",
+          "Caminho padrão",
+          "Tamanho típico",
+          "Comando de limpeza",
+          "Espaço recuperável",
+        ],
+        rows: [
+          [
+            "Disco virtual WSL2",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Cache de build Docker",
+            "Armazenamento interno Docker",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "Toda a cache não usada",
+          ],
+          [
+            "Imagens e contentores órfãos",
+            "Camadas de runtime Docker",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "Volumes Docker não utilizados",
+            "Diretório de volumes",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "Todos os volumes órfãos",
+          ],
+        ],
+      },
       verdict: [
         "O WSL2 e o Docker encherem o disco não é um defeito: é como discos virtuais funcionam. A regra é simples: limpe por dentro, encerre o WSL, compacte o disco. Esses três passos recuperam 20 a 60 GB de uma vez na maioria das máquinas de desenvolvimento.",
         "Como solução duradoura, ative `sparseVhd=true` e limpe o cache de build com regularidade. Se quiser ver o que mais se acumulou, os módulos Arquivos grandes e Disk Treemap do Disk Mop revelam esse tipo de caso em segundos.",
@@ -843,6 +1127,46 @@ export const wslDockerDiskSpace: Article = {
             "たいていは不要ですが、スパースディスクの解放は即時ではなく段階的です。非常に大きな削除を行った直後は、手動での圧縮の方が早く結果が出ます。また `sparseVhd` が自動的に適用されるのは、有効化した後に作成されたディスクだけです。",
         },
       ],
+      dataTable: {
+        caption: "WSL2とDockerのディスク容量解放手順と削減見込み",
+        columns: [
+          "コンポーネント",
+          "デフォルトの場所",
+          "典型的なサイズ",
+          "クリーンアップコマンド",
+          "解放可能な容量",
+        ],
+        rows: [
+          [
+            "WSL2仮想ディスク",
+            "%LOCALAPPDATA%\\Packages\\...\\ext4.vhdx",
+            "20 - 100 GB",
+            "diskpart > compact vdisk",
+            "10 - 60 GB",
+          ],
+          [
+            "Dockerビルドキャッシュ",
+            "Docker内部ストレージ",
+            "10 - 40 GB",
+            "docker builder prune -a -f",
+            "未使用のキャッシュ全量",
+          ],
+          [
+            "不要なイメージ・コンテナ",
+            "Dockerランタイム層",
+            "5 - 30 GB",
+            "docker system prune -a --volumes",
+            "5 - 30 GB",
+          ],
+          [
+            "未使用のDockerボリューム",
+            "Dockerボリュームディレクトリ",
+            "5 - 50 GB",
+            "docker volume prune -f",
+            "孤立した全ボリューム",
+          ],
+        ],
+      },
       verdict: [
         "WSL2 と Docker がディスクを圧迫するのは不具合ではなく、仮想ディスクの性質です。手順は単純で、内部を整理し、WSL を停止し、ディスクを圧縮する。この 3 段階でほとんどの開発マシンは一度に 20〜60 GB を取り戻せます。",
         "恒久的な対策として `sparseVhd=true` を有効にし、ビルドキャッシュを定期的に削除してください。ドライブに他に何がたまっているか知りたい場合、Disk Mop の「大きいファイル」と Disk Treemap は、こうした巨大な単一ファイルを数秒で浮かび上がらせます。",

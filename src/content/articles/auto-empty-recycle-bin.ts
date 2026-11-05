@@ -5,7 +5,7 @@ export const autoEmptyRecycleBin: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-19",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 6,
   content: {
     tr: {
@@ -333,6 +333,12 @@ export const autoEmptyRecycleBin: Article = {
         "Der schnellste Weg, den Papierkorb in Windows 11 automatisch zu leeren, ist die Speicheroptimierung: Öffnen Sie die Einstellungen, gehen Sie zu System und dann Speicher, aktivieren Sie die Speicheroptimierung und lassen Sie Dateien löschen, die länger als 30 Tage im Papierkorb liegen. Wer einen festen Zeitplan bevorzugt, richtet in der Aufgabenplanung eine wöchentliche Aufgabe mit dem PowerShell-Befehl Clear-RecycleBin -Force ein. Beide Methoden sind kostenlos, in Windows integriert und in unter fünf Minuten eingerichtet.",
         "Der Papierkorb wächst still: Eine gelöschte Datei verschwindet nicht von der Festplatte, sie wandert nur in den Papierkorb und belegt dort weiter Platz — oft gigabyteweise. In diesem Leitfaden vergleichen wir die drei Automatisierungswege direkt: Speicheroptimierung, Aufgabenplanung und Disk Mops geplante Bereinigung, die zusätzlich Caches und alte Downloads abdeckt. Zuerst kommen die vollständigen Schritte der Bordmittel, dann die Entscheidung, welcher Weg zu Ihnen passt.",
       ],
+      keyTakeaways: [
+        "Das normale Löschen verschiebt Dateien lediglich in den versteckten Ordner '$Recycle.Bin'; der Speicherplatz wird erst beim Leeren des Papierkorbs freigegeben.",
+        "Die Windows 11-Speicheroptimierung (Storage Sense) bereinigt im Hintergrund automatisch Dateien, die älter als 1, 14, 30 oder 60 Tage sind.",
+        "Die Aufgabenplanung in Kombination mit PowerShell ('Clear-RecycleBin -Force') ermöglicht eine tages- und zeitgenaue Automatisierung unabhängig vom Dateialter.",
+        "Vermeiden Sie die dauerhafte Verwendung von Umschalt+Entf; eine Aufbewahrungsfrist von 14 bis 30 Tagen im Papierkorb verhindert katastrophalen Datenverlust auf SSDs.",
+      ],
       sections: [
         {
           title: "Wie viel Platz belegt Ihr Papierkorb wirklich?",
@@ -383,6 +389,95 @@ export const autoEmptyRecycleBin: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So aktivieren Sie die Speicheroptimierung zum automatischen Leeren des Papierkorbs in Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Windows-Speichereinstellungen öffnen",
+            text: "Drücken Sie Win + I, um die Einstellungen zu öffnen, wählen Sie links 'System' und klicken Sie auf 'Speicher'.",
+          },
+          {
+            name: "Speicheroptimierung aktivieren",
+            text: "Schalten Sie 'Speicheroptimierung' auf Ein und klicken Sie auf den Eintrag, um die Bereinigungsregeln zu konfigurieren.",
+          },
+          {
+            name: "Altersgrenze für den Papierkorb einstellen",
+            text: "Wählen Sie unter 'Dateien im Papierkorb löschen, wenn sie sich dort schon länger befinden als' entweder 14 Tage oder 30 Tage aus.",
+          },
+          {
+            name: "Ausführungsintervall festlegen",
+            text: "Wählen Sie unter 'Speicheroptimierung ausführen' die Option 'Jede Woche' oder 'Jeden Monat', damit der Prozess regelmäßig im Hintergrund läuft.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Vergleich der Methoden zur Papierkorb-Automatisierung unter Windows 11",
+        columns: [
+          "Methode",
+          "Auslösemechanismus",
+          "Einrichtungsaufwand",
+          "Zeitgenauigkeit",
+          "Umfang",
+        ],
+        rows: [
+          [
+            "Speicheroptimierung",
+            "Dateialtersgrenze (z. B. 30 Tage)",
+            "Sehr einfach (Grafische Oberfläche)",
+            "Mittel (Täglich / Wöchentlich / Bei Platzmangel)",
+            "Papierkorb + Temporäre Dateien",
+          ],
+          [
+            "Aufgabenplanung (PowerShell)",
+            "Fester Zeitplan",
+            "Moderat (Befehlseinrichtung)",
+            "Exakt (Bestimmter Tag und Uhrzeit)",
+            "Nur Papierkorb",
+          ],
+          [
+            "Maximale Größenbegrenzung (Eigenschaften)",
+            "Kapazitätsüberschreitung (MB)",
+            "Sehr einfach (Rechtsklick-Menü)",
+            "Fortlaufend (FIFO-Prinzip)",
+            "Max. Papierkorbgröße je Laufwerk",
+          ],
+          [
+            "Disk Mop Geplante Bereinigung",
+            "Wöchentliche / Monatliche Automatisierung",
+            "1 Klick",
+            "Hoch",
+            "Papierkorb + Browser- und App-Caches + Downloads",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Belegen Dateien im Windows-Papierkorb tatsächlich Festplattenspeicher?",
+          answer:
+            "Ja. Dateien im Papierkorb liegen in einem versteckten Systemverzeichnis namens '$Recycle.Bin' auf jeder Partition. Speicherplatz wird erst zurückgewonnen, wenn diese Elemente endgültig gelöscht werden.",
+        },
+        {
+          question:
+            "Löscht die Speicheroptimierung kürzlich gelöschte Dateien sofort?",
+          answer:
+            "Nein. Die Speicheroptimierung prüft das Dateialter. Wenn Sie eine 30-Tage-Regel festlegen, wird eine Datei erst gelöscht, nachdem sie sich mehr als 30 aufeinanderfolgende Tage im Papierkorb befunden hat.",
+        },
+        {
+          question:
+            "Warum ist Umschalt + Entf im Vergleich zur automatischen Leerung riskant?",
+          answer:
+            "Umschalt + Entf löscht Dateien sofort dauerhaft am Papierkorb vorbei. Da moderne SSDs mit TRIM-Befehlen Sektoren zügig freigeben, ist eine spätere Wiederherstellung versehentlich gelöschter Daten nahezu unmöglich.",
+        },
+        {
+          question:
+            "Wie kann ich die maximale Größe des Papierkorbs begrenzen?",
+          answer:
+            "Klicken Sie mit der rechten Maustaste auf den Papierkorb auf dem Desktop, wählen Sie 'Eigenschaften', wählen Sie das Laufwerk aus, aktivieren Sie 'Benutzerdefinierte Größe' und tragen Sie die Maximalgröße in Megabyte ein (z. B. 5120 MB für 5 GB).",
+        },
+      ],
       verdict: [
         "Es gibt drei solide Wege, den Papierkorb in Windows 11 automatisch zu leeren. Die Speicheroptimierung ist am einfachsten und arbeitet altersbasiert; die Aufgabenplanung bietet exakte Terminkontrolle, leert aber jedes Mal alles; ein Größenlimit garantiert, dass der Papierkorb nie überläuft. Ihn ganz zu umgehen spart zu wenig, um das Risiko zu rechtfertigen.",
         "Wenn das eigentliche Problem eine volle Festplatte ist, geht Disk Mop über alle drei Wege hinaus: Die geplante Bereinigung leert den Papierkorb und räumt Caches sowie alte Downloads jede Woche automatisch auf. Für einmalig 19,90 US-Dollar wird Ihre Festplatte zu einem System, das sich selbst wartet.",
@@ -398,6 +493,12 @@ export const autoEmptyRecycleBin: Article = {
       intro: [
         "Le moyen le plus rapide de vider automatiquement la Corbeille dans Windows 11 est l'Assistant Stockage : ouvrez les Paramètres, allez dans Système puis Stockage, activez l'Assistant Stockage et demandez-lui de supprimer les fichiers présents dans la Corbeille depuis plus de 30 jours. Si vous préférez un calendrier fixe, une tâche hebdomadaire du Planificateur de tâches qui exécute la commande PowerShell Clear-RecycleBin -Force fait la même chose, au jour et à l'heure exacts que vous choisissez. Les deux méthodes sont gratuites, intégrées à Windows et se configurent en moins de cinq minutes.",
         "La Corbeille grossit en silence : supprimer un fichier ne le retire pas du disque, cela le déplace simplement dans la Corbeille, où il continue d'occuper de l'espace. Beaucoup d'utilisateurs découvrent des mois plus tard que la Corbeille retient plusieurs gigaoctets. Dans ce guide, nous comparons les trois voies d'automatisation : l'Assistant Stockage, le Planificateur de tâches et le nettoyage programmé (Scheduled Cleanup) de Disk Mop, qui couvre aussi les caches et les anciens téléchargements. Vous verrez d'abord les étapes complètes des outils intégrés, puis vous déciderez de la solution qui vous convient.",
+      ],
+      keyTakeaways: [
+        "La suppression standard déplace seulement les fichiers dans le dossier caché '$Recycle.Bin' ; l'espace disque n'est libéré qu'au vidage de la Corbeille.",
+        "L'Assistant de stockage de Windows 11 supprime automatiquement en arrière-plan les fichiers datant de plus de 1, 14, 30 ou 60 jours.",
+        "Le Planificateur de tâches combiné à PowerShell ('Clear-RecycleBin -Force') permet une automatisation horaire précise sans dépendre de l'ancienneté des fichiers.",
+        "Évitez d'utiliser systématiquement Maj+Suppr ; conserver un délai de recyclage de 14 à 30 jours évite les pertes accidentelles catastrophiques sur les SSD.",
       ],
       sections: [
         {
@@ -452,6 +553,95 @@ export const autoEmptyRecycleBin: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment activer l'Assistant de stockage pour vider automatiquement la Corbeille sous Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Ouvrir les paramètres de stockage Windows",
+            text: "Appuyez sur Win + I pour ouvrir les Paramètres, sélectionnez 'Système' à gauche, puis cliquez sur 'Stockage'.",
+          },
+          {
+            name: "Activer l'Assistant de stockage",
+            text: "Basculez le bouton 'Assistant de stockage' sur Activé, puis cliquez sur son titre pour configurer les règles de nettoyage.",
+          },
+          {
+            name: "Définir l'ancienneté des fichiers dans la Corbeille",
+            text: "Sous la section 'Supprimer les fichiers de ma corbeille s'ils s'y trouvent depuis plus de', choisissez 14 jours ou 30 jours.",
+          },
+          {
+            name: "Choisir la fréquence d'exécution",
+            text: "Sous 'Exécuter l'Assistant de stockage', sélectionnez 'Chaque semaine' ou 'Chaque mois' pour maintenir le nettoyage automatique en arrière-plan.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparatif des méthodes d'automatisation de la Corbeille sous Windows 11",
+        columns: [
+          "Méthode",
+          "Déclencheur",
+          "Difficulté de configuration",
+          "Précision du calendrier",
+          "Périmètre",
+        ],
+        rows: [
+          [
+            "Assistant de stockage",
+            "Âge des fichiers (ex. 30 jours)",
+            "Très facile (Interface paramètres)",
+            "Moyenne (Quotidien / Hebdomadaire / Espace faible)",
+            "Corbeille + Fichiers temporaires",
+          ],
+          [
+            "Planificateur de tâches (PowerShell)",
+            "Calendrier fixe",
+            "Modérée (Ligne de commande)",
+            "Exacte (Jour et heure précis)",
+            "Corbeille uniquement",
+          ],
+          [
+            "Plafond de taille personnalisée (Propriétés)",
+            "Dépassement de capacité (Mo)",
+            "Très facile (Menu contextuel)",
+            "Continue (Suppression FIFO)",
+            "Taille max par lecteur",
+          ],
+          [
+            "Nettoyage planifié Disk Mop",
+            "Automatisation hebdo / mensuelle",
+            "1 clic",
+            "Élevée",
+            "Corbeille + Caches navigateurs & apps + Téléchargements",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Les fichiers présents dans la Corbeille Windows prennent-ils réellement de l'espace disque ?",
+          answer:
+            "Oui. Les fichiers supprimés restent stockés dans un répertoire système masqué nommé '$Recycle.Bin' sur chaque partition. L'espace disque n'est réellement récupéré qu'une fois la Corbeille vidée.",
+        },
+        {
+          question:
+            "L'Assistant de stockage vide-t-il immédiatement les fichiers récemment supprimés ?",
+          answer:
+            "Non. L'Assistant de stockage vérifie l'âge des fichiers. Si vous choisissez une règle de 30 jours, un fichier ne sera supprimé qu'après avoir passé 30 jours consécutifs dans la Corbeille.",
+        },
+        {
+          question:
+            "Pourquoi Maj + Suppr est-il plus risqué que la purge automatique ?",
+          answer:
+            "Maj + Suppr supprime immédiatement et définitivement les fichiers sans passer par la Corbeille. Sur les SSD modernes utilisant la commande TRIM, les blocs sont rapidement écrasés, rendant toute récupération quasi impossible.",
+        },
+        {
+          question:
+            "Comment limiter la taille maximale du disque allouée à la Corbeille ?",
+          answer:
+            "Faites un clic droit sur l'icône de la Corbeille sur votre bureau, choisissez 'Propriétés', sélectionnez le disque souhaité, cochez 'Taille personnalisée' et indiquez la taille maximale en mégaoctets (ex. 5120 Mo pour 5 Go).",
+        },
+      ],
       verdict: [
         "Il existe trois méthodes solides pour vider automatiquement la Corbeille dans Windows 11. L'Assistant Stockage est la plus simple et raisonne en ancienneté ; le Planificateur de tâches offre un contrôle précis du calendrier mais vide entièrement la Corbeille à chaque passage ; un plafond de taille garantit qu'elle ne déborde jamais. Contourner totalement la Corbeille fait gagner trop peu pour justifier le risque.",
         "Si votre vrai problème est un disque qui se remplit et pas seulement la Corbeille, Disk Mop va plus loin que ces trois méthodes : son nettoyage programmé vide la Corbeille et efface les caches et les anciens téléchargements chaque semaine, automatiquement. Pour 19,90 $ en une seule fois, votre disque devient un système qui s'entretient tout seul.",
@@ -466,6 +656,12 @@ export const autoEmptyRecycleBin: Article = {
       intro: [
         "La forma más rápida de vaciar la Papelera de reciclaje automáticamente en Windows 11 es el Sensor de almacenamiento: abre Configuración, ve a Sistema y luego a Almacenamiento, activa el Sensor de almacenamiento y configúralo para que borre los archivos que llevan más de 30 días en la Papelera. Si prefieres un calendario fijo, una tarea semanal del Programador de tareas que ejecute el comando de PowerShell Clear-RecycleBin -Force hace lo mismo el día y a la hora exactos que elijas. Ambos métodos son gratuitos, vienen incluidos en Windows y se configuran en menos de cinco minutos.",
         "La Papelera crece en silencio: borrar un archivo no lo elimina del disco, solo lo mueve a la Papelera, donde sigue ocupando espacio. Muchos usuarios descubren meses después que la Papelera retiene varios gigabytes. En esta guía comparamos las tres vías de automatización: el Sensor de almacenamiento, el Programador de tareas y la limpieza programada (Scheduled Cleanup) de Disk Mop, que además se ocupa de las cachés y de las descargas antiguas. Primero verás los pasos completos de las herramientas integradas y después podrás decidir cuál te encaja mejor.",
+      ],
+      keyTakeaways: [
+        "La eliminación normal solo traslada los archivos a la carpeta oculta '$Recycle.Bin'; el espacio en disco no se libera hasta vaciar la papelera.",
+        "El Sensor de almacenamiento de Windows 11 purga automáticamente en segundo plano los archivos con más de 1, 14, 30 o 60 días de antigüedad.",
+        "El Programador de tareas junto con PowerShell ('Clear-RecycleBin -Force') ofrece automatización exacta de día y hora sin depender de la antigüedad.",
+        "Evita usar Mayús+Supr de manera generalizada; mantener un período de retención de 14 a 30 días previene pérdidas catastróficas de datos en unidades SSD.",
       ],
       sections: [
         {
@@ -519,6 +715,95 @@ export const autoEmptyRecycleBin: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo activar el Sensor de almacenamiento para vaciar la papelera automáticamente en Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Abrir la configuración de almacenamiento de Windows",
+            text: "Presiona Win + I para abrir Configuración, ve a 'Sistema' a la izquierda y haz clic en 'Almacenamiento'.",
+          },
+          {
+            name: "Activar el Sensor de almacenamiento",
+            text: "Activa el interruptor de 'Sensor de almacenamiento' y haz clic en la opción para configurar los criterios de limpieza.",
+          },
+          {
+            name: "Configurar el límite de antigüedad de la papelera",
+            text: "En 'Eliminar los archivos de mi papelera de reciclaje si han estado allí más de', selecciona 14 días o 30 días.",
+          },
+          {
+            name: "Establecer la frecuencia de ejecución",
+            text: "En 'Ejecutar Sensor de almacenamiento', selecciona 'Cada semana' o 'Cada mes' para mantener el proceso automático en segundo plano.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparación de métodos de automatización de la papelera en Windows 11",
+        columns: [
+          "Método",
+          "Mecanismo de activación",
+          "Dificultad de configuración",
+          "Precisión temporal",
+          "Alcance",
+        ],
+        rows: [
+          [
+            "Sensor de almacenamiento",
+            "Antigüedad de archivos (ej. 30 días)",
+            "Muy fácil (Interfaz gráfica)",
+            "Media (Diario / Semanal / Poco espacio)",
+            "Papelera + Archivos temporales",
+          ],
+          [
+            "Programador de tareas (PowerShell)",
+            "Horario de calendario",
+            "Moderada (Configuración de comando)",
+            "Exacta (Día y hora específicos)",
+            "Solo papelera de reciclaje",
+          ],
+          [
+            "Límite de tamaño personalizado (Propiedades)",
+            "Desbordamiento de capacidad (MB)",
+            "Muy fácil (Menú de clic derecho)",
+            "Continua (Eliminación FIFO)",
+            "Límite máximo por unidad",
+          ],
+          [
+            "Limpieza programada de Disk Mop",
+            "Automatización semanal / mensual",
+            "1 clic",
+            "Alta",
+            "Papelera + Cachés de navegador y apps + Descargas",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Los archivos en la Papelera de reciclaje de Windows ocupan realmente espacio en disco?",
+          answer:
+            "Sí. Los archivos permanecen en un directorio del sistema oculto llamado '$Recycle.Bin' en cada partición de disco. El espacio solo se recupera cuando esos elementos se eliminan de forma permanente.",
+        },
+        {
+          question:
+            "¿El Sensor de almacenamiento elimina de inmediato los archivos recién borrados?",
+          answer:
+            "No. El Sensor de almacenamiento comprueba la antigüedad de cada archivo. Si configuras una regla de 30 días, el archivo solo se eliminará tras permanecer más de 30 días seguidos en la papelera.",
+        },
+        {
+          question:
+            "¿Por qué Mayús + Supr es más peligroso que el vaciado automático?",
+          answer:
+            "Mayús + Supr borra permanentemente los archivos al instante sin pasar por la papelera. En los SSD modernos con TRIM activo, los bloques se sobrescriben muy rápido, haciendo que la recuperación de archivos borrados por error sea prácticamente imposible.",
+        },
+        {
+          question:
+            "¿Cómo limito el tamaño máximo de disco de la Papelera de reciclaje?",
+          answer:
+            "Haz clic derecho en la Papelera de reciclaje en el escritorio, selecciona 'Propiedades', elige la unidad, marca 'Tamaño personalizado' e introduce un tamaño máximo en megabytes (por ejemplo, 5120 MB para 5 GB).",
+        },
+      ],
       verdict: [
         "Hay tres formas sólidas de vaciar la Papelera de reciclaje automáticamente en Windows 11. El Sensor de almacenamiento es la más fácil y trabaja por antigüedad; el Programador de tareas te da control exacto del calendario, pero vacía la Papelera entera en cada pasada; y un tope de tamaño garantiza que nunca se desborde. Saltarse la Papelera del todo ahorra demasiado poco para justificar el riesgo.",
         "Si tu problema real es un disco que se llena y no solo la Papelera, Disk Mop va más allá de las tres opciones: su limpieza programada vacía la Papelera y borra cachés y descargas antiguas cada semana de forma automática. Por un pago único de 19,90 $, tu disco se convierte en un sistema que se mantiene solo.",
@@ -533,6 +818,12 @@ export const autoEmptyRecycleBin: Article = {
       intro: [
         "Il modo più rapido per svuotare il Cestino automaticamente in Windows 11 è Sensore memoria: apri Impostazioni, vai su Sistema e poi su Archiviazione, attiva Sensore memoria e impostalo in modo che elimini i file rimasti nel Cestino da più di 30 giorni. Se preferisci una pianificazione fissa, un'attività settimanale in Utilità di pianificazione che esegue il comando PowerShell Clear-RecycleBin -Force fa la stessa cosa nel giorno e nell'ora esatti che scegli. Entrambi i metodi sono gratuiti, integrati in Windows e si configurano in meno di cinque minuti.",
         "Il Cestino cresce in silenzio: eliminare un file non lo rimuove dal disco, lo sposta soltanto nel Cestino, dove continua a occupare spazio. Moltissimi utenti scoprono mesi dopo che il Cestino trattiene diversi gigabyte. In questa guida mettiamo a confronto le tre strade dell'automazione: Sensore memoria, Utilità di pianificazione e la pulizia programmata (Scheduled Cleanup) di Disk Mop, che copre anche le cache e i vecchi download. Prima vedrai i passaggi completi degli strumenti integrati, poi deciderai quale soluzione fa al caso tuo.",
+      ],
+      keyTakeaways: [
+        "L'eliminazione standard sposta semplicemente i file nella cartella nascosta '$Recycle.Bin'; lo spazio su disco viene liberato solo quando il Cestino viene svuotato.",
+        "Il Sensore memoria di Windows 11 rimuove automaticamente in background i file con più di 1, 14, 30 o 60 giorni di permanenza.",
+        "L'Utilità di pianificazione combinata con PowerShell ('Clear-RecycleBin -Force') consente un'automazione precisa per giorno e ora indipendentemente dall'età dei file.",
+        "Evita di usare sempre Maiusc+Canc; mantenere un margine di recupero di 14-30 giorni protegge da cancellazioni accidentali disastrose su unità SSD.",
       ],
       sections: [
         {
@@ -585,6 +876,94 @@ export const autoEmptyRecycleBin: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come abilitare il Sensore memoria per svuotare automaticamente il Cestino su Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Aprire le impostazioni di archiviazione di Windows",
+            text: "Premi Win + I per aprire Impostazioni, seleziona 'Sistema' a sinistra e fai clic su 'Archiviazione'.",
+          },
+          {
+            name: "Attivare il Sensore memoria",
+            text: "Porta l'interruttore 'Sensore memoria' su Attivato, quindi fai clic su di esso per configurare i criteri di pulizia.",
+          },
+          {
+            name: "Configurare il limite di permanenza nel Cestino",
+            text: "Sotto 'Elimina i file nel cestino se sono presenti da più di', scegli 14 giorni o 30 giorni.",
+          },
+          {
+            name: "Impostare la frequenza di esecuzione",
+            text: "Sotto 'Esegui Sensore memoria', seleziona 'Ogni settimana' o 'Ogni mese' per mantenere attivo il processo in background.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Confronto dei metodi di automazione del Cestino su Windows 11",
+        columns: [
+          "Metodo",
+          "Meccanismo di attivazione",
+          "Difficoltà di configurazione",
+          "Precisione temporale",
+          "Ambito",
+        ],
+        rows: [
+          [
+            "Sensore memoria",
+            "Soglia di anzianità file (es. 30 giorni)",
+            "Semplicissimo (Interfaccia grafica)",
+            "Media (Giornaliera / Settimanale / Poco spazio)",
+            "Cestino + File temporanei",
+          ],
+          [
+            "Utilità di pianificazione (PowerShell)",
+            "Pianificazione su calendario",
+            "Moderata (Configurazione comando)",
+            "Esatta (Giorno e orario specifici)",
+            "Solo Cestino",
+          ],
+          [
+            "Limite dimensione massima (Proprietà)",
+            "Superamento capacità (MB)",
+            "Semplicissimo (Menu contestuale)",
+            "Continuo (Eliminazione FIFO)",
+            "Limite massimo per unità",
+          ],
+          [
+            "Pulizia pianificata Disk Mop",
+            "Automazione settimanale / mensile",
+            "1 clic",
+            "Elevata",
+            "Cestino + Cache browser e app + Download",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "I file presenti nel Cestino di Windows occupano realmente spazio sul disco?",
+          answer:
+            "Sì. I file nel Cestino risiedono in una directory di sistema nascosta denominata '$Recycle.Bin' su ciascuna partizione. Lo spazio viene recuperato solo dopo lo svuotamento definitivo.",
+        },
+        {
+          question:
+            "Il Sensore memoria elimina subito i file cancellati di recente?",
+          answer:
+            "No. Il Sensore memoria controlla l'anzianità dei file. Se imposti una regola di 30 giorni, il file verrà eliminato solo dopo essere rimasto nel Cestino per più di 30 giorni consecutivi.",
+        },
+        {
+          question:
+            "Perché Maiusc + Canc è rischioso rispetto allo svuotamento automatico?",
+          answer:
+            "Maiusc + Canc elimina i file in modo permanente e istantaneo saltando il Cestino. Sugli SSD con tecnologia TRIM attiva, i settori vengono rapidamente riutilizzati, rendendo il recupero dati quasi impossibile.",
+        },
+        {
+          question: "Come posso limitare la dimensione massima del Cestino?",
+          answer:
+            "Fai clic con il tasto destro sull'icona del Cestino sul desktop, scegli 'Proprietà', seleziona l'unità desiderata, seleziona 'Dimensioni personalizzate' e inserisci la dimensione massima in megabyte (es. 5120 MB per 5 GB).",
+        },
+      ],
       verdict: [
         "Ci sono tre modi solidi per svuotare il Cestino automaticamente in Windows 11. Sensore memoria è il più semplice e lavora per anzianità; Utilità di pianificazione offre il controllo esatto del calendario ma svuota il Cestino per intero a ogni esecuzione; un tetto di dimensione garantisce che il Cestino non trabocchi mai. Aggirarlo del tutto fa risparmiare troppo poco per giustificare il rischio.",
         "Se il problema vero è un disco che si riempie e non solo il Cestino, Disk Mop va oltre tutte e tre le strade: la sua pulizia programmata svuota il Cestino e cancella cache e vecchi download ogni settimana, in automatico. Con un pagamento una tantum di 19,90 $, il tuo disco diventa un sistema che si mantiene da solo.",
@@ -599,6 +978,12 @@ export const autoEmptyRecycleBin: Article = {
       intro: [
         "A maneira mais rápida de esvaziar a Lixeira automaticamente no Windows 11 é o Sensor de Armazenamento: abra Configurações, vá em Sistema e depois Armazenamento, ligue o Sensor de Armazenamento e configure-o para apagar os arquivos que estão na Lixeira há mais de 30 dias. Se você prefere um horário fixo, uma tarefa semanal no Agendador de Tarefas executando o comando do PowerShell Clear-RecycleBin -Force faz o mesmo no dia e na hora exatos que você escolher. Os dois métodos são gratuitos, já vêm no Windows e levam menos de cinco minutos para configurar.",
         "A Lixeira cresce em silêncio: apagar um arquivo não o remove do disco, apenas o move para a Lixeira, onde ele continua ocupando espaço. Muita gente descobre meses depois que a Lixeira está segurando vários gigabytes. Neste guia colocamos lado a lado os três caminhos de automação: o Sensor de Armazenamento, o Agendador de Tarefas e a limpeza agendada (Scheduled Cleanup) do Disk Mop, que também cuida dos caches e dos downloads antigos. Primeiro você vê o passo a passo completo das ferramentas nativas e depois decide qual caminho combina mais com você.",
+      ],
+      keyTakeaways: [
+        "A exclusão normal apenas move os arquivos para a pasta oculta '$Recycle.Bin'; o espaço só é liberado quando a Lixeira é esvaziada.",
+        "O Sensor de Armazenamento do Windows 11 remove automaticamente em segundo plano arquivos com mais de 1, 14, 30 ou 60 dias.",
+        "O Agendador de Tarefas em conjunto com o PowerShell ('Clear-RecycleBin -Force') oferece automação com hora e dia exatos, sem depender da idade dos arquivos.",
+        "Evite usar Shift+Delete indiscriminadamente; manter uma janela de retenção de 14 a 30 dias evita perdas catastróficas em unidades SSD.",
       ],
       sections: [
         {
@@ -651,6 +1036,95 @@ export const autoEmptyRecycleBin: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como ativar o Sensor de Armazenamento para esvaziar a Lixeira automaticamente no Windows 11",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Abrir as configurações de armazenamento do Windows",
+            text: "Pressione Win + I para abrir as Configurações, selecione 'Sistema' à esquerda e clique em 'Armazenamento'.",
+          },
+          {
+            name: "Ativar o Sensor de Armazenamento",
+            text: "Ative a opção 'Sensor de Armazenamento' e clique sobre ela para configurar as regras de limpeza periódica.",
+          },
+          {
+            name: "Configurar o tempo limite dos arquivos na Lixeira",
+            text: "Em 'Excluir arquivos da lixeira se eles estiverem lá há mais de', selecione 14 dias ou 30 dias.",
+          },
+          {
+            name: "Definir a frequência de execução",
+            text: "Em 'Executar o Sensor de Armazenamento', escolha 'Toda semana' ou 'Todo mês' para manter o processo automático funcionando.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparativo de métodos para automação da Lixeira no Windows 11",
+        columns: [
+          "Método",
+          "Mecanismo de acionamento",
+          "Dificuldade de configuração",
+          "Precisão de agendamento",
+          "Escopo",
+        ],
+        rows: [
+          [
+            "Sensor de Armazenamento",
+            "Idade do arquivo (ex.: 30 dias)",
+            "Muito fácil (Interface gráfica)",
+            "Média (Diária / Semanal / Pouco espaço)",
+            "Lixeira + Arquivos temporários",
+          ],
+          [
+            "Agendador de Tarefas (PowerShell)",
+            "Agendamento no calendário",
+            "Moderada (Configuração via comando)",
+            "Exata (Dia e hora específicos)",
+            "Apenas Lixeira",
+          ],
+          [
+            "Teto de tamanho personalizado (Propriedades)",
+            "Capacidade excedida em MB",
+            "Muito fácil (Menu do botão direito)",
+            "Contínua (Exclusão FIFO)",
+            "Limite por unidade de disco",
+          ],
+          [
+            "Limpeza agendada do Disk Mop",
+            "Automação semanal / mensal",
+            "1 clique",
+            "Alta",
+            "Lixeira + Caches de navegadores e apps + Downloads",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Os arquivos na Lixeira do Windows realmente ocupam espaço em disco?",
+          answer:
+            "Sim. Os itens excluídos ficam em uma pasta oculta do sistema chamada '$Recycle.Bin' em cada partição. O espaço em disco só é liberado de fato quando esses arquivos são apagados em definitivo.",
+        },
+        {
+          question:
+            "O Sensor de Armazenamento apaga imediatamente os arquivos recém-excluídos?",
+          answer:
+            "Não. O Sensor de Armazenamento analisa a data de exclusão. Se você configurar a regra de 30 dias, o arquivo só será apagado após completar 30 dias seguidos na Lixeira.",
+        },
+        {
+          question:
+            "Por que Shift + Delete é arriscado em comparação com o esvaziamento automático?",
+          answer:
+            "Shift + Delete apaga arquivos definitivamente e na hora, sem passar pela Lixeira. Como os SSDs modernos executam o comando TRIM rapidamente, recuperar arquivos deletados por engano torna-se quase impossível.",
+        },
+        {
+          question:
+            "Como limito o tamanho máximo que a Lixeira pode ocupar no disco?",
+          answer:
+            "Clique com o botão direito no ícone da Lixeira na área de trabalho, escolha 'Propriedades', selecione a unidade, marque 'Tamanho personalizado' e defina o valor em megabytes (ex.: 5120 MB para 5 GB).",
+        },
+      ],
       verdict: [
         "Existem três formas sólidas de esvaziar a Lixeira automaticamente no Windows 11. O Sensor de Armazenamento é a mais fácil e trabalha por idade; o Agendador de Tarefas dá controle exato do calendário, mas esvazia a Lixeira inteira a cada execução; e um limite de tamanho garante que ela nunca transborde. Ignorar a Lixeira por completo economiza pouco demais para justificar o risco.",
         "Se o seu problema real é um disco enchendo, e não só a Lixeira, o Disk Mop vai além dos três caminhos: a limpeza agendada esvazia a Lixeira e apaga caches e downloads antigos toda semana, automaticamente. Por um pagamento único de 19,90 $, o seu disco vira um sistema que se mantém sozinho.",
@@ -665,6 +1139,12 @@ export const autoEmptyRecycleBin: Article = {
       intro: [
         "Windows 11でごみ箱を自動的に空にする最も手軽な方法は、ストレージ センサーです。設定を開き、システム、ストレージの順に進んでストレージ センサーをオンにし、ごみ箱に30日より長く入っているファイルを削除するよう設定します。決まった曜日と時刻に実行したい場合は、タスク スケジューラでPowerShellの Clear-RecycleBin -Force を実行する週次タスクを作れば同じことができます。どちらの方法も無料で、Windowsに最初から備わっており、設定は5分もかかりません。",
         "ごみ箱は静かに膨らんでいきます。ファイルを削除してもディスクから消えるわけではなく、ごみ箱へ移動して容量を占め続けるからです。数か月後になって、ごみ箱が数ギガバイトも抱え込んでいたと気づく方は少なくありません。この記事では3つの自動化の選択肢、つまりストレージ センサー、タスク スケジューラ、そしてキャッシュや古いダウンロードまでまとめて片付けるDisk Mopの定期クリーンアップ（Scheduled Cleanup）を並べて比較します。まず標準機能の手順を最後まで確認し、そのうえでご自身に合う方法を選んでください。",
+      ],
+      keyTakeaways: [
+        "通常のファイル削除は隠しフォルダ「$Recycle.Bin」に移動するだけであり、ごみ箱を空にするまで空き容量は増えません。",
+        "Windows 11の「ストレージ センサー」は、1日、14日、30日、または60日以上経過したファイルをバックグラウンドで自動消去します。",
+        "タスク スケジューラとPowerShell（Clear-RecycleBin -Force）を連携させることで、ファイルの滞留日数に依存せず特定日時に自動消去を実行できます。",
+        "Shift+Deleteキーによる直接削除を常用するのは避けてください。SSD環境で誤って削除すると、TRIMの影響で復元がほぼ不可能になります。",
       ],
       sections: [
         {
@@ -714,6 +1194,93 @@ export const autoEmptyRecycleBin: Article = {
             "だからこそ、Disk Mopの定期クリーンアップ（Scheduled Cleanup）は本当の意味で設定したら任せきりにできる答えになります。週次または月次のタスクを作っておけば、アプリがごみ箱を空にし、システム キャッシュを削除し、Chrome、Firefox、Edgeのブラウザー キャッシュを整理し、ダウンロード フォルダーの古いファイルまで一度にまとめて片付けます。高速化（Speed Up）機能を使えば同じクリーンアップをその場でワンクリック実行でき、システム ヘルス スコア（System Health Score）は全体の状態を一目で示してくれます。",
             "Disk Mopは無料でダウンロードでき、機能を絞った状態で試せます。Pro版は買い切り19.90ドルの永続ライセンスです。Windows 10・11（64ビット）に加えて、macOS 12以降でも動作します。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windows 11でストレージ センサーを設定してごみ箱を自動で空にする方法",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Windowsのストレージ設定を開く",
+            text: "Win + Iキーを押して「設定」を開き、左メニューの「システム」から「ストレージ」をクリックします。",
+          },
+          {
+            name: "ストレージ センサーをオンにする",
+            text: "「ストレージ センサー」のスイッチを「オン」に切り替え、項目をクリックして詳細なクリーンアップルールを設定します。",
+          },
+          {
+            name: "ごみ箱の保持期間を設定する",
+            text: "「ごみ箱に移動してから次の期間が経過したファイルを削除する」項目で「14日」または「30日」を選択します。",
+          },
+          {
+            name: "実行頻度を指定する",
+            text: "「ストレージ センサーを実行するタイミング」で「毎週」または「毎月」を選択し、バックグラウンドでの自動処理を維持します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windows 11におけるごみ箱自動化手法の比較",
+        columns: [
+          "手法",
+          "トリガー条件",
+          "設定の難易度",
+          "スケジュールの正確性",
+          "対象範囲",
+        ],
+        rows: [
+          [
+            "ストレージ センサー",
+            "ファイルの経過日数（例：30日）",
+            "非常に簡単（設定画面）",
+            "中（毎日 / 毎週 / 容量不足時）",
+            "ごみ箱 ＋ システム一時ファイル",
+          ],
+          [
+            "タスク スケジューラ（PowerShell）",
+            "カレンダースケジュール",
+            "普通（コマンド・スクリプト設定）",
+            "正確（指定の曜日・時刻）",
+            "ごみ箱のみ",
+          ],
+          [
+            "最大容量の制限（プロパティ設定）",
+            "設定容量超過時（MB）",
+            "非常に簡単（右クリックメニュー）",
+            "常時（古いものから順次削除）",
+            "ドライブごとのごみ箱最大サイズ",
+          ],
+          [
+            "Disk Mop 定期クリーンアップ",
+            "毎週・毎月の全自動処理",
+            "1クリック",
+            "高",
+            "ごみ箱 ＋ ブラウザ・アプリキャッシュ ＋ ダウンロード",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windowsのごみ箱にあるファイルは実際にディスク容量を消費していますか？",
+          answer:
+            "はい。ごみ箱内のファイルは各ドライブの隠しシステムフォルダ「$Recycle.Bin」に保管されています。完全に消去（ごみ箱を空に）するまでストレージ容量は解放されません。",
+        },
+        {
+          question:
+            "ストレージ センサーを有効にすると最近削除したファイルもすぐ消去されますか？",
+          answer:
+            "いいえ。ストレージ センサーは経過日数を判定します。例えば30日に設定している場合、ごみ箱に入ってから30日以上連続して残っているファイルのみが消去されます。",
+        },
+        {
+          question: "なぜShift + Deleteによる即時削除は危険なのですか？",
+          answer:
+            "Shift + Deleteはごみ箱を経由せず即座に完全消去します。最新のSSDではTRIMコマンドによりブロックが即座に無効化されるため、誤って削除したファイルの復元が極めて困難になります。",
+        },
+        {
+          question:
+            "ごみ箱が使用する最大ディスク容量を制限するにはどうすればよいですか？",
+          answer:
+            "デスクトップのごみ箱アイコンを右クリックして「プロパティ」を開き、ドライブを選択後「カスタム サイズ」にチェックを入れて最大容量をメガバイト単位（例：5 GBなら5120 MB）で設定します。",
         },
       ],
       verdict: [

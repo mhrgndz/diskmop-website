@@ -5,12 +5,13 @@ export const onedriveTakingUpSpace: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
       title: "OneDrive Neden Disk Alanı Kaplıyor ve Nasıl Geri Alınır?",
       metaDescription:
-        "OneDrive klasörünüz bulutta olmasına rağmen diskte yer kaplıyorsa sebebi İsteğe Bağlı Dosyalar ayarıdır. Yer açma adımları, otomatikleştirme ve sık yapılan hata.",
+        "OneDrive bulutta olmasına rağmen yer kaplıyorsa İsteğe Bağlı Dosyalar özelliğini kullanarak yerel diski anında boşaltma adımları.",
       subtitle: "İsteğe Bağlı Dosyalar, Yer Açma ve Otomatik Çevrimiçi Yapma",
       intro: [
         "Kısa cevap: OneDrive dosyalarınız buluta yüklenmiş olsa bile, bilgisayarınıza indirilmiş bir kopyası varsa disk alanı kaplar. Çözüm, OneDrive klasöründe istediğiniz klasöre sağ tıklayıp \"Alan boşalt\" seçeneğini kullanmaktır; dosya Dosya Gezgini'nde görünmeye devam eder ama yalnızca bulutta durur. Bunu kalıcı hale getirmek için Depolama Alanı Algılayıcısı'ndan belirli gün sayısı boyunca açılmayan dosyaların otomatik olarak çevrimiçi yapılmasını açın.",
@@ -127,6 +128,47 @@ export const onedriveTakingUpSpace: Article = {
             "Dosya Gezgini'nde OneDrive klasörüne sağ tıklayıp Özellikler'e bakabilirsiniz, ancak bu yalnızca toplam boyutu verir. Hangi alt klasörün şiştiğini görmek için Disk Mop'un Disk Analizi modülü gibi bir treemap görselleştirmesi kullanmak daha hızlıdır; klasörler gerçek boyutlarıyla orantılı alanlar olarak çizilir.",
         },
       ],
+      dataTable: {
+        caption:
+          "OneDrive İsteğe Bağlı Dosyalar Simge Anlamları ve Yerel Disk Etkisi",
+        columns: [
+          "OneDrive Durum Simgesi",
+          "Yerel Disk Kullanımı",
+          "Bulut Durumu",
+          "Çevrimdışı Erişilebilirlik",
+          "Yer Açma Yöntemi",
+        ],
+        rows: [
+          [
+            "Mavi Bulut Simgesi",
+            "0 bayt yerel disk alanı",
+            "Bulutta güvenle saklanır",
+            "İnternet bağlantısı gerektirir",
+            "Zaten optimize; diskte hiç yer kaplamaz",
+          ],
+          [
+            "Yeşil Halka İçinde Tik Simgesi",
+            "Tam dosya boyutu kadar yer kaplar",
+            "Bulut ile eşitlendi",
+            "Geçici olarak çevrimdışı açılabilir",
+            "Klasöre sağ tık > 'Alan boşalt' seçeneğini tıklayın",
+          ],
+          [
+            "Dolu Yeşil Daire ve Beyaz Tik",
+            "Tam dosya boyutu kadar yer kaplar",
+            "Bulut ile eşitlendi",
+            "Her zaman bu cihazda saklanır",
+            "Sağ tık > 'Her zaman bu cihazda tut'u kapatın",
+          ],
+          [
+            "Dönen Oklar (Senkronizasyon)",
+            "Geçici bant genişliği / disk kullanımı",
+            "Yükleme/indirme sürüyor",
+            "İşlem aşamasında",
+            "Eşitlemenin bitmesini bekleyin ve Alan boşalt yapın",
+          ],
+        ],
+      },
       verdict: [
         'OneDrive\'ın disk alanı kaplaması bir hata değil, tasarım gereğidir: açtığınız her dosya çevrimdışı erişim için yerelde tutulur. Alanı geri almanın doğru yolu, klasörlere sağ tıklayıp "Alan boşalt" demek ve İsteğe Bağlı Dosyalar özelliğini açık bırakmaktır.',
         "Kaçınılması gereken iki hamle var: İsteğe Bağlı Dosyalar'ı kapatmak (her şeyi indirir) ve OneDrive bağlantısını kesmek (hiçbir şey silmez). İkisi de sezgisel görünür, ikisi de işe yaramaz.",
@@ -137,7 +179,7 @@ export const onedriveTakingUpSpace: Article = {
     en: {
       title: "Is OneDrive Taking Up Space on Your PC? How to Free It Up",
       metaDescription:
-        "OneDrive keeps copies of your files on the PC unless Files On-Demand is set up. Why it uses disk space, how to free it up safely, and the setting to avoid.",
+        "OneDrive syncing taking up local disk space? Learn how Files On-Demand works, how to free up space with Free Up Space, and avoid local clutter.",
       subtitle: "Files On-Demand, Free Up Space and Automatic Cloud-Only Files",
       intro: [
         'Short answer: OneDrive files take up disk space whenever a local copy exists on your PC, even though they are also stored in the cloud. The fix is to right-click a folder inside your OneDrive folder and choose "Free up space" — the file keeps appearing in File Explorer but lives only in the cloud. To make it permanent, turn on the Storage Sense option that automatically makes cloud files online-only after a number of days you choose.',
@@ -252,6 +294,47 @@ export const onedriveTakingUpSpace: Article = {
             "You can right-click the OneDrive folder in File Explorer and check Properties, but that only gives a total. To find which subfolder is actually bloated, a treemap visualisation such as Disk Mop's Disk Analysis is far quicker, since folders are drawn as areas proportional to their real size.",
         },
       ],
+      dataTable: {
+        caption:
+          "OneDrive Files On-Demand status icons and local disk space impact",
+        columns: [
+          "OneDrive Status Icon",
+          "Local Disk Usage",
+          "Cloud Status",
+          "Offline Availability",
+          "How to Free Disk Space",
+        ],
+        rows: [
+          [
+            "Blue Cloud Icon",
+            "0 bytes on local disk",
+            "Stored safely in cloud",
+            "Requires active internet to open",
+            "Already optimized; takes zero local hard drive space",
+          ],
+          [
+            "Green Outline Circle with Checkmark",
+            "Takes full local disk space",
+            "Synced to cloud",
+            "Available offline temporarily",
+            "Right-click folder > select 'Free up space'",
+          ],
+          [
+            "Solid Green Circle with White Checkmark",
+            "Takes full local disk space",
+            "Synced to cloud",
+            "Always kept on this device",
+            "Right-click > turn off 'Always keep on this device'",
+          ],
+          [
+            "Syncing Circular Arrows",
+            "Temporary bandwidth / disk use",
+            "Currently uploading/downloading",
+            "In transit",
+            "Wait for sync to finish, then click Free up space",
+          ],
+        ],
+      },
       verdict: [
         "OneDrive using disk space is by design rather than a fault: every file you open is kept locally for offline access. The correct way to reclaim that space is to right-click folders and choose Free up space while leaving Files On-Demand enabled.",
         "There are two moves to avoid: turning Files On-Demand off (which downloads everything) and unlinking OneDrive (which deletes nothing). Both look intuitive and neither works.",
@@ -379,6 +462,46 @@ export const onedriveTakingUpSpace: Article = {
             "Sie können im Explorer mit der rechten Maustaste auf den OneDrive-Ordner klicken und die Eigenschaften öffnen, das liefert aber nur eine Gesamtsumme. Um den tatsächlich aufgeblähten Unterordner zu finden, ist eine Treemap-Darstellung wie die Datenträgeranalyse von Disk Mop deutlich schneller, da Ordner als flächenproportionale Rechtecke gezeichnet werden.",
         },
       ],
+      dataTable: {
+        caption: "OneDrive Status-Symbole und lokaler Festplattenplatzbedarf",
+        columns: [
+          "OneDrive-Statussymbol",
+          "Lokaler Speicherplatz",
+          "Cloud-Status",
+          "Offline-Verfügbarkeit",
+          "Speicher freigeben",
+        ],
+        rows: [
+          [
+            "Blaues Wolkensymbol",
+            "0 Bytes lokaler Speicher",
+            "Sicher in der Cloud gespeichert",
+            "Benötigt Internetverbindung",
+            "Bereits optimiert; belegt keinen lokalen Speicher",
+          ],
+          [
+            "Grüner Kreis mit Haken",
+            "Belegt vollen Festplattenspeicher",
+            "Mit Cloud synchronisiert",
+            "Vorübergehend offline verfügbar",
+            "Rechtsklick auf Ordner > 'Speicherplatz freigeben'",
+          ],
+          [
+            "Ausgefüllter grüner Kreis mit weißem Haken",
+            "Belegt vollen Festplattenspeicher",
+            "Mit Cloud synchronisiert",
+            "Immer auf diesem Gerät behalten",
+            "Rechtsklick > 'Immer behalten' deaktivieren",
+          ],
+          [
+            "Kreisförmige Synchronisationspfeile",
+            "Temporäre Datenübertragung",
+            "Wird gerade synchronisiert",
+            "In Übertragung",
+            "Synchronisation abwarten, dann Speicherplatz freigeben",
+          ],
+        ],
+      },
       verdict: [
         "Dass OneDrive Speicherplatz belegt, ist kein Fehler, sondern Absicht: Jede geöffnete Datei wird für den Offlinezugriff lokal vorgehalten. Der richtige Weg, diesen Platz zurückzugewinnen, ist der Rechtsklick auf Ordner und Speicherplatz freigeben — bei aktivierter Funktion Dateien bei Bedarf.",
         "Zwei Schritte sollten Sie vermeiden: Dateien bei Bedarf abzuschalten (lädt alles herunter) und die OneDrive-Verknüpfung aufzuheben (löscht nichts). Beides wirkt naheliegend, beides hilft nicht.",
@@ -508,6 +631,47 @@ export const onedriveTakingUpSpace: Article = {
             "Vous pouvez faire un clic droit sur le dossier OneDrive dans l'Explorateur de fichiers et consulter les Propriétés, mais cela ne donne qu'un total. Pour repérer le sous-dossier réellement gonflé, une visualisation en treemap comme l'Analyse du disque de Disk Mop est bien plus rapide, puisque les dossiers y sont dessinés sous forme de surfaces proportionnelles à leur taille réelle.",
         },
       ],
+      dataTable: {
+        caption:
+          "Icônes d'état OneDrive Fichiers à la demande et impact sur le disque",
+        columns: [
+          "Icône d'état OneDrive",
+          "Espace disque local",
+          "État dans le cloud",
+          "Disponibilité hors ligne",
+          "Comment libérer de l'espace",
+        ],
+        rows: [
+          [
+            "Nuage bleu",
+            "0 octet sur le disque local",
+            "Stocké dans le cloud",
+            "Nécessite une connexion Internet",
+            "Déjà optimisé ; ne consomme aucun espace local",
+          ],
+          [
+            "Cercle vert avec coche",
+            "Prend tout l'espace fichier",
+            "Synchronisé dans le cloud",
+            "Accessible temporairement hors ligne",
+            "Clic droit > 'Libérer de l'espace'",
+          ],
+          [
+            "Cercle vert plein avec coche blanche",
+            "Prend tout l'espace fichier",
+            "Synchronisé dans le cloud",
+            "Toujours conservé sur cet appareil",
+            "Clic droit > Désactiver 'Toujours conserver'",
+          ],
+          [
+            "Flèches tournantes",
+            "Transfert réseau temporaire",
+            "Téléversement/téléchargement en cours",
+            "En cours",
+            "Attendre la fin puis cliquer sur Libérer de l'espace",
+          ],
+        ],
+      },
       verdict: [
         "Que OneDrive occupe de l'espace disque n'est pas un défaut mais une intention : chaque fichier ouvert est conservé localement pour l'accès hors connexion. La bonne façon de récupérer cet espace consiste à faire un clic droit sur les dossiers et à choisir Libérer de l'espace, tout en laissant Fichiers à la demande activé.",
         "Deux gestes sont à éviter : désactiver Fichiers à la demande (ce qui télécharge tout) et dissocier OneDrive (ce qui ne supprime rien). Les deux paraissent intuitifs, aucun ne fonctionne.",
@@ -634,6 +798,47 @@ export const onedriveTakingUpSpace: Article = {
             "Puedes hacer clic derecho en la carpeta de OneDrive en el Explorador de archivos y mirar Propiedades, pero eso solo da un total. Para localizar qué subcarpeta se ha hinchado de verdad, una visualización de treemap como el Análisis de disco de Disk Mop es mucho más rápida, porque dibuja las carpetas como áreas proporcionales a su tamaño real.",
         },
       ],
+      dataTable: {
+        caption:
+          "Iconos de estado de OneDrive Archivos a petición e impacto en disco",
+        columns: [
+          "Icono de estado",
+          "Espacio en disco local",
+          "Estado en la nube",
+          "Disponibilidad sin conexión",
+          "Cómo liberar espacio",
+        ],
+        rows: [
+          [
+            "Nube azul",
+            "0 bytes en disco local",
+            "Almacenado seguro en la nube",
+            "Requiere conexión a internet",
+            "Ya optimizado; no ocupa nada de espacio local",
+          ],
+          [
+            "Círculo verde con marca de verificación",
+            "Ocupa el tamaño completo del archivo",
+            "Sincronizado en la nube",
+            "Disponible temporalmente sin conexión",
+            "Clic derecho > 'Liberar espacio'",
+          ],
+          [
+            "Círculo verde sólido con marca blanca",
+            "Ocupa el tamaño completo del archivo",
+            "Sincronizado en la nube",
+            "Mantener siempre en este dispositivo",
+            "Clic derecho > Desactivar 'Mantener siempre'",
+          ],
+          [
+            "Flechas circulares giratorias",
+            "Transferencia de datos temporal",
+            "Subiendo o descargando datos",
+            "En curso",
+            "Esperar a que termine la sincronización y liberar",
+          ],
+        ],
+      },
       verdict: [
         "Que OneDrive ocupe espacio en disco no es un fallo, sino el diseño previsto: cada archivo que abres se conserva en local para poder acceder a él sin conexión. La forma correcta de recuperar ese espacio es hacer clic derecho en las carpetas y elegir Liberar espacio, dejando Archivos a petición activado.",
         "Hay dos movimientos que conviene evitar: desactivar Archivos a petición (que lo descarga todo) y desvincular OneDrive (que no borra nada). Los dos parecen intuitivos y ninguno funciona.",
@@ -761,6 +966,47 @@ export const onedriveTakingUpSpace: Article = {
             "Puoi fare clic con il tasto destro sulla cartella OneDrive in Esplora file e aprire le Proprietà, ma così ottieni solo un totale. Per capire quale sottocartella si è davvero gonfiata è molto più rapida una visualizzazione a treemap come l'Analisi disco di Disk Mop, che disegna le cartelle come aree proporzionali alla dimensione reale.",
         },
       ],
+      dataTable: {
+        caption:
+          "Icone di stato di OneDrive File su richiesta e consumo del disco",
+        columns: [
+          "Icona di stato OneDrive",
+          "Spazio disco locale",
+          "Stato nel cloud",
+          "Disponibilità offline",
+          "Come liberare spazio",
+        ],
+        rows: [
+          [
+            "Nuvola blu",
+            "0 byte sul disco locale",
+            "Archiviato al sicuro nel cloud",
+            "Richiede connessione internet",
+            "Già ottimizzato; occupa zero spazio su disco",
+          ],
+          [
+            "Cerchio verde con segno di spunta",
+            "Occupa la dimensione reale del file",
+            "Sincronizzato nel cloud",
+            "Disponibile offline temporaneamente",
+            "Tasto destro sulla cartella > 'Libera spazio'",
+          ],
+          [
+            "Cerchio verde pieno con spunta bianca",
+            "Occupa la dimensione reale del file",
+            "Sincronizzato nel cloud",
+            "Sempre conservato su questo dispositivo",
+            "Tasto destro > disattiva 'Conserva sempre'",
+          ],
+          [
+            "Frecce circolari di sincronizzazione",
+            "Uso temporaneo di banda/disco",
+            "Caricamento/download in corso",
+            "In transito",
+            "Attendi il termine e seleziona Libera spazio",
+          ],
+        ],
+      },
       verdict: [
         "Che OneDrive occupi spazio su disco non è un difetto ma una scelta progettuale: ogni file che apri viene tenuto in locale per l'accesso offline. Il modo corretto di recuperare quello spazio è fare clic con il tasto destro sulle cartelle e scegliere Libera spazio, lasciando File su richiesta attivo.",
         "Ci sono due mosse da evitare: disattivare File su richiesta (scarica tutto) e scollegare OneDrive (non elimina nulla). Entrambe sembrano intuitive e nessuna delle due funziona.",
@@ -889,6 +1135,47 @@ export const onedriveTakingUpSpace: Article = {
             "Você pode clicar com o botão direito na pasta do OneDrive no Explorador de Arquivos e abrir Propriedades, mas isso dá apenas um total. Para descobrir qual subpasta realmente inchou, uma visualização em treemap como a Análise de Disco do Disk Mop é bem mais rápida, já que as pastas são desenhadas como áreas proporcionais ao tamanho real.",
         },
       ],
+      dataTable: {
+        caption:
+          "Ícones de estado dos Ficheiros a Pedido do OneDrive e impacto em disco",
+        columns: [
+          "Ícone de estado OneDrive",
+          "Espaço em disco local",
+          "Estado na nuvem",
+          "Disponibilidade offline",
+          "Como libertar espaço",
+        ],
+        rows: [
+          [
+            "Nuvem azul",
+            "0 bytes no disco local",
+            "Armazenado na nuvem",
+            "Requer ligação à internet",
+            "Já otimizado; não ocupa espaço no disco rígido",
+          ],
+          [
+            "Círculo verde com visto",
+            "Ocupa o tamanho total do ficheiro",
+            "Sincronizado na nuvem",
+            "Disponível offline temporariamente",
+            "Clique direito > 'Libertar espaço'",
+          ],
+          [
+            "Círculo verde sólido com visto branco",
+            "Ocupa o tamanho total do ficheiro",
+            "Sincronizado na nuvem",
+            "Sempre guardado neste dispositivo",
+            "Clique direito > desativar 'Manter sempre'",
+          ],
+          [
+            "Setas circulares de sincronização",
+            "Transferência temporária de dados",
+            "A carregar ou descarregar",
+            "Em curso",
+            "Aguardar conclusão e clicar em Libertar espaço",
+          ],
+        ],
+      },
       verdict: [
         "O OneDrive ocupar espaço em disco é projeto, não defeito: todo arquivo que você abre fica guardado localmente para acesso offline. A forma correta de recuperar esse espaço é clicar com o botão direito nas pastas e escolher Liberar espaço, mantendo o Arquivos Sob Demanda ativado.",
         "Há dois movimentos a evitar: desligar o Arquivos Sob Demanda (que baixa tudo) e desvincular o OneDrive (que não apaga nada). Os dois parecem intuitivos e nenhum funciona.",
@@ -1017,6 +1304,47 @@ export const onedriveTakingUpSpace: Article = {
             "エクスプローラーでOneDriveフォルダーを右クリックして「プロパティ」を開く方法もありますが、これでは合計しか分かりません。どのサブフォルダーが実際に膨らんでいるかを知るには、Disk Mopのディスク分析のようなツリーマップ表示のほうがはるかに速く、フォルダーが実際のサイズに比例した面積で描かれます。",
         },
       ],
+      dataTable: {
+        caption:
+          "OneDrive「ファイル オンデマンド」状態アイコンと容量消費マップ",
+        columns: [
+          "OneDrive状態アイコン",
+          "ローカルディスク消費量",
+          "クラウド保管状態",
+          "オフライン時の利用可否",
+          "空き容量を確保する方法",
+        ],
+        rows: [
+          [
+            "青い雲のアイコン",
+            "0 バイト（本体容量ゼロ）",
+            "クラウド上に安全に保管",
+            "ファイルを開くにはネット接続が必要",
+            "すでに最適化済み（PCの容量を消費しません）",
+          ],
+          [
+            "緑の輪郭円とチェックマーク",
+            "完全なファイルサイズを消費",
+            "クラウドと同期完了",
+            "オフラインでも閲覧・編集可能",
+            "フォルダーを右クリック >「空き容量を増やす」をクリック",
+          ],
+          [
+            "塗りつぶしの緑丸と白チェック",
+            "完全なファイルサイズを消費",
+            "クラウドと同期完了",
+            "「このデバイスで常に保持する」設定",
+            "右クリック >「このデバイスで常に保持する」のチェックを解除",
+          ],
+          [
+            "回転する矢印アイコン",
+            "一時的な通信・ディスク処理中",
+            "アップロードまたは同期の実行中",
+            "処理待機中",
+            "同期完了を待ってから「空き容量を増やす」を実行",
+          ],
+        ],
+      },
       verdict: [
         "OneDriveがディスク容量を使うのは不具合ではなく、設計どおりの動作です。開いたファイルはオフラインでも使えるようにローカルへ保持されます。その容量を取り戻す正しい方法は、「ファイル オンデマンド」を有効にしたまま、フォルダーを右クリックして「空き容量を増やす」を選ぶことです。",
         "避けたい操作は2つあります。「ファイル オンデマンド」をオフにすること（すべてがダウンロードされます）と、OneDriveのリンクを解除すること（何も削除されません）です。どちらも直感的に見えますが、どちらも解決にはなりません。",

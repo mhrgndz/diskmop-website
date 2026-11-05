@@ -5,12 +5,11 @@ export const deleteWhatsappPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "WhatsApp Fotoğraflarını iPhone Depolamasından Silme (ve Yenilerinin Birikmesini Durdurma)",
+      title: "WhatsApp Fotoğraflarını iPhone Depolamasından Güvenle Silme",
       metaDescription:
         "WhatsApp gelen her fotoğrafı kendi kopyasına ek olarak iPhone kitaplığına da kaydedebilir. Bunu durdurma, birikeni temizleme ve kopyaları bulma adımları.",
       subtitle:
@@ -151,8 +150,7 @@ export const deleteWhatsappPhotosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Delete WhatsApp Photos From iPhone Storage (and Stop New Ones Piling Up)",
+      title: "How to Delete WhatsApp Media From iPhone & Free Up Space",
       metaDescription:
         "WhatsApp can save every photo you receive into your iPhone library, on top of its own copy. How to stop it, clear what is there and find copies of your photos.",
       subtitle:

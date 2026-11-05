@@ -5,13 +5,13 @@ export const icloudTakingUpMacStorage: Article = {
   type: "guide",
   category: "macOS",
   date: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
-      title:
-        "iCloud Mac Diskimi Neden Dolduruyor? Optimize Etme Ayarı Nasıl Çalışır",
+      title: "iCloud Mac Diskini Neden Doldurur? Depolama Optimizasyonu",
       metaDescription:
-        'iCloud depolaması ile Mac disk alanı iki ayrı şeydir. "Mac Depolamasını Optimize Et" gerçekte ne yapar, neden bazen hiç yer açmaz ve diski dolduran klasik hata nedir?',
+        "iCloud depolaması ile Mac disk alanı farklıdır. Optimize Et ayarının nasıl çalıştığını, neden yer açmadığını ve dosyaları güvenle boşaltmayı görün.",
       subtitle: "Bulutta Yer Var Ama Diskte Yok: Karışıklığın Sebebi",
       intro: [
         "Kısa cevap: iCloud depolama planınız (5 GB, 200 GB…) ile Mac'inizin disk alanı birbirinden tamamen ayrıdır. iCloud Drive'daki her dosyanın Mac'inizde de bir kopyası olabilir; \"Mac Depolamasını Optimize Et\" ayarı bu yerel kopyaları yalnızca disk dolmaya başlayınca ve macOS uygun gördüğünde siler — istediğiniz anda değil.",
@@ -108,6 +108,46 @@ export const icloudTakingUpMacStorage: Article = {
             "Zorunlu değil. Açık olması yedekleme açısından iyidir. Ancak kapatırken dikkatli olun: macOS bu klasörlerin içeriğini iCloud Drive altında bırakır ve yerel Masaüstünüz boş görünebilir. Kapatmadan önce ekrandaki açıklamayı mutlaka okuyun.",
         },
       ],
+      dataTable: {
+        caption: "iCloud Dosya Durumları ve Yerel Mac Depolamasına Etkisi",
+        columns: [
+          "iCloud Durumu",
+          "Yerel Disk Etkisi",
+          "Bulut Durumu",
+          "Mac Depolamasını Optimize Et Eylemi",
+          "Yer Açma Yöntemi",
+        ],
+        rows: [
+          [
+            "Yalnızca Yerel Dosya (Bulut Dışı)",
+            "Tam yerel disk alanı kaplar",
+            "Henüz yüklenmedi",
+            "İnternet varken otomatik yüklenir",
+            "iCloud'a taşıyın veya harici diske aktarın",
+          ],
+          [
+            "İndirilmiş Bulut Dosyası",
+            "Tam yerel disk alanı kaplar",
+            "iCloud ile eşitlendi",
+            "Disk dolana kadar yerelde tutulur",
+            "Sağ tık > İndirmeyi Kaldır (yerel kopyayı siler)",
+          ],
+          [
+            "Yalnızca Bulutta (Evicted)",
+            "0 bayt yerel alan",
+            "iCloud'da güvende saklanır",
+            "Tıklandığında anında indirilir",
+            "Zaten boşaltıldı; yanında bulut simgesi bulunur",
+          ],
+          [
+            "iCloud Fotoğraflar Önbelleği",
+            "5 - 50 GB yerel önbellek",
+            "Orijinaller iCloud'da",
+            "Disk dolunca düşük çözünürlüklü önizlemeye düşer",
+            "Fotoğraflar ayarlarından 'Mac Depolamasını Optimize Et'i açın",
+          ],
+        ],
+      },
       verdict: [
         'iCloud ile Mac diski iki ayrı hesap: bulutta yer açmak diskinizi rahatlatmaz, diski temizlemek de bulut planınızı boşaltmaz. Disk için doğru sıra optimize etmeyi açmak, büyük klasörlerin yerel kopyasını elle kaldırmak ve iCloud Drive\'ı asla "çözüm olsun diye" kapatmamaktır.',
         "Geriye kalan yerel birikintiyi görmek için Disk Mop'un Disk Analizi ve Büyük Dosyalar modülleri gizli klasörler dâhil tüm diski boyut sırasına dizer; Disk Haritası görünümü de hangi klasörün gerçekte ne kadar yer kapladığını tek bakışta gösterir.",
@@ -115,10 +155,9 @@ export const icloudTakingUpMacStorage: Article = {
       ctaText: "Mac'inizde yeri gerçekte ne kaplıyor, görün",
     },
     en: {
-      title:
-        "Why iCloud Fills Up Your Mac Disk: How Optimize Storage Really Works",
+      title: "Why iCloud Fills Up Mac Storage & How Optimize Disk Works",
       metaDescription:
-        'iCloud storage and Mac disk space are two different things. Here is what "Optimize Mac Storage" actually does, why it sometimes frees nothing, and the classic mistake that fills the disk.',
+        "iCloud storage and Mac disk space are distinct. How Optimize Mac Storage works, why local space stays full, and how to evict downloaded files safely.",
       subtitle:
         "Room in the Cloud, None on the Disk: Where the Confusion Starts",
       intro: [
@@ -216,6 +255,46 @@ export const icloudTakingUpMacStorage: Article = {
             "Not necessarily. Having it on is good for backup. Be careful when turning it off though: macOS leaves the contents inside iCloud Drive and your local Desktop can look empty. Always read the on-screen explanation before you confirm.",
         },
       ],
+      dataTable: {
+        caption: "iCloud Drive file states and local Mac disk space impact",
+        columns: [
+          "iCloud State / Category",
+          "Disk Impact",
+          "Cloud Status",
+          "Optimize Mac Storage Action",
+          "How to Free Space",
+        ],
+        rows: [
+          [
+            "Local-Only File (No Cloud)",
+            "Takes full local disk space",
+            "Not uploaded yet",
+            "Will upload when connected",
+            "Upload or move to external drive",
+          ],
+          [
+            "Downloaded Cloud File",
+            "Takes full local disk space",
+            "Synced in iCloud",
+            "Kept local until space is needed",
+            "Right-click > Remove Download (evicts local copy)",
+          ],
+          [
+            "Evicted / Cloud-Only File",
+            "0 bytes local space",
+            "Safely stored in iCloud",
+            "Downloaded on demand when clicked",
+            "Already freed; displays download cloud icon",
+          ],
+          [
+            "iCloud Photos Cache",
+            "5 - 50 GB local cache",
+            "Full resolution in iCloud",
+            "Reduces to low-res thumbnails when disk is low",
+            "Turn on Optimize Mac Storage in Photos settings",
+          ],
+        ],
+      },
       verdict: [
         'iCloud and your Mac disk are two separate accounts: freeing cloud space does not relieve the disk, and cleaning the disk does not empty your plan. For the disk, the right order is to enable optimization, remove downloads of large folders by hand, and never turn iCloud Drive off "to fix it".',
         "To see what local accumulation is left, Disk Mop's Disk Analysis and Large Files modules sort the whole disk by size including hidden folders, and the Disk Treemap view shows at a glance which folder is really taking the space.",
@@ -326,6 +405,47 @@ export const icloudTakingUpMacStorage: Article = {
             "Nicht zwingend. Aktiviert ist sie gut für die Sicherung. Beim Abschalten aber aufpassen: macOS belässt die Inhalte in iCloud Drive, und Ihr lokaler Schreibtisch kann leer wirken. Lesen Sie vor dem Bestätigen unbedingt den Hinweistext.",
         },
       ],
+      dataTable: {
+        caption:
+          "iCloud Drive Dateistatus und Einfluss auf den lokalen Mac-Speicher",
+        columns: [
+          "iCloud-Status",
+          "Lokaler Speicher",
+          "Cloud-Status",
+          "Speicheroptimierung-Verhalten",
+          "So schaffen Sie Platz",
+        ],
+        rows: [
+          [
+            "Nur lokal gespeicherte Datei",
+            "Belegt vollen Festplattenspeicher",
+            "Noch nicht hochgeladen",
+            "Wird bei Verbindung hochgeladen",
+            "In iCloud verschieben oder extern sichern",
+          ],
+          [
+            "Geladene Cloud-Datei",
+            "Belegt vollen Festplattenspeicher",
+            "In iCloud synchronisiert",
+            "Bleibt lokal, bis Speicher knapp wird",
+            "Rechtsklick > Download entfernen (löscht lokale Kopie)",
+          ],
+          [
+            "Nur in der Cloud (Ausgelagert)",
+            "0 Bytes lokaler Speicher",
+            "Sicher in iCloud gespeichert",
+            "Wird bei Klick sofort nachgeladen",
+            "Bereits freigegeben; zeigt Wolkensymbol an",
+          ],
+          [
+            "iCloud-Fotos Cache",
+            "5 - 50 GB lokaler Cache",
+            "Volle Auflösung in iCloud",
+            "Wird bei Platzmangel auf Miniaturansichten reduziert",
+            "In Fotos 'Mac-Speicher optimieren' aktivieren",
+          ],
+        ],
+      },
       verdict: [
         'iCloud und Mac-Festplatte sind zwei getrennte Konten: Platz in der Cloud zu schaffen entlastet die Platte nicht, und die Platte zu leeren schafft keinen Cloud-Speicher. Für die Platte gilt: Optimierung einschalten, Downloads großer Ordner manuell entfernen und iCloud Drive niemals "zur Lösung" abschalten.',
         "Um zu sehen, was lokal übrig bleibt, sortieren die Module Festplattenanalyse und Große Dateien von Disk Mop die gesamte Platte nach Größe einschließlich versteckter Ordner, und die Ansicht Disk Treemap zeigt auf einen Blick, welcher Ordner den Platz wirklich belegt.",
@@ -436,6 +556,47 @@ export const icloudTakingUpMacStorage: Article = {
             "Pas nécessairement. L'activer est bon pour la sauvegarde. Mais soyez prudent en la désactivant : macOS laisse le contenu dans iCloud Drive et votre Bureau local peut sembler vide. Lisez toujours l'explication affichée avant de confirmer.",
         },
       ],
+      dataTable: {
+        caption:
+          "États des fichiers iCloud Drive et impact sur le disque local du Mac",
+        columns: [
+          "État iCloud",
+          "Impact sur le disque",
+          "État dans le cloud",
+          "Action d'Optimiser le stockage",
+          "Comment libérer de l'espace",
+        ],
+        rows: [
+          [
+            "Fichier local uniquement",
+            "Prend tout l'espace disque local",
+            "Pas encore téléversé",
+            "Se synchronise dès connexion",
+            "Déplacer dans iCloud ou sur disque externe",
+          ],
+          [
+            "Fichier cloud téléchargé",
+            "Prend tout l'espace disque local",
+            "Synchronisé dans iCloud",
+            "Conservé en local jusqu'à saturation",
+            "Clic droit > Supprimer le téléchargement",
+          ],
+          [
+            "Fichier cloud uniquement (Expulsé)",
+            "0 octet sur le disque local",
+            "Conservé en sécurité dans iCloud",
+            "Téléchargé à la demande lors du clic",
+            "Espace déjà libéré ; affiche l'icône de nuage",
+          ],
+          [
+            "Cache Photos iCloud",
+            "5 - 50 GB de cache local",
+            "Haute résolution dans iCloud",
+            "Remplacé par des vignettes si le disque est plein",
+            "Activer 'Optimiser le stockage du Mac' dans Photos",
+          ],
+        ],
+      },
       verdict: [
         "iCloud et le disque du Mac sont deux comptes distincts : libérer le nuage ne soulage pas le disque, et nettoyer le disque ne vide pas le forfait. Pour le disque, le bon ordre est : activer l'optimisation, retirer à la main les téléchargements des gros dossiers, et ne jamais désactiver iCloud Drive « pour régler le problème ».",
         "Pour voir ce qui reste accumulé en local, les modules Analyse de disque et Gros fichiers de Disk Mop classent tout le disque par taille, dossiers masqués compris, et la vue Disk Treemap montre d'un coup d'œil quel dossier occupe réellement la place.",
@@ -546,6 +707,47 @@ export const icloudTakingUpMacStorage: Article = {
             "No necesariamente. Tenerla activa es bueno para las copias de seguridad. Pero ten cuidado al desactivarla: macOS deja el contenido dentro de iCloud Drive y tu Escritorio local puede verse vacío. Lee siempre la explicación en pantalla antes de confirmar.",
         },
       ],
+      dataTable: {
+        caption:
+          "Estados de archivo en iCloud Drive e impacto en el disco del Mac",
+        columns: [
+          "Estado en iCloud",
+          "Impacto en disco",
+          "Estado en la nube",
+          "Acción de Optimizar almacenamiento",
+          "Cómo liberar espacio",
+        ],
+        rows: [
+          [
+            "Archivo solo local",
+            "Ocupa espacio completo en disco",
+            "No subido aún",
+            "Se sube al conectar a internet",
+            "Mover a iCloud o a disco externo",
+          ],
+          [
+            "Archivo en la nube descargado",
+            "Ocupa espacio completo en disco",
+            "Sincronizado en iCloud",
+            "Permanece local hasta que falta espacio",
+            "Clic derecho > Eliminar descarga (libera copia local)",
+          ],
+          [
+            "Solo en la nube (Expulsado)",
+            "0 bytes en disco local",
+            "Almacenado seguro en iCloud",
+            "Se descarga al hacer clic",
+            "Espacio ya libre; muestra icono de nube",
+          ],
+          [
+            "Caché de Fotos en iCloud",
+            "5 - 50 GB de caché local",
+            "Alta resolución en iCloud",
+            "Reduce a miniaturas ligeras si falta espacio",
+            "Activar 'Optimizar almacenamiento del Mac' en Fotos",
+          ],
+        ],
+      },
       verdict: [
         "iCloud y el disco del Mac son dos cuentas distintas: liberar la nube no alivia el disco, y limpiar el disco no vacía tu plan. Para el disco, el orden correcto es activar la optimización, quitar a mano las descargas de las carpetas grandes y no desactivar nunca iCloud Drive «para arreglarlo».",
         "Para ver qué acumulación local queda, los módulos Análisis de disco y Archivos grandes de Disk Mop ordenan todo el disco por tamaño incluidas las carpetas ocultas, y la vista Disk Treemap muestra de un vistazo qué carpeta ocupa realmente el espacio.",
@@ -655,6 +857,47 @@ export const icloudTakingUpMacStorage: Article = {
             "Non necessariamente. Tenerla attiva è utile per il backup. Attenzione però a disattivarla: macOS lascia i contenuti dentro iCloud Drive e la Scrivania locale può apparire vuota. Leggi sempre la spiegazione a schermo prima di confermare.",
         },
       ],
+      dataTable: {
+        caption:
+          "Stato dei file iCloud Drive e impatto sullo spazio disco del Mac",
+        columns: [
+          "Stato in iCloud",
+          "Impatto sul disco",
+          "Stato nel cloud",
+          "Azione Ottimizza archiviazione",
+          "Come liberare spazio",
+        ],
+        rows: [
+          [
+            "File solo locale",
+            "Occupa tutto lo spazio disco",
+            "Non ancora caricato",
+            "Si sincronizza appena connesso",
+            "Sposta in iCloud o su disco esterno",
+          ],
+          [
+            "File cloud scaricato",
+            "Occupa tutto lo spazio disco",
+            "Sincronizzato in iCloud",
+            "Mantenuto locale finché c'è spazio",
+            "Tasto destro > Rimuovi download (elimina copia locale)",
+          ],
+          [
+            "Solo nel cloud (Rimosso)",
+            "0 byte su disco locale",
+            "Al sicuro su iCloud",
+            "Scaricato su richiesta con un clic",
+            "Già liberato; mostra l'icona della nuvola",
+          ],
+          [
+            "Cache Foto di iCloud",
+            "5 - 50 GB di cache locale",
+            "Risoluzione piena su iCloud",
+            "Diventa miniatura leggera se il disco è pieno",
+            "Attiva 'Ottimizza spazio Mac' nelle preferenze di Foto",
+          ],
+        ],
+      },
       verdict: [
         "iCloud e il disco del Mac sono due conti separati: liberare il cloud non alleggerisce il disco e pulire il disco non svuota il piano. Per il disco l'ordine giusto è attivare l'ottimizzazione, rimuovere a mano i download delle cartelle grandi e non disattivare mai iCloud Drive «per risolvere».",
         "Per vedere quale accumulo locale resta, i moduli Analisi disco e File di grandi dimensioni di Disk Mop ordinano l'intero disco per dimensione, cartelle nascoste comprese, e la vista Disk Treemap mostra a colpo d'occhio quale cartella occupa davvero lo spazio.",
@@ -762,6 +1005,47 @@ export const icloudTakingUpMacStorage: Article = {
             "Não necessariamente. Mantê-la ligada é bom para backup. Mas tenha cuidado ao desligar: o macOS deixa o conteúdo dentro do iCloud Drive e sua Mesa local pode parecer vazia. Leia sempre a explicação na tela antes de confirmar.",
         },
       ],
+      dataTable: {
+        caption:
+          "Estados de ficheiros no iCloud Drive e impacto no disco local do Mac",
+        columns: [
+          "Estado no iCloud",
+          "Impacto no disco",
+          "Estado na nuvem",
+          "Ação de Otimizar Armazenamento",
+          "Como libertar espaço",
+        ],
+        rows: [
+          [
+            "Ficheiro apenas local",
+            "Ocupa espaço total no disco",
+            "Ainda não enviado",
+            "Será sincronizado ao ligar à net",
+            "Mover para o iCloud ou disco externo",
+          ],
+          [
+            "Ficheiro da nuvem descarregado",
+            "Ocupa espaço total no disco",
+            "Sincronizado no iCloud",
+            "Mantido no Mac até faltar espaço",
+            "Clique direito > Remover descarga (liberta cópia local)",
+          ],
+          [
+            "Apenas na nuvem (Removido)",
+            "0 bytes no disco local",
+            "Guardado com segurança no iCloud",
+            "Descarregado ao clicar",
+            "Espaço já livre; apresenta o ícone de nuvem",
+          ],
+          [
+            "Cache de Fotografias do iCloud",
+            "5 - 50 GB de cache local",
+            "Alta resolução no iCloud",
+            "Reduz para miniaturas se o disco encher",
+            "Ativar 'Otimizar Armazenamento do Mac' nas Fotografias",
+          ],
+        ],
+      },
       verdict: [
         "iCloud e disco do Mac são duas contas separadas: liberar a nuvem não alivia o disco, e limpar o disco não esvazia o plano. Para o disco, a ordem certa é ligar a otimização, remover à mão os downloads das pastas grandes e nunca desativar o iCloud Drive «para resolver».",
         "Para ver o que sobrou acumulado localmente, os módulos Análise de disco e Arquivos grandes do Disk Mop ordenam o disco inteiro por tamanho, incluindo pastas ocultas, e a visão Disk Treemap mostra num relance qual pasta realmente ocupa o espaço.",
@@ -870,6 +1154,47 @@ export const icloudTakingUpMacStorage: Article = {
             "必ずしもそうではありません。有効にしておくことはバックアップの観点で有益です。ただしオフにするときは注意が必要です。macOS は中身を iCloud Drive 側に残すため、ローカルのデスクトップが空に見えることがあります。確定する前に必ず画面の説明を読んでください。",
         },
       ],
+      dataTable: {
+        caption:
+          "iCloud Driveのファイル状態とMacローカルストレージへの影響一覧",
+        columns: [
+          "iCloud上の状態",
+          "ローカルディスクへの影響",
+          "クラウド上の保管状況",
+          "「Macストレージを最適化」の動作",
+          "空き容量を確保する方法",
+        ],
+        rows: [
+          [
+            "ローカルのみのファイル",
+            "完全なファイルサイズを消費",
+            "未アップロード",
+            "インターネット接続時に同期",
+            "iCloudに移動または外付けドライブに退避",
+          ],
+          [
+            "ダウンロード済みのクラウドファイル",
+            "完全なファイルサイズを消費",
+            "iCloudに同期済み",
+            "ディスク容量が逼迫するまで保持",
+            "右クリック >「ダウンロードを削除」（本体容量を即時解放）",
+          ],
+          [
+            "クラウドのみ（退避済み）",
+            "0 バイト（本体容量を消費しない）",
+            "iCloudに安全に保管",
+            "クリック時にオンデマンドで取得",
+            "解放済み（ファイル名の横に雲アイコンが表示）",
+          ],
+          [
+            "iCloud写真のローカルキャッシュ",
+            "5 - 50 GBのキャッシュ",
+            "オリジナルはiCloudに保存",
+            "空き容量不足時に低解像度サムネイルに縮小",
+            "写真アプリの設定で「Macストレージを最適化」を有効化",
+          ],
+        ],
+      },
       verdict: [
         "iCloud と Mac のディスクは別々の勘定です。クラウドを空けてもディスクは楽になりませんし、ディスクを掃除してもプランは空きません。ディスクについての正しい順序は、最適化を有効にし、大きなフォルダーのダウンロードを手動で削除し、「解決のために」iCloud Drive をオフにしないことです。",
         "ローカルに残った蓄積を確認するには、Disk Mop の「ディスク解析」と「大きいファイル」が隠しフォルダーを含めてディスク全体をサイズ順に並べ、Disk Treemap 表示ではどのフォルダーが実際に容量を占めているかが一目で分かります。",

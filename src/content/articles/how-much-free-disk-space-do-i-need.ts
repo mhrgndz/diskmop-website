@@ -5,6 +5,7 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -106,6 +107,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Windows'ta Ayarlar > Sistem > Depolama ekranı sürücü başına doluluk ve kategori kırılımı verir; Dosya Gezgini'nde Bu Bilgisayar altında da her sürücünün boş alanı görünür. macOS'ta menü çubuğundaki Elma menüsünden Bu Mac Hakkında > Depolama yolunu izleyin.",
         },
       ],
+      howTo: {
+        name: "İdeal Boş Disk Alanını Hesaplama ve Korumak İçin Adımlar",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Sürücü Tipinizi ve Kapasitenizi Belirleyin",
+            text: "Görev Yöneticisi > Performans > Disk yolundan sürücünüzün SSD (NVMe/SATA) veya HDD olduğunu ve toplam kapasitesini kontrol edin.",
+          },
+          {
+            name: "Asgari %15-20 Güvenlik Eşiğini Hesaplayın",
+            text: "SSD kullanıyorsanız toplam kapasiteyi 0.20 ile çarparak hedef boş alanı bulun (ör. 512 GB SSD için en az 80-100 GB).",
+          },
+          {
+            name: "Sistem Diski Güncelleme Tamponunu Ekleyin",
+            text: "C: sürücünüzde Windows özellik güncellemeleri ve sanal bellek için en az 20 GB ek serbest alan bırakın.",
+          },
+          {
+            name: "Gereksiz Dosyaları ve Önbellekleri Temizleyin",
+            text: "Disk Mop Disk Analizi ve Önbellek Temizleyici ile şişen klasörleri bularak diski hedef eşiğin üzerinde tutun.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Sürücü Tipi ve Kullanım Senaryosuna Göre Hedef Boş Alan Eşikleri",
+        columns: [
+          "Sürücü Tipi / Kapasite",
+          "Hedef Boş Alan (%)",
+          "Hedef Boş Alan (GB)",
+          "Neden Gerekli",
+          "Eşiğin Altına İnerse Sonuç",
+        ],
+        rows: [
+          [
+            "256 GB NVMe / SATA SSD",
+            "%15 - %20",
+            "40 - 50 GB",
+            "TRIM, aşınma dengeleme ve SLC yazma önbelleği",
+            "Yazma hızı sert düşer, güncelleme hataları başlar",
+          ],
+          [
+            "512 GB NVMe / SATA SSD",
+            "%15 - %20",
+            "75 - 100 GB",
+            "Büyük oyun/uygulama yamaları için SLC önbellek tamponu",
+            "Yüksek sıcaklık, düşen SSD ömrü ve yavaşlama",
+          ],
+          [
+            "1 TB NVMe SSD",
+            "%15 - %20",
+            "150 - 200 GB",
+            "Optimum blok yeniden tahsisi ve geçici render alanı",
+            "Arka plan çöp toplama yavaşlar, takılmalar olur",
+          ],
+          [
+            "1 TB - 2 TB HDD (Mekanik)",
+            "%10 - %15",
+            "100 - 150 GB",
+            "Disk birleştirme (defrag) ve dış iz okuma performansı",
+            "Aşırı dosya parçalanması ve yüksek erişim gecikmesi",
+          ],
+          [
+            "Windows Sistem Bölüntüsü (C:)",
+            "Sabit tampon",
+            "Min 20 - 30 GB",
+            "Windows Update, pagefile.sys ve hazırda bekletme",
+            "Mavi ekran (BSOD), 0x80070070 güncelleme başarısızlığı",
+          ],
+        ],
+      },
       verdict: [
         "Hedef basittir: SSD'de %15-20, HDD'de %10-15 boş alan. Sistem diskinde bunun üzerine Windows için 20 GB, macOS için 15-20 GB güncelleme tamponu ekleyin. 1 TB'lık bir sistem SSD'sinde pratik hedef 150-200 GB boş alandır.",
         "Yüzde hesabı, gigabayt hesabından daha güvenilirdir çünkü ihtiyaç sürücü büyüdükçe artar. Oyun, video düzenleme ve sanal makine gibi geçici çalışma alanı isteyen işlerde alt sınırı %20 kabul edin.",
@@ -212,6 +283,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "On Windows, Settings > System > Storage shows usage per drive with a category breakdown, and File Explorer displays free space for each drive under This PC. On macOS, use the Apple menu > About This Mac > Storage.",
         },
       ],
+      howTo: {
+        name: "How to Calculate and Maintain Recommended Free Disk Space",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identify Your Drive Type and Capacity",
+            text: "Open Task Manager > Performance > Disk to confirm whether each drive is an SSD (NVMe/SATA) or HDD, and note its total capacity.",
+          },
+          {
+            name: "Calculate the 15% to 20% Safety Threshold",
+            text: "For an SSD, multiply total capacity by 0.15–0.20 (e.g., 512 GB requires 75–100 GB of free space for healthy TRIM and write caching).",
+          },
+          {
+            name: "Reserve a System Update Buffer",
+            text: "On your Windows system drive (C:), ensure an additional 20–30 GB remains open for monthly updates and virtual memory expansion.",
+          },
+          {
+            name: "Automate Routine Cleanup",
+            text: "Use Disk Mop Disk Analysis and Scheduled Cleanup to purge temporary files, caches, and duplicates before drive fullness impacts performance.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Recommended free disk space targets by drive type and capacity",
+        columns: [
+          "Drive Type / Capacity",
+          "Target Free Space (%)",
+          "Target Free Space (GB)",
+          "Why It Is Needed",
+          "Consequence If Below Threshold",
+        ],
+        rows: [
+          [
+            "256 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, wear leveling, and SLC write cache headroom",
+            "Write speed collapses, Windows updates fail",
+          ],
+          [
+            "512 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "75 - 100 GB",
+            "Sufficient SLC cache buffer for game/app patch staging",
+            "Thermal throttling, reduced NAND flash endurance",
+          ],
+          [
+            "1 TB NVMe SSD",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Optimal block reallocation, video scratch disk buffer",
+            "Slow background garbage collection, micro-stuttering",
+          ],
+          [
+            "1 TB - 2 TB HDD (Mechanical)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Defragmentation buffer and outer platter track speeds",
+            "Severe file fragmentation, sluggish read/write head seek",
+          ],
+          [
+            "Windows OS System Drive (C:)",
+            "Fixed Buffer",
+            "Min 20 - 30 GB",
+            "Windows Update staging, pagefile.sys, hiberfil.sys",
+            "BSOD out-of-memory errors, 0x80070070 update failure",
+          ],
+        ],
+      },
       verdict: [
         "The target is straightforward: 15-20% free on an SSD, 10-15% on a hard drive. On the system drive, add a further update buffer of 20 GB for Windows or 15-20 GB for macOS. On a 1 TB system SSD, the practical target is 150-200 GB free.",
         "Percentages are more reliable than fixed gigabyte figures because the requirement grows with the drive. For workloads that need scratch space — gaming, video editing, virtual machines — treat 20% as the floor rather than the goal.",
@@ -320,6 +461,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Unter Windows zeigt Einstellungen > System > Speicher die Belegung je Laufwerk samt Kategorien, im Explorer sehen Sie den freien Platz jedes Laufwerks unter Dieser PC. Unter macOS führt der Weg über das Apple-Menü > Über diesen Mac > Speicher.",
         },
       ],
+      howTo: {
+        name: "Freien Speicherplatz berechnen und optimal verwalten",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Laufwerkstyp und Gesamtkapazität prüfen",
+            text: "Öffnen Sie den Task-Manager > Leistung > Datenträger, um festzustellen, ob es sich um eine SSD oder HDD handelt.",
+          },
+          {
+            name: "Den 15-20% Sicherheitspuffer berechnen",
+            text: "Multiplizieren Sie bei einer SSD die Gesamtkapazität mit 0,20 (z. B. mindestens 75-100 GB frei bei 512 GB SSD).",
+          },
+          {
+            name: "Update-Puffer auf Laufwerk C: vorhalten",
+            text: "Halten Sie auf dem Systemlaufwerk mindestens 20 GB zusätzlich frei, damit Windows Updates ohne Fehler installieren kann.",
+          },
+          {
+            name: "Caches und Datenballast regelmäßig leeren",
+            text: "Nutzen Sie Disk Mop, um Caches, temporäre Dateien und Duplikate zu entfernen und den Schwellenwert dauerhaft zu sichern.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Empfohlene freie Speicherplatz-Schwellenwerte nach Laufwerkstyp und Kapazität",
+        columns: [
+          "Laufwerkstyp / Kapazität",
+          "Freier Zielspeicher (%)",
+          "Freier Zielspeicher (GB)",
+          "Warum es nötig ist",
+          "Folgen bei Unterschreitung",
+        ],
+        rows: [
+          [
+            "256 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, Wear-Leveling und SLC-Schreibcache",
+            "Schreibgeschwindigkeit bricht ein, Update-Fehler",
+          ],
+          [
+            "512 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "75 - 100 GB",
+            "SLC-Puffer für Spiele-Patches und Software-Updates",
+            "Drosselung bei Dauerlast, geringere Lebensdauer",
+          ],
+          [
+            "1 TB NVMe SSD",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Optimale Blockumverteilung, Render-Puffer",
+            "Träge Garbage Collection, Ruckler im System",
+          ],
+          [
+            "1 TB - 2 TB HDD (Mechanisch)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Defragmentierungspuffer und Spurenperformance",
+            "Extreme Dateifragmentierung, hohe Latenzen",
+          ],
+          [
+            "Windows-Systemlaufwerk (C:)",
+            "Fester Puffer",
+            "Min 20 - 30 GB",
+            "Windows Update, Auslagerungsdatei (pagefile)",
+            "Bluescreens, Fehlercode 0x80070070 bei Updates",
+          ],
+        ],
+      },
       verdict: [
         "Das Ziel ist eindeutig: 15-20 % frei auf einer SSD, 10-15 % auf einer Festplatte. Auf dem Systemlaufwerk kommt ein Update-Puffer von 20 GB für Windows beziehungsweise 15-20 GB für macOS hinzu. Auf einer 1-TB-System-SSD lautet das praktische Ziel 150-200 GB frei.",
         "Prozentwerte sind verlässlicher als feste Gigabyte-Angaben, weil der Bedarf mit der Laufwerksgröße wächst. Bei Aufgaben mit hohem Bedarf an Arbeitsspeicherplatz — Gaming, Videoschnitt, virtuelle Maschinen — gilt 20 % als Untergrenze, nicht als Ziel.",
@@ -430,6 +641,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Sous Windows, Paramètres > Système > Stockage affiche l'utilisation de chaque disque avec le détail par catégorie, et l'Explorateur de fichiers montre l'espace libre de chaque disque sous Ce PC. Sur macOS, passez par le menu Pomme > À propos de ce Mac > Stockage.",
         },
       ],
+      howTo: {
+        name: "Comment calculer et maintenir l'espace disque recommandé",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identifier le type de disque et sa capacité",
+            text: "Ouvrez le Gestionnaire des tâches > Performances > Disque pour vérifier s'il s'agit d'un SSD ou d'un HDD.",
+          },
+          {
+            name: "Calculer le seuil de sécurité de 15 à 20%",
+            text: "Pour un SSD, multipliez la capacité totale par 0,20 (ex. au moins 75 à 100 GB libres sur un SSD de 512 GB pour préserver les vitesses).",
+          },
+          {
+            name: "Réserver une marge pour le système",
+            text: "Sur le lecteur système (C:), conservez 20 GB supplémentaires pour les mises à jour Windows et la mémoire virtuelle.",
+          },
+          {
+            name: "Automatiser l'entretien du disque",
+            text: "Utilisez Disk Mop pour éliminer les fichiers temporaires, caches et doublons dès que l'espace libre approche du seuil critique.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Objectifs d'espace disque libre recommandés selon le type de disque",
+        columns: [
+          "Type de disque / Capacité",
+          "Espace libre cible (%)",
+          "Espace libre cible (GB)",
+          "Pourquoi c'est nécessaire",
+          "Conséquence sous le seuil",
+        ],
+        rows: [
+          [
+            "SSD NVMe / SATA 256 GB",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, nivellement d'usure et cache SLC en écriture",
+            "Effondrement de la vitesse, échecs des mises à jour",
+          ],
+          [
+            "SSD NVMe / SATA 512 GB",
+            "15% - 20%",
+            "75 - 100 GB",
+            "Tampon SLC pour le téléchargement de gros patchs",
+            "Chauffe excessive, usure prématurée de la mémoire flash",
+          ],
+          [
+            "SSD NVMe 1 TB",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Réallocation optimale des blocs et mémoire de travail",
+            "Ramasse-miettes (garbage collection) ralenti",
+          ],
+          [
+            "Disque dur 1 TB - 2 TB (HDD)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Marge de défragmentation et vitesse des pistes externes",
+            "Forte fragmentation, temps d'accès très lents",
+          ],
+          [
+            "Partition système Windows (C:)",
+            "Marge fixe",
+            "Min 20 - 30 GB",
+            "Windows Update, pagefile.sys et fichiers temporaires",
+            "Écrans bleus, échec de mise à jour 0x80070070",
+          ],
+        ],
+      },
       verdict: [
         "L'objectif est simple : 15-20 % libres sur un SSD, 10-15 % sur un disque dur. Sur le disque système, ajoutez une réserve de mise à jour de 20 GB pour Windows ou de 15-20 GB pour macOS. Sur un SSD système de 1 TB, l'objectif pratique est de 150-200 GB libres.",
         "Les pourcentages sont plus fiables que des valeurs fixes en gigaoctets, car le besoin augmente avec la taille du disque. Pour les usages qui réclament de l'espace de travail temporaire — jeu, montage vidéo, machines virtuelles — considérez 20 % comme un plancher, pas comme un objectif.",
@@ -540,6 +821,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "En Windows, Configuración > Sistema > Almacenamiento muestra el uso de cada unidad desglosado por categorías, y el Explorador de archivos indica el espacio libre de cada unidad en Este equipo. En macOS, ve al menú Apple > Acerca de este Mac > Almacenamiento.",
         },
       ],
+      howTo: {
+        name: "Cómo calcular y mantener el espacio libre recomendado en disco",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificar el tipo y capacidad del disco",
+            text: "Abra el Administrador de tareas > Rendimiento > Disco para comprobar si su unidad es SSD o HDD.",
+          },
+          {
+            name: "Calcular el margen de seguridad del 15% al 20%",
+            text: "Para un SSD, multiplique la capacidad por 0.20 (por ejemplo, mantenga al menos 75-100 GB libres en un SSD de 512 GB).",
+          },
+          {
+            name: "Reservar margen para Windows Update",
+            text: "Asegúrese de dejar al menos 20 GB adicionales en la unidad C: para que las actualizaciones no fallen.",
+          },
+          {
+            name: "Limpiar archivos innecesarios periódicamente",
+            text: "Utilice Disk Mop para limpiar cachés, archivos temporales y duplicados antes de que el disco se sature.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Objetivos de espacio libre recomendado según el tipo de disco y uso",
+        columns: [
+          "Tipo de unidad / Capacidad",
+          "Espacio libre objetivo (%)",
+          "Espacio libre objetivo (GB)",
+          "Por qué es necesario",
+          "Consecuencias por debajo",
+        ],
+        rows: [
+          [
+            "SSD NVMe / SATA de 256 GB",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, nivelación de desgaste y caché SLC de escritura",
+            "Velocidad de escritura cae en picado, fallos de update",
+          ],
+          [
+            "SSD NVMe / SATA de 512 GB",
+            "15% - 20%",
+            "75 - 100 GB",
+            "Búfer de caché SLC para parches pesados de juegos",
+            "Estrangulamiento térmico y menor vida útil del SSD",
+          ],
+          [
+            "SSD NVMe de 1 TB",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Reasignación de bloques y espacio temporal de edición",
+            "Recolección de basura lenta, microtirones",
+          ],
+          [
+            "HDD de 1 TB - 2 TB (Mecánico)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Margen de desfragmentación y velocidad de pistas",
+            "Fragmentación severa, tiempos de acceso muy altos",
+          ],
+          [
+            "Unidad de sistema Windows (C:)",
+            "Búfer fijo",
+            "Min 20 - 30 GB",
+            "Instalación de Windows Update, memoria virtual",
+            "Pantallazos azules (BSOD), error 0x80070070",
+          ],
+        ],
+      },
       verdict: [
         "El objetivo es sencillo: un 15-20 % libre en un SSD y un 10-15 % en un disco duro. En la unidad del sistema, añade un margen de actualización de 20 GB para Windows o de 15-20 GB para macOS. En un SSD de sistema de 1 TB, el objetivo práctico son 150-200 GB libres.",
         "Los porcentajes son más fiables que las cifras fijas en gigabytes, porque la necesidad crece con el tamaño de la unidad. Para las tareas que exigen espacio de trabajo temporal —juegos, edición de vídeo, máquinas virtuales— toma el 20 % como suelo, no como meta.",
@@ -649,6 +1000,76 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Su Windows, Impostazioni > Sistema > Archiviazione mostra l'occupazione di ogni unità suddivisa per categorie, mentre Esplora file indica lo spazio libero di ciascuna unità in Questo PC. Su macOS, apri il menu Apple > Informazioni su questo Mac > Archiviazione.",
         },
       ],
+      howTo: {
+        name: "Come calcolare e mantenere lo spazio libero su disco raccomandato",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificare tipo e capacità del disco",
+            text: "Apri Gestione attività > Prestazioni > Disco per verificare se l'unità è un SSD o un HDD meccanico.",
+          },
+          {
+            name: "Calcolare la soglia di sicurezza del 15-20%",
+            text: "Per un SSD, moltiplica la capacità totale per 0,20 (es. mantieni almeno 75-100 GB liberi su un SSD da 512 GB).",
+          },
+          {
+            name: "Garantire un buffer per Windows Update",
+            text: "Lascia almeno 20 GB extra sull'unità di sistema C: per consentire a Windows di installare gli aggiornamenti.",
+          },
+          {
+            name: "Pulire periodicamente i file temporanei",
+            text: "Usa Disk Mop per eliminare cache, file temporanei e duplicati mantenendo il disco sempre reattivo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Spazio libero consigliato in base al tipo di unità e alla capacità",
+        columns: [
+          "Tipo di unità / Capacità",
+          "Spazio libero target (%)",
+          "Spazio libero target (GB)",
+          "Perché è necessario",
+          "Conseguenza sotto la soglia",
+        ],
+        rows: [
+          [
+            "SSD NVMe / SATA da 256 GB",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, wear leveling e cache di scrittura SLC",
+            "Velocità di scrittura crolla, errori negli update",
+          ],
+          [
+            "SSD NVMe / SATA da 512 GB",
+            "15% - 20%",
+            "75 - 100 GB",
+            "Buffer di cache SLC per download e patch pesanti",
+            "Surriscaldamento e riduzione della durata dell'SSD",
+          ],
+          [
+            "SSD NVMe da 1 TB",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Riassegnazione ottimale dei blocchi e memoria scratch",
+            "Garbage collection lenta, micro-blocchi di sistema",
+          ],
+          [
+            "HDD da 1 TB - 2 TB (Meccanico)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Buffer per deframmentazione e velocità delle tracce",
+            "Frammentazione estrema, tempi di accesso lumaca",
+          ],
+          [
+            "Unità di sistema Windows (C:)",
+            "Buffer fisso",
+            "Min 20 - 30 GB",
+            "Windows Update, pagefile.sys e ibernazione",
+            "Schermate blu (BSOD), errore 0x80070070",
+          ],
+        ],
+      },
       verdict: [
         "L'obiettivo è semplice: 15-20 % libero su un SSD, 10-15 % su un disco fisso. Sull'unità di sistema aggiungi un margine per gli aggiornamenti di 20 GB per Windows o di 15-20 GB per macOS. Su un SSD di sistema da 1 TB l'obiettivo pratico è 150-200 GB liberi.",
         "Le percentuali sono più affidabili dei valori fissi in gigabyte, perché il fabbisogno cresce con la dimensione dell'unità. Per i carichi di lavoro che richiedono spazio temporaneo — gioco, montaggio video, macchine virtuali — considera il 20 % come pavimento, non come traguardo.",
@@ -758,6 +1179,75 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "No Windows, Configurações > Sistema > Armazenamento mostra o uso por unidade com a divisão por categorias, e o Explorador de Arquivos exibe o espaço livre de cada unidade em Este Computador. No macOS, use o menu Apple > Sobre Este Mac > Armazenamento.",
         },
       ],
+      howTo: {
+        name: "Como calcular e manter o espaço livre em disco recomendado",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificar o tipo e capacidade do disco",
+            text: "Abra o Gestor de Tarefas > Desempenho > Disco para confirmar se a unidade é SSD ou HDD.",
+          },
+          {
+            name: "Calcular o limite de segurança de 15% a 20%",
+            text: "Num SSD, multiplique a capacidade total por 0,20 (ex.: mantenha 75-100 GB livres num SSD de 512 GB).",
+          },
+          {
+            name: "Reservar margem para atualizações",
+            text: "Mantenha pelo menos 20 GB adicionais livres na partição de sistema (C:) para as atualizações do Windows.",
+          },
+          {
+            name: "Automatizar a limpeza de ficheiros temporários",
+            text: "Utilize o Disk Mop para limpar ficheiros temporários, caches e duplicados antes que o disco fique cheio.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Espaço livre recomendado por tipo de unidade e capacidade",
+        columns: [
+          "Tipo de unidade / Capacidade",
+          "Espaço livre alvo (%)",
+          "Espaço livre alvo (GB)",
+          "Por que é necessário",
+          "Consequência abaixo do limite",
+        ],
+        rows: [
+          [
+            "SSD NVMe / SATA de 256 GB",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM, nivelamento de desgaste e cache SLC",
+            "A velocidade de escrita desaba, erros de atualização",
+          ],
+          [
+            "SSD NVMe / SATA de 512 GB",
+            "15% - 20%",
+            "75 - 100 GB",
+            "Buffer de cache SLC para patches e atualizações pesadas",
+            "Sobreaquecimento e desgaste acelerado da memória NAND",
+          ],
+          [
+            "SSD NVMe de 1 TB",
+            "15% - 20%",
+            "150 - 200 GB",
+            "Realocação ótima de blocos e disco de rascunho",
+            "Recolha de lixo lenta, pequenos travamentos no sistema",
+          ],
+          [
+            "HDD de 1 TB - 2 TB (Mecânico)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "Margem de desfragmentação e leitura de pistas externas",
+            "Fragmentação severa, latência de leitura elevada",
+          ],
+          [
+            "Unidade de sistema Windows (C:)",
+            "Buffer fixo",
+            "Min 20 - 30 GB",
+            "Windows Update, pagefile.sys e hibernação",
+            "Ecrãs azuis (BSOD), erro de atualização 0x80070070",
+          ],
+        ],
+      },
       verdict: [
         "A meta é direta: 15-20 % livres em um SSD e 10-15 % em um disco rígido. Na unidade do sistema, acrescente uma folga de atualização de 20 GB para o Windows ou de 15-20 GB para o macOS. Em um SSD de sistema de 1 TB, a meta prática é 150-200 GB livres.",
         "Porcentagens são mais confiáveis do que valores fixos em gigabytes, porque a necessidade cresce junto com a unidade. Para as cargas de trabalho que exigem espaço temporário — jogos, edição de vídeo, máquinas virtuais — trate 20 % como piso, não como objetivo.",
@@ -865,6 +1355,75 @@ export const howMuchFreeDiskSpaceDoINeed: Article = {
             "Windowsでは「設定」>「システム」>「ストレージ」で、ドライブごとの使用状況と種類別の内訳を確認できます。エクスプローラーの「PC」からも各ドライブの空き容量が分かります。macOSでは、Appleメニュー >「このMacについて」>「ストレージ」から確認します。",
         },
       ],
+      howTo: {
+        name: "推奨空き容量の計算と維持の手順",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "ドライブの種類と容量を確認する",
+            text: "タスク マネージャー >「パフォーマンス」>「ディスク」を開き、SSDかHDDか、および総容量を確認します。",
+          },
+          {
+            name: "15〜20%の安全なしきい値を計算する",
+            text: "SSDの場合は総容量に0.20を掛けます（例: 512 GBのSSDなら最低でも75〜100 GBの空きを確保します）。",
+          },
+          {
+            name: "Cドライブに更新用の追加バッファを確保",
+            text: "Windowsの大型アップデートや仮想メモリの拡張に備え、Cドライブには常に最低20 GBの余裕を持たせます。",
+          },
+          {
+            name: "不要なキャッシュや一時ファイルを定期的に削除",
+            text: "Disk Mopのディスク分析やキャッシュ クリーナーを活用し、容量不足になる前に整理します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "ドライブの種類と容量別の推奨空き容量目標値一覧",
+        columns: [
+          "ドライブの種類 / 容量",
+          "目標空き容量 (%)",
+          "目標空き容量 (GB)",
+          "必要な理由",
+          "しきい値を下回った場合の影響",
+        ],
+        rows: [
+          [
+            "256 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "40 - 50 GB",
+            "TRIM、ウェアレベリング、SLC書き込みキャッシュ領域",
+            "書き込み速度が激減し、アップデート失敗が発生",
+          ],
+          [
+            "512 GB NVMe / SATA SSD",
+            "15% - 20%",
+            "75 - 100 GB",
+            "大型ゲームやアプリの更新に必要なSLCバッファ",
+            "熱スロットリング、SSD寿命の早期低下",
+          ],
+          [
+            "1 TB NVMe SSD",
+            "15% - 20%",
+            "150 - 200 GB",
+            "最適なブロック再配置と動画編集用スクラッチ領域",
+            "ガベージコレクションの遅延、動作のカクつき",
+          ],
+          [
+            "1 TB - 2 TB HDD (ハードディスク)",
+            "10% - 15%",
+            "100 - 150 GB",
+            "デフラグ作業領域と外周トラックの速度維持",
+            "深刻なファイルの断片化、シーク待ち時間の増大",
+          ],
+          [
+            "Windowsシステムドライブ (C:)",
+            "固定バッファ",
+            "最低 20 - 30 GB",
+            "Windows Update、仮想メモリ (pagefile.sys)",
+            "ブルースクリーン (BSOD)、更新エラー 0x80070070",
+          ],
+        ],
+      },
       verdict: [
         "目標はシンプルです。SSDは15-20%、ハードディスクは10-15%を空けておくこと。システムドライブでは、これに加えてWindowsなら20 GB、macOSなら15-20 GBの更新用の余裕を確保します。1 TBのシステムSSDであれば、150-200 GBの空き容量が現実的な目標です。",
         "固定のギガバイト数よりパーセントのほうが信頼できます。必要な容量はドライブの大きさとともに増えるからです。ゲーム、動画編集、仮想マシンのように作業用の一時領域を必要とする用途では、20%を目標ではなく下限として扱ってください。",

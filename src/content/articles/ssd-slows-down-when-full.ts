@@ -5,12 +5,13 @@ export const ssdSlowsDownWhenFull: Article = {
   type: "guide",
   category: "Performance",
   date: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
       title: "Dolu SSD Neden Yavaşlar? SLC Önbelleği ve Çöp Toplama",
       metaDescription:
-        "SSD dolunca yazma hızı neden çöker? Sebep parçalanma değil: SLC önbelleğinin küçülmesi ve çöp toplamanın yazma sırasında devreye girmesi. Mekanizma ve çözümü.",
+        "SSD doldukça yazma hızı neden çöker? SLC önbelleğinin küçülmesi ve çöp toplama gecikmesini anlayın, SSD'nizi eski hızına kavuşturun.",
       subtitle: "Sebep Parçalanma Değil, Yazma Mimarisi",
       intro: [
         "Kısa cevap: SSD dolduğunda yavaşlamasının iki sebebi vardır. Birincisi, sürücünün hızlı yazma bölgesi olan SLC önbelleği boş alanla orantılıdır ve disk dolunca küçülür ya da tamamen kaybolur. İkincisi, silinmiş blokları temizleyen çöp toplama işlemi boş yer kalmayınca arka planda değil, siz yazarken çalışmak zorunda kalır.",
@@ -106,6 +107,46 @@ export const ssdSlowsDownWhenFull: Article = {
             "Evet, bu elle aşırı sağlama olarak bilinir ve çalışır — ama basitçe diski %15 boş tutmakla aynı sonucu verir. Ayrı bir bölüm oluşturmanın tek avantajı, o alanı yanlışlıkla doldurmanızı engellemesidir.",
         },
       ],
+      dataTable: {
+        caption: "SSD Doluluk Oranına Göre Yazma Hızı ve Tepki Süresi Tablosu",
+        columns: [
+          "SSD Doluluk Oranı",
+          "Yazma Hızı Etkisi",
+          "SLC Önbellek Durumu",
+          "Çöp Toplama (GC) Gecikmesi",
+          "Gereken Önlem",
+        ],
+        rows: [
+          [
+            "%0 - %70 Dolu",
+            "%100 (Fabrika maksimum hızı)",
+            "Dinamik SLC önbelleği tam kapasite aktif",
+            "Anlık arka plan blok silme işlemi",
+            "İdeal çalışma durumu; işlem gerekmez",
+          ],
+          [
+            "%70 - %85 Dolu",
+            "%85 - %95 hız",
+            "SLC önbellek tamponu hafif daralır",
+            "Normal arka plan temizliği",
+            "Depolamayı izleyin; gereksiz önbellekleri silin",
+          ],
+          [
+            "%85 - %95 Dolu",
+            "%30 - %50 hız kaybı",
+            "SLC önbelleği ciddi biçimde küçülür",
+            "Yazma anında zorunlu blok silme gecikmesi",
+            "Hemen en az %15-20 serbest alan açın",
+          ],
+          [
+            "> %95 Dolu",
+            "%5 - %20 hız (Aşırı takılmalar)",
+            "SLC önbelleği tamamen devre dışı",
+            "Sürekli yazma duraklamaları ve yüksek aşınma",
+            "Kritik durum: 50+ GB boşaltarak diski rahatlatın",
+          ],
+        ],
+      },
       verdict: [
         "Dolu bir SSD'nin yavaşlaması bir arıza değil, tasarımın doğal sonucudur: hızlı yazma önbelleği boş alana bağlıdır ve çöp toplama nefes alacak yer ister. Çözüm tek bir cümlede özetlenir — kapasitenin %15'ini boş tutun, QLC sürücülerde %20 hedefleyin.",
         "Bu alanı açmanın en kolay yolu kişisel dosyalarınıza dokunmadan biriken çöpü temizlemektir. Disk Mop'un Önbellek Temizleyici, Büyük Dosyalar, Yinelenenler ve İndirilenler modülleri tam bunu yapar; Disk Sağlığı modülü ise TRIM durumunu ve sürücünün aşınma göstergelerini tek ekranda gösterir.",
@@ -115,7 +156,7 @@ export const ssdSlowsDownWhenFull: Article = {
     en: {
       title: "Why Does a Full SSD Get Slow? SLC Cache and Garbage Collection",
       metaDescription:
-        "Why does write speed collapse when an SSD fills up? Not fragmentation: the SLC cache shrinks and garbage collection has to run while you write. The mechanism, and the fix.",
+        "Why does SSD write speed collapse when full? SLC cache shrinks and garbage collection runs mid-write. Learn the technical cause and simple fixes.",
       subtitle: "The Cause Is Not Fragmentation, It Is How Writing Works",
       intro: [
         "Short answer: a full SSD slows down for two reasons. First, the drive's fast write area — the SLC cache — is proportional to free space, so it shrinks or disappears entirely as the disk fills. Second, garbage collection, which clears out deleted blocks, can no longer run in the background and has to work while you are writing.",
@@ -212,6 +253,46 @@ export const ssdSlowsDownWhenFull: Article = {
             "Yes, this is known as manual over-provisioning and it works — but it gives the same result as simply keeping the disk 15% free. The only advantage of a separate partition is that it stops you from filling that space by accident.",
         },
       ],
+      dataTable: {
+        caption: "SSD capacity usage vs write performance and latency impact",
+        columns: [
+          "SSD Fill Level",
+          "Write Speed Impact",
+          "SLC Cache Status",
+          "Garbage Collection Latency",
+          "Action Required",
+        ],
+        rows: [
+          [
+            "0% - 70% Full",
+            "100% (Maximum rated speed)",
+            "Dynamic SLC cache fully available",
+            "Instant background block clearing",
+            "Optimal state; no action required",
+          ],
+          [
+            "70% - 85% Full",
+            "85% - 95% speed",
+            "SLC cache buffer slightly reduced",
+            "Normal background cleanup",
+            "Monitor storage; clear temporary caches",
+          ],
+          [
+            "85% - 95% Full",
+            "30% - 50% speed drop",
+            "SLC cache severely constricted",
+            "Synchronous garbage collection during writes",
+            "Free up at least 15-20% space immediately",
+          ],
+          [
+            "> 95% Full",
+            "5% - 20% speed (Severe stuttering)",
+            "SLC cache unavailable (Direct-to-TLC/QLC)",
+            "Constant write pauses, high wear",
+            "Critical: Free up 50+ GB to restore drive health",
+          ],
+        ],
+      },
       verdict: [
         "A full SSD slowing down is not a fault, it is a natural consequence of the design: the fast write cache depends on free space, and garbage collection needs room to breathe. The fix fits in one sentence — keep 15% of capacity free, and aim for 20% on QLC drives.",
         "The easiest way to free that space is to clear accumulated junk without touching your personal files. Disk Mop's Cache Cleaner, Large Files, Duplicates and Downloads modules do exactly that, and the Disk Health module shows TRIM status and the drive's wear indicators on one screen.",
@@ -321,6 +402,46 @@ export const ssdSlowsDownWhenFull: Article = {
             "Ja, das nennt man manuelles Over-Provisioning und es funktioniert — es bringt aber dasselbe Ergebnis, wie die Platte einfach zu 15 % frei zu halten. Der einzige Vorteil einer eigenen Partition ist, dass Sie diesen Bereich nicht versehentlich füllen.",
         },
       ],
+      dataTable: {
+        caption: "SSD-Füllstand im Vergleich zur Schreibleistung und Latenz",
+        columns: [
+          "SSD-Füllstand",
+          "Auswirkung auf Schreibgeschwindigkeit",
+          "SLC-Cache-Status",
+          "Garbage Collection Latenz",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "0% - 70% Belegt",
+            "100% (Maximale Werksleistung)",
+            "Dynamischer SLC-Cache voll verfügbar",
+            "Sofortiges Löschen im Hintergrund",
+            "Optimaler Zustand; kein Eingriff nötig",
+          ],
+          [
+            "70% - 85% Belegt",
+            "85% - 95% Geschwindigkeit",
+            "SLC-Puffer leicht verkleinert",
+            "Normale Hintergrundbereinigung",
+            "Speicher beobachten; Caches leeren",
+          ],
+          [
+            "85% - 95% Belegt",
+            "30% - 50% Geschwindigkeitsabfall",
+            "SLC-Cache stark eingeschränkt",
+            "Synchrone Blocklöschung bremst Schreibvorgang",
+            "Dringend mindestens 15-20% Speicher freigeben",
+          ],
+          [
+            "> 95% Belegt",
+            "5% - 20% Tempo (Starke Hänger)",
+            "Kein SLC-Cache mehr verfügbar",
+            "Ständige Schreibpausen und hoher Verschleiß",
+            "Kritisch: Sofort 50+ GB Daten bereinigen",
+          ],
+        ],
+      },
       verdict: [
         "Dass eine volle SSD langsam wird, ist kein Defekt, sondern die natürliche Folge des Designs: Der schnelle Schreib-Cache hängt am freien Platz, und die Garbage Collection braucht Luft zum Atmen. Die Lösung passt in einen Satz — halten Sie 15 % der Kapazität frei, bei QLC-Laufwerken besser 20 %.",
         "Am einfachsten schaffen Sie diesen Platz, indem Sie angesammelten Ballast entfernen, ohne persönliche Dateien anzufassen. Genau das tun die Module Cache-Bereiniger, Große Dateien, Duplikate und Downloads von Disk Mop; das Modul Festplattenzustand zeigt TRIM-Status und Abnutzungswerte auf einem Bildschirm.",
@@ -430,6 +551,47 @@ export const ssdSlowsDownWhenFull: Article = {
             "Oui, c'est le surprovisionnement manuel et cela fonctionne — mais le résultat est le même que de garder simplement 15 % du disque libre. Le seul avantage d'une partition dédiée est qu'elle vous empêche de remplir cet espace par mégarde.",
         },
       ],
+      dataTable: {
+        caption:
+          "Taux de remplissage du SSD et impact sur les performances d'écriture",
+        columns: [
+          "Niveau de remplissage",
+          "Impact sur la vitesse d'écriture",
+          "État du cache SLC",
+          "Latence du ramasse-miettes",
+          "Action recommandée",
+        ],
+        rows: [
+          [
+            "0% à 70% Plein",
+            "100% (Vitesse maximale constructeur)",
+            "Cache SLC dynamique pleinement actif",
+            "Effacement instantané des blocs en tâche de fond",
+            "État optimal ; aucune action requise",
+          ],
+          [
+            "70% à 85% Plein",
+            "85% à 95% de la vitesse",
+            "Tampon SLC légèrement diminué",
+            "Nettoyage en arrière-plan normal",
+            "Surveiller l'espace ; nettoyer les caches temporaires",
+          ],
+          [
+            "85% à 95% Plein",
+            "Chute de 30% à 50% de la vitesse",
+            "Cache SLC drastiquement réduit",
+            "Effacement synchrone bloquant pendant l'écriture",
+            "Libérer immédiatement au moins 15% à 20% d'espace",
+          ],
+          [
+            "> 95% Plein",
+            "5% à 20% de vitesse (Ralentissements graves)",
+            "Cache SLC totalement saturé",
+            "Pauses d'écriture constantes et usure accélérée",
+            "Critique : Libérer 50+ GB d'urgence",
+          ],
+        ],
+      },
       verdict: [
         "Qu'un SSD plein ralentisse n'est pas un défaut, c'est la conséquence naturelle de sa conception : le cache d'écriture rapide dépend de l'espace libre, et le ramasse-miettes a besoin de respirer. Le remède tient en une phrase — gardez 15 % de la capacité libre, et visez 20 % sur un SSD QLC.",
         "Le plus simple pour libérer cet espace est d'éliminer l'encombrement accumulé sans toucher à vos fichiers personnels. C'est exactement ce que font les modules Nettoyeur de cache, Gros fichiers, Doublons et Téléchargements de Disk Mop ; le module Santé du disque affiche l'état de TRIM et les indicateurs d'usure sur un seul écran.",
@@ -537,6 +699,47 @@ export const ssdSlowsDownWhenFull: Article = {
             "Sí, eso se conoce como sobreaprovisionamiento manual y funciona, pero da el mismo resultado que simplemente mantener el disco al 15 % libre. La única ventaja de una partición aparte es que te impide llenar ese espacio por descuido.",
         },
       ],
+      dataTable: {
+        caption:
+          "Nivel de ocupación del SSD frente a velocidad de escritura y latencia",
+        columns: [
+          "Nivel de llenado del SSD",
+          "Impacto en velocidad de escritura",
+          "Estado de la caché SLC",
+          "Latencia de Garbage Collection",
+          "Acción requerida",
+        ],
+        rows: [
+          [
+            "0% - 70% Lleno",
+            "100% (Velocidad máxima nominal)",
+            "Caché SLC dinámica totalmente disponible",
+            "Borrado instantáneo de bloques en segundo plano",
+            "Estado óptimo; no requiere acción",
+          ],
+          [
+            "70% - 85% Lleno",
+            "85% - 95% de velocidad",
+            "Búfer SLC ligeramente reducido",
+            "Limpieza normal en segundo plano",
+            "Supervisar el disco; vaciar cachés temporales",
+          ],
+          [
+            "85% - 95% Lleno",
+            "Caída del 30% al 50% de velocidad",
+            "Caché SLC muy reducida",
+            "Borrado forzado durante la propia escritura",
+            "Liberar al menos un 15-20% de espacio ya",
+          ],
+          [
+            "> 95% Lleno",
+            "5% - 20% velocidad (Congelaciones severas)",
+            "Sin caché SLC disponible",
+            "Pausas constantes de escritura y mayor desgaste",
+            "Crítico: Liberar más de 50 GB de inmediato",
+          ],
+        ],
+      },
       verdict: [
         "Que un SSD lleno se ralentice no es un fallo, es la consecuencia natural del diseño: la caché de escritura rápida depende del espacio libre y la recolección de basura necesita margen para respirar. La solución cabe en una frase: mantén libre el 15 % de la capacidad y apunta al 20 % en unidades QLC.",
         "La forma más fácil de liberar ese espacio es limpiar la basura acumulada sin tocar tus archivos personales. Eso es exactamente lo que hacen los módulos Limpiador de caché, Archivos grandes, Duplicados y Descargas de Disk Mop; el módulo Salud del disco muestra el estado de TRIM y los indicadores de desgaste en una sola pantalla.",
@@ -644,6 +847,47 @@ export const ssdSlowsDownWhenFull: Article = {
             "Sì, si chiama over-provisioning manuale e funziona — ma dà lo stesso risultato che tenere semplicemente il disco libero al 15%. L'unico vantaggio di una partizione dedicata è che ti impedisce di riempire quello spazio per sbaglio.",
         },
       ],
+      dataTable: {
+        caption:
+          "Rapporto tra riempimento dell'SSD, velocità di scrittura e latenza",
+        columns: [
+          "Livello di riempimento SSD",
+          "Impatto velocità di scrittura",
+          "Stato della cache SLC",
+          "Latenza Garbage Collection",
+          "Azione richiesta",
+        ],
+        rows: [
+          [
+            "0% - 70% Pieno",
+            "100% (Velocità massima di fabbrica)",
+            "Cache SLC dinamica pienamente attiva",
+            "Cancellazione blocchi istantanea in background",
+            "Condizione ottimale; nessun intervento",
+          ],
+          [
+            "70% - 85% Pieno",
+            "85% - 95% della velocità",
+            "Buffer SLC leggermente ridotto",
+            "Pulizia normale in background",
+            "Monitora lo spazio; elimina le cache inutili",
+          ],
+          [
+            "85% - 95% Pieno",
+            "Calo di velocità dal 30% al 50%",
+            "Cache SLC fortemente ridotta",
+            "Cancellazione sincrona forzata durante la scrittura",
+            "Libera subito almeno il 15-20% di spazio",
+          ],
+          [
+            "> 95% Pieno",
+            "5% - 20% velocità (Gravi blocchi di sistema)",
+            "Nessuna cache SLC disponibile",
+            "Pause costanti di scrittura e usura elevata",
+            "Critico: Libera immediatamente oltre 50 GB",
+          ],
+        ],
+      },
       verdict: [
         "Che un SSD pieno rallenti non è un difetto, è la conseguenza naturale del progetto: la cache di scrittura veloce dipende dallo spazio libero e la garbage collection ha bisogno di respiro. Il rimedio sta in una frase: tieni libero il 15% della capacità e punta al 20% sugli SSD QLC.",
         "Il modo più semplice per liberare quello spazio è togliere l'ingombro accumulato senza toccare i file personali. È esattamente ciò che fanno i moduli Pulizia cache, File di grandi dimensioni, Duplicati e Download di Disk Mop; il modulo Salute disco mostra lo stato di TRIM e gli indicatori di usura in un'unica schermata.",
@@ -750,6 +994,46 @@ export const ssdSlowsDownWhenFull: Article = {
             "Sim, isso é conhecido como over-provisioning manual e funciona — mas dá o mesmo resultado que simplesmente manter o disco 15% livre. A única vantagem de uma partição separada é impedir que você encha esse espaço sem querer.",
         },
       ],
+      dataTable: {
+        caption: "Nível de ocupação do SSD vs velocidade de escrita e latência",
+        columns: [
+          "Nível de preenchimento SSD",
+          "Impacto na velocidade de escrita",
+          "Estado da cache SLC",
+          "Latência de Garbage Collection",
+          "Ação necessária",
+        ],
+        rows: [
+          [
+            "0% - 70% Cheio",
+            "100% (Velocidade máxima de fábrica)",
+            "Cache SLC dinâmica totalmente disponível",
+            "Eliminação instantânea de blocos em segundo plano",
+            "Estado ideal; nenhuma ação necessária",
+          ],
+          [
+            "70% - 85% Cheio",
+            "85% - 95% de velocidade",
+            "Buffer SLC ligeiramente reduzido",
+            "Limpeza normal em segundo plano",
+            "Monitorizar o disco; limpar caches temporárias",
+          ],
+          [
+            "85% - 95% Cheio",
+            "Queda de 30% a 50% na velocidade",
+            "Cache SLC drasticamente reduzida",
+            "Eliminação síncrona obrigatória durante a escrita",
+            "Libertar pelo menos 15-20% de espaço de imediato",
+          ],
+          [
+            "> 95% Cheio",
+            "5% - 20% velocidade (Travamentos graves)",
+            "Sem cache SLC disponível",
+            "Pausas constantes de escrita e desgaste elevado",
+            "Crítico: Libertar mais de 50 GB com urgência",
+          ],
+        ],
+      },
       verdict: [
         "Um SSD cheio ficar lento não é defeito, é consequência natural do projeto: o cache de gravação rápido depende do espaço livre e a coleta de lixo precisa de folga para respirar. A solução cabe numa frase: mantenha 15% da capacidade livre e mire em 20% em unidades QLC.",
         "O jeito mais fácil de liberar esse espaço é limpar o entulho acumulado sem tocar nos seus arquivos pessoais. É exatamente o que fazem os módulos Limpador de cache, Arquivos grandes, Duplicados e Downloads do Disk Mop; o módulo Saúde do disco mostra o estado do TRIM e os indicadores de desgaste numa única tela.",
@@ -856,6 +1140,46 @@ export const ssdSlowsDownWhenFull: Article = {
             "はい、これは手動オーバープロビジョニングと呼ばれ有効です。ただし結果は、単にディスクを 15% 空けておくのと同じです。専用パーティションの唯一の利点は、その領域をうっかり埋めてしまわないことです。",
         },
       ],
+      dataTable: {
+        caption: "SSD使用率と書き込み速度・応答遅延の相関マップ",
+        columns: [
+          "SSD使用率",
+          "書き込み速度への影響",
+          "SLCキャッシュの状態",
+          "ガベージコレクション遅延",
+          "推奨される対策",
+        ],
+        rows: [
+          [
+            "0% - 70% 使用",
+            "100% (公称最大速度を維持)",
+            "動的SLCキャッシュがフル活用可能",
+            "バックグラウンドで瞬時にブロック消去",
+            "最適な状態（特に対策不要）",
+          ],
+          [
+            "70% - 85% 使用",
+            "85% - 95% 程度に微減",
+            "SLCキャッシュ領域がやや縮小",
+            "通常のバックグラウンド整理",
+            "容量を監視し、不要な一時ファイルを整理",
+          ],
+          [
+            "85% - 95% 使用",
+            "30% - 50% の大幅な速度低下",
+            "SLCキャッシュが極端に縮小",
+            "書き込み時に同時消去が発生し待機時間が増大",
+            "直ちに15〜20%の空き容量を確保",
+          ],
+          [
+            "> 95% 使用",
+            "公称値の 5% - 20% (強烈なフリーズ発生)",
+            "SLCキャッシュが完全枯渇",
+            "頻繁な書き込み一時停止と素子の急激な劣化",
+            "危険水域：今すぐ50 GB以上のデータを退避・削除",
+          ],
+        ],
+      },
       verdict: [
         "満杯の SSD が遅くなるのは故障ではなく、設計上の自然な帰結です。高速書き込みキャッシュは空き容量に依存し、ガベージコレクションには余裕が必要だからです。対処は一文で済みます。容量の 15% を空けておく、QLC ドライブなら 20% を目指す。",
         "その空き容量を作る最も簡単な方法は、個人のファイルに触れずに溜まった不要データを片付けることです。Disk Mop の「キャッシュクリーナー」「大きいファイル」「重複ファイル」「ダウンロード」はまさにそれを行い、「ディスク健康状態」モジュールは TRIM の状態と消耗の指標を 1 画面で示します。",

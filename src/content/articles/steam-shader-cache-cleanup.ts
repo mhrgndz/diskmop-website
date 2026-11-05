@@ -5,14 +5,13 @@ export const steamShaderCacheCleanup: Article = {
   type: "guide",
   category: "Gaming",
   date: "2026-09-19",
-  updated: "2026-09-19",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "Steam Shader Cache (Gölgelendirici Önbelleği) Nasıl Temizlenir? GB'larca Yer Açma",
+      title: "Steam Shader Cache Nasıl Temizlenir? Diskte GB'larca Yer Açın",
       metaDescription:
-        "Steam oyunları C sürücünüzü gizlice dolduruyor mu? steamapps\\shadercache ve DirectX NV_Cache klasörlerini güvenle temizleme ve oyun performansını koruma rehberi.",
+        "Steam oyunları diskinizi gizlice dolduruyor mu? shadercache ve DirectX önbellek klasörlerini güvenle temizleyerek gigabaytlarca yer açma rehberi.",
       subtitle:
         "Oyunları silmeden steamapps\\shadercache ve GPU önbelleklerinden 20–50 GB boş alan kazanmanın kanıtlanmış adımları.",
       intro: [
@@ -245,14 +244,20 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "Does clearing shader cache hurt my frame rate (FPS)?",
+          question: "Does clearing shader cache cause lower FPS in games?",
           answer:
-            "No. After the brief initial compile on startup, your frame rate will be identical or smoother, as corrupt cache bottlenecks are eliminated.",
+            "Only momentarily during the initial launch while the GPU recompiles shaders. Once compilation finishes, games run smoothly—and clearing corrupted caches frequently resolves micro-stutters.",
         },
         {
-          question: "Should I disable Shader Pre-Caching in Steam completely?",
+          question:
+            "Should I disable Shader Pre-Caching entirely in Steam settings?",
           answer:
-            "Unless your drive space is dangerously low, keep it enabled. Disabling it forces shaders to compile on the fly during gameplay, causing noticeable micro-stuttering.",
+            "Not recommended unless your drive is critically full. Disabling it forces the GPU to compile shaders mid-gameplay, causing noticeable frame drops. The best approach is keeping it on and cleaning stale caches periodically.",
+        },
+        {
+          question: "How do I know which shader folder belongs to which game?",
+          answer:
+            "Folder names match Steam AppIDs. For instance, 1172470 is Apex Legends and 1091500 is Cyberpunk 2077. You can check AppIDs on SteamDB or let Disk Mop map them automatically.",
         },
       ],
       verdict: [
@@ -307,9 +312,20 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "Verliere ich dadurch Spielstände?",
+          question: "Führt das Löschen des Shader-Caches zu FPS-Verlusten?",
           answer:
-            "Nein, Spielstände werden völlig getrennt in Cloud- oder Dokumentordnern gesichert.",
+            "Nur ganz kurz beim ersten Spielstart, während die Shader neu kompiliert werden. Danach läuft das Spiel flüssig, und das Beseitigen beschädigter Caches verhindert Ruckler.",
+        },
+        {
+          question:
+            "Sollte ich das Shader-Pre-Caching in Steam komplett abschalten?",
+          answer:
+            "Das wird nicht empfohlen, es sei denn, der Speicher ist extrem knapp. Bei Abschaltung muss die GPU Shader während des Spielens kompilieren, was Ruckler erzeugt.",
+        },
+        {
+          question: "Wie erkenne ich, welcher Ordner zu welchem Spiel gehört?",
+          answer:
+            "Die Ordnernamen entsprechen den Steam-AppIDs (z. B. 1172470 für Apex Legends). Sie können die ID auf SteamDB prüfen oder Disk Mop die Zuordnung überlassen.",
         },
       ],
       verdict: [
@@ -368,9 +384,20 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "Vais-je perdre mes sauvegardes ?",
+          question: "Supprimer le cache de shaders fait-il baisser les FPS ?",
           answer:
-            "Non, les sauvegardes sont totalement indépendantes de ce cache temporaire.",
+            "Uniquement lors du tout premier lancement le temps de la recompilation. Ensuite le jeu retrouve toute sa fluidité et les micro-saccades causées par un cache corrompu disparaissent.",
+        },
+        {
+          question:
+            "Faut-il désactiver le pré-chargement des shaders dans Steam ?",
+          answer:
+            "Ce n'est pas recommandé. Si vous le désactivez, la carte graphique compilera les shaders pendant la partie, provoquant des saccades en plein jeu.",
+        },
+        {
+          question: "Comment savoir quel dossier correspond à quel jeu ?",
+          answer:
+            "Les noms correspondent aux AppID Steam (ex. 1172470 pour Apex Legends). Vous pouvez vérifier sur SteamDB ou laisser Disk Mop les identifier.",
         },
       ],
       verdict: [
@@ -430,9 +457,20 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "¿Afecta al rendimiento del juego?",
+          question: "¿Borrar la caché de shaders reduce los FPS en juegos?",
           answer:
-            "Solo tardará un par de minutos en recompilarse la primera vez; luego el rendimiento será óptimo.",
+            "Solo unos instantes durante el primer arranque mientras se recompilan. Después el rendimiento es óptimo y se eliminan tirones causados por archivos corruptos.",
+        },
+        {
+          question:
+            "¿Debería desactivar el almacenamiento previo de shaders en Steam?",
+          answer:
+            "No se recomienda a menos que el disco esté crítico. Desactivarlo obliga a la GPU a compilar en mitad de la partida, causando caídas de frames.",
+        },
+        {
+          question: "¿Cómo sé a qué juego pertenece cada carpeta de caché?",
+          answer:
+            "Las carpetas llevan el AppID de Steam (por ejemplo, 1172470 es Apex Legends). Puedes consultar el ID en SteamDB o usar Disk Mop para identificarlos.",
         },
       ],
       verdict: [
@@ -486,9 +524,20 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "I miei salvataggi sono a rischio?",
+          question: "Cancellare la cache degli shader riduce i FPS nei giochi?",
           answer:
-            "No, i file di salvataggio sono archiviati separatamente nel cloud o nella cartella Documenti.",
+            "Solo per pochi istanti al primo avvio mentre la scheda video ricompila. Dopodiché il gioco gira fluido e si eliminano i micro-blocchi dovuti a cache corrotte.",
+        },
+        {
+          question: "Dovrei disattivare il pre-caching degli shader su Steam?",
+          answer:
+            "Non è consigliabile se non in casi di estrema carenza di spazio. Disattivarlo causa cali di frame improvvisi durante le sessioni di gioco.",
+        },
+        {
+          question:
+            "Come riconosco a quale gioco corrisponde ciascuna cartella?",
+          answer:
+            "I nomi delle cartelle sono gli AppID di Steam (es. 1172470 per Apex Legends). Puoi cercarli su SteamDB o lasciare che Disk Mop li riconosca in automatico.",
         },
       ],
       verdict: [
@@ -547,9 +596,19 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "Isso afeta o FPS dos meus jogos?",
+          question: "Apagar a cache de shaders reduz os FPS nos jogos?",
           answer:
-            "Após uma breve compilação inicial ao abrir o jogo, o desempenho será idêntico ou até melhor.",
+            "Apenas durante os primeiros instantes do primeiro arranque enquanto os shaders compilam. Depois o jogo corre sem problemas e eliminam-se travamentos.",
+        },
+        {
+          question: "Devo desativar o pré-carregamento de shaders no Steam?",
+          answer:
+            "Não é recomendado, salvo se o disco estiver no limite. Desativar a função faz a placa gráfica compilar em tempo de jogo, gerando quebras de fluidez.",
+        },
+        {
+          question: "Como sei a que jogo pertence cada pasta de shadercache?",
+          answer:
+            "Os nomes correspondem aos AppIDs da Steam (ex.: 1172470 é Apex Legends). Pode verificar o ID no SteamDB ou utilizar o Disk Mop para mapeamento automático.",
         },
       ],
       verdict: [
@@ -609,9 +668,22 @@ export const steamShaderCacheCleanup: Article = {
       ],
       faq: [
         {
-          question: "ゲームの動作が遅くなりますか？",
+          question:
+            "シェーダーキャッシュを削除するとゲームのフレームレート（FPS）は落ちますか？",
           answer:
-            "初回起動時に数十秒〜数分の再コンパイルが入るだけで、以降のフレームレートは変わりません。",
+            "削除後初回の起動時にシェーダーが再コンパイルされる間だけわずかな待ち時間が発生します。完了後は正常に戻り、破損キャッシュ起因のカクつきが解消されます。",
+        },
+        {
+          question:
+            "Steamの「シェーダー事前コンパイル」は完全に無効化すべきですか？",
+          answer:
+            "極端に容量が逼迫していない限りおすすめしません。無効化するとプレイ中にリアルタイムでコンパイルが行われ、ゲーム中に顕著なフレームドロップが発生します。",
+        },
+        {
+          question:
+            "どのフォルダーがどのゲームのものか見分ける方法はありますか？",
+          answer:
+            "フォルダー名はSteamのAppID番号です（例: 1172470はApex Legends）。SteamDB等で番号を検索するか、Disk Mopで自動判別できます。",
         },
       ],
       verdict: [

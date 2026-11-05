@@ -5,7 +5,7 @@ export const diskSpaceForGaming: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-07-19",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -370,6 +370,13 @@ export const diskSpaceForGaming: Article = {
         "Moderne Spiele überschreiten regelmäßig die 100-GB-Marke, und mit jedem Patch wächst der Platzbedarf weiter. Die Steam-Meldung über zu wenig Speicherplatz kennt daher fast jeder PC-Spieler. Die eigentliche Ursache sind meist nicht die Spiele selbst, sondern der Ballast drumherum: hängengebliebene Downloads, Shader-Caches, vergessene Mods und Installationsreste.",
         "In diesem Leitfaden zeigen wir zuerst, wie Sie sehen, was Ihr Laufwerk wirklich füllt, und räumen dann Steam und Ihre Spieleordner Schritt für Schritt auf — jeweils erst manuell, dann mit den passenden Disk-Mop-Funktionen.",
       ],
+      keyTakeaways: [
+        "Die Steam-Fehlermeldung „Nicht genügend Festplattenspeicher“ wird häufig durch beschädigte Download-Caches und temporäre Staging-Ordner verursacht und nicht durch die Spieledateien selbst.",
+        "Das Leeren des Steam-Download-Caches (Einstellungen > Downloads) entfernt gesperrte Patch-Dateien, ohne installierte Spiele oder Cloud-Spielstände zu beeinträchtigen.",
+        "Das Bereinigen alter Shader-Caches unter „steamapps\\shadercache“ und verwaister Workshop-Mods gibt sofort 10 bis über 40 GB frei.",
+        "Deinstallierte Spiele hinterlassen in „steamapps\\common“ häufig viele Gigabyte an Mod-Ordnern, Konfigurationsdateien und Crash-Dumps.",
+        "Die visuelle Festplattenanalyse und der Large File Finder von DiskMop spüren riesige Gameplay-Aufnahme-Archive (ShadowPlay, OBS) und doppelte Installationspakete auf.",
+      ],
       sections: [
         {
           title: "Warum moderne Spiele über 100 GB Speicherplatz belegen",
@@ -428,6 +435,101 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So schaffen Sie Speicherplatz für Steam und PC-Spiele",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Steam-Download-Cache leeren",
+            text: "Öffnen Sie Steam > Einstellungen > Downloads, klicken Sie auf „Download-Cache leeren“ und melden Sie sich erneut in Steam an.",
+          },
+          {
+            name: "Shader-Caches bereinigen",
+            text: "Navigieren Sie zu Ihrem SteamLibrary-Ordner, öffnen Sie „steamapps\\shadercache“ und löschen Sie Ordner nicht mehr gespielter Spiele.",
+          },
+          {
+            name: "Verwaiste Spielordner überprüfen",
+            text: "Prüfen Sie „steamapps\\common“ auf Restordner deinstallierter Spiele und löschen Sie verbliebene Mod-Dateien.",
+          },
+          {
+            name: "Interaktive Treemap in DiskMop ausführen",
+            text: "Scannen Sie Ihr Gaming-Laufwerk mit DiskMop, um vergessene ISO-Abbilder, Installationspakete und große Gameplay-Aufnahmen aufzuspüren.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Größte Speicherfresser auf Gaming-Laufwerken und empfohlene Bereinigungsmaßnahmen",
+        columns: [
+          "Datenkategorie",
+          "Speicherort",
+          "Typische Größe",
+          "Sicherheitsprofil",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "Steam-Download-Cache",
+            "Steam > Einstellungen > Downloads",
+            "5 GB – 30 GB",
+            "Vollkommen sicher",
+            "Download-Cache über den Steam-Client leeren",
+          ],
+          [
+            "Shader-Caches",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Sicher (Werden bei Bedarf neu erstellt)",
+            "Ordner deinstallierter App-IDs löschen",
+          ],
+          [
+            "Steam Workshop-Mods",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Überprüfung ratsam",
+            "Nicht mehr benötigte Mod-Abonnements beenden",
+          ],
+          [
+            "Reste deinstallierter Spiele",
+            "steamapps\\common\\[Spieletitel]",
+            "10 GB – 50 GB",
+            "Vollkommen sicher",
+            "Verwaiste Ordner entfernter Titel manuell löschen",
+          ],
+          [
+            "Gameplay-Videoaufnahmen",
+            "Benutzer-Videos / ShadowPlay / OBS",
+            "20 GB – 100 GB+",
+            "Nach eigenem Ermessen",
+            "Aufnahmen mit DiskMop Large File Finder finden und auslagern",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Werden beim Leeren des Steam-Download-Caches Spielstände gelöscht?",
+          answer:
+            "Nein. Der Download-Cache speichert nur temporäre Update-Fragmente. Ihre Spielstände und Bibliotheksdateien bleiben vollständig unberührt.",
+        },
+        {
+          question: "Ist es sicher, den Ordner „shadercache“ zu löschen?",
+          answer:
+            "Ja. Das Löschen von Shader-Caches ist völlig unbedenklich. Der Grafiktreiber kompiliert benötigte Shader beim Spielstart automatisch neu.",
+        },
+        {
+          question:
+            "Wie verschiebe ich Steam-Spiele ohne erneuten Download auf eine andere SSD?",
+          answer:
+            "Öffnen Sie Steam-Einstellungen > Speicherplatz, fügen Sie ein zweites Bibliothekslaufwerk hinzu, wählen Sie die Spiele aus und klicken Sie auf „Verschieben“.",
+        },
+        {
+          question:
+            "Was verursacht den Steam-Fehler „Schreibfehler auf Festplatte“?",
+          answer:
+            "Dieser Fehler tritt auf, wenn dem Laufwerk der freie Speicher ausgeht, Schreibschutzrechte erzwungen werden oder fehlerhafte Sektoren Dateioperationen blockieren.",
+        },
+      ],
       verdict: [
         "Die Steam-Warnung über zu wenig Speicherplatz entsteht meist durch angesammelten Ballast, nicht durch eine einzelne riesige Datei. Erst das Laufwerk analysieren, dann Download-Cache, Shader- und Workshop-Dateien bereinigen, Restordner entfernen, doppelte Installer löschen und große Titel auf ein zweites Laufwerk verschieben — wer alle Schritte umsetzt, gewinnt Dutzende Gigabyte zurück, ohne die eigenen Spiele anzutasten.",
         "Disk Mop begleitet jeden dieser Schritte: Die Treemap-Festplattenanalyse und der Große-Dateien-Finder übernehmen die Bestandsaufnahme, Duplikatfinder und Downloads-Bereiniger das Aufräumen, Speed Up und die geplante Bereinigung die laufende Pflege. Die kostenlose Version analysiert Ihr Laufwerk sofort; alle Funktionen schaltet die einmalige Lifetime-Lizenz für 19,90 $ frei.",
@@ -444,6 +546,13 @@ export const diskSpaceForGaming: Article = {
         "Pour libérer de l'espace disque pour vos jeux, videz le cache de téléchargement de Steam, supprimez les caches de shaders et les fichiers Workshop des jeux auxquels vous ne jouez plus, effacez les dossiers résiduels des jeux désinstallés et déplacez les gros titres vers un second disque. Ces seules étapes permettent de récupérer des dizaines de gigaoctets sans désinstaller le moindre jeu auquel vous jouez encore.",
         "Avec des sorties modernes qui dépassent régulièrement les 100 GB et des correctifs qui grossissent à chaque mise à jour, l'erreur « espace disque insuffisant » de Steam est devenue le quotidien de presque tous les joueurs PC. Le vrai coupable n'est généralement pas les jeux eux-mêmes, mais tout ce qui gravite autour : données de téléchargement bloquées, caches de shaders, mods oubliés et restes d'installations à moitié supprimées.",
         "Dans ce guide, nous verrons d'abord comment savoir exactement ce qui remplit votre disque, puis nous nettoierons Steam et vos dossiers de jeux étape par étape. Chaque section présente d'abord la méthode manuelle, puis les fonctions de Disk Mop qui accélèrent le travail.",
+      ],
+      keyTakeaways: [
+        "L'erreur Steam « Espace disque insuffisant » est fréquemment causée par des caches de téléchargement corrompus et des dossiers temporaires plutôt que par les fichiers du jeu.",
+        "Vider le cache de téléchargement de Steam (Paramètres > Téléchargements) purge les correctifs verrouillés sans toucher aux jeux installés ni aux sauvegardes cloud.",
+        "Nettoyer les caches de shaders obsolètes dans « steamapps\\shadercache » et les mods Workshop abandonnés libère immédiatement entre 10 et plus de 40 Go.",
+        "Les jeux désinstallés laissent souvent plusieurs gigaoctets de mods, fichiers de configuration et rapports de plantage dans « steamapps\\common ».",
+        "L'analyse visuelle par treemap et le détecteur de gros fichiers de DiskMop mettent en lumière les enregistrements vidéo encombrants (ShadowPlay, OBS) et les doublons.",
       ],
       sections: [
         {
@@ -506,6 +615,101 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment libérer de l'espace disque pour Steam et vos jeux PC",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Vider le cache de téléchargement Steam",
+            text: "Ouvrez Paramètres Steam > Téléchargements, cliquez sur « Vider le cache de téléchargement », puis reconnectez-vous.",
+          },
+          {
+            name: "Purger les caches de shaders",
+            text: "Accédez à votre dossier SteamLibrary, ouvrez « steamapps\\shadercache » et supprimez les dossiers des jeux auxquels vous ne jouez plus.",
+          },
+          {
+            name: "Inspecter les dossiers de jeux orphelins",
+            text: "Vérifiez dans « steamapps\\common » les restes de jeux désinstallés et supprimez les mods abandonnés.",
+          },
+          {
+            name: "Lancer le treemap interactif de DiskMop",
+            text: "Analysez votre disque de jeu avec DiskMop pour repérer les images ISO oubliées, installateurs et captures vidéo volumineuses.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principaux éléments encombrant les disques de jeux et solutions recommandées",
+        columns: [
+          "Catégorie de données",
+          "Emplacement",
+          "Taille typique",
+          "Niveau de sécurité",
+          "Action corrective",
+        ],
+        rows: [
+          [
+            "Cache de téléchargement Steam",
+            "Steam > Paramètres > Téléchargements",
+            "5 Go – 30 Go",
+            "Totalement sûr",
+            "Vider le cache via le client Steam",
+          ],
+          [
+            "Caches de shaders",
+            "steamapps\\shadercache",
+            "3 Go – 15 Go",
+            "Sûr (Régénéré au lancement)",
+            "Supprimer les dossiers des jeux désinstallés",
+          ],
+          [
+            "Mods Steam Workshop",
+            "steamapps\\workshop",
+            "5 Go – 40 Go",
+            "Vérification requise",
+            "Se désabonner des collections de mods obsolètes",
+          ],
+          [
+            "Restes de jeux désinstallés",
+            "steamapps\\common\\[TitreDuJeu]",
+            "10 Go – 50 Go",
+            "Totalement sûr",
+            "Supprimer manuellement les dossiers orphelins",
+          ],
+          [
+            "Captures vidéo de gameplay",
+            "Vidéos utilisateur / ShadowPlay / OBS",
+            "20 Go – 100+ Go",
+            "Au choix de l'utilisateur",
+            "Détecter et transférer les clips avec DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Le vidage du cache de téléchargement Steam supprime-t-il mes sauvegardes ?",
+          answer:
+            "Non. Le cache ne stocke que des fragments temporaires de mise à jour. Vos sauvegardes et bibliothèques de jeux restent intactes.",
+        },
+        {
+          question: "Peut-on supprimer le dossier shadercache sans risque ?",
+          answer:
+            "Oui. Supprimer les caches de shaders est totalement sans danger. Le pilote graphique recompilera automatiquement les shaders nécessaires au prochain lancement.",
+        },
+        {
+          question:
+            "Comment déplacer des jeux Steam vers un autre SSD sans les retélécharger ?",
+          answer:
+            "Allez dans Paramètres Steam > Stockage, ajoutez un disque de bibliothèque secondaire, sélectionnez vos jeux et cliquez sur « Déplacer ».",
+        },
+        {
+          question:
+            "Quelle est la cause de l'erreur d'écriture sur le disque dans Steam ?",
+          answer:
+            "Cette erreur survient lorsque le disque est plein, que des autorisations en lecture seule sont appliquées ou que des secteurs défectueux bloquent l'écriture.",
+        },
+      ],
       verdict: [
         "L'avertissement d'espace disque de Steam résulte le plus souvent d'un empilement de résidus plutôt que d'un seul fichier énorme. Analysez d'abord le disque pour repérer les vrais gloutons, puis videz le cache de téléchargement, élaguez les fichiers de shaders et du Workshop, supprimez les dossiers résiduels, éliminez les installeurs en double et déplacez les gros titres vers un second disque — en appliquant toutes ces étapes, vous récupérez des dizaines de gigaoctets sans toucher aux jeux auxquels vous jouez.",
         "Disk Mop accompagne chaque étape du processus : l'analyse de disque en treemap et le détecteur de gros fichiers couvrent le repérage, le détecteur de doublons et le nettoyeur de téléchargements se chargent du tri, tandis que Speed Up et le nettoyage planifié assurent l'entretien courant. Vous pouvez télécharger la version gratuite et analyser votre disque tout de suite, puis tout débloquer avec une licence à vie unique à 19,90 $.",
@@ -522,6 +726,13 @@ export const diskSpaceForGaming: Article = {
         "Para liberar espacio en disco para tus juegos, vacía la caché de descargas de Steam, borra las cachés de shaders y los archivos de Workshop de los juegos que ya no juegas, elimina las carpetas residuales de los juegos desinstalados y mueve los títulos más pesados a una segunda unidad. Solo con estos pasos puedes recuperar decenas de gigabytes sin desinstalar ni uno de los juegos que sigues jugando.",
         "Con lanzamientos que superan de forma habitual los 100 GB y parches que crecen con cada actualización, el error de Steam por falta de espacio en disco se ha convertido en algo que casi todos los jugadores de PC acaban viendo. El verdadero culpable no suelen ser los juegos en sí, sino los restos que dejan a su alrededor: datos de descarga atascados, cachés de shaders, mods olvidados y sobras de instalaciones a medio borrar.",
         "En esta guía veremos primero cómo saber exactamente qué está llenando tu unidad y después limpiaremos Steam y tus carpetas de juegos paso a paso. En cada apartado encontrarás primero el método manual y luego las funciones de Disk Mop que aceleran el trabajo.",
+      ],
+      keyTakeaways: [
+        "El error 'Espacio insuficiente en disco' de Steam suele deberse a cachés de descarga corruptas y carpetas de preparación temporal, no a los archivos reales del juego.",
+        "Borrar la caché de descargas de Steam (Parámetros > Descargas) purga parches bloqueados sin alterar los juegos instalados ni las partidas guardadas en la nube.",
+        "Limpiar las cachés de sombreadores en 'steamapps\\shadercache' y los mods de Workshop abandonados libera de 10 a más de 40 GB al instante.",
+        "Los juegos desinstalados suelen dejar gigabytes de carpetas de mods, archivos de configuración y volcados de errores en 'steamapps\\common'.",
+        "El análisis visual de disco y el buscador de archivos grandes de DiskMop detectan grabaciones de partidas pesadas (ShadowPlay, OBS) e instaladores duplicados.",
       ],
       sections: [
         {
@@ -583,6 +794,100 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo liberar espacio en disco para Steam y juegos de PC",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Borrar la caché de descarga de Steam",
+            text: "Abre Parámetros de Steam > Descargas, haz clic en 'Borrar caché de descarga' y vuelve a iniciar sesión.",
+          },
+          {
+            name: "Purgar cachés de sombreadores",
+            text: "Dirígete a tu carpeta SteamLibrary, entra en 'steamapps\\shadercache' y borra las carpetas de juegos que ya no uses.",
+          },
+          {
+            name: "Revisar carpetas de juegos huérfanas",
+            text: "Inspecciona 'steamapps\\common' en busca de carpetas de títulos desinstalados y elimina mods obsoletos.",
+          },
+          {
+            name: "Ejecutar el mapa de árbol interactivo de DiskMop",
+            text: "Analiza tu unidad de juegos con DiskMop para descubrir imágenes ISO olvidadas, instaladores y capturas de vídeo pesadas.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Elementos que más espacio ocupan en discos de juegos y acciones recomendadas",
+        columns: [
+          "Categoría de datos",
+          "Ubicación de almacenamiento",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Acción de mitigación",
+        ],
+        rows: [
+          [
+            "Caché de descarga de Steam",
+            "Steam > Parámetros > Descargas",
+            "5 GB – 30 GB",
+            "Completamente seguro",
+            "Borrar la caché desde el cliente Steam",
+          ],
+          [
+            "Cachés de sombreadores",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Seguro (Se regeneran al jugar)",
+            "Eliminar carpetas de identificadores de juegos eliminados",
+          ],
+          [
+            "Mods de Steam Workshop",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Requiere revisión",
+            "Cancelar suscripciones a colecciones de mods obsoletas",
+          ],
+          [
+            "Restos de juegos desinstalados",
+            "steamapps\\common\\[TítuloDelJuego]",
+            "10 GB – 50 GB",
+            "Completamente seguro",
+            "Borrar manualmente carpetas huérfanas de juegos suprimidos",
+          ],
+          [
+            "Capturas de vídeo de gameplay",
+            "Vídeos de usuario / ShadowPlay / OBS",
+            "20 GB – 100 GB+",
+            "A criterio del usuario",
+            "Detectar y mover vídeos mediante DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Borrar la caché de descarga de Steam elimina mis partidas guardadas?",
+          answer:
+            "No. La caché solo contiene fragmentos temporales de actualización. Tus archivos de guardado y bibliotecas de juegos se conservan intactos.",
+        },
+        {
+          question: "¿Es seguro eliminar la carpeta shadercache?",
+          answer:
+            "Sí. Eliminar las cachés de sombreadores es totalmente seguro. El controlador de la tarjeta gráfica las recompilará automáticamente al iniciar el juego.",
+        },
+        {
+          question:
+            "¿Cómo muevo juegos de Steam a otro SSD sin volver a descargarlos?",
+          answer:
+            "Entra en Parámetros de Steam > Almacenamiento, añade una unidad secundaria de biblioteca, marca los juegos deseados y pulsa 'Mover'.",
+        },
+        {
+          question: "¿Qué causa el 'Error de escritura en disco' de Steam?",
+          answer:
+            "Ocurre cuando la unidad se queda sin capacidad libre, se activan permisos de solo lectura o existen sectores defectuosos que impiden escribir archivos.",
+        },
+      ],
       verdict: [
         "El aviso de espacio insuficiente de Steam suele ser el resultado de restos acumulados y no de un único archivo enorme. Analiza primero la unidad para ver quién consume de verdad, después vacía la caché de descargas, poda los archivos de shaders y de Workshop, borra las carpetas residuales, elimina los instaladores duplicados y mueve los títulos grandes a una segunda unidad: aplicando todos estos pasos puedes recuperar decenas de gigabytes sin tocar los juegos a los que juegas.",
         "Disk Mop acompaña cada fase del proceso: el análisis de disco con treemap y el buscador de archivos grandes cubren el reconocimiento, el detector de duplicados y el limpiador de descargas se encargan de la limpieza, y Speed Up junto con la limpieza programada se ocupan del mantenimiento continuo. Puedes descargar la versión gratuita y analizar tu unidad ahora mismo, y desbloquear todo con una licencia de por vida de pago único de 19,90 $.",
@@ -599,6 +904,13 @@ export const diskSpaceForGaming: Article = {
         "Per liberare spazio su disco per i giochi, svuota la cache di download di Steam, elimina le cache degli shader e i file del Workshop dei giochi che non apri più, rimuovi le cartelle residue dei giochi disinstallati e sposta i titoli più pesanti su una seconda unità. Solo con questi passaggi puoi recuperare decine di gigabyte senza disinstallare nemmeno uno dei giochi a cui giochi ancora.",
         "Con le uscite moderne che superano regolarmente i 100 GB e le patch che crescono a ogni aggiornamento, l'errore di Steam sullo spazio su disco insufficiente è ormai un classico per quasi tutti i giocatori PC. Il vero colpevole di solito non sono i giochi in sé, ma quello che si accumula attorno: dati di download rimasti bloccati, cache degli shader, mod dimenticate e residui di installazioni rimosse a metà.",
         "In questa guida vediamo prima come capire con esattezza che cosa sta riempiendo il disco, poi ripuliamo Steam e le cartelle dei giochi passo dopo passo. In ogni sezione trovi prima il metodo manuale e poi le funzioni di Disk Mop che rendono il lavoro più rapido.",
+      ],
+      keyTakeaways: [
+        "L'errore Steam «Spazio su disco insufficiente» è spesso causato da cache di download danneggiate e cartelle di staging temporanee anziché dai file effettivi del gioco.",
+        "Cancellare la cache dei download di Steam (Impostazioni > Download) svuota i file di aggiornamento bloccati senza toccare giochi installati né salvataggi cloud.",
+        "Eliminare le vecchie cache degli shader in «steamapps\\shadercache» e i mod del Workshop abbandonati libera all'istante da 10 a oltre 40 GB.",
+        "I giochi disinstallati lasciano frequentemente gigabyte di mod, file di configurazione e log di crash nella cartella «steamapps\\common».",
+        "L'analisi visiva dello spazio e lo strumento Trova file grandi di DiskMop evidenziano registrazioni video pesanti (ShadowPlay, OBS) e pacchetti duplicati.",
       ],
       sections: [
         {
@@ -660,6 +972,100 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come liberare spazio su disco per Steam e giochi PC",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Svuotare la cache di download di Steam",
+            text: "Apri Impostazioni Steam > Download, clicca su «Svuota la cache dei download» e accedi di nuovo al client.",
+          },
+          {
+            name: "Rimuovere le cache degli shader",
+            text: "Accedi alla cartella SteamLibrary, apri «steamapps\\shadercache» ed elimina le cartelle dei giochi che non usi più.",
+          },
+          {
+            name: "Controllare le cartelle dei giochi orfani",
+            text: "Esamina «steamapps\\common» alla ricerca di cartelle di giochi già disinstallati ed elimina i residui dei mod.",
+          },
+          {
+            name: "Avviare la mappa ad albero interattiva di DiskMop",
+            text: "Analizza l'unità di gioco con DiskMop per trovare file ISO dimenticati, file di installazione e registrazioni di gioco voluminose.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principali cause di occupazione spazio sulle unità da gioco e azioni raccomandate",
+        columns: [
+          "Categoria dati",
+          "Posizione archiviazione",
+          "Spazio tipico",
+          "Profilo di sicurezza",
+          "Azione correttiva",
+        ],
+        rows: [
+          [
+            "Cache download di Steam",
+            "Steam > Impostazioni > Download",
+            "5 GB – 30 GB",
+            "Completamente sicuro",
+            "Svuotare la cache di download dal client Steam",
+          ],
+          [
+            "Cache degli shader",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Sicuro (Rigenerata all'avvio)",
+            "Eliminare le cartelle dei titoli disinstallati",
+          ],
+          [
+            "Mod di Steam Workshop",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Revisione richiesta",
+            "Annullare l'iscrizione a mod di giochi non più utilizzati",
+          ],
+          [
+            "Residui di giochi rimossi",
+            "steamapps\\common\\[NomeGioco]",
+            "10 GB – 50 GB",
+            "Completamente sicuro",
+            "Cancellare a mano le cartelle orfane dei giochi disinstallati",
+          ],
+          [
+            "Registrazioni video di gameplay",
+            "Video utente / ShadowPlay / OBS",
+            "20 GB – 100 GB+",
+            "A discrezione dell'utente",
+            "Individuare e archiviare le clip con DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Svuotare la cache dei download di Steam elimina i salvataggi dei giochi?",
+          answer:
+            "No. La cache contiene solo frammenti temporanei degli aggiornamenti. Salvataggi e libreria di giochi rimangono intatti.",
+        },
+        {
+          question: "È sicuro eliminare la cartella shadercache?",
+          answer:
+            "Sì. Eliminare la cache degli shader è del tutto sicuro. Il driver video ricompilerà automaticamente gli shader all'avvio del gioco.",
+        },
+        {
+          question:
+            "Come posso spostare i giochi Steam su un altro SSD senza riscaricarli?",
+          answer:
+            "Vai su Impostazioni Steam > Memoria, configura una seconda unità libreria, seleziona i giochi desiderati e clicca su «Sposta».",
+        },
+        {
+          question: "Cosa provoca l'errore di scrittura su disco di Steam?",
+          answer:
+            "Si verifica quando lo spazio libero sull'unità si esaurisce, vengono applicati permessi di sola lettura o settori danneggiati bloccano la scrittura dei file.",
+        },
+      ],
       verdict: [
         "L'avviso di Steam sullo spazio su disco è quasi sempre il risultato di residui accumulati, non di un singolo file enorme. Analizza prima l'unità per capire chi consuma davvero, poi svuota la cache di download, sfoltisci i file di shader e del Workshop, elimina le cartelle residue, cancella gli installer duplicati e sposta i titoli più pesanti su una seconda unità: applicando tutti questi passaggi recuperi decine di gigabyte senza toccare i giochi a cui giochi.",
         "Disk Mop ti accompagna in ogni fase: l'analisi del disco a treemap e il ricercatore di file di grandi dimensioni coprono la ricognizione, il rilevatore di duplicati e il pulitore dei download si occupano della cernita, mentre Speed Up e la pulizia pianificata gestiscono la manutenzione continua. Puoi scaricare la versione gratuita e analizzare subito il disco, e sbloccare tutto con una licenza a vita una tantum da 19,90 $.",
@@ -676,6 +1082,13 @@ export const diskSpaceForGaming: Article = {
         "Para liberar espaço em disco para jogos, limpe o cache de download do Steam, apague os caches de shader e os arquivos da Workshop dos jogos que você não joga mais, remova as pastas residuais de jogos desinstalados e mova os títulos maiores para uma segunda unidade. Só esses passos já recuperam dezenas de gigabytes sem desinstalar nenhum jogo que você ainda joga.",
         "Com lançamentos que passam com frequência dos 100 GB e patches que crescem a cada atualização, o erro do Steam sobre espaço em disco insuficiente virou rotina para quase todo jogador de PC. O verdadeiro vilão normalmente não são os jogos em si, e sim o entulho ao redor deles: dados de download travados, caches de shader, mods esquecidos e sobras de instalações removidas pela metade.",
         "Neste guia vamos ver primeiro como descobrir exatamente o que está enchendo a sua unidade e depois limpar o Steam e as pastas de jogos passo a passo. Em cada seção você encontra primeiro o método manual e, na sequência, os recursos do Disk Mop que agilizam o trabalho.",
+      ],
+      keyTakeaways: [
+        "O erro 'Espaço em disco insuficiente' da Steam geralmente é provocado por caches de download corrompidos e pastas temporárias, e não pelos arquivos do jogo em si.",
+        "Limpar o cache de download da Steam (Configurações > Downloads) limpa arquivos de atualização bloqueados sem afetar jogos instalados ou saves em nuvem.",
+        "Remover caches antigos de shaders em 'steamapps\\shadercache' e mods abandonados da Oficina libera de 10 a mais de 40 GB de imediato.",
+        "Jogos desinstalados frequentemente deixam gigabytes de pastas de mods, arquivos de configuração e despejos de falhas em 'steamapps\\common'.",
+        "A análise visual de disco e o localizador de arquivos grandes do DiskMop localizam gravações pesadas de gameplay (ShadowPlay, OBS) e instaladores duplicados.",
       ],
       sections: [
         {
@@ -737,6 +1150,100 @@ export const diskSpaceForGaming: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como liberar espaço em disco para a Steam e jogos de PC",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Limpar cache de download da Steam",
+            text: "Abra Configurações da Steam > Downloads, clique em 'Limpar cache de download' e entre novamente na sua conta.",
+          },
+          {
+            name: "Eliminar caches de shaders",
+            text: "Acesse a pasta SteamLibrary, entre em 'steamapps\\shadercache' e apague as pastas de jogos que você não joga mais.",
+          },
+          {
+            name: "Inspecionar diretórios órfãos de jogos",
+            text: "Verifique em 'steamapps\\common' se há sobras de jogos já desinstalados e remova arquivos e mods antigos.",
+          },
+          {
+            name: "Executar o mapa de árvore interativo do DiskMop",
+            text: "Analise o disco de jogos com o DiskMop para encontrar arquivos ISO esquecidos, instaladores e gravações volumosas.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principais fontes de consumo de espaço em discos de jogos e ações recomendadas",
+        columns: [
+          "Categoria de dados",
+          "Local de armazenamento",
+          "Espaço típico",
+          "Nível de segurança",
+          "Ação de mitigação",
+        ],
+        rows: [
+          [
+            "Cache de download da Steam",
+            "Steam > Configurações > Downloads",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Limpar o cache diretamente pelo cliente Steam",
+          ],
+          [
+            "Caches de shaders",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "Seguro (Recriado ao iniciar o jogo)",
+            "Apagar pastas com IDs de jogos desinstalados",
+          ],
+          [
+            "Mods da Oficina Steam",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "Requer revisão",
+            "Cancelar inscrição em coleções de mods antigas",
+          ],
+          [
+            "Sobras de jogos desinstalados",
+            "steamapps\\common\\[NomeDoJogo]",
+            "10 GB – 50 GB",
+            "Totalmente seguro",
+            "Excluir manualmente pastas órfãs de títulos removidos",
+          ],
+          [
+            "Gravações de vídeo de gameplay",
+            "Vídeos do usuário / ShadowPlay / OBS",
+            "20 GB – 100 GB+",
+            "A critério do usuário",
+            "Identificar e transferir vídeos pelo DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Limpar o cache de download da Steam apaga os saves dos jogos?",
+          answer:
+            "Não. O cache armazena apenas arquivos temporários de atualização. Seus arquivos de save e jogos continuam intactos.",
+        },
+        {
+          question: "É seguro excluir a pasta shadercache?",
+          answer:
+            "Sim. Excluir caches de shaders é totalmente seguro. O driver de vídeo irá recompilá-los de forma automática quando o jogo for iniciado.",
+        },
+        {
+          question:
+            "Como mover jogos da Steam para outro SSD sem precisar baixar de novo?",
+          answer:
+            "Acesse Configurações da Steam > Armazenamento, adicione uma segunda unidade de biblioteca, selecione os jogos e clique em 'Mover'.",
+        },
+        {
+          question: "O que causa o 'Erro de gravação em disco' na Steam?",
+          answer:
+            "Esse erro ocorre quando a unidade fica sem espaço físico livre, permissões de somente leitura são aplicadas ou setores defeituosos impedem gravações.",
+        },
+      ],
       verdict: [
         "O aviso de espaço em disco do Steam quase sempre é resultado de entulho acumulado, e não de um único arquivo gigante. Analise a unidade primeiro para ver quem realmente consome, depois limpe o cache de download, corte os arquivos de shader e da Workshop, remova as pastas residuais, elimine os instaladores duplicados e mova os títulos grandes para uma segunda unidade: aplicando todos esses passos dá para recuperar dezenas de gigabytes sem encostar nos jogos que você joga.",
         "O Disk Mop acompanha cada etapa desse processo: a análise de disco em treemap e o localizador de arquivos grandes cobrem o reconhecimento, o detector de duplicados e o limpador de downloads cuidam da faxina, e o Speed Up com a limpeza agendada garantem a manutenção contínua. Você pode baixar a versão gratuita e analisar a unidade agora mesmo, e liberar tudo com uma licença vitalícia de pagamento único de 19,90 $.",
@@ -752,6 +1259,13 @@ export const diskSpaceForGaming: Article = {
         "ゲーム用にディスク容量を空けるには、Steamのダウンロード キャッシュを削除し、もう遊んでいないゲームのシェーダー キャッシュとWorkshopのファイルを消し、アンインストール済みのゲームが残したフォルダーを片づけ、容量の大きいタイトルを2台目のドライブへ移します。この手順だけでも、今も遊んでいるゲームを1本も消さずに数十GBを取り戻せます。",
         "最近のゲームは100 GBを超えることが珍しくなく、アップデートのたびにパッチの容量も膨らんでいきます。そのためSteamの「ディスク空き容量が不足しています」というエラーは、ほとんどのPCゲーマーが一度は目にする定番の悩みになりました。本当の原因はゲーム本体そのものではなく、その周辺にたまった残骸であることがほとんどです。途中で止まったダウンロードデータ、シェーダー キャッシュ、忘れられたMod、中途半端に消えたインストールの残りかすなどです。",
         "この記事では、まず何がドライブを圧迫しているのかを正確に把握する方法を紹介し、そのうえでSteamとゲームフォルダーを順番に整理していきます。各セクションでは手作業の方法を先に説明し、そのあとで作業を短縮できるDisk Mopの機能を紹介します。",
+      ],
+      keyTakeaways: [
+        "Steamの「ディスク空き容量が不足しています」というエラーは、実際のゲームファイルではなく破損したダウンロードキャッシュや一時展開フォルダが原因であることが大半です。",
+        "Steamのダウンロードキャッシュをクリア（設定 > ダウンロード）すると、インストール済みゲームやクラウドセーブデータに影響を与えずにロックされたパッチファイルを消去できます。",
+        "「steamapps\\shadercache」にある不要なシェーダーキャッシュや使われていないWorkshop MODを整理することで、即座に10〜40GB以上の容量を回復できます。",
+        "アンインストールしたゲームでも、「steamapps\\common」内に数GBものMODフォルダ、設定ファイル、クラッシュログが残留することがよくあります。",
+        "DiskMopの視覚的ディスクツリーマップと大容量ファイル検索機能を使えば、肥大化したプレイ動画録画（ShadowPlay、OBS）や重複ファイルを素早く特定できます。",
       ],
       sections: [
         {
@@ -810,6 +1324,99 @@ export const diskSpaceForGaming: Article = {
             "難しいことは必要ありません。Steamのダウンロード キャッシュをときどき削除し、ゲームをアンインストールしたらシェーダーとWorkshopの残骸を確認し、ごみ箱を空にする。この程度の習慣で十分です。Disk Mopのスピードアップ（Speed Up）機能は、この作業の大半をワンクリックで片づけ、古いダウンロード、システム キャッシュ、ブラウザーのキャッシュ、ごみ箱を自動で整理します。スケジュール クリーンアップ（Scheduled Cleanup）を使えば、週次や月次の自動タスクにできます。",
             "システム ヘルス スコア（System Health Score）は、ディスク全体の状態をひと目で示す指標になります。プリロードの途中で「ディスク空き容量が不足しています」というエラーに気づくのではなく、ドライブが埋まり始めた段階で察知して、問題になる前に手を打てます。",
           ],
+        },
+      ],
+      howTo: {
+        name: "SteamやPCゲーム向けにディスク容量を解放する手順",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Steamのダウンロードキャッシュを削除する",
+            text: "Steamの設定 > ダウンロードを開き、「ダウンロードキャッシュをクリア」をクリックしてSteamに再ログインします。",
+          },
+          {
+            name: "シェーダーキャッシュをクリーンアップする",
+            text: "SteamLibraryフォルダ内の「steamapps\\shadercache」を開き、遊ばなくなったゲームのフォルダを削除します。",
+          },
+          {
+            name: "残留したゲームフォルダを確認する",
+            text: "「steamapps\\common」を確認し、すでにアンインストールしたゲームの残骸フォルダやMODファイルを削除します。",
+          },
+          {
+            name: "DiskMopのインタラクティブツリーマップを実行する",
+            text: "DiskMopでゲームドライブをスキャンし、不要なISOイメージ、インストーラー、大容量の録画ファイルを特定します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "ゲーミングPCドライブで容量を圧迫する主な要因と推奨対処法",
+        columns: [
+          "データ種別",
+          "保存場所",
+          "一般的なサイズ",
+          "安全性",
+          "推奨対処法",
+        ],
+        rows: [
+          [
+            "Steamダウンロードキャッシュ",
+            "Steam > 設定 > ダウンロード",
+            "5 GB – 30 GB",
+            "完全安全",
+            "Steamクライアントからダウンロードキャッシュを削除",
+          ],
+          [
+            "シェーダーキャッシュ",
+            "steamapps\\shadercache",
+            "3 GB – 15 GB",
+            "安全（起動時に自動再構築）",
+            "アンインストール済みタイトルのIDフォルダを削除",
+          ],
+          [
+            "Steam Workshop MOD",
+            "steamapps\\workshop",
+            "5 GB – 40 GB",
+            "要確認",
+            "不要になったMODコレクションのサブスクライブを解除",
+          ],
+          [
+            "アンインストール済みゲームの残留ファイル",
+            "steamapps\\common\\[ゲーム名]",
+            "10 GB – 50 GB",
+            "完全安全",
+            "削除済みタイトルの残骸フォルダを手動で消去",
+          ],
+          [
+            "ゲームプレイ録画ファイル",
+            "ユーザーのビデオ / ShadowPlay / OBS",
+            "20 GB – 100 GB以上",
+            "ユーザー判断",
+            "DiskMopの大容量ファイル検索で特定し退避または削除",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Steamのダウンロードキャッシュをクリアするとセーブデータは消えますか？",
+          answer:
+            "いいえ、消えません。ダウンロードキャッシュには一時的なアップデートデータのみが保存されています。セーブデータやライブラリ内のゲームファイルはそのまま維持されます。",
+        },
+        {
+          question: "shadercacheフォルダを削除しても安全ですか？",
+          answer:
+            "はい、完全に安全です。シェーダーキャッシュを削除しても、ゲーム起動時にGPUドライバが必要なシェーダーを自動的に再生成します。",
+        },
+        {
+          question:
+            "再ダウンロードせずにSteamゲームを別のSSDに移動する方法は？",
+          answer:
+            "Steamの設定 > ストレージを開き、移動先のドライブをライブラリに追加して対象のゲームにチェックを入れ、「移動」をクリックします。",
+        },
+        {
+          question: "Steamの「ディスク書き込みエラー」の原因は何ですか？",
+          answer:
+            "このエラーは、ドライブの物理的な空き容量不足、読み取り専用権限の適用、または不良セクタによる書き込み失敗によって発生します。",
         },
       ],
       verdict: [

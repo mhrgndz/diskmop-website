@@ -5,12 +5,13 @@ export const driveCapacityLessThanAdvertised: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
       title: "1 TB Disk Neden 931 GB Görünüyor? Eksik Kapasitenin Açıklaması",
       metaDescription:
-        "1 TB sürücü Windows'ta 931 GB görünür. Sebep kayıp alan değil, birim farkıdır: üretici 1000, Windows 1024 tabanını kullanır. Geri kalan farkı ne açıklar?",
+        "1 TB disk Windows'ta neden 931 GB görünür? Üreticilerin ondalık, işletim sisteminin ikili sayım farkını ve gerçek kullanılabilir alanı öğrenin.",
       subtitle: "Kayıp Alan Değil, Ölçü Birimi Farkı",
       intro: [
         'Kısa cevap: Kaybolan bir alan yok. Üretici 1 TB derken 1.000.000.000.000 bayt kastediyor; Windows ise aynı sayıyı 1024 tabanında bölüp "931 GB" yazıyor. Yaklaşık %7\'lik fark tamamen bu birim uyuşmazlığından kaynaklanır ve her marka, her model için aynıdır.',
@@ -103,6 +104,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Evet, aynı matematik geçerlidir. Ek olarak telefonlarda işletim sistemi ve önyüklü uygulamalar dâhili depolamada yer kaplar; bu yüzden 128 GB'lık bir telefonda kullanılabilir alan genellikle 105-112 GB civarındadır.",
         },
       ],
+      dataTable: {
+        caption:
+          "Üretici Ondalık Kapasitesi ile Windows İkili (GiB) Kapasite Karşılaştırması",
+        columns: [
+          "İlan Edilen Boyut",
+          "Üretici Bayt Sayısı",
+          "Windows'ta Görünen (GiB)",
+          "Görünürdeki 'Kayıp'",
+          "Teknik Açıklama",
+        ],
+        rows: [
+          [
+            "250 GB Disk",
+            "250.000.000.000 bayt",
+            "~232,8 GiB",
+            "~17,2 GB fark",
+            "1024^3 ikili sayı tabanına bölme farkı",
+          ],
+          [
+            "500 GB Disk",
+            "500.000.000.000 bayt",
+            "~465,6 GiB",
+            "~34,4 GB fark",
+            "1000^3 ondalık ile 1024^3 ikili sayım farkı",
+          ],
+          [
+            "1 TB Disk",
+            "1.000.000.000.000 bayt",
+            "~931,3 GiB",
+            "~68,7 GB fark",
+            "Disk 10^12 baytı tam içerir; Windows GiB hesaplar",
+          ],
+          [
+            "2 TB Disk",
+            "2.000.000.000.000 bayt",
+            "~1.862,6 GiB",
+            "~137,4 GB fark",
+            "Bölüntü tablosu ve ikili çevrim hesaplaması",
+          ],
+          [
+            "4 TB Disk",
+            "4.000.000.000.000 bayt",
+            "~3.725,2 GiB",
+            "~274,8 GB fark",
+            "Tüm depolama üreticileri ve işletim sistemleri için standarttır",
+          ],
+        ],
+      },
       verdict: [
         "1 TB diskin 931 GB görünmesi bir arıza değil, iki farklı sayma biçiminin sonucudur. Buna kurtarma bölümleri ve dosya sistemi defteri eklenince tipik bir Windows makinesinde kullanılabilir alan etiketin yaklaşık %90-92'si olur. Bu tamamen normaldir.",
         "Asıl mesele diskin ne kadar büyük olduğu değil, içinde ne olduğudur. Disk Mop'un Disk Analizi ve Disk Haritası modülleri kalan alanın nereye gittiğini klasör klasör gösterir; çoğu kullanıcı için birim farkını dert etmek yerine 30-40 GB'lık gereksiz birikintiyi temizlemek çok daha kazançlıdır.",
@@ -110,10 +159,9 @@ export const driveCapacityLessThanAdvertised: Article = {
       ctaText: "Diskinizde yeri gerçekte ne kaplıyor, görün",
     },
     en: {
-      title:
-        "Why Does a 1 TB Drive Show as 931 GB? The Missing Capacity Explained",
+      title: "Why a 1 TB Drive Shows 931 GB: Missing Space Explained",
       metaDescription:
-        "A 1 TB drive shows 931 GB in Windows. Nothing is missing: manufacturers count in 1000s, Windows divides by 1024. Here is what explains the rest of the difference.",
+        "A 1 TB drive shows 931 GB in Windows. Manufacturers count in decimal while Windows divides in binary. Learn why no disk capacity is actually lost.",
       subtitle: "Not Lost Space, a Difference in Units",
       intro: [
         'Short answer: no space is missing. When a manufacturer says 1 TB they mean 1,000,000,000,000 bytes; Windows divides that same number by 1024 and labels the result "931 GB". The roughly 7% difference comes entirely from that unit mismatch, and it is identical for every brand and model.',
@@ -206,6 +254,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Yes, the same arithmetic applies. On top of that, the operating system and preinstalled apps occupy internal storage, which is why a 128 GB phone typically shows around 105-112 GB usable.",
         },
       ],
+      dataTable: {
+        caption:
+          "Advertised decimal capacity vs actual usable binary capacity in Windows",
+        columns: [
+          "Advertised Size (Decimal)",
+          "Manufacturer Bytes",
+          "Usable in Windows (GiB)",
+          "Apparent 'Loss'",
+          "Technical Explanation",
+        ],
+        rows: [
+          [
+            "250 GB Drive",
+            "250,000,000,000 bytes",
+            "~232.8 GiB",
+            "~17.2 GB difference",
+            "Divided by 1024^3 (Binary GiB definition in Windows)",
+          ],
+          [
+            "500 GB Drive",
+            "500,000,000,000 bytes",
+            "~465.6 GiB",
+            "~34.4 GB difference",
+            "Decimal 1000^3 vs binary 1024^3 mathematical counting",
+          ],
+          [
+            "1 TB Drive",
+            "1,000,000,000,000 bytes",
+            "~931.3 GiB",
+            "~68.7 GB difference",
+            "Drive has full 10^12 bytes; Windows reports in GiB",
+          ],
+          [
+            "2 TB Drive",
+            "2,000,000,000,000 bytes",
+            "~1,862.6 GiB",
+            "~137.4 GB difference",
+            "Partition overhead and binary calculation difference",
+          ],
+          [
+            "4 TB Drive",
+            "4,000,000,000,000 bytes",
+            "~3,725.2 GiB",
+            "~274.8 GB difference",
+            "Standard across all storage vendors and operating systems",
+          ],
+        ],
+      },
       verdict: [
         "A 1 TB drive showing 931 GB is not a fault, it is the result of two different ways of counting. Add recovery partitions and filesystem bookkeeping and usable space on a typical Windows machine lands at roughly 90-92% of the label. That is entirely normal.",
         "What matters is not how big the drive is but what is inside it. Disk Mop's Disk Analysis and Disk Treemap modules show folder by folder where the remaining space went; for most people, clearing 30-40 GB of genuine clutter beats worrying about the unit difference.",
@@ -310,6 +406,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Ja, dieselbe Rechnung gilt. Zusätzlich belegen Betriebssystem und vorinstallierte Apps internen Speicher, weshalb ein 128-GB-Telefon in der Regel rund 105-112 GB nutzbar anzeigt.",
         },
       ],
+      dataTable: {
+        caption:
+          "Beworbene Dezimalkapazität im Vergleich zur nutzbaren Binärkapazität (GiB)",
+        columns: [
+          "Beworbene Größe",
+          "Hersteller-Bytes",
+          "In Windows nutzbar (GiB)",
+          "Scheinbarer 'Verlust'",
+          "Technische Erklärung",
+        ],
+        rows: [
+          [
+            "250 GB Laufwerk",
+            "250.000.000.000 Bytes",
+            "~232,8 GiB",
+            "~17,2 GB Differenz",
+            "Teilung durch 1024^3 (Binäre GiB-Berechnung in Windows)",
+          ],
+          [
+            "500 GB Laufwerk",
+            "500.000.000.000 Bytes",
+            "~465,6 GiB",
+            "~34,4 GB Differenz",
+            "Dezimal 1000^3 vs. binär 1024^3 Zählweise",
+          ],
+          [
+            "1 TB Laufwerk",
+            "1.000.000.000.000 Bytes",
+            "~931,3 GiB",
+            "~68,7 GB Differenz",
+            "Festplatte hat volle 10^12 Bytes; Windows rechnet in GiB",
+          ],
+          [
+            "2 TB Laufwerk",
+            "2.000.000.000.000 Bytes",
+            "~1.862,6 GiB",
+            "~137,4 GB Differenz",
+            "Partitionierung und binäre Präfix-Umrechnung",
+          ],
+          [
+            "4 TB Laufwerk",
+            "4.000.000.000.000 Bytes",
+            "~3.725,2 GiB",
+            "~274,8 GB Differenz",
+            "Weltweiter Standard aller Hardwarehersteller",
+          ],
+        ],
+      },
       verdict: [
         "Dass eine 1-TB-Platte 931 GB zeigt, ist kein Defekt, sondern das Ergebnis zweier Zählweisen. Rechnet man Wiederherstellungspartitionen und Dateisystemverwaltung hinzu, liegt der nutzbare Platz auf einem typischen Windows-Rechner bei etwa 90-92 % des Aufdrucks. Das ist völlig normal.",
         "Entscheidend ist nicht, wie groß die Platte ist, sondern was darauf liegt. Die Module Festplattenanalyse und Disk Treemap von Disk Mop zeigen Ordner für Ordner, wohin der restliche Platz gegangen ist; für die meisten bringt es weit mehr, 30-40 GB echten Ballast zu entfernen, als sich über den Einheitenunterschied zu ärgern.",
@@ -413,6 +557,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Oui, le même calcul s'applique. S'y ajoute le fait que le système et les applications préinstallées occupent le stockage interne, d'où les 105 à 112 Go utilisables typiques sur un téléphone de 128 Go.",
         },
       ],
+      dataTable: {
+        caption:
+          "Capacité décimale annoncée vs capacité binaire réelle affichée sous Windows",
+        columns: [
+          "Taille commerciale",
+          "Octets constructeur",
+          "Affiché sous Windows (GiB)",
+          "« Perte » apparente",
+          "Explication technique",
+        ],
+        rows: [
+          [
+            "Disque 250 GB",
+            "250 000 000 000 octets",
+            "~232,8 GiB",
+            "~17,2 GB d'écart",
+            "Division par 1024^3 (calcul binaire propre à Windows)",
+          ],
+          [
+            "Disque 500 GB",
+            "500 000 000 000 octets",
+            "~465,6 GiB",
+            "~34,4 GB d'écart",
+            "Comptage décimal (1000^3) vs binaire (1024^3)",
+          ],
+          [
+            "Disque 1 TB",
+            "1 000 000 000 000 octets",
+            "~931,3 GiB",
+            "~68,7 GB d'écart",
+            "Le disque contient bien 10^12 octets ; Windows compte en GiB",
+          ],
+          [
+            "Disque 2 TB",
+            "2 000 000 000 000 octets",
+            "~1 862,6 GiB",
+            "~137,4 GB d'écart",
+            "Structure de partition et conversion binaire",
+          ],
+          [
+            "Disque 4 TB",
+            "4 000 000 000 000 octets",
+            "~3 725,2 GiB",
+            "~274,8 GB d'écart",
+            "Standard universel du matériel informatique",
+          ],
+        ],
+      },
       verdict: [
         "Qu'un disque de 1 To affiche 931 Go n'est pas un défaut, c'est le résultat de deux façons de compter. En ajoutant les partitions de récupération et la comptabilité du système de fichiers, l'espace utilisable d'une machine Windows typique se situe autour de 90 à 92 % de l'étiquette. C'est parfaitement normal.",
         "Ce qui compte n'est pas la taille du disque mais ce qu'il contient. Les modules Analyse de disque et Disk Treemap de Disk Mop montrent dossier par dossier où est passé l'espace restant ; pour la plupart des gens, libérer 30 à 40 Go de véritable encombrement vaut mieux que de s'inquiéter d'une différence d'unités.",
@@ -517,6 +709,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Sí, se aplica la misma aritmética. Además, el sistema operativo y las apps preinstaladas ocupan almacenamiento interno, por eso un teléfono de 128 GB suele mostrar unos 105-112 GB utilizables.",
         },
       ],
+      dataTable: {
+        caption:
+          "Capacidad decimal anunciada frente a capacidad binaria real en Windows",
+        columns: [
+          "Tamaño comercial",
+          "Bytes del fabricante",
+          "Visible en Windows (GiB)",
+          "«Pérdida» aparente",
+          "Explicación técnica",
+        ],
+        rows: [
+          [
+            "Disco de 250 GB",
+            "250.000.000.000 bytes",
+            "~232,8 GiB",
+            "~17,2 GB de diferencia",
+            "División por 1024^3 (definición binaria GiB en Windows)",
+          ],
+          [
+            "Disco de 500 GB",
+            "500.000.000.000 bytes",
+            "~465,6 GiB",
+            "~34,4 GB de diferencia",
+            "Conteo decimal (1000^3) frente a binario (1024^3)",
+          ],
+          [
+            "Disco de 1 TB",
+            "1.000.000.000.000 bytes",
+            "~931,3 GiB",
+            "~68,7 GB de diferencia",
+            "El disco contiene los 10^12 bytes; Windows calcula en GiB",
+          ],
+          [
+            "Disco de 2 TB",
+            "2.000.000.000.000 bytes",
+            "~1.862,6 GiB",
+            "~137,4 GB de diferencia",
+            "Tabla de particiones y cálculo binario",
+          ],
+          [
+            "Disco de 4 TB",
+            "4.000.000.000.000 bytes",
+            "~3.725,2 GiB",
+            "~274,8 GB de diferencia",
+            "Estándar de la industria en todos los fabricantes",
+          ],
+        ],
+      },
       verdict: [
         "Que un disco de 1 TB muestre 931 GB no es un fallo, es el resultado de dos formas distintas de contar. Si sumas las particiones de recuperación y la contabilidad del sistema de archivos, el espacio utilizable en un equipo Windows típico queda en torno al 90-92 % de la etiqueta. Es completamente normal.",
         "Lo que importa no es cómo de grande es el disco, sino qué hay dentro. Los módulos Análisis de disco y Disk Treemap de Disk Mop muestran carpeta por carpeta a dónde fue el espacio restante; para la mayoría, liberar 30-40 GB de basura real compensa mucho más que preocuparse por la diferencia de unidades.",
@@ -619,6 +859,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Sì, vale la stessa aritmetica. In più, sistema operativo e app preinstallate occupano la memoria interna, ecco perché un telefono da 128 GB mostra tipicamente 105-112 GB utilizzabili.",
         },
       ],
+      dataTable: {
+        caption:
+          "Capacità decimale dichiarata contro capacità binaria utilizzabile su Windows",
+        columns: [
+          "Dimensione commerciale",
+          "Byte del produttore",
+          "Visibile in Windows (GiB)",
+          "«Perdita» apparente",
+          "Spiegazione tecnica",
+        ],
+        rows: [
+          [
+            "Disco da 250 GB",
+            "250.000.000.000 byte",
+            "~232,8 GiB",
+            "~17,2 GB di scarto",
+            "Divisione per 1024^3 (calcolo binario GiB in Windows)",
+          ],
+          [
+            "Disco da 500 GB",
+            "500.000.000.000 byte",
+            "~465,6 GiB",
+            "~34,4 GB di scarto",
+            "Differenza tra conteggio decimale 1000^3 e binario 1024^3",
+          ],
+          [
+            "Disco da 1 TB",
+            "1.000.000.000.000 byte",
+            "~931,3 GiB",
+            "~68,7 GB di scarto",
+            "Il disco possiede tutti i 10^12 byte; Windows calcola in GiB",
+          ],
+          [
+            "Disco da 2 TB",
+            "2.000.000.000.000 byte",
+            "~1.862,6 GiB",
+            "~137,4 GB di scarto",
+            "Overhead di partizionamento e calcolo binario",
+          ],
+          [
+            "Disco da 4 TB",
+            "4.000.000.000.000 byte",
+            "~3.725,2 GiB",
+            "~274,8 GB di scarto",
+            "Standard comune a tutto l'hardware di archiviazione",
+          ],
+        ],
+      },
       verdict: [
         "Che un disco da 1 TB mostri 931 GB non è un guasto, è il risultato di due modi diversi di contare. Aggiungendo partizioni di ripristino e strutture del file system, lo spazio utilizzabile su una macchina Windows tipica si attesta intorno al 90-92% dell'etichetta. È del tutto normale.",
         "Ciò che conta non è quanto è grande il disco, ma cosa c'è dentro. I moduli Analisi disco e Disk Treemap di Disk Mop mostrano cartella per cartella dove è finito lo spazio residuo; per la maggior parte delle persone liberare 30-40 GB di vero ingombro rende molto più che preoccuparsi della differenza di unità.",
@@ -721,6 +1009,54 @@ export const driveCapacityLessThanAdvertised: Article = {
             "Sim, vale a mesma conta. Além disso, o sistema operacional e os apps pré-instalados ocupam o armazenamento interno, por isso um celular de 128 GB costuma mostrar cerca de 105-112 GB utilizáveis.",
         },
       ],
+      dataTable: {
+        caption:
+          "Capacidade decimal anunciada vs capacidade binária real no Windows",
+        columns: [
+          "Tamanho comercial",
+          "Bytes do fabricante",
+          "Visível no Windows (GiB)",
+          "«Perda» aparente",
+          "Explicação técnica",
+        ],
+        rows: [
+          [
+            "Disco de 250 GB",
+            "250.000.000.000 bytes",
+            "~232,8 GiB",
+            "~17,2 GB de diferença",
+            "Divisão por 1024^3 (cálculo binário GiB no Windows)",
+          ],
+          [
+            "Disco de 500 GB",
+            "500.000.000.000 bytes",
+            "~465,6 GiB",
+            "~34,4 GB de diferença",
+            "Contagem decimal 1000^3 vs binária 1024^3",
+          ],
+          [
+            "Disco de 1 TB",
+            "1.000.000.000.000 bytes",
+            "~931,3 GiB",
+            "~68,7 GB de diferença",
+            "O disco tem os 10^12 bytes; o Windows calcula em GiB",
+          ],
+          [
+            "Disco de 2 TB",
+            "2.000.000.000.000 bytes",
+            "~1.862,6 GiB",
+            "~137,4 GB de diferença",
+            "Estrutura de partição e conversão binária",
+          ],
+          [
+            "Disco de 4 TB",
+            "4.000.000.000.000 bytes",
+            "~3.725,2 GiB",
+            "~274,8 GB de diferença",
+            "Padrão universal de todos os fabricantes",
+          ],
+        ],
+      },
       verdict: [
         "Um disco de 1 TB aparecer como 931 GB não é defeito, é o resultado de duas formas diferentes de contar. Somando partições de recuperação e a contabilidade do sistema de arquivos, o espaço utilizável numa máquina Windows típica fica em torno de 90-92% do rótulo. Isso é completamente normal.",
         "O que importa não é o tamanho do disco, mas o que há dentro dele. Os módulos Análise de disco e Disk Treemap do Disk Mop mostram pasta a pasta para onde foi o espaço restante; para a maioria das pessoas, liberar 30-40 GB de entulho real vale muito mais do que se preocupar com a diferença de unidades.",
@@ -823,6 +1159,53 @@ export const driveCapacityLessThanAdvertised: Article = {
             "はい、同じ計算が当てはまります。加えてスマートフォンでは OS とプリインストールアプリが内部ストレージを占めるため、128 GB の端末で実際に使えるのは通常 105〜112 GB 程度になります。",
         },
       ],
+      dataTable: {
+        caption: "ストレージメーカーの10進表記とWindowsの2進表記（GiB）比較表",
+        columns: [
+          "公称容量 (10進数)",
+          "メーカーのバイト総数",
+          "Windowsでの表示 (GiB)",
+          "見かけ上の「減少」",
+          "技術的な理由",
+        ],
+        rows: [
+          [
+            "250 GB ドライブ",
+            "250,000,000,000 バイト",
+            "約 232.8 GiB",
+            "約 17.2 GB 差",
+            "Windowsが1024^3（2進数のGiB）で除算して表示するため",
+          ],
+          [
+            "500 GB ドライブ",
+            "500,000,000,000 バイト",
+            "約 465.6 GiB",
+            "約 34.4 GB 差",
+            "1000^3の10進計算と1024^3の2進計算の換算差",
+          ],
+          [
+            "1 TB ドライブ",
+            "1,000,000,000,000 バイト",
+            "約 931.3 GiB",
+            "約 68.7 GB 差",
+            "物理バイト数は満額存在し、単位換算の差に過ぎない",
+          ],
+          [
+            "2 TB ドライブ",
+            "2,000,000,000,000 バイト",
+            "約 1,862.6 GiB",
+            "約 137.4 GB 差",
+            "パーティション構造と2進表記による表示差",
+          ],
+          [
+            "4 TB ドライブ",
+            "4,000,000,000,000 バイト",
+            "約 3,725.2 GiB",
+            "約 274.8 GB 差",
+            "すべてのストレージ機器およびOSにおける国際標準",
+          ],
+        ],
+      },
       verdict: [
         "1 TB のドライブが 931 GB と表示されるのは故障ではなく、2 つの異なる数え方の結果です。これに回復パーティションとファイルシステムの管理領域を加えると、一般的な Windows マシンで使える容量はラベルのおよそ 90〜92% になります。まったく正常です。",
         "重要なのはドライブの大きさではなく、中身です。Disk Mop の「ディスク解析」と Disk Treemap は、残りの容量がどこへ行ったのかをフォルダー単位で示します。多くの人にとっては、単位の差を気にするより、30〜40 GB の実際の不要データを片付けるほうがはるかに効果的です。",

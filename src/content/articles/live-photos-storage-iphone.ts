@@ -5,11 +5,11 @@ export const livePhotosStorageIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "Live Photo'lar iPhone'da Daha Fazla Yer Kaplar mı? Yalnızca Fotoğrafı Tutma",
+      title: "Live Photo'lar iPhone'da Ne Kadar Yer Kaplar? Sabitleme",
       metaDescription:
         "Her Live Photo, çoğu zaman fotoğraftan büyük kısa bir video taşır. Live'ı kapatmak neden yer açmaz, yalnızca fotoğraf nasıl tutulur ve birikme nasıl durdurulur?",
       subtitle:
@@ -147,8 +147,7 @@ export const livePhotosStorageIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "Do Live Photos Take Up More Space on iPhone? How to Keep Only the Still",
+      title: "Do Live Photos Take More Space? How to Convert to Stills",
       metaDescription:
         "Every Live Photo carries a short video that is often bigger than the photo. Why turning Live off frees nothing, how to keep only the still and stop the growth.",
       subtitle:

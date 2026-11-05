@@ -5,12 +5,11 @@ export const hidePhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone'da Fotoğraf Gizleme: Gizlenmiş Albüm mü, Kilitli ve Şifreli Kasa mı?",
+      title: "iPhone'da Fotoğraf Gizleme: Gizli Albüm mü, Kasa mı?",
       metaDescription:
         "Gizlenmiş albüm fotoğrafları kitaplıktan saklar ve Face ID ile kilitlenir, ama iCloud'a eşitlenmeye devam eder. Ayrı, şifreli bir kasa ne zaman daha iyi?",
       subtitle:
@@ -156,8 +155,7 @@ export const hidePhotosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Hide Photos on iPhone: Hidden Album vs a Locked, Encrypted Vault",
+      title: "How to Hide Photos on iPhone: Hidden Album vs Secret Vault",
       metaDescription:
         "The Hidden album keeps photos out of your library and locks with Face ID, but they still sync to iCloud. When a separate encrypted vault is the better choice.",
       subtitle:

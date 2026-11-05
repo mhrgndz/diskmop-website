@@ -5,12 +5,13 @@ export const mergeDuplicateContactsIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title: "iPhone'da Kopya Kişileri Birleştirme (Geri Yüklenebilir Yedekle)",
+      title: "iPhone Çift Kişileri Birleştirme ve Yedekleme Rehberi",
       metaDescription:
-        "iPhone yalnızca birebir aynı kişileri birleştirir. Numarası farklı biçimde iki kez kaydedilmiş kişiyi bulma, güvenle birleştirme ve gerekirse geri alma adımları.",
+        "iPhone çift kişileri birleştirme: Numarası veya adı farklı kaydedilmiş kişileri tespit etme, güvenle birleştirme ve vCard yedeği alma adımları.",
       subtitle:
         "Apple'ın Kopyalar Bulundu kartı, kaçırdıkları ve tek bir numara kaybetmeden birleştirme",
       intro: [
@@ -145,8 +146,7 @@ export const mergeDuplicateContactsIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Merge Duplicate Contacts on iPhone (With a Backup You Can Restore)",
+      title: "How to Merge Duplicate Contacts on iPhone With a Backup",
       metaDescription:
         "iPhone merges only exact duplicate contacts. Here is how to find the same person saved twice with a different number format, merge safely and undo it if needed.",
       subtitle:

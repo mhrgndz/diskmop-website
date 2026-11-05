@@ -5,14 +5,13 @@ export const uninstallLeftovers: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-18",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 6,
   content: {
     tr: {
-      title:
-        "Kaldırma Artıkları Nedir? Windows'ta Geriye Kalan Dosyaları Temizleme",
+      title: "Program Kaldırma Artıkları ve Kayıt Kütüğü Temizleme",
       metaDescription:
-        "Program kaldırdıktan sonra geriye kalan dosya ve registry kayıtlarını temizleyin. Kaldırma artıkları nedir, nasıl bulunur ve güvenle silinir? Disk Mop ile otomatik temizlik.",
+        "Program kaldırdıktan sonra geride kalan dosya ve kayıt kütüğü artıklarını temizleyin. Disk Mop ile güvenli artık temizliği rehberi.",
       subtitle:
         "Kaldırdığınız Programlardan Geriye Kalanları Bulun ve Temizleyin",
       intro: [
@@ -155,10 +154,9 @@ export const uninstallLeftovers: Article = {
       ctaText: "Disk Mop ile Artıkları Temizleyin",
     },
     en: {
-      title:
-        "What Are Uninstall Leftovers? How to Clean Residual Files on Windows",
+      title: "How to Clean Uninstall Leftovers & Residual Files on Windows",
       metaDescription:
-        "Clean up leftover files and registry entries after uninstalling programs. Learn what uninstall leftovers are, how to find them, and safely remove them with Disk Mop.",
+        "Clean up residual files and orphaned registry keys after uninstalling apps. Learn where software leftovers hide and how to delete them safely.",
       subtitle: "Find and Remove Traces Left Behind by Uninstalled Programs",
       intro: [
         'When you uninstall a program on Windows, you assume it\'s completely gone. But in most cases, files, folders, and registry entries are left behind. These "uninstall leftovers" accumulate over time, consume disk space, and slow down your system.',
@@ -307,6 +305,13 @@ export const uninstallLeftovers: Article = {
         'Wenn Sie ein Programm unter Windows deinstallieren, denken Sie, es sei vollständig entfernt. In den meisten Fällen bleiben jedoch Dateien, Ordner und Registry-Einträge zurück. Diese „Deinstallationsreste" sammeln sich mit der Zeit an, belegen Speicherplatz und verlangsamen Ihr System.',
         "Mit Disk Mop v1.0.15 benötigen Sie kein separates Tool mehr. Der neue Deinstallationsreste-Reiniger erkennt automatisch verwaiste Ordner und Registry-Einträge.",
       ],
+      keyTakeaways: [
+        "Die Deinstallation von Apps über die Windows-Systemsteuerung hinterlässt häufig Gigabytes an verwaisten Dateien in AppData, ProgramData und der Windows-Registrierung.",
+        "Verbleibende Datenreste können auf typischen PCs zwischen 5 GB und über 50 GB wertvollen Speicherplatz belegen.",
+        "Zu den Haupt-Hotspots für Datenreste gehören %localappdata%, %appdata%, C:\\ProgramData und der Registrierungszweig HKCU\\Software.",
+        "Der DiskMop-Bereiniger für Deinstallationsreste gleicht die Windows-Registrierung ab, um verwaiste Ordner entfernter Software automatisch aufzuspüren.",
+        "Eine intelligente Whitelist schützt kritische Systemdateien und Gerätetreiber von Microsoft, Intel, NVIDIA, AMD und OEM-Herstellern zuverlässig.",
+      ],
       sections: [
         {
           title: "Warum entstehen Deinstallationsreste?",
@@ -341,6 +346,93 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So bereinigen Sie Deinstallationsreste in Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "DiskMop-Reste-Bereiniger öffnen",
+            text: "Starten Sie DiskMop und navigieren Sie in der Seitenleiste zum Werkzeug 'Uninstall Leftovers Cleaner'.",
+          },
+          {
+            name: "Nach verwaisten Dateien und Schlüsseln scannen",
+            text: "Klicken Sie auf 'Scannen', um AppData, ProgramData und die Windows-Registrierung auf Rückstände deinstallierter Software zu untersuchen.",
+          },
+          {
+            name: "Gefundene Ordner überprüfen",
+            text: "Prüfen Sie die nach Dateien und Registrierung gruppierten Scanergebnisse und nutzen Sie Suchfilter, um bestimmte Anwendungen einzugrenzen.",
+          },
+          {
+            name: "Sichere Löschung ausführen",
+            text: "Wählen Sie nicht mehr benötigte Reste aus und bestätigen Sie das Entfernen, um sofort wertvollen Festplattenspeicher freizugeben.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Typische Speicherorte und Datenmengen von Deinstallationsrückständen",
+        columns: [
+          "Verzeichnis",
+          "Restdatentyp",
+          "Typische Größe",
+          "Schwierigkeit der manuellen Entfernung",
+          "DiskMop-Schutzfunktion",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Caches, temporäre Downloads, lokale Laufzeitdateien",
+            "2 GB – 20 GB",
+            "Mittel (Versteckter Ordner)",
+            "Automatische Zuordnung verwaister Ordner",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Benutzerprofile, benutzerdefinierte Vorlagen, Plugin-Daten",
+            "1 GB – 10 GB",
+            "Mittel",
+            "Abgleich mit deinstallierten Herstellern",
+          ],
+          [
+            "C:\\ProgramData",
+            "Gemeinsame systemweite Programmeinstellungen",
+            "2 GB – 15 GB",
+            "Hoch (Erfordert Administratorrechte)",
+            "Gefiltert gegen System-Whitelist",
+          ],
+          [
+            "Windows-Registrierung",
+            "Veraltete Schlüssel in HKCU\\Software & HKLM\\SOFTWARE",
+            "< 100 MB",
+            "Sehr hoch (Gefahr von Registrierungsfehlern)",
+            "Sicheres Entfernen verwaister Schlüssel",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Warum hinterlassen Programme nach der Deinstallation Dateien?",
+          answer:
+            "Standardmäßige Deinstallationsprogramme behalten Benutzereinstellungen, Lizenzschlüssel und Caches in AppData oft absichtlich oder aufgrund unvollständiger Deinstallationsskripte bei.",
+        },
+        {
+          question: "Ist es sicher, Ordner in AppData zu löschen?",
+          answer:
+            "Ja, vorausgesetzt, diese Ordner gehören zu Software, die Sie bereits deinstalliert haben und nicht mehr verwenden. Löschen Sie niemals Ordner aktiver Anwendungen.",
+        },
+        {
+          question: "Können verbleibende Dateien Windows verlangsamen?",
+          answer:
+            "Obwohl inaktive Dateien keine CPU-Last erzeugen, führt ein volles Laufwerk C: zu verringerter SSD-Schreibleistung, höherer Fragmentierung und verlangsamten Startroutinen.",
+        },
+        {
+          question:
+            "Wie verhindert DiskMop das Löschen wichtiger Systemdateien?",
+          answer:
+            "DiskMop nutzt ein intelligentes Whitelist-System, das lebenswichtige Verzeichnisse und Registrierungseinträge von Microsoft, Windows, NVIDIA, Intel und Hardware-OEMs strikt schützt.",
+        },
+      ],
       verdict: [
         "Deinstallationsreste sind eines der am meisten übersehenen Speicherplatzprobleme für Windows-Benutzer.",
         "Der Deinstallationsreste-Reiniger in Disk Mop v1.0.15 löst dieses Problem mit einem Klick. Er bereinigt sicher verwaiste Ordner und Registry-Einträge und schützt Systemdateien mit einer intelligenten Whitelist. Verfügbar in 8 Sprachen.",
@@ -358,6 +450,13 @@ export const uninstallLeftovers: Article = {
       intro: [
         "Lorsque vous désinstallez un programme sous Windows, vous pensez qu'il a complètement disparu. Mais dans la plupart des cas, des fichiers, des dossiers et des entrées de registre restent. Ces « résidus de désinstallation » s'accumulent, occupent de l'espace disque et ralentissent votre système.",
         "Avec Disk Mop v1.0.15, vous n'avez plus besoin d'un programme séparé. Le nouveau Nettoyeur de résidus détecte automatiquement les dossiers orphelins et les entrées de registre.",
+      ],
+      keyTakeaways: [
+        "La désinstallation d'applications via le Panneau de configuration Windows laisse fréquemment des gigaoctets de fichiers orphelins dans AppData, ProgramData et le Registre.",
+        "Ces résidus de programmes peuvent monopoliser entre 5 Go et plus de 50 Go d'espace de stockage sur un ordinateur classique.",
+        "Les zones d'accumulation principales incluent %localappdata%, %appdata%, C:\\ProgramData et la ruche de registre HKCU\\Software.",
+        "Le nettoyeur de résidus DiskMop croise les données du Registre Windows pour localiser automatiquement les répertoires orphelins liés aux logiciels supprimés.",
+        "Une liste blanche intelligente protège les fichiers système essentiels et les pilotes Microsoft, Intel, NVIDIA, AMD et des fabricants d'ordinateurs.",
       ],
       sections: [
         {
@@ -393,6 +492,94 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment nettoyer les résidus de désinstallation sous Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Ouvrir l'outil de nettoyage de résidus DiskMop",
+            text: "Lancez DiskMop et accédez au module 'Uninstall Leftovers Cleaner' dans le menu latéral.",
+          },
+          {
+            name: "Analyser les fichiers et clés orphelines",
+            text: "Cliquez sur 'Analyser' pour inspecter AppData, ProgramData et le Registre Windows afin de déceler les résidus de logiciels désinstallés.",
+          },
+          {
+            name: "Passer en revue les éléments détectés",
+            text: "Examinez les résultats regroupés par fichiers et registre, en utilisant les filtres de recherche pour cibler des programmes spécifiques.",
+          },
+          {
+            name: "Exécuter la suppression sécurisée",
+            text: "Sélectionnez les restes inutiles et confirmez la suppression pour libérer instantanément de l'espace disque.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Emplacements fréquents des résidus de désinstallation et volume de stockage occupé",
+        columns: [
+          "Emplacement du répertoire",
+          "Type de données résiduelles",
+          "Taille typique",
+          "Difficulté de suppression manuelle",
+          "Protection DiskMop",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Caches, téléchargements temporaires, états d'exécution locaux",
+            "2 Go – 20 Go",
+            "Moyenne (Dossier masqué)",
+            "Détection automatique des dossiers orphelins",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Profils utilisateur, modèles personnalisés, données de plugins",
+            "1 Go – 10 Go",
+            "Moyenne",
+            "Recoupement avec les éditeurs désinstallés",
+          ],
+          [
+            "C:\\ProgramData",
+            "Paramètres partagés à l'échelle de la machine",
+            "2 Go – 15 Go",
+            "Élevée (Nécessite des droits d'administrateur)",
+            "Filtrage automatique par liste blanche système",
+          ],
+          [
+            "Registre Windows",
+            "Clés obsolètes dans HKCU\\Software et HKLM\\SOFTWARE",
+            "< 100 Mo",
+            "Très élevée (Risque de corruption du registre)",
+            "Purge sécurisée des clés orphelines",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Pourquoi les programmes laissent-ils des fichiers après leur désinstallation ?",
+          answer:
+            "Les désinstalleurs standards conservent souvent les préférences utilisateur, clés de licence et caches dans AppData, délibérément ou en raison de scripts de désinstallation négligents.",
+        },
+        {
+          question:
+            "Peut-on supprimer des dossiers dans AppData en toute sécurité ?",
+          answer:
+            "Oui, à condition que ces dossiers appartiennent à des logiciels déjà désinstallés que vous n'utilisez plus. Ne supprimez jamais les dossiers d'applications encore installées.",
+        },
+        {
+          question: "Les fichiers résiduels peuvent-ils ralentir Windows ?",
+          answer:
+            "Bien que ces fichiers inactifs ne sollicitent pas le processeur, saturer le lecteur C: dégrade les performances d'écriture des SSD, accentue la fragmentation et ralentit le démarrage.",
+        },
+        {
+          question:
+            "Comment DiskMop empêche-t-il la suppression de fichiers système vitaux ?",
+          answer:
+            "DiskMop intègre une liste blanche stricte qui protège les répertoires et entrées de registre fondamentaux de Microsoft, Windows, NVIDIA, Intel et des constructeurs OEM.",
+        },
+      ],
       verdict: [
         "Les résidus de désinstallation sont l'un des problèmes d'espace disque les plus négligés pour les utilisateurs Windows.",
         "Le Nettoyeur de résidus dans Disk Mop v1.0.15 résout ce problème en un clic. Disponible en 8 langues et activé avec une licence PRO.",
@@ -410,6 +597,13 @@ export const uninstallLeftovers: Article = {
       intro: [
         'Cuando desinstalas un programa en Windows, asumes que ha desaparecido por completo. Pero en la mayoría de los casos, quedan archivos, carpetas y entradas de registro. Estos "residuos de desinstalación" se acumulan, ocupan espacio en disco y ralentizan tu sistema.',
         "Con Disk Mop v1.0.15, ya no necesitas un programa separado. El nuevo Limpiador de residuos detecta automáticamente carpetas huérfanas y entradas de registro.",
+      ],
+      keyTakeaways: [
+        "Desinstalar aplicaciones mediante el Panel de control de Windows suele dejar gigabytes de archivos huérfanos en AppData, ProgramData y claves del Registro.",
+        "Los datos residuales de programas desinstalados pueden consumir entre 5 GB y más de 50 GB de almacenamiento en equipos convencionales.",
+        "Los puntos clave de acumulación residual son %localappdata%, %appdata%, C:\\ProgramData y la rama HKCU\\Software del Registro.",
+        "El limpiador de residuos de DiskMop coteja el Registro de Windows para localizar automáticamente carpetas huérfanas de programas eliminados.",
+        "Una lista blanca inteligente protege rigurosamente archivos esenciales del sistema y controladores de Microsoft, Intel, NVIDIA, AMD y fabricantes OEM.",
       ],
       sections: [
         {
@@ -445,6 +639,92 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo limpiar restos de desinstalación en Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Abrir el limpiador de residuos de DiskMop",
+            text: "Inicie DiskMop y seleccione la herramienta 'Uninstall Leftovers Cleaner' en la barra lateral.",
+          },
+          {
+            name: "Escanear en busca de archivos y claves huérfanas",
+            text: "Haga clic en 'Escanear' para inspeccionar AppData, ProgramData y el Registro de Windows en busca de restos de software.",
+          },
+          {
+            name: "Revisar las carpetas detectadas",
+            text: "Examine los resultados agrupados por Archivos y Registro, utilizando filtros de búsqueda para localizar aplicaciones específicas.",
+          },
+          {
+            name: "Ejecutar la eliminación segura",
+            text: "Seleccione los restos innecesarios y confirme la eliminación para recuperar espacio de almacenamiento de inmediato.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Ubicaciones habituales de restos de desinstalación y espacio ocupado",
+        columns: [
+          "Ubicación del directorio",
+          "Tipo de datos residuales",
+          "Tamaño habitual",
+          "Dificultad de eliminación manual",
+          "Protección de DiskMop",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Cachés, descargas temporales, estados de ejecución locales",
+            "2 GB – 20 GB",
+            "Moderada (Carpeta oculta)",
+            "Mapeo automático de carpetas huérfanas",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Perfiles de usuario, plantillas personalizadas, datos de complementos",
+            "1 GB – 10 GB",
+            "Moderada",
+            "Cotejo cruzado con desarrolladores desinstalados",
+          ],
+          [
+            "C:\\ProgramData",
+            "Configuraciones compartidas a nivel de sistema",
+            "2 GB – 15 GB",
+            "Alta (Requiere permisos de administrador)",
+            "Filtrado mediante lista blanca del sistema",
+          ],
+          [
+            "Registro de Windows",
+            "Claves obsoletas en HKCU\\Software y HKLM\\SOFTWARE",
+            "< 100 MB",
+            "Muy alta (Riesgo de dañar el registro)",
+            "Limpieza segura de claves huérfanas",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Por qué los programas dejan archivos tras desinstalarse?",
+          answer:
+            "Los desinstaladores habituales suelen conservar preferencias de usuario, claves de licencia y cachés en AppData, ya sea de forma deliberada o por scripts mal diseñados.",
+        },
+        {
+          question: "¿Es seguro eliminar carpetas en AppData?",
+          answer:
+            "Sí, siempre que esas carpetas correspondan a software que ya ha desinstalado y ya no utiliza. Nunca elimine carpetas de programas en uso.",
+        },
+        {
+          question: "¿Pueden los archivos residuales ralentizar Windows?",
+          answer:
+            "Aunque los archivos inactivos no consumen ciclos de CPU, llenar la unidad C: degrada la velocidad de escritura del SSD, incrementa la fragmentación y ralentiza el arranque.",
+        },
+        {
+          question:
+            "¿Cómo previene DiskMop la eliminación de archivos esenciales del sistema?",
+          answer:
+            "DiskMop utiliza un sistema de lista blanca inteligente que preserva directorios y entradas de registro críticos de Microsoft, Windows, NVIDIA, Intel y fabricantes de hardware.",
+        },
+      ],
       verdict: [
         "Los residuos de desinstalación son uno de los problemas de espacio en disco más ignorados por los usuarios de Windows.",
         "El Limpiador de residuos en Disk Mop v1.0.15 resuelve esto con un clic. Disponible en 8 idiomas y activado con licencia PRO.",
@@ -462,6 +742,13 @@ export const uninstallLeftovers: Article = {
       intro: [
         'Quando disinstalli un programma su Windows, pensi che sia completamente sparito. Ma nella maggior parte dei casi, restano file, cartelle e voci di registro. Questi "residui di disinstallazione" si accumulano, occupano spazio su disco e rallentano il sistema.',
         "Con Disk Mop v1.0.15, non hai più bisogno di un programma separato. Il nuovo Pulitore di residui rileva automaticamente cartelle orfane e voci di registro.",
+      ],
+      keyTakeaways: [
+        "La disinstallazione delle app tramite il Pannello di controllo di Windows lascia spesso gigabyte di file orfani in AppData, ProgramData e nel Registro.",
+        "I dati residui possono occupare tra 5 GB e oltre 50 GB di spazio di archiviazione nelle normali installazioni PC.",
+        "Le posizioni principali dei residui includono %localappdata%, %appdata%, C:\\ProgramData e il ramo HKCU\\Software del Registro.",
+        "Il modulo di rimozione residui di DiskMop incrocia il Registro di Windows per individuare automaticamente le cartelle orfane dei programmi rimossi.",
+        "Una whitelist intelligente protegge con cura i file di sistema e i driver critici di Microsoft, Intel, NVIDIA, AMD e produttori OEM.",
       ],
       sections: [
         {
@@ -497,6 +784,93 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come rimuovere i residui di disinstallazione in Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Aprire il modulo pulizia residui di DiskMop",
+            text: "Avvia DiskMop e seleziona lo strumento 'Uninstall Leftovers Cleaner' dalla barra laterale.",
+          },
+          {
+            name: "Scansionare file e chiavi orfane",
+            text: "Fai clic su 'Scansiona' per ispezionare AppData, ProgramData e il Registro di Windows alla ricerca di residui di software disinstallato.",
+          },
+          {
+            name: "Esaminare le cartelle rilevate",
+            text: "Controlla i risultati raggruppati per File e Registro, utilizzando i filtri di ricerca per individuare applicazioni specifiche.",
+          },
+          {
+            name: "Eseguire l'eliminazione sicura",
+            text: "Seleziona i residui non necessari e conferma la rimozione per recuperare spazio su disco all'istante.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Percorsi più comuni dei residui di disinstallazione e relativo ingombro",
+        columns: [
+          "Percorso della cartella",
+          "Tipo di dati residui",
+          "Dimensioni tipiche",
+          "Difficoltà rimozione manuale",
+          "Protezione DiskMop",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Cache, download temporanei, stati di runtime locali",
+            "2 GB – 20 GB",
+            "Media (Cartella nascosta)",
+            "Mappatura automatica delle cartelle orfane",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Profili utente, modelli personalizzati, dati dei plugin",
+            "1 GB – 10 GB",
+            "Media",
+            "Controllo incrociato con i produttori disinstallati",
+          ],
+          [
+            "C:\\ProgramData",
+            "Impostazioni di programma condivise a livello di sistema",
+            "2 GB – 15 GB",
+            "Alta (Richiede autorizzazioni di amministratore)",
+            "Filtraggio tramite whitelist di sistema",
+          ],
+          [
+            "Registro di Windows",
+            "Chiavi obsolete in HKCU\\Software e HKLM\\SOFTWARE",
+            "< 100 MB",
+            "Molto alta (Rischio di corruzione del registro)",
+            "Rimozione sicura delle chiavi orfane",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Perché i programmi lasciano file dopo la disinstallazione?",
+          answer:
+            "I programmi di disinstallazione standard spesso conservano preferenze utente, licenze e file di cache in AppData, intenzionalmente o per via di script imprecisi.",
+        },
+        {
+          question: "È sicuro eliminare le cartelle in AppData?",
+          answer:
+            "Sì, a patto che appartengano a software già disinstallato e non più in uso. Non eliminare mai cartelle riconducibili ad applicazioni attive.",
+        },
+        {
+          question: "I file residui possono rallentare Windows?",
+          answer:
+            "Anche se i file inattivi non consumano CPU, riempire l'unità C: riduce le prestazioni di scrittura degli SSD, aumenta la frammentazione e appesantisce l'avvio.",
+        },
+        {
+          question:
+            "In che modo DiskMop impedisce l'eliminazione di file di sistema importanti?",
+          answer:
+            "DiskMop adotta un sistema di whitelist intelligente che salvaguarda directory e voci di registro vitali di Microsoft, Windows, NVIDIA, Intel e produttori hardware.",
+        },
+      ],
       verdict: [
         "I residui di disinstallazione sono uno dei problemi di spazio su disco più trascurati dagli utenti Windows.",
         "Il Pulitore di residui in Disk Mop v1.0.15 risolve questo con un clic. Disponibile in 8 lingue e attivato con licenza PRO.",
@@ -514,6 +888,13 @@ export const uninstallLeftovers: Article = {
       intro: [
         'Quando você desinstala um programa no Windows, assume que ele foi completamente removido. Mas na maioria dos casos, arquivos, pastas e entradas de registro ficam para trás. Esses "resíduos de desinstalação" se acumulam, ocupam espaço em disco e deixam seu sistema mais lento.',
         "Com o Disk Mop v1.0.15, você não precisa mais de um programa separado. O novo Limpador de resíduos detecta automaticamente pastas órfãs e entradas de registro.",
+      ],
+      keyTakeaways: [
+        "Desinstalar aplicativos pelo Painel de Controle do Windows costuma deixar gigabytes de arquivos órfãos em AppData, ProgramData e chaves do Registro.",
+        "Os dados residuais de programas removidos podem consumir entre 5 GB e mais de 50 GB de espaço em instalações normais de PC.",
+        "Os principais locais de acúmulo residual incluem %localappdata%, %appdata%, C:\\ProgramData e o hive de registro HKCU\\Software.",
+        "O limpador de sobras de desinstalação do DiskMop cruza referências com o Registro do Windows para encontrar diretórios órfãos automaticamente.",
+        "Uma lista de permissões (whitelist) inteligente protege arquivos vitais do sistema e drivers da Microsoft, Intel, NVIDIA, AMD e fabricantes OEM.",
       ],
       sections: [
         {
@@ -549,6 +930,93 @@ export const uninstallLeftovers: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar sobras de desinstalação no Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Abrir o limpador de sobras do DiskMop",
+            text: "Abra o DiskMop e navegue até a ferramenta 'Uninstall Leftovers Cleaner' na barra lateral.",
+          },
+          {
+            name: "Verificar arquivos e chaves órfãs",
+            text: "Clique em 'Escanear' para analisar AppData, ProgramData e o Registro do Windows em busca de sobras de softwares.",
+          },
+          {
+            name: "Examinar as pastas detectadas",
+            text: "Analise os resultados agrupados por Arquivos e Registro, utilizando filtros de busca para localizar programas específicos.",
+          },
+          {
+            name: "Executar a remoção segura",
+            text: "Selecione as sobras desnecessárias e confirme a exclusão para recuperar espaço em disco imediatamente.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Locais comuns de sobras de desinstalação e espaço de armazenamento ocupado",
+        columns: [
+          "Local do diretório",
+          "Tipo de dados residuais",
+          "Tamanho típico",
+          "Dificuldade de remoção manual",
+          "Proteção do DiskMop",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "Caches, downloads temporários, arquivos de tempo de execução locais",
+            "2 GB – 20 GB",
+            "Média (Pasta oculta)",
+            "Mapeamento automático de pastas órfãs",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "Perfis de usuário, modelos personalizados, dados de plugins",
+            "1 GB – 10 GB",
+            "Média",
+            "Cruzamento com registros de fornecedores desinstalados",
+          ],
+          [
+            "C:\\ProgramData",
+            "Configurações de programas compartilhadas por toda a máquina",
+            "2 GB – 15 GB",
+            "Alta (Exige privilégios de administrador)",
+            "Filtrado contra whitelist de segurança do sistema",
+          ],
+          [
+            "Registro do Windows",
+            "Chaves obsoletas em HKCU\\Software e HKLM\\SOFTWARE",
+            "< 100 MB",
+            "Muito alta (Risco de corrupção do registro)",
+            "Limpeza segura de chaves órfãs",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Por que os programas deixam arquivos para trás após serem desinstalados?",
+          answer:
+            "Desinstaladores convencionais costumam preservar preferências de usuário, chaves de licença e caches em AppData de propósito ou por scripts de remoção deficientes.",
+        },
+        {
+          question: "É seguro excluir pastas dentro de AppData?",
+          answer:
+            "Sim, desde que essas pastas pertençam a softwares já desinstalados que você não utiliza mais. Nunca exclua pastas de aplicativos ativos.",
+        },
+        {
+          question: "Arquivos residuais podem deixar o Windows lento?",
+          answer:
+            "Embora arquivos inativos não usem processador, encher a unidade C: prejudica a velocidade de gravação do SSD, aumenta a fragmentação e retarda o boot.",
+        },
+        {
+          question:
+            "Como o DiskMop evita excluir arquivos essenciais do sistema?",
+          answer:
+            "O DiskMop utiliza um sistema de whitelist inteligente que protege pastas e entradas do Registro vitais da Microsoft, Windows, NVIDIA, Intel e fabricantes de hardware.",
+        },
+      ],
       verdict: [
         "Resíduos de desinstalação são um dos problemas de espaço em disco mais ignorados pelos usuários do Windows.",
         "O Limpador de resíduos no Disk Mop v1.0.15 resolve isso com um clique. Disponível em 8 idiomas e ativado com licença PRO.",
@@ -565,6 +1033,13 @@ export const uninstallLeftovers: Article = {
       intro: [
         "Windowsでプログラムをアンインストールすると、完全に削除されたと思いがちです。しかし、ほとんどの場合、ファイル、フォルダ、レジストリエントリが残ります。これらの「アンインストール残留物」は時間とともに蓄積し、ディスク容量を消費し、システムを遅くします。",
         "Disk Mop v1.0.15では、別のプログラムは不要です。新しいアンインストール残留物クリーナーが、孤立したフォルダとレジストリエントリを自動的に検出します。",
+      ],
+      keyTakeaways: [
+        "Windowsのコントロールパネルからアプリを削除しても、AppData、ProgramData、レジストリ内に数ギガバイトもの残留ファイルが残されることがよくあります。",
+        "一般的なPC環境では、アンインストール後の残留データだけで5GB〜50GB以上のストレージ容量が無駄に占有されています。",
+        "主な残留データの蓄積場所は、%localappdata%、%appdata%、C:\\ProgramData、およびHKCU\\Softwareレジストリハイブです。",
+        "DiskMopの残留ファイルクリーナーは、Windowsレジストリと照合して、削除済みソフトウェアの不要な孤立フォルダーを自動検出します。",
+        "スマートホワイトリスト機能により、Microsoft、Intel、NVIDIA、AMD、および各PCメーカーの重要なシステムファイルやドライバーを確実に保護します。",
       ],
       sections: [
         {
@@ -598,6 +1073,93 @@ export const uninstallLeftovers: Article = {
             "レジストリの残留物はサイズは小さいですが、クリーンなレジストリはシステムの全体的な健全性にとって重要です。",
             "Disk Mopのサマリーカードは、孤立フォルダの総数、レジストリエントリ数、合計サイズを一目で表示します。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windowsでアンインストールの残留ファイルを完全に削除する方法",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "DiskMopの残留クリーナーを開く",
+            text: "DiskMopを起動し、サイドバーから「Uninstall Leftovers Cleaner」ツールを選択します。",
+          },
+          {
+            name: "孤立ファイルとレジストリキーをスキャンする",
+            text: "「スキャン」をクリックして、AppData、ProgramData、Windowsレジストリ内のアンインストール済みソフトウェアの痕跡を調査します。",
+          },
+          {
+            name: "検出されたフォルダーを確認する",
+            text: "ファイル別およびレジストリ別に分類されたスキャン結果を確認し、検索フィルターを使って特定のアプリを絞り込みます。",
+          },
+          {
+            name: "安全な削除を実行する",
+            text: "不要な残留項目を選択し、確認ダイアログから削除を実行して、ディスク容量を即座に解放します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "アンインストール残留ファイルの主な保存場所と専有ストレージ容量",
+        columns: [
+          "フォルダーの場所",
+          "残留データの種類",
+          "一般的なサイズ",
+          "手動削除の難易度",
+          "DiskMopの保護機構",
+        ],
+        rows: [
+          [
+            "%localappdata%",
+            "キャッシュ、一時ダウンロードファイル、ローカル実行ステート",
+            "2 GB – 20 GB",
+            "中（隠しフォルダー）",
+            "孤立フォルダーの自動検出・マッピング",
+          ],
+          [
+            "%appdata% (Roaming)",
+            "ユーザープロファイル、カスタムテンプレート、プラグインデータ",
+            "1 GB – 10 GB",
+            "中",
+            "削除済みベンダー情報のクロス照合",
+          ],
+          [
+            "C:\\ProgramData",
+            "マシン全体で共有されるプログラム設定ファイル",
+            "2 GB – 15 GB",
+            "高（管理者権限が必要）",
+            "システムホワイトリストによる除外フィルタリング",
+          ],
+          [
+            "Windowsレジストリ",
+            "HKCU\\SoftwareおよびHKLM\\SOFTWARE内の無効なキー",
+            "< 100 MB",
+            "極めて高（レジストリ破損のリスク）",
+            "孤立した不要キーの安全な整理・削除",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "なぜプログラムはアンインストール後もファイルを残すのですか？",
+          answer:
+            "標準的なアンインストーラーは、再インストール時の利便性のためにユーザー設定、ライセンス情報、キャッシュを意図的に残す設計になっているか、スクリプトの作りが不十分なことが多いためです。",
+        },
+        {
+          question: "AppData内のフォルダーを削除しても安全ですか？",
+          answer:
+            "すでにアンインストール済みで、今後使用しないアプリのフォルダーであれば安全に削除できます。現在使用中のアプリのフォルダーは絶対に削除しないでください。",
+        },
+        {
+          question: "残留ファイルによってWindowsの動作が重くなりますか？",
+          answer:
+            "放置されたファイル自体がCPUを消費することはありませんが、Cドライブの空き容量が逼迫するとSSDの書き込み速度が低下し、ファイルの断片化や起動時の遅延を引き起こします。",
+        },
+        {
+          question:
+            "DiskMopは重要なシステムファイルの誤削除をどのように防止しますか？",
+          answer:
+            "DiskMopは包括的なスマートホワイトリストを搭載しており、Microsoft、Windows、NVIDIA、Intel、主要OEMベンダーの重要フォルダーやレジストリエントリを自動的に除外・保護します。",
         },
       ],
       verdict: [

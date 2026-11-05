@@ -5,7 +5,7 @@ export const windowsOldFolder: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-17",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -347,6 +347,13 @@ export const windowsOldFolder: Article = {
         "In diesem Leitfaden erklären wir zunächst, was Windows.old ist und warum es den Ordner überhaupt gibt, und zeigen dann beide Löschwege Schritt für Schritt: die Datenträgerbereinigung und die Speicheroptimierung. Dazu kommt die Kommandozeilen-Lösung für den hartnäckigen Fall, dass sich Windows.old einfach nicht löschen lässt, egal was Sie versuchen.",
         "Zum Schluss sehen wir uns an, welche versteckten Dateien ein Upgrade sonst noch hinterlässt und wie Sie Ihr C:-Laufwerk nach jedem großen Update dauerhaft schlank halten.",
       ],
+      keyTakeaways: [
+        "Der Ordner 'Windows.old' ist eine vollständige Backup-Kopie Ihres vorherigen Betriebssystems, die bei großen Windows-Funktionsupdates erstellt wird.",
+        "Das Löschen von Windows.old ist zu 100 % sicher, wenn Ihr aktuelles Windows 11 stabil läuft und Sie kein Rollback durchführen möchten.",
+        "Ziehen Sie Windows.old niemals im Datei-Explorer in den Papierkorb; nutzen Sie stattdessen die Datenträgerbereinigung ('Systemdateien bereinigen') oder die Speicheroptimierung.",
+        "Das Entfernen von Windows.old gibt auf dem Laufwerk C: sofort zwischen 10 GB und über 35 GB wertvollen SSD-Speicherplatz frei.",
+        "Falls Windows das Löschen wegen Berechtigungssperren verweigert, heben die Konsolenbefehle 'takeown' und 'icacls' mit Administratorrechten alle Systemsperren auf.",
+      ],
       sections: [
         {
           title: "Was ist der Windows.old Ordner und warum existiert er?",
@@ -407,6 +414,90 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So löschen Sie den Ordner Windows.old sicher",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Datenträgerbereinigung starten",
+            text: "Drücken Sie Win+R, tippen Sie 'cleanmgr' ein, drücken Sie Enter und wählen Sie Laufwerk C: aus.",
+          },
+          {
+            name: "Auf 'Systemdateien bereinigen' klicken",
+            text: "Klicken Sie unten links auf 'Systemdateien bereinigen' und bestätigen Sie bei erneuter Aufforderung erneut Laufwerk C:.",
+          },
+          {
+            name: "Vorherige Windows-Installationen auswählen",
+            text: "Scrollen Sie durch die Liste und setzen Sie ein Häkchen bei 'Vorherige Windows-Installation(en)' sowie 'Temporäre Windows-Installationsdateien'.",
+          },
+          {
+            name: "Bereinigung ausführen",
+            text: "Klicken Sie auf OK und bestätigen Sie mit 'Dateien löschen', um den Ordner Windows.old endgültig zu entfernen.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Spezifikationen, Speicherbedarf und Bereinigungsmethoden des Ordners Windows.old",
+        columns: ["Parameter", "Detail", "Bedeutung", "Empfohlene Maßnahme"],
+        rows: [
+          [
+            "Ordnerpfad",
+            "C:\\Windows.old",
+            "Internes Betriebssystem-Backup",
+            "Über cleanmgr oder Speicheroptimierung bereinigen",
+          ],
+          [
+            "Typischer Speicherbedarf",
+            "10 GB – 35+ GB",
+            "Größter Einzelfresser auf Laufwerk C:",
+            "Gefahrlos löschen, wenn das System stabil läuft",
+          ],
+          [
+            "Automatisches Löschfenster",
+            "10 Tage nach dem Upgrade",
+            "Zeitfenster für einfache Rückkehr",
+            "Bei knappem Speicherplatz sofort manuell entfernen",
+          ],
+          [
+            "Persönliche Dateien retten",
+            "C:\\Windows.old\\Benutzer",
+            "Alte Desktop- & Dokumentdateien",
+            "Vor dem Löschen prüfen und wichtige Daten sichern",
+          ],
+          [
+            "Rollback-Funktion",
+            "Einstellungen > System > Wiederherstellung",
+            "1-Klick-Rückkehr zum alten OS",
+            "Wird mit dem Löschen des Ordners dauerhaft deaktiviert",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Schadet das Löschen des Ordners Windows.old meinem Computer?",
+          answer:
+            "Nein. Es schadet Ihrem aktuellen Betriebssystem in keiner Weise. Es entfernt lediglich die Möglichkeit, über die Einstellungen zur vorherigen Windows-Version zurückzukehren.",
+        },
+        {
+          question: "Löscht Windows den Ordner Windows.old automatisch?",
+          answer:
+            "Ja, Windows 11 löscht den Ordner Windows.old nach 10 Tagen automatisch im Rahmen integrierter Systemwartungsaufgaben.",
+        },
+        {
+          question:
+            "Was kann ich tun, wenn sich Windows.old nicht löschen lässt?",
+          answer:
+            "Öffnen Sie die Eingabeaufforderung als Administrator und führen Sie 'takeown /F C:\\Windows.old /R /A /D Y' gefolgt von 'rd /S /Q C:\\Windows.old' aus.",
+        },
+        {
+          question:
+            "Kann ich persönliche Dateien aus Windows.old wiederherstellen?",
+          answer:
+            "Ja. Bevor Sie den Ordner löschen, navigieren Sie zu C:\\Windows.old\\Benutzer\\[IhrBenutzername], um Desktop, Dokumente oder Downloads zu sichern.",
+        },
+      ],
       verdict: [
         "Den Windows.old Ordner zu löschen ist sicher und sinnvoll, sobald feststeht, dass Sie nicht zurückwechseln wollen. Datenträgerbereinigung oder die Speicheroptionen in den Einstellungen erledigen den Großteil, und für hartnäckige Reste steht der Kommandozeilenweg mit takeown, icacls und rd bereit. Allein dieser Schritt kann Dutzende Gigabytes auf dem C:-Laufwerk freigeben.",
         "Um alles Übrige zu finden, was das Upgrade hinterlassen hat, und das Laufwerk langfristig schlank zu halten, ist Disk Mop ein praktischer Begleiter. Festplattenanalyse, Große-Dateien-Finder, Cache-Bereiniger und geplante Bereinigung sind in einer einmaligen Lifetime-Lizenz für 19,90 $ enthalten — ganz ohne Abo.",
@@ -424,6 +515,13 @@ export const windowsOldFolder: Article = {
         "Réponse courte : oui, supprimer le dossier Windows.old est sans danger — à condition de ne pas envisager un retour à votre version précédente de Windows. Ce dossier apparaît après une mise à niveau vers Windows 11 ou une mise à jour de fonctionnalités majeure, contient une copie complète de votre ancienne installation et dépasse souvent largement 10 Go sur le lecteur C:. Les méthodes de suppression les plus sûres sont l'outil Nettoyage de disque intégré à Windows et les options de stockage des Paramètres.",
         "Dans ce guide, nous expliquons d'abord ce qu'est Windows.old et pourquoi ce dossier existe, puis nous détaillons pas à pas les deux méthodes de suppression : le Nettoyage de disque et l'Assistant Stockage. Vous y trouverez également la solution en ligne de commande pour le cas tenace où Windows.old refuse de disparaître, quoi que vous tentiez.",
         "Enfin, nous verrons quels autres fichiers cachés une mise à niveau laisse derrière elle et comment garder votre lecteur C: allégé après chaque mise à jour majeure.",
+      ],
+      keyTakeaways: [
+        "Le dossier Windows.old est une copie de sauvegarde intégrale de votre système d'exploitation antérieur, créée lors des mises à jour majeures.",
+        "Supprimer Windows.old est 100 % sûr si votre installation actuelle de Windows 11 est stable et si vous ne prévoyez pas de rétrograder.",
+        "Ne glissez jamais Windows.old vers la Corbeille dans l'Explorateur ; utilisez plutôt le Nettoyage de disque ('Nettoyer les fichiers système') ou l'Assistant de stockage.",
+        "La suppression de Windows.old libère immédiatement entre 10 Go et plus de 35 Go d'espace précieux sur le lecteur SSD C:.",
+        "Si Windows refuse la suppression pour des raisons de permissions, les commandes 'takeown' et 'icacls' en invite administrateur permettent de lever ces verrous.",
       ],
       sections: [
         {
@@ -485,6 +583,89 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment supprimer en toute sécurité le dossier Windows.old",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Lancer le Nettoyage de disque",
+            text: "Appuyez sur Win+R, tapez 'cleanmgr', validez avec Entrée et choisissez le disque C:.",
+          },
+          {
+            name: "Cliquer sur 'Nettoyer les fichiers système'",
+            text: "Cliquez sur le bouton 'Nettoyer les fichiers système' en bas à gauche et re-sélectionnez le lecteur C: si demandé.",
+          },
+          {
+            name: "Cocher 'Précédente(s) installation(s) de Windows'",
+            text: "Faites défiler la liste et cochez 'Précédente(s) installation(s) de Windows' ainsi que 'Fichiers d'installation temporaires de Windows'.",
+          },
+          {
+            name: "Confirmer la suppression",
+            text: "Cliquez sur OK puis validez 'Supprimer les fichiers' pour effacer définitivement le dossier Windows.old.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Caractéristiques du dossier Windows.old, volume occupé et méthodes de suppression",
+        columns: ["Paramètre", "Détail", "Importance", "Action recommandée"],
+        rows: [
+          [
+            "Chemin du dossier",
+            "C:\\Windows.old",
+            "Sauvegarde interne de l'ancien système",
+            "Purger via cleanmgr ou l'Assistant de stockage",
+          ],
+          [
+            "Taille typique",
+            "10 Go – 35+ Go",
+            "Consommateur massif sur le disque C:",
+            "Supprimer sans crainte si le PC fonctionne parfaitement",
+          ],
+          [
+            "Délai de purge automatique",
+            "10 jours après la mise à niveau",
+            "Période pendant laquelle le retour en arrière est possible",
+            "Supprimer immédiatement si vous manquez d'espace disque",
+          ],
+          [
+            "Récupération de fichiers personnels",
+            "C:\\Windows.old\\Utilisateurs",
+            "Anciens dossiers Bureau et Documents",
+            "Examiner et sauvegarder les documents utiles avant purge",
+          ],
+          [
+            "Possibilité de rétrograder",
+            "Paramètres > Système > Récupération",
+            "Option de retour vers l'ancien OS en un clic",
+            "Définitivement désactivée une fois le dossier supprimé",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Supprimer Windows.old va-t-il endommager mon PC ?",
+          answer:
+            "Non. Cela n'affectera en rien le fonctionnement actuel de Windows. Vous perdrez simplement la possibilité de revenir facilement à la version antérieure de Windows.",
+        },
+        {
+          question:
+            "Windows supprime-t-il automatiquement le dossier Windows.old ?",
+          answer:
+            "Oui, Windows 11 supprime automatiquement le répertoire Windows.old au bout de 10 jours via ses tâches de maintenance programmées.",
+        },
+        {
+          question: "Que faire si Windows.old refuse de se supprimer ?",
+          answer:
+            "Ouvrez l'Invite de commandes en tant qu'administrateur et exécutez 'takeown /F C:\\Windows.old /R /A /D O' suivi de 'rd /S /Q C:\\Windows.old'.",
+        },
+        {
+          question:
+            "Puis-je récupérer des fichiers personnels depuis Windows.old ?",
+          answer:
+            "Oui. Avant d'effacer le dossier, naviguez dans C:\\Windows.old\\Utilisateurs\\[VotreNom] pour copier vos fichiers du Bureau, de Documents ou de Téléchargements.",
+        },
+      ],
       verdict: [
         "Supprimer le dossier Windows.old est sûr et judicieux dès l'instant où vous êtes certain de ne pas revenir en arrière. Le Nettoyage de disque ou les options de stockage des Paramètres se chargent de l'essentiel, et pour les résidus tenaces, la voie en ligne de commande avec takeown, icacls et rd reste toujours disponible. Cette seule étape peut libérer des dizaines de gigaoctets sur votre lecteur C:.",
         "Pour retrouver tout ce que la mise à niveau a laissé derrière elle — et garder votre disque allégé sur la durée — Disk Mop est un compagnon pratique. L'analyse de disque, le détecteur de gros fichiers, le nettoyeur de cache (Cache Cleaner) et le nettoyage planifié sont tous inclus dans une licence à vie payée une seule fois, 19,90 $, sans le moindre abonnement.",
@@ -502,6 +683,13 @@ export const windowsOldFolder: Article = {
         "Respuesta corta: sí, eliminar la carpeta Windows.old es seguro, siempre que no pienses volver a tu versión anterior de Windows. La carpeta aparece después de una actualización a Windows 11 o de una gran actualización de características, contiene una copia completa de tu instalación antigua y a menudo ocupa bastante más de 10 GB en la unidad C:. Las formas más seguras de quitarla son el Liberador de espacio en disco integrado en Windows y las opciones de almacenamiento de Configuración.",
         "En esta guía explicamos primero qué es Windows.old y por qué existe, y después recorremos paso a paso las dos vías de eliminación: el Liberador de espacio en disco y el Sensor de almacenamiento. También encontrarás la solución por línea de comandos para ese caso testarudo en el que Windows.old no se borra hagas lo que hagas.",
         "Por último, veremos qué otros archivos ocultos deja atrás una actualización y cómo mantener ligera tu unidad C: después de cada gran actualización.",
+      ],
+      keyTakeaways: [
+        "La carpeta Windows.old es una copia de seguridad íntegra de tu sistema operativo previo, generada durante actualizaciones mayores de Windows.",
+        "Eliminar Windows.old es 100 % seguro si tu versión actual de Windows 11 funciona con estabilidad y no tienes pensado volver atrás.",
+        "Nunca arrastres Windows.old a la Papelera de reciclaje en el Explorador; utiliza en su lugar el Liberador de espacio ('Limpiar archivos de sistema') o el Sensor de almacenamiento.",
+        "Borrar Windows.old libera de inmediato entre 10 GB y más de 35 GB de almacenamiento valioso en tu SSD en la unidad C:.",
+        "Si Windows impide borrarlo por permisos del sistema, los comandos en consola con privilegios de administrador 'takeown' e 'icacls' anulan los bloqueos.",
       ],
       sections: [
         {
@@ -562,6 +750,87 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo eliminar la carpeta Windows.old de forma segura",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Iniciar el Liberador de espacio en disco",
+            text: "Pulsa Win+R, escribe 'cleanmgr', presiona Enter y selecciona la unidad C:.",
+          },
+          {
+            name: "Hacer clic en 'Limpiar archivos de sistema'",
+            text: "Haz clic en el botón 'Limpiar archivos de sistema' en la esquina inferior izquierda y vuelve a seleccionar C: si se te solicita.",
+          },
+          {
+            name: "Marcar Instalaciones anteriores de Windows",
+            text: "Desplázate por la lista y marca 'Instalaciones anteriores de Windows' y 'Archivos temporales de instalación de Windows'.",
+          },
+          {
+            name: "Confirmar la eliminación",
+            text: "Haz clic en Aceptar y confirma pulsando 'Eliminar archivos' para borrar la carpeta Windows.old permanentemente.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Detalles de la carpeta Windows.old, espacio ocupado y opciones de borrado",
+        columns: ["Parámetro", "Detalle", "Significado", "Acción recomendada"],
+        rows: [
+          [
+            "Ruta de la carpeta",
+            "C:\\Windows.old",
+            "Copia de seguridad del sistema operativo previo",
+            "Purgar mediante cleanmgr o Sensor de almacenamiento",
+          ],
+          [
+            "Tamaño típico",
+            "10 GB – 35+ GB",
+            "Gran consumidor de espacio en disco C:",
+            "Borrar con total tranquilidad si el sistema es estable",
+          ],
+          [
+            "Período de borrado automático",
+            "10 días tras actualizar",
+            "Plazo disponible para volver a la versión anterior",
+            "Borrar inmediatamente si se necesita espacio en el SSD",
+          ],
+          [
+            "Rescate de archivos personales",
+            "C:\\Windows.old\\Usuarios",
+            "Documentos y Escritorio de la instalación previa",
+            "Comprobar y copiar documentos valiosos antes de borrar",
+          ],
+          [
+            "Capacidad de reversión",
+            "Configuración > Sistema > Recuperación",
+            "Opción de volver atrás en un clic",
+            "Queda deshabilitada de forma definitiva tras la purga",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Borrar Windows.old dañará mi equipo?",
+          answer:
+            "No. No perjudicará en absoluto tu sistema operativo actual. Solo suprime la capacidad de desinstalar la versión actual y regresar a la versión previa de Windows.",
+        },
+        {
+          question: "¿Windows elimina automáticamente la carpeta Windows.old?",
+          answer:
+            "Sí, Windows 11 borra de manera automática la carpeta Windows.old transcurridos 10 días a través de sus tareas programadas de mantenimiento.",
+        },
+        {
+          question: "¿Qué debo hacer si Windows.old no se deja eliminar?",
+          answer:
+            "Abre el Símbolo del sistema como Administrador y escribe 'takeown /F C:\\Windows.old /R /A /D S' seguido de 'rd /S /Q C:\\Windows.old'.",
+        },
+        {
+          question: "¿Puedo recuperar archivos personales desde Windows.old?",
+          answer:
+            "Sí. Antes de borrar la carpeta por completo, explora C:\\Windows.old\\Usuarios\\[TuUsuario] para rescatar tus carpetas de Escritorio, Documentos o Descargas.",
+        },
+      ],
       verdict: [
         "Eliminar la carpeta Windows.old es seguro y sensato en cuanto tengas claro que no vas a volver atrás. El Liberador de espacio en disco o las opciones de almacenamiento de Configuración hacen casi todo el trabajo y, para los restos testarudos, la ruta por línea de comandos con takeown, icacls y rd está siempre disponible. Ese único paso puede liberar decenas de gigabytes en tu unidad C:.",
         "Para encontrar todo lo demás que dejó la actualización, y mantener el disco ligero a largo plazo, Disk Mop es un acompañante práctico. El análisis de disco, el buscador de archivos grandes, el limpiador de caché (Cache Cleaner) y la limpieza programada están incluidos en una licencia de por vida de pago único de 19,90 $, sin ninguna suscripción.",
@@ -578,6 +847,13 @@ export const windowsOldFolder: Article = {
         "Risposta breve: sì, eliminare la cartella Windows.old è sicuro, a patto che tu non abbia intenzione di tornare alla versione precedente di Windows. La cartella compare dopo un aggiornamento a Windows 11 o dopo un aggiornamento delle funzionalità importante, contiene una copia completa della vecchia installazione e spesso occupa ben oltre 10 GB sull'unità C:. I modi più sicuri per rimuoverla sono lo strumento Pulizia disco integrato in Windows e le opzioni di archiviazione nelle Impostazioni.",
         "In questa guida spieghiamo prima che cos'è Windows.old e perché esiste, poi percorriamo passo passo entrambe le strade per la rimozione: Pulizia disco e Sensore memoria. Troverai anche la soluzione da riga di comando per il caso ostinato in cui Windows.old non si cancella qualunque cosa tu provi.",
         "Infine vedremo quali altri file nascosti lascia dietro di sé un aggiornamento e come mantenere leggera l'unità C: dopo ogni aggiornamento importante.",
+      ],
+      keyTakeaways: [
+        "La cartella Windows.old è uno snapshot di backup integrale del sistema operativo precedente, generata durante i principali aggiornamenti funzionali di Windows.",
+        "Eliminare Windows.old è sicuro al 100% se l'attuale installazione di Windows 11 è stabile e non intendi tornare indietro.",
+        "Non trascinare mai Windows.old nel Cestino tramite Esplora file; usa invece Pulizia disco ('Pulizia file di sistema') o il Sensore memoria.",
+        "Rimuovere Windows.old recupera immediatamente dai 10 GB a oltre 35 GB di prezioso spazio SSD sull'unità C:.",
+        "Se Windows ne impedisce la cancellazione per motivi di autorizzazioni, i comandi di prompt amministratore 'takeown' e 'icacls' consentono di sbloccare la cartella.",
       ],
       sections: [
         {
@@ -638,6 +914,88 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come eliminare in sicurezza la cartella Windows.old",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Avviare Pulizia disco",
+            text: "Premi Win+R, digita 'cleanmgr', premi Invio e seleziona l'unità C:.",
+          },
+          {
+            name: "Fare clic su 'Pulizia file di sistema'",
+            text: "Fai clic sul pulsante 'Pulizia file di sistema' in basso a sinistra e seleziona nuovamente l'unità C: se richiesto.",
+          },
+          {
+            name: "Spuntare 'Installazioni di Windows precedenti'",
+            text: "Scorri l'elenco e metti la spunta su 'Installazioni di Windows precedenti' e su 'File di installazione temporanei di Windows'.",
+          },
+          {
+            name: "Confermare l'eliminazione",
+            text: "Fai clic su OK e conferma con 'Eliminazione file' per cancellare definitivamente la cartella Windows.old.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Specifiche della cartella Windows.old, spazio occupato e metodi di rimozione",
+        columns: ["Parametro", "Dettaglio", "Importanza", "Azione consigliata"],
+        rows: [
+          [
+            "Percorso cartella",
+            "C:\\Windows.old",
+            "Backup interno del precedente sistema operativo",
+            "Pulire tramite cleanmgr o Sensore memoria",
+          ],
+          [
+            "Dimensione tipica",
+            "10 GB – 35+ GB",
+            "Grande occupatore di spazio su C:",
+            "Eliminare senza esitazione se il sistema è stabile",
+          ],
+          [
+            "Finestra di eliminazione automatica",
+            "10 giorni dopo l'aggiornamento",
+            "Finestra utile per effettuare il rollback",
+            "Eliminare subito se si ha necessità di spazio su SSD",
+          ],
+          [
+            "Recupero file personali",
+            "C:\\Windows.old\\Utenti",
+            "Vecchi file del Desktop e di Documenti",
+            "Verificare e salvare i documenti utili prima della rimozione",
+          ],
+          [
+            "Funzione di rollback",
+            "Impostazioni > Sistema > Ripristino",
+            "Opzione di downgrade dell'OS con un clic",
+            "Disattivata definitivamente una volta rimossa la cartella",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Cancellare Windows.old danneggerà il mio computer?",
+          answer:
+            "No. Non arrecherà alcun danno al sistema operativo in uso. Eliminerà esclusivamente la possibilità di effettuare il rollback alla versione precedente di Windows.",
+        },
+        {
+          question: "Windows elimina automaticamente la cartella Windows.old?",
+          answer:
+            "Sì, Windows 11 elimina in automatico la cartella Windows.old dopo 10 giorni tramite le attività di manutenzione pianificate.",
+        },
+        {
+          question:
+            "Cosa posso fare se Windows.old rifiuta di essere eliminata?",
+          answer:
+            "Apri il Prompt dei comandi come amministratore ed esegui 'takeown /F C:\\Windows.old /R /A /D S' seguito dal comando 'rd /S /Q C:\\Windows.old'.",
+        },
+        {
+          question: "Posso recuperare file personali da Windows.old?",
+          answer:
+            "Sì. Prima di procedere all'eliminazione, apri il percorso C:\\Windows.old\\Utenti\\[TuoNomeUtente] per copiare le cartelle Desktop, Documenti o Download.",
+        },
+      ],
       verdict: [
         "Eliminare la cartella Windows.old è sicuro e sensato non appena hai la certezza di non voler tornare indietro. Pulizia disco o le opzioni di archiviazione nelle Impostazioni fanno quasi tutto il lavoro e, per i residui ostinati, la strada da riga di comando con takeown, icacls e rd resta sempre disponibile. Già solo questo passaggio può liberare decine di gigabyte sull'unità C:.",
         "Per trovare tutto il resto che l'aggiornamento ha lasciato indietro, e per mantenere il disco leggero nel tempo, Disk Mop è un compagno pratico. L'analisi del disco, il cercatore di file di grandi dimensioni, il pulitore della cache (Cache Cleaner) e la pulizia programmata sono tutti inclusi in una licenza a vita da pagare una volta sola, 19,90 $, senza alcun abbonamento.",
@@ -654,6 +1012,13 @@ export const windowsOldFolder: Article = {
         "Resposta curta: sim, excluir a pasta Windows.old é seguro, desde que você não pretenda voltar para a versão anterior do Windows. A pasta aparece depois de uma atualização para o Windows 11 ou de uma grande atualização de recursos, guarda uma cópia completa da instalação antiga e costuma ocupar bem mais de 10 GB na unidade C:. As formas mais seguras de removê-la são a ferramenta Limpeza de Disco, nativa do Windows, e as opções de armazenamento em Configurações.",
         "Neste guia explicamos primeiro o que é a Windows.old e por que ela existe, e depois mostramos os dois caminhos de remoção passo a passo: a Limpeza de Disco e o Sensor de Armazenamento. Você também encontra a solução por linha de comando para aquele caso teimoso em que a Windows.old não é excluída de jeito nenhum.",
         "Por fim, vamos ver quais outros arquivos ocultos uma atualização deixa para trás e como manter a unidade C: enxuta depois de cada atualização importante.",
+      ],
+      keyTakeaways: [
+        "A pasta Windows.old é uma cópia de segurança completa do seu sistema operacional anterior, criada durante grandes atualizações de versão do Windows.",
+        "Excluir a pasta Windows.old é 100% seguro se a instalação atual do Windows 11 estiver funcionando perfeitamente e você não pretender reverter a versão.",
+        "Nunca arraste a pasta Windows.old para a Lixeira no Explorador de Arquivos; use a Limpeza de Disco ('Limpar arquivos do sistema') ou o Sensor de Armazenamento.",
+        "A eliminação da pasta Windows.old libera instantaneamente entre 10 GB e mais de 35 GB de espaço precioso na unidade SSD C:.",
+        "Se o Windows recusar a exclusão por bloqueios de permissão, comandos como 'takeown' e 'icacls' executados no prompt de comando administrativo resolvem o problema.",
       ],
       sections: [
         {
@@ -714,6 +1079,89 @@ export const windowsOldFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como excluir a pasta Windows.old com segurança",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Abrir a Limpeza de Disco",
+            text: "Pressione Win+R, digite 'cleanmgr', tecle Enter e escolha a unidade C:.",
+          },
+          {
+            name: "Clicar em 'Limpar arquivos do sistema'",
+            text: "Clique no botão 'Limpar arquivos do sistema' no canto inferior esquerdo e confirme a unidade C: novamente se for solicitado.",
+          },
+          {
+            name: "Marcar 'Instalações anteriores do Windows'",
+            text: "Navegue pela lista e marque as opções 'Instalação(ões) anterior(es) do Windows' e 'Arquivos de instalação temporários do Windows'.",
+          },
+          {
+            name: "Confirmar a exclusão",
+            text: "Clique em OK e confirme clicando em 'Excluir Arquivos' para remover a pasta Windows.old em definitivo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Especificações da pasta Windows.old, espaço ocupado e opções de remoção",
+        columns: ["Parâmetro", "Detalhe", "Significado", "Ação recomendada"],
+        rows: [
+          [
+            "Caminho da pasta",
+            "C:\\Windows.old",
+            "Backup interno do sistema operacional anterior",
+            "Limpar via cleanmgr ou Sensor de Armazenamento",
+          ],
+          [
+            "Tamanho típico",
+            "10 GB – 35+ GB",
+            "Grande consumidor de espaço na unidade C:",
+            "Excluir com total tranquilidade se o sistema estiver estável",
+          ],
+          [
+            "Prazo de exclusão automática",
+            "10 dias após a atualização",
+            "Janela disponível para reverter o sistema",
+            "Excluir imediatamente se houver urgência de espaço no SSD",
+          ],
+          [
+            "Resgate de arquivos pessoais",
+            "C:\\Windows.old\\Usuários",
+            "Arquivos da Área de Trabalho e Documentos anteriores",
+            "Inspecionar e salvar arquivos importantes antes de excluir",
+          ],
+          [
+            "Capacidade de reversão",
+            "Configurações > Sistema > Recuperação",
+            "Opção de downgrade com um clique",
+            "Desativada permanentemente após a remoção da pasta",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Excluir o Windows.old vai danificar meu computador?",
+          answer:
+            "Não. Não causará nenhum dano ao seu sistema operacional atual. Apenas desativará a possibilidade de fazer o downgrade ou voltar para a versão anterior do Windows.",
+        },
+        {
+          question: "O Windows apaga a pasta Windows.old automaticamente?",
+          answer:
+            "Sim, o Windows 11 remove a pasta Windows.old de forma automática após 10 dias por meio de tarefas de manutenção agendadas do próprio sistema.",
+        },
+        {
+          question:
+            "O que fazer se a pasta Windows.old se recusar a ser excluída?",
+          answer:
+            "Abra o Prompt de Comando como Administrador e digite 'takeown /F C:\\Windows.old /R /A /D S' seguido de 'rd /S /Q C:\\Windows.old'.",
+        },
+        {
+          question:
+            "É possível resgatar arquivos pessoais de dentro do Windows.old?",
+          answer:
+            "Sim. Antes de realizar a exclusão, navegue até C:\\Windows.old\\Usuários\\[SeuUsuário] para copiar pastas como Área de Trabalho, Documentos ou Downloads.",
+        },
+      ],
       verdict: [
         "Excluir a pasta Windows.old é seguro e faz sentido assim que você tem certeza de que não vai voltar atrás. A Limpeza de Disco ou as opções de armazenamento em Configurações resolvem a maior parte, e para as sobras teimosas o caminho da linha de comando com takeown, icacls e rd está sempre disponível. Só esse passo já pode liberar dezenas de gigabytes na unidade C:.",
         "Para encontrar tudo o mais que a atualização deixou para trás e manter o disco enxuto no longo prazo, o Disk Mop é um companheiro prático. A análise de disco, o localizador de arquivos grandes, o limpador de cache (Cache Cleaner) e a limpeza agendada estão todos incluídos em uma licença vitalícia de pagamento único de 19,90 $, sem assinatura nenhuma.",
@@ -729,6 +1177,13 @@ export const windowsOldFolder: Article = {
         "結論から言えば、Windows.oldフォルダーは削除しても問題ありません。ただし、以前のバージョンのWindowsに戻す予定がないことが条件です。このフォルダーはWindows 11へのアップグレードや大型の機能更新プログラムのあとに作られ、以前のインストール環境をまるごとコピーして保持しているため、Cドライブで10 GBをはるかに超える容量を占めることも珍しくありません。最も安全な削除方法は、Windowsに標準で用意されている「ディスク クリーンアップ」を使うか、「設定」の記憶域オプションから消す方法です。",
         "この記事ではまずWindows.oldとは何か、なぜ存在するのかを説明し、続いて2つの削除方法である「ディスク クリーンアップ」と「ストレージ センサー」を手順ごとに紹介します。さらに、何を試してもWindows.oldが消えてくれないという厄介なケースに向けて、コマンドラインでの対処法も取り上げます。",
         "最後に、アップグレードが残していくそのほかの隠しファイルを確認し、大型更新のたびにCドライブを軽く保つ方法をお伝えします。",
+      ],
+      keyTakeaways: [
+        "Windows.oldフォルダは、Windowsの大型機能更新時に作成される以前のオペレーティングシステムの完全なバックアップスナップショットです。",
+        "現在のWindows 11が安定して動作しており、以前のバージョンへロールバックする予定がなければ、Windows.oldの削除は100%安全です。",
+        "エクスプローラー上でWindows.oldをごみ箱にドラッグしてはいけません。「ディスク クリーンアップ」（システム ファイルのクリーンアップ）または「ストレージ センサー」を使用してください。",
+        "Windows.oldを削除すると、Cドライブ上の貴重なSSD領域が直ちに10 GB〜35 GB以上回復します。",
+        "権限エラーで削除が拒否される場合でも、管理者コマンドプロンプトで「takeown」および「icacls」コマンドを実行すればシステムアクセス権を上書きして削除できます。",
       ],
       sections: [
         {
@@ -786,6 +1241,86 @@ export const windowsOldFolder: Article = {
             "Disk Mopはその習慣を手軽にします。高速化（Speed Up）機能は、古いダウンロード、システムキャッシュ、ブラウザーキャッシュ、ごみ箱をワンクリックでまとめて片づけます。定期クリーンアップ（Scheduled Cleanup）を使えば週次や月次の自動メンテナンスを設定でき、システム ヘルス スコア（System Health Score）ではディスクの状態をひと目で把握できます。",
             "最も良いのは、両方を組み合わせる方法です。Windows.oldのような保護されたシステムフォルダーにはWindows標準のツールを使い、キャッシュ、ダウンロード、重複ファイル、忘れられた大容量ファイルといったそれ以外のすべては、定期的なDisk Mopのルーティンに任せてしまいましょう。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windows.oldフォルダを安全に削除する方法",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "ディスク クリーンアップを起動する",
+            text: "Win+Rを押し、「cleanmgr」と入力してEnterを押し、ドライブ「C:」を選択します。",
+          },
+          {
+            name: "「システム ファイルのクリーンアップ」をクリック",
+            text: "左下の「システム ファイルのクリーンアップ」をクリックし、再度ドライブC:を選択します。",
+          },
+          {
+            name: "以前のWindowsのインストールを選択",
+            text: "一覧から「以前の Windows のインストール」および「一時 Windows インストール ファイル」にチェックを入れます。",
+          },
+          {
+            name: "クリーンアップを実行する",
+            text: "「OK」をクリックし、「ファイルの削除」を選択してWindows.oldフォルダを完全に消去します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windows.oldフォルダの仕様・消費容量・削除方法一覧",
+        columns: ["項目", "詳細情報", "重要度・意味", "推奨される対処"],
+        rows: [
+          [
+            "フォルダパス",
+            "C:\\Windows.old",
+            "以前のOSの内部システムバックアップ",
+            "cleanmgrまたはストレージ センサーから消去",
+          ],
+          [
+            "典型的な占有容量",
+            "10 GB – 35+ GB",
+            "Cドライブの最大の圧迫要因",
+            "OSが安定稼働していれば安全に削除可能",
+          ],
+          [
+            "自動削除までの期間",
+            "アップグレード後10日間",
+            "ロールバック機能の有効期限",
+            "SSDの空き容量が不足している場合は即時消去",
+          ],
+          [
+            "個人ファイルの復元",
+            "C:\\Windows.old\\ユーザー",
+            "旧環境のデスクトップ・ドキュメント",
+            "削除前に中身を確認し必要なデータを退避",
+          ],
+          [
+            "ロールバック機能",
+            "設定 > システム > 回復",
+            "1クリックで旧OSへ復元する機能",
+            "フォルダ削除後は恒久的に利用不可",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Windows.oldフォルダを削除するとパソコンが壊れませんか？",
+          answer:
+            "いいえ。現在稼働しているオペレーティングシステムに影響を与えることは一切ありません。以前のバージョンのWindowsへ簡単にロールバックする機能のみが無効になります。",
+        },
+        {
+          question: "WindowsはWindows.oldフォルダを自動的に削除しますか？",
+          answer:
+            "はい。Windows 11は組み込みのメンテナンス機能により、アップグレード後10日経過すると自動的にWindows.oldを消去します。",
+        },
+        {
+          question: "Windows.oldが削除できない場合はどうすればよいですか？",
+          answer:
+            "管理者としてコマンドプロンプトを開き、「takeown /F C:\\Windows.old /R /A /D Y」を実行した後、「rd /S /Q C:\\Windows.old」を実行します。",
+        },
+        {
+          question: "Windows.oldフォルダから個人ファイルを救出できますか？",
+          answer:
+            "はい。フォルダを完全に削除する前に「C:\\Windows.old\\ユーザー\\[ユーザー名]」にアクセスし、デスクトップ、ドキュメント、ダウンロード等の必要なファイルをコピーできます。",
         },
       ],
       verdict: [

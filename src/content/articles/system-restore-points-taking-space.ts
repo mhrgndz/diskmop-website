@@ -5,14 +5,13 @@ export const systemRestorePointsTakingSpace: Article = {
   type: "guide",
   category: "Windows",
   date: "2026-09-04",
-  updated: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "Sistem Geri Yükleme Noktaları Ne Kadar Yer Kaplıyor? Sınırını Ayarlama",
+      title: "Sistem Geri Yükleme Noktaları Alanı ve Boyut Sınırı Ayarı",
       metaDescription:
-        "Sistem Koruması varsayılan olarak diskinizin %10'una kadarını geri yükleme noktalarına ayırabilir. vssadmin ile gerçek kullanımı ölçme ve ayrılan alanı güvenle küçültme.",
+        "Sistem Koruması diskinizin %10'unu geri yükleme noktalarına ayırabilir. vssadmin ile gerçek kullanımı ölçme ve ayrılan alanı güvenle küçültme rehberi.",
       subtitle: "Diskin Yüzde Onunu Sessizce Rezerve Eden Özellik",
       intro: [
         "Kısa cevap: Sistem geri yükleme noktaları gölge kopya (Volume Shadow Copy) olarak saklanır ve Windows bunlar için diskin belirli bir yüzdesini ayırır. Ne kadar kullanıldığını yönetici komut isteminde `vssadmin list shadowstorage` komutuyla görürsünüz; ayrılan sınırı ise Sistem Özellikleri > Sistem Koruması > Yapılandır penceresindeki kaydırıcıdan değiştirirsiniz. Küçük bir SSD'de bu ayarı %10'dan %3-5'e çekmek 20-50 GB kazandırabilir ve koruma özelliğini kapatmaz; yalnızca daha az sayıda geri yükleme noktası saklanır. Aynı pencerede \"Sil\" düğmesi mevcut tüm noktaları temizler — bu hemen yer açar ama o ana kadarki geri dönüş imkânını da ortadan kaldırır.",
@@ -153,7 +152,7 @@ export const systemRestorePointsTakingSpace: Article = {
     en: {
       title: "How Much Space Do System Restore Points Use? Setting the Limit",
       metaDescription:
-        "System Protection can reserve up to 10% of your drive for restore points. How to measure real usage with vssadmin and safely reduce the space set aside.",
+        "System Protection can allocate up to 10% of disk space to restore points. Learn how to check usage with vssadmin and safely resize allocated space.",
       subtitle: "The Feature That Quietly Reserves a Tenth of Your Disk",
       intro: [
         "Short answer: system restore points are stored as Volume Shadow Copies, and Windows reserves a percentage of the drive for them. You can see how much is actually used by running `vssadmin list shadowstorage` in an elevated command prompt, and change the reserved limit with the slider under System Properties > System Protection > Configure. On a small SSD, dropping that setting from 10% to 3-5% can reclaim 20-50 GB without turning protection off; it simply keeps fewer restore points. The Delete button in the same window clears every existing point — that frees space immediately but also removes your ability to roll back to any earlier state.",

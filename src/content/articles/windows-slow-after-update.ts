@@ -5,14 +5,13 @@ export const windowsSlowAfterUpdate: Article = {
   type: "guide",
   category: "Performance",
   date: "2026-09-04",
-  updated: "2026-09-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
-      title:
-        "Windows Güncellemesinden Sonra Bilgisayar Yavaşladı: Sebepleri ve Çözümü",
+      title: "Windows Güncellemesi Sonrası Bilgisayar Yavaşlığı Çözümü",
       metaDescription:
-        "Büyük bir Windows güncellemesinden sonraki yavaşlığın çoğu 24-48 saatte kendiliğinden geçer. Hangi süreç normal, hangisi müdahale ister ve bir hafta sonra hâlâ yavaşsa ne yapmalı?",
+        "Büyük Windows güncellemesi sonrası yavaşlık çoğu zaman 24-48 saatte geçer. Hangi süreçlerin normal olduğunu ve kalıcı yavaşlığın çözümünü öğrenin.",
       subtitle: "İlk İki Gün Sabır, Sonrası Müdahale",
       intro: [
         "Kısa cevap: Büyük bir Windows güncellemesinden sonraki yavaşlık çoğu zaman geçicidir ve 24-48 saat içinde kendiliğinden düzelir. Sebebi arka planda tamamlanmayı bekleyen üç iştir: arama indeksinin yeniden oluşturulması, bileşen deposunun temizlenmesi (`TiWorker.exe`) ve güncelleme dosyalarının diğer bilgisayarlara dağıtılması. Bunlar bittiğinde makine eski hızına döner. Ancak iki durum kendiliğinden düzelmez ve müdahale ister: güncellemenin ekran kartı veya yonga seti sürücüsünü Microsoft'un genel sürücüsüyle değiştirmesi, ve `Windows.old` klasörünün diski doldurarak SSD'yi yavaşlatması. Bir hafta sonra hâlâ yavaşsa sebep güncellemenin oturması değil, bu ikisinden biridir.",
@@ -159,7 +158,7 @@ export const windowsSlowAfterUpdate: Article = {
     en: {
       title: "PC Slow After a Windows Update: Causes and Fixes",
       metaDescription:
-        "Most slowdowns after a major Windows update clear on their own within 24-48 hours. Which process is normal, which needs action, and what to do if it is still slow a week later.",
+        "Windows updates cause temporary background maintenance for 24-48 hours. Which processes are normal, which need action, and what to do if PC stays slow.",
       subtitle: "Patience for Two Days, Then Intervention",
       intro: [
         "Short answer: slowness after a major Windows update is usually temporary and clears on its own within 24-48 hours. The cause is three background jobs waiting to finish: the search index being rebuilt, the component store being cleaned (`TiWorker.exe`), and update files being shared out to other computers. Once those complete, the machine returns to its old speed. Two situations, however, do not fix themselves and need action: the update replacing your graphics or chipset driver with Microsoft's generic one, and the `Windows.old` folder filling the disk and slowing the SSD. If it is still slow a week later, the cause is not the update settling but one of those two.",

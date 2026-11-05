@@ -5,7 +5,7 @@ export const clearCacheWindows11: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-07-18",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -345,6 +345,13 @@ export const clearCacheWindows11: Article = {
         "Um den Cache in Windows 11 zu leeren, öffnen Sie die Einstellungen mit Windows-Taste + I, gehen Sie zu System, dann Speicher, klicken Sie auf Temporäre Dateien, wählen Sie die gewünschten Kategorien aus und bestätigen Sie mit Dateien entfernen. Den Browser-Cache leeren Sie in Chrome, Edge und Firefox mit Strg+Umschalt+Entf, den Microsoft-Store-Cache mit wsreset.exe und den DNS-Cache mit dem Befehl ipconfig /flushdns in der Eingabeaufforderung. Diese vier Schritte decken alle wichtigen Cache-Typen eines Windows 11 PCs ab.",
         "Caches machen den Computer schneller, wachsen aber über Monate zu Gigabytes an temporären Daten heran und verursachen gelegentlich selbst Störungen. Diese Anleitung zeigt jeden Cache-Typ einzeln mit genauen Schritten — System, Browser, Microsoft Store und DNS — und zum Schluss einen Weg, alle mit einem einzigen Klick zu leeren.",
       ],
+      keyTakeaways: [
+        "Das Leeren des Cache unter Windows 11 ist völlig sicher; gelöschte Dateien werden bei Bedarf von System und Apps automatisch neu erstellt.",
+        "Temporäre Systemdateien und Reste von Windows Update lassen sich am besten über Einstellungen > System > Speicher > Temporäre Dateien bereinigen.",
+        "Die universelle Tastenkombination 'Strg+Umschalt+Entf' öffnet in Chrome, Edge und Firefox direkt das Menü zum Löschen des Browser-Cache.",
+        "Der Befehl 'wsreset.exe' im Ausführen-Dialog setzt den Cache des Microsoft Store zurück, wenn Downloads hängen oder Seiten nicht laden.",
+        "Das Leeren des DNS-Cache mit 'ipconfig /flushdns' behebt veraltete Domain-Einträge und Verbindungsfehler beim Laden von Webseiten sofort.",
+      ],
       sections: [
         {
           title: "Warum sich Caches in Windows 11 mit der Zeit ansammeln",
@@ -396,6 +403,99 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So leeren Sie alle Caches unter Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Temporäre Systemdateien bereinigen",
+            text: "Drücken Sie Win+I, navigieren Sie zu System > Speicher > Temporäre Dateien, wählen Sie die gewünschten Kategorien aus und klicken Sie auf 'Dateien entfernen'.",
+          },
+          {
+            name: "Webbrowser-Caches leeren",
+            text: "Drücken Sie in Chrome, Edge oder Firefox Strg+Umschalt+Entf. Wählen Sie als Zeitraum 'Gesamte Zeit', setzen Sie das Häkchen bei 'Bilder und Dateien im Cache' und klicken Sie auf 'Daten löschen'.",
+          },
+          {
+            name: "Microsoft Store-Cache zurücksetzen",
+            text: "Drücken Sie Win+R, tippen Sie wsreset.exe ein und drücken Sie die Eingabetaste. Warten Sie, bis sich das leere Fenster der Eingabeaufforderung schließt und der Store neu startet.",
+          },
+          {
+            name: "DNS-Cache leeren",
+            text: "Öffnen Sie die Eingabeaufforderung und führen Sie 'ipconfig /flushdns' aus, um den DNS-Auflösungscache vollständig zurückzusetzen.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Cache-Arten in Windows 11, Speicherorte und Bereinigungsschritte",
+        columns: [
+          "Cache-Typ",
+          "Speicherort / Befehl",
+          "Typische Größe",
+          "Sicherheitsstufe",
+          "Grund der Bereinigung",
+        ],
+        rows: [
+          [
+            "Temporäre Systemdateien",
+            "Einstellungen > Speicher oder %temp%",
+            "2 GB – 15 GB",
+            "Vollständig sicher",
+            "Freigabe von Festplattenspeicher",
+          ],
+          [
+            "Webbrowser-Cache",
+            "Strg + Umschalt + Entf (im Browser)",
+            "1 GB – 5 GB",
+            "Vollständig sicher",
+            "Darstellungsfehler auf Webseiten und Profil-Überladung beheben",
+          ],
+          [
+            "Microsoft Store-Cache",
+            "wsreset.exe (Ausführen-Fenster)",
+            "100 MB – 500 MB",
+            "Vollständig sicher",
+            "Hängende Downloads und Abstürze beim Start reparieren",
+          ],
+          [
+            "DNS-Auflösungscache",
+            "ipconfig /flushdns (Eingabeaufforderung)",
+            "< 10 MB",
+            "Vollständig sicher",
+            "Verbindungsabbrüche und veraltete IP-Auflösungen beheben",
+          ],
+          [
+            "Miniaturansichten-Cache (Thumbnails)",
+            "Datenträgerbereinigung (cleanmgr)",
+            "500 MB – 2 GB",
+            "Vollständig sicher",
+            "Fehlerhafte Datei-Vorschaubilder reparieren",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Ist es sicher, den Cache unter Windows 11 zu leeren?",
+          answer:
+            "Ja, das Löschen von Cache-Dateien ist absolut sicher. Bei Caches handelt es sich um temporäre Arbeitsdaten; das Betriebssystem und installierte Programme erstellen diese bei Bedarf automatisch neu.",
+        },
+        {
+          question: "Verbessert das Leeren des Cache die Leistung des PCs?",
+          answer:
+            "Ja. Das Entfernen überquellender Browser-Caches, fehlerhafter Miniaturansichten-Datenbanken und riesiger Windows Update-Reste setzt Speicherplatz frei und beseitigt Verzögerungen sowie Anwendungsabstürze.",
+        },
+        {
+          question:
+            "Werden beim Leeren des Browser-Cache meine gespeicherten Passwörter gelöscht?",
+          answer:
+            "Nein, solange Sie die Optionen 'Cookies und andere Websitedaten' sowie 'Passwörter' nicht aktivieren. Wenn Sie nur 'Bilder und Dateien im Cache' auswählen, bleiben Ihre Anmeldungen vollständig erhalten.",
+        },
+        {
+          question: "Wie oft sollte man den Cache unter Windows 11 leeren?",
+          answer:
+            "Einmal im Monat reicht in der Regel völlig aus, oder sofort bei unerklärlichem Speicherplatzmangel, Netzwerkproblemen sowie hängenden Anwendungen.",
+        },
+      ],
       verdict: [
         "Cache leeren in Windows 11 besteht aus vier Kernschritten: temporäre Dateien über die Einstellungen entfernen, Browser-Caches mit Strg+Umschalt+Entf leeren, den Microsoft-Store-Cache mit wsreset.exe zurücksetzen und den DNS-Cache mit ipconfig /flushdns löschen. Regelmäßig angewendet gewinnen Sie echten Speicherplatz zurück und vermeiden viele alltägliche Störungen, bevor sie entstehen.",
         "Disk Mop vereint alle vier Schritte in einer App: Der Speed-Up-Knopf macht daraus einen einzigen Klick, und die geplante Bereinigung automatisiert die Wartung dauerhaft. Wer sich nie wieder um Caches kümmern möchte, hält Windows 11 mit Disk Mop am einfachsten sauber und schnell.",
@@ -411,6 +511,13 @@ export const clearCacheWindows11: Article = {
       intro: [
         "Pour vider le cache sur Windows 11, ouvrez les Paramètres avec la touche Windows + I, allez dans Système puis Stockage, cliquez sur Fichiers temporaires, cochez les catégories à supprimer et validez avec Supprimer les fichiers. Pour le cache du navigateur, appuyez sur Ctrl+Maj+Suppr dans Chrome, Edge ou Firefox ; pour le cache du Microsoft Store, lancez wsreset.exe ; et pour le cache DNS, saisissez ipconfig /flushdns dans l'Invite de commandes. Ces quatre étapes couvrent tous les types de cache importants d'un PC sous Windows 11.",
         "Les caches existent pour rendre l'ordinateur plus rapide, mais au fil des mois ils se transforment discrètement en plusieurs gigaoctets de données temporaires et provoquent parfois leurs propres dysfonctionnements. Dans ce guide, nous passons en revue chaque type de cache un par un, avec des étapes précises — système, navigateur, Microsoft Store et DNS — et nous terminons par une méthode pour tous les vider en un seul clic.",
+      ],
+      keyTakeaways: [
+        "Vider le cache sous Windows 11 est totalement sans danger ; les fichiers nécessaires sont recréés automatiquement par le système et les applications.",
+        "Les fichiers temporaires système et résidus de Windows Update s'effacent idéalement via Paramètres > Système > Stockage > Fichiers temporaires.",
+        "Le raccourci universel 'Ctrl+Maj+Suppr' ouvre la boîte de dialogue de purge du cache dans Chrome, Edge et Firefox.",
+        "Exécuter 'wsreset.exe' depuis la boîte Exécuter réinitialise le cache du Microsoft Store en cas de téléchargement bloqué.",
+        "Purger le cache DNS avec 'ipconfig /flushdns' corrige instantanément les enregistrements de domaines obsolètes et erreurs de navigation.",
       ],
       sections: [
         {
@@ -464,6 +571,100 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment vider tous les caches dans Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Supprimer les fichiers temporaires système",
+            text: "Appuyez sur Win+I pour ouvrir Paramètres > Système > Stockage > Fichiers temporaires. Cochez les catégories souhaitées et cliquez sur 'Supprimer les fichiers'.",
+          },
+          {
+            name: "Vider le cache des navigateurs web",
+            text: "Dans Chrome, Edge ou Firefox, pressez Ctrl+Maj+Suppr. Choisissez 'Toutes les données', cochez 'Images et fichiers en cache' et validez sur 'Effacer les données'.",
+          },
+          {
+            name: "Réinitialiser le cache du Microsoft Store",
+            text: "Appuyez sur Win+R, tapez wsreset.exe et appuyez sur Entrée. Patientez jusqu'à la fermeture de la fenêtre noire et la réouverture automatique du Store.",
+          },
+          {
+            name: "Purger le cache de résolution DNS",
+            text: "Ouvrez l'Invite de commandes et lancez 'ipconfig /flushdns' pour vider et réinitialiser le cache du résolveur DNS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Types de caches Windows 11, emplacements et procédures de nettoyage",
+        columns: [
+          "Type de cache",
+          "Emplacement / Raccourci",
+          "Taille typique",
+          "Niveau de sécurité",
+          "Pourquoi le vider",
+        ],
+        rows: [
+          [
+            "Fichiers temporaires système",
+            "Paramètres > Stockage ou %temp%",
+            "2 Go – 15 Go",
+            "Totalement sûr",
+            "Récupérer de l'espace disque",
+          ],
+          [
+            "Cache des navigateurs web",
+            "Ctrl + Maj + Suppr (dans le navigateur)",
+            "1 Go – 5 Go",
+            "Totalement sûr",
+            "Corriger les bugs d'affichage de sites et profils alourdis",
+          ],
+          [
+            "Cache du Microsoft Store",
+            "wsreset.exe (Boîte Exécuter)",
+            "100 Mo – 500 Mo",
+            "Totalement sûr",
+            "Débloquer les téléchargements et réparer les plantages au lancement",
+          ],
+          [
+            "Cache du résolveur DNS",
+            "ipconfig /flushdns (Invite de commandes)",
+            "< 10 Mo",
+            "Totalement sûr",
+            "Résoudre les erreurs de connexion et d'adresses IP introuvables",
+          ],
+          [
+            "Cache des miniatures",
+            "Nettoyage de disque (cleanmgr)",
+            "500 Mo – 2 Go",
+            "Totalement sûr",
+            "Réparer les aperçus d'icônes corrompus et dossiers lents",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Est-il prudent de vider le cache sous Windows 11 ?",
+          answer:
+            "Oui, vider les caches est totalement sûr. Il s'agit uniquement de fichiers temporaires de travail ; Windows et vos applications régénéreront des versions neuves dès que nécessaire.",
+        },
+        {
+          question: "Vider le cache améliore-t-il les performances du PC ?",
+          answer:
+            "Oui. Supprimer les caches de navigation surchargés, les bases de miniatures corrompues et les fichiers volumineux de mises à jour libère du stockage et élimine les ralentissements et gels d'écran inexpliqués.",
+        },
+        {
+          question:
+            "Vider le cache de mon navigateur va-t-il effacer mes mots de passe ?",
+          answer:
+            "Non, à condition de ne pas cocher 'Cookies et données de sites' ni 'Mots de passe'. En sélectionnant uniquement 'Images et fichiers mis en cache', vos sessions restent connectées.",
+        },
+        {
+          question:
+            "À quelle fréquence faut-il vider le cache sous Windows 11 ?",
+          answer:
+            "Une fois par mois suffit amplement, ou immédiatement lorsque vous constatez un disque anormalement plein, des lenteurs web ou des plantages d'applications.",
+        },
+      ],
       verdict: [
         "Vider le cache sous Windows 11 tient en quatre gestes essentiels : supprimer les fichiers temporaires depuis les Paramètres, effacer les caches des navigateurs avec Ctrl+Maj+Suppr, réinitialiser le cache du Microsoft Store avec wsreset.exe et vider le cache DNS avec ipconfig /flushdns. Répétés régulièrement, ces gestes récupèrent de l'espace disque bien réel et évitent discrètement toute une famille de petits dysfonctionnements quotidiens.",
         "Disk Mop réunit ces quatre opérations dans une seule application. Le bouton Accélérer transforme toute la routine en un clic, et le nettoyage planifié la rend automatique par la suite. Si vous préférez ne plus jamais penser aux caches, Disk Mop est la façon la plus simple de garder Windows 11 propre et rapide.",
@@ -479,6 +680,13 @@ export const clearCacheWindows11: Article = {
       intro: [
         "Para limpiar la caché en Windows 11, abre Configuración con la tecla Windows + I, entra en Sistema y luego en Almacenamiento, pulsa Archivos temporales, marca las categorías que quieras eliminar y confirma con Quitar archivos. Para la caché del navegador, pulsa Ctrl+Mayús+Supr dentro de Chrome, Edge o Firefox; para la caché de Microsoft Store, ejecuta wsreset.exe; y para la caché DNS, escribe ipconfig /flushdns en el Símbolo del sistema. Esos cuatro pasos cubren todos los tipos de caché importantes de un PC con Windows 11.",
         "Las cachés existen para que el ordenador vaya más rápido, pero con los meses se convierten en silencio en gigabytes de datos temporales y de vez en cuando provocan sus propios fallos. En esta guía repasamos cada tipo de caché uno por uno, con pasos exactos — sistema, navegador, Microsoft Store y DNS — y terminamos con una forma de vaciarlas todas con un solo clic.",
+      ],
+      keyTakeaways: [
+        "Borrar la caché en Windows 11 es totalmente seguro; el sistema y las aplicaciones reconstruyen los archivos según los necesitan.",
+        "Los archivos temporales del sistema y restos de Windows Update se limpian mejor en Configuración > Sistema > Almacenamiento > Archivos temporales.",
+        "El atajo universal 'Ctrl+Mayús+Supr' abre el menú de vaciado de caché en Chrome, Edge y Firefox.",
+        "Ejecutar 'wsreset.exe' en la ventana Ejecutar restablece la caché de Microsoft Store si las descargas se atascan o no inician.",
+        "Vaciar la caché de DNS con 'ipconfig /flushdns' soluciona de inmediato registros de dominio desactualizados y errores de navegación.",
       ],
       sections: [
         {
@@ -531,6 +739,99 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo vaciar todas las memorias caché en Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Limpiar archivos temporales del sistema",
+            text: "Pulsa Win+I para ir a Configuración > Sistema > Almacenamiento > Archivos temporales. Marca las categorías que desees y haz clic en 'Quitar archivos'.",
+          },
+          {
+            name: "Purgar la caché del navegador web",
+            text: "En Chrome, Edge o Firefox, pulsa Ctrl+Mayús+Supr. Selecciona 'Desde siempre', marca 'Archivos e imágenes en caché' y pulsa 'Borrar datos'.",
+          },
+          {
+            name: "Restablecer la caché de Microsoft Store",
+            text: "Pulsa Win+R, escribe wsreset.exe y presiona Enter. Espera a que se cierre sola la ventana negra de consola y la tienda se reinicie.",
+          },
+          {
+            name: "Vaciar la caché DNS",
+            text: "Abre el Símbolo del sistema y escribe 'ipconfig /flushdns' para vaciar y restablecer la caché del cliente de resolución DNS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Tipos de caché en Windows 11, ubicaciones y métodos de limpieza",
+        columns: [
+          "Tipo de caché",
+          "Ubicación / Comando",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Por qué limpiarla",
+        ],
+        rows: [
+          [
+            "Archivos temporales del sistema",
+            "Configuración > Almacenamiento o %temp%",
+            "2 GB – 15 GB",
+            "Totalmente seguro",
+            "Recuperar espacio en disco",
+          ],
+          [
+            "Caché de navegadores web",
+            "Ctrl + Mayús + Supr (en el navegador)",
+            "1 GB – 5 GB",
+            "Totalmente seguro",
+            "Corregir errores gráficos en webs y aligerar perfiles",
+          ],
+          [
+            "Caché de Microsoft Store",
+            "wsreset.exe (Ventana Ejecutar)",
+            "100 MB – 500 MB",
+            "Totalmente seguro",
+            "Corregir descargas atascadas y cuelgues al arrancar",
+          ],
+          [
+            "Caché de resolución DNS",
+            "ipconfig /flushdns (Símbolo del sistema)",
+            "< 10 MB",
+            "Totalmente seguro",
+            "Solucionar fallos de conexión y nombres de dominio",
+          ],
+          [
+            "Caché de miniaturas",
+            "Liberador de espacio (cleanmgr)",
+            "500 MB – 2 GB",
+            "Totalmente seguro",
+            "Reparar iconos defectuosos y lentitud al abrir carpetas",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Es seguro vaciar la memoria caché en Windows 11?",
+          answer:
+            "Sí, borrar archivos en caché es completamente seguro. Solo son datos de trabajo temporales; el sistema operativo y las aplicaciones volverán a crearlos cuando sea necesario.",
+        },
+        {
+          question: "¿Limpiar la caché mejora el rendimiento del equipo?",
+          answer:
+            "Sí. Eliminar cachés saturadas de navegadores, bases de miniaturas corruptas y archivos gigantescos de actualizaciones de Windows libera espacio y elimina bloqueos y congelamientos inesperados.",
+        },
+        {
+          question: "¿Borrar la caché del navegador eliminará mis contraseñas?",
+          answer:
+            "No, siempre que no marques las casillas 'Cookies y otros datos de sitios' ni 'Contraseñas'. Si solo marcas 'Archivos e imágenes en caché', mantendrás tus inicios de sesión intactos.",
+        },
+        {
+          question:
+            "¿Con qué frecuencia se debe limpiar la caché en Windows 11?",
+          answer:
+            "Una vez al mes suele ser suficiente, o de forma inmediata si experimentas falta de espacio en disco, errores de conexión web o fallos al abrir aplicaciones.",
+        },
+      ],
       verdict: [
         "Limpiar la caché en Windows 11 se reduce a cuatro movimientos básicos: eliminar los archivos temporales desde Configuración, borrar las cachés de los navegadores con Ctrl+Mayús+Supr, restablecer la caché de Microsoft Store con wsreset.exe y vaciar la caché DNS con ipconfig /flushdns. Hechos con regularidad, estos pasos recuperan espacio de disco real y evitan de forma silenciosa toda una familia de fallos cotidianos.",
         "Disk Mop reúne los cuatro en una sola aplicación. El botón Acelerar convierte toda la rutina en un clic y la limpieza programada la deja automatizada a partir de ahí. Si prefieres no volver a acordarte nunca de las cachés, Disk Mop es la forma más sencilla de mantener Windows 11 limpio y rápido.",
@@ -546,6 +847,13 @@ export const clearCacheWindows11: Article = {
       intro: [
         "Per svuotare la cache su Windows 11, apri Impostazioni con il tasto Windows + I, vai su Sistema e poi su Archiviazione, fai clic su File temporanei, seleziona le categorie da eliminare e conferma con Rimuovi file. Per la cache del browser premi Ctrl+Maiusc+Canc in Chrome, Edge o Firefox; per la cache del Microsoft Store esegui wsreset.exe; per la cache DNS digita ipconfig /flushdns nel Prompt dei comandi. Questi quattro passaggi coprono tutti i tipi di cache importanti di un PC con Windows 11.",
         "Le cache esistono per rendere il computer più veloce, ma nel giro di qualche mese diventano silenziosamente gigabyte di dati temporanei e ogni tanto creano problemi loro stesse. In questa guida affrontiamo ogni tipo di cache uno alla volta, con passaggi precisi — sistema, browser, Microsoft Store e DNS — e chiudiamo con un modo per svuotarle tutte con un solo clic.",
+      ],
+      keyTakeaways: [
+        "Svuotare la cache in Windows 11 è un'operazione completamente sicura; i file vengono ricreati in automatico dal sistema e dalle app.",
+        "I file temporanei di sistema e i residui di Windows Update si eliminano al meglio da Impostazioni > Sistema > Archiviazione > File temporanei.",
+        "La scorciatoia universale 'Ctrl+Maiusc+Canc' apre la finestra di pulizia della cache su Chrome, Edge e Firefox.",
+        "Il comando 'wsreset.exe' nella casella Esegui azzera la cache di Microsoft Store quando i download si bloccano o le schermate non si caricano.",
+        "La pulizia della cache DNS tramite 'ipconfig /flushdns' risolve istantaneamente record di dominio obsoleti ed errori di connessione.",
       ],
       sections: [
         {
@@ -598,6 +906,100 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come svuotare tutte le cache in Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Eliminare i file temporanei di sistema",
+            text: "Premi Win+I per aprire Impostazioni > Sistema > Archiviazione > File temporanei. Seleziona le categorie desiderate e clicca su 'Rimuovi file'.",
+          },
+          {
+            name: "Svuotare la cache del browser web",
+            text: "In Chrome, Edge o Firefox premi Ctrl+Maiusc+Canc. Imposta l'intervallo temporale su 'Tutto', spunta 'Immagini e file memorizzati nella cache' e clicca su 'Cancella dati'.",
+          },
+          {
+            name: "Ripristinare la cache di Microsoft Store",
+            text: "Premi Win+R, digita wsreset.exe e premi Invio. Attendi che la finestra nera del prompt si chiuda automaticamente e che lo Store si riavvii.",
+          },
+          {
+            name: "Svuotare la cache DNS",
+            text: "Apri il Prompt dei comandi ed esegui 'ipconfig /flushdns' per pulire e reimpostare la cache del resolver DNS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Tipologie di cache in Windows 11, percorsi e passaggi di pulizia",
+        columns: [
+          "Tipo di cache",
+          "Percorso / Comando",
+          "Dimensione tipica",
+          "Livello di sicurezza",
+          "Perché svuotarla",
+        ],
+        rows: [
+          [
+            "File temporanei di sistema",
+            "Impostazioni > Archiviazione o %temp%",
+            "2 GB – 15 GB",
+            "Completamente sicuro",
+            "Recuperare spazio libero su disco",
+          ],
+          [
+            "Cache browser web",
+            "Ctrl + Maiusc + Canc (nel browser)",
+            "1 GB – 5 GB",
+            "Completamente sicuro",
+            "Correggere layout difettosi e alleggerire i profili",
+          ],
+          [
+            "Cache Microsoft Store",
+            "wsreset.exe (Finestra Esegui)",
+            "100 MB – 500 MB",
+            "Completamente sicuro",
+            "Sbloccare i download bloccati ed errori di avvio",
+          ],
+          [
+            "Cache resolver DNS",
+            "ipconfig /flushdns (Prompt dei comandi)",
+            "< 10 MB",
+            "Completamente sicuro",
+            "Risolvere errori di navigazione e domini non raggiungibili",
+          ],
+          [
+            "Cache delle miniature",
+            "Pulizia disco (cleanmgr)",
+            "500 MB – 2 GB",
+            "Completamente sicuro",
+            "Riparare icone corrotte e caricamenti lenti delle cartelle",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "È sicuro svuotare la cache in Windows 11?",
+          answer:
+            "Sì, cancellare i file di cache è un'operazione totalmente sicura. I dati di cache sono informazioni temporanee; il sistema operativo e le app installate li rigenereranno automaticamente quando necessario.",
+        },
+        {
+          question: "Svuotare la cache migliora le prestazioni del PC?",
+          answer:
+            "Sì. Eliminare cache sovraccariche del browser, database di miniature corrotti e file pesanti di aggiornamento Windows libera spazio prezioso ed elimina blocchi, rallentamenti e freeze anomali.",
+        },
+        {
+          question:
+            "Cancellando la cache del browser perderò le mie password salvate?",
+          answer:
+            "No, a patto di non spuntare le voci relative a 'Cookie e altri dati dei siti' o 'Password'. Selezionando unicamente 'Immagini e file memorizzati nella cache', i tuoi accessi rimarranno intatti.",
+        },
+        {
+          question:
+            "Con quale frequenza bisognerebbe pulire la cache su Windows 11?",
+          answer:
+            "Una volta al mese è di solito più che sufficiente, oppure all'occorrenza in presenza di spazio su disco esaurito, errori di navigazione o blocchi improvvisi di programmi.",
+        },
+      ],
       verdict: [
         "Svuotare la cache su Windows 11 si riduce a quattro mosse essenziali: eliminare i file temporanei dalle Impostazioni, cancellare le cache dei browser con Ctrl+Maiusc+Canc, reimpostare la cache del Microsoft Store con wsreset.exe e svuotare la cache DNS con ipconfig /flushdns. Ripetuti con regolarità, questi passaggi recuperano spazio su disco reale e prevengono in silenzio un'intera categoria di piccoli intoppi quotidiani.",
         "Disk Mop riunisce tutte e quattro le operazioni in un'unica applicazione. Il pulsante Accelera trasforma l'intera routine in un clic e la pulizia pianificata la rende automatica da lì in avanti. Se preferisci non pensare mai più alle cache, Disk Mop è il modo più semplice per tenere Windows 11 pulito e veloce.",
@@ -613,6 +1015,13 @@ export const clearCacheWindows11: Article = {
       intro: [
         "Para limpar o cache no Windows 11, abra Configurações com a tecla Windows + I, vá em Sistema e depois em Armazenamento, clique em Arquivos temporários, marque as categorias que deseja apagar e confirme em Remover arquivos. Para o cache do navegador, pressione Ctrl+Shift+Delete no Chrome, no Edge ou no Firefox; para o cache da Microsoft Store, execute wsreset.exe; e para o cache DNS, digite ipconfig /flushdns no Prompt de Comando. Esses quatro passos cobrem todos os tipos de cache importantes de um PC com Windows 11.",
         "Os caches existem para deixar o computador mais rápido, mas ao longo dos meses viram silenciosamente gigabytes de dados temporários e, de vez em quando, causam problemas por conta própria. Neste guia percorremos cada tipo de cache separadamente, com passos exatos — sistema, navegador, Microsoft Store e DNS — e terminamos com um jeito de limpar todos eles em um único clique.",
+      ],
+      keyTakeaways: [
+        "Limpar o cache no Windows 11 é totalmente seguro; os arquivos necessários são reconstruídos pelo sistema e pelos aplicativos automaticamente.",
+        "Arquivos temporários do sistema e sobras do Windows Update são eliminados com facilidade em Configurações > Sistema > Armazenamento > Arquivos temporários.",
+        "O atalho universal 'Ctrl+Shift+Delete' abre a janela de limpeza de cache no Chrome, Edge e Firefox.",
+        "O comando 'wsreset.exe' na janela Executar redefine o cache da Microsoft Store quando downloads travam ou o aplicativo não abre.",
+        "Limpar o cache DNS com 'ipconfig /flushdns' corrige na hora registros de domínio corrompidos e erros de navegação na web.",
       ],
       sections: [
         {
@@ -665,6 +1074,97 @@ export const clearCacheWindows11: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar todos os tipos de cache no Windows 11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Limpar arquivos temporários do sistema",
+            text: "Pressione Win+I para abrir Configurações > Sistema > Armazenamento > Arquivos temporários. Marque as opções desejadas e clique em 'Remover arquivos'.",
+          },
+          {
+            name: "Limpar caches dos navegadores de internet",
+            text: "No Chrome, Edge ou Firefox, pressione Ctrl+Shift+Delete. Defina o período como 'Todo o período', marque 'Imagens e arquivos armazenados em cache' e clique em 'Limpar dados'.",
+          },
+          {
+            name: "Redefinir o cache da Microsoft Store",
+            text: "Pressione Win+R, digite wsreset.exe e aperte Enter. Aguarde a janela preta fechar automaticamente e a loja abrir de novo.",
+          },
+          {
+            name: "Limpar o cache DNS",
+            text: "Abra o Prompt de Comando e execute 'ipconfig /flushdns' para esvaziar e renovar a resolução do cliente DNS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Tipos de cache no Windows 11, diretórios e passos de limpeza",
+        columns: [
+          "Tipo de cache",
+          "Localização / Atalho",
+          "Tamanho típico",
+          "Nível de segurança",
+          "Motivo para limpar",
+        ],
+        rows: [
+          [
+            "Arquivos temporários do sistema",
+            "Configurações > Armazenamento ou %temp%",
+            "2 GB – 15 GB",
+            "Totalmente seguro",
+            "Liberar espaço no drive C:",
+          ],
+          [
+            "Cache de navegadores de internet",
+            "Ctrl + Shift + Delete (no navegador)",
+            "1 GB – 5 GB",
+            "Totalmente seguro",
+            "Corrigir falhas visuais de páginas e perfis pesados",
+          ],
+          [
+            "Cache da Microsoft Store",
+            "wsreset.exe (Janela Executar)",
+            "100 MB – 500 MB",
+            "Totalmente seguro",
+            "Destravar downloads e resolver erros de inicialização",
+          ],
+          [
+            "Cache do resolvedor DNS",
+            "ipconfig /flushdns (Prompt de Comando)",
+            "< 10 MB",
+            "Totalmente seguro",
+            "Solucionar problemas de conexão e endereços inacessíveis",
+          ],
+          [
+            "Cache de miniaturas",
+            "Limpeza de Disco (cleanmgr)",
+            "500 MB – 2 GB",
+            "Totalmente seguro",
+            "Reparar ícones corrompidos e lentidão ao carregar pastas",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "É seguro limpar o cache no Windows 11?",
+          answer:
+            "Sim, excluir arquivos de cache é 100% seguro. São dados temporários de processamento; o Windows e seus programas recriarão versões limpas conforme a necessidade.",
+        },
+        {
+          question: "Limpar o cache melhora o desempenho do computador?",
+          answer:
+            "Sim. A remoção de caches de navegadores sobrecarregados, bancos de miniaturas com erros e gigabytes de arquivos temporários de atualizações libera espaço e resolve lentidões e travamentos inexplicáveis.",
+        },
+        {
+          question: "Limpar o cache do navegador apagará minhas senhas salvas?",
+          answer:
+            "Não, desde que você não marque as opções 'Cookies e outros dados de sites' nem 'Senhas'. Mantendo marcado apenas 'Imagens e arquivos armazenados em cache', suas contas permanecerão conectadas.",
+        },
+        {
+          question: "Com que frequência devo limpar o cache no Windows 11?",
+          answer:
+            "Uma vez por mês é suficiente para a maioria dos usuários, ou imediatamente quando surgirem problemas de falta de espaço, erros de conexão ou falhas em aplicativos.",
+        },
+      ],
       verdict: [
         "Limpar o cache no Windows 11 se resume a quatro movimentos principais: remover os arquivos temporários pelas Configurações, limpar os caches dos navegadores com Ctrl+Shift+Delete, redefinir o cache da Microsoft Store com wsreset.exe e liberar o cache DNS com ipconfig /flushdns. Feitos com regularidade, esses passos recuperam espaço em disco de verdade e evitam, sem alarde, uma classe inteira de probleminhas do dia a dia.",
         "O Disk Mop reúne os quatro em um único aplicativo. O botão Acelerar transforma toda a rotina em um clique, e a limpeza agendada deixa tudo automático dali em diante. Se você prefere nunca mais pensar em cache, o Disk Mop é o jeito mais simples de manter o Windows 11 limpo e rápido.",
@@ -679,6 +1179,13 @@ export const clearCacheWindows11: Article = {
       intro: [
         "Windows 11でキャッシュを削除するには、Windowsキー + I で「設定」を開き、「システム」から「記憶域」へ進んで「一時ファイル」をクリックし、消したいカテゴリにチェックを入れて「ファイルの削除」を押します。ブラウザーのキャッシュは、Chrome、Edge、FirefoxでCtrl+Shift+Deleteを押して削除します。Microsoft Storeのキャッシュは wsreset.exe を実行し、DNSキャッシュはコマンド プロンプトで ipconfig /flushdns を実行してください。この4つの手順で、Windows 11パソコンの主要なキャッシュはすべてカバーできます。",
         "キャッシュはパソコンを速くするための仕組みですが、数か月のうちに気づかないまま数ギガバイトの一時データへ膨らみ、ときには不具合の原因にもなります。この記事では、システム、ブラウザー、Microsoft Store、DNSという4種類のキャッシュを1つずつ、具体的な手順とともに解説し、最後にすべてをワンクリックで消す方法を紹介します。",
+      ],
+      keyTakeaways: [
+        "Windows 11でのキャッシュクリアは完全に安全です。削除された一時ファイルはシステムやアプリによって必要に応じて自動再生成されます。",
+        "システムの一時ファイルやWindows Updateの残骸は、「設定」>「システム」>「ストレージ」>「一時ファイル」から消去するのが最適です。",
+        "共通ショートカット「Ctrl+Shift+Delete」を使えば、Chrome、Edge、Firefoxでキャッシュ消去画面をダイレクトに開けます。",
+        "「ファイル名を指定して実行」で「wsreset.exe」を実行すると、ダウンロードが止まったMicrosoft Storeのキャッシュを素早くリセットできます。",
+        "「ipconfig /flushdns」によるDNSキャッシュ消去で、古いドメイン情報やWebサイトの読み込み不具合を即時解消できます。",
       ],
       sections: [
         {
@@ -728,6 +1235,100 @@ export const clearCacheWindows11: Article = {
             "Disk Mopはこの一連の作業をワンクリックにまとめます。高速化（Speed Up）機能は、システムキャッシュ、ブラウザーのキャッシュ、古いダウンロード、ごみ箱を一度に片づけます。細かく制御したいときは、キャッシュクリーナー（Cache Cleaner）、ブラウザーキャッシュクリーナー、DNSキャッシュクリーナーが種類ごとに対応します。スケジュールクリーンアップ（Scheduled Cleanup）は毎週または毎月すべてを自動実行し、システム健全性スコア（System Health Score）はパソコンの手入れが必要な時期をひと目で示してくれます。",
             "Disk Mopは機能を絞った無料版を無償でダウンロードでき、Pro版は買い切り19.90ドルの永続ライセンスです。サブスクリプションはありません。アプリはWindows 10と11に加え、macOSでも動作します。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windows 11ですべてのキャッシュを消去する方法",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "システムの一時ファイルを消去する",
+            text: "Win+Iキーで「設定」>「システム」>「ストレージ」>「一時ファイル」を開き、不要なカテゴリにチェックを入れて「ファイルの削除」をクリックします。",
+          },
+          {
+            name: "Webブラウザのキャッシュをクリアする",
+            text: "Chrome、Edge、Firefoxの画面でCtrl+Shift+Deleteを押します。期間を「全期間」にし、「キャッシュされた画像とファイル」にチェックを入れて「データを削除」を実行します。",
+          },
+          {
+            name: "Microsoft Storeのキャッシュをリセットする",
+            text: "Win+Rを押し、「wsreset.exe」と入力してEnterを押します。黒い画面が自動で閉じてストアが再起動するまで待ちます。",
+          },
+          {
+            name: "DNSキャッシュをフラッシュする",
+            text: "コマンドプロンプトを開き、「ipconfig /flushdns」を実行してDNSリゾルバーキャッシュを消去・リセットします。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windows 11のキャッシュ種類・保存場所・クリーンアップ手順",
+        columns: [
+          "キャッシュ種類",
+          "保存場所 / コマンド",
+          "典型的な容量",
+          "安全性レベル",
+          "消去する目的",
+        ],
+        rows: [
+          [
+            "システム一時ファイル",
+            "設定 > ストレージ または %temp%",
+            "2 GB – 15 GB",
+            "完全に安全",
+            "ドライブの空き容量を回復する",
+          ],
+          [
+            "Webブラウザキャッシュ",
+            "Ctrl + Shift + Delete（ブラウザ内）",
+            "1 GB – 5 GB",
+            "完全に安全",
+            "Web表示の崩れやプロファイルの肥大化を解消",
+          ],
+          [
+            "Microsoft Storeキャッシュ",
+            "wsreset.exe（ファイル名を指定して実行）",
+            "100 MB – 500 MB",
+            "完全に安全",
+            "ダウンロード停止や起動時クラッシュの修復",
+          ],
+          [
+            "DNSリゾルバーキャッシュ",
+            "ipconfig /flushdns（コマンドプロンプト）",
+            "< 10 MB",
+            "完全に安全",
+            "接続エラーや古いドメイン参照の修正",
+          ],
+          [
+            "縮小表示（サムネイル）キャッシュ",
+            "ディスク クリーンアップ（cleanmgr）",
+            "500 MB – 2 GB",
+            "完全に安全",
+            "壊れたアイコン表示の修復とフォルダ読み込み改善",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windows 11でキャッシュをクリアしても安全性に問題はありませんか？",
+          answer:
+            "はい、キャッシュファイルの消去は完全に安全です。キャッシュは一時的な作業データに過ぎず、OSやインストール済みアプリが必要に応じて新しいファイルを自動的に再生成します。",
+        },
+        {
+          question: "キャッシュを削除するとPCの動作は軽くなりますか？",
+          answer:
+            "はい。肥大化したブラウザキャッシュ、破損したサムネイルデータベース、巨大なWindows Update一時ファイルを整理することで、ドライブ空き容量が増え、予期せぬプチフリーズや動作遅延が解消されます。",
+        },
+        {
+          question:
+            "ブラウザのキャッシュをクリアすると保存したパスワードも消えますか？",
+          answer:
+            "いいえ。「Cookieと他のサイトデータ」や「パスワード」のチェックを外していれば問題ありません。「キャッシュされた画像とファイル」のみを選択すればログイン状態は保持されます。",
+        },
+        {
+          question:
+            "Windows 11ではどのくらいの頻度でキャッシュを消去すべきですか？",
+          answer:
+            "通常は月に1回程度で十分です。あるいはストレージ容量が急激に不足した際や、ネット接続エラー、アプリの異常終了が発生した際に適時実行してください。",
         },
       ],
       verdict: [

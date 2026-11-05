@@ -5,6 +5,7 @@ export const reduceVideoSizeIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {

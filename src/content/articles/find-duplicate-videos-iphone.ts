@@ -5,12 +5,11 @@ export const findDuplicateVideosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone'da Kopya ve Benzer Videoları Bulma (ve En İyi Çekimi Tutma)",
+      title: "iPhone'da Kopya ve Benzer Videoları Bulup Temizleme",
       metaDescription:
         "Aynı anın üç çekimi bin fotoğraftan fazla yer kaplayabilir. iPhone'da benzer videoları bulma, en iyi çekimi seçme ve gigabaytlarca alanı güvenle açma adımları.",
       subtitle:
@@ -133,8 +132,7 @@ export const findDuplicateVideosIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Find Duplicate and Similar Videos on iPhone (and Keep the Best Take)",
+      title: "How to Find and Delete Duplicate Videos on Your iPhone",
       metaDescription:
         "Three takes of the same clip can cost more space than a thousand photos. How to find similar videos on iPhone, pick the best take and free gigabytes safely.",
       subtitle:

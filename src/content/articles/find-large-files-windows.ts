@@ -5,7 +5,7 @@ export const findLargeFilesWindows: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-06-29",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 6,
   content: {
     tr: {
@@ -335,6 +335,12 @@ export const findLargeFilesWindows: Article = {
         "Der schnellste Weg, große Dateien unter Windows 10 und 11 zu finden: Öffnen Sie den Datei-Explorer, wählen Sie Dieser PC und tippen Sie size:gigantic in das Suchfeld — so werden alle Dateien über 4 GB aufgelistet. Für das vollständige Bild zeigt ein Analyse-Tool mit Treemap-Ansicht auf einen Blick, was den Speicherplatz auf Ihrer Festplatte belegt. Beide Methoden dauern keine fünf Minuten, und diese Anleitung führt Sie Schritt für Schritt durch jede davon.",
         "Festplatten füllen sich leise: ein vergessener Videoexport, eine alte VM-Festplatte oder ein Spiel, das Sie längst nicht mehr spielen, kann Dutzende Gigabyte verschlingen. Diese Anleitung ist als Stufenmodell aufgebaut: zuerst die wenig bekannten size:-Suchoperatoren des Datei-Explorers, dann die visuelle Treemap-Analyse und schließlich ein automatischer Scan für alle Dateien über 500 MB. Am Ende wissen Sie, wie Sie jede große Datei aufspüren, die Ihren Speicherplatz belegt, und können sicher entscheiden, was damit geschehen soll.",
       ],
+      keyTakeaways: [
+        "Die Eingabe von „groesse:gigantisch“ in das Suchfeld des Windows-Explorers listet sofort alle Dateien über 4 GB auf dem PC auf.",
+        "Die interaktive Treemap-Visualisierung stellt die Festplatte in proportionalen Blöcken dar und enttarnt riesige Ordner in tiefen Verzeichnissen auf einen Blick.",
+        "Automatisierte Scans nach Dateien ab 500 MB und die SHA-256-Duplikaterkennung geben viele Gigabyte frei, ohne mühsam Ordner durchklicken zu müssen.",
+        "Löschen Sie keinesfalls zentrale Betriebssystemdateien (pagefile.sys, hiberfil.sys, C:\\Windows); zielen Sie sicher auf alte ISO-Dateien, Videoexporte und vergessene Setup-Dateien.",
+      ],
       sections: [
         {
           title: "Warum sich große Dateien unter Windows so gut verstecken",
@@ -385,6 +391,95 @@ export const findLargeFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Große Dateien über 4 GB im Windows-Explorer finden",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Windows-Explorer öffnen",
+            text: "Drücken Sie Win+E und wählen Sie „Dieser PC“ oder das gewünschte Ziellaufwerk aus.",
+          },
+          {
+            name: "Suchfilter für gigantische Dateien eingeben",
+            text: "Geben Sie in das Suchfeld oben rechts „groesse:gigantisch“ (oder „size:gigantic“) ein und drücken Sie die Eingabetaste.",
+          },
+          {
+            name: "Suchergebnisse nach Größe sortieren",
+            text: "Klicken Sie auf den Spaltenkopf „Größe“, um die größten Dateien an oberster Stelle anzuzeigen.",
+          },
+          {
+            name: "Gefundene Großdateien überprüfen und bereinigen",
+            text: "Entfernen Sie alte virtuelle Maschinen, ISO-Abbilder oder exportierte Videodateien, die Sie nicht mehr benötigen.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Vergleich der Methoden zum Auffinden großer Dateien unter Windows",
+        columns: [
+          "Methode",
+          "Geschwindigkeit",
+          "Visuelle Übersicht",
+          "Erkennung in tiefen Ordnern",
+          "Automatisierung",
+        ],
+        rows: [
+          [
+            "Explorer (groesse:gigantisch)",
+            "Schnell (1–2 Min.)",
+            "Einfache Liste",
+            "Eingeschränkt / Langsam",
+            "Manuell",
+          ],
+          [
+            "Windows-Speichereinstellungen",
+            "Sofort",
+            "Kategorie-Balken",
+            "Nur Kategorien (Keine Einzeldateien)",
+            "Teilautomatisiert",
+          ],
+          [
+            "Treemap-Festplattenanalyse",
+            "Moderat (1–3 Min.)",
+            "Interaktive geschachtelte Rechtecke",
+            "Hervorragend (Vollständiger Verzeichnisbaum)",
+            "Visuelle Entdeckung",
+          ],
+          [
+            "DiskMop Large File Finder (>500MB)",
+            "Sehr schnell (<1 Min.)",
+            "Nach Größe sortierte Liste mit Pfaden",
+            "Umfassend (Alle Laufwerke)",
+            "Automatisiert & Sicher",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Was bewirkt der Suchfilter „groesse:gigantisch“ in Windows?",
+          answer:
+            "„groesse:gigantisch“ (bzw. „size:gigantic“) ist ein Windows-Suchoperator, der Dateien über 4 GB filtert. Sie können auch „groesse:riesig“ (1–4 GB) oder Filter wie „groesse:>500MB“ nutzen.",
+        },
+        {
+          question:
+            "Welche großen Dateien sollte man unter Windows niemals löschen?",
+          answer:
+            "Löschen Sie niemals Systemdateien im Stammverzeichnis C:\\ wie „pagefile.sys“, „hiberfil.sys“ oder „swapfile.sys“ und fassen Sie keine Dateien im Windows-Systemverzeichnis an.",
+        },
+        {
+          question:
+            "Warum ist der Windows-Explorer beim Suchen großer Dateien so langsam?",
+          answer:
+            "Wenn Ordner nicht im Windows-Suchindex enthalten sind, muss der Explorer jedes Unterverzeichnis einzeln durchsuchen, was bei herkömmlichen Festplatten oder großen Laufwerken Minuten dauern kann.",
+        },
+        {
+          question:
+            "Wie hilft eine Treemap-Ansicht beim Freigeben von Speicherplatz?",
+          answer:
+            "Eine Treemap stellt Dateien und Ordner als Rechtecke dar, deren Größe dem tatsächlichen Speicherverbrauch entspricht. So sehen Sie sofort, welche Ordner den meisten Platz belegen.",
+        },
+      ],
       verdict: [
         "Große Dateien unter Windows zu finden besteht aus drei Kompetenzstufen: eine size:gigantic-Suche im Datei-Explorer für den Schnellcheck, eine Treemap-Analyse für die Gesamtkarte des Laufwerks und ein automatischer Scanner für Dateien über 500 MB als wiederkehrende Kontrolle. Wer alle drei kombiniert, kann auf den meisten PCs in einer Viertelstunde Dutzende Gigabyte zurückgewinnen.",
         "Disk Mop bündelt diesen gesamten Arbeitsablauf in einer App: Festplattenanalyse mit Treemap, Große-Dateien-Finder für alles über 500 MB, SHA-256-basierter Duplikatfinder und geplante Bereinigung. Sie können die App kostenlos testen; die einmalige Lifetime-Lizenz für 19,90 $ schaltet alle Funktionen frei.",
@@ -401,6 +496,12 @@ export const findLargeFilesWindows: Article = {
       intro: [
         "Le moyen le plus rapide de trouver les gros fichiers sous Windows 10 et 11 : ouvrez l'Explorateur de fichiers, sélectionnez Ce PC et tapez size:gigantic dans le champ de recherche — la liste affiche alors tous les fichiers de plus de 4 Go. Pour une vue d'ensemble complète, un outil d'analyse de disque doté d'une treemap montre d'un seul coup d'œil ce qui occupe l'espace de votre disque dur. Les deux méthodes prennent moins de cinq minutes, et ce guide vous accompagne pas à pas dans chacune d'elles.",
         "Les disques se remplissent en silence. Un export vidéo oublié, un ancien disque de machine virtuelle ou un jeu auquel vous ne jouez plus peuvent engloutir des dizaines de gigaoctets sans jamais attirer votre attention. Ce guide est construit comme une progression : d'abord les opérateurs de recherche size: méconnus de l'Explorateur de fichiers, puis l'analyse visuelle en treemap, et enfin un scan automatique qui repère tous les fichiers de plus de 500 Mo. À la fin, vous saurez débusquer les gros fichiers qui saturent votre disque et décider en confiance de ce qu'il faut en faire.",
+      ],
+      keyTakeaways: [
+        "Saisir « taille:gigantesque » dans l'Explorateur Windows liste instantanément tous les fichiers de plus de 4 Go sur votre ordinateur.",
+        "La visualisation interactive par treemap cartographie le disque en blocs proportionnels et révèle en un clin d'œil les répertoires cachés les plus volumineux.",
+        "Le scan automatique des fichiers de plus de 500 Mo combiné à la détection SHA-256 libère des gigaoctets sans parcourir péniblement les dossiers un à un.",
+        "Évitez de toucher aux fichiers système cruciaux (pagefile.sys, hiberfil.sys, C:\\Windows) ; ciblez en priorité les ISO périmées, vidéos exportées et installeurs oubliés.",
       ],
       sections: [
         {
@@ -452,6 +553,95 @@ export const findLargeFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment trouver les gros fichiers de plus de 4 Go dans l'Explorateur Windows",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Ouvrir l'Explorateur de fichiers",
+            text: "Appuyez sur Win+E et sélectionnez « Ce PC » ou le lecteur que vous souhaitez analyser.",
+          },
+          {
+            name: "Saisir le filtre des fichiers gigantesques",
+            text: "Dans la zone de recherche en haut à droite, tapez « taille:gigantesque » (ou « size:gigantic ») et appuyez sur Entrée.",
+          },
+          {
+            name: "Trier les résultats par taille",
+            text: "Cliquez sur l'en-tête de colonne « Taille » pour afficher les plus gros fichiers en premier.",
+          },
+          {
+            name: "Inspecter et nettoyer les éléments inutiles",
+            text: "Supprimez les anciennes images ISO, machines virtuelles obsolètes ou rendus vidéo dont vous n'avez plus l'usage.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparatif des méthodes de détection des gros fichiers sous Windows",
+        columns: [
+          "Méthode",
+          "Vitesse",
+          "Clarté visuelle",
+          "Découverte en profondeur",
+          "Automatisation",
+        ],
+        rows: [
+          [
+            "Explorateur de fichiers (taille:gigantesque)",
+            "Rapide (1–2 min)",
+            "Liste plate",
+            "Limitée / Lente",
+            "Manuelle",
+          ],
+          [
+            "Paramètres de stockage Windows",
+            "Instantanée",
+            "Barres par catégorie",
+            "Par catégorie uniquement (Pas de fichiers)",
+            "Semi-automatisée",
+          ],
+          [
+            "Analyse de disque par treemap",
+            "Modérée (1–3 min)",
+            "Rectangles imbriqués interactifs",
+            "Excellente (Arborescence complète)",
+            "Découverte visuelle",
+          ],
+          [
+            "Détecteur de gros fichiers DiskMop (>500Mo)",
+            "Très rapide (<1 min)",
+            "Liste triée par taille avec chemins d'accès",
+            "Complète (Tous les disques)",
+            "Automatisée et sécurisée",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "À quoi sert le filtre de recherche « taille:gigantesque » dans Windows ?",
+          answer:
+            "« taille:gigantesque » (ou « size:gigantic ») est un opérateur de recherche Windows qui sélectionne les fichiers dépassant 4 Go. Vous pouvez aussi utiliser « taille:énorme » (1 à 4 Go) ou « taille:>500Mo ».",
+        },
+        {
+          question:
+            "Quels gros fichiers ne faut-il jamais supprimer sous Windows ?",
+          answer:
+            "Ne supprimez jamais les fichiers système à la racine de C: comme « pagefile.sys », « hiberfil.sys » ou « swapfile.sys », ni les fichiers du dossier C:\\Windows.",
+        },
+        {
+          question:
+            "Pourquoi la recherche de gros fichiers dans l'Explorateur est-elle si lente ?",
+          answer:
+            "Si les dossiers ne figurent pas dans l'index de recherche Windows, l'Explorateur analyse chaque répertoire un par un, ce qui peut prendre plusieurs minutes sur les gros disques.",
+        },
+        {
+          question:
+            "En quoi une vue treemap facilite-t-elle la récupération d'espace disque ?",
+          answer:
+            "Le treemap affiche chaque dossier et fichier sous forme de rectangle proportionnel à sa taille réelle, ce qui permet de localiser visuellement et instantanément les plus gros mangeurs d'espace.",
+        },
+      ],
       verdict: [
         "Trouver les gros fichiers sous Windows repose sur trois niveaux de compétence : une recherche size:gigantic dans l'Explorateur de fichiers pour un contrôle rapide, une analyse en treemap pour la carte d'ensemble de votre disque, et un scanner automatique des fichiers de plus de 500 Mo comme audit récurrent. En combinant les trois, récupérer des dizaines de gigaoctets en un quart d'heure est un objectif réaliste sur la plupart des PC.",
         "Disk Mop réunit tout ce flux de travail dans une seule application : la treemap de l'analyse de disque, le détecteur de gros fichiers au-delà de 500 Mo, le détecteur de doublons fondé sur SHA-256 et le nettoyage planifié pour l'entretien. Vous pouvez l'essayer gratuitement, et une licence à vie à 19,90 $, payée une seule fois, débloque toutes les fonctions.",
@@ -467,6 +657,12 @@ export const findLargeFilesWindows: Article = {
       intro: [
         "La forma más rápida de encontrar archivos grandes en Windows 10 y 11 es abrir el Explorador de archivos, seleccionar Este equipo y escribir size:gigantic en el cuadro de búsqueda: así aparecen todos los archivos de más de 4 GB. Para una visión más completa, una herramienta de análisis de disco con vista de treemap muestra de un vistazo qué está ocupando el espacio de tu disco duro. Ambos métodos llevan menos de cinco minutos, y esta guía recorre cada uno paso a paso.",
         "Los discos se llenan en silencio. Una exportación de vídeo olvidada, el disco de una máquina virtual antigua o un juego al que ya no juegas pueden tragarse decenas de gigabytes sin que llegues a verlos nunca. Esta guía está planteada como una progresión: primero los poco conocidos operadores de búsqueda size: del Explorador de archivos, después el análisis visual en treemap y, por último, un escaneo automático que detecta todos los archivos de más de 500 MB. Al terminar sabrás localizar los archivos grandes que ocupan tu disco y decidir con criterio qué hacer con cada uno.",
+      ],
+      keyTakeaways: [
+        "Escribir 'tamaño:gigantesco' en el Explorador de archivos lista al instante todos los archivos de más de 4 GB en tu ordenador.",
+        "El mapa de árbol interactivo divide tu unidad en bloques proporcionales, mostrando al momento carpetas pesadas ocultas en subdirectorios profundos.",
+        "Los análisis automáticos de más de 500 MB y la detección SHA-256 recuperan gigabytes de espacio sin tener que revisar carpetas una por una.",
+        "Evita borrar archivos esenciales del sistema (pagefile.sys, hiberfil.sys, C:\\Windows); enfócate en imágenes ISO antiguas, vídeos exportados e instaladores olvidados.",
       ],
       sections: [
         {
@@ -519,6 +715,94 @@ export const findLargeFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo encontrar archivos de más de 4 GB en el Explorador de Windows",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Abrir el Explorador de archivos",
+            text: "Pulsa Win+E y accede a 'Este equipo' o selecciona la unidad que deseas analizar.",
+          },
+          {
+            name: "Escribir el comando de búsqueda de archivos gigantes",
+            text: "En el cuadro de búsqueda superior derecho, escribe 'tamaño:gigantesco' (o 'size:gigantic') y pulsa Intro.",
+          },
+          {
+            name: "Ordenar los resultados por tamaño",
+            text: "Haz clic en el encabezado de columna 'Tamaño' para ver primero los archivos que más espacio ocupan.",
+          },
+          {
+            name: "Revisar y eliminar archivos prescindibles",
+            text: "Elimina máquinas virtuales obsoletas, imágenes ISO que ya no uses o exportaciones de vídeo prescindibles.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparativa de métodos para encontrar archivos grandes en Windows",
+        columns: [
+          "Método",
+          "Velocidad",
+          "Claridad visual",
+          "Búsqueda en directorios profundos",
+          "Automatización",
+        ],
+        rows: [
+          [
+            "Explorador de archivos (tamaño:gigantesco)",
+            "Rápido (1–2 min)",
+            "Lista plana",
+            "Limitada / Lenta",
+            "Manual",
+          ],
+          [
+            "Configuración de almacenamiento de Windows",
+            "Instantáneo",
+            "Barras por categoría",
+            "Solo categorías (Sin lista de archivos)",
+            "Semiautomatizado",
+          ],
+          [
+            "Análisis con mapa de árbol",
+            "Moderado (1–3 min)",
+            "Rectángulos interactivos proporcionales",
+            "Excelente (Árbol completo)",
+            "Descubrimiento visual",
+          ],
+          [
+            "Buscador de archivos grandes de DiskMop (>500MB)",
+            "Muy rápido (<1 min)",
+            "Lista ordenada por tamaño con rutas",
+            "Exhaustivo (Todas las unidades)",
+            "Automatizado y seguro",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Qué hace el filtro de búsqueda 'tamaño:gigantesco' en Windows?",
+          answer:
+            "'tamaño:gigantesco' (o 'size:gigantic') es un comando del Explorador de Windows que filtra archivos mayores de 4 GB. También puedes probar 'tamaño:enorme' (1 a 4 GB) o 'tamaño:>500MB'.",
+        },
+        {
+          question: "¿Qué archivos grandes nunca se deben borrar en Windows?",
+          answer:
+            "Nunca borres archivos del sistema situados en la raíz C:\\ como 'pagefile.sys', 'hiberfil.sys' o 'swapfile.sys', ni modifiques archivos dentro del directorio C:\\Windows.",
+        },
+        {
+          question:
+            "¿Por qué el Explorador de Windows tarda tanto en encontrar archivos grandes?",
+          answer:
+            "Si las carpetas no están indexadas por Windows Search, el Explorador debe leer cada directorio en tiempo real, lo que ralentiza la búsqueda en discos grandes.",
+        },
+        {
+          question:
+            "¿Cómo ayuda la vista de mapa de árbol a recuperar espacio?",
+          answer:
+            "El mapa de árbol muestra carpetas y archivos en bloques rectangulares proporcionales a su peso en disco, permitiendo identificar al instante qué carpetas consumen más capacidad.",
+        },
+      ],
       verdict: [
         "Encontrar archivos grandes en Windows se reduce a tres niveles: una búsqueda size:gigantic en el Explorador de archivos para la comprobación rápida, un análisis en treemap para el mapa general de la unidad y un escáner automático de archivos de más de 500 MB como revisión periódica. Usando los tres juntos, recuperar decenas de gigabytes en una sesión de quince minutos es un objetivo realista en la mayoría de los equipos.",
         "Disk Mop reúne todo ese flujo de trabajo en una sola aplicación: el treemap del análisis de disco, el buscador de archivos grandes desde 500 MB, el detector de duplicados basado en SHA-256 y la limpieza programada para el mantenimiento. Puedes probarlo gratis, y una licencia de por vida de 19,90 $ en un pago único lo desbloquea todo.",
@@ -534,6 +818,12 @@ export const findLargeFilesWindows: Article = {
       intro: [
         "Il modo più rapido per trovare i file di grandi dimensioni su Windows 10 e 11 è aprire Esplora file, selezionare Questo PC e digitare size:gigantic nella casella di ricerca: compaiono così tutti i file oltre i 4 GB. Per un quadro più completo, uno strumento di analisi del disco con vista treemap mostra a colpo d'occhio che cosa sta occupando lo spazio sul disco. Entrambi i metodi richiedono meno di cinque minuti, e questa guida li percorre passo per passo.",
         "I dischi si riempiono in silenzio. Un'esportazione video dimenticata, il disco di una vecchia macchina virtuale o un gioco che non apri più possono divorare decine di gigabyte senza mai finirti davanti agli occhi. Questa guida è costruita come una progressione: prima gli operatori di ricerca size: poco conosciuti di Esplora file, poi l'analisi visiva con la treemap e infine una scansione automatica che intercetta ogni file oltre i 500 MB. Alla fine saprai individuare i file di grandi dimensioni che occupano il disco e decidere con sicurezza che cosa farne.",
+      ],
+      keyTakeaways: [
+        "Digitare «dimensione:gigantesco» nella ricerca di Esplora file elenca subito tutti i file superiori a 4 GB presenti nel PC.",
+        "La visualizzazione interattiva ad albero (treemap) mappa l'unità in blocchi proporzionali, svelando all'istante cartelle giganti nascoste nei percorsi più profondi.",
+        "Le scansioni automatiche per file oltre i 500 MB e la deduplicazione SHA-256 recuperano gigabyte senza dover esplorare manualmente ogni directory.",
+        "Evita di eliminare i file cardine del sistema operativo (pagefile.sys, hiberfil.sys, C:\\Windows); concentrati su vecchie immagini ISO, esportazioni video e file d'installazione dimenticati.",
       ],
       sections: [
         {
@@ -585,6 +875,94 @@ export const findLargeFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come trovare file di grandi dimensioni superiori a 4 GB in Esplora file",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Aprire Esplora file",
+            text: "Premi Win+E e fai clic su «Questo PC» o seleziona l'unità da controllare.",
+          },
+          {
+            name: "Inserire il filtro per i file giganteschi",
+            text: "Nella casella di ricerca in alto a destra, digita «dimensione:gigantesco» (oppure «size:gigantic») e premi Invio.",
+          },
+          {
+            name: "Ordinare i risultati per dimensione",
+            text: "Fai clic sull'intestazione della colonna «Dimensione» per visualizzare i file più pesanti in cima all'elenco.",
+          },
+          {
+            name: "Verificare e rimuovere i file inutili",
+            text: "Elimina vecchie immagini ISO, file di macchine virtuali inutilizzate o montaggi video che non ti servono più.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Confronto tra i metodi per trovare file di grandi dimensioni su Windows",
+        columns: [
+          "Metodo",
+          "Velocità",
+          "Chiarezza visiva",
+          "Esplorazione in profondità",
+          "Automazione",
+        ],
+        rows: [
+          [
+            "Esplora file (dimensione:gigantesco)",
+            "Veloce (1–2 min)",
+            "Elenco semplice",
+            "Limitata / Lenta",
+            "Manuale",
+          ],
+          [
+            "Impostazioni di archiviazione Windows",
+            "Istantanea",
+            "Barre per categoria",
+            "Solo categorie (Nessun elenco file)",
+            "Semiautomatica",
+          ],
+          [
+            "Analisi disco con treemap",
+            "Moderata (1–3 min)",
+            "Rettangoli nidificati interattivi",
+            "Eccellente (Albero completo)",
+            "Esplorazione visiva",
+          ],
+          [
+            "Trova file grandi di DiskMop (>500MB)",
+            "Molto veloce (<1 min)",
+            "Elenco ordinato per dimensione con percorsi",
+            "Completa (Tutte le unità)",
+            "Automatica e sicura",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "A cosa serve il filtro di ricerca «dimensione:gigantesco» in Windows?",
+          answer:
+            "«dimensione:gigantesco» (o «size:gigantic») è un comando nativo di Windows che filtra i file superiori a 4 GB. Puoi anche usare «dimensione:enorme» (1-4 GB) o filtri personalizzati come «dimensione:>500MB».",
+        },
+        {
+          question:
+            "Quali file di grandi dimensioni non bisogna mai eliminare su Windows?",
+          answer:
+            "Non cancellare mai i file di sistema nella radice C:\\ come «pagefile.sys», «hiberfil.sys» o «swapfile.sys», ed evita di modificare la cartella C:\\Windows.",
+        },
+        {
+          question: "Perché la ricerca di file grandi in Esplora file è lenta?",
+          answer:
+            "Se le cartelle non sono indicizzate dal servizio Windows Search, Esplora file deve esaminare ogni sottocartella in tempo reale, impiegando diversi minuti sulle unità più capienti.",
+        },
+        {
+          question:
+            "In che modo una mappa ad albero (treemap) aiuta a recuperare spazio?",
+          answer:
+            "La treemap rappresenta cartelle e file come rettangoli di dimensioni proporzionali al peso su disco, consentendo di individuare all'istante i percorsi più pesanti.",
+        },
+      ],
       verdict: [
         "Trovare i file di grandi dimensioni su Windows si riduce a tre livelli: una ricerca size:gigantic in Esplora file per il controllo veloce, un'analisi treemap per la mappa complessiva dell'unità e uno scanner automatico dei file oltre i 500 MB come verifica ricorrente. Usandoli insieme, recuperare decine di gigabyte in una sessione di un quarto d'ora è un obiettivo realistico sulla maggior parte dei PC.",
         "Disk Mop racchiude l'intero flusso di lavoro in un'unica app: la treemap dell'analisi del disco, il ricercatore di file oltre i 500 MB, il rilevatore di duplicati basato su SHA-256 e la pulizia pianificata per la manutenzione. Puoi provarla gratis e una licenza a vita da 19,90 $, pagata una volta sola, sblocca tutto.",
@@ -600,6 +978,12 @@ export const findLargeFilesWindows: Article = {
       intro: [
         "A maneira mais rápida de encontrar arquivos grandes no Windows 10 e 11 é abrir o Explorador de Arquivos, selecionar Este Computador e digitar size:gigantic na caixa de pesquisa: isso lista todos os arquivos acima de 4 GB. Para um panorama mais completo, uma ferramenta de análise de disco com visualização em treemap mostra num relance o que está ocupando espaço no seu disco. Os dois métodos levam menos de cinco minutos, e este guia percorre cada um passo a passo.",
         "Os discos enchem em silêncio. Uma exportação de vídeo esquecida, o disco de uma máquina virtual antiga ou um jogo que você não abre mais podem engolir dezenas de gigabytes sem nunca aparecer na sua frente. Este guia foi montado como uma progressão: primeiro os operadores de busca size: pouco conhecidos do Explorador de Arquivos, depois a análise visual em treemap e, por fim, uma varredura automática que encontra todo arquivo acima de 500 MB. No final, você saberá localizar os arquivos grandes que ocupam o disco e decidir com segurança o que fazer com cada um.",
+      ],
+      keyTakeaways: [
+        "Digitar 'tamanho:gigantesco' no Explorador de Arquivos lista imediatamente todos os arquivos com mais de 4 GB no computador.",
+        "A visualização interativa em mapa de árvore divide o disco em blocos proporcionais, revelando na hora pastas volumosas escondidas em diretórios profundos.",
+        "Varreduras automáticas para arquivos com mais de 500 MB e a desduplicação SHA-256 recuperam gigabytes sem exigir navegação manual pasta por pasta.",
+        "Evite apagar arquivos críticos do sistema (pagefile.sys, hiberfil.sys, C:\\Windows); concentre-se em ISOs antigas, renderizações de vídeo e instaladores esquecidos.",
       ],
       sections: [
         {
@@ -651,6 +1035,95 @@ export const findLargeFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como encontrar arquivos com mais de 4 GB no Explorador de Arquivos do Windows",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "Abrir o Explorador de Arquivos",
+            text: "Pressione Win+E e acesse 'Este Computador' ou a unidade que deseja verificar.",
+          },
+          {
+            name: "Digitar o comando para arquivos gigantescos",
+            text: "No campo de pesquisa no canto superior direito, digite 'tamanho:gigantesco' (ou 'size:gigantic') e pressione Enter.",
+          },
+          {
+            name: "Ordenar os resultados por tamanho",
+            text: "Clique no cabeçalho da coluna 'Tamanho' para ordenar os maiores arquivos no topo da lista.",
+          },
+          {
+            name: "Analisar e limpar os arquivos desnecessários",
+            text: "Exclua imagens ISO que não usa mais, máquinas virtuais desativadas ou vídeos gravados que já foram arquivados.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparativo de métodos para encontrar arquivos grandes no Windows",
+        columns: [
+          "Método",
+          "Velocidade",
+          "Clareza visual",
+          "Descoberta em diretórios profundos",
+          "Automação",
+        ],
+        rows: [
+          [
+            "Explorador de Arquivos (tamanho:gigantesco)",
+            "Rápido (1–2 min)",
+            "Lista simples",
+            "Limitada / Lenta",
+            "Manual",
+          ],
+          [
+            "Configurações de Armazenamento do Windows",
+            "Instantâneo",
+            "Barras por categoria",
+            "Apenas categorias (Sem lista de arquivos)",
+            "Semiautomático",
+          ],
+          [
+            "Análise de disco por mapa de árvore",
+            "Moderada (1–3 min)",
+            "Retângulos proporcionais interativos",
+            "Excelente (Árvore completa)",
+            "Descoberta visual",
+          ],
+          [
+            "Localizador de arquivos grandes do DiskMop (>500MB)",
+            "Muito rápido (<1 min)",
+            "Lista ordenada por tamanho com caminhos",
+            "Abrangente (Todas as unidades)",
+            "Automático e seguro",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "O que faz o filtro de busca 'tamanho:gigantesco' no Windows?",
+          answer:
+            "'tamanho:gigantesco' (ou 'size:gigantic') é um operador nativo da pesquisa do Windows que filtra arquivos maiores que 4 GB. Você também pode usar 'tamanho:enorme' (1 a 4 GB) ou 'tamanho:>500MB'.",
+        },
+        {
+          question:
+            "Quais arquivos grandes nunca devem ser excluídos no Windows?",
+          answer:
+            "Nunca apague arquivos do sistema na raiz C:\\ como 'pagefile.sys', 'hiberfil.sys' ou 'swapfile.sys', nem altere arquivos dentro da pasta C:\\Windows.",
+        },
+        {
+          question:
+            "Por que o Explorador de Arquivos do Windows demora tanto para encontrar arquivos grandes?",
+          answer:
+            "Se as pastas não estiverem no índice de pesquisa do Windows, o Explorador precisa varrer cada pasta em tempo real, o que pode levar vários minutos em unidades grandes.",
+        },
+        {
+          question:
+            "Como a visualização em mapa de árvore ajuda a liberar espaço?",
+          answer:
+            "O mapa de árvore organiza pastas e arquivos em blocos retangulares proporcionais ao espaço que ocupam no disco, permitindo identificar visualmente os itens mais pesados de forma instantânea.",
+        },
+      ],
       verdict: [
         "Encontrar arquivos grandes no Windows se resume a três camadas: uma busca size:gigantic no Explorador de Arquivos para a checagem rápida, uma análise em treemap para o mapa geral da unidade e um scanner automático de arquivos acima de 500 MB como auditoria recorrente. Usando os três juntos, recuperar dezenas de gigabytes numa sessão de quinze minutos é uma meta realista na maioria dos PCs.",
         "O Disk Mop reúne todo esse fluxo de trabalho em um único aplicativo: o treemap da análise de disco, o localizador de arquivos acima de 500 MB, o detector de duplicados baseado em SHA-256 e a limpeza agendada para a manutenção. Você pode testar de graça, e uma licença vitalícia de 19,90 $ em pagamento único libera tudo.",
@@ -666,6 +1139,12 @@ export const findLargeFilesWindows: Article = {
       intro: [
         "Windows 10/11で大きいファイルをいちばん早く見つける方法は、エクスプローラーを開いて「PC」を選び、検索ボックスに size:gigantic と入力することです。これだけで4 GBを超えるファイルがすべて一覧表示されます。全体像をつかみたいときは、ツリーマップ表示に対応したディスク分析ツールを使えば、ハードディスクの容量を何が占めているのかがひと目で分かります。どちらの方法も5分とかかりません。この記事では、その手順をひとつずつ順を追って説明します。",
         "ディスクは静かに埋まっていきます。書き出したまま忘れた動画、古い仮想マシンのディスク、もう遊ばなくなったゲーム。こうしたファイルは、目に触れないまま数十ギガバイトを飲み込みます。この記事は段階を追って進む構成です。まずエクスプローラーのあまり知られていない size: 検索演算子、次に視覚的なツリーマップ分析、最後に500 MBを超えるファイルをすべて拾い出す自動スキャン。読み終えるころには、ディスクを圧迫している大きいファイルを見つけ出し、それぞれをどうするか自信を持って判断できるようになります。",
+      ],
+      keyTakeaways: [
+        "エクスプローラーの検索ボックスに「サイズ:巨大」または「size:gigantic」と入力すると、4GBを超えるすべてのファイルが一瞬でリストアップされます。",
+        "インタラクティブなツリーマップ表示はドライブを容量比率に応じたブロックで視覚化し、深い階層に隠れた肥大化フォルダを即座に特定します。",
+        "500MB以上のファイルに対する自動スキャンとSHA-256重複検出を活用すれば、手作業でフォルダを探し回ることなくギガバイト単位の空き容量を取り戻せます。",
+        "OSのコアファイル（pagefile.sys、hiberfil.sys、C:\\Windows配下）は絶対に削除せず、古いISOイメージや書き出し済み動画、不要なインストーラーを安全に整理してください。",
       ],
       sections: [
         {
@@ -714,6 +1193,94 @@ export const findLargeFilesWindows: Article = {
             "Windows標準のストレージ センサー（設定、システム、記憶域）は、一時ファイルやごみ箱を自動で整理してくれます。土台としては優秀で、有効にしておく価値があります。ただし、自分で作った大きいファイルや動画アーカイブ、古いダウンロードには一切手を付けません。そちらには専用の定期スキャンが必要です。",
             "Disk Mopはこの定期作業を自動化します。スケジュール クリーンアップ（Scheduled Cleanup）で週次または月次のメンテナンスを設定でき、ダウンロード クリーナーはダウンロード フォルダーの古いファイルをカテゴリー別に整理して、まとめて削除できるようにします。大容量ファイルのスキャンも一定の間隔で回しておけば、ディスクの空き不足に驚かされることはもうありません。",
           ],
+        },
+      ],
+      howTo: {
+        name: "エクスプローラーで4GB超の大容量ファイルを検索する手順",
+        totalTime: "PT3M",
+        steps: [
+          {
+            name: "エクスプローラーを開く",
+            text: "Win+Eキーを押し、「PC」またはスキャンしたい対象ドライブを開きます。",
+          },
+          {
+            name: "大容量ファイル検索コマンドを入力する",
+            text: "右上の検索ボックスに「サイズ:巨大」または「size:gigantic」と入力してEnterキーを押します。",
+          },
+          {
+            name: "検索結果をサイズ順に並べ替える",
+            text: "「サイズ」列の見出しをクリックし、容量の大きい順に並べ替えます。",
+          },
+          {
+            name: "不要な大容量ファイルを確認・整理する",
+            text: "使用済みのISOイメージ、不要になった仮想マシンファイル、保管不要な動画書き出しファイルを確認して削除します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windowsにおける大容量ファイル検出手法の比較",
+        columns: [
+          "手法",
+          "スキャン速度",
+          "視覚的な分かりやすさ",
+          "深層フォルダの検出力",
+          "自動化度",
+        ],
+        rows: [
+          [
+            "エクスプローラー（サイズ:巨大）",
+            "高速（1〜2分）",
+            "フラットなリスト",
+            "限定的 / 低速",
+            "手動",
+          ],
+          [
+            "Windows ストレージ設定",
+            "即時",
+            "カテゴリ別バーグラフ",
+            "カテゴリ単位のみ（ファイル一覧なし）",
+            "半自動",
+          ],
+          [
+            "ツリーマップ ディスク分析",
+            "中程度（1〜3分）",
+            "インタラクティブなネスト構造ブロック",
+            "極めて高い（ツリー全体を網羅）",
+            "視覚的検出",
+          ],
+          [
+            "DiskMop 大容量ファイル検索（>500MB）",
+            "超高速（1分未満）",
+            "パス付きサイズ順リスト",
+            "網羅的（全ドライブ対象）",
+            "自動化＆高安全性",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windowsの「サイズ:巨大」検索フィルターは何をするものですか？",
+          answer:
+            "「サイズ:巨大」（英語環境では「size:gigantic」）は、4GBを超えるファイルを自動抽出するWindows標準の検索コマンドです。「サイズ:特大」（1〜4GB）や「size:>500MB」などの指定も可能です。",
+        },
+        {
+          question:
+            "Windowsで絶対に削除してはいけない大容量ファイルは何ですか？",
+          answer:
+            "Cドライブ直下にある「pagefile.sys」「hiberfil.sys」「swapfile.sys」などの仮想メモリ関連ファイルや、C:\\Windowsフォルダ内のファイルは絶対に削除しないでください。",
+        },
+        {
+          question:
+            "エクスプローラーでの大容量ファイル検索が遅いのはなぜですか？",
+          answer:
+            "対象フォルダがWindows Searchのインデックスに含まれていない場合、エクスプローラーはサブフォルダを1つずつ順番にスキャンするため、大容量ドライブでは完了までに数分かかることがあります。",
+        },
+        {
+          question:
+            "ツリーマップ表示はどのようにディスク容量確保に役立ちますか？",
+          answer:
+            "ツリーマップはファイルやフォルダの実容量に比例した長方形ブロックで画面に描画するため、どのディレクトリが最も容量を占有しているのかが一目で直感的に把握できます。",
         },
       ],
       verdict: [

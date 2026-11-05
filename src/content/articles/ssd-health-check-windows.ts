@@ -5,12 +5,13 @@ export const ssdHealthCheckWindows: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 9,
   content: {
     tr: {
       title: "SSD Sağlığı Nasıl Kontrol Edilir? S.M.A.R.T., TBW ve Ömür",
       metaDescription:
-        "SSD'nizin ne kadar ömrü kaldığını öğrenin: S.M.A.R.T. değerleri, TBW dayanıklılık sınırı, TRIM kontrolü ve arıza belirtileri. Windows'un yerleşik komutlarıyla adım adım.",
+        "SSD'nizin ne kadar ömrü kaldığını öğrenin: S.M.A.R.T. değerleri, TBW dayanıklılık sınırı ve TRIM kontrolünü Windows komutlarıyla yapın.",
       subtitle: "Hangi Değere Bakılır, Ne Zaman Endişelenilir?",
       intro: [
         'Kısa cevap: Windows\'ta PowerShell\'i açıp Get-PhysicalDisk | Select FriendlyName, HealthStatus, MediaType komutunu çalıştırın; sağlıklı bir sürücü Healthy döner. Daha ayrıntılı bilgi için Get-PhysicalDisk | Get-StorageReliabilityCounter komutu yazma miktarını, sıcaklığı ve aşınma göstergesini verir. NVMe SSD\'lerde asıl bakılacak değer "Percentage Used" (kullanılan yüzde), SATA SSD\'lerde ise "Wear Leveling Count" ve "Reallocated Sector Count" değerleridir.',
@@ -125,6 +126,53 @@ export const ssdHealthCheckWindows: Article = {
             "İlk belirti genellikle yazma hızının kalıcı düşmesidir. Ardından dosya bozulmaları, açılmayan belgeler ve tekrarlayan mavi ekranlar gelir. Sürücünün salt okunur moda geçmesi veya BIOS'ta hiç görünmemesi son aşamadır. S.M.A.R.T. durumunda Warning gördüğünüz anda, başka belirti beklemeden yedek alın.",
         },
       ],
+      dataTable: {
+        caption: "SSD Sağlık ve Dayanıklılık Göstergeleri (S.M.A.R.T. Tablosu)",
+        columns: [
+          "S.M.A.R.T. Niteliği",
+          "Kritik Eşik",
+          "Windows Kontrol Aracı",
+          "Sağlıklı Değer",
+          "Bozulma Durumunda Önlem",
+        ],
+        rows: [
+          [
+            "Percentage Used (Aşınma Oranı)",
+            "> %90 aşınma",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< %80 kullanım",
+            "SSD değişimini planlayın; verileri yedekleyin",
+          ],
+          [
+            "Available Spare (Yedek Bloklar)",
+            "< %10 kaldı",
+            "Üretici NVMe aracı / smartctl",
+            "%100 kullanılabilir",
+            "Kritik uyarı: NAND flash hücreleri tükeniyor",
+          ],
+          [
+            "Media & Data Integrity Errors",
+            "> 0 kurtarılamayan hata",
+            "PowerShell StorageReliabilityCounter",
+            "0 hata",
+            "chkdsk /f çalıştırın ve derhal diski test edin",
+          ],
+          [
+            "Sıcaklık / Isıl Kısılma",
+            "> 70°C sürekli",
+            "Görev Yöneticisi > Performans > Disk",
+            "< 50°C boşta, < 65°C yükte",
+            "Kasa hava akışını artırın veya M.2 soğutucu takın",
+          ],
+          [
+            "TRIM Durumu",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Aktif)",
+            "fsutil behavior set DisableDeleteNotify 0 çalıştırın",
+          ],
+        ],
+      },
       verdict: [
         'SSD sağlığını kontrol etmek için üçüncü parti programa gerek yok: PowerShell\'de Get-PhysicalDisk genel durumu, Get-StorageReliabilityCounter ise aşınma, sıcaklık ve hata sayaçlarını verir. NVMe\'de "Percentage Used", SATA\'da "Wear Leveling Count" bakılacak temel değerlerdir.',
         "Rakamlar çoğu kullanıcı için rahatlatıcıdır: 300-600 TBW dayanıklılığa sahip modern bir SSD, normal kullanımda on yılı aşan bir ömre sahiptir. Endişelenmeniz gereken şey aşınma değil, ani arıza belirtileridir — salt okunur mod, kaybolan dosyalar ve S.M.A.R.T. uyarıları.",
@@ -135,7 +183,7 @@ export const ssdHealthCheckWindows: Article = {
     en: {
       title: "How to Check SSD Health: S.M.A.R.T., TBW and Real Lifespan",
       metaDescription:
-        "Find out how much life your SSD has left: S.M.A.R.T. attributes, TBW endurance ratings, TRIM verification and failure warning signs — using Windows' own built-in commands.",
+        "Find out how much life your SSD has left. Check S.M.A.R.T. health, TBW endurance ratings, TRIM status, and failure signs with built-in tools.",
       subtitle: "Which Value Matters, and When to Worry",
       intro: [
         'Short answer: open PowerShell and run Get-PhysicalDisk | Select FriendlyName, HealthStatus, MediaType — a healthy drive reports Healthy. For detail, Get-PhysicalDisk | Get-StorageReliabilityCounter reports wear, temperature and total bytes written. On NVMe SSDs the attribute that matters most is "Percentage Used"; on SATA SSDs it is "Wear Leveling Count" together with "Reallocated Sector Count".',
@@ -250,6 +298,54 @@ export const ssdHealthCheckWindows: Article = {
             "The first sign is usually a permanent drop in write speed. Next come file corruption, documents that will not open and recurring blue screens. The drive switching to read-only mode, or disappearing from the BIOS entirely, is the final stage. Back up the moment S.M.A.R.T. reports Warning, without waiting for further symptoms.",
         },
       ],
+      dataTable: {
+        caption:
+          "Critical S.M.A.R.T. attributes and endurance health indicators for SSDs",
+        columns: [
+          "S.M.A.R.T. Attribute",
+          "Critical Threshold",
+          "Windows Check Tool",
+          "Healthy Value",
+          "Action Needed If Degraded",
+        ],
+        rows: [
+          [
+            "Percentage Used (Wear Indicator)",
+            "> 90% worn",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% used",
+            "Plan SSD replacement; back up critical data",
+          ],
+          [
+            "Available Spare",
+            "< 10% remaining",
+            "Manufacturer NVMe toolbox / smartctl",
+            "100% available",
+            "Critical warning: NAND flash blocks are failing",
+          ],
+          [
+            "Media and Data Integrity Errors",
+            "> 0 unrecovered errors",
+            "PowerShell StorageReliabilityCounter",
+            "0 errors",
+            "Run chkdsk /f and test drive immediately",
+          ],
+          [
+            "Temperature / Throttling",
+            "> 70°C sustained",
+            "Task Manager > Performance > Disk",
+            "< 50°C idle, < 65°C load",
+            "Improve chassis airflow or install M.2 heatsink",
+          ],
+          [
+            "TRIM Status",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Enabled)",
+            "Run 'fsutil behavior set DisableDeleteNotify 0' if 1",
+          ],
+        ],
+      },
       verdict: [
         'You do not need third-party software to check SSD health: Get-PhysicalDisk in PowerShell gives the overall status and Get-StorageReliabilityCounter gives wear, temperature and error counters. On NVMe watch "Percentage Used"; on SATA watch "Wear Leveling Count".',
         "The numbers are reassuring for most users: a modern SSD rated at 300-600 TBW has a service life well beyond a decade under normal use. What deserves your attention is not gradual wear but sudden failure signs — read-only mode, disappearing files and S.M.A.R.T. warnings.",
@@ -375,6 +471,53 @@ export const ssdHealthCheckWindows: Article = {
             "Das erste Anzeichen ist meist eine dauerhaft gesunkene Schreibgeschwindigkeit. Danach folgen beschädigte Dateien, Dokumente, die sich nicht öffnen lassen, und wiederkehrende Bluescreens. Der Wechsel in den Schreibschutz oder das vollständige Verschwinden aus dem BIOS ist das Endstadium. Sichern Sie Ihre Daten, sobald S.M.A.R.T. Warning meldet, ohne weitere Symptome abzuwarten.",
         },
       ],
+      dataTable: {
+        caption: "Kritische S.M.A.R.T.-Attribute und SSD-Verschleißindikatoren",
+        columns: [
+          "S.M.A.R.T.-Attribut",
+          "Kritischer Schwellenwert",
+          "Windows-Prüftool",
+          "Gesunder Wert",
+          "Maßnahme bei Verschlechterung",
+        ],
+        rows: [
+          [
+            "Percentage Used (Abnutzung)",
+            "> 90% verbraucht",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% belegt",
+            "SSD-Tausch planen; Daten sofort sichern",
+          ],
+          [
+            "Available Spare (Reserveblöcke)",
+            "< 10% verbleibend",
+            "Hersteller-Tool / smartctl",
+            "100% verfügbar",
+            "Kritische Warnung: Flash-Zellen fallen aus",
+          ],
+          [
+            "Media and Integrity Errors",
+            "> 0 unkorrigierte Fehler",
+            "PowerShell StorageReliabilityCounter",
+            "0 Fehler",
+            "chkdsk /f ausführen und Laufwerk prüfen",
+          ],
+          [
+            "Betriebstemperatur",
+            "> 70°C dauerhaft",
+            "Task-Manager > Leistung > Datenträger",
+            "< 50°C Leerlauf, < 65°C Last",
+            "Gehäuselüftung verbessern oder M.2-Kühler anbringen",
+          ],
+          [
+            "TRIM-Status",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Aktiv)",
+            "'fsutil behavior set DisableDeleteNotify 0' ausführen",
+          ],
+        ],
+      },
       verdict: [
         'Für die Zustandsprüfung einer SSD braucht es keine Zusatzsoftware: Get-PhysicalDisk liefert in PowerShell den Gesamtstatus, Get-StorageReliabilityCounter die Werte zu Abnutzung, Temperatur und Fehlern. Bei NVMe achten Sie auf "Percentage Used", bei SATA auf "Wear Leveling Count".',
         "Die Zahlen sind für die meisten Nutzer beruhigend: Eine moderne SSD mit 300-600 TBW hält bei normaler Nutzung weit über ein Jahrzehnt. Aufmerksamkeit verdient nicht die allmähliche Abnutzung, sondern plötzliche Ausfallanzeichen — Schreibschutz, verschwindende Dateien und S.M.A.R.T.-Warnungen.",
@@ -503,6 +646,54 @@ export const ssdHealthCheckWindows: Article = {
             "Le premier signe est en général une baisse durable de la vitesse d'écriture. Viennent ensuite des fichiers corrompus, des documents qui ne s'ouvrent plus et des écrans bleus à répétition. Le passage en lecture seule, ou la disparition pure et simple du disque dans le BIOS, marque le stade final. Sauvegardez dès que S.M.A.R.T. affiche Warning, sans attendre d'autres symptômes.",
         },
       ],
+      dataTable: {
+        caption:
+          "Attributs S.M.A.R.T. critiques et indicateurs d'endurance pour SSD",
+        columns: [
+          "Attribut S.M.A.R.T.",
+          "Seuil critique",
+          "Outil de test Windows",
+          "Valeur saine",
+          "Action requise en cas d'alerte",
+        ],
+        rows: [
+          [
+            "Pourcentage d'usure (Percentage Used)",
+            "> 90% d'usure",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% utilisé",
+            "Planifier le remplacement ; sauvegarder les données",
+          ],
+          [
+            "Blocs de réserve (Available Spare)",
+            "< 10% restants",
+            "Utilitaire constructeur / smartctl",
+            "100% disponible",
+            "Alerte critique : les cellules NAND s'épuisent",
+          ],
+          [
+            "Erreurs d'intégrité des médias",
+            "> 0 erreur non corrigée",
+            "PowerShell StorageReliabilityCounter",
+            "0 erreur",
+            "Lancer chkdsk /f et tester le disque en urgence",
+          ],
+          [
+            "Température en charge",
+            "> 70°C en continu",
+            "Gestionnaire des tâches > Disque",
+            "< 50°C repos, < 65°C charge",
+            "Améliorer le flux d'air ou ajouter un dissipateur M.2",
+          ],
+          [
+            "État de la commande TRIM",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM activé)",
+            "Exécuter 'fsutil behavior set DisableDeleteNotify 0'",
+          ],
+        ],
+      },
       verdict: [
         "Vérifier la santé d'un SSD ne demande aucun logiciel tiers : dans PowerShell, Get-PhysicalDisk donne l'état général et Get-StorageReliabilityCounter fournit l'usure, la température et les compteurs d'erreurs. Sur NVMe, surveillez « Percentage Used » ; sur SATA, « Wear Leveling Count ».",
         "Les chiffres sont rassurants pour la plupart des utilisateurs : un SSD moderne donné pour 300-600 TBW tient bien plus de dix ans en usage normal. Ce qui mérite votre attention n'est pas l'usure progressive, mais les signes de panne soudaine — mode lecture seule, fichiers qui disparaissent et avertissements S.M.A.R.T.",
@@ -629,6 +820,54 @@ export const ssdHealthCheckWindows: Article = {
             "La primera señal suele ser una caída permanente de la velocidad de escritura. Después llegan los archivos corruptos, los documentos que no abren y los pantallazos azules recurrentes. Que la unidad pase a solo lectura o desaparezca por completo de la BIOS es la fase final. Haz una copia de seguridad en cuanto S.M.A.R.T. informe de Warning, sin esperar a más síntomas.",
         },
       ],
+      dataTable: {
+        caption:
+          "Atributos S.M.A.R.T. críticos e indicadores de vida útil para SSD",
+        columns: [
+          "Atributo S.M.A.R.T.",
+          "Umbral crítico",
+          "Herramienta en Windows",
+          "Valor saludable",
+          "Acción necesaria si se degrada",
+        ],
+        rows: [
+          [
+            "Porcentaje de desgaste (Percentage Used)",
+            "> 90% desgastado",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% usado",
+            "Planear sustitución del SSD; hacer copia de seguridad",
+          ],
+          [
+            "Bloques de reserva (Available Spare)",
+            "< 10% restante",
+            "Software del fabricante / smartctl",
+            "100% disponible",
+            "Alerta crítica: las celdas de memoria fallan",
+          ],
+          [
+            "Errores de integridad del medio",
+            "> 0 errores",
+            "PowerShell StorageReliabilityCounter",
+            "0 errores",
+            "Ejecutar chkdsk /f y testear la unidad de inmediato",
+          ],
+          [
+            "Temperatura de funcionamiento",
+            "> 70°C constante",
+            "Administrador de tareas > Disco",
+            "< 50°C reposo, < 65°C carga",
+            "Mejorar ventilación o montar disipador M.2",
+          ],
+          [
+            "Estado de TRIM",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Activado)",
+            "Ejecutar 'fsutil behavior set DisableDeleteNotify 0'",
+          ],
+        ],
+      },
       verdict: [
         "No hace falta software de terceros para comprobar la salud de un SSD: Get-PhysicalDisk da el estado general en PowerShell y Get-StorageReliabilityCounter aporta desgaste, temperatura y contadores de errores. En NVMe vigila «Percentage Used»; en SATA, «Wear Leveling Count».",
         "Las cifras son tranquilizadoras para la mayoría: un SSD moderno declarado para 300-600 TBW tiene una vida útil muy superior a una década con un uso normal. Lo que merece atención no es el desgaste gradual, sino las señales de fallo repentino: modo de solo lectura, archivos que desaparecen y avisos de S.M.A.R.T.",
@@ -755,6 +994,53 @@ export const ssdHealthCheckWindows: Article = {
             "Il primo segnale è di solito un calo permanente della velocità di scrittura. Poi arrivano i file corrotti, i documenti che non si aprono e le schermate blu ricorrenti. Il passaggio in sola lettura, o la scomparsa totale dell'unità dal BIOS, è la fase finale. Fai un backup appena S.M.A.R.T. segnala Warning, senza aspettare altri sintomi.",
         },
       ],
+      dataTable: {
+        caption: "Attributi S.M.A.R.T. critici e indicatori di salute dell'SSD",
+        columns: [
+          "Attributo S.M.A.R.T.",
+          "Soglia critica",
+          "Strumento Windows",
+          "Valore ottimale",
+          "Azione necessaria in caso di degrado",
+        ],
+        rows: [
+          [
+            "Percentuale di usura (Percentage Used)",
+            "> 90% usurato",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% utilizzato",
+            "Pianifica sostituzione; esegui backup immediato",
+          ],
+          [
+            "Blocchi di riserva (Available Spare)",
+            "< 10% rimasto",
+            "Tool del produttore / smartctl",
+            "100% disponibile",
+            "Allarme critico: le celle flash stanno cedendo",
+          ],
+          [
+            "Errori di integrità dei dati",
+            "> 0 errori",
+            "PowerShell StorageReliabilityCounter",
+            "0 errori",
+            "Esegui chkdsk /f e verifica il disco subito",
+          ],
+          [
+            "Temperatura di esercizio",
+            "> 70°C costante",
+            "Gestione attività > Prestazioni > Disco",
+            "< 50°C riposo, < 65°C carico",
+            "Migliora aerazione o monta un dissipatore M.2",
+          ],
+          [
+            "Stato del comando TRIM",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Attivo)",
+            "Esegui 'fsutil behavior set DisableDeleteNotify 0'",
+          ],
+        ],
+      },
       verdict: [
         "Per controllare la salute di un SSD non serve software di terze parti: in PowerShell Get-PhysicalDisk restituisce lo stato generale e Get-StorageReliabilityCounter fornisce usura, temperatura e contatori di errore. Su NVMe tieni d'occhio «Percentage Used», su SATA «Wear Leveling Count».",
         "I numeri sono rassicuranti per la maggior parte degli utenti: un SSD moderno dichiarato per 300-600 TBW ha una vita di servizio ben oltre i dieci anni con un uso normale. A meritare attenzione non è l'usura graduale, ma i segnali di guasto improvviso: sola lettura, file che spariscono e avvisi S.M.A.R.T.",
@@ -880,6 +1166,53 @@ export const ssdHealthCheckWindows: Article = {
             "O primeiro sinal costuma ser uma queda permanente na velocidade de gravação. Depois vêm arquivos corrompidos, documentos que não abrem e telas azuis recorrentes. A unidade entrar em modo somente leitura, ou sumir por completo da BIOS, é o estágio final. Faça backup assim que o S.M.A.R.T. mostrar Warning, sem esperar por mais sintomas.",
         },
       ],
+      dataTable: {
+        caption: "Atributos S.M.A.R.T. críticos e indicadores de saúde do SSD",
+        columns: [
+          "Atributo S.M.A.R.T.",
+          "Limite crítico",
+          "Ferramenta no Windows",
+          "Valor saudável",
+          "Ação necessária em caso de falha",
+        ],
+        rows: [
+          [
+            "Percentagem de uso (Percentage Used)",
+            "> 90% desgastado",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% usado",
+            "Planear substituição do SSD; fazer backup urgente",
+          ],
+          [
+            "Blocos de reserva (Available Spare)",
+            "< 10% restante",
+            "Utilitário do fabricante / smartctl",
+            "100% disponível",
+            "Aviso crítico: as células flash estão a esgotar",
+          ],
+          [
+            "Erros de integridade de dados",
+            "> 0 erros",
+            "PowerShell StorageReliabilityCounter",
+            "0 erros",
+            "Executar chkdsk /f e testar a unidade de imediato",
+          ],
+          [
+            "Temperatura de operação",
+            "> 70°C contínuo",
+            "Gestor de Tarefas > Desempenho > Disco",
+            "< 50°C repouso, < 65°C carga",
+            "Melhorar o fluxo de ar ou instalar dissipador M.2",
+          ],
+          [
+            "Estado do TRIM",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM Ativado)",
+            "Executar 'fsutil behavior set DisableDeleteNotify 0'",
+          ],
+        ],
+      },
       verdict: [
         "Não é preciso software de terceiros para verificar a saúde de um SSD: o Get-PhysicalDisk mostra o estado geral no PowerShell e o Get-StorageReliabilityCounter traz desgaste, temperatura e contadores de erro. Em NVMe, acompanhe “Percentage Used”; em SATA, “Wear Leveling Count”.",
         "Os números são tranquilizadores para a maioria: um SSD moderno declarado para 300-600 TBW tem vida útil bem acima de uma década em uso normal. O que merece atenção não é o desgaste gradual, e sim os sinais de falha repentina — modo somente leitura, arquivos que somem e avisos do S.M.A.R.T.",
@@ -1004,6 +1337,53 @@ export const ssdHealthCheckWindows: Article = {
             "最初のサインはたいてい、書き込み速度が元に戻らないまま低下することです。次にファイルの破損、開けなくなった書類、繰り返すブルースクリーンが続きます。読み取り専用モードへの切り替わりや、BIOSからドライブが消えることが最終段階です。S.M.A.R.T.がWarningを示したら、ほかの症状を待たずにバックアップしてください。",
         },
       ],
+      dataTable: {
+        caption: "SSDの重要S.M.A.R.T.属性としきい値・寿命診断マップ",
+        columns: [
+          "S.M.A.R.T. 属性",
+          "危険水域のしきい値",
+          "Windows標準確認コマンド",
+          "健全な状態の目安",
+          "劣化時の推奨対処",
+        ],
+        rows: [
+          [
+            "使用率 (Percentage Used)",
+            "> 90% 消耗",
+            "PowerShell (Get-StorageReliabilityCounter)",
+            "< 80% 使用",
+            "SSDの換装を計画し、重要データを直ちにバックアップ",
+          ],
+          [
+            "予備領域 (Available Spare)",
+            "< 10% 残存",
+            "メーカー製NVMe管理ツール / smartctl",
+            "100% 利用可能",
+            "重大な警告：NANDフラッシュの予備ブロックが枯渇",
+          ],
+          [
+            "データ完全性エラー",
+            "> 0 回のエラー",
+            "PowerShell StorageReliabilityCounter",
+            "0 エラー",
+            "chkdsk /f を実行し、直ちにドライブ詳細検査を実施",
+          ],
+          [
+            "動作温度 / スロットリング",
+            "> 70°C 常時超過",
+            "タスク マネージャー > パフォーマンス > ディスク",
+            "アイドル < 50°C、高負荷 < 65°C",
+            "PC内部のエアフロー改善またはM.2ヒートシンクを装着",
+          ],
+          [
+            "TRIM有効化状態",
+            "DisableDeleteNotify = 0",
+            "fsutil behavior query DisableDeleteNotify",
+            "0 (TRIM有効)",
+            "1 の場合は 'fsutil behavior set DisableDeleteNotify 0' を実行",
+          ],
+        ],
+      },
       verdict: [
         "SSDの健康状態を確認するのに、サードパーティ製のソフトは必要ありません。PowerShellのGet-PhysicalDiskで全体の状態が、Get-StorageReliabilityCounterで摩耗度、温度、エラーカウンターが分かります。NVMeなら「Percentage Used」、SATAなら「Wear Leveling Count」が見るべき基本の値です。",
         "数字自体は、ほとんどの人にとって安心できるものです。300-600 TBWで設計された最近のSSDは、通常の使い方なら十年を超えて使えます。気にすべきなのは少しずつ進む摩耗ではなく、突然の故障のサインです。読み取り専用モード、消えるファイル、S.M.A.R.T.の警告がそれにあたります。",

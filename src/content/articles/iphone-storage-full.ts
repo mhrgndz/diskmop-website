@@ -5,12 +5,11 @@ export const iphoneStorageFull: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
-      title:
-        "iPhone Depolama Alanı Dolu mu? Fotoğraf Silmek Neden Yer Açmadı (ve Ne Açar)",
+      title: "iPhone Depolama Alanı Dolu Uyarısı ve Kesin Çözüm Yolları",
       metaDescription:
         "iPhone'da fotoğraf sildiniz ama yer açılmadı mı? Silinenler 30 gün Son Silinenler'de bekler, iCloud'un optimize ayarı gerisini gizler. Asıl yer açan adımlar.",
       subtitle:
@@ -141,8 +140,7 @@ export const iphoneStorageFull: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "iPhone Storage Full? Why Deleting Photos Didn't Free Any Space (and What Does)",
+      title: "iPhone Storage Full? Why Deleting Photos Didn't Free Space",
       metaDescription:
         "Deleted photos but iPhone storage didn't change? They wait 30 days in Recently Deleted, and iCloud Optimize hides the rest. Here is what actually frees space.",
       subtitle:

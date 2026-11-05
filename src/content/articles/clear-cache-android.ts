@@ -5,11 +5,11 @@ export const clearCacheAndroid: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "Android'de Önbellek Nasıl Temizlenir: Her Uygulama, Ne Silinir, Ne Zaman Yapmaya Değer",
+      title: "Android'de Uygulama Önbelleği Nasıl Güvenle Temizlenir?",
       metaDescription:
         'Android 8 "tüm önbelleği temizle" düğmesini kaldırdı. Uygulama önbelleği nasıl temizlenir, "Depolama alanını temizle"den farkı ne ve neden hızlandırmaz.',
       subtitle:
@@ -154,8 +154,7 @@ export const clearCacheAndroid: Article = {
       ctaText: "Disk Mop'u Google Play'den edinin",
     },
     en: {
-      title:
-        "How to Clear Cache on Android: Every App, What It Deletes and When It Is Worth It",
+      title: "How to Clear Cache on Android: What to Delete Safely",
       metaDescription:
         "Android has had no 'clear all cache' button since version 8. How to clear app cache on any phone, how it differs from Clear storage, and why it won't go faster.",
       subtitle:

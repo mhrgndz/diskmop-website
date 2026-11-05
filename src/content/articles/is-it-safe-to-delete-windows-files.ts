@@ -5,12 +5,13 @@ export const isItSafeToDeleteWindowsFiles: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 10,
   content: {
     tr: {
       title: "Bu Windows Dosyalarını Silmek Güvenli mi? Dosya Dosya Cevap",
       metaDescription:
-        "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution ve Installer klasörü: hangisini silmek güvenli, hangisi sistemi bozar? Her dosya için net cevap.",
+        "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Temp ve Installer: hangisini silmek güvenli, hangisi sistemi bozar? Net dosya güvenlik rehberi.",
       subtitle: "Silinebilir, Şartlı Silinebilir ve Asla Dokunulmaz Listesi",
       intro: [
         "Kısa cevap: geçici dosyalar, Windows.old, Prefetch, küçük resim önbelleği ve SoftwareDistribution indirme klasörü silinebilir. pagefile.sys ve hiberfil.sys silinmez ama Windows ayarlarından kapatılabilir. WinSxS, C:\\Windows\\Installer, System32 ve System Volume Information klasörlerine ise asla elle dokunulmaz — bunları silmek uygulamaların kaldırılmasını, güncellemeleri ve sistem kurtarmayı kalıcı olarak bozar.",
@@ -108,6 +109,93 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Hayır, tam tersi. Prefetch, sık kullandığınız uygulamaların daha hızlı açılması için tutulan verilerdir ve nadiren birkaç yüz megabayttan fazla yer kaplar. Sildiğinizde kazandığınız alan ihmal edilebilir düzeydedir, buna karşılık Windows verileri yeniden toplayana kadar uygulamalar birkaç gün boyunca biraz daha yavaş açılır.",
         },
       ],
+      howTo: {
+        name: "Windows Dosyalarını Güvenle Kontrol Etme ve Silme Adımları",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Depolama Ayarlarını Açın",
+            text: "Windows Başlat menüsünden Ayarlar > Sistem > Depolama yolunu açın. Sisteminizin disk kullanım dökümünü inceleyin.",
+          },
+          {
+            name: "Geçici Dosyaları Temizleyin",
+            text: "Geçici dosyalar kategorisine tıklayın. Önceki Windows kurulumları, teslimat optimizasyonu ve küçük resim kutularını işaretleyip 'Dosyaları kaldırın' butonuna basın.",
+          },
+          {
+            name: "%TEMP% Klasörünü Boşaltın",
+            text: "Win+R tuşlarına basıp %TEMP% yazın. Ctrl+A ile tüm dosyaları seçip silin; çalışmakta olan programlara ait dosyaları 'Atla' seçeneğiyle geçin.",
+          },
+          {
+            name: "WinSxS İçin DISM Komutunu Çalıştırın",
+            text: "Komut İstemini (CMD) yönetici olarak açın ve 'DISM /Online /Cleanup-Image /StartComponentCleanup' komutunu çalıştırarak eski bileşenleri güvenle temizleyin.",
+          },
+          {
+            name: "Kritik Sistem Yollarına Dokunmayın",
+            text: "System32, C:\\Windows\\Installer ve WinSxS klasörlerinden hiçbir dosyayı Dosya Gezgini üzerinden elle silmeyin.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windows Sistem Klasörleri ve Dosyaları Güvenlik Haritası",
+        columns: [
+          "Klasör / Dosya",
+          "Tipik Boyut",
+          "Güvenlik Seviyesi",
+          "İşlev ve Amaç",
+          "Önerilen Eylem",
+        ],
+        rows: [
+          [
+            "%TEMP% ve C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Tamamen Güvenli",
+            "Geçici program ve kurulum artık dosyaları",
+            "Tümünü silin; kullanımda olanları atlayın",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Güvenle Silinebilir",
+            "Önceki Windows sürümüne geri dönüş dosyaları",
+            "Ayarlar > Depolama > Geçici dosyalar üzerinden silin",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Güvenle Silinebilir",
+            "İndirilen Windows Update kurulum paketleri",
+            "Güncelleme sonrası veya Disk Temizleme ile silin",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Şartlı / Doğrudan Silinmez",
+            "Sanal bellek ve hazırda bekletme durum dosyası",
+            "Gerekirse powercfg /h off ile hazırda bekletmeyi kapatın",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "ASLA Elle Silinmez",
+            "Bileşen deposu ve sabit sistem bağlantıları",
+            "Yalnızca DISM /StartComponentCleanup komutunu kullanın",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "ASLA Elle Silinmez",
+            "Kurulu MSI uygulamalarının onarım/kaldırma önbelleği",
+            "Kesinlikle dokunmayın; silinirse uygulamalar bozulur",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "ASLA Dokunulmaz",
+            "Windows işletim sistemi çekirdek ve sistem kütüphaneleri",
+            "İşletim sistemi korumalıdır; hiçbir dosyayı silmeyin",
+          ],
+        ],
+      },
       verdict: [
         "Windows'ta yer açmanın güvenli yolu bellidir: geçici dosyalar, önbellekler, Windows.old ve yükseltme artıkları serbestçe silinebilir; pagefile.sys ile hiberfil.sys silinmez, Windows'un kendi ayarlarından kapatılır; WinSxS, Installer, System32, sürücü deposu ve System Volume Information ise elle dokunulmaması gereken alanlardır.",
         "Genel kural şudur: bir klasörü Dosya Gezgini'nden silmek için yönetici izni veya sahiplik değişikliği gerekiyorsa, o klasör muhtemelen sizin silmeniz için tasarlanmamıştır. Windows'un o alan için sunduğu kendi aracını kullanın — Depolama ayarları, DISM, powercfg veya sistem koruması ekranı.",
@@ -118,7 +206,7 @@ export const isItSafeToDeleteWindowsFiles: Article = {
     en: {
       title: "Is It Safe to Delete These Windows Files? A File-by-File Answer",
       metaDescription:
-        "Windows.old, WinSxS, pagefile.sys, hiberfil.sys, Prefetch, SoftwareDistribution and the Installer folder: which are safe to delete and which break your system? A clear verdict for each.",
+        "Windows.old, WinSxS, pagefile.sys, Temp, and Installer folder: which are safe to delete and which break Windows? A complete, safe verdict for each file.",
       subtitle: "The Safe, Conditional and Never-Touch Lists",
       intro: [
         "Short answer: temporary files, Windows.old, Prefetch, the thumbnail cache and the SoftwareDistribution download folder are safe to delete. pagefile.sys and hiberfil.sys should not be deleted but can be disabled through Windows settings. WinSxS, C:\\Windows\\Installer, System32 and System Volume Information must never be touched by hand — deleting them permanently breaks program uninstalls, Windows updates and system recovery.",
@@ -214,6 +302,93 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "No, it does the opposite. Prefetch stores data that helps your frequently used applications launch faster, and it rarely exceeds a few hundred megabytes. Deleting it reclaims a negligible amount of space and makes applications open slightly slower for several days while Windows rebuilds the data.",
         },
       ],
+      howTo: {
+        name: "How to Safely Check and Delete Disposable Windows Files",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Open Windows Storage Settings",
+            text: "Open Start > Settings > System > Storage. Review the categories taking up space on your drive.",
+          },
+          {
+            name: "Clean Up Temporary Files",
+            text: "Click on Temporary files. Check Previous Windows installations, Windows Update Cleanup, and thumbnails, then click Remove files.",
+          },
+          {
+            name: "Empty User Temp Folder",
+            text: "Press Win+R, type %TEMP%, and press Enter. Select all files with Ctrl+A and press Delete. Skip any locked files currently in use.",
+          },
+          {
+            name: "Clean Component Store via DISM",
+            text: "Open Command Prompt as Administrator and run 'DISM /Online /Cleanup-Image /StartComponentCleanup' to safely clean the WinSxS folder.",
+          },
+          {
+            name: "Never Touch Protected Directories",
+            text: "Do not manually delete files inside System32, C:\\Windows\\Installer, or WinSxS in File Explorer.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Safety verdict and action guide for Windows system folders",
+        columns: [
+          "Folder / File",
+          "Typical Size",
+          "Safety Level",
+          "Function & Purpose",
+          "Recommended Action",
+        ],
+        rows: [
+          [
+            "%TEMP% and C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Completely Safe",
+            "Temporary application and installer scratch files",
+            "Select all and delete; skip locked files in use",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Safe to Delete",
+            "Rollback files from previous Windows build",
+            "Remove via Settings > Storage > Temporary files",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Safe to Delete",
+            "Downloaded Windows Update installation files",
+            "Clean via Disk Cleanup or after updates apply",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Conditional / Do Not Delete",
+            "Virtual memory swap and hibernation image",
+            "Disable hibernation via 'powercfg /h off' if needed",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "NEVER Delete Manually",
+            "Component store with system-wide hard links",
+            "Use DISM /StartComponentCleanup command only",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "NEVER Delete Manually",
+            "Cached .msi files needed to repair or uninstall apps",
+            "Do not touch; manual deletion breaks installed software",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "NEVER Touch (Core OS)",
+            "Windows kernel, core libraries and system drivers",
+            "Core system files; never attempt manual deletion",
+          ],
+        ],
+      },
       verdict: [
         "The safe path to free space in Windows is well defined: temporary files, caches, Windows.old and upgrade leftovers can be removed freely; pagefile.sys and hiberfil.sys are disabled through Windows settings rather than deleted; and WinSxS, Installer, System32, the driver store and System Volume Information should never be touched by hand.",
         "A reliable rule of thumb: if deleting a folder in File Explorer requires administrator rights or taking ownership, that folder was probably not designed for you to delete. Use the tool Windows provides for that area instead — Storage settings, DISM, powercfg or the System Protection screen.",
@@ -323,6 +498,94 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Nein, im Gegenteil. Prefetch speichert Daten, die häufig genutzten Programmen zu einem schnelleren Start verhelfen, und belegt selten mehr als ein paar hundert Megabyte. Das Löschen bringt vernachlässigbar wenig Platz und lässt Programme mehrere Tage lang etwas langsamer starten, während Windows die Daten neu aufbaut.",
         },
       ],
+      howTo: {
+        name: "Windows-Dateien sicher prüfen und überflüssigen Speicher freigeben",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Windows-Speichereinstellungen öffnen",
+            text: "Öffnen Sie Start > Einstellungen > System > Speicher und analysieren Sie die Speicherbelegung.",
+          },
+          {
+            name: "Temporäre Dateien bereinigen",
+            text: "Wählen Sie 'Temporäre Dateien' aus, markieren Sie Vorherige Windows-Installationen und Update-Dateien und klicken Sie auf 'Dateien entfernen'.",
+          },
+          {
+            name: "Benutzer-Temp-Ordner leeren",
+            text: "Drücken Sie Win+R, geben Sie %TEMP% ein und löschen Sie alle ungesperrten Dateien.",
+          },
+          {
+            name: "Komponentenspeicher per DISM bereinigen",
+            text: "Starten Sie die Eingabeaufforderung als Administrator und führen Sie 'DISM /Online /Cleanup-Image /StartComponentCleanup' aus.",
+          },
+          {
+            name: "Systemordner schützen",
+            text: "Löschen Sie niemals manuell Dateien in System32, C:\\Windows\\Installer oder WinSxS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Sicherheitsbewertung und Bereinigungsübersicht für Windows-Dateien",
+        columns: [
+          "Ordner / Datei",
+          "Typische Größe",
+          "Sicherheitsstufe",
+          "Funktion & Zweck",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "%TEMP% & C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Völlig sicher",
+            "Temporäre Anwendungs- und Setup-Dateien",
+            "Alles markieren und löschen; gesperrte überspringen",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Sicher zu löschen",
+            "Rollback-Dateien früherer Windows-Versionen",
+            "Über Einstellungen > Speicher > Temporäre Dateien löschen",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Sicher zu löschen",
+            "Heruntergeladene Windows-Update-Installationsdateien",
+            "Über Datenträgerbereinigung sicher leeren",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Bedingt / Nicht manuell",
+            "Virtueller Arbeitsspeicher & Ruhezustandsabbild",
+            "Ruhezustand per 'powercfg /h off' deaktivieren",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "NIEMALS manuell löschen",
+            "Windows-Komponentenspeicher & Hardlinks",
+            "Ausschließlich DISM /StartComponentCleanup nutzen",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "NIEMALS manuell löschen",
+            "MSI-Cache für Deinstallation und Reparatur",
+            "Niemals berühren; beschädigt installierte Programme",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "NIEMALS anfassen",
+            "Systemkern, Gerätetreiber und Bibliotheken",
+            "Betriebssystemkern; darf niemals gelöscht werden",
+          ],
+        ],
+      },
       verdict: [
         "Der sichere Weg zu freiem Speicher unter Windows ist klar umrissen: Temporäre Dateien, Caches, Windows.old und Upgrade-Reste dürfen bedenkenlos entfernt werden; pagefile.sys und hiberfil.sys werden über die Windows-Einstellungen deaktiviert statt gelöscht; WinSxS, Installer, System32, der Treiberspeicher und System Volume Information bleiben unangetastet.",
         "Eine verlässliche Faustregel: Wenn das Löschen eines Ordners im Explorer Administratorrechte oder eine Besitzübernahme erfordert, war dieser Ordner vermutlich nicht zum Löschen durch Sie gedacht. Nutzen Sie stattdessen das Werkzeug, das Windows für diesen Bereich vorsieht — Speichereinstellungen, DISM, powercfg oder den Computerschutz.",
@@ -434,6 +697,94 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Non, c'est l'inverse. Prefetch stocke des données qui accélèrent le lancement de vos applications les plus utilisées et dépasse rarement quelques centaines de mégaoctets. Le supprimer ne récupère qu'un espace négligeable et fait démarrer les applications un peu plus lentement pendant plusieurs jours, le temps que Windows reconstruise les données.",
         },
       ],
+      howTo: {
+        name: "Comment vérifier et supprimer en toute sécurité les fichiers Windows",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Ouvrir les paramètres de stockage",
+            text: "Accédez à Démarrer > Paramètres > Système > Stockage pour consulter la répartition de l'espace.",
+          },
+          {
+            name: "Nettoyer les fichiers temporaires",
+            text: "Cliquez sur 'Fichiers temporaires', cochez les versions précédentes de Windows et cliquez sur 'Supprimer les fichiers'.",
+          },
+          {
+            name: "Vider le dossier temporaire utilisateur",
+            text: "Appuyez sur Win+R, tapez %TEMP% et supprimez les fichiers temporaires libres.",
+          },
+          {
+            name: "Nettoyer le magasin de composants avec DISM",
+            text: "Ouvrez l'Invite de commandes en mode administrateur et exécutez 'DISM /Online /Cleanup-Image /StartComponentCleanup'.",
+          },
+          {
+            name: "Préserver les répertoires système",
+            text: "Ne supprimez jamais manuellement de fichiers dans System32, C:\\Windows\\Installer ou WinSxS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Guide de sécurité et verdict pour les dossiers et fichiers Windows",
+        columns: [
+          "Dossier / Fichier",
+          "Taille typique",
+          "Niveau de sécurité",
+          "Rôle et fonction",
+          "Action recommandée",
+        ],
+        rows: [
+          [
+            "%TEMP% et C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Totalement sûr",
+            "Fichiers temporaires des applications et installateurs",
+            "Tout sélectionner et supprimer ; ignorer les fichiers verrouillés",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Sûr à supprimer",
+            "Fichiers de restauration de la version précédente",
+            "Supprimer via Paramètres > Stockage > Fichiers temporaires",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Sûr à supprimer",
+            "Paquets d'installation téléchargés pour Windows Update",
+            "Nettoyer avec l'outil Nettoyage de disque",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Conditionnel / Ne pas effacer",
+            "Mémoire virtuelle et fichier d'hibernation",
+            "Désactiver la veille prolongée via 'powercfg /h off'",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "JAMAIS manuellement",
+            "Magasin des composants et liens physiques Windows",
+            "Utiliser uniquement DISM /StartComponentCleanup",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "JAMAIS manuellement",
+            "Cache MSI nécessaire à la réparation/désinstallation",
+            "Ne jamais toucher ; casse la désinstallation des logiciels",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "JAMAIS toucher",
+            "Cœur du système d'exploitation et pilotes essentiels",
+            "Composants vitaux protégés de Windows",
+          ],
+        ],
+      },
       verdict: [
         "La voie sûre pour libérer de l'espace sous Windows est bien balisée : fichiers temporaires, caches, Windows.old et restes de mise à niveau peuvent être supprimés librement ; pagefile.sys et hiberfil.sys se désactivent depuis les paramètres de Windows au lieu d'être effacés ; et WinSxS, Installer, System32, le magasin de pilotes et System Volume Information ne doivent jamais être touchés à la main.",
         "Une règle empirique fiable : si supprimer un dossier dans l'Explorateur de fichiers exige des droits d'administrateur ou une prise de propriété, c'est que ce dossier n'a probablement pas été conçu pour que vous le supprimiez. Utilisez plutôt l'outil que Windows prévoit pour cette zone — les paramètres de stockage, DISM, powercfg ou l'écran de protection du système.",
@@ -542,6 +893,93 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "No, hace lo contrario. Prefetch guarda datos que ayudan a que tus aplicaciones más usadas se abran antes y rara vez pasa de unos cientos de megabytes. Borrarla recupera una cantidad insignificante de espacio y hace que las aplicaciones tarden un poco más en abrirse durante varios días mientras Windows reconstruye los datos.",
         },
       ],
+      howTo: {
+        name: "Cómo comprobar y eliminar archivos prescindibles en Windows de forma segura",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Abrir la configuración de almacenamiento",
+            text: "Abra Inicio > Configuración > Sistema > Almacenamiento y revise el desglose del disco.",
+          },
+          {
+            name: "Limpiar archivos temporales",
+            text: "Seleccione 'Archivos temporales', marque Instalaciones anteriores de Windows y pulse 'Quitar archivos'.",
+          },
+          {
+            name: "Vaciar la carpeta temporal del usuario",
+            text: "Pulse Win+R, escriba %TEMP% y elimine los archivos no bloqueados.",
+          },
+          {
+            name: "Limpiar el almacén de componentes con DISM",
+            text: "Abra el Símbolo del sistema como Administrador y ejecute 'DISM /Online /Cleanup-Image /StartComponentCleanup'.",
+          },
+          {
+            name: "No tocar carpetas críticas del sistema",
+            text: "Nunca borre manualmente archivos dentro de System32, C:\\Windows\\Installer ni WinSxS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Mapa de seguridad y recomendaciones para carpetas de Windows",
+        columns: [
+          "Carpeta / Archivo",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Función y propósito",
+          "Acción recomendada",
+        ],
+        rows: [
+          [
+            "%TEMP% y C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Completamente seguro",
+            "Archivos temporales de aplicaciones e instaladores",
+            "Seleccionar todo y eliminar; omitir en uso",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Seguro de borrar",
+            "Archivos para revertir a la versión previa de Windows",
+            "Eliminar desde Configuración > Almacenamiento",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Seguro de borrar",
+            "Paquetes de instalación de Windows Update",
+            "Vaciar con el Liberador de espacio en disco",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Condicional / No borrar",
+            "Memoria virtual y estado de hibernación",
+            "Desactivar hibernación con 'powercfg /h off'",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "NUNCA borrar a mano",
+            "Almacén de componentes y vínculos físicos",
+            "Usar solo DISM /StartComponentCleanup",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "NUNCA borrar a mano",
+            "Caché MSI para desinstalar y reparar programas",
+            "No tocar; estropea desinstalaciones de apps",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "NUNCA tocar",
+            "Núcleo de Windows, controladores y bibliotecas",
+            "Archivos vitales del sistema operativo",
+          ],
+        ],
+      },
       verdict: [
         "El camino seguro para liberar espacio en Windows está bien delimitado: archivos temporales, cachés, Windows.old y restos de actualización se pueden eliminar sin reparos; pagefile.sys y hiberfil.sys se desactivan desde la configuración de Windows en lugar de borrarse; y WinSxS, Installer, System32, el almacén de controladores y System Volume Information no se tocan nunca a mano.",
         "Una regla práctica fiable: si borrar una carpeta en el Explorador de archivos exige permisos de administrador o tomar posesión, esa carpeta probablemente no estaba pensada para que la borres tú. Usa en su lugar la herramienta que Windows ofrece para esa zona: la configuración de almacenamiento, DISM, powercfg o la pantalla de protección del sistema.",
@@ -651,6 +1089,94 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "No, fa l'opposto. Prefetch conserva i dati che aiutano le applicazioni più usate ad avviarsi prima e raramente supera qualche centinaio di megabyte. Eliminarla recupera una quantità di spazio trascurabile e fa aprire le applicazioni un po' più lentamente per diversi giorni, mentre Windows ricostruisce i dati.",
         },
       ],
+      howTo: {
+        name: "Come verificare ed eliminare in sicurezza i file superflui in Windows",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Aprire Impostazioni di archiviazione",
+            text: "Vai su Start > Impostazioni > Sistema > Spazio di archiviazione per esaminare l'uso del disco.",
+          },
+          {
+            name: "Pulire i file temporanei",
+            text: "Clicca su 'File temporanei', seleziona Installazioni precedenti di Windows e fai clic su 'Rimuovi file'.",
+          },
+          {
+            name: "Svuotare la cartella Temp utente",
+            text: "Premi Win+R, digita %TEMP% ed elimina tutti i file non bloccati.",
+          },
+          {
+            name: "Pulire l'archivio componenti con DISM",
+            text: "Apri il Prompt dei comandi come amministratore ed esegui 'DISM /Online /Cleanup-Image /StartComponentCleanup'.",
+          },
+          {
+            name: "Non toccare le cartelle di sistema",
+            text: "Non eliminare mai a mano file all'interno di System32, C:\\Windows\\Installer o WinSxS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Mappa di sicurezza e guida all'eliminazione per i file di Windows",
+        columns: [
+          "Cartella / File",
+          "Dimensione tipica",
+          "Livello di sicurezza",
+          "Funzione e scopo",
+          "Azione consigliata",
+        ],
+        rows: [
+          [
+            "%TEMP% e C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Completamente sicuro",
+            "File temporanei di app e programmi di installazione",
+            "Seleziona ed elimina; ignora i file in uso",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Sicuro da eliminare",
+            "File di ripristino della versione precedente di Windows",
+            "Rimuovi tramite Impostazioni > Spazio di archiviazione",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Sicuro da eliminare",
+            "Pacchetti scaricati per gli aggiornamenti Windows",
+            "Pulisci tramite Pulizia disco",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Condizionale / Non eliminare",
+            "Memoria virtuale e file per l'ibernazione",
+            "Disattiva ibernazione con 'powercfg /h off'",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "MAI eliminare a mano",
+            "Archivio dei componenti e collegamenti fisici",
+            "Usa esclusivamente DISM /StartComponentCleanup",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "MAI eliminare a mano",
+            "Cache MSI usata per disinstallare e ripristinare app",
+            "Non toccare; rende impossibile disinstallare app",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "MAI toccare",
+            "Kernel di sistema, driver e librerie essenziali",
+            "File vitali protetti del sistema operativo",
+          ],
+        ],
+      },
       verdict: [
         "La strada sicura per liberare spazio in Windows è ben tracciata: file temporanei, cache, Windows.old e residui dell'aggiornamento si possono rimuovere senza esitazioni; pagefile.sys e hiberfil.sys si disattivano dalle impostazioni di Windows invece di essere eliminati; WinSxS, Installer, System32, l'archivio driver e System Volume Information non si toccano mai a mano.",
         "Una regola pratica affidabile: se eliminare una cartella in Esplora file richiede i diritti di amministratore o la presa di proprietà, probabilmente quella cartella non era pensata perché la eliminassi tu. Usa piuttosto lo strumento che Windows prevede per quell'area: le impostazioni di archiviazione, DISM, powercfg o la schermata di protezione sistema.",
@@ -759,6 +1285,93 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "Não, faz o contrário. O Prefetch guarda dados que ajudam os aplicativos mais usados a abrir mais rápido e raramente passa de algumas centenas de megabytes. Apagá-lo recupera uma quantidade insignificante de espaço e faz os aplicativos abrirem um pouco mais devagar por vários dias, enquanto o Windows reconstrói os dados.",
         },
       ],
+      howTo: {
+        name: "Como verificar e apagar ficheiros descartáveis no Windows com segurança",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Abrir as Definições de Armazenamento",
+            text: "Abra Iniciar > Definições > Sistema > Armazenamento para ver a utilização do disco.",
+          },
+          {
+            name: "Limpar ficheiros temporários",
+            text: "Clique em 'Ficheiros temporários', selecione Instalações anteriores do Windows e clique em 'Remover ficheiros'.",
+          },
+          {
+            name: "Esvaziar a pasta Temp do utilizador",
+            text: "Prima Win+R, escreva %TEMP% e elimine os ficheiros que não estejam bloqueados.",
+          },
+          {
+            name: "Limpar o arquivo de componentes com DISM",
+            text: "Abra a Linha de Comandos como Administrador e execute 'DISM /Online /Cleanup-Image /StartComponentCleanup'.",
+          },
+          {
+            name: "Proteger pastas críticas do sistema",
+            text: "Nunca apague manualmente ficheiros dentro de System32, C:\\Windows\\Installer ou WinSxS.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Mapa de segurança e recomendações para pastas do Windows",
+        columns: [
+          "Pasta / Ficheiro",
+          "Tamanho típico",
+          "Nível de segurança",
+          "Função e objetivo",
+          "Ação recomendada",
+        ],
+        rows: [
+          [
+            "%TEMP% e C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "Completamente seguro",
+            "Ficheiros temporários de apps e instaladores",
+            "Selecionar tudo e apagar; ignorar ficheiros em uso",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "Seguro para apagar",
+            "Ficheiros de recuperação da versão anterior",
+            "Remover através de Definições > Armazenamento",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "Seguro para apagar",
+            "Pacotes transferidos de atualizações do Windows",
+            "Limpar com a Limpeza do Disco",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "Condicional / Não apagar",
+            "Memória virtual e ficheiro de hibernação",
+            "Desativar hibernação via 'powercfg /h off'",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "NUNCA apagar à mão",
+            "Arquivo de componentes e hard links do sistema",
+            "Usar apenas DISM /StartComponentCleanup",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "NUNCA apagar à mão",
+            "Cache MSI necessária para desinstalar ou reparar apps",
+            "Não mexer; corrompe a desinstalação de programas",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "NUNCA mexer",
+            "Núcleo do Windows, controladores e bibliotecas vitais",
+            "Ficheiros essenciais do sistema operativo",
+          ],
+        ],
+      },
       verdict: [
         "O caminho seguro para liberar espaço no Windows é bem definido: arquivos temporários, caches, Windows.old e sobras de atualização podem ser removidos à vontade; pagefile.sys e hiberfil.sys são desativados pelas configurações do Windows em vez de apagados; e WinSxS, Installer, System32, o repositório de drivers e System Volume Information nunca devem ser tocados na mão.",
         "Uma regra prática confiável: se apagar uma pasta pelo Explorador de Arquivos exige direitos de administrador ou apropriação, essa pasta provavelmente não foi feita para você apagar. Use a ferramenta que o Windows oferece para aquela área — as configurações de armazenamento, o DISM, o powercfg ou a tela de Proteção do Sistema.",
@@ -866,6 +1479,93 @@ export const isItSafeToDeleteWindowsFiles: Article = {
             "いいえ、逆効果です。Prefetch は、よく使うアプリの起動を速くするためのデータを保存しており、数百メガバイトを超えることはめったにありません。削除しても空く容量はごくわずかで、Windowsがデータを作り直すまでの数日間は、アプリの起動がかえって少し遅くなります。",
         },
       ],
+      howTo: {
+        name: "Windowsの不要ファイルを安全に確認・削除する手順",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "ストレージ設定を開く",
+            text: "スタート >「設定」>「システム」>「ストレージ」を開き、ドライブの容量内訳を確認します。",
+          },
+          {
+            name: "一時ファイルをクリーンアップする",
+            text: "「一時ファイル」をクリックし、「以前のWindowsのインストール」などにチェックを入れて「ファイルの削除」を実行します。",
+          },
+          {
+            name: "ユーザーTempフォルダーを空にする",
+            text: "Win+Rキーを押し、%TEMP% と入力してEnterを押します。使用中でないファイルをすべて削除します。",
+          },
+          {
+            name: "DISMコマンドでコンポーネントストアを安全に整理",
+            text: "コマンド プロンプトを管理者として開き、「DISM /Online /Cleanup-Image /StartComponentCleanup」を実行します。",
+          },
+          {
+            name: "保護されたシステムフォルダーには手動で触らない",
+            text: "エクスプローラーから System32、C:\\Windows\\Installer、WinSxS 内のファイルを手動で削除しないでください。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windowsシステムフォルダーとファイルの安全判定マップ",
+        columns: [
+          "フォルダー / ファイル",
+          "典型的なサイズ",
+          "安全性レベル",
+          "機能と目的",
+          "推奨される対処法",
+        ],
+        rows: [
+          [
+            "%TEMP% と C:\\Windows\\Temp",
+            "5 - 20 GB",
+            "完全に安全",
+            "アプリやインストーラーの一時作業ファイル",
+            "すべて選択して削除（使用中のファイルはスキップ）",
+          ],
+          [
+            "Windows.old",
+            "15 - 35 GB",
+            "安全に削除可能",
+            "以前のWindowsバージョンへの復元用ファイル",
+            "「設定」>「ストレージ」>「一時ファイル」から削除",
+          ],
+          [
+            "SoftwareDistribution\\Download",
+            "2 - 10 GB",
+            "安全に削除可能",
+            "ダウンロード済みのWindows Updateインストールファイル",
+            "ディスク クリーンアップで安全に消去",
+          ],
+          [
+            "pagefile.sys / hiberfil.sys",
+            "4 - 32 GB",
+            "条件付き / 直接削除不可",
+            "仮想メモリのスワップおよび休止状態ファイル",
+            "必要に応じて 'powercfg /h off' で休止状態を無効化",
+          ],
+          [
+            "C:\\Windows\\WinSxS",
+            "8 - 15 GB",
+            "手動削除は絶対に禁止",
+            "コンポーネント ストアとハードリンク",
+            "DISM /StartComponentCleanup コマンドのみ使用",
+          ],
+          [
+            "C:\\Windows\\Installer",
+            "5 - 40 GB",
+            "手動削除は絶対に禁止",
+            "アプリのアンインストールや修復に必要なMSIキャッシュ",
+            "絶対に触らない（アプリが削除・修復不能になります）",
+          ],
+          [
+            "C:\\Windows\\System32",
+            "10 - 25 GB",
+            "絶対に触らない",
+            "Windowsの中核バイナリ、ドライバー、ライブラリ",
+            "OSの中核ファイル（削除すると起動しなくなります）",
+          ],
+        ],
+      },
       verdict: [
         "Windowsで安全に容量を空ける道筋は、はっきりしています。一時ファイル、キャッシュ、Windows.old、アップグレードの残骸は自由に削除して構いません。pagefile.sys と hiberfil.sys は、削除ではなくWindowsの設定から無効化します。そして WinSxS、Installer、System32、ドライバーストア、System Volume Information には、手作業で決して触れないことです。",
         "使える目安があります。エクスプローラーでフォルダーを削除しようとして管理者権限や所有権の取得を求められたなら、そのフォルダーはおそらく利用者が削除する前提で作られていません。その領域のためにWindowsが用意している手段、つまりストレージの設定、DISM、powercfg、システムの保護の画面を使ってください。",

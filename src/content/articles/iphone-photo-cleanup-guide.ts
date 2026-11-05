@@ -5,14 +5,13 @@ export const iphonePhotoCleanupGuide: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-11-03",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
-      title:
-        "iPhone Fotoğraf Temizleme Rehberi: Neler Güvenle Silinebilir, Neler Saklanmalı?",
+      title: "iPhone Fotoğraf Temizleme Rehberi: Neler Güvenle Silinir?",
       metaDescription:
-        "iPhone fotoğraf temizliği yaparken anılarınızı kaybetmeyin. Nelerin güvenle silinebileceği (kopya, bulanık, 4K ekran kaydı) ve nelerin korunması gerektiği haritası.",
+        "iPhone fotoğraf temizliği yaparken anılarınızı kaybetmeyin. Nelerin güvenle silinebileceği (kopya, bulanık, video) ve korunma yolları rehberi.",
       subtitle:
         "Fotoğraflar kütüphanesi için Güvenli-Riskli haritası, iCloud tuzakları ve doğru temizleme sırası",
       intro: [
@@ -169,8 +168,7 @@ export const iphonePhotoCleanupGuide: Article = {
       ctaText: "DiskMop for iPhone'u İndirin ve Kitaplığınızı Temizleyin",
     },
     en: {
-      title:
-        "The Complete iPhone Photo Cleanup Guide: What Is Safe to Delete and What to Keep",
+      title: "iPhone Photo Cleanup Guide: What to Delete and What to Keep",
       metaDescription:
         "Clean up thousands of iPhone photos without losing precious memories. A complete safe-vs-risk map of blurry shots, duplicates, Live Photos and iCloud pitfalls.",
       subtitle:
@@ -403,9 +401,26 @@ export const iphonePhotoCleanupGuide: Article = {
       faq: [
         {
           question:
-            "Löscht das Entfernen auf dem iPhone auch das Bild in iCloud?",
+            "Löscht das Entfernen eines Fotos auf dem iPhone dieses auch aus iCloud?",
           answer:
-            "Ja, wenn iCloud-Fotos aktiv ist, wird das Foto auf allen synchronisierten Apple-Geräten gelöscht.",
+            "Ja! Wenn iCloud-Fotos aktiv ist, wird das Foto auf allen Apple-Geräten und auf iCloud.com entfernt. Es verbleibt jedoch 30 Tage in 'Zuletzt gelöscht'.",
+        },
+        {
+          question:
+            "Ich habe 500 Fotos gelöscht, aber der Speicherplatz stieg nicht. Warum?",
+          answer:
+            "Zwei Gründe: 1) Die Fotos befinden sich noch 30 Tage im Album 'Zuletzt gelöscht'. 2) 'iPhone-Speicher optimieren' war aktiv, sodass lokal nur winzige Vorschaubilder lagen.",
+        },
+        {
+          question:
+            "Verbrauchen Live Photos deutlich mehr Speicherplatz als normale Fotos?",
+          answer:
+            "Ja. Ein Live Photo kombiniert ein 12-MP-Standbild mit einem 3-sekündigen Videoclip und belegt etwa doppelt so viel Speicher wie ein normales Foto.",
+        },
+        {
+          question: "Kann ich unscharfe Fotos direkt in der Fotos-App finden?",
+          answer:
+            "Nein. Die native Fotos-App bietet keinen Filter für unscharfe Aufnahmen. Hierfür benötigen Sie ein On-Device-Tool wie DiskMop für iPhone.",
         },
       ],
       verdict: [
@@ -489,9 +504,26 @@ export const iphonePhotoCleanupGuide: Article = {
       faq: [
         {
           question:
-            "Supprimer une photo sur iPhone la supprime-t-elle d'iCloud ?",
+            "Supprimer une photo de l'iPhone la supprime-t-elle d'iCloud ?",
           answer:
-            "Oui, si Photos iCloud est activé, la photo disparaît de tous vos appareils Apple.",
+            "Oui ! Si Photos iCloud est activé, la suppression s'applique à tous vos appareils Apple et à iCloud.com. Elle reste 30 jours dans 'Supprimés récemment'.",
+        },
+        {
+          question:
+            "J'ai supprimé 500 photos mais l'espace libre n'a pas augmenté. Pourquoi ?",
+          answer:
+            "Deux raisons : 1) Les photos sont dans 'Supprimés récemment' pendant 30 jours. 2) 'Optimiser le stockage de l'iPhone' était activé, réduisant l'impact local.",
+        },
+        {
+          question: "Les Live Photos prennent-elles beaucoup plus de place ?",
+          answer:
+            "Oui. Une Live Photo associe une photo 12 Mpx à un clip vidéo de 3 secondes, occupant environ le double de place d'une photo classique.",
+        },
+        {
+          question:
+            "Peut-on repérer les photos floues directement dans l'app Photos ?",
+          answer:
+            "Non. L'application Photos native ne possède aucun filtre pour le flou. Il faut utiliser une application sur l'appareil comme DiskMop pour iPhone.",
         },
       ],
       verdict: [
@@ -581,7 +613,25 @@ export const iphonePhotoCleanupGuide: Article = {
         {
           question: "¿Borrar una foto del iPhone la elimina también de iCloud?",
           answer:
-            "Sí, si Fotos en iCloud está activado, se eliminará de todos tus dispositivos Apple sincronizados.",
+            "¡Sí! Si Fotos en iCloud está activado, se borra de todos tus dispositivos Apple y de iCloud.com. Queda 30 días en 'Eliminado recientemente'.",
+        },
+        {
+          question:
+            "He borrado 500 fotos pero el espacio no ha aumentado. ¿Por qué?",
+          answer:
+            "Dos razones: 1) Siguen en el álbum 'Eliminado recientemente'. 2) 'Optimizar almacenamiento del iPhone' estaba activo y solo borraste miniaturas locales.",
+        },
+        {
+          question:
+            "¿Ocupan las Live Photos mucho más espacio que las fotos estándar?",
+          answer:
+            "Sí. Una Live Photo une una foto de 12 MP con un vídeo de 3 segundos a 1080p, ocupando aproximadamente el doble de espacio que una foto fija.",
+        },
+        {
+          question:
+            "¿Se pueden encontrar fotos borrosas directamente en la app Fotos?",
+          answer:
+            "No. La app Fotos no tiene álbum para fotos desenfocadas. Necesitas una herramienta local como DiskMop para iPhone.",
         },
       ],
       verdict: [
@@ -664,9 +714,27 @@ export const iphonePhotoCleanupGuide: Article = {
       ],
       faq: [
         {
-          question: "Eliminando una foto da iPhone la perdo anche su iCloud?",
+          question:
+            "Eliminare una foto dall'iPhone la cancella anche da iCloud?",
           answer:
-            "Sì, se Foto di iCloud è attivo, la cancellazione si propaga su tutti i dispositivi associati.",
+            "Sì! Se Foto di iCloud è attivo, la cancellazione si riflette su tutti i dispositivi Apple e iCloud.com. Rimane per 30 giorni in 'Eliminati di recente'.",
+        },
+        {
+          question:
+            "Ho cancellato 500 foto ma lo spazio non è aumentato. Perché?",
+          answer:
+            "Due motivi: 1) Le foto sono ancora in 'Eliminati di recente'. 2) L'opzione 'Ottimizza spazio iPhone' era attiva e hai rimosso solo miniature leggere.",
+        },
+        {
+          question:
+            "Le Live Photo occupano molto più spazio delle foto normali?",
+          answer:
+            "Sì. Una Live Photo abbina uno scatto da 12 MP a un video da 3 secondi, occupando circa il doppio dello spazio di una normale foto statica.",
+        },
+        {
+          question: "Posso trovare le foto sfocate direttamente nell'app Foto?",
+          answer:
+            "No. L'app Foto non ha un filtro per le immagini mosse. Serve uno strumento on-device come DiskMop per iPhone.",
         },
       ],
       verdict: [
@@ -754,9 +822,24 @@ export const iphonePhotoCleanupGuide: Article = {
       ],
       faq: [
         {
-          question: "Apagar fotos do iPhone também apaga do iCloud?",
+          question: "Apagar uma foto do iPhone também a apaga do iCloud?",
           answer:
-            "Sim, se o Fotos do iCloud estiver ativo, a exclusão sincroniza em todos os seus aparelhos Apple.",
+            "Sim! Se Fotografias do iCloud estiver ativo, a eliminação afeta todos os dispositivos Apple e o iCloud.com. Fica 30 dias em 'Apagados recentemente'.",
+        },
+        {
+          question: "Apaguei 500 fotos e o espaço livre não aumentou. Porquê?",
+          answer:
+            "Duas razões: 1) Estão na pasta 'Apagados recentemente'. 2) 'Otimizar Armazenamento do iPhone' estava ligado e eram apenas miniaturas locais.",
+        },
+        {
+          question: "As Live Photos ocupam significativamente mais espaço?",
+          answer:
+            "Sim. Uma Live Photo combina uma foto de 12 MP com um vídeo de 3 segundos, ocupando cerca do dobro de uma foto tradicional.",
+        },
+        {
+          question: "Consigo encontrar fotos desfocadas na app Fotografias?",
+          answer:
+            "Não. A app Fotografias não possui filtro para fotos tremidas. Precisa de uma ferramenta no dispositivo como o DiskMop para iPhone.",
         },
       ],
       verdict: [
@@ -839,9 +922,26 @@ export const iphonePhotoCleanupGuide: Article = {
       ],
       faq: [
         {
-          question: "iPhoneで写真を削除するとiCloudからも消えますか？",
+          question: "iPhoneから写真を削除するとiCloudからも消えますか？",
           answer:
-            "はい。iCloud写真が有効な場合、連携しているすべてのApple製品から写真が削除されます。",
+            "はい。iCloud写真が有効な場合、すべてのApple端末およびiCloud.comから削除されます。ただし30日間は「最近削除した項目」に残ります。",
+        },
+        {
+          question:
+            "写真を数百枚削除したのに空き容量が増えないのはなぜですか？",
+          answer:
+            "原因は2つあります。1) 写真が「最近削除した項目」に残っている。2)「iPhoneのストレージを最適化」が有効で、本体にあったのは極小サムネイルだったためです。",
+        },
+        {
+          question: "Live Photosは通常の写真より容量を多く消費しますか？",
+          answer:
+            "はい。1200万画素の静止画に加えて3秒間の動画データが保存されるため、通常の静止画の約2倍のストレージを消費します。",
+        },
+        {
+          question:
+            "写真アプリ標準機能でピンボケ・手ブレ写真を検出できますか？",
+          answer:
+            "できません。標準の写真アプリにはブレ写真の抽出機能はありません。端末内で解析するDiskMopのような専用アプリが必要です。",
         },
       ],
       verdict: [

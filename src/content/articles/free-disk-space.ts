@@ -5,13 +5,13 @@ export const freeDiskSpace: Article = {
   type: "guide",
   category: "Disk Management",
   date: "2025-05-16",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
       title: "Disk Alanı Nasıl Açılır? Adım Adım Rehber",
       metaDescription:
-        "C diski dolu mu? Disk alanı açma ve disk temizleme için 6 etkili yöntem. Gereksiz dosyaları bulun, önbellek temizleyin ve yer açın. Disk Mop ile otomatik temizlik.",
+        "C diski dolu mu? Disk alanı açmak için 6 etkili yöntem: büyük dosyaları bulun, önbellekleri temizleyin, kopyaları silin ve anında yer açın.",
       subtitle: "C Diskiniz Doluysa Yapmanız Gereken 6 Adım",
       intro: [
         'Bilgisayarınızda "Disk alanı yetersiz" uyarısı mı görüyorsunuz? [C diski sebepsiz doluyor](/blog/c-drive-full-for-no-reason) gibi göründüğünde sistem yavaşlar, güncellemeler başarısız olur ve yeni program yükleyemezsiniz. Neyse ki disk temizleme işlemi düşündüğünüz kadar zor değil.',
@@ -175,7 +175,7 @@ export const freeDiskSpace: Article = {
     en: {
       title: "How to Free Up Disk Space: A Step-by-Step Guide",
       metaDescription:
-        "C drive full? Learn how to clean disk and free up disk space with 6 proven methods. Find large files, clean cache, remove duplicates. Disk cleanup made easy with Disk Mop.",
+        "C drive full? Learn how to clean disk space with 6 proven methods. Find large files, clear caches, remove duplicates, and reclaim storage safely.",
       subtitle: "6 Steps to Reclaim Your Disk Space When Your C Drive Is Full",
       intro: [
         "Running out of disk space is one of the most common and frustrating computer problems. When your [C drive is full for no reason](/blog/c-drive-full-for-no-reason), your system slows down, updates fail to install, and you can't save new files. But don't worry — freeing up disk space is easier than you might think.",
@@ -347,6 +347,13 @@ export const freeDiskSpace: Article = {
         "Wenn der Speicherplatz knapp wird, ist das eines der häufigsten und frustrierendsten Computerprobleme. Bei einer vollen Festplatte wird das System langsamer, Updates schlagen fehl und neue Dateien können nicht gespeichert werden. Doch keine Sorge — Speicherplatz freigeben ist einfacher als gedacht.",
         "In dieser Anleitung zeigen wir Ihnen 6 effektive Schritte, um Ihre Festplatte aufzuräumen und wertvollen Speicherplatz zurückzugewinnen. Jeder Schritt enthält praktische Tipps und zeigt, wie Disk Mop den Prozess vereinfacht.",
       ],
+      keyTakeaways: [
+        "Die interaktive Treemap-Visualisierung beendet das Rätselraten, indem sie sofort die exakten Ordner anzeigt, die viele Gigabyte belegen.",
+        "Das Löschen von System-, Browser- und Windows Update-Caches gibt auf Standard-Systemen mühelos 10 bis 30 GB freien Speicher frei.",
+        "Das Entfernen vergessener großer Dateien (>500 MB) wie alter ISOs, unkomprimierter Archive und Videoexporte schafft sofort spürbar Platz.",
+        "Der SHA-256-Byte-Abgleich eliminiert doppelte Medien und Dokumente zuverlässig, selbst bei völlig unterschiedlichen Dateinamen.",
+        "Die Automatisierung der wöchentlichen Reinigung über die geplante Wartung von DiskMop verhindert dauerhaft Warnungen vor geringem Speicherplatz.",
+      ],
       sections: [
         {
           title: "1. Analysieren Sie Ihre Festplattennutzung",
@@ -397,6 +404,100 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Schritt-für-Schritt Speicherplatz auf Laufwerk C: freigeben",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Datenträgerbereinigung oder DiskMop ausführen",
+            text: "Starten Sie DiskMop oder die Windows-Datenträgerbereinigung, um temporäre Systemdateien und alte Update-Protokolle zu löschen.",
+          },
+          {
+            name: "Laufwerk mit Treemap visualisieren",
+            text: "Öffnen Sie die visuelle Treemap-Ansicht, um die größten Verzeichnisse und versteckte Speicherfresser aufzuspüren.",
+          },
+          {
+            name: "Doppelte Dateien mit SHA-256 deduplizieren",
+            text: "Scannen Sie Ihre Benutzerordner mit dem Duplikat-Finder und entfernen Sie redundante Kopien von Fotos und Dokumenten.",
+          },
+          {
+            name: "Alte Windows-Installationen bereinigen",
+            text: "Entfernen Sie die Sicherung früherer Windows-Installationen (Windows.old), falls Ihr PC nach dem Update stabil läuft.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Effektivste Bereiche zur Datenträgerbereinigung und typisches Einsparpotenzial",
+        columns: [
+          "Bereinigungsziel",
+          "Angewandte Methode",
+          "Typischer Speichergewinn",
+          "Sicherheitsprofil",
+          "Empfohlene Häufigkeit",
+        ],
+        rows: [
+          [
+            "Temporäre System- & Cache-Dateien",
+            "DiskMop Cache Cleaner / cleanmgr",
+            "5 GB – 25 GB",
+            "Vollkommen sicher",
+            "Wöchentlich bereinigen",
+          ],
+          [
+            "Große vergessene Dateien",
+            "Large File Finder (>500MB)",
+            "10 GB – 80 GB",
+            "Überprüfung ratsam",
+            "Veraltete ISOs in die Cloud / externe Festplatte verschieben",
+          ],
+          [
+            "Doppelte Medien & Dokumente",
+            "SHA-256 Duplikat-Erkennung",
+            "5 GB – 30 GB",
+            "Vollkommen sicher",
+            "Redundante Fotos und Kopien entfernen",
+          ],
+          [
+            "Alte Downloads & Setup-Dateien",
+            "Downloads Cleaner",
+            "5 GB – 20 GB",
+            "Vollkommen sicher",
+            "Installationsdateien nach der Einrichtung löschen",
+          ],
+          [
+            "Frühere Windows-Installationen",
+            "Datenträgerbereinigung (Windows.old)",
+            "15 GB – 35 GB",
+            "Sicher (Wenn System stabil)",
+            "Über die Bereinigung von Systemdateien löschen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Wie viel freier Speicherplatz sollte auf Laufwerk C: verbleiben?",
+          answer:
+            "Halten Sie stets mindestens 15 % bis 20 % freien Speicher frei (mindestens 20–30 GB), um eine reibungslose Auslagerung des virtuellen Arbeitsspeichers zu gewährleisten und Schreibverlangsamungen auf SSDs zu vermeiden.",
+        },
+        {
+          question:
+            "Wird mein System beschädigt, wenn ich Cache-Dateien lösche?",
+          answer:
+            "Nein. Caches und temporäre Dateien (%temp%, Browser-Caches) können gefahrlos neu erstellt werden. Gesperrte aktive Dateien können vom System ohnehin nicht gelöscht werden.",
+        },
+        {
+          question: "Warum belegt der Ordner WinSxS so viel Speicherplatz?",
+          answer:
+            "WinSxS speichert Windows-Komponenten und alte Update-Dateien. Löschen Sie ihn keinesfalls manuell; verwenden Sie stattdessen DISM oder die Windows-Bereinigung.",
+        },
+        {
+          question: "Ist es sicher, den Ordner Windows.old zu löschen?",
+          answer:
+            "Ja, wenn nach einem großen Windows-Upgrade alle Programme einwandfrei laufen. Das Entfernen gibt meist 15 bis über 30 GB auf einen Schlag frei.",
+        },
+      ],
       verdict: [
         "Das Freigeben von Speicherplatz erfordert einen systematischen Ansatz. Beginnen Sie mit der Analyse Ihrer Festplatte, bereinigen Sie dann Cache und temporäre Dateien, finden Sie große und doppelte Dateien, entfernen Sie leere Ordner und automatisieren Sie schließlich Ihre Bereinigungsroutine.",
         "Disk Mop vereint alle 6 Schritte in einer einzigen Anwendung. Mit visueller Festplattenanalyse, intelligentem Cache-Cleaner, Große-Dateien-Finder, SHA-256-Duplikaterkennung, Leere-Ordner-Bereinigung und geplanter automatischer Wartung war die Verwaltung Ihres Speicherplatzes noch nie so einfach.",
@@ -413,6 +514,13 @@ export const freeDiskSpace: Article = {
       intro: [
         "Manquer d'espace disque est l'un des problèmes informatiques les plus courants et les plus agaçants. Quand le lecteur C: est plein, le système ralentit, les mises à jour échouent et vous ne pouvez plus enregistrer de nouveaux fichiers. Rassurez-vous : libérer de l'espace disque est plus simple qu'il n'y paraît.",
         "Dans ce guide, nous détaillons 6 étapes efficaces pour nettoyer votre disque et récupérer un espace de stockage précieux. Chaque étape s'accompagne de conseils concrets et montre comment Disk Mop simplifie l'opération. Commençons.",
+      ],
+      keyTakeaways: [
+        "La visualisation interactive en treemap élimine toute incertitude en mettant immédiatement en lumière les répertoires précis qui monopolisent des gigaoctets.",
+        "Nettoyer les fichiers de cache du système, du navigateur et de Windows Update libère généralement entre 10 et 30 Go sur un ordinateur classique.",
+        "Purger les fichiers volumineux oubliés (>500 Mo) tels que vieilles images ISO, archives non compressées et rendus vidéo offre un gain d'espace immédiat.",
+        "La comparaison octet par octet SHA-256 élimine avec certitude les doublons de photos et de documents, peu importe leur nom de fichier.",
+        "Automatiser le nettoyage hebdomadaire via la planification de DiskMop supprime définitivement les alertes d'espace disque insuffisant.",
       ],
       sections: [
         {
@@ -465,6 +573,100 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment libérer de l'espace disque sur le lecteur C: pas à pas",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Lancer le nettoyage de disque ou DiskMop",
+            text: "Ouvrez DiskMop ou l'outil Nettoyage de disque pour supprimer les fichiers temporaires et les résidus de mises à jour.",
+          },
+          {
+            name: "Visualiser le disque avec la carte Treemap",
+            text: "Consultez le treemap interactif pour localiser instantanément les dossiers les plus imposants et les données cachées.",
+          },
+          {
+            name: "Dedupliquer les fichiers avec le scan SHA-256",
+            text: "Analysez vos dossiers utilisateur avec le détecteur de doublons pour effacer les copies inutiles de photos et documents.",
+          },
+          {
+            name: "Purger les anciennes versions de Windows",
+            text: "Supprimez la sauvegarde de la version précédente (Windows.old) si votre ordinateur fonctionne sans encombre.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Zones de nettoyage prioritaires et gains d'espace disque envisageables",
+        columns: [
+          "Cible de nettoyage",
+          "Méthode appliquée",
+          "Espace généralement libéré",
+          "Niveau de sécurité",
+          "Recommandation",
+        ],
+        rows: [
+          [
+            "Fichiers temporaires & caches système",
+            "Nettoyeur de cache DiskMop / cleanmgr",
+            "5 Go – 25 Go",
+            "Totalement sûr",
+            "Nettoyer chaque semaine",
+          ],
+          [
+            "Fichiers volumineux oubliés",
+            "Détecteur de gros fichiers (>500Mo)",
+            "10 Go – 80 Go",
+            "Vérification requise",
+            "Déplacer les ISO obsolètes vers le cloud ou disque externe",
+          ],
+          [
+            "Photos et fichiers en double",
+            "Détecteur de doublons SHA-256",
+            "5 Go – 30 Go",
+            "Totalement sûr",
+            "Supprimer les photos redondantes et copies en trop",
+          ],
+          [
+            "Vieux téléchargements et installeurs",
+            "Nettoyeur de téléchargements",
+            "5 Go – 20 Go",
+            "Totalement sûr",
+            "Supprimer les installeurs une fois l'installation terminée",
+          ],
+          [
+            "Installations Windows antérieures",
+            "Nettoyage de disque (Windows.old)",
+            "15 Go – 35 Go",
+            "Sûr (Si le système est stable)",
+            "Nettoyer via l'option des fichiers système",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Combien d'espace libre faut-il conserver sur le disque C: ?",
+          answer:
+            "Conservez toujours au moins 15 % à 20 % d'espace libre (soit au moins 20 à 30 Go) pour assurer le bon fonctionnement de la mémoire virtuelle et préserver les performances du SSD.",
+        },
+        {
+          question:
+            "Supprimer les fichiers de cache risque-t-il d'endommager mon système ?",
+          answer:
+            "Non. Les caches et fichiers temporaires (%temp%, caches de navigation) se recréent automatiquement. De plus, les fichiers système actifs en cours d'utilisation sont verrouillés et protégés.",
+        },
+        {
+          question: "Pourquoi le dossier WinSxS prend-il autant de place ?",
+          answer:
+            "Le dossier WinSxS stocke les composants Windows et l'historique des mises à jour. Ne le supprimez jamais à la main ; utilisez l'outil DISM ou le Nettoyage de disque.",
+        },
+        {
+          question: "Est-il prudent de supprimer le dossier Windows.old ?",
+          answer:
+            "Oui, dès lors que votre système fonctionne de manière parfaitement stable après une mise à niveau majeure. Cela libère généralement entre 15 et plus de 30 Go d'un coup.",
+        },
+      ],
       verdict: [
         "Libérer de l'espace disque demande une approche méthodique. Commencez par analyser votre disque, nettoyez ensuite le cache et les fichiers temporaires, retrouvez les gros fichiers et les doublons, supprimez les dossiers vides et automatisez enfin votre routine de nettoyage pour garder la situation sous contrôle.",
         "Disk Mop réunit ces 6 étapes dans une seule application. Avec l'analyse de disque visuelle, le nettoyage intelligent du cache, le détecteur de gros fichiers, la détection de doublons en SHA-256, le nettoyage des dossiers vides et l'entretien automatique planifié, gérer son espace disque n'a jamais été aussi simple.",
@@ -480,6 +682,13 @@ export const freeDiskSpace: Article = {
       intro: [
         "Quedarse sin espacio en disco es uno de los problemas informáticos más habituales y molestos. Cuando la unidad C: se llena, el sistema se ralentiza, las actualizaciones fallan al instalarse y no puedes guardar archivos nuevos. Tranquilo: liberar espacio en disco es más sencillo de lo que parece.",
         "En esta guía repasamos 6 pasos eficaces para limpiar el disco y recuperar un almacenamiento muy valioso. Cada paso incluye consejos prácticos y muestra cómo Disk Mop simplifica el proceso. Empecemos.",
+      ],
+      keyTakeaways: [
+        "La visualización mediante mapa de árbol interactivo elimina las dudas al señalar con total precisión qué carpetas consumen más gigabytes.",
+        "Eliminar los archivos de caché del sistema, navegadores y Windows Update libera con total seguridad entre 10 y 30 GB en un equipo estándar.",
+        "Suprimir archivos pesados olvidados (>500 MB) como imágenes ISO antiguas, archivos comprimidos y vídeos produce un alivio inmediato de almacenamiento.",
+        "La comprobación binaria SHA-256 erradica duplicados de fotos y documentos con total exactitud, independientemente del nombre del archivo.",
+        "Programar una limpieza periódica automática con DiskMop previene para siempre los avisos recurrentes de 'Poco espacio en disco'.",
       ],
       sections: [
         {
@@ -531,6 +740,98 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo liberar espacio en disco en la unidad C: paso a paso",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Iniciar el Liberador de espacio o DiskMop",
+            text: "Abre DiskMop o la herramienta Liberador de espacio en disco para suprimir temporales del sistema y registros viejos de actualización.",
+          },
+          {
+            name: "Mapear el disco con la vista interactiva",
+            text: "Utiliza el mapa de árbol visual para ubicar las carpetas más pesadas y descubrir archivos ocultos que consumen capacidad.",
+          },
+          {
+            name: "Deduplicar archivos con tecnología SHA-256",
+            text: "Analiza las carpetas del usuario con el detector de duplicados para borrar copias sobrantes de fotos y documentos.",
+          },
+          {
+            name: "Purgar versiones anteriores de Windows",
+            text: "Elimina los archivos residuales de la instalación previa (Windows.old) cuando hayas comprobado que el sistema está completamente estable.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Áreas prioritarias de limpieza en disco y volumen de espacio recuperable",
+        columns: [
+          "Objetivo de limpieza",
+          "Método aplicado",
+          "Espacio típico recuperado",
+          "Nivel de seguridad",
+          "Recomendación",
+        ],
+        rows: [
+          [
+            "Archivos temporales y cachés de sistema",
+            "Limpiador de caché DiskMop / cleanmgr",
+            "5 GB – 25 GB",
+            "Completamente seguro",
+            "Limpiar semanalmente",
+          ],
+          [
+            "Archivos grandes olvidados",
+            "Buscador de archivos grandes (>500MB)",
+            "10 GB – 80 GB",
+            "Requiere revisión",
+            "Mover archivos ISO antiguos a la nube o disco externo",
+          ],
+          [
+            "Fotos y archivos duplicados",
+            "Detector de duplicados SHA-256",
+            "5 GB – 30 GB",
+            "Completamente seguro",
+            "Eliminar imágenes redundantes y copias innecesarias",
+          ],
+          [
+            "Descargas e instaladores antiguos",
+            "Limpiador de descargas",
+            "5 GB – 20 GB",
+            "Completamente seguro",
+            "Borrar instaladores tras configurar las aplicaciones",
+          ],
+          [
+            "Instalaciones previas de Windows",
+            "Liberador de espacio (Windows.old)",
+            "15 GB – 35 GB",
+            "Seguro (Si el sistema es estable)",
+            "Limpiar desde los archivos del sistema",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Cuánto espacio libre se debe conservar en la unidad C:?",
+          answer:
+            "Conserva siempre como mínimo entre el 15 % y el 20 % de espacio libre (al menos 20–30 GB) para facilitar el intercambio de memoria virtual y prevenir la degradación de escritura en discos SSD.",
+        },
+        {
+          question: "¿Borrar archivos de caché dañará mi sistema operativo?",
+          answer:
+            "No. La caché y los archivos temporales (%temp%, caché del navegador) se reconstruyen sin problemas. Además, los archivos que el sistema está utilizando activamente quedan bloqueados y protegidos.",
+        },
+        {
+          question: "¿Por qué la carpeta WinSxS ocupa tanto espacio?",
+          answer:
+            "WinSxS guarda componentes de Windows y copias de seguridad de actualizaciones previas. Jamás la borres manualmente; utiliza la herramienta DISM o el Liberador de espacio en disco.",
+        },
+        {
+          question: "¿Es seguro borrar la carpeta Windows.old?",
+          answer:
+            "Sí, siempre que tu ordenador funcione con total normalidad tras una actualización relevante de Windows. Eliminarla suele recuperar entre 15 y más de 30 GB de una sola vez.",
+        },
+      ],
       verdict: [
         "Liberar espacio en disco exige un enfoque sistemático. Empieza analizando el disco, limpia después la caché y los archivos temporales, localiza los archivos grandes y los duplicados, elimina las carpetas vacías y, por último, automatiza la rutina de limpieza para no perder el control.",
         "Disk Mop reúne los 6 pasos en una sola aplicación. Con el análisis visual de disco, la limpieza inteligente de caché, el buscador de archivos grandes, la detección de duplicados por SHA-256, la limpieza de carpetas vacías y el mantenimiento automático programado, gestionar el espacio en disco nunca ha sido tan fácil.",
@@ -546,6 +847,13 @@ export const freeDiskSpace: Article = {
       intro: [
         "Restare senza spazio su disco è uno dei problemi informatici più comuni e più fastidiosi. Quando l'unità C: è piena il sistema rallenta, gli aggiornamenti non si installano e non riesci più a salvare nuovi file. Niente panico: liberare spazio su disco è più semplice di quanto pensi.",
         "In questa guida vediamo 6 passi efficaci per pulire il disco e recuperare spazio prezioso. Ogni passo include consigli pratici e mostra come Disk Mop semplifica il lavoro. Cominciamo.",
+      ],
+      keyTakeaways: [
+        "La mappa interattiva ad albero (treemap) azzera i dubbi evidenziando con precisione chirurgica le cartelle che assorbono gigabyte preziosi.",
+        "La rimozione delle cache di sistema, del browser e di Windows Update recupera in tutta sicurezza tra i 10 e i 30 GB sui computer d'uso quotidiano.",
+        "Eliminare file di grandi dimensioni dimenticati (>500 MB) come vecchie ISO, archivi non compressi ed esportazioni video offre un sollievo immediato al disco.",
+        "Il confronto a livello di byte con SHA-256 elimina duplicati di foto e documenti con assoluta certezza, indipendentemente dai nomi dei file.",
+        "L'automazione della pulizia settimanale tramite DiskMop previene in modo definitivo i fastidiosi avvisi di spazio su disco in esaurimento.",
       ],
       sections: [
         {
@@ -597,6 +905,98 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come liberare spazio sul disco C: passo dopo passo",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Avviare Pulizia disco o DiskMop",
+            text: "Esegui DiskMop o l'utilità Pulizia disco di Windows per cancellare temporanei di sistema e vecchi log di aggiornamento.",
+          },
+          {
+            name: "Esplorare il disco con la visualizzazione treemap",
+            text: "Utilizza la vista grafica treemap per individuare rapidamente le cartelle più voluminose e i file nascosti che occupano spazio.",
+          },
+          {
+            name: "Deduplicare i file con l'analisi SHA-256",
+            text: "Scansiona le cartelle personali con il rilevatore di duplicati per rimuovere foto doppie e copie ridondanti di documenti.",
+          },
+          {
+            name: "Rimuovere le installazioni precedenti di Windows",
+            text: "Cancella i residui della versione precedente (Windows.old) dopo esserti accertato che il sistema funzioni senza anomalie.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Aree d'intervento prioritarie per il recupero di spazio e guadagni tipici",
+        columns: [
+          "Obiettivo di pulizia",
+          "Metodo impiegato",
+          "Spazio recuperato tipico",
+          "Profilo di sicurezza",
+          "Raccomandazione",
+        ],
+        rows: [
+          [
+            "File temporanei e cache di sistema",
+            "Pulitore cache DiskMop / cleanmgr",
+            "5 GB – 25 GB",
+            "Completamente sicuro",
+            "Eseguire con cadenza settimanale",
+          ],
+          [
+            "File di grandi dimensioni dimenticati",
+            "Trova file grandi (>500MB)",
+            "10 GB – 80 GB",
+            "Revisione richiesta",
+            "Spostare ISO inutilizzate su cloud o disco esterno",
+          ],
+          [
+            "Foto e file duplicati",
+            "Rilevatore duplicati SHA-256",
+            "5 GB – 30 GB",
+            "Completamente sicuro",
+            "Eliminare foto replicate e copie superflue",
+          ],
+          [
+            "Download obsoleti e file di installazione",
+            "Pulitore della cartella Download",
+            "5 GB – 20 GB",
+            "Completamente sicuro",
+            "Cancellare i file setup a installazione completata",
+          ],
+          [
+            "Installazioni precedenti di Windows",
+            "Pulizia disco (Windows.old)",
+            "15 GB – 35 GB",
+            "Sicuro (Se il PC è stabile)",
+            "Eliminare tramite la pulizia dei file di sistema",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Quanto spazio libero è opportuno mantenere sull'unità C:?",
+          answer:
+            "È consigliabile mantenere sempre almeno il 15-20% di spazio libero (un minimo di 20-30 GB) per agevolare il paging della memoria virtuale ed evitare rallentamenti nelle scritture SSD.",
+        },
+        {
+          question: "Cancellare i file di cache può danneggiare il sistema?",
+          answer:
+            "No. I file temporanei e di cache (%temp%, cache dei browser) vengono ricreati in autonomia dalle applicazioni. I file attivi indispensabili per il sistema sono protetti da blocco.",
+        },
+        {
+          question: "Come mai la cartella WinSxS occupa così tanto spazio?",
+          answer:
+            "La cartella WinSxS conserva i componenti di sistema e lo storico degli aggiornamenti. Non cancellarla manualmente: sfrutta sempre DISM o lo strumento Pulizia disco.",
+        },
+        {
+          question: "È sicuro cancellare la cartella Windows.old?",
+          answer:
+            "Sì, se dopo un importante aggiornamento di versione hai verificato la perfetta stabilità di app e periferiche. La sua rimozione libera subito tra 15 e oltre 30 GB.",
+        },
+      ],
       verdict: [
         "Liberare spazio su disco richiede un approccio sistematico. Comincia analizzando il disco, poi pulisci cache e file temporanei, trova i file grandi e i duplicati, rimuovi le cartelle vuote e infine automatizza la routine di pulizia per tenere tutto sotto controllo.",
         "Disk Mop raccoglie tutti e 6 i passaggi in un'unica applicazione. Con l'analisi visiva del disco, la pulizia intelligente della cache, il cercatore di file di grandi dimensioni, il rilevamento dei duplicati tramite SHA-256, la pulizia delle cartelle vuote e la manutenzione automatica pianificata, gestire lo spazio su disco non è mai stato così semplice.",
@@ -612,6 +1012,13 @@ export const freeDiskSpace: Article = {
       intro: [
         "Ficar sem espaço em disco é um dos problemas de computador mais comuns e mais irritantes. Quando a unidade C: enche, o sistema fica lento, as atualizações falham na instalação e você não consegue salvar arquivos novos. Mas fique tranquilo: liberar espaço em disco é mais fácil do que parece.",
         "Neste guia percorremos 6 passos eficazes para limpar o disco e recuperar um armazenamento valioso. Cada passo traz dicas práticas e mostra como o Disk Mop simplifica o processo. Vamos começar.",
+      ],
+      keyTakeaways: [
+        "A visualização em mapa de árvore interativo elimina suposições ao exibir com precisão absoluta as pastas que estão consumindo gigabytes no disco.",
+        "A limpeza de caches do sistema, navegadores e Windows Update recupera com total segurança entre 10 e 30 GB em instalações comuns.",
+        "Eliminar arquivos pesados esquecidos (>500 MB) como imagens ISO antigas, arquivos descompactados e gravações de vídeo gera alívio imediato no armazenamento.",
+        "A comparação em nível de bytes com SHA-256 remove fotos e documentos duplicados com precisão impecável, independentemente de terem nomes diferentes.",
+        "A automatização da manutenção semanal com a rotina agendada do DiskMop elimina definitivamente os alertas de espaço em disco insuficiente.",
       ],
       sections: [
         {
@@ -663,6 +1070,98 @@ export const freeDiskSpace: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como liberar espaço no disco C: passo a passo",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Executar a Limpeza de Disco ou o DiskMop",
+            text: "Abra o DiskMop ou a Limpeza de Disco do Windows para excluir arquivos temporários e relatórios desnecessários de atualização.",
+          },
+          {
+            name: "Mapear o armazenamento com a visão em treemap",
+            text: "Utilize a interface interativa de mapa de árvore para localizar os maiores diretórios e arquivos pesados escondidos no disco.",
+          },
+          {
+            name: "Desduplicar arquivos com o algoritmo SHA-256",
+            text: "Analise suas pastas de usuário com o verificador de duplicatas para remover fotos idênticas e cópias de documentos.",
+          },
+          {
+            name: "Excluir versões anteriores do Windows",
+            text: "Remova os arquivos da instalação anterior (Windows.old) assim que constatar que a versão atual está estável.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Áreas prioritárias para recuperação de espaço em disco e ganhos típicos",
+        columns: [
+          "Alvo da limpeza",
+          "Método adotado",
+          "Espaço típico liberado",
+          "Nível de segurança",
+          "Recomendação",
+        ],
+        rows: [
+          [
+            "Arquivos temporários e caches de sistema",
+            "Limpador de Cache do DiskMop / cleanmgr",
+            "5 GB – 25 GB",
+            "Totalmente seguro",
+            "Limpar semanalmente",
+          ],
+          [
+            "Arquivos grandes esquecidos",
+            "Localizador de Arquivos Grandes (>500MB)",
+            "10 GB – 80 GB",
+            "Requer revisão",
+            "Transferir ISOs antigas para a nuvem ou disco externo",
+          ],
+          [
+            "Fotos e mídias duplicadas",
+            "Detector de Duplicatas SHA-256",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Eliminar fotos redundantes e cópias soltas",
+          ],
+          [
+            "Downloads antigos e instaladores",
+            "Limpador da pasta Downloads",
+            "5 GB – 20 GB",
+            "Totalmente seguro",
+            "Apagar instaladores após concluir as configurações",
+          ],
+          [
+            "Instalações anteriores do Windows",
+            "Limpeza de Disco (Windows.old)",
+            "15 GB – 35 GB",
+            "Seguro (Com sistema estável)",
+            "Limpar pela opção de arquivos do sistema",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Quanto de espaço livre devo manter na unidade C:?",
+          answer:
+            "Mantenha sempre pelo menos 15% a 20% de espaço livre (no mínimo 20 a 30 GB) para assegurar o funcionamento da memória virtual de swap e evitar queda de velocidade em SSDs.",
+        },
+        {
+          question: "Apagar arquivos de cache pode corromper meu computador?",
+          answer:
+            "Não. Os caches e arquivos temporários (%temp%, cache de navegadores) são recriados automaticamente conforme a necessidade. Arquivos ativos em uso pelo sistema são bloqueados contra exclusão.",
+        },
+        {
+          question: "Por que a pasta WinSxS consome tanto espaço em disco?",
+          answer:
+            "A pasta WinSxS armazena componentes fundamentais do Windows e históricos de atualizações. Nunca a exclua manualmente; utilize a ferramenta DISM ou a Limpeza de Disco.",
+        },
+        {
+          question: "É seguro apagar a pasta Windows.old?",
+          answer:
+            "Sim, caso o seu computador esteja funcionando perfeitamente após uma atualização do sistema. A exclusão dessa pasta costuma recuperar de 15 a mais de 30 GB imediatamente.",
+        },
+      ],
       verdict: [
         "Liberar espaço em disco pede uma abordagem sistemática. Comece analisando o disco, depois limpe o cache e os arquivos temporários, encontre os arquivos grandes e os duplicados, remova as pastas vazias e, por fim, automatize a rotina de limpeza para manter tudo sob controle.",
         "O Disk Mop reúne os 6 passos em um único aplicativo. Com análise visual de disco, limpeza inteligente de cache, localizador de arquivos grandes, detecção de duplicados por SHA-256, limpeza de pastas vazias e manutenção automática agendada, gerenciar o espaço em disco nunca foi tão fácil.",
@@ -678,6 +1177,13 @@ export const freeDiskSpace: Article = {
       intro: [
         "ディスクの空き容量が足りなくなる問題は、パソコンのトラブルの中でも特に多く、そして厄介なものです。C:ドライブがいっぱいになると、システムの動作は重くなり、更新プログラムのインストールは失敗し、新しいファイルを保存することもできなくなります。しかしご安心ください。空き容量を増やす作業は、思っているよりずっと簡単です。",
         "この記事では、ディスクを整理して貴重な保存領域を取り戻すための、効果の高い6つの手順を順に説明します。それぞれの手順に実践的なコツを添えながら、Disk Mopを使うとどれだけ手間が減るのかも紹介します。それでは始めましょう。",
+      ],
+      keyTakeaways: [
+        "インタラクティブなツリーマップ表示により、どのフォルダが何ギガバイトを消費しているかが一目で特定でき、推測に頼る作業が不要になります。",
+        "システム、ブラウザ、Windows Updateのキャッシュファイルをクリーンアップするだけで、一般的なPC環境で10〜30GBの空き容量を安全に確保できます。",
+        "古いISOイメージ、展開済みアーカイブ、動画ファイルなど、忘れ去られた大容量ファイル（500MB以上）を整理することで即座に容量の余裕が生まれます。",
+        "SHA-256によるバイト単位のハッシュ照合なら、ファイル名が違っていても重複している写真やドキュメントを漏れなく確実に検出・削除できます。",
+        "DiskMopのスケジュール定期メンテナンスを有効にすることで、「ディスクの空き容量が不足しています」という警告の再発を未然に防ぎます。",
       ],
       sections: [
         {
@@ -727,6 +1233,97 @@ export const freeDiskSpace: Article = {
             "クリーンアップを自動化することが、ディスクの容量問題を根本から解決する最も効果的な方法です。週次または月次のクリーンアップを設定しておけば、不要なファイルがたまるのを防ぎ、システムを常に快適な状態に保てます。",
             "Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）は、指定した間隔でキャッシュの削除、一時ファイルの整理、システムのメンテナンスを自動的に実行します。クリーンアップの実行時には通知し、何を削除したのかをレポートで示します。こうしておけば、ディスクの容量管理を意識しなくても、パソコンは常に最適な状態を保ち続けます。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Cドライブの空き容量をステップバイステップで解放する手順",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "ディスククリーンアップまたはDiskMopを実行する",
+            text: "DiskMopまたはWindowsのディスククリーンアップを起動し、システム一時ファイルや不要な更新ログを削除します。",
+          },
+          {
+            name: "ツリーマップでドライブの構造を視覚化する",
+            text: "視覚的ツリーマップ表示を開き、最も容量を占めているディレクトリや隠れた大容量ファイルを特定します。",
+          },
+          {
+            name: "SHA-256照合で重複ファイルを整理する",
+            text: "重複ファイル検索を実行し、写真や文書の重複コピーを検出して安全に消去します。",
+          },
+          {
+            name: "過去のWindowsインストールファイルを削除する",
+            text: "システムの動作が安定していることを確認後、以前のWindowsのバックアップ（Windows.old）を消去します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "ディスク容量クリーンアップの主要対象と期待できる回復容量",
+        columns: [
+          "対象項目",
+          "適用手法",
+          "一般的な回復容量",
+          "安全性",
+          "推奨アクション",
+        ],
+        rows: [
+          [
+            "システム一時ファイル・各種キャッシュ",
+            "DiskMop キャッシュクリーナー / cleanmgr",
+            "5 GB – 25 GB",
+            "完全安全",
+            "週1回程度の定期実行",
+          ],
+          [
+            "放置された大容量ファイル",
+            "大容量ファイル検索（500MB超）",
+            "10 GB – 80 GB",
+            "要確認",
+            "不要なISOをクラウドや外部ストレージへ退避",
+          ],
+          [
+            "重複した写真・各種ドキュメント",
+            "SHA-256 重複ファイル検出",
+            "5 GB – 30 GB",
+            "完全安全",
+            "重複した写真や重複コピーを整理",
+          ],
+          [
+            "ダウンロード残骸・古いインストーラー",
+            "ダウンロードフォルダ クリーナー",
+            "5 GB – 20 GB",
+            "完全安全",
+            "アプリのインストール完了後に速やかに消去",
+          ],
+          [
+            "以前のWindowsインストールデータ",
+            "システムファイルのクリーンアップ（Windows.old）",
+            "15 GB – 35 GB",
+            "安全（動作安定時）",
+            "システムファイルのクリーンアップから一括削除",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Cドライブにはどれくらいの空き容量を残しておくべきですか？",
+          answer:
+            "仮想メモリのスワップ領域を確保し、SSDの書き込み性能低下（ライトアンプリフィケーション）を防ぐため、常に最低15〜20%（少なくとも20〜30GB）の空き容量を維持してください。",
+        },
+        {
+          question: "キャッシュファイルを削除するとシステムに異常が出ますか？",
+          answer:
+            "いいえ、異常は出ません。キャッシュや一時ファイル（%temp%、ブラウザキャッシュ等）は必要に応じて安全に再生成されます。また、現在稼働中の保護ファイルは誤って消せない設計になっています。",
+        },
+        {
+          question: "WinSxSフォルダがこれほど大容量なのはなぜですか？",
+          answer:
+            "WinSxSフォルダにはWindowsコンポーネントや以前の更新プログラムのロールバック用データが保管されています。手動削除は行わず、DISMコマンドまたはディスククリーンアップ機能を使用してください。",
+        },
+        {
+          question: "Windows.oldフォルダは削除しても問題ありませんか？",
+          answer:
+            "はい、Windowsの大規模アップデート後にすべてのアプリやデータが正常に動作していることを確認できれば、安全に削除できます。通常これだけで15〜30GB以上が即座に解放されます。",
         },
       ],
       verdict: [

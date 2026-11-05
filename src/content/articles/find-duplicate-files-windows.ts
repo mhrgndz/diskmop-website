@@ -5,7 +5,7 @@ export const findDuplicateFilesWindows: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-14",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -321,6 +321,12 @@ export const findDuplicateFilesWindows: Article = {
         "Es gibt zwei Wege, doppelte Dateien unter Windows zu finden: Ordner im Datei-Explorer nach Größe und Name sortieren, um offensichtliche Kopien manuell zu erkennen, oder das Laufwerk mit einem Duplikatfinder scannen, der Dateien anhand ihres SHA-256-Hashes vergleicht. Nur der Hash-Abgleich ist wirklich zuverlässig, denn er beweist vor dem Löschen, dass zwei Dateien Byte für Byte identisch sind. Windows 10 und 11 haben keinen eingebauten Duplikatfinder — es braucht also etwas Handarbeit oder ein spezialisiertes Tool.",
         "Duplikate sind heimliche Speicherfresser: dieselben Urlaubsfotos in zwei Ordnern, dasselbe Video auf dem Desktop und in Downloads, dasselbe PDF aus drei E-Mails gespeichert. Dieser Leitfaden zeigt, wie Kopien entstehen, was der Datei-Explorer leisten kann, warum der Hash-Abgleich die einzig sichere Methode ist und welche Kopien Sie bedenkenlos löschen können.",
       ],
+      keyTakeaways: [
+        "Die Windows-Dateisuche findet nur offensichtliche Duplikate mit identischem Namen oder dem Suffix „(1)“; umbenannte identische Dateien bleiben unentdeckt.",
+        "Der SHA-256-Hash-Abgleich prüft Inhalte Byte für Byte auf absolute Identität – unabhängig von Dateinamen oder Änderungsdatum.",
+        "Das Entfernen doppelter Medien, mehrfacher Downloads und redundanter Foto-Importe gibt oft 20 bis 30 % des Benutzerspeichers frei.",
+        "Löschen Sie niemals Duplikate in Windows- oder Programme-Verzeichnissen; beschränken Sie die Deduplizierung strikt auf persönliche Benutzerordner.",
+      ],
       sections: [
         {
           title: "Wie sich doppelte Dateien auf dem PC ansammeln",
@@ -371,6 +377,88 @@ export const findDuplicateFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Doppelte Dateien unter Windows finden und sicher entfernen",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Duplikat-Scan starten",
+            text: "Öffnen Sie DiskMop, wechseln Sie zum Tab Duplikat-Erkennung, wählen Sie Laufwerke oder Ordner aus und klicken Sie auf Scannen.",
+          },
+          {
+            name: "SHA-256-Hash-Gruppen prüfen",
+            text: "Prüfen Sie nach Abschluss des Scans die Duplikatgruppen mit übereinstimmenden Prüfsummen und visueller Vorschau.",
+          },
+          {
+            name: "Hauptkopie festlegen",
+            text: "Behalten Sie die organisierte Kopie in Ihrem Bilder- oder Dokumente-Ordner und markieren Sie Streukopien in Downloads oder auf dem Desktop zum Löschen.",
+          },
+          {
+            name: "Überflüssige Kopien löschen",
+            text: "Verschieben Sie Duplikate in den Papierkorb. Überprüfen Sie Ihre Daten ein paar Tage lang, bevor Sie den Papierkorb endgültig leeren.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Vergleich der Methoden zur Erkennung doppelter Dateien unter Windows",
+        columns: [
+          "Methode",
+          "Abgleichkriterium",
+          "Zuverlässigkeit",
+          "Scan-Geschwindigkeit",
+          "Risiko von Fehlalarmen",
+        ],
+        rows: [
+          [
+            "Explorer-Namenssuche („(1)“, „Kopie“)",
+            "Dateiname & Dateigröße",
+            "Gering",
+            "Schnell (Ordner für Ordner)",
+            "Hoch (Namen können täuschen)",
+          ],
+          [
+            "Eingabeaufforderung (certutil SHA256)",
+            "Byte-Prüfsumme",
+            "100 % präzise",
+            "Extrem langsam (Manuell)",
+            "Keines",
+          ],
+          [
+            "DiskMop Duplikat-Erkennung",
+            "SHA-256-Hash + Vorschau",
+            "100 % präzise",
+            "Sehr schnell (Multi-Threading)",
+            "Null (Sicheres 1-Klick-Löschen)",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Besitzt Windows 11 oder 10 einen integrierten Duplikat-Finder?",
+          answer:
+            "Nein. Windows bietet kein integriertes Tool zum Vergleich von Dateiinhalten. Nutzer müssen Ordner entweder manuell prüfen oder Drittanbieter-Tools mit SHA-256-Hash-Abgleich nutzen.",
+        },
+        {
+          question:
+            "Können zwei Dateien dieselbe Dateigröße haben, ohne Duplikate zu sein?",
+          answer:
+            "Ja. Unterschiedliche Dokumente oder Bilder können zufällig exakt dieselbe Byte-Größe aufweisen. Nur kryptografische Hashes (wie SHA-256) garantieren echte Byte-Identität.",
+        },
+        {
+          question:
+            "Wie findet ein Hash-basierter Scanner umbenannte doppelte Fotos?",
+          answer:
+            "Ein Hash-Scanner analysiert den Datenstrom der Datei, nicht ihren Namen. Haben „IMG_001.jpg“ und „urlaub.jpg“ identische Bilddaten, erzeugen sie denselben SHA-256-Hash und werden gruppiert.",
+        },
+        {
+          question:
+            "Ist es sicher, Duplikate in Cloud-Speicherordnern zu löschen?",
+          answer:
+            "Ja, beachten Sie jedoch: Wenn Sie eine lokale Datei in einem synchronisierten OneDrive- oder Google Drive-Ordner löschen, wird sie auch aus der Cloud entfernt. Behalten Sie das Original immer am gewünschten Ort.",
+        },
+      ],
       verdict: [
         "Beim Finden doppelter Dateien unter Windows erkennt der Datei-Explorer nur die offensichtlichen Fälle: gleicher Name, gleicher Ordner, ein (1)-Zusatz. Für ein echtes Aufräumen braucht es einen Inhaltsvergleich — und der zuverlässige Weg dafür ist der SHA-256-Hash-Abgleich, bei dem nur Byte-identische Dateien als Duplikate gelten.",
         "Disk Mop vereint die gesamte Aufgabe in einer App: Der SHA-256-basierte Duplikatfinder findet echte Kopien, Festplattenanalyse und Große-Dateien-Finder zeigen, wohin der Speicherplatz verschwindet, und Downloads-Bereiniger plus geplante Bereinigung verhindern neue Duplikate. Das alles mit einer einmaligen Lifetime-Lizenz für 19,90 $.",
@@ -386,6 +474,12 @@ export const findDuplicateFilesWindows: Article = {
       intro: [
         "Il existe deux façons de trouver les fichiers en double sous Windows : trier les dossiers par taille et par nom dans l'Explorateur de fichiers pour repérer les copies évidentes à la main, ou analyser votre disque avec un détecteur de doublons qui compare les fichiers par leur empreinte SHA-256. Seule l'analyse par hash est réellement fiable, car elle prouve que deux fichiers sont identiques octet par octet avant que vous ne supprimiez quoi que ce soit. Windows 10 et 11 n'intègrent aucun détecteur de doublons : il faut donc soit un peu de travail manuel, soit un outil dédié.",
         "Les doublons sont des dévoreurs d'espace discrets : les mêmes photos de vacances dans deux dossiers, la même vidéo sur le Bureau et dans Téléchargements, le même PDF enregistré depuis trois e-mails différents. Dans ce guide, nous verrons comment les copies s'accumulent, ce que l'Explorateur de fichiers permet et ne permet pas, pourquoi la comparaison par hash est la seule approche sûre, et quelles copies vous pouvez supprimer en toute confiance.",
+      ],
+      keyTakeaways: [
+        "La recherche de l'Explorateur de fichiers ne détecte que les doublons évidents avec des noms identiques ou des suffixes « (1) » ; les fichiers identiques renommés ne sont pas repérés.",
+        "La comparaison par hachage SHA-256 valide un contenu strictement identique octet par octet, indépendamment du nom ou de la date de modification.",
+        "Supprimer les médias en double, les téléchargements redondants et les imports de photos répétés libère souvent de 20 à 30 % de stockage utilisateur.",
+        "Ne supprimez jamais de doublons dans les répertoires Windows ou Program Files ; limitez le nettoyage aux dossiers personnels et bibliothèques utilisateur.",
       ],
       sections: [
         {
@@ -439,6 +533,87 @@ export const findDuplicateFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment trouver et supprimer en toute sécurité les fichiers en double sur Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Lancer l'analyse des doublons",
+            text: "Ouvrez DiskMop, accédez à l'onglet Détecteur de doublons, sélectionnez les lecteurs ou dossiers à analyser et cliquez sur Scanner.",
+          },
+          {
+            name: "Examiner les groupes de doublons SHA-256",
+            text: "À la fin de l'analyse, vérifiez les groupes de fichiers identiques grâce aux aperçus visuels et aux sommes de contrôle.",
+          },
+          {
+            name: "Sélectionner la copie principale à conserver",
+            text: "Conservez la copie classée dans vos dossiers Photos ou Documents et cochez pour suppression les copies éparpillées dans Téléchargements ou Bureau.",
+          },
+          {
+            name: "Supprimer les copies superflues",
+            text: "Envoyez les doublons dans la Corbeille. Vérifiez vos fichiers pendant quelques jours avant de vider définitivement la corbeille.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparatif des méthodes de recherche de fichiers en double sous Windows",
+        columns: [
+          "Méthode",
+          "Critère de comparaison",
+          "Fiabilité",
+          "Vitesse d'analyse",
+          "Risque de faux positif",
+        ],
+        rows: [
+          [
+            "Recherche de nom dans l'Explorateur (« (1) », « Copie »)",
+            "Nom et taille du fichier",
+            "Faible",
+            "Rapide (Dossier par dossier)",
+            "Élevé (Noms trompeurs)",
+          ],
+          [
+            "Invite de commandes (certutil SHA256)",
+            "Hachage octet par octet",
+            "100 % précis",
+            "Extrêmement lent (Manuel)",
+            "Aucun",
+          ],
+          [
+            "Détecteur de doublons DiskMop",
+            "Hachage SHA-256 + Aperçu visuel",
+            "100 % précis",
+            "Ultrarapide (Multi-thread)",
+            "Zéro (Suppression sécurisée en 1 clic)",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windows 11 ou 10 dispose-t-il d'un détecteur de doublons intégré ?",
+          answer:
+            "Non. Windows n'intègre aucun outil comparant le contenu des fichiers. Les utilisateurs doivent inspecter manuellement leurs dossiers ou utiliser un utilitaire avec hachage SHA-256.",
+        },
+        {
+          question:
+            "Deux fichiers peuvent-ils avoir la même taille sans être des doublons ?",
+          answer:
+            "Oui. Des documents ou photos totalement distincts peuvent avoir exactement le même nombre d'octets. Seul un hachage cryptographique (comme SHA-256) garantit un contenu identique.",
+        },
+        {
+          question:
+            "Comment un scanner par empreinte retrouve-t-il des photos renommées ?",
+          answer:
+            "Le scanner analyse le flux binaire du fichier plutôt que son nom. Si « IMG_001.jpg » et « vacances.jpg » contiennent les mêmes pixels, ils ont le même SHA-256 et sont regroupés.",
+        },
+        {
+          question: "Est-il prudent de supprimer des doublons dans le cloud ?",
+          answer:
+            "Oui, mais attention : supprimer un fichier dans un dossier synchronisé (OneDrive, Google Drive) le supprime aussi de votre sauvegarde en ligne. Conservez toujours l'original principal.",
+        },
+      ],
       verdict: [
         "Pour trouver les fichiers en double sous Windows, l'Explorateur de fichiers ne repère que les cas évidents : même nom, même dossier, un suffixe (1). Un vrai nettoyage impose de comparer le contenu des fichiers, et la façon fiable de le faire est la comparaison par hash SHA-256 : seuls des fichiers identiques octet par octet devraient être considérés comme des doublons.",
         "Disk Mop réunit toute la tâche dans une seule application : le détecteur de doublons fondé sur SHA-256 trouve les vraies copies, l'analyse de disque et le détecteur de gros fichiers (Large File Finder) montrent où part votre espace, et le nettoyeur de téléchargements avec le nettoyage planifié empêchent les doublons de revenir. Le tout avec une licence à vie payée une seule fois, 19,90 $.",
@@ -454,6 +629,12 @@ export const findDuplicateFilesWindows: Article = {
       intro: [
         "Hay dos formas de encontrar archivos duplicados en Windows: ordenar las carpetas por tamaño y nombre en el Explorador de archivos para detectar a mano las copias evidentes, o analizar la unidad con un buscador de duplicados que compara los archivos por su hash SHA-256. El análisis basado en hash es el único método fiable, porque demuestra que dos archivos son idénticos byte a byte antes de que borres nada. Windows 10 y 11 no incluyen ningún buscador de duplicados, así que necesitas algo de trabajo manual o una herramienta dedicada.",
         "Los duplicados son un devorador de espacio silencioso: las mismas fotos de vacaciones en dos carpetas, el mismo vídeo en el escritorio y en Descargas, el mismo PDF guardado desde tres correos distintos. En esta guía verás cómo se acumulan las copias, qué puede y qué no puede hacer el Explorador de archivos, por qué la comparación por hash es el único enfoque seguro y qué copias puedes borrar con total tranquilidad.",
+      ],
+      keyTakeaways: [
+        "La búsqueda del Explorador de archivos solo halla duplicados evidentes con nombres coincidentes o sufijos '(1)'; los archivos renombrados idénticos no se detectan.",
+        "La coincidencia criptográfica SHA-256 comprueba el contenido byte a byte, sin importar el nombre del archivo ni la fecha de modificación.",
+        "Eliminar fotos duplicadas, descargas repetidas y copias redundantes puede liberar entre el 20 y el 30 % del almacenamiento del usuario.",
+        "Nunca elimines duplicados en los directorios de Windows o Archivos de programa; limita la limpieza exclusivamente a las carpetas personales del usuario.",
       ],
       sections: [
         {
@@ -507,6 +688,88 @@ export const findDuplicateFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo buscar y eliminar archivos duplicados en Windows con seguridad",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Iniciar el análisis de duplicados",
+            text: "Abre DiskMop, entra en la pestaña Detector de duplicados, selecciona las unidades o carpetas a escanear y pulsa Analizar.",
+          },
+          {
+            name: "Examinar los grupos de duplicados SHA-256",
+            text: "Una vez terminado el escaneo, revisa los grupos de archivos idénticos con sumas de comprobación coincidentes y vista previa.",
+          },
+          {
+            name: "Elegir la copia maestra que conservarás",
+            text: "Mantén la copia ordenada en tus carpetas de Fotos o Documentos y marca las copias sueltas en Descargas o Escritorio para eliminarlas.",
+          },
+          {
+            name: "Eliminar copias redundantes",
+            text: "Mueve los duplicados a la Papelera de reciclaje. Comprueba tus archivos durante unos días antes de vaciarla definitivamente.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparativa de métodos para buscar archivos duplicados en Windows",
+        columns: [
+          "Método",
+          "Criterio de comparación",
+          "Fiabilidad",
+          "Velocidad de análisis",
+          "Riesgo de falsos positivos",
+        ],
+        rows: [
+          [
+            "Búsqueda por nombre en el Explorador ('(1)', 'Copia')",
+            "Nombre y tamaño de archivo",
+            "Baja",
+            "Rápida (Carpeta por carpeta)",
+            "Alto (Nombres engañosos)",
+          ],
+          [
+            "Símbolo del sistema (certutil SHA256)",
+            "Hash a nivel de byte",
+            "100 % exacto",
+            "Extremadamente lento (Manual)",
+            "Ninguno",
+          ],
+          [
+            "Detector de duplicados de DiskMop",
+            "Hash SHA-256 + Vista previa",
+            "100 % exacto",
+            "Ultrarrápido (Multihilo)",
+            "Cero (Eliminación segura en 1 clic)",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Tiene Windows 11 o 10 una herramienta nativa para buscar archivos duplicados?",
+          answer:
+            "No. Windows no incluye ninguna función nativa que compare el contenido de los archivos. Los usuarios deben revisar carpetas a mano o usar un programa con cotejo SHA-256.",
+        },
+        {
+          question:
+            "¿Pueden dos archivos tener el mismo tamaño exacto sin ser duplicados?",
+          answer:
+            "Sí. Documentos o imágenes diferentes pueden coincidir por casualidad en el número exacto de bytes. Solo el hash criptográfico (como SHA-256) certifica que son idénticos.",
+        },
+        {
+          question:
+            "¿Cómo detecta un escáner por hash fotos duplicadas con distinto nombre?",
+          answer:
+            "El escáner examina el flujo de datos binarios y no el nombre del archivo. Si 'IMG_001.jpg' y 'vacaciones.jpg' tienen los mismos píxeles, generan el mismo SHA-256 y se agrupan al instante.",
+        },
+        {
+          question:
+            "¿Es seguro eliminar duplicados en carpetas de almacenamiento en la nube?",
+          answer:
+            "Sí, pero ten en cuenta que al borrar un archivo local en una carpeta sincronizada de OneDrive o Google Drive, también se borrará en la nube. Conserva siempre la copia principal.",
+        },
+      ],
       verdict: [
         "A la hora de encontrar archivos duplicados en Windows, el Explorador de archivos solo caza los casos obvios: mismo nombre, misma carpeta, un sufijo (1). Una limpieza de verdad exige comparar el contenido de los archivos, y la forma fiable de hacerlo es la comparación de hash SHA-256: solo los archivos idénticos byte a byte deberían contar como duplicados.",
         "Disk Mop reúne todo el trabajo en una sola aplicación: el detector de duplicados basado en SHA-256 encuentra las copias reales, el análisis de disco y el buscador de archivos grandes (Large File Finder) muestran adónde va tu espacio, y el limpiador de descargas junto con la limpieza programada evitan que los duplicados vuelvan. Todo ello con una licencia de por vida de pago único, 19,90 $.",
@@ -522,6 +785,12 @@ export const findDuplicateFilesWindows: Article = {
       intro: [
         "Ci sono due modi per trovare i file duplicati su Windows: ordinare le cartelle per dimensione e nome in Esplora file, individuando a mano le copie più evidenti, oppure analizzare l'unità con un rilevatore di duplicati che confronta i file in base al loro hash SHA-256. La scansione basata sull'hash è l'unico metodo davvero affidabile, perché dimostra che due file sono identici byte per byte prima che tu elimini qualcosa. Windows 10 e 11 non includono alcun rilevatore di duplicati: serve quindi un po' di lavoro manuale oppure uno strumento dedicato.",
         "I duplicati divorano spazio in silenzio: le stesse foto delle vacanze in due cartelle, lo stesso video sul desktop e in Download, lo stesso PDF salvato da tre e-mail diverse. In questa guida vediamo come si accumulano le copie, che cosa può e non può fare Esplora file, perché il confronto degli hash è l'unico approccio sicuro e quali copie puoi eliminare senza alcun timore.",
+      ],
+      keyTakeaways: [
+        "La ricerca di Esplora file rileva solo duplicati evidenti con nomi identici o suffissi «(1)»; i file identici rinominati non vengono trovati.",
+        "Il confronto con hash crittografico SHA-256 verifica l'identità esatta byte per byte, a prescindere dal nome o dalla data di modifica.",
+        "Rimuovere foto duplicate, download ripetuti e copie ridondanti permette di recuperare dal 20 al 30% dello spazio utente.",
+        "Non eliminare mai duplicati nelle cartelle di sistema Windows o Programmi; limita sempre la deduplicazione alle cartelle personali.",
       ],
       sections: [
         {
@@ -573,6 +842,86 @@ export const findDuplicateFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come trovare ed eliminare in sicurezza i file duplicati su Windows",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Avviare la scansione dei file duplicati",
+            text: "Apri DiskMop, vai alla scheda Rilevatore duplicati, seleziona unità o cartelle da esaminare e clicca su Scansiona.",
+          },
+          {
+            name: "Esaminare i gruppi di duplicati SHA-256",
+            text: "Al termine della scansione, controlla i gruppi di file identici con checksum coincidenti e anteprima visiva.",
+          },
+          {
+            name: "Scegliere la copia principale da conservare",
+            text: "Mantieni la versione ordinata nelle cartelle Immagini o Documenti e contrassegna per l'eliminazione le copie sparse in Download o sul Desktop.",
+          },
+          {
+            name: "Eliminare le copie ridondanti",
+            text: "Sposta i duplicati nel Cestino. Controlla i tuoi file per qualche giorno prima di svuotare definitivamente il Cestino.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Confronto tra i metodi per trovare file duplicati su Windows",
+        columns: [
+          "Metodo",
+          "Criterio di corrispondenza",
+          "Affidabilità",
+          "Velocità di scansione",
+          "Rischio di falsi positivi",
+        ],
+        rows: [
+          [
+            "Ricerca per nome in Esplora file («(1)», «Copia»)",
+            "Nome file e dimensione",
+            "Bassa",
+            "Veloce (Cartella per cartella)",
+            "Alto (I nomi possono ingannare)",
+          ],
+          [
+            "Prompt dei comandi (certutil SHA256)",
+            "Hash a livello di byte",
+            "Accuratezza al 100%",
+            "Estremamente lento (Manuale)",
+            "Nessuno",
+          ],
+          [
+            "Rilevatore duplicati di DiskMop",
+            "Hash SHA-256 + Anteprima visiva",
+            "Accuratezza al 100%",
+            "Velocissimo (Multithread)",
+            "Zero (Eliminazione sicura in 1 clic)",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windows 11 o 10 dispone di uno strumento nativo per trovare file duplicati?",
+          answer:
+            "No. Windows non include un'utilità nativa in grado di confrontare i contenuti dei file. È necessario verificare a mano o usare software di terze parti basato su hash SHA-256.",
+        },
+        {
+          question:
+            "Due file possono avere la stessa identica dimensione senza essere duplicati?",
+          answer:
+            "Sì. Documenti o foto del tutto diversi possono condividere per coincidenza lo stesso numero di byte. Solo l'hash crittografico (come SHA-256) garantisce l'effettiva identità del contenuto.",
+        },
+        {
+          question:
+            "Come riesce una scansione con hash a trovare foto duplicate rinominate?",
+          answer:
+            "Lo scanner analizza il flusso binario dei dati anziché il nome del file. Se «IMG_001.jpg» e «vacanze.jpg» contengono gli stessi pixel, generano lo stesso SHA-256 e vengono raggruppati.",
+        },
+        {
+          question: "È sicuro eliminare file duplicati nelle cartelle cloud?",
+          answer:
+            "Sì, ma ricorda che cancellare un file locale in una cartella sincronizzata di OneDrive o Google Drive lo cancellerà anche dal cloud. Assicurati di conservare la copia principale.",
+        },
+      ],
       verdict: [
         "Quando si tratta di trovare i file duplicati su Windows, Esplora file intercetta solo i casi ovvi: stesso nome, stessa cartella, il suffisso (1). Una pulizia vera richiede il confronto del contenuto dei file, e il modo affidabile per farlo è il confronto degli hash SHA-256: solo i file identici byte per byte dovrebbero essere considerati duplicati.",
         "Disk Mop riunisce l'intero lavoro in un'unica app: il rilevatore di duplicati basato su SHA-256 trova le copie vere, l'analisi del disco e la ricerca dei file di grandi dimensioni (Large File Finder) mostrano dove finisce lo spazio, mentre il pulitore dei download e la pulizia pianificata impediscono ai duplicati di tornare. Il tutto con una licenza a vita pagata una sola volta, 19,90 $.",
@@ -588,6 +937,12 @@ export const findDuplicateFilesWindows: Article = {
       intro: [
         "Existem duas formas de encontrar arquivos duplicados no Windows: ordenar as pastas por tamanho e nome no Explorador de Arquivos para identificar as cópias óbvias manualmente, ou varrer a unidade com um localizador de duplicatas que compara os arquivos pelo hash SHA-256. A varredura baseada em hash é o único método confiável, porque prova que dois arquivos são idênticos byte a byte antes de você excluir qualquer coisa. O Windows 10 e o 11 não têm um localizador de duplicatas nativo, então é preciso um pouco de trabalho manual ou uma ferramenta dedicada.",
         "As duplicatas são devoradoras silenciosas de espaço: as mesmas fotos de viagem em duas pastas, o mesmo vídeo na área de trabalho e em Downloads, o mesmo PDF salvo a partir de três e-mails diferentes. Neste guia você vai ver como as cópias se acumulam, o que o Explorador de Arquivos consegue e não consegue fazer, por que a comparação por hash é a única abordagem segura e quais cópias dá para excluir com tranquilidade.",
+      ],
+      keyTakeaways: [
+        "A pesquisa do Explorador de Arquivos só localiza duplicatas óbvias com nomes iguais ou sufixos '(1)'; arquivos idênticos renomeados não são detectados.",
+        "A comparação por hash SHA-256 valida conteúdos idênticos byte a byte, independentemente do nome do arquivo ou da data de modificação.",
+        "Remover mídias repetidas, downloads duplicados e cópias desnecessárias pode liberar de 20% a 30% do armazenamento do usuário.",
+        "Nunca exclua arquivos duplicados dentro das pastas do Windows ou Arquivos de Programas; limite a desduplicação às pastas pessoais do usuário.",
       ],
       sections: [
         {
@@ -640,6 +995,88 @@ export const findDuplicateFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como encontrar e remover arquivos duplicados no Windows com segurança",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Iniciar a verificação de arquivos duplicados",
+            text: "Abra o DiskMop, acesse a aba Detector de Duplicatas, selecione as unidades ou pastas e clique em Verificar.",
+          },
+          {
+            name: "Examinar os grupos de duplicatas SHA-256",
+            text: "Ao final da verificação, confira os grupos de arquivos idênticos com o mesmo hash e pré-visualização.",
+          },
+          {
+            name: "Definir a cópia principal a ser mantida",
+            text: "Mantenha a cópia organizada em Imagens ou Documentos e selecione as cópias avulsas em Downloads ou na Área de Trabalho para exclusão.",
+          },
+          {
+            name: "Excluir cópias redundantes",
+            text: "Envie as duplicatas para a Lixeira. Teste seus arquivos por alguns dias antes de esvaziar a Lixeira em definitivo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Comparativo de métodos para encontrar arquivos duplicados no Windows",
+        columns: [
+          "Método",
+          "Critério de comparação",
+          "Confiabilidade",
+          "Velocidade de verificação",
+          "Risco de falso positivo",
+        ],
+        rows: [
+          [
+            "Busca por nome no Explorador ('(1)', 'Cópia')",
+            "Nome e tamanho do arquivo",
+            "Baixa",
+            "Rápida (Pasta por pasta)",
+            "Alto (Nomes podem enganar)",
+          ],
+          [
+            "Prompt de Comando (certutil SHA256)",
+            "Hash no nível de bytes",
+            "100% exato",
+            "Extremamente lento (Manual)",
+            "Nenhum",
+          ],
+          [
+            "Detector de Duplicatas do DiskMop",
+            "Hash SHA-256 + Pré-visualização",
+            "100% exato",
+            "Ultrarrápido (Multithread)",
+            "Zero (Exclusão segura em 1 clique)",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "O Windows 11 ou 10 possui uma ferramenta nativa para localizar arquivos duplicados?",
+          answer:
+            "Não. O Windows não traz uma ferramenta integrada para comparar o conteúdo dos arquivos. É preciso fazer conferência manual ou usar um utilitário com verificação de hash SHA-256.",
+        },
+        {
+          question:
+            "Dois arquivos podem ter o mesmo tamanho exato sem serem duplicatas?",
+          answer:
+            "Sim. Arquivos de texto ou fotos totalmente diferentes podem coincidir no mesmo número de bytes. Somente o hash criptográfico (como SHA-256) assegura que são rigorosamente idênticos.",
+        },
+        {
+          question:
+            "Como um verificador por hash encontra fotos duplicadas com nomes diferentes?",
+          answer:
+            "O verificador analisa o fluxo de bytes do arquivo e não o seu nome. Se 'IMG_001.jpg' e 'praia.jpg' tiverem os mesmos dados de imagem, eles produzem o mesmo hash SHA-256 e são agrupados.",
+        },
+        {
+          question:
+            "É seguro excluir arquivos duplicados em pastas sincronizadas na nuvem?",
+          answer:
+            "Sim, mas lembre-se de que ao excluir um arquivo local em uma pasta do OneDrive ou Google Drive sincronizada, ele também será excluído da nuvem. Mantenha sempre a cópia principal.",
+        },
+      ],
       verdict: [
         "Quando o assunto é encontrar arquivos duplicados no Windows, o Explorador de Arquivos só pega os casos óbvios: mesmo nome, mesma pasta, um sufixo (1). Uma limpeza de verdade exige comparar o conteúdo dos arquivos, e o jeito confiável de fazer isso é a comparação de hash SHA-256: só arquivos idênticos byte a byte deveriam contar como duplicatas.",
         "O Disk Mop reúne o trabalho inteiro em um só aplicativo: o detector de duplicatas baseado em SHA-256 encontra as cópias verdadeiras, a análise de disco e o localizador de arquivos grandes (Large File Finder) mostram para onde vai o seu espaço, e o limpador de downloads somado à limpeza agendada impede que as duplicatas voltem. Tudo isso com uma licença vitalícia de pagamento único, 19,90 $.",
@@ -654,6 +1091,12 @@ export const findDuplicateFilesWindows: Article = {
       intro: [
         "Windowsで重複ファイルを見つける方法は2つあります。「エクスプローラー」でフォルダーをサイズと名前で並べ替え、明らかなコピーを目視で探す方法と、ファイルをSHA-256ハッシュで比較する重複ファイル検出ツールでドライブをスキャンする方法です。信頼できるのはハッシュを使ったスキャンだけです。削除する前に、2つのファイルが1バイトも違わないことを証明できるからです。Windows 10と11には重複ファイル検出機能が標準搭載されていないため、多少の手作業か専用ツールのどちらかが必要になります。",
         "重複ファイルはひそかに容量を食いつぶします。同じ旅行写真が2つのフォルダーに、同じ動画がデスクトップと「ダウンロード」フォルダーに、同じPDFが3通のメールからそれぞれ保存されている、といった具合です。この記事では、コピーがどのようにたまるのか、「エクスプローラー」でできることとできないこと、なぜハッシュ照合だけが安全な方法なのか、そしてどのコピーなら安心して削除できるのかを順に見ていきます。",
+      ],
+      keyTakeaways: [
+        "エクスプローラーの検索では「(1)」や「コピー」などのわかりやすい重複ファイルしか見つからず、名前が変更された同一ファイルは見落とされます。",
+        "SHA-256ハッシュ照合を使用すると、ファイル名や更新日時が異なっていてもバイト単位で完全に一致するコンテンツを正確に特定できます。",
+        "重複した画像や動画、ダウンロードファイル、多重インポートされた写真を整理することで、ユーザー領域の20〜30%の空き容量を回復できます。",
+        "WindowsやProgram Filesフォルダ内のファイルを重複として削除してはいけません。重複整理はユーザーの個人フォルダとライブラリに限定してください。",
       ],
       sections: [
         {
@@ -703,6 +1146,87 @@ export const findDuplicateFilesWindows: Article = {
             "「ダウンロード」フォルダーは重複ファイルの最大の発生源なので、ここを整理しておくだけでも大きな効果があります。Disk Mopのダウンロード クリーナー（Downloads Cleaner）は、このフォルダー内の古いファイルをカテゴリー別に整理して、まとめて片づけやすくします。スケジュール クリーンアップ（Scheduled Cleanup）は週次・月次のメンテナンスを自動で実行するため、古いダウンロードやキャッシュがそもそもたまりません。",
             "最後に、月に1回ほど重複ファイル検出を実行し、ディスク分析（Disk Analysis）のツリーマップでどのフォルダーが膨らんでいるかを確認しましょう。数分の習慣が、ドライブがいっぱいになるずっと前に原因を断ってくれます。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windowsで重複ファイルを安全に検索・削除する手順",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "重複ファイルスキャンを開始する",
+            text: "DiskMopを開き、「重複ファイル検出」タブを選択してスキャン対象のドライブやフォルダを選び、「スキャン」をクリックします。",
+          },
+          {
+            name: "SHA-256ハッシュグループを確認する",
+            text: "スキャン完了後、プレビュー画面と照合済みのチェックサムを確認しながら重複グループをチェックします。",
+          },
+          {
+            name: "残すマスターファイルを選択する",
+            text: "「ピクチャ」や「ドキュメント」フォルダに保存されている整理済みのファイルを残し、「ダウンロード」や「デスクトップ」の散乱したコピーを削除対象に指定します。",
+          },
+          {
+            name: "不要なコピーを削除する",
+            text: "重複ファイルを一度ごみ箱に移動します。数日間アプリケーションの動作を確認してから、ごみ箱を完全に空にします。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windowsにおける重複ファイル検索手法の比較",
+        columns: [
+          "検索手法",
+          "一致判定の基準",
+          "信頼性",
+          "スキャン速度",
+          "誤検出リスク",
+        ],
+        rows: [
+          [
+            "エクスプローラーの名前検索（「(1)」「コピー」）",
+            "ファイル名・ファイルサイズ",
+            "低",
+            "高速（フォルダ単位）",
+            "高（名前だけで誤認しやすい）",
+          ],
+          [
+            "コマンドプロンプト（certutil SHA256）",
+            "バイトレベルのハッシュ",
+            "100%正確",
+            "極めて低速（手動実行）",
+            "なし",
+          ],
+          [
+            "DiskMop 重複ファイル検出",
+            "SHA-256ハッシュ＋画像プレビュー",
+            "100%正確",
+            "超高速（マルチスレッド処理）",
+            "ゼロ（1クリック安全削除）",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Windows 11や10には重複ファイルを検索する標準機能がありますか？",
+          answer:
+            "いいえ、ありません。Windowsにはファイル内容を比較する機能が組み込まれていません。手動で探すか、SHA-256ハッシュ照合に対応した専用ツールを使用する必要があります。",
+        },
+        {
+          question:
+            "重複ファイルでなくてもサイズが完全に同じになることはありますか？",
+          answer:
+            "はい、あります。全く異なる文書や写真でも、偶然バイト数が一致することがあります。そのため、中身が同一であると証明するにはSHA-256等の暗号ハッシュが必要です。",
+        },
+        {
+          question:
+            "ファイル名が異なる重複写真をハッシュスキャナーはどうやって見つけますか？",
+          answer:
+            "ハッシュスキャナーは名前ではなくバイナリデータそのものを検査します。「IMG_001.jpg」と「旅行.jpg」が同じ画像データであれば、同一のSHA-256値が算出されて同じグループに分類されます。",
+        },
+        {
+          question:
+            "クラウド同期フォルダ内の重複ファイルを削除しても大丈夫ですか？",
+          answer:
+            "はい、可能ですが注意が必要です。同期中のOneDriveやGoogle Driveフォルダ内のファイルを削除すると、クラウド上のファイルも削除されます。残したい元データを確認したうえで作業してください。",
         },
       ],
       verdict: [

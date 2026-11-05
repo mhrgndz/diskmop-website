@@ -5,7 +5,7 @@ export const deleteTemporaryFilesWindows: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-06-24",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -349,6 +349,13 @@ export const deleteTemporaryFilesWindows: Article = {
         "Ja, temporäre Dateien in Windows zu löschen ist sicher — das System erstellt alles, was es noch braucht, automatisch neu. Der schnellste Weg: Öffnen Sie Einstellungen > System > Speicher, wählen Sie Temporäre Dateien und klicken Sie auf Dateien entfernen. Alternativ drücken Sie Win+R, geben %temp% ein und leeren den Ordner manuell.",
         "Die Unsicherheit ist trotzdem verständlich: Der Temp-Ordner steckt voller kryptischer Dateinamen, und niemand möchte versehentlich etwas Wichtiges löschen. In dieser Anleitung zeigen wir, welche temporären Dateien gefahrlos gelöscht werden können, führen Schritt für Schritt durch die manuelle Bereinigung und erklären, wie sich die ganze Routine automatisieren lässt.",
       ],
+      keyTakeaways: [
+        "Das Löschen temporärer Dateien in Windows (%temp% und C:\\Windows\\Temp) ist zu 100 % sicher; Programme erstellen benötigte Arbeitsdateien bei Bedarf neu.",
+        "Windows verfügt über eine automatische Schutzsperre: Dateien, die aktuell von laufenden Prozessen genutzt werden, lassen sich nicht löschen (einfach auf 'Überspringen' klicken).",
+        "Über Einstellungen > System > Speicher > Temporäre Dateien und die Datenträgerbereinigung ('cleanmgr') lassen sich regelmäßig 10 bis 30 GB Speicher zurückgewinnen.",
+        "Aktivieren Sie bei der Bereinigung niemals unbedacht das Kontrollkästchen 'Downloads', um den Verlust wichtiger persönlicher Dateien zu verhindern.",
+        "Der DiskMop Cache-Cleaner und die geplante Bereinigung automatisieren das Entfernen temporärer Dateien wöchentlich oder monatlich ganz ohne Konsolenbefehle.",
+      ],
       sections: [
         {
           title: "Was temporäre Dateien sind und warum sie sich ansammeln",
@@ -400,6 +407,102 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So löschen Sie temporäre Dateien in Windows 11 sicher",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Speichereinstellungen aufrufen",
+            text: "Drücken Sie Win+I, um die Einstellungen zu öffnen, und navigieren Sie zu System > Speicher > Temporäre Dateien.",
+          },
+          {
+            name: "Sichere Dateikategorien auswählen",
+            text: "Wählen Sie Temporäre Dateien, Windows Update-Bereinigung und Miniaturansichten aus. Stellen Sie sicher, dass das Häkchen bei 'Downloads' nicht gesetzt ist.",
+          },
+          {
+            name: "Auf 'Dateien entfernen' klicken",
+            text: "Klicken Sie oben im Menü auf 'Dateien entfernen', um die Löschung auf Systemebene auszuführen.",
+          },
+          {
+            name: "Den Ordner %temp% manuell leeren",
+            text: "Drücken Sie Win+R, tippen Sie %temp% ein, drücken Sie Enter, wählen Sie mit Strg+A alle Dateien aus und drücken Sie Entf (geöffnete Dateien überspringen).",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Kategorien temporärer Windows-Dateien, Speicherpfade und Bereinigungssicherheit",
+        columns: [
+          "Dateikategorie",
+          "Speicherort / Befehl",
+          "Typische Größe",
+          "Sicherheitsstufe",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "Benutzer-Temp-Ordner",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Vollständig sicher",
+            "Alles markieren (Strg+A) und löschen; gesperrte Dateien überspringen",
+          ],
+          [
+            "System-Temp-Ordner",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Vollständig sicher",
+            "Verzeichnisinhalt mit Administratorrechten leeren",
+          ],
+          [
+            "Windows Update-Bereinigung",
+            "cleanmgr / Speichereinstellungen",
+            "3 GB – 12 GB",
+            "Vollständig sicher",
+            "Übrig gebliebene Installationsdateien alter Updates gefahrlos entfernen",
+          ],
+          [
+            "Miniaturansichten-Cache",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Vollständig sicher",
+            "Über Datenträgerbereinigung entfernen; wird bei Bedarf neu generiert",
+          ],
+          [
+            "Übermittlungsoptimierung",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Vollständig sicher",
+            "Über Windows-Speichereinstellungen oder DiskMop bereinigen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Ist es sicher, den gesamten Inhalt des Ordners %temp% zu löschen?",
+          answer:
+            "Ja, das ist vollkommen unbedenklich. Windows verhindert automatisch das Löschen von Dateien, die gerade verwendet werden; klicken Sie bei entsprechenden Hinweisen einfach auf 'Überspringen'.",
+        },
+        {
+          question:
+            "Verbessert das Löschen temporärer Dateien die Arbeitsgeschwindigkeit des PCs?",
+          answer:
+            "Ja, insbesondere wenn auf Ihrem Laufwerk C: weniger als 15 % freier Speicher verbleiben. Das Bereinigen verhindert ständige Festplatten-Zugriffsengpässe und schafft Raum für die Auslagerungsdatei.",
+        },
+        {
+          question:
+            "Sollte ich die Windows Update-Bereinigungsdateien entfernen?",
+          answer:
+            "Wenn Ihr System nach dem letzten Windows-Update stabil läuft, ist das Entfernen der Windows Update-Bereinigungsdateien völlig risikolos und spart üblicherweise 3 bis 10 GB ein.",
+        },
+        {
+          question:
+            "Wie oft sollte man temporäre Dateien unter Windows löschen?",
+          answer:
+            "Einmal im Monat ist in den meisten Fällen ideal, oder ganz automatisch über die Windows-Speicheroptimierung bzw. die geplante Bereinigung von DiskMop.",
+        },
+      ],
       verdict: [
         "Die Angst vor dem Löschen temporärer Dateien ist meist unbegründet: Windows sperrt verwendete Dateien und erstellt alles Benötigte neu. Temporäre Dateien über die Einstellungen entfernen, %temp% und C:\\Windows\\Temp leeren, die Datenträgerbereinigung ausführen, Browser-Cache und Papierkorb bereinigen — all das sind sichere Routineaufgaben.",
         "Wer diese Arbeit nicht jeden Monat von Hand wiederholen möchte, bekommt mit Disk Mop Cache-Bereiniger, Browser-Cache-Bereiniger, Papierkorb-Leerung, Ein-Klick-Speed-Up und geplante Bereinigung in einer einzigen Anwendung — für einmalig 19,90 $ mit lebenslanger Lizenz, für Windows 10/11 und macOS.",
@@ -416,6 +519,13 @@ export const deleteTemporaryFilesWindows: Article = {
       intro: [
         "Oui, supprimer les fichiers temporaires sous Windows est sans danger, et l'opération peut libérer plusieurs gigaoctets. Windows et vos applications ne s'en servent que comme brouillon de courte durée, et le système recrée automatiquement tout ce dont il a encore besoin. La méthode la plus rapide consiste à ouvrir Paramètres > Système > Stockage, à sélectionner Fichiers temporaires puis à cliquer sur Supprimer les fichiers.",
         "L'hésitation reste pourtant compréhensible : le dossier temporaire de Windows est rempli de noms de fichiers énigmatiques, et personne n'a envie d'effacer quelque chose d'important par mégarde. Dans ce guide, nous expliquons précisément quels fichiers temporaires peuvent être supprimés sans risque, nous détaillons chaque étape du nettoyage manuel avec les vrais chemins de menus et les commandes, et nous montrons comment automatiser toute la routine pour ne plus jamais y penser.",
+      ],
+      keyTakeaways: [
+        "Supprimer les fichiers temporaires dans Windows (%temp% et C:\\Windows\\Temp) est 100 % sûr ; les applications recréent les données utiles à la demande.",
+        "Windows intègre un verrou de sécurité automatique : les fichiers en cours d'utilisation par des processus actifs ne peuvent pas être supprimés (cliquez simplement sur 'Ignorer').",
+        "Passer par Paramètres > Système > Stockage > Fichiers temporaires et 'cleanmgr' permet couramment de récupérer 10 à 30 Go d'espace.",
+        "Ne cochez jamais la case du dossier 'Téléchargements' à l'aveugle pour éviter de perdre des documents personnels essentiels.",
+        "Le nettoyeur de cache et le nettoyage planifié de DiskMop automatisent l'élimination des fichiers temporaires chaque semaine ou mois sans commande manuelle.",
       ],
       sections: [
         {
@@ -472,6 +582,101 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment supprimer en toute sécurité les fichiers temporaires sous Windows 11",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Ouvrir les paramètres de stockage",
+            text: "Appuyez sur Win+I pour afficher les Paramètres, puis rendez-vous dans Système > Stockage > Fichiers temporaires.",
+          },
+          {
+            name: "Sélectionner les catégories sûres",
+            text: "Cochez Fichiers temporaires, Nettoyage de Windows Update et Miniatures. Assurez-vous que Téléchargements n'est pas coché.",
+          },
+          {
+            name: "Cliquer sur 'Supprimer les fichiers'",
+            text: "Cliquez sur 'Supprimer les fichiers' en haut de la fenêtre pour lancer le nettoyage géré par le système.",
+          },
+          {
+            name: "Vider le dossier %temp% manuellement",
+            text: "Appuyez sur Win+R, tapez %temp%, validez avec Entrée, sélectionnez tous les fichiers avec Ctrl+A et appuyez sur Suppr (ignorez les fichiers verrouillés).",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Catégories de fichiers temporaires Windows, emplacements et sécurité de nettoyage",
+        columns: [
+          "Catégorie de fichier",
+          "Emplacement / Raccourci",
+          "Taille typique",
+          "Niveau de sécurité",
+          "Action recommandée",
+        ],
+        rows: [
+          [
+            "Dossier Temp utilisateur",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 Go – 15 Go",
+            "Totalement sûr",
+            "Tout sélectionner (Ctrl+A) et supprimer ; ignorer les fichiers ouverts",
+          ],
+          [
+            "Dossier Temp système",
+            "C:\\Windows\\Temp",
+            "1 Go – 10 Go",
+            "Totalement sûr",
+            "Vider le contenu avec les droits administrateur",
+          ],
+          [
+            "Nettoyage Windows Update",
+            "cleanmgr / Paramètres Stockage",
+            "3 Go – 12 Go",
+            "Totalement sûr",
+            "Supprimer sans risque les installateurs de mises à jour précédentes",
+          ],
+          [
+            "Cache des miniatures",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 Mo – 2 Go",
+            "Totalement sûr",
+            "Purger via Nettoyage de disque ; recréé à la volée par l'Explorateur",
+          ],
+          [
+            "Optimisation de livraison",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 Go – 5 Go",
+            "Totalement sûr",
+            "Nettoyer via les paramètres Windows ou DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Est-il prudent de tout supprimer dans le dossier %temp% ?",
+          answer:
+            "Oui, c'est parfaitement sans danger. Windows bloque la suppression des fichiers en cours d'utilisation ; lorsqu'une boîte de dialogue apparaît, cliquez simplement sur 'Ignorer'.",
+        },
+        {
+          question:
+            "La suppression des fichiers temporaires accélère-t-elle l'ordinateur ?",
+          answer:
+            "Oui, en particulier si le lecteur C: dispose de moins de 15 % d'espace disponible. Nettoyer les temporaires soulage le disque dur ou SSD et laisse respirer le fichier d'échange virtuel.",
+        },
+        {
+          question:
+            "Faut-il supprimer les fichiers de nettoyage de Windows Update ?",
+          answer:
+            "Si votre ordinateur fonctionne de façon stable après la dernière mise à jour de Windows, vider les fichiers d'installation d'update est totalement sûr et libère habituellement 3 à 10 Go.",
+        },
+        {
+          question:
+            "À quelle fréquence faut-il supprimer les fichiers temporaires dans Windows ?",
+          answer:
+            "Une fois par mois suffit généralement, ou en continu de manière automatique via l'Assistant de stockage ou la planification DiskMop.",
+        },
+      ],
       verdict: [
         "La crainte de supprimer les fichiers temporaires est le plus souvent infondée : Windows verrouille tout ce qui est en cours d'utilisation et recrée ce dont il a encore besoin. Supprimer les fichiers temporaires depuis les Paramètres, vider %temp% et C:\\Windows\\Temp, lancer le Nettoyage de disque, effacer les caches des navigateurs et la Corbeille : autant d'opérations d'entretien sûres et à la portée de tous.",
         "Si vous préférez ne pas répéter cette liste à la main tous les mois, Disk Mop réunit le nettoyeur de cache, le nettoyeur de cache navigateur, le vidage de la Corbeille, le Speed Up en un clic et le nettoyage planifié dans une seule application, avec une licence à vie pour un paiement unique de 19,90 $, sous Windows 10/11 comme sous macOS.",
@@ -487,6 +692,13 @@ export const deleteTemporaryFilesWindows: Article = {
       intro: [
         "Sí, eliminar archivos temporales en Windows es seguro, y hacerlo puede liberar varios gigabytes de espacio. Windows y tus aplicaciones solo los usan como borrador de corta duración, y el sistema vuelve a crear automáticamente todo lo que aún necesita. El método más rápido es abrir Configuración > Sistema > Almacenamiento, seleccionar Archivos temporales y pulsar Quitar archivos.",
         "Aun así, la duda es comprensible: la carpeta temporal de Windows está llena de nombres de archivo crípticos y nadie quiere borrar algo importante sin querer. En esta guía explicamos exactamente qué archivos temporales se pueden eliminar sin riesgo, recorremos cada paso de la limpieza manual con las rutas de menú y los comandos reales, y mostramos cómo automatizar toda la rutina para no volver a pensar en ella.",
+      ],
+      keyTakeaways: [
+        "Eliminar los archivos temporales en Windows (%temp% y C:\\Windows\\Temp) es 100 % seguro; los programas vuelven a generar lo necesario bajo demanda.",
+        "Windows cuenta con un bloqueo de seguridad automático: los archivos en uso por procesos activos no se pueden borrar (solo haz clic en 'Omitir').",
+        "Usar Configuración > Sistema > Almacenamiento > Archivos temporales y el Liberador de espacio ('cleanmgr') recupera de 10 a 30 GB de espacio.",
+        "Nunca marques a la ligera la casilla de la carpeta 'Descargas' durante la limpieza para no perder descargas personales importantes.",
+        "El Limpiador de Caché de DiskMop y su Limpieza Programada automatizan la eliminación de temporales cada semana o mes sin comandos manuales.",
       ],
       sections: [
         {
@@ -542,6 +754,99 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo eliminar de forma segura los archivos temporales en Windows 11",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Abrir la configuración de almacenamiento",
+            text: "Pulsa Win+I para abrir Configuración y ve a Sistema > Almacenamiento > Archivos temporales.",
+          },
+          {
+            name: "Seleccionar las categorías seguras",
+            text: "Marca Archivos temporales, Limpieza de actualizaciones de Windows y Vistas en miniatura. Asegúrate de desmarcar Descargas.",
+          },
+          {
+            name: "Hacer clic en 'Quitar archivos'",
+            text: "Pulsa el botón 'Quitar archivos' en la parte superior para iniciar la limpieza gestionada por Windows.",
+          },
+          {
+            name: "Vaciar la carpeta %temp% a mano",
+            text: "Presiona Win+R, escribe %temp%, pulsa Enter, selecciona todo con Ctrl+A y presiona Supr (omite los archivos en uso).",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Categorías de archivos temporales de Windows, rutas y nivel de seguridad",
+        columns: [
+          "Categoría de archivo",
+          "Ubicación / Comando",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Acción recomendada",
+        ],
+        rows: [
+          [
+            "Carpeta Temp de usuario",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Totalmente seguro",
+            "Seleccionar todo (Ctrl+A) y borrar; omitir archivos bloqueados",
+          ],
+          [
+            "Carpeta Temp del sistema",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Totalmente seguro",
+            "Vaciar contenido con permisos de administrador",
+          ],
+          [
+            "Limpieza de Windows Update",
+            "cleanmgr / Configuración",
+            "3 GB – 12 GB",
+            "Totalmente seguro",
+            "Eliminar con seguridad instaladores de actualizaciones previas",
+          ],
+          [
+            "Caché de miniaturas",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Totalmente seguro",
+            "Eliminar con cleanmgr; el Explorador las regenera al instante",
+          ],
+          [
+            "Optimización de entrega",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Totalmente seguro",
+            "Purgar mediante la configuración de Windows o con DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Es seguro borrar todo el contenido de la carpeta %temp%?",
+          answer:
+            "Sí, es completamente seguro. Windows impide que se eliminen los archivos que se encuentran actualmente abiertos; cuando aparezca el aviso, solo debes pulsar 'Omitir'.",
+        },
+        {
+          question: "¿Borrar archivos temporales aumenta la velocidad del PC?",
+          answer:
+            "Sí, en particular si tu disco C: cuenta con menos del 15 % de espacio libre disponible. Limpiar temporales evita cuellos de botella de lectura/escritura y da holgura al archivo de paginación.",
+        },
+        {
+          question: "¿Debo borrar los archivos de limpieza de Windows Update?",
+          answer:
+            "Si tu sistema funciona correctamente tras la última actualización recibida, eliminar los archivos residuales de actualización es 100 % seguro y suele liberar de 3 a 10 GB.",
+        },
+        {
+          question:
+            "¿Con qué frecuencia se deben eliminar los archivos temporales en Windows?",
+          answer:
+            "Una vez al mes es suficiente para la gran mayoría de equipos, o de forma totalmente automatizada mediante el Sensor de almacenamiento o DiskMop.",
+        },
+      ],
       verdict: [
         "El miedo a eliminar archivos temporales es casi siempre infundado: Windows bloquea todo lo que está en uso y reconstruye lo que aún necesita. Quitar archivos temporales desde Configuración, vaciar %temp% y C:\\Windows\\Temp, ejecutar el Liberador de espacio en disco y limpiar las cachés del navegador y la Papelera de reciclaje son tareas de mantenimiento seguras y rutinarias que cualquiera puede hacer.",
         "Si prefieres no repetir esa lista a mano cada mes, Disk Mop reúne el limpiador de caché, el limpiador de caché del navegador, el vaciado de la Papelera de reciclaje, el Speed Up de un clic y la limpieza programada en una sola aplicación, con licencia de por vida por un pago único de 19,90 $, tanto en Windows 10/11 como en macOS.",
@@ -557,6 +862,13 @@ export const deleteTemporaryFilesWindows: Article = {
       intro: [
         "Sì, eliminare i file temporanei in Windows è sicuro e può liberare diversi gigabyte di spazio. Windows e le tue applicazioni li usano solo come area di lavoro provvisoria e il sistema ricrea automaticamente tutto ciò che gli serve ancora. Il metodo più rapido è aprire Impostazioni > Sistema > Archiviazione, selezionare File temporanei e fare clic su Rimuovi file.",
         "L'esitazione, però, è comprensibile: la cartella dei temporanei di Windows è piena di nomi di file incomprensibili e nessuno vuole cancellare per sbaglio qualcosa di importante. In questa guida spieghiamo esattamente quali file temporanei si possono rimuovere senza rischi, ripercorriamo ogni passaggio della pulizia manuale con i percorsi dei menu e i comandi reali e mostriamo come automatizzare l'intera routine per non doverci più pensare.",
+      ],
+      keyTakeaways: [
+        "Eliminare i file temporanei in Windows (%temp% e C:\\Windows\\Temp) è sicuro al 100%; i software rigenerano i dati necessari su richiesta.",
+        "Windows è dotato di un blocco di sicurezza automatico: i file attualmente impiegati da processi attivi non possono essere cancellati (basta cliccare su 'Ignora').",
+        "L'uso combinato di Impostazioni > Sistema > Archiviazione > File temporanei e 'cleanmgr' recupera regolarmente dai 10 ai 30 GB di spazio.",
+        "Non selezionare mai alla cieca la casella 'Download' durante la pulizia per scongiurare la perdita accidentale di documenti personali salvati.",
+        "La Pulizia Cache e la Pulizia Programmata di DiskMop automatizzano la rimozione dei file temporanei ogni settimana o mese senza digitare comandi manuali.",
       ],
       sections: [
         {
@@ -610,6 +922,101 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come eliminare in sicurezza i file temporanei in Windows 11",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Accedere alle impostazioni di archiviazione",
+            text: "Premi Win+I per aprire Impostazioni, quindi vai su Sistema > Archiviazione > File temporanei.",
+          },
+          {
+            name: "Selezionare le categorie sicure",
+            text: "Metti la spunta su File temporanei, Pulizia di Windows Update e Anteprime. Assicurati che Download rimanga deselezionato.",
+          },
+          {
+            name: "Fare clic su 'Rimuovi file'",
+            text: "Fai clic su 'Rimuovi file' nella parte alta della schermata per avviare la rimozione gestita dal sistema operativo.",
+          },
+          {
+            name: "Svuotare la cartella %temp% manualmente",
+            text: "Premi Win+R, scrivi %temp%, dai Invio, seleziona tutto con Ctrl+A e premi Canc (fai clic su Ignora per i file bloccati).",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Categorie di file temporanei Windows, percorsi e livello di sicurezza",
+        columns: [
+          "Categoria di file",
+          "Percorso / Comando",
+          "Dimensione tipica",
+          "Livello di sicurezza",
+          "Azione consigliata",
+        ],
+        rows: [
+          [
+            "Cartella Temp utente",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Completamente sicuro",
+            "Seleziona tutto (Ctrl+A) ed elimina; salta i file aperti",
+          ],
+          [
+            "Cartella Temp di sistema",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Completamente sicuro",
+            "Svuota il contenuto come amministratore",
+          ],
+          [
+            "Pulizia Windows Update",
+            "cleanmgr / Impostazioni Archiviazione",
+            "3 GB – 12 GB",
+            "Completamente sicuro",
+            "Cancella senza problemi i file di installazione dei vecchi aggiornamenti",
+          ],
+          [
+            "Cache delle anteprime",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Completamente sicuro",
+            "Rimuovi tramite Pulizia disco; Esplora file la ricrea all'occorrenza",
+          ],
+          [
+            "Ottimizzazione recapito",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Completamente sicuro",
+            "Pulisci tramite Impostazioni Windows o DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "È sicuro cancellare tutto ciò che si trova nella cartella %temp%?",
+          answer:
+            "Sì, è un'operazione completamente priva di rischi. Windows blocca autonomamente l'eliminazione dei file attualmente in uso; in presenza del messaggio di notifica, fai semplicemente clic su 'Ignora'.",
+        },
+        {
+          question:
+            "Cancellare i file temporanei rende il computer più veloce?",
+          answer:
+            "Sì, soprattutto quando l'unità di sistema C: possiede meno del 15% di spazio libero residuo. Eliminare i file temporanei riduce le continue letture su disco e lascia respiro al file di paging.",
+        },
+        {
+          question: "Dovrei rimuovere i file di pulizia di Windows Update?",
+          answer:
+            "Se il computer si comporta stabilmente dopo l'applicazione degli ultimi aggiornamenti di Windows, eliminare i pacchetti di installazione residui è sicuro e recupera generalmente dai 3 ai 10 GB.",
+        },
+        {
+          question:
+            "Con quale periodicità andrebbero eliminati i file temporanei in Windows?",
+          answer:
+            "Una volta ogni mese è la cadenza raccomandata per la maggior parte dei casi, oppure in maniera del tutto trasparente tramite il Sensore memoria o la pianificazione di DiskMop.",
+        },
+      ],
       verdict: [
         "La paura di eliminare i file temporanei è quasi sempre infondata: Windows blocca tutto ciò che è in uso e ricrea quello che gli serve ancora. Rimuovere i file temporanei dalle Impostazioni, svuotare %temp% e C:\\Windows\\Temp, eseguire Pulizia disco e cancellare le cache dei browser e il Cestino sono tutte operazioni di manutenzione sicure e ordinarie, alla portata di chiunque.",
         "Se preferisci non ripetere quell'elenco a mano ogni mese, Disk Mop riunisce il pulitore della cache, il pulitore della cache del browser, lo svuotamento del Cestino, lo Speed Up con un clic e la pulizia pianificata in un'unica applicazione, con licenza a vita per un pagamento una tantum di 19,90 $, sia su Windows 10/11 sia su macOS.",
@@ -625,6 +1032,13 @@ export const deleteTemporaryFilesWindows: Article = {
       intro: [
         "Sim, excluir arquivos temporários no Windows é seguro, e isso pode liberar vários gigabytes de espaço. O Windows e os seus aplicativos usam esses arquivos apenas como rascunho de curta duração, e o sistema recria automaticamente tudo de que ainda precisa. O caminho mais rápido é abrir Configurações > Sistema > Armazenamento, selecionar Arquivos temporários e clicar em Remover arquivos.",
         "Mesmo assim, a hesitação faz sentido: a pasta de temporários do Windows está cheia de nomes de arquivo indecifráveis e ninguém quer apagar algo importante sem querer. Neste guia explicamos exatamente quais arquivos temporários podem ser removidos com segurança, percorremos cada passo da limpeza manual com os caminhos de menu e os comandos reais e mostramos como automatizar toda a rotina para nunca mais precisar pensar nisso.",
+      ],
+      keyTakeaways: [
+        "Excluir arquivos temporários no Windows (%temp% e C:\\Windows\\Temp) é 100% seguro; os aplicativos recriam os dados necessários sob demanda.",
+        "O Windows possui um bloqueio de segurança nativo: arquivos em uso no momento por processos ativos não podem ser excluídos (basta clicar em 'Ignorar').",
+        "Usar Configurações > Sistema > Armazenamento > Arquivos temporários e o comando 'cleanmgr' costuma recuperar de 10 a 30 GB de espaço em disco.",
+        "Nunca marque a caixa da pasta 'Downloads' sem conferir o conteúdo, evitando a perda de arquivos baixados importantes.",
+        "O Limpador de Cache do DiskMop e a Limpeza Agendada automatizam a remoção de arquivos temporários semanalmente ou mensalmente sem comandos manuais.",
       ],
       sections: [
         {
@@ -679,6 +1093,99 @@ export const deleteTemporaryFilesWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como excluir arquivos temporários no Windows 11 com segurança",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "Acessar as configurações de armazenamento",
+            text: "Pressione Win+I para abrir as Configurações e acesse Sistema > Armazenamento > Arquivos temporários.",
+          },
+          {
+            name: "Selecionar categorias seguras",
+            text: "Marque Arquivos temporários, Limpeza do Windows Update e Miniaturas. Certifique-se de manter Downloads desmarcado.",
+          },
+          {
+            name: "Clicar em 'Remover arquivos'",
+            text: "Clique no botão 'Remover arquivos' no topo da janela para efetuar a limpeza automática gerenciada pelo Windows.",
+          },
+          {
+            name: "Esvaziar a pasta %temp% manualmente",
+            text: "Pressione Win+R, digite %temp%, tecle Enter, selecione tudo com Ctrl+A e pressione Delete (pule os arquivos em uso).",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Categorias de arquivos temporários do Windows, locais e segurança",
+        columns: [
+          "Categoria de arquivo",
+          "Localização / Atalho",
+          "Tamanho típico",
+          "Nível de segurança",
+          "Ação recomendada",
+        ],
+        rows: [
+          [
+            "Pasta Temp de usuário",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "Totalmente seguro",
+            "Selecionar tudo (Ctrl+A) e excluir; pular arquivos abertos",
+          ],
+          [
+            "Pasta Temp do sistema",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "Totalmente seguro",
+            "Limpar os arquivos internos com direitos de administrador",
+          ],
+          [
+            "Limpeza do Windows Update",
+            "cleanmgr / Configurações",
+            "3 GB – 12 GB",
+            "Totalmente seguro",
+            "Apagar tranquilamente instaladores de atualizações anteriores",
+          ],
+          [
+            "Cache de miniaturas",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "Totalmente seguro",
+            "Remover pela Limpeza de Disco; o sistema regenera sob demanda",
+          ],
+          [
+            "Otimização de Entrega",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "Totalmente seguro",
+            "Limpar através das Configurações do Windows ou com o DiskMop",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "É seguro apagar tudo o que está dentro da pasta %temp%?",
+          answer:
+            "Sim, é totalmente seguro. O Windows impede a exclusão de arquivos em execução ativa; quando aparecer a solicitação, clique simplesmente em 'Ignorar'.",
+        },
+        {
+          question: "Apagar arquivos temporários deixa o PC mais rápido?",
+          answer:
+            "Sim, especialmente se o drive C: estiver com menos de 15% de espaço livre disponível. A limpeza evita congestionamento de gravação e dá fôlego à memória virtual.",
+        },
+        {
+          question: "Devo remover os arquivos de Limpeza do Windows Update?",
+          answer:
+            "Se o seu computador estiver estável após a instalação da atualização mais recente do Windows, apagar os arquivos antigos de update é seguro e costuma liberar de 3 a 10 GB.",
+        },
+        {
+          question:
+            "Com que frequência devo deletar os arquivos temporários no Windows?",
+          answer:
+            "Uma vez por mês é mais do que suficiente para a maioria das pessoas, ou automaticamente através do Sensor de Armazenamento e do DiskMop.",
+        },
+      ],
       verdict: [
         "O medo de excluir arquivos temporários é quase sempre infundado: o Windows bloqueia tudo o que está em uso e recria o que ainda precisa. Remover arquivos temporários pelas Configurações, esvaziar %temp% e C:\\Windows\\Temp, rodar a Limpeza de Disco e limpar os caches dos navegadores e a Lixeira são tarefas de manutenção seguras e rotineiras, ao alcance de qualquer um.",
         "Se você prefere não repetir essa lista na mão todo mês, o Disk Mop reúne o limpador de cache, o limpador de cache do navegador, o esvaziamento da Lixeira, o Speed Up de um clique e a limpeza agendada em um único aplicativo, com licença vitalícia por um pagamento único de 19,90 $, tanto no Windows 10/11 quanto no macOS.",
@@ -693,6 +1200,13 @@ export const deleteTemporaryFilesWindows: Article = {
       intro: [
         "はい、Windowsの一時ファイルは削除しても安全です。しかも数ギガバイト単位の空き容量が戻ってくることも珍しくありません。Windowsもアプリも、一時ファイルは短時間の作業用スペースとして使っているだけで、まだ必要なものはシステムが自動的に作り直します。最も手早い方法は、「設定」>「システム」>「記憶域」を開き、「一時ファイル」を選んで「ファイルの削除」をクリックすることです。",
         "とはいえ、ためらう気持ちもよく分かります。Windowsの一時ファイル用フォルダーは意味の分からない名前のファイルであふれていて、大事なものをうっかり消してしまいたい人はいません。この記事では、どの一時ファイルなら安全に削除できるのかを具体的に説明し、手動でのクリーンアップ手順を実際のメニュー名やコマンドとともに一つずつ追いかけ、さらに作業そのものを自動化して二度と気にしなくて済むようにする方法まで紹介します。",
+      ],
+      keyTakeaways: [
+        "Windowsの一時ファイル（%temp%およびC:\\Windows\\Temp）の削除は100%安全です。アプリは必要なデータを必要に応じて自動的に再生成します。",
+        "Windowsには自動安全ロック機構があり、起動中のプロセスが使用しているファイルは削除されません（スキップをクリックするだけです）。",
+        "「設定」>「システム」>「ストレージ」>「一時ファイル」および「ディスク クリーンアップ」（cleanmgr）を活用することで、定期的に10〜30 GBの容量を回復できます。",
+        "誤って大事な個人ダウンロードファイルを消さないよう、一括選択時に「ダウンロード」フォルダのチェックは必ず外してください。",
+        "DiskMopのキャッシュクリーナーと定期クリーンアップ機能を使えば、面倒なコマンド入力なしで毎週または毎月の一時ファイル消去を全自動化できます。",
       ],
       sections: [
         {
@@ -743,6 +1257,99 @@ export const deleteTemporaryFilesWindows: Article = {
             "より広い範囲を自動化したい場合は、Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）で週次や月次のタスクを作成できます。キャッシュの削除、一時ファイルの整理、ごみ箱を空にする処理が、いずれも自動で実行されます。システム ヘルス スコア（System Health Score）を見れば、パソコン全体の状態がひと目で分かり、この仕組みがきちんと働いているかどうかも確認できます。",
             "おすすめの進め方はシンプルです。今日は手作業で1回きれいにして、そのうえで週次または月次のスケジュールを設定しておくこと。こうしておけば、一時ファイルはもう気にする必要のない存在になります。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windows 11で一時ファイルを安全に削除する方法",
+        totalTime: "PT5M",
+        steps: [
+          {
+            name: "ストレージ設定を開く",
+            text: "Win+Iキーを押して設定を開き、「システム」>「ストレージ」>「一時ファイル」に進みます。",
+          },
+          {
+            name: "安全な削除項目を選択する",
+            text: "「一時ファイル」「Windows Updateのクリーンアップ」「縮小表示」にチェックを入れます。「ダウンロード」のチェックが外れていることを確認します。",
+          },
+          {
+            name: "「ファイルの削除」を実行する",
+            text: "画面上部の「ファイルの削除」をクリックして、システムレベルでの安全な消去を開始します。",
+          },
+          {
+            name: "%temp%フォルダを手動で空にする",
+            text: "Win+Rを押し、「%temp%」と入力してEnterを押します。Ctrl+Aですべて選択してDeleteキーを押します（使用中のファイルはスキップ）。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windowsの一時ファイル種類・保存先・クリーンアップの安全性",
+        columns: [
+          "ファイル区分",
+          "保存場所 / コマンド",
+          "典型的な容量",
+          "安全性レベル",
+          "推奨される対処",
+        ],
+        rows: [
+          [
+            "ユーザーTempフォルダ",
+            "%temp% (AppData\\Local\\Temp)",
+            "2 GB – 15 GB",
+            "完全に安全",
+            "すべて選択（Ctrl+A）して削除（ロック中はスキップ）",
+          ],
+          [
+            "システムTempフォルダ",
+            "C:\\Windows\\Temp",
+            "1 GB – 10 GB",
+            "完全に安全",
+            "管理者権限でフォルダ内の中身を削除",
+          ],
+          [
+            "Windows Updateクリーンアップ",
+            "cleanmgr / 設定 > ストレージ",
+            "3 GB – 12 GB",
+            "完全に安全",
+            "過去の更新プログラム残骸ファイルを安全に消去",
+          ],
+          [
+            "縮小表示（サムネイル）キャッシュ",
+            "AppData\\Local\\Microsoft\\Windows\\Explorer",
+            "500 MB – 2 GB",
+            "完全に安全",
+            "ディスク クリーンアップで消去（エクスプローラーが必要時に再構築）",
+          ],
+          [
+            "配信の最適化ファイル",
+            "C:\\Windows\\SoftwareDistribution",
+            "1 GB – 5 GB",
+            "完全に安全",
+            "Windowsストレージ設定またはDiskMopで安全にクリア",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "%temp%フォルダ内のファイルをすべて削除しても安全ですか？",
+          answer:
+            "はい、完全に安全です。Windowsは現在実行中のプロセスが使用しているファイルが削除されないよう保護しています。ダイアログが表示されたら「スキップ」を選択してください。",
+        },
+        {
+          question: "一時ファイルを削除するとPCの動作は速くなりますか？",
+          answer:
+            "はい、特にCドライブの空き容量が15%未満に低下している場合は顕著です。一時ファイルを削除してディスクの空きを確保することで、スラッシングを防ぎ仮想メモリの動作を安定させます。",
+        },
+        {
+          question:
+            "「Windows Updateのクリーンアップ」ファイルは削除すべきですか？",
+          answer:
+            "直近のWindows更新適用後にPCが安定して動作していれば、更新プログラムの不要なバックアップファイルを削除しても全く問題なく、通常3〜10 GBの空き容量が回復します。",
+        },
+        {
+          question:
+            "Windowsの一時ファイルはどのくらいの頻度で削除すべきですか？",
+          answer:
+            "通常は月に1回程度の実行で十分です。あるいはストレージ センサーやDiskMopの定期クリーンアップにより自動的に実行させることもできます。",
         },
       ],
       verdict: [

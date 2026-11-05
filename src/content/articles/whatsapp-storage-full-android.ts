@@ -5,11 +5,11 @@ export const whatsappStorageFullAndroid: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "WhatsApp Android'de Çok Yer Kaplıyor: Sohbetleri Kaybetmeden Medyayı Temizleyin",
+      title: "WhatsApp Android'de Çok Yer Kaplıyor: Medya Temizleme",
       metaDescription:
         "WhatsApp Android'de sessizce 10–20 GB'a ulaşabilir. Tek bir sohbeti silmeden fotoğraf, video ve sesli mesajları temizleme ve yeniden dolmasını önleme yolları.",
       subtitle:

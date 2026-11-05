@@ -5,7 +5,7 @@ export const macStartupDiskFull: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-07-18",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -367,6 +367,13 @@ export const macStartupDiskFull: Article = {
         "macOS braucht ständig freien Speicherplatz: für die Auslagerung von Arbeitsspeicher, temporäre Dateien und mehrere Gigabyte große Systemupdates. Ist das Volume voll, werden Apps träge, Dateien lassen sich nicht mehr sichern und Updates schlagen fehl.",
         "In dieser Anleitung schaffen wir zuerst mit den Bordmitteln von macOS Platz und zeigen dann, wie Disk Mop dieselben Aufgaben ab macOS 12 in einer einzigen App erledigt.",
       ],
+      keyTakeaways: [
+        "Die Meldung „Dein Startvolume ist fast voll“ erscheint, wenn der freie Speicherplatz unter die kritische Schwelle von 5–10 % fällt, die macOS für den virtuellen Auslagerungsspeicher (Swap) benötigt.",
+        "Mindestens 10–15 % freier Speicherplatz auf dem Startvolume verhindern massive Systemverzögerungen, App-Abstürze und fehlgeschlagene macOS-Updates.",
+        "Das Leeren des Papierkorbs und das Löschen alter .dmg- und .pkg-Installationsdateien aus dem Download-Ordner befreit im Schnitt sofort 10 bis 30 GB.",
+        "Programm-Caches unter ~/Library/Caches können bedenkenlos gelöscht werden; aktive Anwendungen erstellen sie bei Bedarf automatisch neu.",
+        "DiskMop für Mac visualisiert Speicherfresser mithilfe einer Live-Treemap und spürt Medien-Duplikate per SHA-256-Hash-Abgleich auf.",
+      ],
       sections: [
         {
           title:
@@ -425,6 +432,101 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So schaffen Sie sicher Speicherplatz auf dem Mac-Startvolume",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Mac-Papierkorb entleeren",
+            text: "Klicken Sie mit der rechten Maustaste auf den Papierkorb im Dock und wählen Sie „Papierkorb entleeren“, um belegte Speicherblöcke freizugeben.",
+          },
+          {
+            name: "Download-Ordner bereinigen",
+            text: "Öffnen Sie den Finder, wechseln Sie zu Downloads, sortieren Sie nach Dateigröße und löschen Sie veraltete .dmg-Dateien und ZIP-Archive.",
+          },
+          {
+            name: "Anwendungs-Caches bereinigen",
+            text: "Drücken Sie im Finder Umschalt+Befehl+G, geben Sie ~/Library/Caches ein und leeren Sie die Cache-Ordner nicht mehr genutzter Programme.",
+          },
+          {
+            name: "Große Dateien und Duplikate aufspüren",
+            text: "Starten Sie DiskMop für Mac, um per Treemap-Scan versteckte Riesen-Dateien und doppelte Dateien über 500 MB zu identifizieren.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Größte Speicherverbraucher auf dem Mac-Startvolume und empfohlene Bereinigungsmethoden",
+        columns: [
+          "Speicherverbraucher",
+          "Pfad / Speicherort",
+          "Typische Größe",
+          "Sicherheitsstufe",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "Papierkorb (.Trash)",
+            "Dock > Papierkorb",
+            "5 GB – 30 GB",
+            "Vollkommen sicher",
+            "Rechtsklick auf den Papierkorb und „Papierkorb entleeren“ wählen",
+          ],
+          [
+            "Alte Installationsdateien",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Vollkommen sicher",
+            "Images nach der Programminstallation löschen",
+          ],
+          [
+            "App- & System-Caches",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Sicher",
+            "Benutzer-Cache-Ordner leeren, ohne Systemdateien anzufassen",
+          ],
+          [
+            "Systemdaten & Protokolle",
+            "Systemeinstellungen > Allgemein > Speicher",
+            "10 GB – 40 GB",
+            "Sorgfältig prüfen",
+            "Lokale Time Machine-Schnappschüsse löschen und Mac neu starten",
+          ],
+          [
+            "Doppelte Fotos & Dateien",
+            "Benutzer-Heimatverzeichnisse",
+            "2 GB – 15 GB",
+            "Vollkommen sicher",
+            "Mit dem DiskMop SHA-256-Scanner nur Originale behalten",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Wann zeigt macOS die Warnung „Dein Startvolume ist fast voll“ an?",
+          answer:
+            "macOS schlägt Alarm, sobald der freie Festplattenspeicher unter ca. 5 % bis 10 % der Gesamtkapazität fällt, da dann der virtuelle Arbeitsspeicher nicht mehr ordnungsgemäß ausgelagert werden kann.",
+        },
+        {
+          question:
+            "Wie viel freien Speicherplatz sollte man auf dem Mac freihalten?",
+          answer:
+            "Es wird empfohlen, stets mindestens 15 % bis 20 % des Startvolumes frei zu halten, damit macOS reibungslos RAM auslagern, Systemupdates laden und Dateifragmentierung verhindern kann.",
+        },
+        {
+          question:
+            "Warum belegen die „Systemdaten“ so viel Speicher auf dem Mac?",
+          answer:
+            "Unter Systemdaten fallen lokale APFS-Schnappschüsse von Time Machine, Xcode-Caches, Browser-Datenbanken, Auslagerungsdateien (Swap) und veraltete Protokolle.",
+        },
+        {
+          question: "Schadet das Löschen von Cache-Dateien meinem Mac?",
+          answer:
+            "Nein. Das Löschen von Benutzer-Caches in ~/Library/Caches ist vollkommen unbedenklich. Anwendungen bauen benötigte Cache-Dateien beim nächsten Start automatisch wieder auf.",
+        },
+      ],
       verdict: [
         "Die Warnung vor dem fast vollen Startvolume heißt schlicht: Macintosh HD braucht Luft. Papierkorb entleeren, Downloads aufräumen, große Dateien und Duplikate löschen, Caches leeren und selten Genutztes auslagern — all das gelingt mit macOS-Bordmitteln und etwas Geduld.",
         "Disk Mop bündelt die komplette Checkliste ab macOS 12 in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Downloads Cleaner, Cache-Bereinigung und geplante Bereinigung halten das Startvolume dauerhaft schlank. Der Download ist mit eingeschränkten Funktionen kostenlos; die einmalige Zahlung von 19,90 $ schaltet mit lebenslanger Lizenz alle Funktionen frei.",
@@ -441,6 +543,13 @@ export const macStartupDiskFull: Article = {
         "L'alerte « Votre disque de démarrage est presque plein » signifie que le disque sur lequel votre Mac démarre — en général le volume interne nommé Macintosh HD — n'a presque plus d'espace libre. Pour y remédier : videz la Corbeille, faites le ménage dans le dossier Téléchargements, supprimez les fichiers volumineux et les doublons, effacez les caches et déplacez vers iCloud ou un disque externe les fichiers dont vous vous servez rarement. Récupérer ne serait-ce que 10 à 20 Go suffit généralement à faire disparaître le message.",
         "macOS a besoin en permanence d'espace libre pour fonctionner correctement : il transfère la mémoire sur le disque lorsque la RAM sature, écrit des fichiers temporaires pour les applications et télécharge des mises à jour système qui pèsent plusieurs gigaoctets. Quand le disque est plein, les apps ralentissent, les fichiers refusent de s'enregistrer et les mises à jour s'interrompent en cours de route.",
         "Dans ce guide, nous allons d'abord libérer de l'espace étape par étape avec les outils de stockage intégrés à macOS, puis voir comment Disk Mop réunit le même travail dans une seule application, sous macOS 12 et versions ultérieures.",
+      ],
+      keyTakeaways: [
+        "L'alerte « Votre disque de démarrage est presque plein » apparaît lorsque l'espace libre passe sous le seuil critique de 5 à 10 % requis par la mémoire virtuelle de macOS.",
+        "Conserver au moins 10 à 15 % d'espace libre sur Macintosh HD évite les ralentissements sévères, les plantages d'applications et les échecs de mise à jour.",
+        "Vider la Corbeille et supprimer les installateurs .dmg / .pkg dans Téléchargements libère en moyenne entre 10 et 30 Go dès les premières minutes.",
+        "Les caches dans ~/Library/Caches peuvent être vidés sans crainte : les applications actives les recréent automatiquement à la demande.",
+        "DiskMop pour Mac visualise les dossiers gourmands en temps réel via une carte Treemap et isole les doublons grâce au hachage SHA-256.",
       ],
       sections: [
         {
@@ -503,6 +612,101 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment libérer efficacement de l'espace sur le disque de démarrage Mac",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Vider la Corbeille du Mac",
+            text: "Faites un clic droit sur l'icône de la Corbeille dans le Dock et cliquez sur « Vider la corbeille » pour libérer les blocs d'espace.",
+          },
+          {
+            name: "Nettoyer le dossier Téléchargements",
+            text: "Ouvrez le Finder, rendez-vous dans Téléchargements, triez par taille et supprimez les images disque .dmg et archives .zip inutiles.",
+          },
+          {
+            name: "Supprimer les caches d'applications",
+            text: "Dans le Finder, faites Maj+Commande+G, saisissez ~/Library/Caches et videz les répertoires de cache des logiciels délaissés.",
+          },
+          {
+            name: "Détecter les gros fichiers et doublons",
+            text: "Ouvrez DiskMop pour Mac pour lancer une analyse treemap et supprimer les fichiers et doublons inutiles de plus de 500 Mo.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principaux consommateurs d'espace sur le disque Mac et solutions de nettoyage",
+        columns: [
+          "Consommateur d'espace",
+          "Emplacement / Chemin",
+          "Taille moyenne",
+          "Niveau de risque",
+          "Action conseillée",
+        ],
+        rows: [
+          [
+            "Corbeille (.Trash)",
+            "Dock > Corbeille",
+            "5 Go – 30 Go",
+            "Totalement sûr",
+            "Clic droit sur la Corbeille et choisir « Vider la corbeille »",
+          ],
+          [
+            "Vieux installateurs et paquets",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 Go – 25 Go",
+            "Totalement sûr",
+            "Supprimer les fichiers disque après installation de l'app",
+          ],
+          [
+            "Caches d'applications & système",
+            "~/Library/Caches",
+            "5 Go – 20 Go",
+            "Sûr",
+            "Purger les caches utilisateur sans altérer les binaires",
+          ],
+          [
+            "Données système & Journaux",
+            "Réglages Système > Général > Stockage",
+            "10 Go – 40 Go",
+            "Vérifier attentivement",
+            "Purger les instantanés locaux Time Machine et redémarrer",
+          ],
+          [
+            "Photos et fichiers en double",
+            "Dossiers de départ de l'utilisateur",
+            "2 Go – 15 GB",
+            "Totalement sûr",
+            "Utiliser DiskMop pour ne préserver que les fichiers d'origine",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Quand macOS affiche-t-il l'alerte « Disque de démarrage presque plein » ?",
+          answer:
+            "macOS déclenche cette alerte dès que l'espace libre descend sous environ 5 % à 10 % de la capacité globale, ce qui compromet la mémoire d'échange (swap).",
+        },
+        {
+          question: "Quel espace libre doit-on maintenir sur un Mac ?",
+          answer:
+            "Il est fortement recommandé de garder 15 % à 20 % d'espace disponible pour permettre à macOS d'effectuer sa pagination RAM, de télécharger les mises à jour et d'éviter la fragmentation.",
+        },
+        {
+          question:
+            "Pourquoi la catégorie « Données système » est-elle si volumineuse ?",
+          answer:
+            "Les Données système regroupent les instantanés locaux APFS de Time Machine, les caches Xcode, les bases de données de navigateurs et les fichiers de pagination swap.",
+        },
+        {
+          question:
+            "Le nettoyage des fichiers de cache peut-il endommager mon Mac ?",
+          answer:
+            "Non. Supprimer les caches utilisateur dans ~/Library/Caches est tout à fait inoffensif. Les logiciels reconstituent automatiquement les caches requis à leur réouverture.",
+        },
+      ],
       verdict: [
         "L'alerte de disque de démarrage presque plein signifie simplement que Macintosh HD a besoin de respirer. Vider la Corbeille, nettoyer le dossier Téléchargements, supprimer les fichiers volumineux et les doublons, effacer les caches et déporter les données rarement utilisées vers iCloud ou un disque externe suffit à récupérer l'espace perdu — et chacune de ces étapes se réalise avec les outils intégrés de macOS et un peu de patience.",
         "Disk Mop rassemble toute cette liste de contrôle dans une seule application, sous macOS 12 et versions ultérieures : analyse de disque, détecteur de gros fichiers, détecteur de doublons, nettoyeur de téléchargements, nettoyage des caches et nettoyage planifié travaillent de concert pour garder votre disque de démarrage au régime sans fouille manuelle. Le téléchargement est gratuit avec des fonctions limitées, et un paiement unique de 19,90 $ débloque toute la boîte à outils avec une licence à vie.",
@@ -518,6 +722,13 @@ export const macStartupDiskFull: Article = {
         "El aviso « El disco de arranque está casi lleno » significa que al disco desde el que arranca tu Mac — normalmente el volumen interno llamado Macintosh HD — apenas le queda espacio libre. Para solucionarlo: vacía la Papelera, limpia la carpeta Descargas, borra archivos grandes y duplicados, elimina cachés y mueve a iCloud o a un disco externo los archivos que casi nunca usas. Recuperar tan solo 10-20 GB suele bastar para que el aviso desaparezca.",
         "macOS necesita espacio libre de forma constante para funcionar con soltura: intercambia memoria al disco cuando la RAM se llena, escribe archivos temporales para las apps y descarga actualizaciones del sistema que pesan varios gigabytes. Cuando el disco se llena, las aplicaciones se ralentizan, los archivos no se guardan y las actualizaciones fallan a medio camino.",
         "En esta guía liberaremos espacio primero paso a paso con las herramientas de almacenamiento integradas en macOS y después veremos cómo Disk Mop reúne ese mismo trabajo en una sola aplicación para macOS 12 y posteriores.",
+      ],
+      keyTakeaways: [
+        "El aviso 'El disco de inicio está casi lleno' salta cuando el almacenamiento libre cae por debajo del 5-10 %, margen crítico para la memoria virtual de macOS.",
+        "Mantener al menos un 10-15 % libre en Macintosh HD evita ralentizaciones severas, cierres inesperados de aplicaciones y errores al actualizar el sistema.",
+        "Vaciar la Papelera y eliminar instaladores .dmg / .pkg en Descargas recupera de inmediato entre 10 y 30 GB de media.",
+        "Las cachés en ~/Library/Caches pueden eliminarse con tranquilidad; las aplicaciones activas las reconstruyen sobre la marcha.",
+        "DiskMop para Mac visualiza el espacio mediante un mapa interactivo y localiza fotos y archivos duplicados mediante hash SHA-256.",
       ],
       sections: [
         {
@@ -578,6 +789,99 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo liberar espacio en el disco de inicio de un Mac con seguridad",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Vaciar la papelera de Mac",
+            text: "Haz clic derecho en el icono de la Papelera en el Dock y selecciona 'Vaciar papelera' para liberar espacio en disco de inmediato.",
+          },
+          {
+            name: "Limpiar la carpeta de Descargas",
+            text: "Abre el Finder, accede a Descargas, ordena por tamaño y descarta imágenes .dmg e instaladores .pkg antiguos.",
+          },
+          {
+            name: "Limpiar cachés de aplicaciones",
+            text: "Pulsa Mayús+Comando+G en el Finder, escribe ~/Library/Caches y vacía las carpetas de aplicaciones que no utilices.",
+          },
+          {
+            name: "Detectar archivos pesados y duplicados",
+            text: "Abre DiskMop para Mac, inicia una revisión con el mapa de árbol y elimina duplicados y archivos de más de 500 MB.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Elementos que más espacio ocupan en el disco de inicio de Mac y pautas de limpieza",
+        columns: [
+          "Elemento consumidor",
+          "Ubicación / Ruta",
+          "Tamaño habitual",
+          "Nivel de seguridad",
+          "Acción recomendada",
+        ],
+        rows: [
+          [
+            "Papelera (.Trash)",
+            "Dock > Papelera",
+            "5 GB – 30 GB",
+            "Completamente seguro",
+            "Clic derecho en la Papelera y seleccionar 'Vaciar papelera'",
+          ],
+          [
+            "Instaladores y descargas viejas",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Completamente seguro",
+            "Borrar las imágenes de disco tras la instalación",
+          ],
+          [
+            "Cachés de apps y del sistema",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Seguro",
+            "Vaciar cachés de usuario sin alterar binarios del sistema",
+          ],
+          [
+            "Datos del sistema y registros",
+            "Ajustes del Sistema > General > Almacenamiento",
+            "10 GB – 40 GB",
+            "Revisar con cuidado",
+            "Purgar instantáneas locales de Time Machine y reiniciar",
+          ],
+          [
+            "Fotos y archivos duplicados",
+            "Carpetas de inicio del usuario",
+            "2 GB – 15 GB",
+            "Completamente seguro",
+            "Usar el escáner SHA-256 de DiskMop para conservar solo los originales",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Cuándo muestra macOS el aviso 'El disco de inicio está casi lleno'?",
+          answer:
+            "macOS muestra este mensaje cuando el espacio libre disponible desciende aproximadamente por debajo del 5 % al 10 % del disco, comprometiendo las operaciones de intercambio (swap).",
+        },
+        {
+          question: "¿Cuánto espacio libre se debe conservar en un Mac?",
+          answer:
+            "La pauta recomendada es mantener al menos un 15 % a 20 % libre en el disco de inicio para permitir la gestión de memoria swap, actualizaciones de software y evitar la fragmentación.",
+        },
+        {
+          question: "¿Por qué los 'Datos del sistema' ocupan tanto en Mac?",
+          answer:
+            "La categoría Datos del sistema comprende instantáneas locales APFS de Time Machine, cachés de desarrollo como Xcode, bases de datos de navegación y archivos swap de memoria.",
+        },
+        {
+          question: "¿Borrar archivos de caché dañará mi Mac?",
+          answer:
+            "No. Eliminar las carpetas de caché de usuario en ~/Library/Caches es totalmente seguro. Las aplicaciones regenerarán los archivos que precisen al volver a iniciarse.",
+        },
+      ],
       verdict: [
         "El aviso de disco de arranque casi lleno significa, sencillamente, que Macintosh HD necesita respirar. Vaciar la Papelera, limpiar la carpeta Descargas, borrar archivos grandes y duplicados, eliminar cachés y llevar los datos que apenas usas a iCloud o a un disco externo recupera ese espacio, y todos esos pasos se pueden dar con las herramientas integradas de macOS y algo de paciencia.",
         "Disk Mop concentra toda esa lista en una sola aplicación para macOS 12 y posteriores: el análisis de disco, el buscador de archivos grandes, el detector de duplicados, el limpiador de descargas, la limpieza de cachés y la limpieza programada trabajan juntos para que tu disco de arranque siga despejado sin rebuscar a mano. Puedes descargarlo gratis con funciones limitadas, y un pago único de 19,90 $ desbloquea todas las herramientas con licencia de por vida.",
@@ -594,6 +898,13 @@ export const macStartupDiskFull: Article = {
         "L'avviso « Il disco di avvio è quasi pieno » indica che sul disco da cui il Mac si avvia — di solito il volume interno chiamato Macintosh HD — non è rimasto quasi più spazio libero. Per risolvere: svuotate il Cestino, ripulite la cartella Download, eliminate i file di grandi dimensioni e i duplicati, cancellate le cache e spostate su iCloud o su un disco esterno i file che usate di rado. Recuperare anche solo 10-20 GB di solito basta a far sparire l'avviso.",
         "macOS ha bisogno di spazio libero in continuazione per funzionare senza intoppi: sposta la memoria sul disco quando la RAM si riempie, scrive file temporanei per le app e scarica aggiornamenti di sistema che pesano diversi gigabyte. Quando il disco si riempie, le app rallentano, i file non si salvano e gli aggiornamenti si bloccano a metà.",
         "In questa guida libereremo spazio prima passo dopo passo con gli strumenti di archiviazione integrati in macOS, poi vedremo come Disk Mop riunisca lo stesso lavoro in un'unica app per macOS 12 e versioni successive.",
+      ],
+      keyTakeaways: [
+        "L'avviso «Il disco di avvio è quasi pieno» interviene quando lo spazio libero scende al di sotto del 5-10%, soglia critica per la memoria virtuale di swap in macOS.",
+        "Mantenere costantemente almeno il 10-15% di spazio libero su Macintosh HD previene cali di reattività, arresti improvvisi delle app ed errori negli aggiornamenti.",
+        "Svuotare il Cestino ed eliminare i file d'installazione .dmg e .pkg dalla cartella Download recupera subito tra i 10 e i 30 GB in media.",
+        "Le cache delle applicazioni in ~/Library/Caches possono essere rimosse in sicurezza; le app in uso le ricreano da sole alla richiesta successiva.",
+        "DiskMop per Mac visualizza lo spazio con una treemap interattiva e individua le foto duplicate tramite il confronto di hash SHA-256.",
       ],
       sections: [
         {
@@ -655,6 +966,101 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come liberare spazio sul disco di avvio del Mac in sicurezza",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Svuotare il Cestino del Mac",
+            text: "Fai clic con il tasto destro sull'icona del Cestino nel Dock e seleziona «Svuota il Cestino» per recuperare blocchi di memoria.",
+          },
+          {
+            name: "Fare pulizia nella cartella Download",
+            text: "Apri il Finder, entra in Download, ordina per dimensione ed elimina vecchie immagini disco .dmg e archivi .zip.",
+          },
+          {
+            name: "Pulire le cache delle applicazioni",
+            text: "Premi Maiusc+Comando+G nel Finder, digita ~/Library/Caches ed elimina le cartelle delle app non più necessarie.",
+          },
+          {
+            name: "Scovare file grandi e duplicati",
+            text: "Avvia DiskMop per Mac per eseguire un'analisi con treemap e rimuovere file duplicati e residui superiori a 500 MB.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principali elementi che occupano spazio sul disco di avvio Mac e procedure di pulizia",
+        columns: [
+          "Elemento archiviato",
+          "Posizione / Percorso",
+          "Dimensione tipica",
+          "Livello di sicurezza",
+          "Azione consigliata",
+        ],
+        rows: [
+          [
+            "Cestino (.Trash)",
+            "Dock > Cestino",
+            "5 GB – 30 GB",
+            "Completamente sicuro",
+            "Clic destro sul Cestino e seleziona «Svuota il Cestino»",
+          ],
+          [
+            "Vecchi installatori e file scaricati",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Completamente sicuro",
+            "Eliminare i file di immagine dopo l'installazione del software",
+          ],
+          [
+            "Cache di sistema e applicazioni",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Sicuro",
+            "Cancellare le cache utente senza toccare i file di sistema",
+          ],
+          [
+            "Dati di sistema e file di log",
+            "Impostazioni di Sistema > Generali > Spazio",
+            "10 GB – 40 GB",
+            "Esaminare con cura",
+            "Rimuovere le istantanee locali di Time Machine e riavviare",
+          ],
+          [
+            "Foto e file duplicati",
+            "Cartelle personali dell'utente",
+            "2 GB – 15 GB",
+            "Completamente sicuro",
+            "Utilizzare lo scanner SHA-256 di DiskMop per mantenere solo i file originali",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "In quali circostanze macOS mostra l'avviso «Il disco di avvio è quasi pieno»?",
+          answer:
+            "macOS attiva questa notifica quando lo spazio residuo cala al di sotto del 5-10% della capacità complessiva dell'unità, mettendo a rischio il file di swap della memoria.",
+        },
+        {
+          question: "Quanto spazio libero conviene conservare su un Mac?",
+          answer:
+            "È buona norma mantenere sempre il 15-20% del disco libero per consentire al sistema di gestire la memoria virtuale, applicare gli aggiornamenti ed evitare la frammentazione.",
+        },
+        {
+          question:
+            "A cosa è dovuto l'elevato consumo di spazio da parte di «Dati di sistema»?",
+          answer:
+            "I Dati di sistema comprendono le istantanee APFS locali di Time Machine, le cache di strumenti come Xcode, i dati di navigazione e i file di swap della memoria.",
+        },
+        {
+          question:
+            "Cancellare i file di cache può provocare malfunzionamenti al Mac?",
+          answer:
+            "No. Eliminare le cartelle di cache utente in ~/Library/Caches è del tutto sicuro. All'apertura successiva, ciascuna applicazione rigenera automaticamente le cache indispensabili.",
+        },
+      ],
       verdict: [
         "L'avviso di disco di avvio quasi pieno significa semplicemente che Macintosh HD ha bisogno di respirare. Svuotare il Cestino, ripulire la cartella Download, eliminare file di grandi dimensioni e duplicati, cancellare le cache e spostare su iCloud o su un disco esterno i dati usati di rado permette di recuperare lo spazio: ognuno di questi passaggi si può eseguire con gli strumenti integrati di macOS e un po' di pazienza.",
         "Disk Mop raccoglie l'intera lista in un'unica app per macOS 12 e versioni successive: analisi del disco, ricercatore di file di grandi dimensioni, rilevatore di duplicati, pulitore dei download, pulizia della cache e pulizia pianificata lavorano insieme per mantenere snello il disco di avvio senza ricerche manuali. Potete scaricarlo gratuitamente con funzioni limitate, mentre un pagamento una tantum di 19,90 $ sblocca l'intero set di strumenti con una licenza a vita.",
@@ -670,6 +1076,13 @@ export const macStartupDiskFull: Article = {
         "O alerta “O disco de inicialização está quase cheio” significa que o disco de onde o seu Mac inicia — normalmente o volume interno chamado Macintosh HD — está praticamente sem espaço livre. Para resolver: esvazie o Lixo, limpe a pasta Downloads, apague arquivos grandes e duplicados, remova caches e mova para o iCloud ou para um disco externo os arquivos que você quase não usa. Recuperar apenas 10 a 20 GB costuma bastar para o alerta sumir.",
         "O macOS precisa de espaço livre o tempo todo para funcionar bem: ele passa memória para o disco quando a RAM enche, grava arquivos temporários para os apps e baixa atualizações de sistema de vários gigabytes. Quando o disco lota, os apps ficam lentos, os arquivos não salvam e as atualizações falham no meio do caminho.",
         "Neste guia vamos primeiro liberar espaço passo a passo com as ferramentas de armazenamento embutidas no macOS e depois ver como o Disk Mop reúne o mesmo trabalho em um único app para macOS 12 e versões mais recentes.",
+      ],
+      keyTakeaways: [
+        "O aviso 'Seu disco de inicialização está quase cheio' surge quando o espaço livre cai abaixo de 5% a 10%, faixa crítica exigida para a memória virtual de swap do macOS.",
+        "Manter ao menos 10% a 15% de espaço livre no Macintosh HD evita travamentos do sistema, fechamento inesperado de aplicativos e erros nas atualizações do macOS.",
+        "Esvaziar o Lixo e apagar instaladores .dmg e .pkg na pasta Downloads recupera de imediato de 10 a 30 GB em média.",
+        "Os caches em ~/Library/Caches podem ser excluídos com tranquilidade; os programas em uso os recriam automaticamente conforme a demanda.",
+        "O DiskMop para Mac mapeia o armazenamento visualmente com uma treemap dinâmica e localiza fotos duplicadas via algoritmo de hash SHA-256.",
       ],
       sections: [
         {
@@ -729,6 +1142,99 @@ export const macStartupDiskFull: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como liberar espaço no disco de inicialização do Mac com segurança",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Esvaziar o Lixo do Mac",
+            text: "Clique com o botão direito no ícone do Lixo no Dock e selecione 'Esvaziar Lixo' para liberar blocos de disco permanentemente.",
+          },
+          {
+            name: "Limpar a pasta Downloads",
+            text: "Abra o Finder, vá até Downloads, organize os arquivos por tamanho e apague imagens .dmg e pacotes .pkg antigos.",
+          },
+          {
+            name: "Limpar caches de aplicativos",
+            text: "No Finder, pressione Shift+Command+G, digite ~/Library/Caches e descarte os arquivos de programas que você não usa mais.",
+          },
+          {
+            name: "Localizar arquivos grandes e duplicatas",
+            text: "Inicie o DiskMop para Mac para executar uma análise visual por treemap e eliminar duplicatas e arquivos acima de 500 MB.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Maiores vilões de espaço no disco de inicialização do Mac e ações recomendadas",
+        columns: [
+          "Item consumidor",
+          "Localização / Caminho",
+          "Tamanho habitual",
+          "Nível de segurança",
+          "Ação recomendada",
+        ],
+        rows: [
+          [
+            "Lixo (.Trash)",
+            "Dock > Lixo",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Clicar com o botão direito no Lixo e escolher 'Esvaziar Lixo'",
+          ],
+          [
+            "Instaladores e pacotes antigos",
+            "~/Downloads (.dmg, .pkg, .zip)",
+            "5 GB – 25 GB",
+            "Totalmente seguro",
+            "Excluir as imagens de disco após instalar os programas",
+          ],
+          [
+            "Caches de apps e sistema",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "Seguro",
+            "Limpar caches do usuário preservando arquivos de sistema",
+          ],
+          [
+            "Dados do Sistema e registros",
+            "Ajustes do Sistema > Geral > Armazenamento",
+            "10 GB – 40 GB",
+            "Verificar com cautela",
+            "Purgar instantâneos locais do Time Machine e reiniciar o Mac",
+          ],
+          [
+            "Fotos e arquivos duplicados",
+            "Pastas de início do usuário",
+            "2 GB – 15 GB",
+            "Totalmente seguro",
+            "Usar o verificador SHA-256 do DiskMop para reter somente os originais",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Quando o macOS avisa que o disco de inicialização está quase cheio?",
+          answer:
+            "O sistema exibe o aviso quando a capacidade livre disponível desce para cerca de 5% a 10% da unidade, ameaçando as rotinas de troca de memória virtual (swap).",
+        },
+        {
+          question: "Qual porcentagem de espaço livre é recomendada no Mac?",
+          answer:
+            "Recomenda-se manter sempre entre 15% e 20% do disco livre para que o macOS gerencie a paginação de memória, baixe atualizações e previna fragmentação dos dados.",
+        },
+        {
+          question: "Por que os 'Dados do Sistema' ocupam tanto espaço no Mac?",
+          answer:
+            "A seção Dados do Sistema reúne capturas locais de Time Machine (instantâneos APFS), caches de compilação como Xcode, dados de navegadores e memória de swap.",
+        },
+        {
+          question: "Apagar arquivos de cache pode prejudicar meu Mac?",
+          answer:
+            "Não. Remover os arquivos da pasta ~/Library/Caches é inteiramente seguro. Os aplicativos recriam os arquivos necessários automaticamente na próxima execução.",
+        },
+      ],
       verdict: [
         "O alerta de disco de inicialização quase cheio significa apenas que o Macintosh HD precisa de espaço para respirar. Esvaziar o Lixo, limpar a pasta Downloads, apagar arquivos grandes e duplicados, remover caches e mandar os dados pouco usados para o iCloud ou para um disco externo recupera esse espaço — e cada um desses passos pode ser feito com as ferramentas embutidas do macOS e um pouco de paciência.",
         "O Disk Mop reúne a lista inteira em um app só para macOS 12 e versões mais recentes: análise de disco, localizador de arquivos grandes, detector de duplicados, limpador de downloads, limpeza de cache e limpeza agendada trabalham juntos para o seu disco de inicialização continuar enxuto sem garimpo manual. Dá para baixar de graça com recursos limitados, e um pagamento único de 19,90 $ libera o kit completo com licença vitalícia.",
@@ -745,6 +1251,13 @@ export const macStartupDiskFull: Article = {
         "「起動ディスクの空き容量がほとんどありません」という警告は、Macが起動しているディスク — 多くの場合は「Macintosh HD」という名前の内蔵ボリューム — の空き容量がほとんど残っていないことを意味します。対処法は、「ゴミ箱」を空にする、「ダウンロード」フォルダを整理する、大きなファイルと重複ファイルを削除する、キャッシュを消去する、めったに使わないファイルをiCloudや外付けドライブに移す、の5つです。10〜20 GBほど空けるだけで、たいていは警告が消えます。",
         "macOSが快適に動作するには、常に空き容量が必要です。RAMが逼迫すればメモリの内容をディスクにスワップし、アプリのために一時ファイルを書き込み、数ギガバイト規模のシステムアップデートをダウンロードします。ディスクが一杯になると、アプリの動作が遅くなり、ファイルが保存できなくなり、アップデートも途中で失敗します。",
         "この記事では、まずmacOSに標準で備わっているストレージ機能を使って順番に空き容量を増やし、そのあとで、同じ作業をmacOS 12以降の1つのアプリにまとめたDisk Mopを見ていきます。",
+      ],
+      keyTakeaways: [
+        "「起動ディスクがほぼ一杯です」という警告は、macOSの仮想メモリスワップに必要な空き容量が危機的な5〜10%を下回った際に表示されます。",
+        "Macintosh HDの空き容量を最低でも10〜15%以上に維持することで、急激な処理速度低下、アプリのフリーズ、OSアップデートの失敗を防止できます。",
+        "ゴミ箱を空にし、ダウンロードフォルダ内の不要な.dmgや.pkgインストーラーを削除するだけで、平均10〜30GBの容量が即座に確保できます。",
+        "~/Library/Cachesフォルダ内のアプリキャッシュは安全に削除できます。必要なキャッシュは起動時にアプリが自動で再生成します。",
+        "DiskMop for Macはリアルタイムのツリーマップ表示でストレージの肥大化箇所を可視化し、SHA-256ハッシュで重複メディアを素早く検出します。",
       ],
       sections: [
         {
@@ -802,6 +1315,98 @@ export const macStartupDiskFull: Article = {
             "Disk Mopは、まさにこの種のメンテナンスのために作られています。スケジュール クリーンアップ（Scheduled Cleanup）は週次または月次の清掃タスクを自動で実行し、キャッシュ、古いダウンロード、「ゴミ箱」がたまる前に片付けます。システムの健全性スコア（System Health Score）は、Macの状態をひと目で示す指標になります。",
             "習慣として定着すれば、「起動ディスクの空き容量がほとんどありません」という警告は過去のものになります。Macはメモリのスワップやアップデートのために十分な空き容量を常に確保し、何十ギガバイトも慌てて削除する必要は二度となくなります。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Macの起動ディスクの空き容量を安全に増やす手順",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Macのゴミ箱を空にする",
+            text: "Dock内のゴミ箱アイコンを右クリックし、「ゴミ箱を空にする」を選択してディスク領域を解放します。",
+          },
+          {
+            name: "ダウンロードフォルダを整理する",
+            text: "Finderでダウンロードフォルダを開き、サイズ順に並べ替えて不要な.dmgイメージや.zipアーカイブを削除します。",
+          },
+          {
+            name: "アプリキャッシュを削除する",
+            text: "FinderでShift+Command+Gを押し、「~/Library/Caches」を入力して使っていないアプリのキャッシュフォルダを消去します。",
+          },
+          {
+            name: "大容量ファイルと重複ファイルを検出する",
+            text: "DiskMop for Macを起動してツリーマップスキャンを実行し、500MB超の不要ファイルや重複データを一括整理します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Mac起動ディスクの主な容量消費項目と推奨クリーンアップ手法",
+        columns: [
+          "消費項目",
+          "保存場所・パス",
+          "一般的なサイズ",
+          "安全性",
+          "推奨アクション",
+        ],
+        rows: [
+          [
+            "ゴミ箱（.Trash）",
+            "Dock > ゴミ箱",
+            "5 GB – 30 GB",
+            "完全安全",
+            "ゴミ箱アイコンを右クリックして「ゴミ箱を空にする」を実行",
+          ],
+          [
+            "古いインストーラー・ダウンロード",
+            "~/Downloads（.dmg, .pkg, .zip）",
+            "5 GB – 25 GB",
+            "完全安全",
+            "アプリのインストール完了後にディスクイメージを消去",
+          ],
+          [
+            "アプリおよびシステムのキャッシュ",
+            "~/Library/Caches",
+            "5 GB – 20 GB",
+            "安全",
+            "システム本体に触れずユーザーキャッシュ領域をクリア",
+          ],
+          [
+            "システムデータ・各種ログ",
+            "システム設定 > 一般 > ストレージ",
+            "10 GB – 40 GB",
+            "慎重に確認",
+            "Time Machineのローカルスナップショットを整理し再起動",
+          ],
+          [
+            "重複した写真やドキュメント",
+            "ユーザーのホームディレクトリ",
+            "2 GB – 15 GB",
+            "完全安全",
+            "DiskMopのSHA-256スキャナーでオリジナルのみを残して整理",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "macOSが「起動ディスクがほぼ一杯です」と警告するタイミングは？",
+          answer:
+            "ディスク全体の空き容量が概ね5%〜10%を下回り、仮想メモリのスワップ領域や一時ファイルの作成が困難になった時点でmacOSが警告を出します。",
+        },
+        {
+          question: "Macではどのくらいの空き容量を保つのが理想ですか？",
+          answer:
+            "仮想メモリのスワップ、OSアップデートのインストール、APFSの断片化防止のため、起動ディスクの15%〜20%程度の空き容量を常に維持することが推奨されます。",
+        },
+        {
+          question: "Macの「システムデータ」が膨大になる原因は何ですか？",
+          answer:
+            "システムデータには、Time MachineのローカルAPFSスナップショット、Xcode等の開発キャッシュ、ブラウザのデータベース、仮想メモリスワップファイルなどが含まれます。",
+        },
+        {
+          question: "キャッシュファイルを削除するとMacに害はありますか？",
+          answer:
+            "いいえ、害はありません。~/Library/Caches内のユーザーキャッシュを消去しても、アプリを次回起動した際、必要最低限のファイルが自動生成されます。",
         },
       ],
       verdict: [

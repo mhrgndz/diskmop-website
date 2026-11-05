@@ -5,7 +5,7 @@ export const winsxsCleanup: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-07-17",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -337,6 +337,13 @@ export const winsxsCleanup: Article = {
         "In diesem Leitfaden erklären wir zunächst, was WinSxS ist und warum die angezeigte Größe täuscht. Danach zeigen wir, wie Sie die tatsächliche Größe mit DISM messen, mit welchen Befehlen Sie den Ordner sicher verkleinern und wie Sie neuen Update-Ballast verhindern.",
         "Anders als die im Internet kursierenden Tipps nach dem Motto 'WinSxS löschen und 10 GB gewinnen' stützt sich jeder Schritt hier auf von Microsoft unterstützte Methoden. Ziel ist es, Speicherplatz freizugeben, ohne die Update- und Reparaturfähigkeit des Systems zu gefährden.",
       ],
+      keyTakeaways: [
+        "Der WinSxS-Ordner ist der zentrale Windows-Komponentenspeicher; versuchen Sie niemals, ihn manuell über den Datei-Explorer zu löschen.",
+        "Die im Datei-Explorer angezeigte Ordnergröße ist täuschend hoch, da NTFS-Hardlinks dazu führen, dass Systemdateien mehrfach gezählt werden.",
+        "Ermitteln Sie den tatsächlichen Speicherplatzbedarf mit dem Administrator-Befehl 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Verkleinern Sie veraltete Update-Pakete sicher mit dem Befehl 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "Die Windows-Datenträgerbereinigung (cleanmgr) unter 'Windows Update-Bereinigung' ermöglicht eine sichere Komponentenbereinigung über eine grafische Oberfläche.",
+      ],
       sections: [
         {
           title: "Was ist der WinSxS-Ordner und warum wirkt er so groß?",
@@ -387,6 +394,92 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So verkleinern Sie den WinSxS-Ordner sicher mit DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Terminal mit Administratorrechten starten",
+            text: "Klicken Sie mit der rechten Maustaste auf das Startmenü und wählen Sie 'Terminal (Administrator)' oder 'Eingabeaufforderung (Administrator)'.",
+          },
+          {
+            name: "Komponentenspeicher analysieren",
+            text: "Führen Sie 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' aus, um den tatsächlichen Speicherverbrauch und Bereinigungsempfehlungen zu sehen.",
+          },
+          {
+            name: "StartComponentCleanup ausführen",
+            text: "Führen Sie 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' aus und warten Sie, bis der Vorgang 100 % erreicht hat.",
+          },
+          {
+            name: "Computer neu starten",
+            text: "Starten Sie Windows neu, um die Dateifreigabe abzuschließen und Speicherplatz zurückzugewinnen.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Methoden, Befehle und Risikoprofile zur Reduzierung des WinSxS-Komponentenspeichers",
+        columns: [
+          "Methode",
+          "Befehl / Dienstprogramm",
+          "Rollback-Fähigkeit",
+          "Sicherheitsstufe",
+          "Speichereffekt",
+        ],
+        rows: [
+          [
+            "DISM-Standardbereinigung",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Erhalten",
+            "Vollständig sicher",
+            "Entfernt überholte Komponenten (2–8 GB freigegeben)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Deaktiviert",
+            "Mit Vorsicht verwenden",
+            "Schreibt Updates permanent fest; maximiert freien Speicher",
+          ],
+          [
+            "Windows-Datenträgerbereinigung",
+            "cleanmgr.exe (Systemdateien bereinigen)",
+            "Erhalten",
+            "Vollständig sicher",
+            "Bereinigt Update-Caches über die native Benutzeroberfläche",
+          ],
+          [
+            "Manuelles Löschen",
+            "Löschen von C:\\Windows\\WinSxS",
+            "Keine (Schwerer Systemabsturz)",
+            "STRENGSTENS UNTERSAGT",
+            "Zerstört Windows-Start, macht SFC / DISM unbrauchbar",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Kann ich den WinSxS-Ordner manuell löschen?",
+          answer:
+            "Nein, löschen Sie ihn unter keinen Umständen manuell. Dies beschädigt Windows Update, zerstört Systemabhängigkeiten und kann dazu führen, dass Windows nicht mehr startet.",
+        },
+        {
+          question:
+            "Warum wird WinSxS im Datei-Explorer mit über 15 GB angezeigt?",
+          answer:
+            "Der Datei-Explorer kann NTFS-Hardlinks nicht von eigenständigen Dateien unterscheiden und zählt denselben physischen Speicherblock fälschlicherweise mehrfach.",
+        },
+        {
+          question: "Was bewirkt der Parameter /ResetBase in DISM?",
+          answer:
+            "Er schreibt installierte Updates dauerhaft fest und verwirft alle Rollback-Dateien. Dies gibt maximalen Speicherplatz frei, verhindert jedoch das Deinstallieren kürzlicher Updates.",
+        },
+        {
+          question: "Wie lange dauert StartComponentCleanup?",
+          answer:
+            "Abhängig von CPU-Leistung und Laufwerkstyp (SSD vs. HDD) dauert die Komponentenbereinigung in der Regel zwischen 5 und 20 Minuten.",
+        },
+      ],
       verdict: [
         "Die erschreckende Größe des WinSxS-Ordners ist größtenteils eine Illusion: Harte Links blähen den Explorer-Wert auf, und manuelles Löschen kann Windows startunfähig machen. Die tatsächliche Größe mit Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore messen und die Bereinigung StartComponentCleanup und der Windows Update-Bereinigung überlassen — das ist sicher und völlig ausreichend.",
         "Für alles außerhalb des Komponentenspeichers übernimmt Disk Mop: Die Festplattenanalyse zeigt, was Ihren Platz frisst, Cache- und Download-Bereiniger entfernen den Ballast, und die geplante Bereinigung automatisiert die Wartung. Die einmalige Lizenz für 19,90 $ gilt lebenslang für Windows und macOS — die kostenlose Version können Sie sofort ausprobieren.",
@@ -403,6 +496,13 @@ export const winsxsCleanup: Article = {
         "Le dossier WinSxS n'est presque jamais aussi volumineux qu'il en a l'air : Windows stocke la plupart des fichiers système sous forme de liens physiques (hardlink) pointant vers WinSxS, si bien que l'Explorateur de fichiers compte plusieurs fois les mêmes données. Ne supprimez jamais ce dossier à la main — il contient les composants dont Windows a besoin pour démarrer, se mettre à jour et se réparer. La bonne méthode pour le réduire est la commande intégrée Dism.exe /Online /Cleanup-Image /StartComponentCleanup, complétée par l'option Nettoyage de Windows Update du Nettoyage de disque.",
         "Dans ce guide, nous expliquons d'abord ce qu'est réellement WinSxS et pourquoi la taille affichée est trompeuse. Nous montrons ensuite comment mesurer son encombrement réel avec DISM, quelles commandes exactes le réduisent sans risque, et comment empêcher les résidus de mises à jour de s'accumuler à nouveau.",
         "Contrairement aux conseils du type « supprimez WinSxS et récupérez 10 Go » qui circulent sur Internet, chaque étape présentée ici s'appuie sur des méthodes prises en charge par Microsoft. L'objectif est de libérer de l'espace disque tout en gardant un système capable de se mettre à jour et de se réparer.",
+      ],
+      keyTakeaways: [
+        "Le dossier WinSxS est le magasin central des composants Windows ; ne tentez jamais de le supprimer manuellement depuis l'Explorateur de fichiers.",
+        "La taille affichée par l'Explorateur de fichiers est trompeuse en raison des liens physiques NTFS qui comptabilisent plusieurs fois les mêmes fichiers système.",
+        "Vérifiez l'espace disque réel avec la commande administrateur 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Réduisez en toute sécurité les paquets de mise à jour obsolètes à l'aide de 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "Le Nettoyage de disque Windows (cleanmgr) avec l'option 'Nettoyer les fichiers système' permet un nettoyage sûr via une interface graphique.",
       ],
       sections: [
         {
@@ -457,6 +557,92 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment réduire en toute sécurité le dossier WinSxS avec DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Ouvrir un Terminal en mode administrateur",
+            text: "Faites un clic droit sur le bouton Démarrer et choisissez 'Terminal (administrateur)' ou 'Invite de commandes (admin)'.",
+          },
+          {
+            name: "Analyser le magasin des composants",
+            text: "Exécutez 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' pour connaître la taille réelle et vérifier si un nettoyage est conseillé.",
+          },
+          {
+            name: "Lancer StartComponentCleanup",
+            text: "Exécutez 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' et patientez jusqu'à ce que la progression atteigne 100 %.",
+          },
+          {
+            name: "Redémarrer votre ordinateur",
+            text: "Redémarrez Windows pour finaliser la libération d'espace disque et réorganiser les fichiers système.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Méthodes, commandes et profils de risque pour réduire le magasin de composants WinSxS",
+        columns: [
+          "Méthode",
+          "Commande / Utilitaire",
+          "Possibilité de rétrogradation",
+          "Niveau de sécurité",
+          "Impact sur le stockage",
+        ],
+        rows: [
+          [
+            "Nettoyage DISM standard",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Conservée",
+            "Totalement sûr",
+            "Supprime les composants obsolètes (2 à 8 Go récupérés)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Désactivée",
+            "Utiliser avec précaution",
+            "Valide les mises à jour de façon permanente ; optimise l'espace",
+          ],
+          [
+            "Nettoyage de disque Windows",
+            "cleanmgr.exe (Nettoyer les fichiers système)",
+            "Conservée",
+            "Totalement sûr",
+            "Purge les caches de mise à jour via l'interface graphique",
+          ],
+          [
+            "Suppression manuelle",
+            "Suppression de C:\\Windows\\WinSxS",
+            "Aucune (Panne critique)",
+            "STRICTEMENT INTERDIT",
+            "Empêche le démarrage du système, rend SFC / DISM inutilisables",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Puis-je supprimer manuellement le dossier WinSxS ?",
+          answer:
+            "Non, ne le supprimez jamais manuellement. Cela corrompt Windows Update, casse les dépendances critiques du système et peut empêcher Windows de démarrer.",
+        },
+        {
+          question:
+            "Pourquoi WinSxS affiche-t-il plus de 15 Go dans l'Explorateur de fichiers ?",
+          answer:
+            "L'Explorateur de fichiers ne distingue pas les liens matériels NTFS des fichiers indépendants, comptant plusieurs fois les mêmes blocs de stockage physiques.",
+        },
+        {
+          question: "Que fait le paramètre /ResetBase dans DISM ?",
+          answer:
+            "Il valide définitivement les mises à jour installées et supprime tous les fichiers de restauration, libérant un maximum d'espace mais empêchant la désinstallation des mises à jour récentes.",
+        },
+        {
+          question: "Combien de temps prend StartComponentCleanup ?",
+          answer:
+            "Selon la puissance du processeur et le type de disque (SSD ou HDD), le nettoyage des composants prend généralement entre 5 et 20 minutes.",
+        },
+      ],
       verdict: [
         "La taille effrayante du dossier WinSxS est en grande partie une illusion : les liens physiques gonflent le chiffre affiché par l'Explorateur de fichiers, et supprimer le dossier à la main peut rendre Windows impossible à démarrer. Mesurer la taille réelle avec Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore, puis confier le nettoyage à StartComponentCleanup et au Nettoyage de Windows Update, est à la fois sûr et suffisant.",
         "Pour tout ce qui se trouve hors du magasin de composants, Disk Mop prend le relais : l'analyse de disque montre ce qui dévore votre espace, les nettoyeurs de cache et de téléchargements éliminent les accumulations, et le nettoyage planifié met l'entretien en pilote automatique. Une licence unique à 19,90 $ couvre Windows et macOS à vie, et la version gratuite vous permet de commencer tout de suite.",
@@ -472,6 +658,13 @@ export const winsxsCleanup: Article = {
         "La carpeta WinSxS casi nunca es tan grande como parece: Windows guarda la mayoría de los archivos del sistema como vínculos físicos (hardlink) que apuntan a WinSxS, así que el Explorador de archivos cuenta los mismos datos más de una vez. Nunca borres la carpeta a mano — ahí están los componentes que Windows necesita para arrancar, actualizarse y repararse. La forma segura de reducirla es el comando integrado Dism.exe /Online /Cleanup-Image /StartComponentCleanup, combinado con la opción Limpieza de Windows Update del Liberador de espacio en disco.",
         "En esta guía explicamos primero qué es realmente WinSxS y por qué el tamaño que muestra Windows resulta engañoso. Después verás cómo medir su tamaño real con DISM, qué comandos exactos la reducen sin riesgo y cómo evitar que los restos de las actualizaciones se vuelvan a acumular.",
         "A diferencia de los consejos del tipo « borra WinSxS y recupera 10 GB » que circulan por Internet, cada paso de este artículo se apoya en métodos admitidos por Microsoft. El objetivo es liberar espacio en disco manteniendo un sistema que se pueda seguir actualizando y reparando.",
+      ],
+      keyTakeaways: [
+        "La carpeta WinSxS es el almacén central de componentes de Windows; nunca intente eliminarla manualmente desde el Explorador de archivos.",
+        "El tamaño mostrado en el Explorador de archivos es engañoso debido a los enlaces duros NTFS que cuentan varias veces los mismos archivos del sistema.",
+        "Compruebe el espacio real en disco con el comando con privilegios 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Reduzca los paquetes de actualización obsoletos de forma segura con 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "El Liberador de espacio en disco (cleanmgr) con 'Limpiar archivos de sistema' realiza una limpieza segura mediante interfaz gráfica.",
       ],
       sections: [
         {
@@ -526,6 +719,92 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo reducir de forma segura la carpeta WinSxS con DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Abrir el Terminal como administrador",
+            text: "Haga clic derecho en el botón de Inicio y elija 'Terminal (Administrador)' o 'Símbolo del sistema (administrador)'.",
+          },
+          {
+            name: "Analizar el almacén de componentes",
+            text: "Ejecute 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' para conocer el tamaño real y comprobar si se recomienda una limpieza.",
+          },
+          {
+            name: "Ejecutar StartComponentCleanup",
+            text: "Ejecute 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' y espere a que el proceso complete el 100%.",
+          },
+          {
+            name: "Reiniciar el ordenador",
+            text: "Reinicie Windows para consolidar los cambios en el sistema de archivos y liberar el espacio en disco.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Métodos, comandos y perfiles de riesgo para reducir el almacén de componentes WinSxS",
+        columns: [
+          "Método",
+          "Comando / Herramienta",
+          "Capacidad de reversión",
+          "Nivel de seguridad",
+          "Impacto en el almacenamiento",
+        ],
+        rows: [
+          [
+            "Limpieza estándar DISM",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Conservada",
+            "Totalmente seguro",
+            "Elimina componentes obsoletos (recupera de 2 a 8 GB)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Deshabilitada",
+            "Usar con precaución",
+            "Fija actualizaciones permanentemente; maximiza espacio libre",
+          ],
+          [
+            "Liberador de espacio de Windows",
+            "cleanmgr.exe (Limpiar archivos de sistema)",
+            "Conservada",
+            "Totalmente seguro",
+            "Purga cachés de actualización desde la interfaz gráfica oficial",
+          ],
+          [
+            "Eliminación manual",
+            "Eliminar C:\\Windows\\WinSxS",
+            "Ninguna (Fallo crítico)",
+            "TOTALMENTE PROHIBIDO",
+            "Impide el arranque del SO, inutiliza SFC y DISM",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Puedo eliminar manualmente la carpeta WinSxS?",
+          answer:
+            "No, jamás la elimine manualmente. Hacerlo daña Windows Update, corrompe dependencias vitales del sistema y puede impedir que Windows vuelva a arrancar.",
+        },
+        {
+          question:
+            "¿Por qué WinSxS muestra más de 15 GB en el Explorador de archivos?",
+          answer:
+            "El Explorador de archivos no distingue los vínculos físicos NTFS de archivos independientes, contabilizando los mismos bloques de almacenamiento físico en múltiples ocasiones.",
+        },
+        {
+          question: "¿Qué hace el parámetro /ResetBase en DISM?",
+          answer:
+            "Confirma de forma permanente las actualizaciones instaladas y descarta los archivos de desinstalación, liberando el máximo espacio a cambio de no poder desinstalar actualizaciones recientes.",
+        },
+        {
+          question: "¿Cuánto tiempo tarda StartComponentCleanup?",
+          answer:
+            "Según la potencia del procesador y el tipo de disco (SSD o HDD), la limpieza de componentes suele requerir entre 5 y 20 minutos.",
+        },
+      ],
       verdict: [
         "El tamaño aterrador de la carpeta WinSxS es en buena medida una ilusión: los vínculos físicos inflan la cifra que muestra el Explorador de archivos, y borrar la carpeta a mano puede dejar Windows sin arrancar. Medir el tamaño real con Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore y dejar la limpieza en manos de StartComponentCleanup y de la Limpieza de Windows Update es seguro y más que suficiente.",
         "Para todo lo que queda fuera del almacén de componentes, toma el relevo Disk Mop: el análisis de disco muestra qué se está comiendo tu espacio, los limpiadores de caché y de descargas eliminan lo acumulado, y la limpieza programada pone el mantenimiento en piloto automático. Una licencia única de 19,90 $ cubre Windows y macOS de por vida, y con la versión gratuita puedes empezar ahora mismo.",
@@ -541,6 +820,13 @@ export const winsxsCleanup: Article = {
         "La cartella WinSxS non è quasi mai grande quanto sembra: Windows conserva la maggior parte dei file di sistema come collegamenti reali (hardlink) che puntano a WinSxS, così Esplora file conta più volte gli stessi dati. Non eliminarla mai a mano — contiene i componenti che servono a Windows per avviarsi, aggiornarsi e ripararsi. Il modo sicuro per ridurla è il comando integrato Dism.exe /Online /Cleanup-Image /StartComponentCleanup, insieme all'opzione Pulizia di Windows Update in Pulizia disco.",
         "In questa guida spieghiamo prima che cos'è davvero WinSxS e perché la dimensione mostrata inganna. Poi vediamo come misurare lo spazio realmente occupato con DISM, quali comandi la riducono in sicurezza e come evitare che i residui degli aggiornamenti si accumulino di nuovo.",
         "A differenza dei consigli tipo « elimina WinSxS e recupera 10 GB » che girano in rete, ogni passaggio di questa guida si basa su metodi supportati da Microsoft. L'obiettivo è liberare spazio su disco mantenendo un sistema che si possa ancora aggiornare e riparare.",
+      ],
+      keyTakeaways: [
+        "La cartella WinSxS è l'archivio centrale dei componenti di Windows; non tentare mai di eliminarla manualmente da Esplora file.",
+        "Le dimensioni indicate in Esplora file sono ingannevoli per via degli hard link NTFS, che conteggiano più volte gli stessi file di sistema.",
+        "Verifica l'effettivo ingombro su disco con il comando con privilegi elevati 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Riduci in sicurezza i pacchetti di aggiornamento obsoleti con 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "Pulizia disco di Windows (cleanmgr) con la voce 'Pulizia file di sistema' consente una pulizia sicura tramite interfaccia grafica.",
       ],
       sections: [
         {
@@ -593,6 +879,91 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come ridurre in modo sicuro la cartella WinSxS con DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Aprire il Terminale come amministratore",
+            text: "Fai clic con il tasto destro sul pulsante Start e scegli 'Terminale (amministratore)' oppure 'Prompt dei comandi (amministratore)'.",
+          },
+          {
+            name: "Analizzare l'archivio dei componenti",
+            text: "Esegui 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' per visualizzare lo spazio effettivo e i suggerimenti di pulizia.",
+          },
+          {
+            name: "Eseguire StartComponentCleanup",
+            text: "Esegui 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' e attendi il completamento al 100%.",
+          },
+          {
+            name: "Riavviare il computer",
+            text: "Riavvia Windows per rendere effettiva la deallocazione dei file e recuperare spazio su disco.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Metodi, comandi e profili di rischio per la riduzione dell'archivio componenti WinSxS",
+        columns: [
+          "Metodo",
+          "Comando / Utilità",
+          "Funzione di ripristino (Rollback)",
+          "Livello di sicurezza",
+          "Impatto sullo spazio",
+        ],
+        rows: [
+          [
+            "Pulizia standard DISM",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Mantenuta",
+            "Completamente sicuro",
+            "Rimuove componenti obsoleti (recupero di 2-8 GB)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Disabilitata",
+            "Usare con cautela",
+            "Conferma gli aggiornamenti definitivamente; massima pulizia",
+          ],
+          [
+            "Pulizia disco di Windows",
+            "cleanmgr.exe (Pulizia file di sistema)",
+            "Mantenuta",
+            "Completamente sicuro",
+            "Cancella le cache di aggiornamento tramite interfaccia nativa",
+          ],
+          [
+            "Cancellazione manuale",
+            "Eliminazione di C:\\Windows\\WinSxS",
+            "Nessuna (Errore critico)",
+            "SEVERAMENTE VIETATO",
+            "Blocca l'avvio del sistema, rende inutilizzabili SFC e DISM",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Posso cancellare manualmente la cartella WinSxS?",
+          answer:
+            "No, non eliminarla mai manualmente. Ciò danneggia Windows Update, compromette le dipendenze essenziali del sistema e può impedire l'avvio del computer.",
+        },
+        {
+          question: "Perché WinSxS mostra oltre 15 GB in Esplora file?",
+          answer:
+            "Esplora file non distingue gli hard link NTFS dai file indipendenti, calcolando più volte gli stessi blocchi fisici di memoria.",
+        },
+        {
+          question: "A cosa serve il parametro /ResetBase in DISM?",
+          answer:
+            "Conferma definitivamente gli aggiornamenti installati ed elimina tutti i file di rollback, liberando il massimo spazio ma impedendo la disinstallazione degli aggiornamenti recenti.",
+        },
+        {
+          question: "Quanto tempo richiede StartComponentCleanup?",
+          answer:
+            "A seconda delle prestazioni del processore e del disco (SSD o HDD), la procedura richiede generalmente tra 5 e 20 minuti.",
+        },
+      ],
       verdict: [
         "Le dimensioni spaventose della cartella WinSxS sono in gran parte un'illusione: i collegamenti reali gonfiano il numero mostrato da Esplora file ed eliminare la cartella a mano può lasciare Windows incapace di avviarsi. Misurare le dimensioni reali con Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore e affidare la pulizia a StartComponentCleanup e alla Pulizia di Windows Update è sicuro e più che sufficiente.",
         "Per tutto ciò che sta fuori dall'archivio componenti subentra Disk Mop: l'analisi del disco mostra che cosa sta divorando lo spazio, i pulitori di cache e download rimuovono gli accumuli e la pulizia pianificata mette la manutenzione in automatico. Una licenza una tantum da 19,90 $ copre Windows e macOS a vita, e con la versione gratuita puoi iniziare subito.",
@@ -609,6 +980,13 @@ export const winsxsCleanup: Article = {
         "A pasta WinSxS quase nunca é tão grande quanto parece: o Windows guarda a maior parte dos arquivos de sistema como links físicos (hardlink) que apontam para o WinSxS, então o Explorador de Arquivos conta os mesmos dados mais de uma vez. Nunca apague a pasta manualmente — é ali que ficam os componentes de que o Windows precisa para iniciar, se atualizar e se reparar. O jeito seguro de reduzi-la é o comando nativo Dism.exe /Online /Cleanup-Image /StartComponentCleanup, combinado com a opção Limpeza do Windows Update na Limpeza de Disco.",
         "Neste guia explicamos primeiro o que é de fato o WinSxS e por que o tamanho exibido engana. Depois mostramos como medir o espaço real com o DISM, quais comandos exatos reduzem a pasta com segurança e como impedir que os restos de atualização voltem a se acumular.",
         "Ao contrário das dicas do tipo “apague o WinSxS e ganhe 10 GB” que circulam pela internet, cada passo daqui se apoia em métodos suportados pela Microsoft. A meta é liberar espaço em disco mantendo o sistema capaz de se atualizar e se reparar.",
+      ],
+      keyTakeaways: [
+        "A pasta WinSxS é o repositório central de componentes do Windows; nunca tente excluí-la manualmente pelo Explorador de Arquivos.",
+        "O tamanho informado no Explorador de Arquivos é ilusório devido aos links físicos (hard links) NTFS que contam os mesmos binários várias vezes.",
+        "Verifique o espaço real em disco com o comando com privilégios de administrador 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore'.",
+        "Reduza pacotes de atualização antigos com segurança utilizando 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup'.",
+        "A Limpeza de Disco do Windows (cleanmgr) em 'Limpar arquivos do sistema' executa a limpeza segura de componentes por interface gráfica.",
       ],
       sections: [
         {
@@ -662,6 +1040,92 @@ export const winsxsCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como reduzir a pasta WinSxS com segurança usando o DISM",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Abrir o Terminal como administrador",
+            text: "Clique com o botão direito no menu Iniciar e selecione 'Terminal (Administrador)' ou 'Prompt de Comando (Admin)'.",
+          },
+          {
+            name: "Analisar o repositório de componentes",
+            text: "Execute 'Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore' para verificar o uso real do disco e as recomendações de limpeza.",
+          },
+          {
+            name: "Executar o StartComponentCleanup",
+            text: "Execute 'Dism.exe /Online /Cleanup-Image /StartComponentCleanup' e aguarde a barra de progresso atingir 100%.",
+          },
+          {
+            name: "Reiniciar o computador",
+            text: "Reinicie o Windows para finalizar a liberação dos arquivos e recuperar sua capacidade de armazenamento.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Métodos, comandos e níveis de risco para redução do repositório WinSxS",
+        columns: [
+          "Método",
+          "Comando / Utilitário",
+          "Capacidade de reversão",
+          "Nível de segurança",
+          "Impacto no armazenamento",
+        ],
+        rows: [
+          [
+            "Limpeza padrão DISM",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "Mantida",
+            "Totalmente seguro",
+            "Remove componentes obsoletos (2 a 8 GB liberados)",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "Desativada",
+            "Usar com cautela",
+            "Consolida atualizações permanentemente; maximiza espaço livre",
+          ],
+          [
+            "Limpeza de Disco do Windows",
+            "cleanmgr.exe (Limpar arquivos do sistema)",
+            "Mantida",
+            "Totalmente seguro",
+            "Elimina caches de atualização pela interface nativa do sistema",
+          ],
+          [
+            "Exclusão manual",
+            "Excluir C:\\Windows\\WinSxS",
+            "Nenhuma (Falha crítica)",
+            "TERMINANTEMENTE PROIBIDO",
+            "Impede a inicialização do Windows, inutiliza SFC e DISM",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Posso excluir a pasta WinSxS manualmente?",
+          answer:
+            "Não, nunca a exclua manualmente. Isso danifica o Windows Update, corrompe dependências vitais do sistema e pode impedir o Windows de inicializar.",
+        },
+        {
+          question:
+            "Por que a pasta WinSxS aparece com mais de 15 GB no Explorador de Arquivos?",
+          answer:
+            "O Explorador de Arquivos não diferencia hard links NTFS de arquivos independentes, contabilizando os mesmos blocos físicos de armazenamento várias vezes.",
+        },
+        {
+          question: "O que o parâmetro /ResetBase faz no DISM?",
+          answer:
+            "Ele consolida definitivamente as atualizações instaladas e descarta todos os arquivos de reversão, liberando o máximo de espaço, mas impedindo desinstalar updates recentes.",
+        },
+        {
+          question: "Quanto tempo demora o StartComponentCleanup?",
+          answer:
+            "Dependendo da velocidade do processador e do tipo de disco (SSD vs HDD), a limpeza de componentes costuma levar entre 5 e 20 minutos.",
+        },
+      ],
       verdict: [
         "O tamanho assustador da pasta WinSxS é, em boa parte, uma ilusão: os links físicos inflam o número que o Explorador de Arquivos mostra, e apagar a pasta na mão pode deixar o Windows sem iniciar. Medir o tamanho real com Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore e deixar a limpeza por conta do StartComponentCleanup e da Limpeza do Windows Update é seguro e suficiente.",
         "Para tudo o que está fora do repositório de componentes, o Disk Mop assume: a análise de disco mostra o que está devorando o seu espaço, os limpadores de cache e de downloads removem o acúmulo, e a limpeza agendada coloca a manutenção no piloto automático. Uma licença única de 19,90 $ cobre Windows e macOS para sempre, e a versão gratuita deixa você começar agora mesmo.",
@@ -677,6 +1141,13 @@ export const winsxsCleanup: Article = {
         "WinSxSフォルダーは、見た目ほど大きいことはほとんどありません。Windowsはシステム ファイルの多くを、WinSxS内の実体を指すハードリンク（hardlink）として保持しているため、エクスプローラーは同じデータを何度も数えてしまいます。このフォルダーを手動で削除するのは絶対にやめてください。Windowsが起動し、更新され、自分自身を修復するために必要なコンポーネントがここに置かれています。安全に小さくする方法は、標準搭載のコマンド Dism.exe /Online /Cleanup-Image /StartComponentCleanup と、「ディスク クリーンアップ」の「Windows Update のクリーンアップ」の組み合わせです。",
         "この記事では、まずWinSxSとは何か、そしてなぜ表示されるサイズが実態とずれるのかを説明します。続いて、DISMで実際の使用量を測る方法、安全に容量を減らせる具体的なコマンド、更新プログラムの残骸が再びたまるのを防ぐ方法を順に見ていきます。",
         "インターネットでよく見かける「WinSxSを削除して10 GB空ける」といった助言とは違い、ここで紹介する手順はすべてMicrosoftがサポートしている方法にもとづいています。目的は、システムを更新・修復できる状態に保ったまま、ディスクの空き容量を増やすことです。",
+      ],
+      keyTakeaways: [
+        "WinSxSフォルダーはWindowsの中核コンポーネントストアです。エクスプローラーから手動で直接削除することは絶対に避けてください。",
+        "エクスプローラーに表示されるフォルダーサイズは、NTFSハードリンクによって同一バイナリが重複計算されているため実際の専有量より誇大です。",
+        "管理者権限で「Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore」を実行することで、正確な実容量を確認できます。",
+        "「Dism.exe /Online /Cleanup-Image /StartComponentCleanup」コマンドにより、置き換えられた不要な更新プログラムを安全に削減できます。",
+        "Windows標準のディスククリーンアップ（cleanmgr）の「システムファイルのクリーンアップ」でも、GUI経由で安全にコンポーネント整理が可能です。",
       ],
       sections: [
         {
@@ -727,6 +1198,92 @@ export const winsxsCleanup: Article = {
             "一方、ディスクの他の部分はそう恵まれていません。ダウンロードしたインストーラー、アプリのキャッシュ、ごみ箱は静かに増え続けます。Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）は、週次または月次のスケジュールでこうした蓄積を一掃します。ワンクリックの高速化（Speed Up）機能を使えば、古いダウンロード、システムとブラウザーのキャッシュ、ごみ箱をまとめて一度に片付けられます。",
             "システム ヘルス スコア（System Health Score）はディスク全体の状態をひと目で示すので、スコアが下がってきたら掃除の合図です。DISMがコンポーネント ストアを抑え、Disk Mopがそれ以外のすべてを引き受ければ、C:ドライブが知らないうちにいっぱいになることはなくなります。",
           ],
+        },
+      ],
+      howTo: {
+        name: "DISMを使ってWinSxSフォルダーを安全に縮小・クリーンアップする方法",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "管理者権限でターミナルを起動する",
+            text: "スタートボタンを右クリックし、「ターミナル（管理者）」または「コマンドプロンプト（管理者）」を選択します。",
+          },
+          {
+            name: "コンポーネントストアを分析する",
+            text: "「Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore」を実行し、実際の専有サイズとクリーンアップ推奨の有無を確認します。",
+          },
+          {
+            name: "StartComponentCleanupを実行する",
+            text: "「Dism.exe /Online /Cleanup-Image /StartComponentCleanup」を実行し、処理が100%に達するまで待機します。",
+          },
+          {
+            name: "コンピューターを再起動する",
+            text: "Windowsを再起動してファイルの割り当て解除を完了し、解放されたディスク容量を確定させます。",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "WinSxSコンポーネントストアの削減方法・コマンドおよびリスク評価",
+        columns: [
+          "実行方法",
+          "コマンド / ツール",
+          "更新プログラムのロールバック",
+          "安全性",
+          "容量削減効果",
+        ],
+        rows: [
+          [
+            "DISM標準クリーンアップ",
+            "Dism /Online /Cleanup-Image /StartComponentCleanup",
+            "可能（保持）",
+            "完全に安全",
+            "置き換えられた旧コンポーネントを削除（2〜8 GB解放）",
+          ],
+          [
+            "DISM ResetBase",
+            "... /StartComponentCleanup /ResetBase",
+            "不可（無効化）",
+            "注意して実行",
+            "更新を完全コミットし空き容量を最大化",
+          ],
+          [
+            "Windowsディスククリーンアップ",
+            "cleanmgr.exe（システムファイルのクリーンアップ）",
+            "可能（保持）",
+            "完全に安全",
+            "標準GUIを通じて更新キャッシュを安全にパージ",
+          ],
+          [
+            "手動削除",
+            "C:\\Windows\\WinSxSの直接削除",
+            "不可（致命的破損）",
+            "厳禁",
+            "OS起動不能、SFCおよびDISMコマンドの破損を招く",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "WinSxSフォルダーを手動で削除できますか？",
+          answer:
+            "いいえ、絶対に手動で削除しないでください。Windows Updateが機能しなくなり、システム依存関係が破壊され、最悪の場合Windowsが起動不能になります。",
+        },
+        {
+          question:
+            "なぜエクスプローラーでWinSxSが15GB以上と大きく表示されるのですか？",
+          answer:
+            "エクスプローラーはNTFSハードリンクと実ファイルを区別できないため、同じ物理ディスク領域を複数回重複してカウントしてしまうためです。",
+        },
+        {
+          question: "DISMの /ResetBase パラメーターは何をしますか？",
+          answer:
+            "インストール済みの更新プログラムを完全に確定し、以前のバージョンのロールバックファイルを破棄します。空き容量を最大化できますが、過去の更新プログラムをアンインストールできなくなります。",
+        },
+        {
+          question: "StartComponentCleanupにはどのくらい時間がかかりますか？",
+          answer:
+            "CPUの処理性能やドライブ速度（SSDかHDDか）によりますが、通常は5分から20分程度で完了します。",
         },
       ],
       verdict: [

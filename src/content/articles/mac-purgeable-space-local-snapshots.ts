@@ -5,11 +5,11 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
-      title:
-        "Mac'te Temizlenebilir (Purgeable) Alan Nedir ve Nasıl Geri Alınır?",
+      title: "Mac'te Temizlenebilir (Purgeable) Alan Nedir ve Silinir?",
       metaDescription:
         'Mac\'inizde "X GB temizlenebilir" yazıyorsa sebebi genellikle Time Machine yerel anlık görüntüleridir. tmutil ile listeleme, silme ve inceltme adımları.',
       subtitle: "Time Machine Yerel Anlık Görüntüleri ve Kaybolan Gigabaytlar",
@@ -139,6 +139,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Bu kategori uygulama önbellekleri, günlük dosyaları, iOS aygıt yedekleri, Mail ekleri, indirilmiş yazılım güncellemeleri ve yerel anlık görüntüleri birlikte sayar. Yazılım geliştiriyorsanız Xcode türev verileri ve simülatör imajları da eklenir. Tek bir kalem değil, onlarca küçük kaynağın toplamıdır — bu yüzden hangisinin şiştiğini görmek için klasör bazlı bir analiz gerekir.",
         },
       ],
+      dataTable: {
+        caption:
+          "macOS Temizlenebilir (Purgeable) Alan Bileşenleri ve Geri Alma Yolları",
+        columns: [
+          "Temizlenebilir Bileşen",
+          "Konum / Tür",
+          "Tipik Boyut",
+          "macOS Ne Zaman Temizler",
+          "Manuel Geri Alma Komutu",
+        ],
+        rows: [
+          [
+            "Time Machine Yerel Anlık Görüntüleri",
+            "APFS birim gizli anlık görüntüsü",
+            "10 - 50 GB",
+            "Boş alan kritik eşiğin altına inince",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "APFS Sistem Önbelleği & Takas",
+            "Sistem önbellek katmanları",
+            "5 - 20 GB",
+            "Yeni uygulamalar disk alanı istedikçe",
+            "Mac'i yeniden başlatın veya Disk Mop Önbellek Temizleyici kullanın",
+          ],
+          [
+            "Optimize iCloud Fotoğraf & Müzik",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Yerel depolama alanı daralınca",
+            "Apple ID ayarlarından 'Mac Depolamasını Optimize Et'i açın",
+          ],
+          [
+            "Xcode & Simulator Önbellekleri",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "macOS tarafından asla otomatik silinmez",
+            "DerivedData klasörünü silin veya Disk Mop ile temizleyin",
+          ],
+        ],
+      },
       verdict: [
         "Mac'teki temizlenebilir alan bir hata değil, APFS'in tasarım tercihidir: macOS gerektiğinde silebileceği veriyi boş alan gibi sayar. Sorun yalnızca bu mekanizmanın kritik ana kadar beklemesidir.",
         "Alanı hemen geri almak istiyorsanız yol tmutil'den geçer: listlocalsnapshots ile görün, thinlocalsnapshots ile hedeflediğiniz kadarını serbest bırakın. Bu işlem harici Time Machine yedeğinizi etkilemez, yalnızca son saatlere hızlı dönüşü kaybettirir.",
@@ -276,6 +317,46 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "That category combines application caches, log files, iOS device backups, Mail attachments, downloaded software updates and local snapshots. If you develop software, Xcode derived data and simulator images are added on top. It is not one item but the sum of dozens of small sources, which is why a folder-level analysis is needed to find the one that is bloated.",
         },
       ],
+      dataTable: {
+        caption: "macOS Purgeable space components and reclamation methods",
+        columns: [
+          "Purgeable Component",
+          "Location / Type",
+          "Typical Size",
+          "When macOS Purges It",
+          "Manual Reclaim Method",
+        ],
+        rows: [
+          [
+            "Time Machine Local Snapshots",
+            "APFS volume hidden snapshot",
+            "10 - 50 GB",
+            "When disk free space drops below threshold",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "APFS System Purgeable Cache",
+            "System cache & swap layers",
+            "5 - 20 GB",
+            "Automatically cleared when apps demand RAM/disk",
+            "Restart Mac or use Disk Mop Cache Cleaner",
+          ],
+          [
+            "Optimized iCloud Photos / Music",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Evicted when local space is required",
+            "Turn on Optimize Mac Storage in Apple ID settings",
+          ],
+          [
+            "Xcode & Simulator Caches",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "Never purged automatically by macOS",
+            "Clear DerivedData and Archives in Xcode or Disk Mop",
+          ],
+        ],
+      },
       verdict: [
         "Purgeable space on a Mac is a design decision in APFS rather than a fault: macOS counts data it could delete as available. The only real problem is that the mechanism waits until the critical moment to act.",
         "If you want the space back now, the route is tmutil: list snapshots with listlocalsnapshots and release what you need with thinlocalsnapshots. Doing so does not touch your external Time Machine backup; it only costs you fast rollback over the last few hours.",
@@ -416,6 +497,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Diese Kategorie fasst Programm-Caches, Protokolldateien, iOS-Gerätesicherungen, Mail-Anhänge, heruntergeladene Softwareupdates und lokale Schnappschüsse zusammen. Wer Software entwickelt, hat zusätzlich Xcode-Zwischendaten und Simulator-Images. Es ist kein einzelner Posten, sondern die Summe vieler kleiner Quellen — deshalb braucht es eine ordnerbasierte Analyse, um den aufgeblähten Anteil zu finden.",
         },
       ],
+      dataTable: {
+        caption:
+          "Komponenten des löschbaren macOS-Speichers und Rückgewinnungsmethoden",
+        columns: [
+          "Löschbare Komponente",
+          "Speicherort / Typ",
+          "Typische Größe",
+          "Wann macOS sie freigibt",
+          "Manuelle Bereinigungsmethode",
+        ],
+        rows: [
+          [
+            "Time Machine Lokale Schnappschüsse",
+            "Ausgeblendeter APFS-Schnappschuss",
+            "10 - 50 GB",
+            "Wenn freier Speicher unter Grenzwert fällt",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "APFS System-Caches & Auslagerung",
+            "System-Cache-Ebenen",
+            "5 - 20 GB",
+            "Automatisch, wenn Apps Speicher anfordern",
+            "Mac neu starten oder Disk Mop Cache Cleaner nutzen",
+          ],
+          [
+            "Optimierte iCloud-Fotos & Musik",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Wird ausgelagert, wenn Platz nötig ist",
+            "'Mac-Speicher optimieren' in den Apple-ID-Einstellungen aktivieren",
+          ],
+          [
+            "Xcode- & Simulator-Caches",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "Wird von macOS niemals automatisch gelöscht",
+            "DerivedData und Archive in Xcode oder Disk Mop leeren",
+          ],
+        ],
+      },
       verdict: [
         "Bereinigbarer Speicher auf dem Mac ist kein Fehler, sondern eine Designentscheidung von APFS: macOS zählt Daten, die es löschen könnte, als verfügbar. Problematisch ist allein, dass der Mechanismus bis zum kritischen Moment wartet.",
         "Wer den Platz sofort zurückwill, geht über tmutil: mit listlocalsnapshots ansehen, mit thinlocalsnapshots den benötigten Anteil freigeben. Ihre externe Time-Machine-Sicherung bleibt davon unberührt, es entfällt lediglich die schnelle Rückkehr über die letzten Stunden.",
@@ -559,6 +681,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Cette catégorie additionne les caches d'applications, les fichiers journaux, les sauvegardes d'appareils iOS, les pièces jointes de Mail, les mises à jour logicielles téléchargées et les instantanés locaux. Si vous développez, les données dérivées de Xcode et les images de simulateur s'y ajoutent. Ce n'est pas un poste unique mais la somme de dizaines de petites sources : d'où l'intérêt d'une analyse dossier par dossier pour trouver celle qui a enflé.",
         },
       ],
+      dataTable: {
+        caption:
+          "Composants de l'espace purgeable sur macOS et méthodes de récupération",
+        columns: [
+          "Composant purgeable",
+          "Emplacement / Type",
+          "Taille typique",
+          "Quand macOS le purge",
+          "Méthode de purge manuelle",
+        ],
+        rows: [
+          [
+            "Instantanés locaux Time Machine",
+            "Instantané masqué du volume APFS",
+            "10 - 50 GB",
+            "Dès que l'espace libre passe sous le seuil",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "Caches système purgeables APFS",
+            "Couches de cache et swap système",
+            "5 - 20 GB",
+            "Automatiquement quand une app réclame du disque",
+            "Redémarrer le Mac ou utiliser Disk Mop Cache Cleaner",
+          ],
+          [
+            "Photos & Musique iCloud optimisées",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Expulsé dès que de l'espace est requis",
+            "Activer 'Optimiser le stockage du Mac' dans Réglages",
+          ],
+          [
+            "Caches Xcode et simulateurs",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "Jamais purgé automatiquement par macOS",
+            "Nettoyer DerivedData et Archives dans Xcode ou Disk Mop",
+          ],
+        ],
+      },
       verdict: [
         "L'espace purgeable d'un Mac n'est pas un défaut mais un choix de conception d'APFS : macOS compte comme disponibles des données qu'il pourrait supprimer. Le seul vrai problème, c'est que le mécanisme attend le moment critique pour agir.",
         "Si vous voulez récupérer la place tout de suite, la route passe par tmutil : listez les instantanés avec listlocalsnapshots, puis libérez ce qu'il vous faut avec thinlocalsnapshots. L'opération ne touche pas à votre sauvegarde Time Machine externe, elle vous coûte seulement le retour rapide sur les dernières heures.",
@@ -699,6 +862,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Esa categoría suma cachés de aplicaciones, archivos de registro, copias de dispositivos iOS, adjuntos de Mail, actualizaciones de software descargadas e instantáneas locales. Si desarrollas software, se añaden los datos derivados de Xcode y las imágenes del simulador. No es un único elemento, sino la suma de decenas de fuentes pequeñas: por eso hace falta un análisis por carpetas para dar con la que se ha hinchado.",
         },
       ],
+      dataTable: {
+        caption:
+          "Componentes del espacio purgabile en macOS y métodos de liberación",
+        columns: [
+          "Componente purgable",
+          "Ubicación / Tipo",
+          "Tamaño típico",
+          "Cuándo lo purga macOS",
+          "Comando de liberación manual",
+        ],
+        rows: [
+          [
+            "Instantáneas locales de Time Machine",
+            "Instantánea oculta del volumen APFS",
+            "10 - 50 GB",
+            "Cuando el espacio libre cae bajo el umbral",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "Caché purgable del sistema APFS",
+            "Capas de caché y swap del sistema",
+            "5 - 20 GB",
+            "Automáticamente cuando una app requiere espacio",
+            "Reiniciar el Mac o usar Disk Mop Cache Cleaner",
+          ],
+          [
+            "Fotos y música optimizadas en iCloud",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Se desaloja cuando se requiere espacio",
+            "Activar 'Optimizar almacenamiento del Mac' en Ajustes",
+          ],
+          [
+            "Cachés de Xcode y simuladores",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "macOS nunca lo purga automáticamente",
+            "Borrar DerivedData y archivos en Xcode o Disk Mop",
+          ],
+        ],
+      },
       verdict: [
         "El espacio purgable de un Mac no es un fallo, sino una decisión de diseño de APFS: macOS cuenta como disponibles unos datos que podría borrar. El único problema real es que el mecanismo espera al momento crítico para actuar.",
         "Si quieres el espacio ya, el camino pasa por tmutil: mira las instantáneas con listlocalsnapshots y libera lo que necesites con thinlocalsnapshots. Hacerlo no toca tu copia externa de Time Machine; solo te cuesta la vuelta atrás rápida de las últimas horas.",
@@ -838,6 +1042,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Quella categoria somma cache delle applicazioni, file di log, backup di dispositivi iOS, allegati di Mail, aggiornamenti software scaricati e snapshot locali. Se sviluppi software si aggiungono i dati derivati di Xcode e le immagini del simulatore. Non è una voce sola, ma la somma di decine di piccole fonti: per questo serve un'analisi cartella per cartella per capire quale si è gonfiata.",
         },
       ],
+      dataTable: {
+        caption:
+          "Componenti dello spazio eliminabile su macOS e metodi di recupero",
+        columns: [
+          "Componente eliminabile",
+          "Posizione / Tipo",
+          "Dimensione tipica",
+          "Quando macOS lo libera",
+          "Metodo di recupero manuale",
+        ],
+        rows: [
+          [
+            "Istantanee locali di Time Machine",
+            "Snapshot nascosto del volume APFS",
+            "10 - 50 GB",
+            "Quando lo spazio libero scende sotto la soglia",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "Cache eliminabile di sistema APFS",
+            "Cache di sistema e livelli di swap",
+            "5 - 20 GB",
+            "Automaticamente quando le app chiedono spazio",
+            "Riavvia il Mac o usa Disk Mop Cache Cleaner",
+          ],
+          [
+            "Foto e musica ottimizzate su iCloud",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Espulso quando serve spazio su disco",
+            "Attiva 'Ottimizza spazio Mac' nelle impostazioni",
+          ],
+          [
+            "Cache di Xcode e dei simulatori",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "Mai eliminato automaticamente da macOS",
+            "Svuota DerivedData e archivi in Xcode o Disk Mop",
+          ],
+        ],
+      },
       verdict: [
         "Lo spazio eliminabile sul Mac non è un difetto ma una scelta di progetto di APFS: macOS conteggia come disponibili dati che potrebbe cancellare. L'unico vero problema è che il meccanismo aspetta il momento critico per agire.",
         "Se vuoi lo spazio subito, la strada passa da tmutil: guarda gli snapshot con listlocalsnapshots e libera quanto ti serve con thinlocalsnapshots. L'operazione non tocca il backup esterno di Time Machine, ti costa soltanto il ritorno rapido alle ultime ore.",
@@ -977,6 +1222,47 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "Essa categoria soma caches de aplicativos, arquivos de log, backups de dispositivos iOS, anexos do Mail, atualizações de software baixadas e instantâneos locais. Se você desenvolve software, entram ainda os dados derivados do Xcode e as imagens de simulador. Não é um item só, mas a soma de dezenas de fontes pequenas — por isso é preciso uma análise pasta a pasta para achar a que inchou.",
         },
       ],
+      dataTable: {
+        caption:
+          "Componentes do espaço purgável no macOS e formas de libertação",
+        columns: [
+          "Componente purgável",
+          "Localização / Tipo",
+          "Tamanho típico",
+          "Quando o macOS o purga",
+          "Comando de recuperação manual",
+        ],
+        rows: [
+          [
+            "Instantâneos locais do Time Machine",
+            "Instantâneo oculto do volume APFS",
+            "10 - 50 GB",
+            "Quando o espaço livre cai abaixo do limite",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "Cache purgável do sistema APFS",
+            "Camadas de cache e swap do sistema",
+            "5 - 20 GB",
+            "Automaticamente quando as apps pedem espaço",
+            "Reiniciar o Mac ou usar o Disk Mop Cache Cleaner",
+          ],
+          [
+            "Fotografias e música do iCloud",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "Despejado quando o espaço é necessário",
+            "Ativar 'Otimizar Armazenamento do Mac' nas Definições",
+          ],
+          [
+            "Caches do Xcode e simuladores",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "Nunca é limpo automaticamente pelo macOS",
+            "Apagar DerivedData e ficheiros no Xcode ou Disk Mop",
+          ],
+        ],
+      },
       verdict: [
         "O espaço liberável no Mac não é um defeito, e sim uma decisão de projeto do APFS: o macOS conta como disponíveis dados que poderia apagar. O único problema real é que o mecanismo espera o momento crítico para agir.",
         "Se você quer o espaço agora, o caminho é o tmutil: veja os instantâneos com listlocalsnapshots e libere o que precisar com thinlocalsnapshots. Isso não encosta no seu backup externo do Time Machine; custa apenas a volta rápida às últimas horas.",
@@ -1117,6 +1403,46 @@ export const macPurgeableSpaceLocalSnapshots: Article = {
             "このカテゴリーは、アプリケーションのキャッシュ、ログファイル、iOSデバイスのバックアップ、Mailの添付ファイル、ダウンロード済みのソフトウェアアップデート、そしてローカルスナップショットをまとめて数えています。ソフトウェアを開発しているなら、Xcodeの派生データやシミュレータのイメージも加わります。単一の項目ではなく、数十の小さな要因の合計です。そのため、どれが肥大化しているのかを知るにはフォルダー単位の分析が必要になります。",
         },
       ],
+      dataTable: {
+        caption: "macOS「削除可能」領域の構成要素と安全な回収コマンド一覧",
+        columns: [
+          "削除可能コンポーネント",
+          "保存場所 / 種類",
+          "典型的なサイズ",
+          "macOSが自動消去するタイミング",
+          "手動での即時解放手順",
+        ],
+        rows: [
+          [
+            "Time Machine ローカルスナップショット",
+            "APFSボリュームの非表示スナップショット",
+            "10 - 50 GB",
+            "ディスクの空き容量が一定のしきい値を下回った時",
+            "tmutil listlocalsnapshots / && tmutil deletelocalsnapshots",
+          ],
+          [
+            "APFSシステム削除可能キャッシュ",
+            "システムキャッシュおよびスワップ層",
+            "5 - 20 GB",
+            "他のアプリがメモリやディスク領域を要求した時",
+            "Macを再起動するか、Disk Mopのキャッシュ クリーナーを実行",
+          ],
+          [
+            "最適化されたiCloud写真・音楽",
+            "~/Pictures/Photos Library",
+            "10 - 40 GB",
+            "ローカルの空き容量が必要になった時に自動退避",
+            "Apple ID設定で「Macストレージを最適化」を有効化",
+          ],
+          [
+            "Xcodeおよびシミュレーターキャッシュ",
+            "~/Library/Developer/Xcode/DerivedData",
+            "5 - 30 GB",
+            "macOSによって自動消去されることは絶対にない",
+            "XcodeまたはDisk MopからDerivedDataとアーカイブを手動削除",
+          ],
+        ],
+      },
       verdict: [
         "Macの「削除可能」な領域は不具合ではなく、APFSの設計上の判断です。macOSは、必要になれば削除できるデータを空き容量として数えています。本当に困るのは、この仕組みがぎりぎりの状態になるまで動かない点だけです。",
         "いますぐ容量を取り戻したいなら、道筋はtmutilです。listlocalsnapshotsで一覧を確認し、thinlocalsnapshotsで必要な分を解放してください。この操作は外付けディスクのTime Machineバックアップには影響せず、代償は直近数時間へすばやく戻れる機能だけです。",

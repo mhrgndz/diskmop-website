@@ -5,7 +5,7 @@ export const fix100DiskUsageWindows: Article = {
   type: "guide",
   category: "Performance",
   date: "2026-06-10",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -361,6 +361,13 @@ export const fix100DiskUsageWindows: Article = {
         "Zeigt der Task-Manager in Windows 10 oder 11 dauerhaft 100% Datenträgerauslastung an, sind die häufigsten Ursachen Hintergrunddienste wie SysMain und die Windows-Suchindizierung, zu viele Autostart-Programme, ein fast volles Systemlaufwerk, Malware oder eine defekte Festplatte. Zur Behebung identifizieren Sie zuerst den aktivsten Prozess im Task-Manager, deaktivieren dann SysMain und die Suchindizierung über services.msc, reduzieren die Autostart-Liste und bereinigen zwischengespeicherte Dateien. In den meisten Fällen normalisiert sich die Auslastung wenige Minuten nach diesen Änderungen.",
         "Dauerhafte 100% Datenträgerauslastung lässt einen PC defekt wirken: Jeder Klick hängt, Programme öffnen sich quälend langsam und die Lüfter laufen ununterbrochen. Auf mechanischen Festplatten (HDDs) ist das Problem besonders gravierend, da sie viele gleichzeitige Lese- und Schreibanfragen nicht bewältigen können. In dieser Anleitung zeigen wir jeden Schritt zunächst manuell mit Windows-Bordmitteln und danach, wie Disk Mop dieselben Korrekturen per Schalter anwendet.",
       ],
+      keyTakeaways: [
+        "Eine konstante Datenträgerauslastung von 100 % im Task-Manager bedeutet, dass die I/O-Warteschlange gesättigt ist und Windows eingehende Anfragen nicht mehr verarbeiten kann.",
+        "Das Deaktivieren von SysMain (früher Superfetch) und der Windows Search-Indizierung behebt über 60 % der dauerhaften Festplattenauslastungsspitzen auf HDDs und SATA-SSDs.",
+        "Beschädigte Windows Update-Caches und Hintergrund-Malware belasten das Laufwerk häufig maximal, ohne nennenswerte CPU-Ressourcen zu verbrauchen.",
+        "Sinkt der freie Speicher auf Laufwerk C: unter 10 %, fragmentiert die Auslagerungsdatei massiv, was die Festplatte bei 100 % Aktivität blockiert.",
+        "DiskMop vereint Diensteverwaltung, Autostart-Optimierung und SMART-Zustandsüberwachung, um Speicherengpässe präzise zu diagnostizieren.",
+      ],
       sections: [
         {
           title: "Was 100% Datenträgerauslastung im Task-Manager bedeutet",
@@ -418,6 +425,101 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So beheben Sie 100 % Datenträgerauslastung unter Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Verursacher im Task-Manager ermitteln",
+            text: "Drücken Sie Strg+Umschalt+Esc, sortieren Sie nach der Spalte „Datenträger“ und lokalisieren Sie die Prozesse mit dem höchsten Schreib-/Lesezugriff.",
+          },
+          {
+            name: "SysMain-Dienst deaktivieren",
+            text: "Drücken Sie Win+R, tippen Sie „services.msc“ ein, suchen Sie SysMain, wählen Sie Eigenschaften, stellen Sie den Starttyp auf „Deaktiviert“ und klicken Sie auf „Beenden“.",
+          },
+          {
+            name: "Windows Search-Indizierung einschränken",
+            text: "Suchen Sie Windows Search in services.msc und stellen Sie den Starttyp auf „Manuell“ oder „Deaktiviert“.",
+          },
+          {
+            name: "Dateisystem-Reparatur ausführen",
+            text: "Öffnen Sie eine Eingabeaufforderung mit Administratorrechten und führen Sie „sfc /scannow“ sowie anschließend „chkdsk C: /f“ aus, um beschädigte Sektoren zu reparieren.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Häufigste Ursachen für 100 % Datenträgerauslastung unter Windows und bewährte Lösungen",
+        columns: [
+          "Verursachender Prozess",
+          "Zugrunde liegender Mechanismus",
+          "Anfällige Hardware",
+          "Schnelle Sofortmaßnahme",
+          "Dauerhafte Lösung",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Aggressive RAM-Vorablademechanismen",
+            "HDDs & Günstige SSDs",
+            "SysMain in services.msc stoppen",
+            "Starttyp auf „Deaktiviert“ setzen",
+          ],
+          [
+            "Windows Search",
+            "Kontinuierliche Datei-Indizierung im Hintergrund",
+            "Laufwerke mit sehr vielen Einzeldateien",
+            "Indizierte Orte reduzieren",
+            "Dienst auf „Manuell“ umstellen",
+          ],
+          [
+            "Hängendes Windows Update",
+            "Fehlerhafte Entpackschleife beim Download",
+            "Alle Systeme",
+            "Ordner SoftwareDistribution leeren",
+            "DISM /RestoreHealth ausführen",
+          ],
+          [
+            "Knapper freier Speicher (<10%)",
+            "Starke Fragmentierung der Auslagerungsdatei",
+            "Systemlaufwerk C:",
+            "Temporäre und Cache-Dateien löschen",
+            "Mit DiskMop mindestens 20 % freien Speicher schaffen",
+          ],
+          [
+            "Defektes Laufwerk / Schlechte Sektoren",
+            "Hardware-Wiederholungsversuche blockieren I/O",
+            "Ältere Festplatten und SSDs",
+            "„chkdsk C: /f /r“ ausführen",
+            "SMART-Zustand prüfen und Laufwerk austauschen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Ist es sicher, den SysMain-Dienst zu deaktivieren?",
+          answer:
+            "Ja, absolut. Auf modernen PCs mit SSD-Laufwerken bringt SysMain kaum messbare Vorteile. Das Deaktivieren beeinträchtigt die Systemstabilität in keiner Weise.",
+        },
+        {
+          question:
+            "Deutet eine Datenträgerauslastung von 100 % auf einen Festplattendefekt hin?",
+          answer:
+            "Wenn die Auslastung bei sehr geringer Datenübertragung (z. B. 0,1 MB/s) auf 100 % verharrt und die Antwortzeiten über 1.000 ms steigen, hat das Laufwerk oft fehlerhafte Sektoren oder Hardwareschäden.",
+        },
+        {
+          question:
+            "Kann chkdsk das Problem der 100 % Festplattenauslastung beheben?",
+          answer:
+            "Wird der Engpass durch NTFS-Dateisystemfehler oder anstehende Sektoren-Neuzuweisungen hervorgerufen, stellt der Befehl „chkdsk C: /f /r“ oft die gewohnte Geschwindigkeit wieder her.",
+        },
+        {
+          question:
+            "Sollte ich den virtuellen Arbeitsspeicher deaktivieren, um die Auslastung zu senken?",
+          answer:
+            "Nein. Das Deaktivieren der Auslagerungsdatei (pagefile) führt zu Programmabstürzen und Instabilität. Die saubere Lösung besteht darin, ausreichend freien Speicherplatz auf C: zu schaffen.",
+        },
+      ],
       verdict: [
         "100% Datenträgerauslastung in Windows 10 und 11 lässt sich fast immer beheben. Finden Sie zuerst den verantwortlichen Prozess im Task-Manager und Ressourcenmonitor, deaktivieren Sie dann SysMain und die Windows-Suchindizierung, reduzieren Sie die Autostart-Programme, leeren Sie Caches, geben Sie Speicherplatz frei und schließen Sie zuletzt Malware und Hardwaredefekte aus. Jeder dieser Schritte funktioniert kostenlos mit Windows-Bordmitteln.",
         "Disk Mop richtet sich an alle, die dieselben Korrekturen ohne services.msc und Eingabeaufforderung anwenden möchten. Dienst-Manager, Autostart-Manager, Ein-Klick-Bereinigung, Festplattenanalyse und geplante Bereinigung stecken in einer einzigen App. Sie läuft unter Windows und macOS, kostet einmalig 19,90 $ als Lifetime-Lizenz, und die kostenlose Version lässt sich vor dem Kauf ausprobieren.",
@@ -433,6 +535,13 @@ export const fix100DiskUsageWindows: Article = {
       intro: [
         "Lorsque le Gestionnaire des tâches affiche votre disque à 100 % sous Windows 10 ou 11, les coupables habituels sont les services d'arrière-plan comme SysMain et l'indexation de Windows Search, un trop grand nombre de programmes au démarrage, un disque système presque plein, un logiciel malveillant ou un disque en fin de vie. Pour corriger une utilisation du disque à 100 %, repérez d'abord le processus le plus gourmand dans le Gestionnaire des tâches, désactivez SysMain et l'indexation de la recherche dans services.msc, allégez votre liste de démarrage, puis videz les fichiers mis en cache. Dans la plupart des cas, l'utilisation du disque redescend à un niveau normal en quelques minutes.",
         "Une utilisation du disque bloquée à 100 % donne l'impression que le PC est cassé : chaque clic se fige, les programmes mettent une éternité à s'ouvrir et les ventilateurs ne s'arrêtent jamais. Le problème est bien plus marqué sur les disques durs mécaniques (HDD), tout simplement incapables de traiter des dizaines de requêtes de lecture et d'écriture simultanées. Dans ce guide, nous détaillons chaque correctif d'abord manuellement avec les outils intégrés de Windows, puis nous montrons comment Disk Mop applique les mêmes réglages avec de simples interrupteurs.",
+      ],
+      keyTakeaways: [
+        "Une utilisation du disque à 100 % constante dans le Gestionnaire des tâches signifie que la file d'attente d'E/S est saturée et que Windows n'arrive plus à traiter les requêtes.",
+        "Désactiver SysMain (anciennement Superfetch) et l'indexation Windows Search résout plus de 60 % des pics d'utilisation persistants sur HDD et SSD SATA.",
+        "Des caches de mise à jour Windows corrompus ou des logiciels malveillants saturent fréquemment le disque sans consommer de processeur visible.",
+        "Lorsque l'espace libre du disque C: passe sous les 10 %, la pagination de la mémoire virtuelle se fragmente lourdement et verrouille l'activité du disque à 100 %.",
+        "DiskMop combine la gestion des services, l'optimisation du démarrage et la surveillance SMART pour diagnostiquer précisément les goulots d'étranglement.",
       ],
       sections: [
         {
@@ -492,6 +601,101 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment réparer une utilisation disque à 100 % sur Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identifier le processus coupable dans le Gestionnaire des tâches",
+            text: "Appuyez sur Ctrl+Maj+Échap, triez par la colonne Disque et localisez les processus qui génèrent le plus d'écritures et de lectures.",
+          },
+          {
+            name: "Désactiver le service SysMain",
+            text: "Appuyez sur Win+R, tapez « services.msc », trouvez SysMain, ouvrez Propriétés, mettez le Type de démarrage sur « Désactivé » et cliquez sur « Arrêter ».",
+          },
+          {
+            name: "Limiter l'indexation Windows Search",
+            text: "Trouvez Windows Search dans services.msc et passez son type de démarrage en « Manuel » ou « Désactivé ».",
+          },
+          {
+            name: "Lancer les réparations du système de fichiers",
+            text: "Ouvrez une Invite de commandes en mode administrateur et exécutez « sfc /scannow » puis « chkdsk C: /f » pour réparer les secteurs corrompus.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principales causes d'utilisation disque à 100 % sous Windows et solutions éprouvées",
+        columns: [
+          "Processus en cause",
+          "Mécanisme sous-jacent",
+          "Matériel vulnérable",
+          "Solution immédiate",
+          "Remède permanent",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Préchargement agressif de la RAM",
+            "Disques durs & SSD d'entrée de gamme",
+            "Arrêter SysMain dans services.msc",
+            "Régler le démarrage sur « Désactivé »",
+          ],
+          [
+            "Windows Search",
+            "Indexation permanente de fichiers en arrière-plan",
+            "Disques avec des millions de fichiers",
+            "Restreindre les emplacements indexés",
+            "Passer le service en démarrage « Manuel »",
+          ],
+          [
+            "Windows Update bloqué",
+            "Boucle de décompression corrompue",
+            "Tous les systèmes",
+            "Vider le dossier SoftwareDistribution",
+            "Lancer la commande DISM /RestoreHealth",
+          ],
+          [
+            "Espace disque insuffisant (<10%)",
+            "Forte fragmentation de la mémoire virtuelle",
+            "Disque système C:",
+            "Supprimer fichiers temporaires et caches",
+            "Libérer au moins 20 % d'espace avec DiskMop",
+          ],
+          [
+            "Disque défaillant / Secteurs défectueux",
+            "Blocage des E/S par tentatives de relecture",
+            "Vieux disques durs et vieux SSD",
+            "Exécuter « chkdsk C: /f /r »",
+            "Contrôler la santé SMART et remplacer le disque",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Est-il prudent de désactiver le service SysMain ?",
+          answer:
+            "Oui, tout à fait. Sur les ordinateurs équipés de SSD modernes, SysMain n'apporte presque aucun gain et le désactiver n'affecte en rien la stabilité du système.",
+        },
+        {
+          question:
+            "Une utilisation du disque à 100 % signifie-t-elle que le disque dur est mourant ?",
+          answer:
+            "Si l'utilisation grimpe à 100 % avec un débit minuscule (ex. 0,1 Mo/s) et des temps de réponse supérieurs à 1 000 ms, votre disque présente probablement des secteurs défectueux.",
+        },
+        {
+          question:
+            "La commande chkdsk peut-elle corriger l'utilisation du disque à 100 % ?",
+          answer:
+            "Si le problème vient d'erreurs de métadonnées du système de fichiers NTFS ou de réallocations de secteurs, exécuter « chkdsk C: /f /r » rétablit souvent les performances normales.",
+        },
+        {
+          question:
+            "Faut-il désactiver la mémoire virtuelle pour réduire l'utilisation du disque ?",
+          answer:
+            "Non. Supprimer le fichier d'échange (pagefile) entraîne des instabilités et des plantages. La bonne démarche est de libérer de l'espace sur le disque C:.",
+        },
+      ],
       verdict: [
         "Une utilisation du disque à 100 % sous Windows 10 et 11 est presque toujours réparable. Commencez par identifier le processus fautif dans le Gestionnaire des tâches et le Moniteur de ressources, puis désactivez SysMain et l'indexation de Windows Search, allégez vos programmes au démarrage, videz les caches et libérez de l'espace disque, et écartez enfin les pistes du logiciel malveillant et du disque défaillant. Chacune de ces étapes peut être réalisée gratuitement avec les outils intégrés de Windows.",
         "Disk Mop s'adresse à ceux qui veulent les mêmes correctifs sans fouiller dans services.msc ni dans l'invite de commandes. Gestionnaire de services, gestionnaire de démarrage, accélération en un clic, analyse de disque et nettoyage planifié tiennent dans une seule application. Elle fonctionne sous Windows et macOS avec une licence à vie à 19,90 $ en paiement unique, et la version gratuite permet d'essayer avant de se décider.",
@@ -507,6 +711,13 @@ export const fix100DiskUsageWindows: Article = {
       intro: [
         "Cuando el Administrador de tareas muestra el disco al 100 % en Windows 10 u 11, las causas habituales son los servicios en segundo plano como SysMain y la indexación de Windows Search, demasiados programas de inicio, una unidad de sistema casi llena, el malware o un disco que está fallando. Para solucionar el uso de disco al 100 %, localiza primero el proceso más activo en el Administrador de tareas, desactiva SysMain y la indexación de la búsqueda desde services.msc, reduce la lista de inicio y elimina los archivos en caché. En la mayoría de los casos, el uso de disco vuelve a la normalidad pocos minutos después de aplicar estos cambios.",
         "Un uso de disco fijo al 100 % hace que el PC parezca estropeado: cada clic se queda colgado, los programas tardan una eternidad en abrirse y los ventiladores no paran nunca. El problema es mucho peor en los discos duros mecánicos (HDD), que sencillamente no pueden atender decenas de peticiones de lectura y escritura simultáneas. En esta guía repasamos cada solución primero de forma manual con las herramientas integradas de Windows y después mostramos cómo Disk Mop aplica esos mismos ajustes con simples interruptores.",
+      ],
+      keyTakeaways: [
+        "Un uso constante del disco al 100 % en el Administrador de tareas significa que la cola de E/S está saturada y Windows no puede procesar solicitudes.",
+        "Desactivar SysMain (antes Superfetch) y la indexación de Windows Search resuelve más del 60 % de los picos continuos de disco en discos duros mecánicos y SSD SATA.",
+        "Cachés de Windows Update corruptas o malware en segundo plano saturan con frecuencia el disco sin consumir un porcentaje notable de CPU.",
+        "Cuando el espacio libre en C: baja del 10 %, el archivo de intercambio de memoria virtual se fragmenta gravemente, bloqueando el disco al 100 % de uso.",
+        "DiskMop aúna gestión de servicios, optimización de inicio y monitorización de salud SMART para diagnosticar y solucionar cuellos de botella en la unidad.",
       ],
       sections: [
         {
@@ -566,6 +777,100 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo solucionar el 100 % de uso de disco en Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificar el proceso responsable en el Administrador de tareas",
+            text: "Pulsa Ctrl+Mayús+Esc, ordena por la columna Disco y localiza los programas con mayor tasa de lectura o escritura.",
+          },
+          {
+            name: "Deshabilitar el servicio SysMain",
+            text: "Pulsa Win+R, escribe 'services.msc', busca SysMain, haz clic derecho en Propiedades, elige 'Deshabilitado' en Tipo de inicio y pulsa 'Detener'.",
+          },
+          {
+            name: "Moderar la indexación de Windows Search",
+            text: "Busca Windows Search en services.msc y ajusta el tipo de inicio a 'Manual' o 'Deshabilitado'.",
+          },
+          {
+            name: "Ejecutar reparaciones del sistema de archivos",
+            text: "Abre un Símbolo del sistema como administrador y ejecuta 'sfc /scannow' seguido de 'chkdsk C: /f' para reparar sectores corruptos.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Causas comunes del 100 % de uso de disco en Windows y soluciones probadas",
+        columns: [
+          "Proceso causante",
+          "Mecanismo de origen",
+          "Hardware más vulnerable",
+          "Solución rápida",
+          "Solución definitiva",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Precarga agresiva de aplicaciones en RAM",
+            "Discos HDD y SSD económicos",
+            "Detener SysMain en services.msc",
+            "Configurar inicio como 'Deshabilitado'",
+          ],
+          [
+            "Windows Search",
+            "Indexación continua de archivos en segundo plano",
+            "Discos con gran cantidad de archivos",
+            "Reducir carpetas indexadas",
+            "Cambiar el servicio a inicio 'Manual'",
+          ],
+          [
+            "Windows Update atascado",
+            "Bucle de descompresión de parches corrupto",
+            "Cualquier configuración",
+            "Purgar la carpeta SoftwareDistribution",
+            "Ejecutar el comando DISM /RestoreHealth",
+          ],
+          [
+            "Poco espacio libre (<10%)",
+            "Fragmentación severa de la memoria de intercambio",
+            "Unidad de sistema C:",
+            "Eliminar temporales y cachés",
+            "Liberar al menos un 20 % de espacio con DiskMop",
+          ],
+          [
+            "Fallo de disco / Sectores dañados",
+            "Reintentos de hardware que colapsan el bus de E/S",
+            "Discos mecánicos y SSD antiguos",
+            "Ejecutar 'chkdsk C: /f /r'",
+            "Comprobar salud SMART y sustituir la unidad",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Es seguro deshabilitar el servicio SysMain?",
+          answer:
+            "Sí, totalmente. En equipos actuales con unidades SSD, SysMain no aporta mejoras perceptibles y deshabilitarlo no compromete en nada la estabilidad del sistema.",
+        },
+        {
+          question:
+            "¿Un uso de disco al 100 % significa que la unidad está dañada?",
+          answer:
+            "Si el uso alcanza el 100 % con transferencias mínimas (ej. 0,1 MB/s) y los tiempos de respuesta superan los 1.000 ms, es muy probable que el disco tenga sectores defectuosos.",
+        },
+        {
+          question: "¿Puede chkdsk solucionar el 100 % de uso de disco?",
+          answer:
+            "Si el fallo se debe a metadatos dañados del sistema de archivos NTFS o sectores pendientes de reubicación, ejecutar 'chkdsk C: /f /r' suele devolver el rendimiento normal.",
+        },
+        {
+          question:
+            "¿Debería deshabilitar la memoria virtual para reducir el uso del disco?",
+          answer:
+            "No. Desactivar el archivo de paginación (pagefile) provoca inestabilidad y cierres inesperados. Lo correcto es liberar espacio libre suficiente en la unidad C:.",
+        },
+      ],
       verdict: [
         "El uso de disco al 100 % en Windows 10 y 11 casi siempre tiene solución. Empieza por encontrar el proceso culpable en el Administrador de tareas y el Monitor de recursos; después desactiva SysMain y la indexación de Windows Search, reduce los programas de inicio, limpia las cachés y libera espacio en el disco, y por último descarta el malware y un fallo de hardware. Todos estos pasos se pueden hacer gratis con las herramientas integradas de Windows.",
         "Disk Mop está pensado para quienes quieren esas mismas soluciones sin rebuscar en services.msc ni en la línea de comandos. Su gestor de servicios, el gestor de inicio, la aceleración con un clic, el análisis de disco y la limpieza programada conviven en una única aplicación. Funciona en Windows y macOS con una licencia de por vida de 19,90 $ en un pago único, y la versión gratuita te deja probarla antes de decidir.",
@@ -581,6 +886,13 @@ export const fix100DiskUsageWindows: Article = {
       intro: [
         "Quando Gestione attività mostra il disco al 100 % su Windows 10 o 11, le cause tipiche sono i servizi in background come SysMain e l'indicizzazione di Windows Search, troppi programmi all'avvio, un'unità di sistema quasi piena, il malware o un disco che si sta guastando. Per risolvere l'utilizzo del disco al 100 %, individua prima il processo più attivo in Gestione attività, disattiva SysMain e l'indicizzazione della ricerca da services.msc, riduci l'elenco dei programmi all'avvio ed elimina i file nella cache. Nella maggior parte dei casi l'utilizzo del disco torna alla normalità pochi minuti dopo queste modifiche.",
         "Un utilizzo del disco fisso al 100 % fa sembrare il PC rotto: ogni clic si blocca, i programmi impiegano un'eternità ad aprirsi e le ventole non si fermano mai. Il problema è molto più marcato sui dischi rigidi meccanici (HDD), che non riescono proprio a servire decine di richieste di lettura e scrittura contemporanee. In questa guida vediamo ogni soluzione prima manualmente con gli strumenti integrati di Windows, poi mostriamo come Disk Mop applica le stesse correzioni con semplici interruttori.",
+      ],
+      keyTakeaways: [
+        "Un utilizzo fisso del disco al 100% in Gestione attività indica che la coda di I/O è satura e Windows non riesce a smaltire le richieste in sospeso.",
+        "Disattivare SysMain (precedentemente noto come Superfetch) e l'indicizzazione di Windows Search risolve oltre il 60% dei picchi anomali di disco su HDD e SSD SATA.",
+        "I file di cache corrotti di Windows Update o malware invisibili possono tenere il disco occupato al massimo senza consumare CPU evidente.",
+        "Se lo spazio libero sull'unità C: scende sotto il 10%, il file di swap della memoria virtuale si frammenta gravemente, bloccando l'attività al 100%.",
+        "DiskMop integra gestione dei servizi, ottimizzazione dell'avvio e controllo dello stato SMART per individuare con precisione la causa dei colli di bottiglia.",
       ],
       sections: [
         {
@@ -640,6 +952,101 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come risolvere il problema del disco al 100% su Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificare il processo anomalo in Gestione attività",
+            text: "Premi Ctrl+Maiusc+Esc, ordina per la colonna Disco e individua i processi che richiedono il maggior volume di lettura o scrittura.",
+          },
+          {
+            name: "Disattivare il servizio SysMain",
+            text: "Premi Win+R, digita «services.msc», cerca SysMain, fai clic con il tasto destro su Proprietà, imposta il Tipo di avvio su «Disabilitato» e clicca su «Interrompi».",
+          },
+          {
+            name: "Ridurre l'indicizzazione di Windows Search",
+            text: "Individua Windows Search in services.msc e imposta il tipo di avvio su «Manuale» o «Disabilitato».",
+          },
+          {
+            name: "Eseguire i controlli del file system",
+            text: "Apri il Prompt dei comandi come amministratore ed esegui «sfc /scannow» seguito da «chkdsk C: /f» per riparare eventuali settori corrotti.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Cause principali dell'utilizzo del disco al 100% su Windows e rimedi efficaci",
+        columns: [
+          "Processo responsabile",
+          "Meccanismo alla base",
+          "Hardware vulnerabile",
+          "Rimedio immediato",
+          "Soluzione definitiva",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Precaricamento aggressivo dei programmi in RAM",
+            "HDD e SSD economici",
+            "Arrestare SysMain in services.msc",
+            "Impostare il tipo di avvio su «Disabilitato»",
+          ],
+          [
+            "Windows Search",
+            "Indicizzazione continua in background",
+            "Dischi con milioni di piccoli file",
+            "Ridurre i percorsi indicizzati",
+            "Impostare il servizio su avvio «Manuale»",
+          ],
+          [
+            "Windows Update bloccato",
+            "Loop di decompressione dei file di download",
+            "Tutti i computer",
+            "Svuotare la cartella SoftwareDistribution",
+            "Eseguire il comando DISM /RestoreHealth",
+          ],
+          [
+            "Spazio libero esaurito (<10%)",
+            "Grave frammentazione del file di paging",
+            "Unità di sistema C:",
+            "Eliminare file temporanei e cache",
+            "Liberare almeno il 20% di spazio con DiskMop",
+          ],
+          [
+            "Guasto del disco / Settori danneggiati",
+            "Tentativi di lettura hardware che bloccano l'I/O",
+            "HDD e SSD con molti anni di utilizzo",
+            "Eseguire «chkdsk C: /f /r»",
+            "Controllare i parametri SMART e sostituire l'unità",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "È sicuro disattivare il servizio SysMain?",
+          answer:
+            "Sì, assolutamente. Con le moderne unità SSD, i vantaggi di SysMain sono pressoché impercettibili e la sua disattivazione non crea problemi di stabilità.",
+        },
+        {
+          question:
+            "L'utilizzo del disco al 100% indica che il disco rigido si sta rompendo?",
+          answer:
+            "Se l'attività è al 100% con velocità minime (es. 0,1 MB/s) e i tempi di risposta superano i 1.000 ms, l'unità potrebbe avere settori danneggiati o guasti fisici.",
+        },
+        {
+          question:
+            "Eseguire chkdsk può risolvere l'utilizzo del disco al 100%?",
+          answer:
+            "Se la causa risiede in errori dei metadati NTFS o settori in fase di riallocazione, il comando «chkdsk C: /f /r» ripristina frequentemente la normale velocità.",
+        },
+        {
+          question:
+            "Conviene disattivare la memoria virtuale per abbassare l'uso del disco?",
+          answer:
+            "No. Eliminare il file di paging crea instabilità e blocchi delle applicazioni. La soluzione corretta consiste nel liberare spazio sul disco C:.",
+        },
+      ],
       verdict: [
         "L'utilizzo del disco al 100 % su Windows 10 e 11 è quasi sempre risolvibile. Parti individuando il processo colpevole in Gestione attività e Monitoraggio risorse, poi disattiva SysMain e l'indicizzazione di Windows Search, riduci i programmi all'avvio, svuota le cache e libera spazio sull'unità e, infine, escludi malware e guasti hardware. Ognuno di questi passaggi si può eseguire gratuitamente con gli strumenti integrati di Windows.",
         "Disk Mop è pensato per chi vuole le stesse correzioni senza districarsi tra services.msc e prompt dei comandi. Gestore dei servizi, gestore dell'avvio, accelerazione con un clic, analisi del disco e pulizia pianificata vivono tutti in un'unica app. Funziona su Windows e macOS con licenza a vita a 19,90 $ in un pagamento unico, e la versione gratuita permette di provarla prima di decidere.",
@@ -655,6 +1062,13 @@ export const fix100DiskUsageWindows: Article = {
       intro: [
         "Quando o Gerenciador de Tarefas mostra o disco em 100 % no Windows 10 ou 11, as causas mais comuns são serviços em segundo plano como o SysMain e a indexação do Windows Search, programas demais na inicialização, uma unidade de sistema quase cheia, malware ou um disco com defeito. Para resolver o uso de disco em 100 %, identifique primeiro o processo mais ativo no Gerenciador de Tarefas, desative o SysMain e a indexação da pesquisa pelo services.msc, reduza a lista de inicialização e limpe os arquivos em cache. Na maioria dos casos, o uso de disco volta ao normal poucos minutos depois dessas mudanças.",
         "Um uso de disco travado em 100 % faz o PC parecer quebrado: cada clique trava, os programas demoram uma eternidade para abrir e as ventoinhas não param nunca. O problema é bem pior nos discos rígidos mecânicos (HDD), que simplesmente não dão conta de dezenas de solicitações simultâneas de leitura e gravação. Neste guia percorremos cada solução primeiro de forma manual, com as ferramentas nativas do Windows, e depois mostramos como o Disk Mop aplica as mesmas correções com botões simples de ligar e desligar.",
+      ],
+      keyTakeaways: [
+        "O indicador constante de 100% de uso de disco no Gerenciador de Tarefas significa que a fila de E/S está saturada e o Windows não consegue processar novas solicitações.",
+        "Desativar o serviço SysMain (antigo Superfetch) e a indexação do Windows Search resolve mais de 60% dos picos contínuos em HDDs e SSDs SATA.",
+        "Caches de atualização do Windows corrompidos e malwares em segundo plano costumam ocupar o disco totalmente sem consumir CPU perceptível.",
+        "Quando o espaço livre no disco C: fica abaixo de 10%, o arquivo de paginação da memória virtual se fragmenta e trava o disco em 100% de uso.",
+        "O DiskMop une gerenciamento de serviços, otimização de inicialização e monitoramento SMART para diagnosticar gargalos no disco com facilidade.",
       ],
       sections: [
         {
@@ -714,6 +1128,99 @@ export const fix100DiskUsageWindows: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como corrigir o uso de disco em 100% no Windows 10/11",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Identificar o vilão no Gerenciador de Tarefas",
+            text: "Pressione Ctrl+Shift+Esc, ordene pela coluna Disco e localize os processos com maior consumo de leitura ou gravação.",
+          },
+          {
+            name: "Desativar o serviço SysMain",
+            text: "Pressione Win+R, digite 'services.msc', localize o SysMain, clique com o botão direito em Propriedades, mude o Tipo de inicialização para 'Desativado' e clique em 'Parar'.",
+          },
+          {
+            name: "Reduzir a indexação do Windows Search",
+            text: "Localize o Windows Search em services.msc e configure o Tipo de inicialização como 'Manual' ou 'Desativado'.",
+          },
+          {
+            name: "Executar reparos no sistema de arquivos",
+            text: "Abra o Prompt de Comando como administrador e rode 'sfc /scannow' seguido por 'chkdsk C: /f' para reparar setores e arquivos corrompidos.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principais causas de 100% de uso de disco no Windows e soluções eficazes",
+        columns: [
+          "Processo causador",
+          "Mecanismo de ação",
+          "Hardware vulnerável",
+          "Solução rápida",
+          "Solução definitiva",
+        ],
+        rows: [
+          [
+            "SysMain (Superfetch)",
+            "Pré-carregamento agressivo de aplicativos na RAM",
+            "HDDs e SSDs de entrada",
+            "Parar SysMain no services.msc",
+            "Definir inicialização como 'Desativado'",
+          ],
+          [
+            "Windows Search",
+            "Indexação permanente de arquivos em segundo plano",
+            "Discos com enorme volume de arquivos",
+            "Reduzir locais indexados",
+            "Mudar o serviço para inicialização 'Manual'",
+          ],
+          [
+            "Windows Update travado",
+            "Loop na descompactação de downloads danificados",
+            "Todos os computadores",
+            "Limpar a pasta SoftwareDistribution",
+            "Executar o comando DISM /RestoreHealth",
+          ],
+          [
+            "Pouco espaço livre (<10%)",
+            "Fragmentação extrema da paginação virtual",
+            "Unidade de sistema C:",
+            "Excluir arquivos temporários e caches",
+            "Liberar pelo menos 20% de espaço com o DiskMop",
+          ],
+          [
+            "Disco defeituoso / Setores ruins",
+            "Tentativas mecânicas que congelam o barramento",
+            "HDDs e SSDs desgastados",
+            "Executar 'chkdsk C: /f /r'",
+            "Conferir a saúde SMART e substituir a unidade",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "É seguro desativar o serviço SysMain?",
+          answer:
+            "Sim, com certeza. Em computadores modernos com SSD, o SysMain traz ganhos insignificantes e desativá-lo não compromete a estabilidade do Windows.",
+        },
+        {
+          question: "Uso de disco em 100% indica que a unidade está morrendo?",
+          answer:
+            "Se a taxa de uso permanece em 100% com velocidades muito baixas (ex: 0,1 MB/s) e tempos de resposta acima de 1.000 ms, é provável que haja setores defeituosos ou falha física.",
+        },
+        {
+          question:
+            "O comando chkdsk consegue corrigir o uso de 100% do disco?",
+          answer:
+            "Se a origem do problema forem erros na estrutura do sistema de arquivos NTFS ou setores com problemas, rodar 'chkdsk C: /f /r' costuma restabelecer o desempenho.",
+        },
+        {
+          question: "Devo desativar a memória virtual para aliviar o disco?",
+          answer:
+            "Não. Desativar o arquivo de paginação (pagefile) provoca travamentos e erros de memória. O procedimento correto é liberar espaço livre na unidade C:.",
+        },
+      ],
       verdict: [
         "Uso de disco em 100 % no Windows 10 e 11 quase sempre tem solução. Comece encontrando o processo culpado no Gerenciador de Tarefas e no Monitor de Recursos; depois desative o SysMain e a indexação do Windows Search, reduza os programas de inicialização, limpe os caches e libere espaço na unidade e, por último, descarte malware e falha de hardware. Todos esses passos podem ser feitos de graça com as ferramentas nativas do Windows.",
         "O Disk Mop foi feito para quem quer as mesmas correções sem garimpar no services.msc e no prompt de comando. Gerenciador de serviços, gerenciador de inicialização, aceleração com um clique, análise de disco e limpeza agendada ficam todos em um único aplicativo. Ele roda no Windows e no macOS com licença vitalícia de 19,90 $ em pagamento único, e a versão gratuita permite testar antes de decidir.",
@@ -728,6 +1235,13 @@ export const fix100DiskUsageWindows: Article = {
       intro: [
         "Windows 10や11でタスク マネージャーのディスク使用率が100%のまま張り付いている場合、よくある原因はSysMainやWindows Searchのインデックス作成といったバックグラウンド サービス、多すぎるスタートアップ アプリ、空き容量が不足したシステム ドライブ、マルウェア、そして故障しかけたディスクです。ディスク使用率100%を解消するには、まずタスク マネージャーで最も負荷の高いプロセスを特定し、services.msc からSysMainと検索インデックスを無効にして、スタートアップの一覧を整理し、キャッシュ ファイルを削除します。多くの場合、これらの変更を行ってから数分でディスク使用率は通常の水準に戻ります。",
         "ディスク使用率が100%に張り付いた状態では、パソコンが壊れてしまったように感じられます。クリックのたびに固まり、アプリの起動にはいつまでもかかり、ファンも止まる気配がありません。この症状は機械式のハードディスク（HDD）で特に深刻です。数十件もの読み書き要求を同時にさばけないためです。この記事では、まずWindows標準の機能を使った手動の対処を1つずつ解説し、そのうえでDisk Mopが同じ対処をどれだけ簡単なスイッチ操作で実現するかを紹介します。",
+      ],
+      keyTakeaways: [
+        "タスクマネージャーのディスク使用率が100%に張り付く現象は、I/Oキューが飽和してWindowsが要求を処理しきれなくなっている状態を示します。",
+        "SysMain（旧Superfetch）とWindows Searchインデックスを停止することで、HDDやSATA SSDにおけるディスク高負荷の60%以上が解消されます。",
+        "破損したWindows Updateキャッシュやバックグラウンドで動作する不正プログラムが、CPUを使わずにディスクだけを100%消費することがあります。",
+        "Cドライブの空き容量が10%未満になると、仮想メモリのスワップファイルが激しく断片化し、ディスクが常時100%でロックされる原因になります。",
+        "DiskMopはサービス管理、スタートアップ最適化、SMARTハードウェア診断を統合し、ストレージのボトルネックを素早く特定します。",
       ],
       sections: [
         {
@@ -784,6 +1298,98 @@ export const fix100DiskUsageWindows: Article = {
             "ディスク使用率の高止まりは、一度直せば終わりという問題ではありません。新しくインストールしたアプリはスタートアップに自分を登録することがあり、キャッシュはまた増え、一時ファイルもたまっていきます。ときどきタスク マネージャーを確認する、ソフトを入れたらスタートアップの一覧を見直す、システム ドライブの空き容量を十分に保つ。この3つを習慣にすれば、症状の再発を防げます。",
             "Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）を使えば、週次や月次のメンテナンスを設定でき、キャッシュの削除と一時ファイルの整理が手を動かさなくても自動で実行されます。システム ヘルス スコア（System Health Score）はパソコン全体の状態を一目で示すため、Windows 11や10でディスク使用率が再び高くなる前に手を打てます。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Windows 10/11でディスク使用率100%を解消する手順",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "タスクマネージャーで使用率の原因プロセスを特定する",
+            text: "Ctrl+Shift+Escキーを押し、「ディスク」列をクリックして読み書き負荷が最も高いプロセスを確認します。",
+          },
+          {
+            name: "SysMainサービスを無効化する",
+            text: "Win+Rキーを押し「services.msc」と入力してSysMainを探し、プロパティでスタートアップの種類を「無効」に変更して「停止」をクリックします。",
+          },
+          {
+            name: "Windows Searchのインデックス作成を抑制する",
+            text: "services.mscで「Windows Search」を見つけ、スタートアップの種類を「手動」または「無効」に切り替えます。",
+          },
+          {
+            name: "ファイルシステムの修復コマンドを実行する",
+            text: "管理者権限でコマンドプロンプトを開き、「sfc /scannow」と「chkdsk C: /f」を実行して不良セクタや破損ファイルを修復します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Windowsにおけるディスク使用率100%の主な原因と効果的な対処法",
+        columns: [
+          "原因プロセス",
+          "発生の仕組み",
+          "影響を受けやすい環境",
+          "初期対応",
+          "根本的な解決策",
+        ],
+        rows: [
+          [
+            "SysMain（Superfetch）",
+            "過剰なRAM先行プリロード処理",
+            "HDDおよびエントリー向けSSD",
+            "services.mscでSysMainを停止",
+            "スタートアップの種類を「無効」に設定",
+          ],
+          [
+            "Windows Search",
+            "バックグラウンドでの常時ファイルインデックス作成",
+            "大量のファイルを持つドライブ",
+            "インデックス対象フォルダを限定",
+            "サービスを「手動」開始に変更",
+          ],
+          [
+            "Windows Updateのスタック",
+            "破損した更新プログラム展開ループ",
+            "全システム環境",
+            "SoftwareDistributionフォルダを消去",
+            "DISM /RestoreHealthコマンドを実行",
+          ],
+          [
+            "空き容量不足（10%未満）",
+            "仮想メニリスワップファイルの激しい断片化",
+            "システムCドライブ",
+            "一時ファイルや不要キャッシュを削除",
+            "DiskMopで20%以上の空き容量を確保",
+          ],
+          [
+            "ドライブの経年劣化 / 不良セクタ",
+            "読み取りリトライ多発によるI/Oバス停滞",
+            "長年使用したHDDや初期型SSD",
+            "「chkdsk C: /f /r」を実行",
+            "SMART診断を確認して新品ドライブへ交換",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "SysMainサービスを無効にしても安全ですか？",
+          answer:
+            "はい、完全に安全です。SSDを搭載した最新のPC環境ではSysMainによる高速化効果はほとんどなく、無効にしてもシステムの安定性に影響はありません。",
+        },
+        {
+          question: "ディスク使用率100%はドライブの寿命や故障を意味しますか？",
+          answer:
+            "転送速度が0.1MB/sなど極端に低いにもかかわらず使用率が100%になり、応答時間が1,000msを超える場合は、不良セクタやハードウェア障害の可能性が高いです。",
+        },
+        {
+          question: "chkdskを実行すればディスク使用率100%は直りますか？",
+          answer:
+            "NTFSファイルシステムのメタデータ破損や不良セクタの再割り当て待機が原因である場合、「chkdsk C: /f /r」を実行することで本来の速度に戻るケースが多くあります。",
+        },
+        {
+          question:
+            "ディスク負荷を下げるために仮想メモリを無効化すべきですか？",
+          answer:
+            "いいえ、無効化してはいけません。ページファイルを無効にするとアプリのクラッシュやシステムの不安定化を招きます。Cドライブの空き容量を確保することが正しい対策です。",
         },
       ],
       verdict: [

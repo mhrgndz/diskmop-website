@@ -5,12 +5,11 @@ export const deleteScreenshotsIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-10-26",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone'da Ekran Görüntülerini ve Ekran Kayıtlarını Silme (Gerekenleri Kaybetmeden)",
+      title: "iPhone'da Ekran Görüntüleri ve Ekran Kayıtlarını Silme",
       metaDescription:
         "Ekran görüntüleri binlerle birikir, ekran kayıtları yüzlerce MB tutar. Hepsini bulma, toplu silme ve ihtiyacınız olan fiş, bilet ve kodları koruma adımları.",
       subtitle:
@@ -134,8 +133,7 @@ export const deleteScreenshotsIphone: Article = {
       ctaText: "DiskMop'u App Store'dan indirin",
     },
     en: {
-      title:
-        "How to Delete Screenshots and Screen Recordings on iPhone (Without Losing the Ones You Need)",
+      title: "How to Delete Screenshots & Screen Recordings on iPhone",
       metaDescription:
         "Screenshots pile up by the thousand and screen recordings weigh hundreds of MB. Find them all, delete in bulk and keep the receipts, tickets and codes you need.",
       subtitle:

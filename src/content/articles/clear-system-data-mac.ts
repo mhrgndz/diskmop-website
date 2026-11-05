@@ -5,7 +5,7 @@ export const clearSystemDataMac: Article = {
   type: "guide",
   category: "Mac Tips",
   date: "2026-07-03",
-  updated: "2026-11-04",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
@@ -27,14 +27,45 @@ export const clearSystemDataMac: Article = {
         "DiskMop görsel treemap analiziyle devasa önbellek ve gizli sistem kalıntılarını saniyeler içinde tespit eder.",
       ],
       dataTable: {
-        caption: "Mac Sistem Verisini (System Data) oluşturan ana bileşenler ve güvenli temizleme yolları",
-        columns: ["Bileşen", "Tipik Boyut", "Nerede Saklanır?", "Güvenli Temizleme Yolu"],
+        caption:
+          "Mac Sistem Verisini (System Data) oluşturan ana bileşenler ve güvenli temizleme yolları",
+        columns: [
+          "Bileşen",
+          "Tipik Boyut",
+          "Nerede Saklanır?",
+          "Güvenli Temizleme Yolu",
+        ],
         rows: [
-          ["Kullanıcı ve Uygulama Önbellekleri", "5 – 25 GB", "~/Library/Caches", "Finder ile seçerek temizleme veya DiskMop Önbellek Temizleyici"],
-          ["Sistem ve Uygulama Günlükleri", "1 – 5 GB", "~/Library/Logs", "Eski .log dosyalarını temizleme"],
-          ["Yerel Time Machine Anlık Görüntüleri", "10 – 50 GB", "/Volumes/Data/.MobileBackups", "Terminal 'tmutil deletelocalsnapshots' komutu"],
-          ["Eski iPhone & iPad Yedekleri", "10 – 80 GB", "~/Library/Application Support/MobileSync", "Finder > Genel > Yedekleri Yönet menüsünden silme"],
-          ["Sanal Bellek Takas Dosyaları", "2 – 16 GB", "/private/var/vm", "Mac'i normal şekilde yeniden başlatma"],
+          [
+            "Kullanıcı ve Uygulama Önbellekleri",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Finder ile seçerek temizleme veya DiskMop Önbellek Temizleyici",
+          ],
+          [
+            "Sistem ve Uygulama Günlükleri",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Eski .log dosyalarını temizleme",
+          ],
+          [
+            "Yerel Time Machine Anlık Görüntüleri",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Terminal 'tmutil deletelocalsnapshots' komutu",
+          ],
+          [
+            "Eski iPhone & iPad Yedekleri",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > Genel > Yedekleri Yönet menüsünden silme",
+          ],
+          [
+            "Sanal Bellek Takas Dosyaları",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Mac'i normal şekilde yeniden başlatma",
+          ],
         ],
       },
       howTo: {
@@ -65,20 +96,25 @@ export const clearSystemDataMac: Article = {
       },
       faq: [
         {
-          question: "Mac'te Sistem Verisi neden 50-100 GB gibi devasa boyutlara ulaşır?",
-          answer: "Time Machine'in harici disk bağlı değilken aldığı yerel anlık görüntüler, Adobe ve Xcode gibi dev araçların render önbellekleri ve eski iPhone yedekleri Sistem Verisi'ni onlarca gigabayt şişirebilir.",
+          question:
+            "Mac'te Sistem Verisi neden 50-100 GB gibi devasa boyutlara ulaşır?",
+          answer:
+            "Time Machine'in harici disk bağlı değilken aldığı yerel anlık görüntüler, Adobe ve Xcode gibi dev araçların render önbellekleri ve eski iPhone yedekleri Sistem Verisi'ni onlarca gigabayt şişirebilir.",
         },
         {
           question: "Library klasörünü tamamen silmek güvenli midir?",
-          answer: "Kesinlikle hayır. Library klasörünün kendisini silmek macOS uygulamalarının çökmesine ve kişisel ayarların kaybolmasına yol açar. Yalnızca Caches ve Logs klasörlerinin içi seçici temizlenmelidir.",
+          answer:
+            "Kesinlikle hayır. Library klasörünün kendisini silmek macOS uygulamalarının çökmesine ve kişisel ayarların kaybolmasına yol açar. Yalnızca Caches ve Logs klasörlerinin içi seçici temizlenmelidir.",
         },
         {
           question: "Mac'i yeniden başlatmak Sistem Verisini azaltır mı?",
-          answer: "Evet. macOS'in RAM yetmediğinde diske yazdığı sanal bellek (swap / sleepimage) takas dosyaları yeniden başlatma esnasında otomatik olarak temizlenir.",
+          answer:
+            "Evet. macOS'in RAM yetmediğinde diske yazdığı sanal bellek (swap / sleepimage) takas dosyaları yeniden başlatma esnasında otomatik olarak temizlenir.",
         },
         {
           question: "Sistem Verisini tamamen sıfırlamak mümkün müdür?",
-          answer: "Hayır. macOS temel işletim işlevlerini yürütmek için her zaman birkaç gigabaytlık aktif sistem önbelleğine ihtiyaç duyar. Sağlıklı bir Sistem Verisi boyutu 10–20 GB civarıdır.",
+          answer:
+            "Hayır. macOS temel işletim işlevlerini yürütmek için her zaman birkaç gigabaytlık aktif sistem önbelleğine ihtiyaç duyar. Sağlıklı bir Sistem Verisi boyutu 10–20 GB civarıdır.",
         },
       ],
       sections: [
@@ -158,14 +194,45 @@ export const clearSystemDataMac: Article = {
         "DiskMop's visual treemap locates bloated caches and hidden system clutter within seconds.",
       ],
       dataTable: {
-        caption: "Main components of Mac System Data and how to clean them safely",
-        columns: ["Component", "Typical Size", "Storage Location", "Safe Cleaning Method"],
+        caption:
+          "Main components of Mac System Data and how to clean them safely",
+        columns: [
+          "Component",
+          "Typical Size",
+          "Storage Location",
+          "Safe Cleaning Method",
+        ],
         rows: [
-          ["User & App Caches", "5 – 25 GB", "~/Library/Caches", "Selective removal via Finder or DiskMop Cache Cleaner"],
-          ["System & App Logs", "1 – 5 GB", "~/Library/Logs", "Prune outdated .log files"],
-          ["Local Time Machine Snapshots", "10 – 50 GB", "/Volumes/Data/.MobileBackups", "Terminal 'tmutil deletelocalsnapshots' command"],
-          ["Old iPhone & iPad Backups", "10 – 80 GB", "~/Library/Application Support/MobileSync", "Finder > General > Manage Backups"],
-          ["Virtual Memory Swap Files", "2 – 16 GB", "/private/var/vm", "Standard Mac restart"],
+          [
+            "User & App Caches",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Selective removal via Finder or DiskMop Cache Cleaner",
+          ],
+          [
+            "System & App Logs",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Prune outdated .log files",
+          ],
+          [
+            "Local Time Machine Snapshots",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Terminal 'tmutil deletelocalsnapshots' command",
+          ],
+          [
+            "Old iPhone & iPad Backups",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > General > Manage Backups",
+          ],
+          [
+            "Virtual Memory Swap Files",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Standard Mac restart",
+          ],
         ],
       },
       howTo: {
@@ -197,19 +264,23 @@ export const clearSystemDataMac: Article = {
       faq: [
         {
           question: "Why does System Data take up 50 to 100 GB on my Mac?",
-          answer: "Local Time Machine snapshots created when backup drives are disconnected, massive render caches from apps like Adobe and Xcode, and old iOS device backups are the most common culprits.",
+          answer:
+            "Local Time Machine snapshots created when backup drives are disconnected, massive render caches from apps like Adobe and Xcode, and old iOS device backups are the most common culprits.",
         },
         {
           question: "Is it safe to delete the Library folder on Mac?",
-          answer: "No. Deleting the entire Library folder will corrupt user profiles and break applications. Only contents inside Caches and Logs should ever be selectively removed.",
+          answer:
+            "No. Deleting the entire Library folder will corrupt user profiles and break applications. Only contents inside Caches and Logs should ever be selectively removed.",
         },
         {
           question: "Does restarting a Mac reduce System Data storage?",
-          answer: "Yes. macOS automatically flushes virtual memory swap files and sleepimage cache files during a clean system reboot.",
+          answer:
+            "Yes. macOS automatically flushes virtual memory swap files and sleepimage cache files during a clean system reboot.",
         },
         {
           question: "Can System Data ever be reduced to zero?",
-          answer: "No. macOS requires active runtime caches and fonts to operate properly. A normal, healthy System Data allocation ranges between 10 and 20 GB.",
+          answer:
+            "No. macOS requires active runtime caches and fonts to operate properly. A normal, healthy System Data allocation ranges between 10 and 20 GB.",
         },
       ],
       sections: [
@@ -280,6 +351,13 @@ export const clearSystemDataMac: Article = {
         "Auf vielen Macs wachsen die Systemdaten auf Dutzende Gigabyte an, und Apple zeigt nie, was genau darin steckt. In Foren wird oft empfohlen, den Library-Ordner pauschal zu leeren — das kann jedoch Apps beschädigen und Daten kosten. Dieser Leitfaden zeigt stattdessen sechs sichere, umkehrbare Methoden, die vollständig in Ihrer Hand bleiben.",
         "Wir beginnen mit den manuellen Schritten über die Bordmittel von macOS und zeigen anschließend, wie die macOS-Version von Disk Mop dieselbe Bereinigung auf wenige Klicks reduziert. Arbeiten Sie die Schritte der Reihe nach ab, dann sollte spürbar Speicherplatz auf Ihrem Laufwerk zurückkommen.",
       ],
+      keyTakeaways: [
+        "Die Kategorie 'Systemdaten' ist ein dynamischer Sammelbereich für Caches, Systemprotokolle, Swap-Dateien des virtuellen Arbeitsspeichers und Time Machine-Schnappschüsse.",
+        "Das pauschale Löschen des Library-Ordners kann Anwendungen unbrauchbar machen; nur Inhalte in ~/Library/Caches und ~/Library/Logs sollten selektiv entfernt werden.",
+        "Veraltete Backups von iOS-Geräten und lokale Time Machine-Schnappschüsse können allein 20–50 GB der Systemdaten belegen.",
+        "Ein Neustart Ihres Mac leert automatisch Swap-Dateien des virtuellen Speichers und temporäre Laufzeitdateien.",
+        "Die visuelle Treemap von DiskMop spürt überquellende Caches und versteckten Systemmüll auf dem Mac innerhalb von Sekunden auf.",
+      ],
       sections: [
         {
           title: "Was zählt auf dem Mac zu den Systemdaten?",
@@ -331,6 +409,98 @@ export const clearSystemDataMac: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So bereinigen Sie die Systemdaten auf dem Mac sicher",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Speicherbelegung überprüfen",
+            text: "Öffnen Sie das Apple-Menü > Systemeinstellungen > Allgemein > Speicher, um den aktuellen Speicherbedarf Ihrer Systemdaten zu sehen.",
+          },
+          {
+            name: "Benutzer-Caches leeren",
+            text: "Drücken Sie im Finder Umschalt-Befehl-G, geben Sie ~/Library/Caches ein und löschen Sie veraltete Cache-Dateien geschlossener Apps.",
+          },
+          {
+            name: "Alte Geräte-Backups entfernen",
+            text: "Verwalten und löschen Sie veraltete iPhone- und iPad-Sicherungen im Finder, um auf einen Schlag Dutzende Gigabyte freizugeben.",
+          },
+          {
+            name: "Lokale Time Machine-Schnappschüsse ausdünnen",
+            text: "Führen Sie im Terminal 'tmutil listlocalsnapshots /' aus und löschen Sie nicht mehr benötigte lokale Snapshots.",
+          },
+          {
+            name: "Mac neu starten",
+            text: "Starten Sie Ihren Computer neu, um virtuellen Swap-Speicher und temporäre Systemcaches automatisch zu leeren.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Hauptbestandteile der Mac-Systemdaten und sichere Bereinigungsmethoden",
+        columns: [
+          "Komponente",
+          "Typische Größe",
+          "Speicherort",
+          "Sichere Bereinigungsmethode",
+        ],
+        rows: [
+          [
+            "Benutzer- & App-Caches",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Gezielte Bereinigung über Finder oder DiskMop Cache-Cleaner",
+          ],
+          [
+            "System- & App-Protokolle (Logs)",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Veraltete .log-Dateien manuell oder automatisch löschen",
+          ],
+          [
+            "Lokale Time Machine-Snapshots",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Terminal-Befehl 'tmutil deletelocalsnapshots'",
+          ],
+          [
+            "Alte iPhone- & iPad-Backups",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > Allgemein > Backups verwalten",
+          ],
+          [
+            "Virtuelle Speicher-Swap-Dateien",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Regulärer Mac-Neustart",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Warum belegen die Systemdaten auf meinem Mac 50 bis 100 GB?",
+          answer:
+            "Häufigste Ursachen sind lokale Time Machine-Schnappschüsse (die entstehen, wenn externe Backup-Laufwerke nicht verbunden sind), riesige Render-Caches von Programmen wie Adobe oder Xcode sowie alte iOS-Geräte-Backups.",
+        },
+        {
+          question: "Ist es sicher, den Library-Ordner auf dem Mac zu löschen?",
+          answer:
+            "Nein. Das Löschen des gesamten Library-Ordners zerstört Benutzerprofile und verhindert den Start vieler Apps. Entfernen Sie stets nur selektive Inhalte innerhalb von Unterordnern wie 'Caches' und 'Logs'.",
+        },
+        {
+          question:
+            "Verringert ein Neustart des Mac den Speicherbedarf der Systemdaten?",
+          answer:
+            "Ja. macOS löscht temporäre Swap-Dateien des virtuellen Speichers und Sleepimage-Cache-Dateien automatisch bei einem regulären Systemneustart.",
+        },
+        {
+          question: "Können die Systemdaten jemals auf 0 GB reduziert werden?",
+          answer:
+            "Nein. macOS benötigt grundlegende Caches und Schriftarten für den einwandfreien Betrieb. Eine normale, gesunde Größe der Systemdaten liegt im Bereich zwischen 10 und 20 GB.",
+        },
+      ],
       verdict: [
         "Systemdaten wirken auf dem Mac einschüchternd, sind aber gut beherrschbar, sobald man weiß, was sie speist. Speicherübersicht prüfen, Caches und Protokolle sicher bereinigen, alte Downloads und Geräte-Backups entfernen, Papierkorb leeren, Duplikate löschen und die Festplatte per Treemap sichtbar machen — diese sechs Schritte gewinnen etliche Gigabyte zurück, ganz ohne die riskanten Library-Löschtipps aus Foren.",
         "Disk Mop vereint alle sechs Schritte in einer App: Festplattenanalyse, Große-Dateien-Finder, Duplikat-Detektor, Cache-Bereiniger und geplante Bereinigung arbeiten unter macOS zusammen. Der Download ist kostenlos, und eine einmalige Zahlung von 19,90 $ schaltet mit lebenslanger Lizenz alle Funktionen frei.",
@@ -347,6 +517,13 @@ export const clearSystemDataMac: Article = {
         "Sur un Mac, les données système (System Data) forment la catégorie fourre-tout qui regroupe les caches, les fichiers journaux, les fichiers d'échange de la mémoire virtuelle, les instantanés locaux de Time Machine et tout ce que macOS ne parvient pas à ranger dans des catégories comme Apps ou Documents. Pour libérer cet espace sans risque, il suffit de nettoyer les caches et les anciens téléchargements, de supprimer les sauvegardes obsolètes, de vider la Corbeille et d'effacer les fichiers en double — aucune suppression hasardeuse dans les dossiers système n'est nécessaire.",
         "Sur beaucoup de Mac, les données système atteignent des dizaines de gigaoctets, et Apple ne montre jamais ce qu'elles contiennent réellement. Le conseil que l'on croise sans cesse sur les forums consiste à vider en bloc le dossier Bibliothèque (Library), au risque de casser des applications et de perdre des données. Ce guide prend le chemin inverse : six méthodes sûres, réversibles et entièrement sous votre contrôle.",
         "Nous commencerons par les manipulations manuelles réalisables avec les outils intégrés de macOS, puis nous verrons comment la version macOS de Disk Mop regroupe le même nettoyage en quelques clics. Suivez les étapes dans l'ordre et vous devriez récupérer une quantité d'espace tout à fait visible.",
+      ],
+      keyTakeaways: [
+        "La catégorie 'Données Système' est un ensemble dynamique regroupant caches, journaux, fichiers de swap mémoire et instantanés Time Machine.",
+        "Supprimer brutalement le dossier Bibliothèque peut bloquer vos applications ; seuls les contenus de ~/Library/Caches et ~/Library/Logs doivent être triés.",
+        "Les anciennes sauvegardes d'appareils iOS et les instantanés locaux Time Machine peuvent à eux seuls monopoliser de 20 à 50 Go de Données Système.",
+        "Redémarrer votre Mac vide automatiquement les fichiers de swap de mémoire virtuelle et les allocations de mémoire temporaires.",
+        "L'arborescence visuelle de DiskMop identifie en quelques secondes les caches démesurés et les fichiers système cachés sur Mac.",
       ],
       sections: [
         {
@@ -401,6 +578,99 @@ export const clearSystemDataMac: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment nettoyer en toute sécurité les Données Système sur Mac",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Vérifier la répartition du stockage",
+            text: "Allez dans le menu Pomme > Réglages Système > Général > Stockage pour consulter la taille exacte de vos Données Système.",
+          },
+          {
+            name: "Nettoyer les caches utilisateur",
+            text: "Dans le Finder, faites Maj-Commande-G, saisissez ~/Library/Caches et videz les caches obsolètes d'applications fermées.",
+          },
+          {
+            name: "Supprimer les vieilles sauvegardes d'appareils",
+            text: "Gérez et supprimez les sauvegardes obsolètes d'iPhone ou d'iPad depuis le Finder pour libérer des dizaines de gigaoctets.",
+          },
+          {
+            name: "Alléger les instantanés locaux Time Machine",
+            text: "Exécutez 'tmutil listlocalsnapshots /' dans le Terminal et supprimez les instantanés accumulés.",
+          },
+          {
+            name: "Redémarrer le Mac",
+            text: "Redémarrez l'ordinateur afin de purger automatiquement la mémoire virtuelle swap et les caches temporaires du système.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Composants principaux des Données Système sur Mac et méthodes de nettoyage",
+        columns: [
+          "Composant",
+          "Taille typique",
+          "Emplacement",
+          "Méthode sûre de nettoyage",
+        ],
+        rows: [
+          [
+            "Caches utilisateur & applications",
+            "5 – 25 Go",
+            "~/Library/Caches",
+            "Nettoyage sélectif via Finder ou le nettoyeur de cache DiskMop",
+          ],
+          [
+            "Journaux système & apps (Logs)",
+            "1 – 5 Go",
+            "~/Library/Logs",
+            "Supprimer les anciens fichiers .log",
+          ],
+          [
+            "Instantanés locaux Time Machine",
+            "10 – 50 Go",
+            "/Volumes/Data/.MobileBackups",
+            "Commande Terminal 'tmutil deletelocalsnapshots'",
+          ],
+          [
+            "Sauvegardes iPhone & iPad",
+            "10 – 80 Go",
+            "~/Library/Application Support/MobileSync",
+            "Finder > Général > Gérer les sauvegardes",
+          ],
+          [
+            "Fichiers d'échange de mémoire virtuelle",
+            "2 – 16 Go",
+            "/private/var/vm",
+            "Redémarrage standard du Mac",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Pourquoi les Données Système occupent-elles 50 à 100 Go sur mon Mac ?",
+          answer:
+            "Les responsables les plus courants sont les instantanés locaux créés par Time Machine lorsque le disque externe est débranché, les gigantesques caches de rendu de logiciels comme Adobe ou Xcode, et les vieilles sauvegardes iOS.",
+        },
+        {
+          question:
+            "Est-il prudent de supprimer le dossier Bibliothèque sur Mac ?",
+          answer:
+            "Non. Effacer le dossier Bibliothèque complet corrompra votre profil et empêchera les applications de s'exécuter. Seuls les fichiers situés à l'intérieur de sous-dossiers spécifiques comme Caches et Logs peuvent être retirés.",
+        },
+        {
+          question:
+            "Le redémarrage du Mac réduit-il la taille des Données Système ?",
+          answer:
+            "Oui. macOS purge automatiquement les fichiers d'échange (swap) de mémoire virtuelle et les caches sleepimage lors d'un redémarrage complet du système.",
+        },
+        {
+          question: "Les Données Système peuvent-elles être ramenées à zéro ?",
+          answer:
+            "Non. macOS a besoin de polices et de caches d'exécution actifs pour fonctionner de manière fluide. Un volume normal et sain de Données Système se situe habituellement entre 10 et 20 Go.",
+        },
+      ],
       verdict: [
         "Sur un Mac, les données système ont l'air intimidantes, mais la catégorie devient tout à fait gérable dès que l'on sait ce qui l'alimente. Consulter la répartition du stockage, nettoyer les caches et les journaux sans risque, supprimer les anciens téléchargements et les sauvegardes d'appareils, vider la Corbeille, effacer les doublons et visualiser le disque avec une treemap : ces six étapes récupèrent des gigaoctets d'espace sans jamais recourir aux conseils de suppression hasardeuse du dossier Bibliothèque que l'on lit sur les forums.",
         "Disk Mop réunit ces six étapes dans une seule application : l'analyse de disque, le détecteur de gros fichiers, le détecteur de doublons, le nettoyeur de cache et le nettoyage planifié travaillent de concert sous macOS. Le téléchargement est gratuit pour tester l'essentiel, et un paiement unique de 19,90 $ débloque toutes les fonctions avec une licence à vie.",
@@ -417,6 +687,13 @@ export const clearSystemDataMac: Article = {
         "En un Mac, los datos del sistema (System Data) son la categoría cajón de sastre que reúne cachés, archivos de registro, archivos de intercambio de la memoria virtual, instantáneas locales de Time Machine y todo aquello que macOS no puede asignar a categorías como Aplicaciones o Documentos. Para liberar ese espacio sin riesgos basta con limpiar cachés y descargas antiguas, eliminar copias de seguridad obsoletas, vaciar la Papelera y borrar archivos duplicados: no hace falta ninguna eliminación arriesgada en carpetas del sistema.",
         "En muchos Mac los datos del sistema crecen hasta decenas de gigabytes, y Apple nunca muestra qué hay realmente dentro. El consejo que se repite en los foros es vaciar de golpe la carpeta Biblioteca (Library), algo que puede romper aplicaciones y provocar pérdida de datos. Esta guía toma el camino contrario: seis métodos seguros, reversibles y bajo tu control en todo momento.",
         "Empezaremos por los pasos manuales que puedes dar con las herramientas integradas de macOS y después veremos cómo la versión para macOS de Disk Mop reúne esa misma limpieza en unos pocos clics. Sigue los pasos en orden y deberías recuperar una cantidad de espacio bien visible.",
+      ],
+      keyTakeaways: [
+        "La categoría 'Datos del sistema' reúne cachés dinámicos, registros de depuración, archivos de intercambio de memoria (swap) e instantáneas de Time Machine.",
+        "Eliminar la carpeta Biblioteca por completo puede inutilizar tus aplicaciones; solo el contenido de ~/Library/Caches y ~/Library/Logs debe depurarse selectivamente.",
+        "Las copias de seguridad antiguas de dispositivos iOS y las instantáneas locales de Time Machine pueden ocupar por sí solas entre 20 y 50 GB de Datos del sistema.",
+        "Reiniciar tu Mac vacía automáticamente los archivos de memoria swap y las asignaciones temporales de tiempo de ejecución.",
+        "El mapa de árbol visual de DiskMop encuentra cachés hinchados y archivos ocultos del sistema en Mac en pocos segundos.",
       ],
       sections: [
         {
@@ -470,6 +747,98 @@ export const clearSystemDataMac: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo limpiar los Datos del sistema en Mac de forma segura",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Consultar la distribución del almacenamiento",
+            text: "Abre el menú Apple > Ajustes del Sistema > General > Almacenamiento para comprobar cuánto espacio ocupan los Datos del sistema.",
+          },
+          {
+            name: "Limpiar cachés de usuario",
+            text: "Presiona Mayús-Comando-G en el Finder, dirígete a ~/Library/Caches y elimina los cachés obsoletos de programas cerrados.",
+          },
+          {
+            name: "Eliminar copias de seguridad de dispositivos",
+            text: "Gestiona y elimina copias antiguas de iPhone o iPad en el Finder para liberar decenas de gigabytes de inmediato.",
+          },
+          {
+            name: "Reducir instantáneas locales de Time Machine",
+            text: "Ejecuta 'tmutil listlocalsnapshots /' en la app Terminal y purga los snapshots locales acumulados.",
+          },
+          {
+            name: "Reiniciar el Mac",
+            text: "Reinicia el equipo para purgar automáticamente la memoria virtual de intercambio y los cachés volátiles del sistema.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Componentes principales de los Datos del sistema en Mac y cómo limpiarlos",
+        columns: [
+          "Componente",
+          "Tamaño típico",
+          "Ubicación",
+          "Método seguro de limpieza",
+        ],
+        rows: [
+          [
+            "Cachés de usuario y aplicaciones",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Eliminación selectiva en Finder o con DiskMop Cache Cleaner",
+          ],
+          [
+            "Registros del sistema y apps (Logs)",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Purgar archivos .log antiguos",
+          ],
+          [
+            "Instantáneas locales de Time Machine",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Comando de Terminal 'tmutil deletelocalsnapshots'",
+          ],
+          [
+            "Copias antiguas de iPhone y iPad",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > General > Gestionar copias de seguridad",
+          ],
+          [
+            "Archivos swap de memoria virtual",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Reinicio habitual del Mac",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Por qué los Datos del sistema ocupan de 50 a 100 GB en mi Mac?",
+          answer:
+            "Los causantes más comunes son las instantáneas locales que Time Machine crea cuando el disco externo no está conectado, cachés masivos de programas como Adobe o Xcode y copias de seguridad antiguas de iPhone o iPad.",
+        },
+        {
+          question: "¿Es seguro borrar la carpeta Biblioteca en Mac?",
+          answer:
+            "No. Eliminar la carpeta Biblioteca íntegra corromperá tu perfil de usuario y hará que las aplicaciones dejen de funcionar. Solo debes limpiar de manera selectiva subcarpetas como Caches y Logs.",
+        },
+        {
+          question:
+            "¿Reiniciar el Mac reduce el espacio ocupado por los Datos del sistema?",
+          answer:
+            "Sí. macOS vacía automáticamente los archivos de memoria virtual swap y los cachés de imagen de reposo al realizar un reinicio limpio del equipo.",
+        },
+        {
+          question: "¿Pueden los Datos del sistema llegar a reducirse a cero?",
+          answer:
+            "No. macOS requiere tipos de letra y cachés de ejecución en tiempo real para operar fluidamente. Un tamaño normal y saludable oscila entre 10 y 20 GB.",
+        },
+      ],
       verdict: [
         "Los datos del sistema de un Mac imponen respeto, pero son una categoría manejable en cuanto sabes qué la alimenta. Consultar el desglose del almacenamiento, limpiar cachés y registros sin riesgo, eliminar descargas antiguas y copias de seguridad de dispositivos, vaciar la Papelera, borrar duplicados y visualizar el disco con un treemap: estos seis pasos recuperan gigabytes de espacio sin acercarse siquiera a los arriesgados consejos de borrar la carpeta Biblioteca que circulan por los foros.",
         "Disk Mop reúne los seis pasos en una sola aplicación: el análisis de disco, el buscador de archivos grandes, el detector de duplicados, el limpiador de caché y la limpieza programada trabajan juntos en macOS. Puedes descargarlo gratis para probar lo esencial, y un pago único de 19,90 $ desbloquea todas las funciones con licencia de por vida.",
@@ -486,6 +855,13 @@ export const clearSystemDataMac: Article = {
         "Sul Mac i dati di sistema (System Data) sono la categoria calderone che raccoglie cache, file di log, file di scambio della memoria virtuale, istantanee locali di Time Machine e tutto ciò che macOS non riesce ad assegnare a categorie come App o Documenti. Per liberare questo spazio in sicurezza basta ripulire cache e vecchi download, rimuovere i backup obsoleti, svuotare il Cestino ed eliminare i file duplicati: nessuna cancellazione azzardata nelle cartelle di sistema.",
         "Su molti Mac i dati di sistema arrivano a decine di gigabyte e Apple non mostra mai che cosa contengano davvero. Il consiglio che circola nei forum è svuotare in blocco la cartella Libreria (Library), una mossa che può danneggiare le applicazioni e far perdere dati. Questa guida sceglie la strada opposta: sei metodi sicuri, reversibili e sempre sotto il vostro controllo.",
         "Partiremo dai passaggi manuali che si possono eseguire con gli strumenti integrati di macOS, poi vedremo come la versione macOS di Disk Mop concentri la stessa pulizia in pochi clic. Seguendo i passaggi nell'ordine indicato dovreste recuperare una quantità di spazio ben visibile.",
+      ],
+      keyTakeaways: [
+        "La categoria 'Dati di sistema' include cache dinamiche, file di log, file di swap della memoria virtuale e istantanee di Time Machine.",
+        "Eliminare in blocco la cartella Libreria rischia di compromettere le app; solo i contenuti in ~/Library/Caches e ~/Library/Logs devono essere rimossi selettivamente.",
+        "I vecchi backup di dispositivi iOS e le istantanee locali di Time Machine da soli possono occupare tra 20 e 50 GB di Dati di sistema.",
+        "Il riavvio del Mac svuota automaticamente i file di swap della memoria virtuale e le allocazioni temporanee di sistema.",
+        "La mappa ad albero interattiva di DiskMop individua le cache gonfie e lo spazio di sistema nascosto su Mac in una manciata di secondi.",
       ],
       sections: [
         {
@@ -539,6 +915,97 @@ export const clearSystemDataMac: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come ripulire in sicurezza i Dati di sistema su Mac",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Esaminare l'occupazione di memoria",
+            text: "Apri il menu Apple > Impostazioni di Sistema > Generali > Spazio per verificare la quantità esatta di Dati di sistema occupata.",
+          },
+          {
+            name: "Svuotare le cache utente",
+            text: "Premi Maiusc-Comando-G nel Finder, digita ~/Library/Caches ed elimina le cache obsolete generate dalle app chiuse.",
+          },
+          {
+            name: "Eliminare i vecchi backup dei dispositivi",
+            text: "Gestisci e rimuovi i vecchi backup di iPhone e iPad tramite il Finder per recuperare decine di gigabyte.",
+          },
+          {
+            name: "Sfoltire le istantanee locali di Time Machine",
+            text: "Esegui il comando 'tmutil listlocalsnapshots /' nel Terminale per rimuovere le snapshot locali accumulate.",
+          },
+          {
+            name: "Riavviare il Mac",
+            text: "Riavvia il computer per cancellare automaticamente la memoria virtuale di swap e i file di runtime temporanei.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Componenti principali dei Dati di sistema su Mac e metodi di pulizia sicura",
+        columns: [
+          "Componente",
+          "Dimensione tipica",
+          "Percorso",
+          "Metodo di pulizia sicuro",
+        ],
+        rows: [
+          [
+            "Cache utente e applicazioni",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Pulizia selettiva con il Finder o DiskMop Cache Cleaner",
+          ],
+          [
+            "Log di sistema e applicazioni",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Cancellazione dei vecchi file di log (.log)",
+          ],
+          [
+            "Istantanee locali di Time Machine",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Comando da Terminale 'tmutil deletelocalsnapshots'",
+          ],
+          [
+            "Vecchi backup di iPhone e iPad",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > Generali > Gestisci backup",
+          ],
+          [
+            "File di swap della memoria virtuale",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Riavvio standard del Mac",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Perché i Dati di sistema occupano 50-100 GB sul mio Mac?",
+          answer:
+            "Le cause principali sono le istantanee locali create da Time Machine quando il disco di backup non è connesso, enormi file di cache creati da programmi come Adobe o Xcode e vecchi backup di iPhone e iPad archiviati localmente.",
+        },
+        {
+          question: "È sicuro eliminare la cartella Libreria su Mac?",
+          answer:
+            "No. L'eliminazione dell'intera cartella Libreria danneggerà il profilo utente e impedirà l'avvio delle applicazioni. Vanno rimossi solo file selezionati all'interno delle sottodirectory Caches e Logs.",
+        },
+        {
+          question:
+            "Riavviare il Mac riduce lo spazio occupato dai Dati di sistema?",
+          answer:
+            "Sì. macOS ripulisce in automatico i file di swap della memoria virtuale e i file temporanei di cache al termine di un riavvio completo del sistema.",
+        },
+        {
+          question: "È possibile ridurre a zero la voce Dati di sistema?",
+          answer:
+            "No. macOS necessita di cache essenziali di runtime e font di sistema per poter funzionare correttamente. Un valore fisiologico e normale si aggira solitamente tra i 10 e i 20 GB.",
+        },
+      ],
       verdict: [
         "Sul Mac i dati di sistema sembrano intimidatori, ma diventano una categoria gestibile appena si capisce che cosa li alimenta. Controllare la ripartizione dello spazio, ripulire cache e log in sicurezza, rimuovere vecchi download e backup dei dispositivi, svuotare il Cestino, eliminare i duplicati e visualizzare il disco con una treemap: questi sei passaggi recuperano gigabyte di spazio senza mai avvicinarsi ai rischiosi consigli sulla cancellazione della cartella Libreria che si leggono nei forum.",
         "Disk Mop riunisce tutti e sei i passaggi in un'unica app: analisi del disco, ricercatore di file di grandi dimensioni, rilevatore di duplicati, pulitore della cache e pulizia pianificata lavorano insieme su macOS. Potete scaricarlo gratuitamente per provare le funzioni essenziali, mentre un pagamento una tantum di 19,90 $ sblocca tutto con una licenza a vita.",
@@ -555,6 +1022,13 @@ export const clearSystemDataMac: Article = {
         "No Mac, os dados do sistema (System Data) são a categoria coringa que reúne caches, arquivos de log, arquivos de troca da memória virtual, instantâneos locais do Time Machine e tudo o mais que o macOS não consegue encaixar em categorias como Aplicativos ou Documentos. Para liberar esse espaço com segurança, basta limpar caches e downloads antigos, remover backups desatualizados, esvaziar o Lixo e apagar arquivos duplicados: nenhuma exclusão arriscada em pastas do sistema é necessária.",
         "Em muitos Macs, os dados do sistema chegam a dezenas de gigabytes, e a Apple nunca mostra o que existe de fato lá dentro. O conselho que se repete nos fóruns é apagar de uma vez o conteúdo da pasta Biblioteca (Library), o que pode quebrar aplicativos e causar perda de dados. Este guia segue o caminho oposto: seis métodos seguros, reversíveis e totalmente sob o seu controle.",
         "Vamos começar pelos passos manuais que dá para fazer com as ferramentas nativas do macOS e depois mostrar como a versão para macOS do Disk Mop reúne essa mesma limpeza em poucos cliques. Siga os passos na ordem e você deve ver uma quantidade bem visível de espaço voltar.",
+      ],
+      keyTakeaways: [
+        "A categoria 'Dados do Sistema' é um agrupamento dinâmico de caches, relatórios de log, arquivos de paginação swap de memória e snapshots do Time Machine.",
+        "Apagar a pasta Biblioteca por completo pode quebrar seus aplicativos; apenas os itens em ~/Library/Caches e ~/Library/Logs devem ser excluídos com critério.",
+        "Backups antigos de dispositivos iOS e snapshots locais do Time Machine sozinhos podem ocupar de 20 a 50 GB em Dados do Sistema.",
+        "Reiniciar o Mac esvazia de forma automática os arquivos de swap da memória virtual e as alocações temporárias em tempo de execução.",
+        "O mapa visual em árvore do DiskMop localiza caches inflados e arquivos ocultos do sistema no Mac em questão de segundos.",
       ],
       sections: [
         {
@@ -607,6 +1081,98 @@ export const clearSystemDataMac: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar os Dados do Sistema no Mac com segurança",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Verificar a distribuição do armazenamento",
+            text: "Abra o menu Apple > Ajustes do Sistema > Geral > Armazenamento para checar o volume atual de Dados do Sistema.",
+          },
+          {
+            name: "Limpar caches do usuário",
+            text: "Pressione Shift-Command-G no Finder, acesse ~/Library/Caches e descarte os caches inúteis de aplicativos fechados.",
+          },
+          {
+            name: "Excluir backups antigos de dispositivos",
+            text: "Gerencie e delete backups desnecessários de iPhone e iPad pelo Finder para liberar dezenas de gigabytes de espaço.",
+          },
+          {
+            name: "Reduzir snapshots locais do Time Machine",
+            text: "Execute 'tmutil listlocalsnapshots /' no Terminal e apague os instantâneos locais excedentes.",
+          },
+          {
+            name: "Reiniciar o Mac",
+            text: "Reinicie o Mac para esvaziar a memória virtual de swap e os caches transitórios do sistema.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Principais componentes de Dados do Sistema no Mac e como limpá-los",
+        columns: [
+          "Componente",
+          "Tamanho típico",
+          "Localização",
+          "Método seguro de limpeza",
+        ],
+        rows: [
+          [
+            "Caches de usuário e aplicativos",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Limpeza seletiva pelo Finder ou com o DiskMop Cache Cleaner",
+          ],
+          [
+            "Logs do sistema e de aplicativos",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "Remoção de arquivos de log obsoletos (.log)",
+          ],
+          [
+            "Snapshots locais do Time Machine",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "Comando no Terminal 'tmutil deletelocalsnapshots'",
+          ],
+          [
+            "Backups antigos de iPhone e iPad",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > Geral > Gerenciar Backups",
+          ],
+          [
+            "Arquivos swap de memória virtual",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Reinicialização padrão do Mac",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Por que os Dados do Sistema ocupam de 50 a 100 GB no meu Mac?",
+          answer:
+            "Os principais causadores costumam ser os instantâneos locais do Time Machine gravados quando a unidade externa está desconectada, caches de renderização pesados de programas como Adobe ou Xcode e backups antigos de iPhone/iPad.",
+        },
+        {
+          question: "É seguro apagar a pasta Biblioteca (Library) no Mac?",
+          answer:
+            "Não. A exclusão completa da pasta Biblioteca danificará os perfis de usuário e impedirá o funcionamento dos seus aplicativos. Somente conteúdos específicos dentro de Caches e Logs devem ser removidos.",
+        },
+        {
+          question:
+            "Reiniciar o Mac diminui o espaço ocupado por Dados do Sistema?",
+          answer:
+            "Sim. O macOS descarta automaticamente os arquivos de memória virtual swap e caches transitórios ao reiniciar o sistema.",
+        },
+        {
+          question: "É possível zerar totalmente os Dados do Sistema?",
+          answer:
+            "Não. O macOS necessita de caches ativos e fontes do sistema para funcionar adequadamente. O tamanho habitual e saudável de Dados do Sistema costuma variar entre 10 e 20 GB.",
+        },
+      ],
       verdict: [
         "Os dados do sistema no Mac assustam à primeira vista, mas viram uma categoria bem administrável quando você entende o que alimenta esse número. Conferir a divisão do armazenamento, limpar caches e logs com segurança, remover downloads antigos e backups de aparelhos, esvaziar o Lixo, apagar duplicados e enxergar o disco em um treemap: esses seis passos recuperam gigabytes de espaço sem nunca encostar nos conselhos arriscados de apagar a pasta Biblioteca que circulam nos fóruns.",
         "O Disk Mop reúne os seis passos em um app só: análise de disco, localizador de arquivos grandes, detector de duplicados, limpador de cache e limpeza agendada trabalham juntos no macOS. Dá para baixar de graça e testar o essencial, e um pagamento único de 19,90 $ libera todos os recursos com licença vitalícia.",
@@ -623,6 +1189,13 @@ export const clearSystemDataMac: Article = {
         "Macの「システムデータ」（System Data）は、キャッシュ、ログファイル、仮想メモリのスワップファイル、Time Machineのローカルスナップショットなど、macOSが「アプリケーション」や「書類」といった分類に振り分けられなかったものをまとめて放り込む受け皿の分類です。この領域を安全に減らすには、キャッシュと古いダウンロードを整理し、不要になったバックアップを削除し、「ゴミ箱」を空にして、重複ファイルを取り除けば十分です。危険を伴うシステムフォルダの削除は必要ありません。",
         "多くのMacでシステムデータは数十ギガバイトにまで膨らみますが、Appleはその中身を具体的に見せてくれません。フォーラムでよく見かけるのは「ライブラリ」フォルダの中身をまとめて削除するという助言ですが、これはアプリの動作を壊し、データを失う原因になります。この記事はその逆を行きます。安全で、元に戻せて、最後まで自分の判断で進められる6つの方法を紹介します。",
         "まずはmacOSの標準機能だけでできる手動の手順を説明し、そのうえで、同じ作業を数クリックにまとめてくれるDisk MopのmacOS版がどのように役立つかを見ていきます。手順どおりに順番に進めれば、目に見える量の空き容量が戻ってくるはずです。",
+      ],
+      keyTakeaways: [
+        "「システムデータ」は、キャッシュ、システムログ、仮想メモリスワップファイル、Time Machineのスナップショットなどをまとめた動的な包括カテゴリです。",
+        "ライブラリフォルダ全体を一括削除するとアプリが破損します。選別して削除すべきなのは~/Library/Cachesと~/Library/Logsの中身のみです。",
+        "古いiOS端末のバックアップやローカルTime Machineスナップショットだけで、20〜50 GBものシステムデータを占有することがあります。",
+        "Macを再起動すると、仮想メモリスワップファイルや一時的な実行時データが自動的にフラッシュ・消去されます。",
+        "DiskMopの視覚的ツリーマップを使用すれば、肥大化したキャッシュや隠れたシステム上の不要ファイルをわずか数秒で特定できます。",
       ],
       sections: [
         {
@@ -673,6 +1246,96 @@ export const clearSystemDataMac: Article = {
             "いくつかの簡単な習慣が大きな差を生みます。スワップファイルが整理されるようMacを定期的に再起動する、「ゴミ箱」の自動削除設定を有効なままにしておく、使わなくなったアプリは完全にアンインストールする、月末に「ダウンロード」フォルダをざっと見直す。この4つです。",
             "この一連の作業を自動化したい場合は、Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）が役に立ちます。週次または月次のタスクを作成し、キャッシュの整理、古いダウンロードの削除、「ゴミ箱」を空にする処理を代わりに実行します。ワンクリックの高速化機能（Speed Up）は同じ処理を好きなタイミングで実行でき、システムの健全性スコア（System Health Score）はMac全体の状態をひと目で示します。",
           ],
+        },
+      ],
+      howTo: {
+        name: "Macのシステムデータを安全にクリーンアップする方法",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "ストレージ内訳を確認する",
+            text: "Appleメニュー >「システム設定」>「一般」>「ストレージ」を開き、システムデータがどれくらい容量を占めているか確認します。",
+          },
+          {
+            name: "ユーザーキャッシュを消去する",
+            text: "FinderでShift+Command+Gを押し、「~/Library/Caches」に移動して、終了済みアプリの不要なキャッシュを削除します。",
+          },
+          {
+            name: "古いデバイスバックアップを削除する",
+            text: "Finderから不要になったiPhoneやiPadのバックアップを管理・削除し、数十GBの空き容量を直ちに回復します。",
+          },
+          {
+            name: "Time Machineのローカルスナップショットを削減する",
+            text: "ターミナルで「tmutil listlocalsnapshots /」を実行し、溜まったローカルスナップショットを整理します。",
+          },
+          {
+            name: "Macを再起動する",
+            text: "Macを再起動して、仮想メモリスワップや実行時の一時キャッシュをOSによって自動解放させます。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Macのシステムデータの主な内訳と安全なクリーンアップ手順",
+        columns: [
+          "コンポーネント",
+          "典型的なサイズ",
+          "保存場所",
+          "安全な削除方法",
+        ],
+        rows: [
+          [
+            "ユーザー＆アプリキャッシュ",
+            "5 – 25 GB",
+            "~/Library/Caches",
+            "Finderでの選別削除またはDiskMopキャッシュクリーナー",
+          ],
+          [
+            "システム＆アプリログ",
+            "1 – 5 GB",
+            "~/Library/Logs",
+            "古い.logファイルの消去",
+          ],
+          [
+            "Time Machineローカルスナップショット",
+            "10 – 50 GB",
+            "/Volumes/Data/.MobileBackups",
+            "ターミナルコマンド「tmutil deletelocalsnapshots」",
+          ],
+          [
+            "古いiPhone＆iPadバックアップ",
+            "10 – 80 GB",
+            "~/Library/Application Support/MobileSync",
+            "Finder > 一般 > バックアップを管理",
+          ],
+          [
+            "仮想メモリスワップファイル",
+            "2 – 16 GB",
+            "/private/var/vm",
+            "Macの通常再起動",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "なぜMacのシステムデータは50〜100 GBも肥大化するのですか？",
+          answer:
+            "外付けドライブ未接続時に生成されるTime Machineのローカルスナップショット、AdobeやXcodeなどの制作系アプリの巨大レンダリングキャッシュ、保存されたままの古いiPhone/iPadバックアップが主な要因です。",
+        },
+        {
+          question:
+            "Macのライブラリ（Library）フォルダを削除しても大丈夫ですか？",
+          answer:
+            "いいえ。ライブラリフォルダ全体を消すとユーザー設定が破壊され、アプリが正常に起動しなくなります。削除してよいのはCachesやLogsサブフォルダ内の不要なファイルのみです。",
+        },
+        {
+          question: "Macを再起動するとシステムデータの容量は減りますか？",
+          answer:
+            "はい。macOSは通常の再起動プロセス中に、仮想メモリスワップファイルやsleepimage一時キャッシュを自動的にクリアします。",
+        },
+        {
+          question: "システムデータを完全に0 GBにすることはできますか？",
+          answer:
+            "いいえ。macOSが正常に動作するために、リアルタイムのフォントキャッシュや実行時ファイルが必須です。システムデータの健全な通常範囲は概ね10〜20 GB程度です。",
         },
       ],
       verdict: [

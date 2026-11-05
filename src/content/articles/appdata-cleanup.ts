@@ -5,7 +5,7 @@ export const appdataCleanup: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-07-18",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
@@ -352,6 +352,13 @@ export const appdataCleanup: Article = {
         "Ist Ihr AppData-Ordner auf Dutzende Gigabyte angewachsen? In den meisten Fällen lässt er sich sicher verkleinern, indem Sie den Temp-Ordner in AppData\\Local leeren, Anwendungs-Caches bereinigen und Ordner löschen, die von längst deinstallierten Programmen zurückgeblieben sind. Was Sie niemals tun sollten: den gesamten AppData-Ordner löschen — denn er enthält auch die Einstellungen, Profile und gespeicherten Daten, die Ihre installierten Programme zum Laufen brauchen.",
         "In diesem Leitfaden erklären wir zunächst die drei Unterordner Local, LocalLow und Roaming, ziehen dann eine klare Grenze zwischen sicher löschbaren und unantastbaren Daten, bereinigen Temp und App-Caches Schritt für Schritt, entfernen Reste deinstallierter Programme und automatisieren die Bereinigung, damit AppData nie wieder ausufert.",
       ],
+      keyTakeaways: [
+        "Löschen Sie niemals den gesamten AppData-Ordner; dadurch werden Anwendungseinstellungen, Lizenzen, gespeicherte Sitzungen und Profile gelöscht.",
+        "Sicher zu entfernen: Der Inhalt von AppData\\Local\\Temp, Unterordner namens Cache und GPUCache geschlossener Anwendungen sowie verwaiste Ordner deinstallierter Programme.",
+        "Der Ordner 'Local' speichert gerätespezifische Caches sowie temporäre Dateien und ist meist am größten; 'Roaming' enthält Einstellungen, die über PCs hinweg synchronisiert werden können.",
+        "Deinstallationsprogramme hinterlassen regelmäßig Einstellungsordner in AppData, die im Laufe der Jahre unbemerkt Dutzende Gigabyte belegen.",
+        "Die DiskMop-Festplattenanalyse visualisiert mit einer interaktiven Treemap sekundenschnell die größten Speicherfresser in AppData.",
+      ],
       sections: [
         {
           title:
@@ -407,6 +414,100 @@ export const appdataCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So bereinigen Sie den AppData-Ordner und temporäre Dateien sicher",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Lokalen Temp-Ordner leeren",
+            text: "Drücken Sie Win+R, geben Sie %localappdata%\\Temp ein und drücken Sie die Eingabetaste. Wählen Sie mit Strg+A alle Dateien aus und drücken Sie Entf. Überspringen Sie Dateien, die gerade von Windows gesperrt sind.",
+          },
+          {
+            name: "Temporäre Windows-Dateien bereinigen",
+            text: "Öffnen Sie Einstellungen > System > Speicher > Temporäre Dateien. Markieren Sie Übermittlungsoptimierungsdateien und Windows Update-Bereinigungsreste und klicken Sie auf 'Dateien entfernen'.",
+          },
+          {
+            name: "Reste deinstallierter Software entfernen",
+            text: "Öffnen Sie %appdata% und %localappdata% über Win+R. Suchen Sie nach Ordnern bereits deinstallierter Programme und löschen Sie diese.",
+          },
+          {
+            name: "Papierkorb leeren",
+            text: "Klicken Sie mit der rechten Maustaste auf den Papierkorb auf Ihrem Desktop und wählen Sie 'Papierkorb leeren', um den Speicherplatz endgültig freizugeben.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Sicherheitsübersicht zur Bereinigung von AppData-Unterordnern",
+        columns: [
+          "Unterordner",
+          "Pfad",
+          "Inhaltstyp",
+          "Sicherheitsstufe",
+          "Bereinigungsmethode",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "Temporäre Arbeitsdateien",
+            "Vollständig sicher",
+            "Alles markieren und löschen; geöffnete Dateien überspringen",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[App]\\Cache",
+            "Browser- und Medien-Caches",
+            "Sicher (bei geschlossener App)",
+            "Nur Unterordner namens Cache oder GPUCache löschen",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "Absturzberichte und Speicherabbilder",
+            "Vollständig sicher",
+            "Alte .dmp-Absturzdateien löschen",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "Benutzereinstellungen, Spielstände, Profile",
+            "Nur deinstallierte Programme",
+            "Ordner bereits entfernter Software bereinigen",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "Daten isolierter Anwendungen (Sandbox-Browser/Spiele)",
+            "Sorgfältig prüfen",
+            "Nur Reste entfernter Programme löschen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Kann ich den gesamten AppData-Ordner löschen?",
+          answer:
+            "Nein. Das Löschen des gesamten AppData-Ordners beschädigt installierte Anwendungen und löscht Ihre benutzerdefinierten Einstellungen, Spielstände, Profilkonfigurationen und Lizenzschlüssel. Entfernen Sie nur bestimmte entbehrliche Verzeichnisse wie Temp und App-Caches.",
+        },
+        {
+          question: "Warum wird der AppData-Ordner so groß?",
+          answer:
+            "Moderne Anwendungen nutzen Caches intensiv, um die Leistung zu steigern. Mit der Zeit sammeln sich Browser-Caches, Discord-Medienpuffer, Update-Installationsprogramme, Crash-Dumps und Reste deinstallierter Programme an, ohne dass Windows sie automatisch bereinigt.",
+        },
+        {
+          question:
+            "Was ist der Unterschied zwischen Local, LocalLow und Roaming?",
+          answer:
+            "'Local' speichert gerätespezifische Caches, temporäre Dateien und Binärdateien und ist meist der größte Ordner. 'LocalLow' enthält Daten für isolierte Software mit niedrigen Rechten. 'Roaming' speichert Benutzereinstellungen, Profile und Konfigurationsdaten, die Ihrem Benutzerkonto folgen.",
+        },
+        {
+          question:
+            "Wie finde ich Ordner, die von deinstallierten Programmen übrig geblieben sind?",
+          answer:
+            "Öffnen Sie %appdata% und %localappdata% im Datei-Explorer und suchen Sie nach Herstellernamen nicht mehr genutzter Programme, oder nutzen Sie die visuelle Treemap der DiskMop-Festplattenanalyse, um verwaiste Ordner sofort aufzuspüren.",
+        },
+      ],
       verdict: [
         "Ein großer AppData-Ordner ist keine Fehlfunktion, sondern die natürliche Folge aggressiven App-Cachings — unkontrolliertes Wachstum müssen Sie deshalb aber nicht hinnehmen. Die Karte von Local, LocalLow und Roaming kennen, Temp und Caches leeren, Reste deinstallierter Programme entfernen und den Ordner niemals als Ganzes löschen: Mit diesen vier Prinzipien gewinnen Sie sicher Gigabytes zurück.",
         "Disk Mop vereint alle Schritte dieses Leitfadens in einer App: Die Festplattenanalyse zeigt aufgeblähte Ordner, der Cache-Bereiniger entfernt System- und App-Caches sicher, und die geplante Bereinigung verhindert, dass sich AppData erneut füllt. Die einmalige Lizenz für 19,90 $ gilt lebenslang unter Windows 10, Windows 11 und macOS.",
@@ -423,6 +524,13 @@ export const appdataCleanup: Article = {
       intro: [
         "Votre dossier AppData est-il devenu trop volumineux ? Dans la plupart des cas, vous pouvez le réduire sans risque en trois gestes : vider le dossier Temp situé dans AppData\\Local, effacer les caches des applications et supprimer les dossiers laissés derrière eux par des programmes que vous avez déjà désinstallés. Ce qu'il ne faut jamais faire, en revanche, c'est supprimer l'intégralité du dossier AppData : il contient aussi les réglages, les profils et les données enregistrées dont vos applications installées ont besoin pour fonctionner.",
         "Dans ce guide, nous expliquons d'abord à quoi servent réellement les trois sous-dossiers d'AppData (Local, LocalLow et Roaming), puis nous traçons une carte claire de ce qui peut être supprimé sans danger et de ce à quoi il ne faut surtout pas toucher. Vous viderez le dossier Temp et les caches applicatifs étape par étape, vous débusquerez les résidus des programmes désinstallés que la plupart des guides ignorent, et vous finirez par automatiser le nettoyage pour qu'AppData ne gonfle plus jamais jusqu'à des dizaines de gigaoctets.",
+      ],
+      keyTakeaways: [
+        "Ne supprimez jamais l'intégralité du dossier AppData ; vous perdriez les paramètres de vos applications, licences, sessions et profils.",
+        "Suppression sûre : le contenu d'AppData\\Local\\Temp, les sous-dossiers Cache et GPUCache des applications fermées, ainsi que les dossiers orphelins de logiciels désinstallés.",
+        "Le dossier Local conserve les caches spécifiques à la machine et les fichiers temporaires (souvent le plus volumineux) ; Roaming stocke les paramètres synchronisables entre PC.",
+        "Les programmes de désinstallation laissent couramment des résidus dans AppData, gaspillant silencieusement des dizaines de gigaoctets avec le temps.",
+        "L'analyse de disque DiskMop révèle en quelques secondes les dossiers les plus lourds d'AppData grâce à un treemap interactif.",
       ],
       sections: [
         {
@@ -481,6 +589,100 @@ export const appdataCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment nettoyer en toute sécurité le dossier AppData et les fichiers temporaires",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Vider le dossier Temp local",
+            text: "Appuyez sur Win+R, tapez %localappdata%\\Temp et validez avec Entrée. Sélectionnez tous les fichiers avec Ctrl+A et supprimez-les. Ignorez les fichiers actuellement verrouillés par Windows.",
+          },
+          {
+            name: "Nettoyer les fichiers temporaires Windows",
+            text: "Ouvrez Paramètres > Système > Stockage > Fichiers temporaires. Cochez les fichiers d'optimisation de livraison et les résidus de Windows Update, puis cliquez sur 'Supprimer les fichiers'.",
+          },
+          {
+            name: "Supprimer les restes de logiciels désinstallés",
+            text: "Ouvrez %appdata% et %localappdata% via Win+R. Localisez les dossiers appartenant à des programmes déjà désinstallés et supprimez-les.",
+          },
+          {
+            name: "Vider la Corbeille",
+            text: "Faites un clic droit sur la Corbeille du Bureau et choisissez 'Vider la corbeille' pour récupérer définitivement l'espace disque.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Guide de sécurité pour le nettoyage des sous-dossiers AppData",
+        columns: [
+          "Sous-dossier",
+          "Chemin",
+          "Type de contenu",
+          "Niveau de sécurité",
+          "Méthode de nettoyage",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "Fichiers de travail temporaires",
+            "Totalement sûr",
+            "Tout sélectionner et supprimer ; ignorer les fichiers en cours d'utilisation",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[App]\\Cache",
+            "Caches de navigateurs et médias",
+            "Sûr (application fermée)",
+            "Supprimer uniquement les sous-dossiers nommés Cache ou GPUCache",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "Rapports de plantage et vidages mémoire",
+            "Totalement sûr",
+            "Supprimer les anciens fichiers de vidage .dmp",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "Préférences utilisateur, sauvegardes de jeux, profils",
+            "Uniquement programmes désinstallés",
+            "Supprimer les dossiers de logiciels qui ne sont plus installés",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "Données d'apps sandboxées ou à faible niveau d'intégrité",
+            "Examiner avec prudence",
+            "Supprimer uniquement les résidus de programmes supprimés",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Puis-je supprimer tout le dossier AppData ?",
+          answer:
+            "Non. Supprimer l'intégralité du dossier AppData endommagera vos logiciels installés en effaçant vos préférences, sauvegardes de jeux, configurations de profil et clés de licence. Vous devez uniquement vider des dossiers jetables ciblés comme Temp et les caches applicatifs.",
+        },
+        {
+          question: "Pourquoi le dossier AppData devient-il si volumineux ?",
+          answer:
+            "Les applications modernes mettent agressivement des données en cache pour accélérer leurs performances. Au fil du temps, les caches de navigateurs, tampons multimédias Discord, installateurs de mises à jour, rapports de plantage et résidus de logiciels s'accumulent sans que Windows ne les nettoie automatiquement.",
+        },
+        {
+          question:
+            "Quelle est la différence entre Local, LocalLow et Roaming ?",
+          answer:
+            "Local stocke les caches spécifiques à la machine, les fichiers temporaires et les binaires d'applications (généralement le plus gros dossier). LocalLow héberge les données des logiciels sandboxés ou à faible intégrité. Roaming conserve les préférences utilisateur, profils et configurations synchronisables avec votre compte.",
+        },
+        {
+          question:
+            "Comment repérer les dossiers laissés par des programmes désinstallés ?",
+          answer:
+            "Ouvrez %appdata% et %localappdata% dans l'Explorateur de fichiers et recherchez les éditeurs ou applications que vous n'utilisez plus, ou lancez le treemap visuel de DiskMop pour repérer instantanément les dossiers orphelins volumineux.",
+        },
+      ],
       verdict: [
         "Un dossier AppData surdimensionné n'est pas une panne : c'est la conséquence naturelle de l'appétit des applications modernes pour le cache. Cela ne signifie pas pour autant qu'il faille accepter une croissance sans limite. Apprenez la carte de Local, LocalLow et Roaming, videz Temp et les caches, supprimez les résidus des programmes désinstallés et ne supprimez jamais le dossier dans son ensemble : appliquez ces quatre principes et vous récupérerez des gigaoctets en toute sécurité.",
         "Disk Mop réunit chaque étape de ce guide dans une seule application : l'analyse de disque montre quels dossiers ont gonflé, le nettoyeur de cache efface sans risque les caches système et applicatifs, et le nettoyage planifié empêche AppData de s'accumuler à nouveau. Une licence unique à 19,90 $ couvre une utilisation à vie sous Windows 10, Windows 11 et macOS.",
@@ -496,6 +698,13 @@ export const appdataCleanup: Article = {
       intro: [
         "¿Tu carpeta AppData ha crecido demasiado? En la mayoría de los casos puedes reducirla sin riesgo con tres gestos: vaciar la carpeta Temp que hay dentro de AppData\\Local, borrar las cachés de las aplicaciones y eliminar las carpetas que dejaron atrás los programas que ya desinstalaste. Lo que nunca debes hacer es borrar la carpeta AppData entera, porque también guarda la configuración, los perfiles y los datos guardados que tus aplicaciones instaladas necesitan para funcionar.",
         "En esta guía explicamos primero para qué sirven realmente las tres subcarpetas de AppData (Local, LocalLow y Roaming) y después trazamos un mapa claro de lo que se puede borrar sin peligro y de lo que conviene no tocar. Vaciarás la carpeta Temp y las cachés de las aplicaciones paso a paso, localizarás los restos de programas desinstalados que casi ninguna guía menciona y, por último, automatizarás la limpieza para que AppData no vuelva a dispararse hasta decenas de gigabytes.",
+      ],
+      keyTakeaways: [
+        "Nunca elimines la carpeta AppData completa; hacerlo borrará la configuración de tus aplicaciones, licencias, sesiones guardadas y perfiles.",
+        "Seguro de eliminar: el contenido de AppData\\Local\\Temp, subcarpetas llamadas Cache y GPUCache de apps cerradas y carpetas huérfanas de programas desinstalados.",
+        "Local almacena cachés específicos del equipo y archivos temporales (suele ser el más grande); Roaming guarda configuraciones sincronizables entre equipos.",
+        "Los desinstaladores suelen dejar carpetas de configuración en AppData, acumulando silenciosamente decenas de gigabytes con los años.",
+        "El análisis de disco de DiskMop utiliza un mapa de árbol interactivo para revelar en segundos las carpetas más pesadas dentro de AppData.",
       ],
       sections: [
         {
@@ -552,6 +761,98 @@ export const appdataCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo limpiar de forma segura la carpeta AppData y archivos temporales",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Vaciar la carpeta Local Temp",
+            text: "Pulsa Win+R, escribe %localappdata%\\Temp y presiona Enter. Selecciona todos los archivos con Ctrl+A y presiona Supr. Omite los archivos bloqueados actualmente por Windows.",
+          },
+          {
+            name: "Limpiar archivos temporales de Windows",
+            text: "Abre Configuración > Sistema > Almacenamiento > Archivos temporales. Marca los archivos de optimización de entrega y restos de Windows Update, y haz clic en 'Quitar archivos'.",
+          },
+          {
+            name: "Eliminar restos de software desinstalado",
+            text: "Abre %appdata% y %localappdata% mediante Win+R. Localiza carpetas pertenecientes a programas que ya hayas desinstalado y elimínalas.",
+          },
+          {
+            name: "Vaciar la Papelera de reciclaje",
+            text: "Haz clic derecho en la Papelera de reciclaje en el escritorio y selecciona 'Vaciar papelera de reciclaje' para liberar el espacio definitivamente.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Mapa de seguridad para la limpieza de subcarpetas de AppData",
+        columns: [
+          "Subcarpeta",
+          "Ruta",
+          "Tipo de contenido",
+          "Nivel de seguridad",
+          "Método de limpieza",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "Archivos de trabajo temporales",
+            "Totalmente seguro",
+            "Seleccionar todo y borrar; omitir archivos en uso",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[App]\\Cache",
+            "Cachés de navegadores y multimedia",
+            "Seguro (con la app cerrada)",
+            "Eliminar solo subcarpetas llamadas Cache o GPUCache",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "Volcados de memoria y registros de error",
+            "Totalmente seguro",
+            "Eliminar archivos antiguos de volcado .dmp",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "Preferencias de usuario, partidas y perfiles",
+            "Solo programas desinstalados",
+            "Borrar carpetas de software que ya no esté instalado",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "Datos de aplicaciones en sandbox o baja integridad",
+            "Revisar con cuidado",
+            "Eliminar únicamente restos de programas desinstalados",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "¿Puedo borrar toda la carpeta AppData?",
+          answer:
+            "No. Eliminar toda la carpeta AppData estropeará las aplicaciones instaladas, borrando configuraciones personalizadas, partidas guardadas, perfiles y claves de licencia. Solo debes limpiar carpetas descartables específicas como Temp y cachés de aplicaciones.",
+        },
+        {
+          question: "¿Por qué la carpeta AppData se vuelve tan grande?",
+          answer:
+            "Las aplicaciones modernas guardan datos en caché agresivamente para acelerar su rendimiento. Con el tiempo, los cachés de navegadores, búferes de Discord, instaladores de actualizaciones, volcados de errores y restos de programas desinstalados se acumulan sin que Windows los limpie por sí solo.",
+        },
+        {
+          question: "¿Cuál es la diferencia entre Local, LocalLow y Roaming?",
+          answer:
+            "Local guarda cachés específicos del sistema, temporales y binarios de aplicaciones (suele ser la carpeta más grande). LocalLow aloja datos de software aislado o de baja integridad. Roaming contiene preferencias de usuario, perfiles y configuraciones sincronizables vinculadas a tu cuenta.",
+        },
+        {
+          question:
+            "¿Cómo encuentro carpetas dejadas por programas desinstalados?",
+          answer:
+            "Abre %appdata% y %localappdata% en el Explorador de archivos y busca nombres de desarrolladores o programas que ya no uses, o abre el mapa de árbol visual de DiskMop para detectar al instante carpetas huérfanas pesadas.",
+        },
+      ],
       verdict: [
         "Una carpeta AppData enorme no es un fallo: es la consecuencia natural de lo agresivas que son las aplicaciones modernas con la caché. Pero que crezca sin límite no es algo que tengas que aceptar. Aprende el mapa de Local, LocalLow y Roaming, vacía Temp y las cachés, elimina los restos de los programas desinstalados y no borres nunca la carpeta entera: con esos cuatro principios recuperarás gigabytes sin correr riesgos.",
         "Disk Mop reúne todos los pasos de esta guía en una sola aplicación: el análisis de disco te enseña qué carpetas se han disparado, el limpiador de caché borra sin riesgo las cachés del sistema y de las aplicaciones, y la limpieza programada evita que AppData vuelva a acumularse. Una licencia única de 19,90 $ cubre el uso de por vida en Windows 10, Windows 11 y macOS.",
@@ -567,6 +868,13 @@ export const appdataCleanup: Article = {
       intro: [
         "La tua cartella AppData è diventata troppo grande? Nella maggior parte dei casi puoi ridurla in sicurezza con tre mosse: svuotare la cartella Temp che si trova dentro AppData\\Local, cancellare le cache delle applicazioni ed eliminare le cartelle lasciate indietro dai programmi che hai già disinstallato. Quello che non devi mai fare è eliminare l'intera cartella AppData, perché contiene anche le impostazioni, i profili e i dati salvati di cui le tue applicazioni hanno bisogno per funzionare.",
         "In questa guida spieghiamo prima a cosa servono davvero le tre sottocartelle di AppData (Local, LocalLow e Roaming), poi tracciamo una mappa chiara di ciò che si può eliminare senza pericolo e di ciò che è meglio non toccare. Svuoterai la cartella Temp e le cache delle app passo dopo passo, andrai a caccia dei residui dei programmi disinstallati che quasi nessuna guida considera e infine automatizzerai la pulizia, così AppData non si gonfierà mai più fino a decine di gigabyte.",
+      ],
+      keyTakeaways: [
+        "Non eliminare mai l'intera cartella AppData: farlo cancellerà impostazioni delle app, licenze, sessioni salvate e profili utente.",
+        "Sicuro da eliminare: il contenuto di AppData\\Local\\Temp, le sottocartelle Cache e GPUCache delle app chiuse e le cartelle orfane di programmi disinstallati.",
+        "Local conserva cache specifiche del dispositivo e file temporanei (di solito la più capiente); Roaming ospita impostazioni sincronizzabili tra PC.",
+        "I programmi di disinstallazione lasciano spesso cartelle residue in AppData, sprecando decine di gigabyte nel corso degli anni.",
+        "L'Analisi Disco di DiskMop usa una mappa ad albero interattiva per individuare in pochi secondi le cartelle più pesanti in AppData.",
       ],
       sections: [
         {
@@ -623,6 +931,99 @@ export const appdataCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come pulire in sicurezza la cartella AppData e i file temporanei",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Svuotare la cartella Temp locale",
+            text: "Premi Win+R, digita %localappdata%\\Temp e premi Invio. Seleziona tutti i file con Ctrl+A e premi Canc. Salta i file attualmente bloccati da Windows.",
+          },
+          {
+            name: "Pulire i file temporanei di Windows",
+            text: "Apri Impostazioni > Sistema > Archiviazione > File temporanei. Spunta i file di Ottimizzazione recapito e i residui di Windows Update, quindi fai clic su 'Rimuovi file'.",
+          },
+          {
+            name: "Rimuovere residui di software disinstallato",
+            text: "Apri %appdata% e %localappdata% tramite Win+R. Individua le cartelle appartenenti ad app già disinstallate ed eliminale.",
+          },
+          {
+            name: "Svuotare il Cestino",
+            text: "Fai clic destro sull'icona del Cestino sul desktop e seleziona 'Svuota cestino' per recuperare definitivamente lo spazio su disco.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Mappa di sicurezza per la pulizia delle sottocartelle di AppData",
+        columns: [
+          "Sottocartella",
+          "Percorso",
+          "Tipo di contenuto",
+          "Livello di sicurezza",
+          "Metodo di pulizia",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "File temporanei di lavoro",
+            "Completamente sicuro",
+            "Seleziona tutto ed elimina; salta i file in uso",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[App]\\Cache",
+            "Cache di browser e contenuti multimediali",
+            "Sicuro (ad app chiusa)",
+            "Elimina solo sottocartelle denominate Cache o GPUCache",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "Dump di arresto anomalo e log di errore",
+            "Completamente sicuro",
+            "Elimina i vecchi file di dump .dmp",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "Preferenze utente, salvataggi e profili",
+            "Solo programmi disinstallati",
+            "Elimina le cartelle di software non più presente",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "Dati per app in sandbox o a bassa integrità",
+            "Verificare con cura",
+            "Elimina solo i residui di programmi disinstallati",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Posso eliminare l'intera cartella AppData?",
+          answer:
+            "No. L'eliminazione dell'intera cartella AppData danneggerà le applicazioni installate, azzerando preferenze personali, salvataggi di gioco, configurazioni di profilo e chiavi di licenza. Vanno rimosse solo cartelle eliminabili mirate come Temp e le cache delle applicazioni.",
+        },
+        {
+          question: "Perché la cartella AppData diventa così pesante?",
+          answer:
+            "Le applicazioni moderne usano la cache in modo intensivo per migliorare le prestazioni. Con il tempo, cache dei browser, buffer di Discord, installer di aggiornamenti, file dump e residui di programmi disinstallati si accumulano senza essere puliti automaticamente da Windows.",
+        },
+        {
+          question: "Qual è la differenza tra Local, LocalLow e Roaming?",
+          answer:
+            "Local conserva cache di sistema, file temporanei e file binari delle app (in genere la cartella più voluminosa). LocalLow contiene dati per software sandbox o a bassa integrità. Roaming conserva preferenze utente, profili e configurazioni sincronizzabili con il proprio account.",
+        },
+        {
+          question:
+            "Come posso trovare le cartelle rimaste dai programmi disinstallati?",
+          answer:
+            "Apri %appdata% e %localappdata% in Esplora file e cerca i nomi di produttori o programmi non più presenti, oppure apri l'Analisi Disco visuale di DiskMop per individuare istantaneamente le cartelle orfane più ingombranti.",
+        },
+      ],
       verdict: [
         "Una cartella AppData enorme non è un malfunzionamento: è la conseguenza naturale di quanto le app moderne usino la cache. Questo però non significa che la crescita senza limiti vada accettata. Impara la mappa di Local, LocalLow e Roaming, svuota Temp e le cache, rimuovi i residui dei programmi disinstallati e non eliminare mai la cartella per intero: applica questi quattro principi e recupererai gigabyte in tutta sicurezza.",
         "Disk Mop riunisce ogni passaggio di questa guida in un'unica applicazione: l'analisi del disco mostra quali cartelle si sono gonfiate, il pulitore della cache rimuove in sicurezza le cache di sistema e delle applicazioni, e la pulizia pianificata impedisce ad AppData di riaccumularsi. Una licenza una tantum da 19,90 $ copre l'uso a vita su Windows 10, Windows 11 e macOS.",
@@ -638,6 +1039,13 @@ export const appdataCleanup: Article = {
       intro: [
         "A sua pasta AppData ficou grande demais? Na maioria dos casos dá para reduzi-la com segurança em três movimentos: esvaziar a pasta Temp que fica dentro de AppData\\Local, limpar os caches dos aplicativos e apagar as pastas deixadas para trás por programas que você já desinstalou. O que você nunca deve fazer é apagar a pasta AppData inteira, porque ela também guarda as configurações, os perfis e os dados salvos de que os seus aplicativos precisam para funcionar.",
         "Neste guia explicamos primeiro para que servem de fato as três subpastas do AppData (Local, LocalLow e Roaming) e depois desenhamos um mapa claro do que pode ser apagado sem risco e do que é melhor não tocar. Você vai esvaziar a pasta Temp e os caches dos aplicativos passo a passo, caçar os restos de programas desinstalados que a maioria dos guias ignora e, por fim, automatizar a limpeza para que o AppData nunca mais chegue a dezenas de gigabytes.",
+      ],
+      keyTakeaways: [
+        "Nunca exclua a pasta AppData inteira; isso apagará as configurações dos seus aplicativos, licenças, sessões salvas e perfis.",
+        "Seguro de remover: o conteúdo de AppData\\Local\\Temp, subpastas chamadas Cache e GPUCache de apps fechados e pastas órfãs de programas desinstalados.",
+        "A pasta Local guarda caches específicos da máquina e arquivos temporários (geralmente a maior); Roaming contém configurações sincronizáveis entre computadores.",
+        "Os desinstaladores costumam deixar pastas de configuração para trás no AppData, acumulando silenciosamente dezenas de gigabytes com o tempo.",
+        "A Análise de Disco do DiskMop utiliza um mapa em árvore interativo para revelar em segundos as pastas mais pesadas dentro do AppData.",
       ],
       sections: [
         {
@@ -695,6 +1103,98 @@ export const appdataCleanup: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar com segurança a pasta AppData e arquivos temporários",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Esvaziar a pasta Temp local",
+            text: "Pressione Win+R, digite %localappdata%\\Temp e aperte Enter. Selecione todos os arquivos com Ctrl+A e pressione Delete. Pule os arquivos que estiverem atualmente em uso pelo Windows.",
+          },
+          {
+            name: "Limpar arquivos temporários do Windows",
+            text: "Abra Configurações > Sistema > Armazenamento > Arquivos temporários. Marque arquivos de Otimização de Entrega e sobras do Windows Update, depois clique em 'Remover arquivos'.",
+          },
+          {
+            name: "Remover sobras de programas desinstalados",
+            text: "Abra %appdata% e %localappdata% via Win+R. Localize pastas pertencentes a programas já desinstalados e exclua-as.",
+          },
+          {
+            name: "Esvaziar a Lixeira",
+            text: "Clique com o botão direito na Lixeira na área de trabalho e selecione 'Esvaziar Lixeira' para liberar o espaço permanentemente.",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "Mapa de segurança para limpeza de subpastas do AppData",
+        columns: [
+          "Subpasta",
+          "Caminho",
+          "Tipo de conteúdo",
+          "Nível de segurança",
+          "Como limpar",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "Arquivos de trabalho temporários",
+            "Totalmente seguro",
+            "Selecionar tudo e excluir; pular arquivos em uso",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[App]\\Cache",
+            "Caches de navegadores e mídia",
+            "Seguro (com o app fechado)",
+            "Excluir apenas subpastas chamadas Cache ou GPUCache",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "Relatórios de erro e despejos de memória",
+            "Totalmente seguro",
+            "Excluir arquivos de despejo .dmp antigos",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "Preferências do usuário, jogos salvos e perfis",
+            "Apenas programas desinstalados",
+            "Limpar pastas de programas já removidos",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "Dados de apps em sandbox ou baixa integridade",
+            "Revisar com cautela",
+            "Excluir apenas sobras de softwares removidos",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "Posso excluir a pasta AppData inteira?",
+          answer:
+            "Não. A exclusão de toda a pasta AppData corromperá seus aplicativos instalados, apagando configurações personalizadas, jogos salvos, perfis e chaves de licença. Remova apenas pastas descartáveis específicas, como Temp e caches de aplicativos.",
+        },
+        {
+          question: "Por que a pasta AppData fica tão grande?",
+          answer:
+            "Aplicativos modernos criam caches agressivos para acelerar a inicialização. Com o tempo, caches de navegadores, buffers de mídia do Discord, instaladores de atualizações, relatórios de falha e sobras de programas desinstalados se acumulam sem que o Windows os limpe sozinho.",
+        },
+        {
+          question: "Qual é a diferença entre Local, LocalLow e Roaming?",
+          answer:
+            "Local guarda caches da máquina, temporários e binários de apps (normalmente a maior pasta). LocalLow abriga dados de programas isolados em sandbox ou de baixa integridade. Roaming armazena preferências de usuário, perfis e configurações sincronizáveis com a sua conta.",
+        },
+        {
+          question:
+            "Como encontro pastas deixadas por programas desinstalados?",
+          answer:
+            "Abra %appdata% e %localappdata% no Explorador de Arquivos e procure nomes de empresas ou programas que você já removeu, ou use o mapa visual de Análise de Disco do DiskMop para localizar pastas órfãs pesadas instantaneamente.",
+        },
+      ],
       verdict: [
         "Uma pasta AppData enorme não é um defeito: é a consequência natural de como os aplicativos modernos usam cache. Mas crescer sem limite não é algo que você precise aceitar. Aprenda o mapa de Local, LocalLow e Roaming, limpe a Temp e os caches, remova os restos de programas desinstalados e nunca apague a pasta inteira: aplique esses quatro princípios e recupere gigabytes com segurança.",
         "O Disk Mop reúne todas as etapas deste guia em um único aplicativo: a análise de disco mostra quais pastas incharam, o limpador de cache apaga com segurança os caches do sistema e dos aplicativos, e a limpeza agendada impede que o AppData volte a se acumular. Uma licença única de 19,90 $ cobre o uso vitalício no Windows 10, no Windows 11 e no macOS.",
@@ -710,6 +1210,13 @@ export const appdataCleanup: Article = {
       intro: [
         "AppDataフォルダーが大きくなりすぎていませんか。ほとんどの場合、AppData\\Localの中にあるTempフォルダーを空にし、アプリケーションのキャッシュを削除し、すでにアンインストールしたプログラムが残していったフォルダーを消せば、安全に容量を減らせます。逆に絶対にやってはいけないのが、AppDataフォルダーごと削除することです。このフォルダーには、インストール済みのアプリが動作するために必要な設定やプロファイル、保存データも入っているからです。",
         "この記事ではまず、AppDataの3つのサブフォルダー（Local、LocalLow、Roaming）がそれぞれ何をしているのかを説明し、そのうえで「安全に削除できるもの」と「触ってはいけないもの」をはっきりと切り分けます。Tempフォルダーとアプリのキャッシュを手順どおりに削除し、多くの記事が触れないアンインストール済みプログラムの残骸を洗い出し、最後にクリーンアップを自動化して、AppDataが再び数十ギガバイトまで膨らまないようにします。",
+      ],
+      keyTakeaways: [
+        "AppDataフォルダ全体を絶対に削除しないでください。アプリの設定、ライセンス、保存されたセッション、プロファイルが失われます。",
+        "安全に削除できる対象：AppData\\Local\\Tempの内容、終了したアプリ内のCacheおよびGPUCacheサブフォルダ、アンインストール済みアプリの残骸フォルダ。",
+        "LocalはPC固有のキャッシュと一時ファイルを保持し通常最も大容量です。RoamingはPC間で同期可能なユーザー設定を保持します。",
+        "アンインストーラーはAppDataに設定フォルダを残しがちで、長年の使用で気付かぬうちに数十GBを圧迫します。",
+        "DiskMopのディスク分析なら、インタラクティブなツリーマップでAppData内の巨大フォルダを数秒で特定できます。",
       ],
       sections: [
         {
@@ -762,6 +1269,98 @@ export const appdataCleanup: Article = {
             "Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）は、まさにその隙間を埋めます。週次や月次のタスクを作っておけば、キャッシュの削除、一時ファイルの整理、ごみ箱を空にする処理が自動で実行されます。システム健全性スコア（System Health Score）を見れば、ディスクがいつ手入れを必要としているかがひと目で分かるので、目を離しているあいだにAppDataが静かに膨らんでいくこともなくなります。",
             "この自動化に、ちょっとした習慣を組み合わせてください。数か月に一度アンインストール済みプログラムの残骸を見直し、C:ドライブの空き容量が減り始めたらディスク分析を実行するだけです。この2つを続けていれば、AppDataは長期的にきちんと管理された状態を保てます。",
           ],
+        },
+      ],
+      howTo: {
+        name: "AppDataフォルダと一時ファイルを安全にクリーンアップする方法",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "ローカルTempフォルダを空にする",
+            text: "Win+Rキーを押し、「%localappdata%\\Temp」と入力してEnterを押します。Ctrl+Aですべてのファイルを選択してDeleteキーを押します。Windowsで使用中のファイルは「スキップ」を選択してください。",
+          },
+          {
+            name: "Windowsの一時ファイルをクリーンアップする",
+            text: "「設定」>「システム」>「ストレージ」>「一時ファイル」を開きます。「配信の最適化ファイル」や「Windows Updateのクリーンアップ」にチェックを入れ、「ファイルの削除」をクリックします。",
+          },
+          {
+            name: "アンインストール済みアプリの残骸を削除する",
+            text: "Win+Rから「%appdata%」および「%localappdata%」を開きます。すでにアンインストール済みのアプリ名が付いたフォルダを見つけて削除します。",
+          },
+          {
+            name: "ごみ箱を空にする",
+            text: "デスクトップのごみ箱アイコンを右クリックし、「ごみ箱を空にする」を選択してディスク領域を完全に解放します。",
+          },
+        ],
+      },
+      dataTable: {
+        caption: "AppDataサブフォルダの安全なクリーンアップマップ",
+        columns: [
+          "サブフォルダ",
+          "パス",
+          "コンテンツの種類",
+          "安全性レベル",
+          "クリーンアップ方法",
+        ],
+        rows: [
+          [
+            "Local\\Temp",
+            "%localappdata%\\Temp",
+            "作業用一時ファイル",
+            "完全に安全",
+            "すべて選択して削除（使用中のファイルはスキップ）",
+          ],
+          [
+            "Local\\...\\Cache",
+            "%localappdata%\\[アプリ]\\Cache",
+            "ブラウザおよびメディアのキャッシュ",
+            "安全（アプリ終了時）",
+            "CacheまたはGPUCacheという名前のサブフォルダのみ削除",
+          ],
+          [
+            "Local\\CrashDumps",
+            "%localappdata%\\CrashDumps",
+            "クラッシュダンプとログ",
+            "完全に安全",
+            "古い.dmpクラッシュファイルを削除",
+          ],
+          [
+            "Roaming",
+            "%appdata%",
+            "ユーザー設定、ゲームのセーブデータ、プロファイル",
+            "アンインストール済みのみ",
+            "削除済みソフトウェアの残骸フォルダのみ消去",
+          ],
+          [
+            "LocalLow",
+            "%userprofile%\\AppData\\LocalLow",
+            "低整合性アプリデータ（サンドボックスブラウザ/ゲーム）",
+            "要確認",
+            "削除済みプログラムの残骸のみ削除",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question: "AppDataフォルダ全体を削除しても大丈夫ですか？",
+          answer:
+            "いいえ。AppDataフォルダ全体を削除すると、インストール済みアプリが正常に起動しなくなり、個人設定、セーブデータ、プロファイル構成、ライセンス情報が消失します。削除するのはTempやアプリのキャッシュなど特定の使い捨てフォルダのみに限定してください。",
+        },
+        {
+          question: "なぜAppDataフォルダはこれほど肥大化するのですか？",
+          answer:
+            "最近のアプリはパフォーマンス向上のため積極的にキャッシュを保存します。ブラウザのキャッシュ、Discordのメディアバッファ、更新インストーラー、クラッシュダンプ、削除済みアプリの残骸が蓄積し、Windowsによって自動削除されないためです。",
+        },
+        {
+          question: "Local、LocalLow、Roamingの違いは何ですか？",
+          answer:
+            "LocalはPC固有のキャッシュ、一時ファイル、アプリアイコンなどを保存し、通常最大のサイズになります。LocalLowはサンドボックス化された整合性の低いソフト用のデータを保持します。Roamingはユーザーアカウントに追従するプロファイルや同期用設定を保存します。",
+        },
+        {
+          question:
+            "アンインストールしたソフトの残骸フォルダはどうやって見つけますか？",
+          answer:
+            "エクスプローラーで「%appdata%」や「%localappdata%」を開き、既に使っていない開発元やソフト名のフォルダを探すか、DiskMopの視覚的ツリーマップ分析を実行して不要な大容量フォルダを即座に見つけます。",
         },
       ],
       verdict: [

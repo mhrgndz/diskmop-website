@@ -5,12 +5,13 @@ export const windowsUpdateNotEnoughSpace: Article = {
   type: "guide",
   category: "Windows Tips",
   date: "2026-08-17",
+  updated: "2026-11-06",
   readingTime: 8,
   content: {
     tr: {
       title: "Windows Güncellemesi İçin Yeterli Disk Alanı Yok: Kalıcı Çözüm",
       metaDescription:
-        "Windows güncellemesi 0x80070070 hatası veriyor veya yeterli alan olmadığını söylüyorsa: ne kadar alan gerektiği, nereden açılacağı ve Ayrılmış Depolama'nın rolü.",
+        "Windows güncellemesi 0x80070070 yetersiz disk alanı hatası veriyorsa gereken alanı açma, tampon klasörleri temizleme ve güncelleme adımları.",
       subtitle: "20 GB'ı Nereden Bulacaksınız?",
       intro: [
         'Kısa cevap: Windows 11 özellik güncellemeleri sistem diskinde yaklaşık 20 GB boş alan ister. En hızlı yol, Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından "Windows Update temizliği" ve "Önceki Windows kurulumları" kutularını işaretleyip temizlemektir; bu genellikle tek başına 10-25 GB kazandırır. Yetmezse SoftwareDistribution indirme klasörünü boşaltın ve DISM ile bileşen deposunu temizleyin.',
@@ -128,6 +129,46 @@ export const windowsUpdateNotEnoughSpace: Article = {
             'Evet. Windows.old yalnızca ilk 10 gün içinde önceki sürüme dönmenizi sağlar ve zaten 10 gün sonra otomatik silinir. Yeni sürümde sorun yaşamıyorsanız Ayarlar > Sistem > Depolama > Geçici dosyalar ekranından "Önceki Windows kurulumları" seçeneğiyle hemen kaldırabilir, 15-30 GB kazanabilirsiniz.',
         },
       ],
+      dataTable: {
+        caption: "Windows Güncelleme Türleri ve Gereken Minimum Disk Alanı",
+        columns: [
+          "Güncelleme Türü",
+          "Gereken Minimum Alan",
+          "Bileşen Kırılımı",
+          "Alan Yetmezse Hata Kodu",
+          "Nasıl Yer Açılır",
+        ],
+        rows: [
+          [
+            "Aylık Toplu Güncelleme",
+            "2 - 4 GB",
+            "Paket indirme, geçici açma ve yedek",
+            "0x80070070",
+            "%TEMP% ve SoftwareDistribution temizliği",
+          ],
+          [
+            "Yıllık Sürüm Güncellemesi (24H2)",
+            "15 - 20 GB",
+            "Yeni işletim sistemi imajı, Windows.old",
+            "0x80070070 / 0x80240020",
+            "Disk Temizleme > Önceki Windows kurulumlarını silin",
+          ],
+          [
+            "Ayrılmış Depolama (Reserved Storage)",
+            "7 - 10 GB",
+            "Kritik güvenlik yamaları için ayrılan alan",
+            "Windows otomatik yönetir",
+            "Güncellemelerin sorunsuz kurulmasını garantiler",
+          ],
+          [
+            "Kurtarma Tamponu",
+            "5 GB",
+            "WinRE hazırlığı ve bileşen doğrulaması",
+            "0x80070070",
+            "DISM /StartComponentCleanup çalıştırın",
+          ],
+        ],
+      },
       verdict: [
         '"Yeterli disk alanı yok" hatasının çözümü sıralıdır: önce Geçici dosyalar ekranından Windows Update temizliği ve önceki Windows kurulumlarını kaldırın, sonra SoftwareDistribution indirme klasörünü boşaltın, gerekirse DISM ile bileşen deposunu temizleyin. Bu üç adım çoğu makinede gereken 20 GB\'ı fazlasıyla karşılar.',
         "Ayrılmış Depolama'yı kapatmak ve harici USB kullanmak işe yarar ama ikisi de sorunu ertelemekten ibarettir. Diskiniz her güncellemede sınırda kalıyorsa asıl mesele kalıcı doluluktur.",
@@ -138,7 +179,7 @@ export const windowsUpdateNotEnoughSpace: Article = {
     en: {
       title: "Windows Update Says Not Enough Disk Space: The Permanent Fix",
       metaDescription:
-        "If Windows Update fails with 0x80070070 or says it needs more space: how much is actually required, where to reclaim it, and what Reserved Storage has to do with it.",
+        "Windows Update fails with 0x80070070 when disk space is low. Learn how much space is required, how to clear staging buffers, and how to fix it.",
       subtitle: "Where to Find the 20 GB",
       intro: [
         'Short answer: Windows 11 feature updates need roughly 20 GB free on the system drive. The fastest route is Settings > System > Storage > Temporary files, where ticking "Windows Update Cleanup" and "Previous Windows installation(s)" typically reclaims 10-25 GB on its own. If that is not enough, clear the SoftwareDistribution download folder and run a DISM component store cleanup.',
@@ -256,6 +297,46 @@ export const windowsUpdateNotEnoughSpace: Article = {
             'Yes. Windows.old only lets you roll back to the previous version within 10 days, and it is deleted automatically after that period. If the new version is working fine, remove it immediately via Settings > System > Storage > Temporary files by ticking "Previous Windows installation(s)" and reclaim 15-30 GB.',
         },
       ],
+      dataTable: {
+        caption: "Windows Update space requirements and staging breakdown",
+        columns: [
+          "Update Type",
+          "Minimum Required Space",
+          "Component Breakdown",
+          "Error Code If Full",
+          "How to Reclaim Space",
+        ],
+        rows: [
+          [
+            "Monthly Cumulative Update",
+            "2 - 4 GB",
+            "Package download, staging, and temp extraction",
+            "0x80070070",
+            "Clear %TEMP% and SoftwareDistribution\\Download",
+          ],
+          [
+            "Annual Feature Update (24H2)",
+            "15 - 20 GB",
+            "New OS image, rollback backup (Windows.old)",
+            "0x80070070 / 0x80240020",
+            "Use Disk Cleanup > Previous Windows installations",
+          ],
+          [
+            "Windows Reserved Storage",
+            "7 - 10 GB",
+            "Reserved OS cushion for critical security fixes",
+            "Auto-managed by OS",
+            "Ensures baseline security updates apply smoothly",
+          ],
+          [
+            "Recovery Buffer",
+            "5 GB",
+            "WinRE staging and component store verification",
+            "0x80070070",
+            "Run DISM /StartComponentCleanup to free space",
+          ],
+        ],
+      },
       verdict: [
         'The fix for "not enough disk space" follows a clear order: clear Windows Update Cleanup and previous Windows installations from the Temporary files screen, then empty the SoftwareDistribution download folder, then run a DISM component store cleanup if needed. Those three steps cover the required 20 GB on most machines with room to spare.',
         "Disabling Reserved Storage and using an external USB drive both work, but both only postpone the problem. If your drive is on the edge at every update, the real issue is permanent fullness.",
@@ -387,6 +468,47 @@ export const windowsUpdateNotEnoughSpace: Article = {
             'Ja. Windows.old erlaubt nur innerhalb von 10 Tagen die Rückkehr zur Vorversion und wird danach automatisch entfernt. Läuft die neue Version einwandfrei, entfernen Sie den Ordner sofort über Einstellungen > System > Speicher > Temporäre Dateien mit "Vorherige Windows-Installationen" und gewinnen 15-30 GB.',
         },
       ],
+      dataTable: {
+        caption:
+          "Windows Update Speicherbedarf und Aufschlüsselung der Komponenten",
+        columns: [
+          "Update-Typ",
+          "Mindestens benötigter Speicher",
+          "Komponenten-Aufschlüsselung",
+          "Fehlercode bei Platzmangel",
+          "So schaffen Sie Platz",
+        ],
+        rows: [
+          [
+            "Monatliches kumulatives Update",
+            "2 - 4 GB",
+            "Paket-Download, Bereitstellung und Entpacken",
+            "0x80070070",
+            "%TEMP% und SoftwareDistribution\\Download leeren",
+          ],
+          [
+            "Jährliches Funktions-Update (24H2)",
+            "15 - 20 GB",
+            "Neues Betriebssystem-Image, Windows.old",
+            "0x80070070 / 0x80240020",
+            "Datenträgerbereinigung > Vorherige Installationen",
+          ],
+          [
+            "Reservierter Speicher (Reserved Storage)",
+            "7 - 10 GB",
+            "Fest reservierter Puffer für Sicherheitspatches",
+            "Wird von Windows verwaltet",
+            "Garantiert die Installation wichtiger Patches",
+          ],
+          [
+            "Wiederherstellungspuffer",
+            "5 GB",
+            "WinRE-Bereitstellung und Komponentenprüfung",
+            "0x80070070",
+            "DISM /StartComponentCleanup ausführen",
+          ],
+        ],
+      },
       verdict: [
         'Die Behebung von "nicht genügend Speicherplatz" folgt einer klaren Reihenfolge: erst Windows-Update-Bereinigung und vorherige Windows-Installationen über die temporären Dateien entfernen, dann den Download-Ordner von SoftwareDistribution leeren, bei Bedarf den Komponentenspeicher per DISM bereinigen. Diese drei Schritte decken auf den meisten Rechnern die nötigen 20 GB mit Reserve ab.',
         "Den reservierten Speicher abzuschalten und einen externen USB-Stick zu nutzen funktioniert zwar, vertagt das Problem aber nur. Steht Ihr Laufwerk bei jedem Update am Limit, ist die dauerhafte Überfüllung die eigentliche Ursache.",
@@ -521,6 +643,47 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Oui. Windows.old ne sert qu'à revenir à la version précédente dans les 10 jours, et il est supprimé automatiquement passé ce délai. Si la nouvelle version fonctionne bien, retirez-le immédiatement via Paramètres > Système > Stockage > Fichiers temporaires en cochant « Installations précédentes de Windows » : vous récupérez 15-30 GB.",
         },
       ],
+      dataTable: {
+        caption:
+          "Espace requis pour les mises à jour Windows et répartition des besoins",
+        columns: [
+          "Type de mise à jour",
+          "Espace minimal requis",
+          "Répartition des besoins",
+          "Code d'erreur si saturé",
+          "Comment libérer l'espace",
+        ],
+        rows: [
+          [
+            "Mise à jour cumulative mensuelle",
+            "2 - 4 GB",
+            "Téléchargement, extraction temporaire et cache",
+            "0x80070070",
+            "Vider %TEMP% et SoftwareDistribution\\Download",
+          ],
+          [
+            "Mise à jour majeure annuelle (24H2)",
+            "15 - 20 GB",
+            "Image du nouvel OS, sauvegarde Windows.old",
+            "0x80070070 / 0x80240020",
+            "Nettoyage de disque > Installations précédentes",
+          ],
+          [
+            "Stockage réservé Windows",
+            "7 - 10 GB",
+            "Tampon système réservé aux correctifs critiques",
+            "Géré automatiquement par l'OS",
+            "Garantit le bon déploiement de la sécurité",
+          ],
+          [
+            "Tampon de récupération",
+            "5 GB",
+            "Préparation WinRE et vérification composants",
+            "0x80070070",
+            "Exécuter DISM /StartComponentCleanup",
+          ],
+        ],
+      },
       verdict: [
         "La résolution de « pas assez d'espace disque » suit un ordre précis : supprimez d'abord le nettoyage de Windows Update et les installations précédentes de Windows depuis l'écran Fichiers temporaires, videz ensuite le dossier de téléchargement de SoftwareDistribution, puis lancez au besoin un nettoyage du magasin de composants avec DISM. Ces trois étapes couvrent largement les 20 GB requis sur la plupart des machines.",
         "Désactiver le stockage réservé et passer par une clé USB externe fonctionnent, mais ces deux solutions ne font que repousser le problème. Si votre disque est à la limite à chaque mise à jour, la vraie cause est une saturation permanente.",
@@ -653,6 +816,47 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Sí. Windows.old solo sirve para volver a la versión anterior durante 10 días, y pasado ese plazo se borra sola. Si la versión nueva funciona bien, elimínala ya desde Configuración > Sistema > Almacenamiento > Archivos temporales marcando « Instalaciones anteriores de Windows » y recupera entre 15 y 30 GB.",
         },
       ],
+      dataTable: {
+        caption:
+          "Requisitos de espacio para Windows Update y desglose de archivos",
+        columns: [
+          "Tipo de actualización",
+          "Espacio mínimo requerido",
+          "Desglose de componentes",
+          "Código de error por falta de espacio",
+          "Cómo liberar espacio",
+        ],
+        rows: [
+          [
+            "Actualización acumulativa mensual",
+            "2 - 4 GB",
+            "Descarga, descompresión temporal e instalación",
+            "0x80070070",
+            "Vaciar %TEMP% y SoftwareDistribution\\Download",
+          ],
+          [
+            "Actualización de características (24H2)",
+            "15 - 20 GB",
+            "Nueva imagen del sistema, copia Windows.old",
+            "0x80070070 / 0x80240020",
+            "Liberador de espacio > Instalaciones anteriores",
+          ],
+          [
+            "Almacenamiento reservado de Windows",
+            "7 - 10 GB",
+            "Margen reservado para parches de seguridad",
+            "Administrado por Windows",
+            "Garantiza que las actualizaciones críticas entren",
+          ],
+          [
+            "Búfer de recuperación",
+            "5 GB",
+            "Entorno WinRE y comprobación de almacén",
+            "0x80070070",
+            "Ejecutar DISM /StartComponentCleanup",
+          ],
+        ],
+      },
       verdict: [
         "Arreglar el « espacio en disco insuficiente » tiene un orden claro: primero elimina la limpieza de Windows Update y las instalaciones anteriores de Windows desde la pantalla de Archivos temporales, después vacía la carpeta de descargas de SoftwareDistribution y, si hace falta, lanza una limpieza del almacén de componentes con DISM. Esos tres pasos cubren de sobra los 20 GB necesarios en la mayoría de los equipos.",
         "Desactivar el almacenamiento reservado y tirar de una memoria USB externa funcionan, pero ambas cosas solo aplazan el problema. Si tu disco se queda al límite en cada actualización, la causa real es que está permanentemente lleno.",
@@ -786,6 +990,47 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Sì. Windows.old serve solo a tornare alla versione precedente entro 10 giorni e dopo viene eliminata automaticamente. Se la nuova versione funziona bene, rimuovila subito da Impostazioni > Sistema > Archiviazione > File temporanei spuntando « Installazioni precedenti di Windows » e recupera 15-30 GB.",
         },
       ],
+      dataTable: {
+        caption:
+          "Spazio richiesto per Windows Update e scomposizione delle cartelle",
+        columns: [
+          "Tipo di aggiornamento",
+          "Spazio minimo richiesto",
+          "Scomposizione componenti",
+          "Codice di errore se pieno",
+          "Come liberare spazio",
+        ],
+        rows: [
+          [
+            "Aggiornamento cumulativo mensile",
+            "2 - 4 GB",
+            "Download, estrazione temporanea e staging",
+            "0x80070070",
+            "Svuota %TEMP% e SoftwareDistribution\\Download",
+          ],
+          [
+            "Aggiornamento annuale delle funzionalità",
+            "15 - 20 GB",
+            "Nuova immagine OS, backup Windows.old",
+            "0x80070070 / 0x80240020",
+            "Pulizia disco > Installazioni precedenti di Windows",
+          ],
+          [
+            "Spazio riservato di Windows",
+            "7 - 10 GB",
+            "Buffer riservato per patch di sicurezza critiche",
+            "Gestito da Windows",
+            "Garantisce l'applicazione degli aggiornamenti vitali",
+          ],
+          [
+            "Buffer di ripristino",
+            "5 GB",
+            "Staging WinRE e verifica archivio componenti",
+            "0x80070070",
+            "Esegui DISM /StartComponentCleanup",
+          ],
+        ],
+      },
       verdict: [
         "La soluzione di « spazio su disco insufficiente » segue un ordine preciso: prima rimuovi la pulizia di Windows Update e le installazioni precedenti di Windows dalla schermata File temporanei, poi svuota la cartella di download di SoftwareDistribution e, se serve, esegui una pulizia dell'archivio componenti con DISM. Questi tre passaggi coprono con ampio margine i 20 GB richiesti sulla maggior parte delle macchine.",
         "Disattivare l'archiviazione riservata e ricorrere a una chiavetta USB esterna funzionano, ma entrambe le strade si limitano a rimandare il problema. Se il disco è al limite a ogni aggiornamento, la vera causa è la saturazione permanente.",
@@ -915,6 +1160,47 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "Sim. A Windows.old só serve para voltar à versão anterior dentro de 10 dias, e depois disso é apagada automaticamente. Se a versão nova está rodando bem, remova-a na hora em Configurações > Sistema > Armazenamento > Arquivos temporários marcando “Instalações anteriores do Windows” e recupere de 15 a 30 GB.",
         },
       ],
+      dataTable: {
+        caption:
+          "Espaço necessário para o Windows Update e divisão de componentes",
+        columns: [
+          "Tipo de atualização",
+          "Espaço mínimo necessário",
+          "Divisão de componentes",
+          "Código de erro se cheio",
+          "Como libertar espaço",
+        ],
+        rows: [
+          [
+            "Atualização cumulativa mensal",
+            "2 - 4 GB",
+            "Download do pacote, extração e ficheiros temp",
+            "0x80070070",
+            "Limpar %TEMP% e SoftwareDistribution\\Download",
+          ],
+          [
+            "Atualização anual de funcionalidades (24H2)",
+            "15 - 20 GB",
+            "Nova imagem do OS, cópia Windows.old",
+            "0x80070070 / 0x80240020",
+            "Limpeza do Disco > Instalações anteriores",
+          ],
+          [
+            "Armazenamento Reservado do Windows",
+            "7 - 10 GB",
+            "Margem reservada para correções de segurança",
+            "Gerido pelo Windows",
+            "Assegura a instalação suave de atualizações",
+          ],
+          [
+            "Buffer de recuperação",
+            "5 GB",
+            "Preparação WinRE e validação de componentes",
+            "0x80070070",
+            "Executar DISM /StartComponentCleanup",
+          ],
+        ],
+      },
       verdict: [
         "A correção do “espaço em disco insuficiente” segue uma ordem clara: primeiro remova a limpeza do Windows Update e as instalações anteriores do Windows pela tela de Arquivos temporários, depois esvazie a pasta de downloads do SoftwareDistribution e, se precisar, rode uma limpeza do armazenamento de componentes com o DISM. Essas três etapas cobrem com folga os 20 GB exigidos na maioria das máquinas.",
         "Desativar o armazenamento reservado e recorrer a um pen drive externo funcionam, mas os dois caminhos apenas adiam o problema. Se o seu disco fica no limite em toda atualização, a causa real é a lotação permanente.",
@@ -1043,6 +1329,46 @@ export const windowsUpdateNotEnoughSpace: Article = {
             "できます。Windows.old は更新から10日以内に以前のバージョンへ戻すためだけのもので、10日を過ぎれば自動的に削除されます。新しいバージョンが問題なく動いているなら、「設定」>「システム」>「記憶域」>「一時ファイル」で「以前のWindowsのインストール」にチェックを入れてすぐに削除し、15〜30 GBを取り戻せます。",
         },
       ],
+      dataTable: {
+        caption: "Windows Updateの種類別必要空き容量と領域内訳一覧",
+        columns: [
+          "アップデートの種類",
+          "最低必要空き容量",
+          "容量の内訳",
+          "容量不足時のエラーコード",
+          "空き容量の確保手順",
+        ],
+        rows: [
+          [
+            "月例累積更新プログラム",
+            "2 - 4 GB",
+            "ダウンロード、一時展開領域、バックアップ",
+            "0x80070070",
+            "%TEMP% および SoftwareDistribution\\Download を消去",
+          ],
+          [
+            "年間大型機能更新 (24H2等)",
+            "15 - 20 GB",
+            "新規OSイメージ、ロールバック用 Windows.old",
+            "0x80070070 / 0x80240020",
+            "「ディスク クリーンアップ」>「以前のWindowsのインストール」を削除",
+          ],
+          [
+            "Windows予約済みストレージ",
+            "7 - 10 GB",
+            "セキュリティ更新専用にOSが事前確保した領域",
+            "OSが自動管理",
+            "更新プログラムの安定した適用を保証",
+          ],
+          [
+            "回復用作業バッファ",
+            "5 GB",
+            "WinRE展開およびコンポーネント整合性確認",
+            "0x80070070",
+            "DISM /StartComponentCleanup を実行",
+          ],
+        ],
+      },
       verdict: [
         "「空き容量が足りません」の解決には順番があります。まず「一時ファイル」の画面から「Windows Update のクリーンアップ」と「以前のWindowsのインストール」を削除し、次に SoftwareDistribution のダウンロードフォルダーを空にし、必要なら DISM でコンポーネント ストアを整理します。この3つの手順で、たいていのパソコンでは必要な20 GBを十分に上回る余裕が生まれます。",
         "予約済み記憶域を無効にすることも、外付けUSBメモリを使うことも確かに効果はありますが、どちらも問題の先送りにすぎません。更新のたびにドライブがぎりぎりになるなら、本当の問題は恒常的な容量不足です。",

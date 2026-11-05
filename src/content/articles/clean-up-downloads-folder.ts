@@ -5,7 +5,7 @@ export const cleanUpDownloadsFolder: Article = {
   type: "guide",
   category: "Disk Cleanup",
   date: "2026-07-16",
-  updated: "2026-11-03",
+  updated: "2026-11-06",
   readingTime: 6,
   content: {
     tr: {
@@ -352,6 +352,13 @@ export const cleanUpDownloadsFolder: Article = {
         "Um den Downloads-Ordner aufzuräumen, öffnen Sie ihn im Datei-Explorer oder Finder, sortieren die Dateien nach Datum und Größe, löschen alte Installationsdateien und nicht mehr benötigte Downloads und leeren anschließend den Papierkorb, um den Speicherplatz tatsächlich freizugeben. Da fast alles in diesem Ordner eine Kopie ist, die auch anderswo existiert, gehört er zu den Ordnern, die sich am sichersten bereinigen lassen.",
         "Auf den meisten Computern wird der Downloads-Ordner unbemerkt zur größten Rumpelkammer der Festplatte: Installationsdateien, ZIP-Archive, PDFs und E-Mail-Anhänge sammeln sich über Jahre zu Gigabytes an. Diese Anleitung zeigt einen Arbeitsablauf nach dem Prinzip erst kategorisieren, dann löschen — für Windows und Mac deutlich schneller als das Durchsehen hunderter gemischter Dateien.",
       ],
+      keyTakeaways: [
+        "Das Löschen des Inhalts Ihres Download-Ordners ist zu 100 % sicher, da es sich um sekundäre Kopien aus Browsern und E-Mail-Programmen handelt.",
+        "Installationspakete (.exe, .msi, .dmg, .pkg) und entpackte ZIP-Archive belegen nach erfolgreicher Software-Installation unnötig Gigabytes an SSD-Speicher.",
+        "Mehrfach heruntergeladene Dateien mit Duplikatsuffixen wie 'datei (1).pdf' können per SHA-256-Hash-Prüfung auf Byte-Ebene restlos aufgespürt und entfernt werden.",
+        "Gelöschte Dateien verbleiben im Papierkorb, bis dieser manuell geleert wird, und belegen bis dahin weiterhin Speicherkapazität.",
+        "Der DiskMop Download-Bereiniger gruppiert Dateien nach Kategorien (Installer, Archive, Medien, Dokumente) für gezieltes Ausmisten mit einem Klick.",
+      ],
       sections: [
         {
           title: "Warum der Downloads-Ordner zur Rumpelkammer wird",
@@ -402,6 +409,101 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "So bereinigen Sie den Download-Ordner sicher",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Nach Größe und Datum sortieren",
+            text: "Öffnen Sie Downloads im Datei-Explorer oder Finder. Wechseln Sie zur Detailansicht und klicken Sie auf die Spaltenüberschrift 'Größe' oder 'Änderungsdatum'.",
+          },
+          {
+            name: "Alte Installationspakete entfernen",
+            text: "Wählen Sie überflüssige Setup-Dateien und Disk-Images (.exe, .msi, .dmg, .pkg) aus und löschen Sie diese.",
+          },
+          {
+            name: "Nach doppelten Downloads suchen",
+            text: "Nutzen Sie den DiskMop Duplikat-Finder, um redundante Kopien von Fotos, Medien und Dokumenten anhand von Prüfsummen zu identifizieren.",
+          },
+          {
+            name: "Papierkorb leeren",
+            text: "Klicken Sie mit der rechten Maustaste auf den Papierkorb in Windows (oder macOS) und wählen Sie 'Leeren', um die freigegebenen Blöcke auf dem Laufwerk freizugeben.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Größte Speicherfresser im Download-Ordner und empfohlene Bereinigungsrichtlinien",
+        columns: [
+          "Dateikategorie",
+          "Dateierweiterungen",
+          "Typischer Speicherbedarf",
+          "Sicherheitsstufe",
+          "Empfohlene Maßnahme",
+        ],
+        rows: [
+          [
+            "Software-Installationsdateien",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Vollständig sicher",
+            "Direkt nach erfolgreicher Installation löschen",
+          ],
+          [
+            "Komprimierte Archive",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Vollständig sicher",
+            "Archiv löschen, sobald der Inhalt entpackt wurde",
+          ],
+          [
+            "Doppelte Downloads",
+            "*(1).*, *(2).* Namensmuster",
+            "2 GB – 10 GB",
+            "Vollständig sicher",
+            "Mit SHA-256-Scanner prüfen und nur eine Kopie behalten",
+          ],
+          [
+            "Alte PDFs & Dokumente",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Prüfung erforderlich",
+            "Wichtige Dateien nach Dokumente verschieben, Rest löschen",
+          ],
+          [
+            "Disk-Images & ISOs",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Vollständig sicher",
+            "Auswerfen und veraltete Betriebssystem-Images löschen",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Werden installierte Anwendungen beschädigt, wenn ich den Inhalt des Download-Ordners lösche?",
+          answer:
+            "Nein. Heruntergeladene .exe-, .msi- oder .dmg-Dateien sind reine Installationsdateien. Einmal installiert, laufen Programme völlig unabhängig aus den Verzeichnissen 'Programme' bzw. 'Programme (x86)' oder 'Programme' (Mac).",
+        },
+        {
+          question: "Sollte ich das Downloads-Verzeichnis selbst löschen?",
+          answer:
+            "Nein, löschen Sie niemals das Systemverzeichnis 'Downloads' selbst. Bereinigen Sie lediglich die darin gespeicherten Dateien und Unterordner.",
+        },
+        {
+          question:
+            "Warum hat sich mein freier Speicherplatz nach dem Löschen der Dateien nicht vergrößert?",
+          answer:
+            "Gelöschte Dateien landen zunächst im Windows-Papierkorb (oder im macOS-Papierkorb). Sie müssen den Papierkorb leeren, um den physikalischen Speicherplatz auf dem Laufwerk tatsächlich freizugeben.",
+        },
+        {
+          question:
+            "Wie kann ich die Bereinigung des Download-Ordners automatisieren?",
+          answer:
+            "Aktivieren Sie unter Windows die Speicheroptimierung unter Einstellungen > System > Speicher. Auf Mac oder PC können Sie die geplante Bereinigung von DiskMop für eine wöchentliche automatische Wartung nutzen.",
+        },
+      ],
       verdict: [
         "Der effektivste Weg, den Downloads-Ordner aufzuräumen, ist ein wiederholbarer Ablauf: nach Alter und Größe sortieren, Dateien in Kategorien gruppieren und alte gebündelt löschen, Duplikate aufspüren und anschließend den Papierkorb leeren, damit der Platz wirklich frei wird. Zum Schluss sorgt ein Zeitplan dafür, dass sich derselbe Berg nie wieder auftürmt.",
         "Disk Mop deckt jeden Schritt dieses Ablaufs in einer App ab: Der Downloads-Bereiniger — ein Werkzeug, das kaum ein Konkurrent bietet — kategorisiert Ihre Downloads, der SHA-256-basierte Duplikatfinder entdeckt überflüssige Kopien, und die geplante Bereinigung hält den Ordner dauerhaft sauber. Der Download ist kostenlos; alle Funktionen schalten Sie mit einer einmaligen Lifetime-Lizenz für 19,90 $ frei.",
@@ -417,6 +519,13 @@ export const cleanUpDownloadsFolder: Article = {
       intro: [
         "Pour nettoyer votre dossier Téléchargements, ouvrez-le dans l'Explorateur de fichiers ou le Finder, triez les fichiers par date et par taille, supprimez les anciens programmes d'installation et tout ce dont vous n'avez plus besoin, puis videz la Corbeille pour récupérer réellement l'espace. Comme presque tout ce qui s'y trouve est la copie d'un fichier existant ailleurs, c'est l'un des dossiers les plus sûrs à nettoyer sur votre ordinateur.",
         "Sur la plupart des ordinateurs, le dossier Téléchargements devient discrètement le plus grand fourre-tout du disque : des années d'installeurs, d'archives ZIP, de PDF et de pièces jointes s'y accumulent jusqu'à représenter plusieurs gigaoctets. Dans ce guide, nous suivons une méthode « catégoriser puis supprimer », valable sous Windows comme sur Mac — bien plus rapide que de faire défiler un par un des centaines de fichiers mélangés.",
+      ],
+      keyTakeaways: [
+        "Supprimer le contenu du dossier Téléchargements est 100 % sûr : il ne s'agit que de copies secondaires récupérées via les navigateurs et clients e-mail.",
+        "Les programmes d'installation (.exe, .msi, .dmg, .pkg) et les archives ZIP décompressées gaspillent des gigaoctets sur votre SSD une fois les logiciels installés.",
+        "Les téléchargements répétés comportant des suffixes de doublons ('fichier (1).pdf') peuvent être purgés par comparaison d'empreintes numériques SHA-256.",
+        "Les fichiers supprimés restent dans la Corbeille jusqu'à son vidage manuel, continuant d'occuper de la place sur votre disque.",
+        "Le nettoyeur de Téléchargements DiskMop regroupe les éléments par catégorie (installeurs, archives, médias, documents) pour un tri sélectif en un clic.",
       ],
       sections: [
         {
@@ -471,6 +580,101 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Comment nettoyer en toute sécurité le dossier Téléchargements",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Trier par taille et par date",
+            text: "Ouvrez Téléchargements dans l'Explorateur de fichiers ou le Finder. Passez en affichage détaillé et cliquez sur l'en-tête 'Taille' ou 'Date de modification'.",
+          },
+          {
+            name: "Supprimer les anciens installateurs",
+            text: "Sélectionnez et effacez les fichiers d'installation et images disques obsolètes (.exe, .msi, .dmg, .pkg).",
+          },
+          {
+            name: "Détecter les téléchargements en double",
+            text: "Lancez le Détecteur de doublons DiskMop pour identifier les fichiers redondants de photos, médias et documents grâce aux hachages SHA-256.",
+          },
+          {
+            name: "Vider la Corbeille",
+            text: "Faites un clic droit sur la Corbeille sous Windows (ou dans macOS) et choisissez 'Vider' pour restituer définitivement les blocs libérés au disque.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Fichiers les plus volumineux du dossier Téléchargements et politique de nettoyage",
+        columns: [
+          "Catégorie de fichier",
+          "Extensions",
+          "Espace typique",
+          "Niveau de sécurité",
+          "Action recommandée",
+        ],
+        rows: [
+          [
+            "Installateurs de logiciels",
+            ".exe, .msi, .dmg, .pkg",
+            "5 Go – 30 Go",
+            "Totalement sûr",
+            "Supprimer immédiatement après l'installation",
+          ],
+          [
+            "Archives compressées",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 Go – 15 Go",
+            "Totalement sûr",
+            "Supprimer l'archive dès que les fichiers sont extraits",
+          ],
+          [
+            "Téléchargements en double",
+            "Modèles de nom *(1).*, *(2).* ",
+            "2 Go – 10 Go",
+            "Totalement sûr",
+            "Utiliser un scanner SHA-256 et ne garder qu'une seule copie",
+          ],
+          [
+            "Anciens PDF & documents",
+            ".pdf, .docx, .xlsx",
+            "500 Mo – 3 Go",
+            "Vérification requise",
+            "Déplacer les fichiers importants dans Documents, purger le reste",
+          ],
+          [
+            "Images disque & ISO",
+            ".iso, .img",
+            "4 Go – 25 Go",
+            "Totalement sûr",
+            "Éjecter et effacer les images d'OS obsolètes",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Supprimer les téléchargements risque-t-il d'endommager mes logiciels installés ?",
+          answer:
+            "Non. Les fichiers .exe, .msi ou .dmg téléchargés ne sont que des supports d'installation temporaires. Une fois installées, les applications s'exécutent de façon totalement autonome depuis 'Program Files' ou 'Applications'.",
+        },
+        {
+          question: "Dois-je supprimer le dossier Téléchargements lui-même ?",
+          answer:
+            "Non, ne supprimez jamais le répertoire système 'Téléchargements' lui-même. Contentez-vous d'effacer les fichiers et sous-dossiers qui s'y trouvent.",
+        },
+        {
+          question:
+            "Pourquoi mon espace disque disponible n'a-t-il pas augmenté après avoir supprimé des fichiers ?",
+          answer:
+            "Les éléments supprimés sont conservés dans la Corbeille de Windows ou de macOS. Vous devez impérativement vider la Corbeille pour libérer physiquement les blocs de stockage.",
+        },
+        {
+          question:
+            "Comment automatiser le nettoyage régulier du dossier Téléchargements ?",
+          answer:
+            "Sous Windows, activez l'Assistant de stockage dans Paramètres > Système > Stockage. Sur Mac comme sur PC, configurez le Nettoyage planifié de DiskMop pour un entretien hebdomadaire automatique.",
+        },
+      ],
       verdict: [
         "La méthode la plus efficace pour nettoyer votre dossier Téléchargements consiste à suivre un enchaînement reproductible : trier par ancienneté et par taille, regrouper les fichiers en catégories et supprimer les anciens par lots, repérer les doublons, puis vider la Corbeille pour que l'espace soit vraiment récupéré. Terminez en programmant un nettoyage régulier afin que la même pile ne se reconstitue jamais.",
         "Disk Mop couvre chacune de ces étapes dans une seule application : son Nettoyeur de téléchargements — un outil dédié que presque aucun concurrent ne propose — classe vos fichiers pour vous, le Détecteur de doublons fondé sur SHA-256 repère les copies inutiles, et le Nettoyage planifié garde le dossier propre durablement. L'application se télécharge gratuitement, et une licence à vie en paiement unique de 19,90 $ débloque toutes les fonctionnalités.",
@@ -486,6 +690,13 @@ export const cleanUpDownloadsFolder: Article = {
       intro: [
         "Para limpiar la carpeta Descargas, ábrela en el Explorador de archivos o en el Finder, ordena los archivos por fecha y tamaño, borra los instaladores antiguos y todo lo que ya no necesites, y vacía después la Papelera de reciclaje para recuperar el espacio de verdad. Como casi todo lo que hay en Descargas es una copia de un archivo que existe en otro sitio, es una de las carpetas más seguras de limpiar de todo el equipo.",
         "En la mayoría de los equipos, Descargas se convierte sin que nadie lo note en el mayor cajón de sastre del disco: años de instaladores, archivos ZIP, PDF y adjuntos de correo acaban ocupando gigabytes. En esta guía seguimos un método de categorizar y después borrar, válido tanto en Windows como en Mac y mucho más rápido que revisar uno por uno cientos de archivos mezclados.",
+      ],
+      keyTakeaways: [
+        "Borrar el contenido de la carpeta Descargas es 100 % seguro, ya que los archivos son copias secundarias descargadas desde navegadores y correos.",
+        "Los paquetes de instalación (.exe, .msi, .dmg, .pkg) y archivos comprimidos ZIP desperdician gigabytes en el SSD una vez instalado el software.",
+        "Las descargas duplicadas con sufijos como 'archivo (1).pdf' pueden purgarse mediante verificación de hash SHA-256 byte a byte.",
+        "Los archivos borrados se quedan en la Papelera de reciclaje hasta que se vacía manualmente, ocupando espacio hasta ese momento.",
+        "El limpiador de descargas de DiskMop agrupa los elementos por categorías (instaladores, comprimidos, multimedia, documentos) para una purga selectiva en un clic.",
       ],
       sections: [
         {
@@ -538,6 +749,101 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Cómo limpiar de forma segura la carpeta de Descargas",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Ordenar por tamaño y fecha",
+            text: "Abre Descargas en el Explorador de archivos o Finder. Cambia a la vista de lista de detalles y haz clic en la columna 'Tamaño' o 'Fecha de modificación'.",
+          },
+          {
+            name: "Eliminar instaladores antiguos",
+            text: "Selecciona y elimina ejecutables de instalación obsoletos e imágenes de disco (.exe, .msi, .dmg, .pkg).",
+          },
+          {
+            name: "Buscar descargas duplicadas",
+            text: "Ejecuta el Detector de duplicados de DiskMop para identificar copias redundantes de fotos, multimedia y documentos mediante hashes.",
+          },
+          {
+            name: "Vaciar la Papelera de reciclaje",
+            text: "Haz clic derecho en la Papelera de reciclaje (o Papelera en macOS) y pulsa 'Vaciar' para liberar definitivamente los bloques en la unidad.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Elementos más pesados en Descargas y normas recomendadas de limpieza",
+        columns: [
+          "Categoría de archivo",
+          "Extensiones",
+          "Tamaño típico",
+          "Nivel de seguridad",
+          "Acción recomendada",
+        ],
+        rows: [
+          [
+            "Instaladores de software",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Eliminar de inmediato tras instalar la aplicación",
+          ],
+          [
+            "Archivos comprimidos",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Totalmente seguro",
+            "Borrar el archivo comprimido tras descomprimir su contenido",
+          ],
+          [
+            "Descargas duplicadas",
+            "Patrones *(1).*, *(2).* ",
+            "2 GB – 10 GB",
+            "Totalmente seguro",
+            "Usar escáner SHA-256 y conservar solo una copia",
+          ],
+          [
+            "PDFs y documentos antiguos",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Revisión requerida",
+            "Mover documentos importantes a Documentos, purgar el resto",
+          ],
+          [
+            "Imágenes de disco e ISOs",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Totalmente seguro",
+            "Expulsar y borrar imágenes de sistemas operativos en desuso",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "¿Borrar las descargas dañará los programas que tengo instalados?",
+          answer:
+            "No. Los archivos descargados .exe, .msi o .dmg son medios de instalación. Una vez que se instalan, los programas se ejecutan de manera totalmente autónoma desde Archivos de programa o Aplicaciones.",
+        },
+        {
+          question: "¿Debería eliminar la carpeta Descargas en sí?",
+          answer:
+            "No, nunca debes eliminar el directorio del sistema 'Descargas'. Solo debes limpiar los archivos y subcarpetas que se encuentran en su interior.",
+        },
+        {
+          question:
+            "¿Por qué no aumentó el espacio libre tras borrar archivos?",
+          answer:
+            "Los archivos eliminados se trasladan a la Papelera de reciclaje (en Windows o macOS). Debes vaciar la papelera para recuperar físicamente los bloques de almacenamiento.",
+        },
+        {
+          question:
+            "¿Cómo puedo automatizar la limpieza de la carpeta Descargas?",
+          answer:
+            "En Windows, activa el Sensor de almacenamiento en Configuración > Sistema > Almacenamiento. En Mac o PC, configura la Limpieza programada de DiskMop para un mantenimiento automático semanal.",
+        },
+      ],
       verdict: [
         "La forma más eficaz de limpiar la carpeta Descargas es seguir un proceso repetible: ordenar por antigüedad y tamaño, agrupar los archivos en categorías y borrar los antiguos en bloque, cazar las copias duplicadas y vaciar después la Papelera de reciclaje para recuperar el espacio de verdad. Termina programando una limpieza periódica para que el mismo montón no vuelva a formarse.",
         "Disk Mop cubre cada paso de ese proceso en una sola aplicación: su Limpiador de descargas —una herramienta dedicada que casi ningún competidor ofrece— clasifica tus descargas por ti, el Detector de duplicados basado en SHA-256 encuentra las copias sobrantes y la Limpieza programada mantiene la carpeta ordenada de forma permanente. Puedes descargarlo gratis y desbloquear todas las funciones con una licencia de por vida de pago único de 19,90 $.",
@@ -553,6 +859,13 @@ export const cleanUpDownloadsFolder: Article = {
       intro: [
         "Per pulire la cartella Download, aprila in Esplora file o nel Finder, ordina i file per data e dimensione, elimina i vecchi programmi di installazione e tutto ciò che non ti serve più, poi svuota il Cestino per recuperare davvero lo spazio. Dato che quasi tutto ciò che finisce in Download è la copia di un file che esiste già altrove, è una delle cartelle più sicure da ripulire di tutto il computer.",
         "Sulla maggior parte dei computer la cartella Download diventa in silenzio il più grande ripostiglio del disco: anni di programmi di installazione, archivi ZIP, PDF e allegati e-mail si accumulano fino a occupare gigabyte. In questa guida seguiamo un metodo che prima categorizza e poi elimina, valido sia su Windows sia su Mac: molto più rapido che scorrere uno per uno centinaia di file mescolati.",
+      ],
+      keyTakeaways: [
+        "Eliminare il contenuto della cartella Download è sicuro al 100%, trattandosi di copie secondarie scaricate da browser web e posta elettronica.",
+        "I pacchetti di installazione (.exe, .msi, .dmg, .pkg) e gli archivi ZIP estratti sprecano gigabyte di spazio SSD una volta completata l'installazione.",
+        "I download ripetuti contrassegnati con suffissi numerici ('file (1).pdf') possono essere eliminati tramite verifica dell'hash SHA-256 byte per byte.",
+        "I file eliminati rimangono nel Cestino finché non viene svuotato a mano, continuando a occupare spazio prezioso.",
+        "Lo strumento Pulizia Download di DiskMop raggruppa i file per categoria (installer, archivi, media, documenti) per una rimozione selettiva con un clic.",
       ],
       sections: [
         {
@@ -605,6 +918,101 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Come ripulire in sicurezza la cartella Download",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Ordinare per dimensione e data",
+            text: "Apri Download in Esplora file o nel Finder. Passa alla visualizzazione Dettagli e clicca sull'intestazione 'Dimensioni' o 'Ultima modifica'.",
+          },
+          {
+            name: "Cancellare i vecchi pacchetti di installazione",
+            text: "Seleziona e rimuovi i file eseguibili di configurazione e le immagini disco obsolete (.exe, .msi, .dmg, .pkg).",
+          },
+          {
+            name: "Scansionare i download duplicati",
+            text: "Avvia il Rilevatore di duplicati di DiskMop per individuare copie ridondanti di foto, video e documenti tramite hash SHA-256.",
+          },
+          {
+            name: "Svuotare il Cestino",
+            text: "Fai clic destro sul Cestino in Windows (o macOS) e seleziona 'Svuota' per confermare il recupero definitivo dei blocchi di memoria sul disco.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "I principali consumatori di spazio in Download e linee guida di pulizia",
+        columns: [
+          "Categoria di file",
+          "Estensioni",
+          "Ingombro tipico",
+          "Livello di sicurezza",
+          "Azione consigliata",
+        ],
+        rows: [
+          [
+            "Installer di software",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Completamente sicuro",
+            "Eliminare subito dopo il completamento dell'installazione",
+          ],
+          [
+            "Archivi compressi",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Completamente sicuro",
+            "Eliminare l'archivio non appena il contenuto è stato estratto",
+          ],
+          [
+            "Download duplicati",
+            "Pattern nomi *(1).*, *(2).* ",
+            "2 GB – 10 GB",
+            "Completamente sicuro",
+            "Usare lo scanner SHA-256 e conservare una sola copia",
+          ],
+          [
+            "Vecchi PDF e documenti",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Verifica richiesta",
+            "Spostare i file importanti in Documenti, eliminare il resto",
+          ],
+          [
+            "Immagini disco e ISO",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Completamente sicuro",
+            "Espellere e rimuovere immagini di sistemi operativi obsolete",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Eliminare i file in Download comprometterà le applicazioni installate?",
+          answer:
+            "No. I file .exe, .msi o .dmg scaricati sono semplici installer. Una volta completata l'installazione, i programmi girano in totale autonomia dalle cartelle Programmi o Applicazioni.",
+        },
+        {
+          question: "Dovrei cancellare la cartella Download stessa?",
+          answer:
+            "No, non eliminare mai la cartella di sistema 'Download'. Limiti la pulizia ai soli file e alle sottocartelle presenti al suo interno.",
+        },
+        {
+          question:
+            "Perché lo spazio su disco non è aumentato dopo aver cancellato i file?",
+          answer:
+            "Gli elementi cancellati finiscono nel Cestino di Windows (o macOS). È necessario svuotare il Cestino per liberare fisicamente lo spazio su disco.",
+        },
+        {
+          question:
+            "Come posso automatizzare la pulizia della cartella Download?",
+          answer:
+            "Su Windows, abilita il Sensore memoria in Impostazioni > Sistema > Archiviazione. Su Mac o PC, imposta la Pulizia pianificata di DiskMop per una manutenzione settimanale automatica.",
+        },
+      ],
       verdict: [
         "Il modo più efficace per pulire la cartella Download è seguire un percorso ripetibile: ordinare per età e dimensione, raggruppare i file in categorie ed eliminare in blocco quelli vecchi, individuare le copie duplicate e poi svuotare il Cestino perché lo spazio venga davvero recuperato. Concludi impostando una pianificazione, così lo stesso mucchio non si riforma più.",
         "Disk Mop copre ogni passaggio di questo percorso in un'unica app: il Pulitore dei download — uno strumento dedicato che quasi nessun concorrente offre — categorizza i download al posto tuo, il Rilevatore di duplicati basato su SHA-256 trova le copie superflue e la Pulizia pianificata mantiene la cartella in ordine in modo permanente. Puoi scaricarlo gratuitamente e sbloccare tutte le funzioni con una licenza a vita, pagamento unico di 19,90 $.",
@@ -620,6 +1028,13 @@ export const cleanUpDownloadsFolder: Article = {
       intro: [
         "Para limpar a pasta Downloads, abra-a no Explorador de Arquivos ou no Finder, ordene os arquivos por data e tamanho, apague os instaladores antigos e tudo de que você não precisa mais e esvazie a Lixeira para recuperar o espaço de verdade. Como quase tudo o que está em Downloads é a cópia de um arquivo que existe em outro lugar, essa é uma das pastas mais seguras de limpar no computador.",
         "Na maioria dos computadores, a pasta Downloads se transforma silenciosamente no maior depósito de tralha do disco: anos de instaladores, arquivos ZIP, PDFs e anexos de e-mail se acumulam até ocupar gigabytes. Neste guia seguimos um fluxo de categorizar e depois apagar, válido tanto no Windows quanto no Mac — bem mais rápido do que percorrer um a um centenas de arquivos misturados.",
+      ],
+      keyTakeaways: [
+        "Excluir o conteúdo da sua pasta Downloads é 100% seguro, pois são apenas cópias secundárias obtidas por navegadores e clientes de e-mail.",
+        "Instaladores (.exe, .msi, .dmg, .pkg) e arquivos compactados ZIP já extraídos desperdiçam gigabytes no SSD após a conclusão da instalação.",
+        "Downloads repetidos com sufixos de duplicata ('arquivo (1).pdf') podem ser eliminados com verificação de hash SHA-256 byte a byte.",
+        "Arquivos excluídos permanecem na Lixeira até que ela seja esvaziada manualmente, retendo o espaço em disco até a limpeza final.",
+        "O Limpador de Downloads do DiskMop categoriza itens (instaladores, arquivos compactados, mídia, documentos) para uma limpeza seletiva com um clique.",
       ],
       sections: [
         {
@@ -671,6 +1086,100 @@ export const cleanUpDownloadsFolder: Article = {
           ],
         },
       ],
+      howTo: {
+        name: "Como limpar a pasta Downloads com total segurança",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "Classificar por tamanho e data",
+            text: "Abra Downloads no Explorador de Arquivos ou no Finder. Alterne para o modo de exibição Detalhes e clique na coluna 'Tamanho' ou 'Data de modificação'.",
+          },
+          {
+            name: "Excluir instaladores antigos",
+            text: "Selecione e apague instaladores desnecessários e imagens de disco obsoletas (.exe, .msi, .dmg, .pkg).",
+          },
+          {
+            name: "Buscar downloads duplicados",
+            text: "Execute o Detector de Duplicatas do DiskMop para localizar cópias idênticas de fotos, mídias e documentos através de hash SHA-256.",
+          },
+          {
+            name: "Esvaziar a Lixeira",
+            text: "Clique com o botão direito na Lixeira no Windows (ou no macOS) e selecione 'Esvaziar' para consolidar os blocos de disco recuperados.",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "Maiores consumidores de espaço na pasta Downloads e política de limpeza",
+        columns: [
+          "Categoria de arquivo",
+          "Extensões",
+          "Consumo típico",
+          "Nível de segurança",
+          "Ação recomendada",
+        ],
+        rows: [
+          [
+            "Instaladores de software",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "Totalmente seguro",
+            "Excluir logo após concluir a instalação",
+          ],
+          [
+            "Arquivos compactados",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "Totalmente seguro",
+            "Excluir o arquivo comprimido logo após a extração",
+          ],
+          [
+            "Downloads duplicados",
+            "Padrões *(1).*, *(2).* ",
+            "2 GB – 10 GB",
+            "Totalmente seguro",
+            "Usar scanner SHA-256 e manter somente uma cópia",
+          ],
+          [
+            "PDFs e documentos antigos",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "Revisão necessária",
+            "Mover arquivos úteis para Documentos e apagar os demais",
+          ],
+          [
+            "Imagens de disco e ISOs",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "Totalmente seguro",
+            "Ejetar e apagar imagens de sistemas operacionais obsoletos",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "Apagar os downloads vai corromper os aplicativos instalados?",
+          answer:
+            "Não. Os arquivos baixados .exe, .msi ou .dmg são meros instaladores. Depois de instalados, os programas rodam de forma independente a partir das pastas Arquivos de Programas ou Aplicativos.",
+        },
+        {
+          question: "Devo excluir a pasta Downloads em si?",
+          answer:
+            "Não, nunca exclua o diretório de sistema 'Downloads'. Limpe somente os arquivos e subpastas existentes no interior dele.",
+        },
+        {
+          question:
+            "Por que meu espaço livre em disco não aumentou após apagar arquivos?",
+          answer:
+            "Os itens excluídos foram movidos para a Lixeira (no Windows ou no macOS). É preciso esvaziar a Lixeira para que o espaço seja fisicamente liberado na unidade.",
+        },
+        {
+          question: "Como automatizo a limpeza periódica da pasta Downloads?",
+          answer:
+            "No Windows, ative o Sensor de Armazenamento em Configurações > Sistema > Armazenamento. No Mac ou PC, utilize a Limpeza Agendada do DiskMop para manutenção semanal automática.",
+        },
+      ],
       verdict: [
         "A forma mais eficaz de limpar a pasta Downloads é seguir um fluxo repetível: ordenar por idade e tamanho, agrupar os arquivos em categorias e apagar os antigos em lote, localizar as cópias duplicadas e então esvaziar a Lixeira para que o espaço seja realmente recuperado. Termine criando um agendamento para que a mesma pilha nunca se forme de novo.",
         "O Disk Mop cobre cada etapa desse fluxo em um único aplicativo: o Limpador de Downloads — uma ferramenta dedicada que quase nenhum concorrente tem — categoriza seus downloads para você, o Detector de Duplicados baseado em SHA-256 encontra as cópias redundantes e a Limpeza Agendada mantém a pasta em ordem de forma permanente. Você pode baixar de graça e liberar todos os recursos com uma licença vitalícia de pagamento único de 19,90 $.",
@@ -686,6 +1195,13 @@ export const cleanUpDownloadsFolder: Article = {
       intro: [
         "ダウンロードフォルダーを整理するには、エクスプローラーまたはFinderでフォルダーを開き、ファイルを日付とサイズで並べ替え、不要になったインストーラーや古いファイルを削除し、最後にごみ箱を空にして容量を実際に取り戻します。「ダウンロード」フォルダーの中身は、そのほとんどが別の場所にも存在するファイルのコピーです。そのため、パソコンの中でもとりわけ安全に整理できるフォルダーだといえます。",
         "多くのパソコンでは、ダウンロードフォルダーがいつの間にかディスク上で最大の物置になっています。何年分ものインストーラー、ZIPアーカイブ、PDF、メールの添付ファイルが積み重なり、数ギガバイトを占めていることも珍しくありません。この記事では、混在した何百ものファイルを1つずつ見ていくよりもはるかに速い、まず分類してから削除するという手順を、WindowsとMacの両方について紹介します。",
+      ],
+      keyTakeaways: [
+        "ダウンロードフォルダ内のファイルはウェブブラウザやメールから取得した二次的なコピーであるため、削除しても100%安全です。",
+        "インストーラーパッケージ（.exe、.msi、.dmg、.pkg）や解凍済みZIPアーカイブは、ソフト導入後はSSD領域を無駄に占有するだけです。",
+        "「ファイル名 (1).pdf」のように重複保存されたダウンロードファイルは、SHA-256ハッシュ検証で完全に特定して消去できます。",
+        "削除したファイルはごみ箱を手動で空にするまで残り続け、実際に空にするまでストレージ容量は解放されません。",
+        "DiskMopのダウンロードクリーナーは、ファイルをカテゴリ別（インストーラー、圧縮ファイル、メディア、文書）に自動分類し、1クリックで整理できます。",
       ],
       sections: [
         {
@@ -735,6 +1251,100 @@ export const cleanUpDownloadsFolder: Article = {
             "Disk Mopのスケジュール クリーンアップ（Scheduled Cleanup）を使えば、この作業をまるごと自動化できます。毎週または毎月のタスクを設定しておくだけで、古いダウンロード、システムとブラウザーのキャッシュ、ごみ箱が定期的に整理されます。スケジュールの合間にさっと片付けたいときは、スピードアップ（Speed Up）機能が古いダウンロード、キャッシュ、ごみ箱をワンクリックで整理します。",
             "定期整理を設定すると、「ダウンロード」フォルダーは保管庫ではなくなり、本来あるべき姿に戻ります。ファイルが届き、処理され、次の場所へ移っていく一時的な受信箱です。",
           ],
+        },
+      ],
+      howTo: {
+        name: "ダウンロードフォルダを安全にクリーンアップする方法",
+        totalTime: "PT10M",
+        steps: [
+          {
+            name: "サイズと日付で並べ替える",
+            text: "エクスプローラーまたはFinderで「ダウンロード」を開きます。詳細表示に切り替え、「サイズ」または「更新日時」の見出しをクリックして並べ替えます。",
+          },
+          {
+            name: "古いインストーラーパッケージを削除する",
+            text: "不要になったセットアップ実行可能ファイルやディスクイメージ（.exe、.msi、.dmg、.pkg）を選択して削除します。",
+          },
+          {
+            name: "重複ダウンロードをスキャンする",
+            text: "DiskMopの重複ファイル検出機能を実行し、写真・動画・文書の無駄な重複コピーをSHA-256ハッシュで検出します。",
+          },
+          {
+            name: "ごみ箱を空にする",
+            text: "Windowsのごみ箱（またはmacOSのゴミ箱）を右クリックして「空にする」を実行し、ドライブの解放ブロックを確定させます。",
+          },
+        ],
+      },
+      dataTable: {
+        caption:
+          "ダウンロードフォルダ内の主な消費ファイルと推奨クリーンアップ方針",
+        columns: [
+          "ファイル区分",
+          "拡張子",
+          "典型的な容量",
+          "安全性レベル",
+          "推奨される対処",
+        ],
+        rows: [
+          [
+            "ソフトウェアインストーラー",
+            ".exe, .msi, .dmg, .pkg",
+            "5 GB – 30 GB",
+            "完全に安全",
+            "ソフトのインストール完了後すぐに削除",
+          ],
+          [
+            "圧縮アーカイブ",
+            ".zip, .rar, .7z, .tar.gz",
+            "3 GB – 15 GB",
+            "完全に安全",
+            "内容を解凍した後は元アーカイブを削除",
+          ],
+          [
+            "重複ダウンロードファイル",
+            "*(1).*, *(2).* などの命名規則",
+            "2 GB – 10 GB",
+            "完全に安全",
+            "SHA-256重複スキャナーで照合し1点のみ保持",
+          ],
+          [
+            "古いPDF・文書ファイル",
+            ".pdf, .docx, .xlsx",
+            "500 MB – 3 GB",
+            "要確認",
+            "重要文書は「ドキュメント」へ移動し残りを整理",
+          ],
+          [
+            "ディスクイメージ・ISO",
+            ".iso, .img",
+            "4 GB – 25 GB",
+            "完全に安全",
+            "取り出し後に不要なOSイメージを削除",
+          ],
+        ],
+      },
+      faq: [
+        {
+          question:
+            "ダウンロードファイルを削除するとインストールしたアプリが壊れませんか？",
+          answer:
+            "いいえ。ダウンロードした.exeや.msi、.dmgファイルはセットアップ用メディアにすぎません。インストール後は「Program Files」や「アプリケーション」フォルダから完全に独立して動作します。",
+        },
+        {
+          question: "「ダウンロード」フォルダ自体を削除してもいいですか？",
+          answer:
+            "いいえ、システムの「ダウンロード」フォルダ自体は絶対に削除しないでください。削除するのはフォルダ内に存在する不要なファイルやサブフォルダのみです。",
+        },
+        {
+          question: "ファイルを削除したのに空き容量が増えないのはなぜですか？",
+          answer:
+            "削除されたファイルはWindowsのごみ箱（またはMacのゴミ箱）に一時保管されているためです。ごみ箱を完全に空にして初めて物理的な空き容量として反映されます。",
+        },
+        {
+          question:
+            "ダウンロードフォルダのクリーンアップを自動化するにはどうすればいいですか？",
+          answer:
+            "Windowsでは「設定」>「システム」>「ストレージ」のストレージ センサーを設定します。MacやPCではDiskMopの定期クリーンアップ機能を設定することで毎週の自動メンテナンスが可能です。",
         },
       ],
       verdict: [

@@ -5,14 +5,13 @@ export const findDuplicateSimilarPhotosIphone: Article = {
   type: "guide",
   category: "Mobile",
   date: "2026-09-17",
-  updated: "2026-10-30",
+  updated: "2026-11-06",
   readingTime: 7,
   content: {
     tr: {
-      title:
-        "iPhone'da Kopya ve Benzer Fotoğrafları Bulma (Apple'ın Kopyalar Albümünün Ötesinde)",
+      title: "iPhone'da Kopya ve Benzer Fotoğrafları Bulup Temizleme",
       metaDescription:
-        "Apple'ın Kopyalar albümü sadece birebir kopyaları bulur. Seri çekimleri, tekrarları ve kırpılmış veya filtreli kopyaları en iyi kareyi kaybetmeden silmenin yolu.",
+        "Apple Kopyalar albümü yalnızca birebir aynıları bulur. Seri çekimler, benzer pozlar ve filtreli kopyaları en iyi kareyi koruyarak temizleyin.",
       subtitle:
         "Birebir kopyalar işin kolay kısmı; asıl yeri kaplayan aynı anın on farklı çekimi",
       intro: [
@@ -142,7 +141,7 @@ export const findDuplicateSimilarPhotosIphone: Article = {
     en: {
       title: "Find Similar and Duplicate Photos on iPhone",
       metaDescription:
-        "Apple's Duplicates album finds only exact copies. Here is how to find bursts, retries and edited copies on iPhone and delete them without losing the best frame.",
+        "Apple's Duplicates album only finds exact matches. Learn how on-device AI detects burst shots, similar poses, and resized copies without data loss.",
       subtitle:
         "Exact copies are the easy part; the ten shots of the same moment are the real space hog",
       intro: [
