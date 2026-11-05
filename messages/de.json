@@ -50,6 +50,46 @@
     "freed": "freigegeben",
     "cleaned": "Bereinigt"
   },
+  "storageMap": {
+    "eyebrow": "Beispiel-Datenträger · {total} GB",
+    "freeLabel": "GB frei",
+    "freedLabel": "{gb} GB freigegeben",
+    "hint": "Wählen Sie eine Kategorie und räumen Sie sie auf.",
+    "groupLabel": "Speicherbelegung",
+    "kindLocked": "Geschützt",
+    "kindClean": "Bereinigbar",
+    "btnClean": "Bereinigen, {gb} GB freigeben",
+    "btnUndo": "Rückgängig (Beispiel)",
+    "note": "In der App sehen Sie die Liste und bestätigen, bevor etwas gelöscht wird.",
+    "disclaimer": "Beispieldaten. Die echten Größen hängen von Ihrem Computer ab.",
+    "cleaned": "bereinigt",
+    "cats": {
+      "sys": {
+        "name": "System",
+        "text": "Betriebssystem und Apps. Disk Mop lässt Sie diese Dateien nicht zum Löschen auswählen."
+      },
+      "mine": {
+        "name": "Ihre Dateien",
+        "text": "Dokumente, Fotos, Projekte. Sie erscheinen auf der Karte, kommen aber nie in die Bereinigungsliste."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "Temporäre Dateien von System und Apps sowie Browser-Caches. Sie entstehen bei Bedarf von selbst neu."
+      },
+      "dup": {
+        "name": "Duplikate",
+        "text": "Byte-genau identische Dateien (SHA-256). Pro Gruppe bleibt eine Kopie; Sie entscheiden, welche."
+      },
+      "dev": {
+        "name": "Entwickler-Caches",
+        "text": "Caches von Paketmanagern und Entwicklerwerkzeugen wie npm, pip und Gradle. Werden bei Bedarf neu geladen."
+      },
+      "dl": {
+        "name": "Alte Downloads",
+        "text": "Installationsdateien, Archive und über 30 Tage alte Dateien im Download-Ordner. Erst sortiert, dann wählen Sie aus."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Downloads",
     "downloadsLabel": "Downloads",

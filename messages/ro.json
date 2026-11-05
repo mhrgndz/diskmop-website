@@ -50,6 +50,46 @@
     "freed": "recuperat",
     "cleaned": "Curățat"
   },
+  "storageMap": {
+    "eyebrow": "Disc exemplu · {total} GB",
+    "freeLabel": "GB liberi",
+    "freedLabel": "{gb} GB eliberați",
+    "hint": "Alege o categorie și curăț-o.",
+    "groupLabel": "Bara de utilizare a discului",
+    "kindLocked": "Protejat",
+    "kindClean": "Curățabil",
+    "btnClean": "Curăță și eliberează {gb} GB",
+    "btnUndo": "Anulează (exemplu)",
+    "note": "În aplicație vezi lista și confirmi înainte să se șteargă ceva.",
+    "disclaimer": "Date de exemplu. Dimensiunile reale depind de computerul tău.",
+    "cleaned": "curățat",
+    "cats": {
+      "sys": {
+        "name": "Sistem",
+        "text": "Sistemul de operare și aplicațiile. Disk Mop nu te lasă să selectezi aceste fișiere pentru ștergere."
+      },
+      "mine": {
+        "name": "Fișierele tale",
+        "text": "Documente, fotografii, proiecte. Apar pe hartă, dar nu intră niciodată în lista de curățare."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "Fișiere temporare ale sistemului și aplicațiilor, plus cache-ul browserelor. Se recreează singure când e nevoie."
+      },
+      "dup": {
+        "name": "Duplicate",
+        "text": "Fișiere identice octet cu octet (SHA-256). În fiecare grup rămâne o copie; tu alegi care."
+      },
+      "dev": {
+        "name": "Cache de dezvoltare",
+        "text": "Cache lăsat de managerii de pachete și de instrumentele de dezvoltare precum npm, pip și Gradle. Se descarcă din nou când e nevoie."
+      },
+      "dl": {
+        "name": "Descărcări vechi",
+        "text": "Programe de instalare, arhive și fișiere mai vechi de 30 de zile din Descărcări. Mai întâi sunt clasificate, apoi tu alegi ce dispare."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Descărcări",
     "downloadsLabel": "Descărcări",

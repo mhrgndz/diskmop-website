@@ -50,6 +50,46 @@
     "freed": "kazanıldı",
     "cleaned": "Temizlenenler"
   },
+  "storageMap": {
+    "eyebrow": "Örnek disk · {total} GB",
+    "freeLabel": "GB boş",
+    "freedLabel": "{gb} GB açıldı",
+    "hint": "Bir kategori seç, temizle.",
+    "groupLabel": "Disk kullanım çubuğu",
+    "kindLocked": "Korumalı",
+    "kindClean": "Temizlenebilir",
+    "btnClean": "Temizle, {gb} GB aç",
+    "btnUndo": "Geri al (örnek)",
+    "note": "Uygulamada hiçbir şey silinmeden önce listeyi görür ve onaylarsın.",
+    "disclaimer": "Örnek veri. Gerçek boyutlar bilgisayarına göre değişir.",
+    "cleaned": "temizlendi",
+    "cats": {
+      "sys": {
+        "name": "Sistem",
+        "text": "İşletim sistemi ve uygulamalar. Disk Mop bu dosyaları silme için seçtirmez."
+      },
+      "mine": {
+        "name": "Senin dosyaların",
+        "text": "Belgeler, fotoğraflar, projeler. Haritada görünür ama temizlik listesine hiç girmez."
+      },
+      "cache": {
+        "name": "Önbellek",
+        "text": "Sistemin ve uygulamaların geçici dosyaları ile tarayıcı önbellekleri. Gerektiğinde kendiliğinden yeniden oluşur."
+      },
+      "dup": {
+        "name": "Kopyalar",
+        "text": "SHA-256 ile birebir aynı olan dosyalar. Her grupta bir kopya kalır; hangisinin kalacağına sen karar verirsin."
+      },
+      "dev": {
+        "name": "Geliştirici önbellekleri",
+        "text": "npm, pip, Gradle gibi paket yöneticilerinin ve geliştirici araçlarının biriktirdiği önbellekler. Gerekince yeniden indirilir."
+      },
+      "dl": {
+        "name": "Eski indirmeler",
+        "text": "İndirilenler klasöründeki kurulum dosyaları, arşivler ve 30 günden eski dosyalar. Önce sınıflandırılır, ne gideceğini sen seçersin."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "İndirme",
     "downloadsLabel": "İndirme",

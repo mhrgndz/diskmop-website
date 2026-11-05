@@ -50,6 +50,46 @@
     "freed": "odzyskano",
     "cleaned": "Wyczyszczono"
   },
+  "storageMap": {
+    "eyebrow": "Przykładowy dysk · {total} GB",
+    "freeLabel": "GB wolnego",
+    "freedLabel": "Zwolniono {gb} GB",
+    "hint": "Wybierz kategorię i ją wyczyść.",
+    "groupLabel": "Pasek zajętości dysku",
+    "kindLocked": "Chronione",
+    "kindClean": "Do wyczyszczenia",
+    "btnClean": "Wyczyść i zwolnij {gb} GB",
+    "btnUndo": "Cofnij (przykład)",
+    "note": "W aplikacji widzisz listę i potwierdzasz, zanim cokolwiek zostanie usunięte.",
+    "disclaimer": "Dane przykładowe. Rzeczywiste rozmiary zależą od Twojego komputera.",
+    "cleaned": "wyczyszczono",
+    "cats": {
+      "sys": {
+        "name": "System",
+        "text": "System operacyjny i aplikacje. Disk Mop nie pozwala zaznaczyć tych plików do usunięcia."
+      },
+      "mine": {
+        "name": "Twoje pliki",
+        "text": "Dokumenty, zdjęcia, projekty. Widać je na mapie, ale nigdy nie trafiają na listę czyszczenia."
+      },
+      "cache": {
+        "name": "Pamięć podręczna",
+        "text": "Pliki tymczasowe systemu i aplikacji oraz pamięć podręczna przeglądarek. Odtwarzają się same, gdy są potrzebne."
+      },
+      "dup": {
+        "name": "Duplikaty",
+        "text": "Pliki identyczne co do bajta (SHA-256). W każdej grupie zostaje jedna kopia — którą, wybierasz Ty."
+      },
+      "dev": {
+        "name": "Cache programistyczne",
+        "text": "Pamięć podręczna po menedżerach pakietów i narzędziach programistycznych, takich jak npm, pip i Gradle. Pobierana ponownie, gdy jest potrzebna."
+      },
+      "dl": {
+        "name": "Stare pobrane pliki",
+        "text": "Instalatory, archiwa i pliki starsze niż 30 dni w folderze Pobrane. Najpierw są sortowane, potem Ty wybierasz, co usunąć."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Pobrania",
     "downloadsLabel": "Pobrania",

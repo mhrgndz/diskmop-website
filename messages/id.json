@@ -50,6 +50,46 @@
     "freed": "dikembalikan",
     "cleaned": "Dibersihkan"
   },
+  "storageMap": {
+    "eyebrow": "Disk contoh · {total} GB",
+    "freeLabel": "GB kosong",
+    "freedLabel": "{gb} GB dibebaskan",
+    "hint": "Pilih kategori lalu bersihkan.",
+    "groupLabel": "Bilah penggunaan disk",
+    "kindLocked": "Terlindungi",
+    "kindClean": "Dapat dibersihkan",
+    "btnClean": "Bersihkan, bebaskan {gb} GB",
+    "btnUndo": "Batalkan (contoh)",
+    "note": "Di aplikasi, Anda melihat daftar dan mengonfirmasi sebelum apa pun dihapus.",
+    "disclaimer": "Data contoh. Ukuran sebenarnya bergantung pada komputer Anda.",
+    "cleaned": "dibersihkan",
+    "cats": {
+      "sys": {
+        "name": "Sistem",
+        "text": "Sistem operasi dan aplikasi. Disk Mop tidak mengizinkan file ini dipilih untuk dihapus."
+      },
+      "mine": {
+        "name": "File Anda",
+        "text": "Dokumen, foto, proyek. Tampil di peta tetapi tidak pernah masuk daftar pembersihan."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "File sementara sistem dan aplikasi serta cache browser. Dibuat ulang sendiri saat dibutuhkan."
+      },
+      "dup": {
+        "name": "Duplikat",
+        "text": "File yang identik byte demi byte (SHA-256). Satu salinan tetap ada di tiap grup; Anda yang memilih."
+      },
+      "dev": {
+        "name": "Cache pengembang",
+        "text": "Cache yang ditinggalkan pengelola paket dan alat pengembang seperti npm, pip, dan Gradle. Diunduh ulang saat dibutuhkan."
+      },
+      "dl": {
+        "name": "Unduhan lama",
+        "text": "Installer, arsip, dan file berusia lebih dari 30 hari di folder Unduhan. Dikelompokkan dulu, Anda yang memilih apa yang dihapus."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Unduhan",
     "downloadsLabel": "Unduhan",

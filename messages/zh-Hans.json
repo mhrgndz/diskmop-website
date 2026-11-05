@@ -50,6 +50,46 @@
     "freed": "已回收",
     "cleaned": "已清理"
   },
+  "storageMap": {
+    "eyebrow": "示例磁盘 · {total} GB",
+    "freeLabel": "GB 可用",
+    "freedLabel": "已释放 {gb} GB",
+    "hint": "选择一个类别并清理。",
+    "groupLabel": "磁盘使用情况条",
+    "kindLocked": "受保护",
+    "kindClean": "可清理",
+    "btnClean": "清理并释放 {gb} GB",
+    "btnUndo": "撤销（示例）",
+    "note": "在应用中，删除任何内容之前你都会先查看清单并确认。",
+    "disclaimer": "示例数据。实际大小取决于你的电脑。",
+    "cleaned": "已清理",
+    "cats": {
+      "sys": {
+        "name": "系统",
+        "text": "操作系统和应用。Disk Mop 不允许你选择这些文件进行删除。"
+      },
+      "mine": {
+        "name": "你的文件",
+        "text": "文档、照片、项目。它们会显示在图中，但绝不会进入清理清单。"
+      },
+      "cache": {
+        "name": "缓存",
+        "text": "系统和应用的临时文件，以及浏览器缓存。需要时会自动重新生成。"
+      },
+      "dup": {
+        "name": "重复文件",
+        "text": "逐字节完全相同的文件（SHA-256）。每组保留一份，保留哪份由你决定。"
+      },
+      "dev": {
+        "name": "开发者缓存",
+        "text": "npm、pip、Gradle 等包管理器和开发工具留下的缓存。需要时会重新下载。"
+      },
+      "dl": {
+        "name": "旧下载文件",
+        "text": "下载文件夹中的安装包、压缩包和超过 30 天的文件。先分类，再由你选择删除哪些。"
+      }
+    }
+  },
   "trustBar": {
     "downloads": "下载量",
     "downloadsLabel": "下载量",

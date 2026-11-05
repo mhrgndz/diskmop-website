@@ -50,6 +50,46 @@
     "freed": "reclaimed",
     "cleaned": "Cleaned"
   },
+  "storageMap": {
+    "eyebrow": "Sample disk · {total} GB",
+    "freeLabel": "GB free",
+    "freedLabel": "{gb} GB freed",
+    "hint": "Pick a category and clean it.",
+    "groupLabel": "Disk usage bar",
+    "kindLocked": "Protected",
+    "kindClean": "Cleanable",
+    "btnClean": "Clean, free {gb} GB",
+    "btnUndo": "Undo (sample)",
+    "note": "In the app you review the list and confirm before anything is deleted.",
+    "disclaimer": "Sample data. Real sizes depend on your computer.",
+    "cleaned": "cleaned",
+    "cats": {
+      "sys": {
+        "name": "System",
+        "text": "Operating system and apps. Disk Mop will not let you select these files for deletion."
+      },
+      "mine": {
+        "name": "Your files",
+        "text": "Documents, photos, projects. They show up on the map but never enter the cleanup list."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "Temporary files from the system and apps, plus browser caches. They regenerate on their own when needed."
+      },
+      "dup": {
+        "name": "Duplicates",
+        "text": "Files that are byte-for-byte identical (SHA-256). One copy per group stays; you choose which."
+      },
+      "dev": {
+        "name": "Developer caches",
+        "text": "Caches left by package managers and developer tools such as npm, pip and Gradle. Re-downloaded when needed."
+      },
+      "dl": {
+        "name": "Old downloads",
+        "text": "Installers, archives and files older than 30 days in Downloads. Sorted first, then you pick what goes."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Downloads",
     "downloadsLabel": "Downloads",

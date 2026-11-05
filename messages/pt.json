@@ -50,6 +50,46 @@
     "freed": "liberados",
     "cleaned": "Limpos"
   },
+  "storageMap": {
+    "eyebrow": "Disco de exemplo · {total} GB",
+    "freeLabel": "GB livres",
+    "freedLabel": "{gb} GB liberados",
+    "hint": "Escolha uma categoria e limpe.",
+    "groupLabel": "Barra de uso do disco",
+    "kindLocked": "Protegido",
+    "kindClean": "Limpável",
+    "btnClean": "Limpar e liberar {gb} GB",
+    "btnUndo": "Desfazer (exemplo)",
+    "note": "No app, você vê a lista e confirma antes de qualquer exclusão.",
+    "disclaimer": "Dados de exemplo. Os tamanhos reais dependem do seu computador.",
+    "cleaned": "limpo",
+    "cats": {
+      "sys": {
+        "name": "Sistema",
+        "text": "Sistema operacional e aplicativos. O Disk Mop não deixa você selecionar esses arquivos para exclusão."
+      },
+      "mine": {
+        "name": "Seus arquivos",
+        "text": "Documentos, fotos, projetos. Aparecem no mapa, mas nunca entram na lista de limpeza."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "Arquivos temporários do sistema e dos apps, além de caches de navegadores. Eles se recriam sozinhos quando necessário."
+      },
+      "dup": {
+        "name": "Duplicados",
+        "text": "Arquivos idênticos byte a byte (SHA-256). Uma cópia fica em cada grupo; você escolhe qual."
+      },
+      "dev": {
+        "name": "Caches de desenvolvimento",
+        "text": "Caches deixados por gerenciadores de pacotes e ferramentas de desenvolvimento como npm, pip e Gradle. São baixados de novo quando necessário."
+      },
+      "dl": {
+        "name": "Downloads antigos",
+        "text": "Instaladores, arquivos compactados e arquivos com mais de 30 dias em Downloads. Primeiro são classificados, depois você escolhe o que sai."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Downloads",
     "downloadsLabel": "Downloads",

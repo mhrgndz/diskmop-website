@@ -50,6 +50,46 @@
     "freed": "đã thu hồi",
     "cleaned": "Đã dọn"
   },
+  "storageMap": {
+    "eyebrow": "Ổ đĩa mẫu · {total} GB",
+    "freeLabel": "GB trống",
+    "freedLabel": "Đã giải phóng {gb} GB",
+    "hint": "Chọn một danh mục và dọn dẹp.",
+    "groupLabel": "Thanh dung lượng đĩa",
+    "kindLocked": "Được bảo vệ",
+    "kindClean": "Có thể dọn",
+    "btnClean": "Dọn và giải phóng {gb} GB",
+    "btnUndo": "Hoàn tác (mẫu)",
+    "note": "Trong ứng dụng, bạn xem danh sách và xác nhận trước khi xóa bất cứ thứ gì.",
+    "disclaimer": "Dữ liệu mẫu. Dung lượng thực tế tùy thuộc vào máy tính của bạn.",
+    "cleaned": "đã dọn",
+    "cats": {
+      "sys": {
+        "name": "Hệ thống",
+        "text": "Hệ điều hành và ứng dụng. Disk Mop không cho phép chọn các tệp này để xóa."
+      },
+      "mine": {
+        "name": "Tệp của bạn",
+        "text": "Tài liệu, ảnh, dự án. Chúng hiện trên bản đồ nhưng không bao giờ vào danh sách dọn dẹp."
+      },
+      "cache": {
+        "name": "Bộ nhớ đệm",
+        "text": "Tệp tạm của hệ thống và ứng dụng cùng bộ nhớ đệm trình duyệt. Tự tạo lại khi cần."
+      },
+      "dup": {
+        "name": "Tệp trùng lặp",
+        "text": "Các tệp giống nhau từng byte (SHA-256). Mỗi nhóm giữ lại một bản; bạn chọn bản nào."
+      },
+      "dev": {
+        "name": "Bộ nhớ đệm lập trình",
+        "text": "Bộ nhớ đệm do trình quản lý gói và công cụ lập trình như npm, pip, Gradle để lại. Sẽ tải lại khi cần."
+      },
+      "dl": {
+        "name": "Tải xuống cũ",
+        "text": "Trình cài đặt, tệp nén và tệp cũ hơn 30 ngày trong thư mục Tải xuống. Được phân loại trước, rồi bạn chọn cái nào sẽ bị xóa."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Lượt tải",
     "downloadsLabel": "Lượt tải",

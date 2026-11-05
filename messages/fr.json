@@ -50,6 +50,46 @@
     "freed": "libérés",
     "cleaned": "Nettoyé"
   },
+  "storageMap": {
+    "eyebrow": "Disque d’exemple · {total} GB",
+    "freeLabel": "GB libres",
+    "freedLabel": "{gb} GB libérés",
+    "hint": "Choisissez une catégorie et nettoyez-la.",
+    "groupLabel": "Barre d’utilisation du disque",
+    "kindLocked": "Protégé",
+    "kindClean": "Nettoyable",
+    "btnClean": "Nettoyer et libérer {gb} GB",
+    "btnUndo": "Annuler (exemple)",
+    "note": "Dans l’application, vous voyez la liste et confirmez avant toute suppression.",
+    "disclaimer": "Données d’exemple. Les tailles réelles dépendent de votre ordinateur.",
+    "cleaned": "nettoyé",
+    "cats": {
+      "sys": {
+        "name": "Système",
+        "text": "Système d’exploitation et applications. Disk Mop ne vous laisse pas sélectionner ces fichiers pour les supprimer."
+      },
+      "mine": {
+        "name": "Vos fichiers",
+        "text": "Documents, photos, projets. Ils apparaissent sur la carte, mais n’entrent jamais dans la liste de nettoyage."
+      },
+      "cache": {
+        "name": "Cache",
+        "text": "Fichiers temporaires du système et des applications, et caches des navigateurs. Ils se recréent seuls au besoin."
+      },
+      "dup": {
+        "name": "Doublons",
+        "text": "Fichiers strictement identiques (SHA-256). Une copie reste par groupe ; vous choisissez laquelle."
+      },
+      "dev": {
+        "name": "Caches de développement",
+        "text": "Caches laissés par les gestionnaires de paquets et outils de développement comme npm, pip et Gradle. Retéléchargés au besoin."
+      },
+      "dl": {
+        "name": "Anciens téléchargements",
+        "text": "Installateurs, archives et fichiers de plus de 30 jours dans Téléchargements. Triés d’abord, puis vous choisissez ce qui part."
+      }
+    }
+  },
   "trustBar": {
     "downloads": "Téléchargements",
     "downloadsLabel": "Téléchargements",
