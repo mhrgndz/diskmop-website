@@ -378,7 +378,7 @@ export const windowsDiskCleanup: Article = {
       metaDescription:
         "Disk Mop ve Windows dahili Disk Cleanup aracını karşılaştırın. 21+ özellik vs temel temizlik. Neden dahili araç yeterli değil? Detaylı analiz.",
       subtitle:
-        "Windows'un dahili Disk Cleanup aracı ücretsiz ve kurulum gerektirmiyor — ama 2025'te bilgisayarınızı gerçekten temiz tutmak için yeterli mi?",
+        "Windows'un dahili Disk Cleanup aracı ücretsiz ve kurulum gerektirmiyor — ama 2026'da bilgisayarınızı gerçekten temiz tutmak için yeterli mi?",
       keyTakeaways: [
         "Klasik Windows Disk Temizleme (cleanmgr.exe) 1998'den kalma bir araçtır ve Microsoft tarafından kullanım dışı (deprecated) ilan edilmiştir.",
         "Disk Temizleme treemap analizi yapamaz, kopya dosyaları bulamaz ve üçüncü parti tarayıcı (Chrome, Firefox) önbelleklerine dokunamaz.",
@@ -486,7 +486,7 @@ export const windowsDiskCleanup: Article = {
     en: {
       title: "Disk Mop vs Windows Disk Cleanup: 2026 Comparison",
       metaDescription:
-        "Compare Disk Mop vs Windows built-in Disk Cleanup. 21+ features vs basic temp file cleaning. Why the built-in tool isn't enough in 2025.",
+        "Compare Disk Mop vs Windows built-in Disk Cleanup. 21+ features vs basic temp file cleaning. Why the built-in tool isn't enough in 2026.",
       subtitle:
         "Windows Disk Cleanup is free and requires no installation — but is it really enough to keep your computer clean in 2026?",
       keyTakeaways: [

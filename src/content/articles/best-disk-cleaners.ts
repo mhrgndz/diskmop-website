@@ -326,9 +326,9 @@ export const bestDiskCleaners: Article = {
     },
 
     de: {
-      title: "Beste Festplattenreiniger 2025 — Top-Auswahl im Vergleich",
+      title: "Beste Festplattenreiniger (2026) — Top-Auswahl im Vergleich",
       metaDescription:
-        "Vergleich der besten Festplattenreinigungs-Software 2025. Wir bewerten Disk Mop, CCleaner, BleachBit und CleanMyMac X — finden Sie das beste PC Reinigungsprogramm.",
+        "Vergleich der besten Festplattenreinigungs-Software 2026. Wir bewerten Disk Mop, CCleaner, BleachBit und CleanMyMac X — finden Sie das beste PC Reinigungsprogramm.",
       subtitle:
         "Wir haben die besten Festplattenreinigungs-Tools 2025 getestet und verglichen, um Ihnen bei der Auswahl des richtigen Programms zu helfen.",
       intro: [
@@ -490,7 +490,7 @@ export const bestDiskCleaners: Article = {
       title:
         "Meilleurs logiciels de nettoyage de disque 2026 — notre comparatif",
       metaDescription:
-        "Comparatif des meilleurs logiciels de nettoyage de disque en 2025 : Disk Mop, CCleaner, BleachBit et CleanMyMac X testés pour trouver le nettoyeur PC idéal.",
+        "Comparatif des meilleurs logiciels de nettoyage de disque en 2026 : Disk Mop, CCleaner, BleachBit et CleanMyMac X testés pour trouver le nettoyeur PC idéal.",
       subtitle:
         "Nous avons testé et comparé les meilleurs outils de nettoyage de disque de 2025 pour vous aider à libérer de l'espace et à retrouver des performances.",
       intro: [
@@ -652,7 +652,7 @@ export const bestDiskCleaners: Article = {
       title:
         "Mejores programas de limpieza de disco 2026 — comparativa y análisis",
       metaDescription:
-        "Comparamos los mejores programas de limpieza de disco de 2025: Disk Mop, CCleaner, BleachBit y CleanMyMac X, para que elijas el limpiador de PC ideal.",
+        "Comparamos los mejores programas de limpieza de disco de 2026: Disk Mop, CCleaner, BleachBit y CleanMyMac X, para que elijas el limpiador de PC ideal.",
       subtitle:
         "Hemos probado y comparado las mejores herramientas de limpieza de disco de 2025 para ayudarte a liberar espacio y recuperar rendimiento.",
       intro: [
@@ -811,9 +811,10 @@ export const bestDiskCleaners: Article = {
     },
 
     it: {
-      title: "Migliori programmi per pulire il disco 2025 — confronto e guida",
+      title:
+        "Migliori programmi per pulire il disco (2026) — confronto e guida",
       metaDescription:
-        "Confronto tra i migliori programmi per la pulizia del disco del 2025: Disk Mop, CCleaner, BleachBit e CleanMyMac X, per scegliere il pulitore PC giusto.",
+        "Confronto tra i migliori programmi per la pulizia del disco del 2026: Disk Mop, CCleaner, BleachBit e CleanMyMac X, per scegliere il pulitore PC giusto.",
       subtitle:
         "Abbiamo testato e confrontato i migliori strumenti di pulizia del disco del 2025 per aiutarti a liberare spazio e recuperare prestazioni.",
       intro: [
@@ -972,9 +973,9 @@ export const bestDiskCleaners: Article = {
     },
 
     pt: {
-      title: "Melhores programas de limpeza de disco em 2025 — comparativo",
+      title: "Melhores programas de limpeza de disco (2026) — comparativo",
       metaDescription:
-        "Comparamos os melhores programas de limpeza de disco de 2025: Disk Mop, CCleaner, BleachBit e CleanMyMac X, para você escolher o limpador de PC ideal.",
+        "Comparamos os melhores programas de limpeza de disco de 2026: Disk Mop, CCleaner, BleachBit e CleanMyMac X, para você escolher o limpador de PC ideal.",
       subtitle:
         "Testamos e comparamos as melhores ferramentas de limpeza de disco de 2025 para você liberar espaço e recuperar o desempenho do computador.",
       intro: [
@@ -1132,9 +1133,9 @@ export const bestDiskCleaners: Article = {
     },
 
     ja: {
-      title: "ディスククリーナーおすすめ2025｜人気4製品を徹底比較",
+      title: "ディスククリーナーおすすめ（2026年）｜人気4製品を徹底比較",
       metaDescription:
-        "2025年のディスククリーニングソフトを比較しました。Disk Mop、CCleaner、BleachBit、CleanMyMac Xの機能・価格・プライバシーを検証し、自分に合ったPC掃除ソフトの選び方を解説します。",
+        "2026年のディスククリーニングソフトを比較しました。Disk Mop、CCleaner、BleachBit、CleanMyMac Xの機能・価格・プライバシーを検証し、自分に合ったPC掃除ソフトの選び方を解説します。",
       subtitle:
         "2025年の主要なディスククリーニングソフトを実際に試し、空き容量とパフォーマンスを取り戻せる製品を比較しました。",
       intro: [

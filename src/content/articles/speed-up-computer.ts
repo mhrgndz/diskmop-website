@@ -178,7 +178,7 @@ export const speedUpComputer: Article = {
       metaDescription:
         "Is your computer slow in 2026? Learn how to speed up your PC: clean cache, manage startup apps, remove duplicates, free disk space, and optimize RAM.",
       subtitle:
-        "If your computer has slowed down, don't worry — with the right steps, you can restore its original performance. Here's everything you need to do to speed up your PC in 2025.",
+        "If your computer has slowed down, don't worry — with the right steps, you can restore its original performance. Here's everything you need to do to speed up your PC in 2026.",
       intro: [
         "Is your computer not running as fast as it used to? You're not alone. Over time, accumulated temporary files, unnecessary startup programs, duplicate files, and a filling hard drive significantly degrade your computer's performance. The good news is that you can fix most of these issues yourself.",
         "In this comprehensive guide, we walk you through 6 essential steps to speed up your computer. For each step, we explain both manual methods and the automated solutions offered by professional tools like Disk Mop. Let's get started on making your PC faster.",
@@ -509,7 +509,7 @@ export const speedUpComputer: Article = {
       metaDescription:
         "Votre PC est lent ? Accélérez-le en 2026 : nettoyage du cache, programmes au démarrage, doublons, espace disque libéré et RAM optimisée. Guide complet.",
       subtitle:
-        "Si votre ordinateur s'est essoufflé, pas d'inquiétude : avec les bonnes manipulations, vous pouvez lui rendre ses performances d'origine. Voici tout ce qu'il faut faire pour accélérer votre PC en 2025.",
+        "Si votre ordinateur s'est essoufflé, pas d'inquiétude : avec les bonnes manipulations, vous pouvez lui rendre ses performances d'origine. Voici tout ce qu'il faut faire pour accélérer votre PC en 2026.",
       intro: [
         "Votre ordinateur ne va plus aussi vite qu'avant ? Vous êtes loin d'être seul. Avec le temps, les fichiers temporaires accumulés, les programmes inutiles au démarrage, les fichiers en double et un disque qui se remplit dégradent nettement les performances de votre machine. La bonne nouvelle, c'est que vous pouvez régler vous-même la plupart de ces problèmes.",
         "Dans ce guide complet, nous détaillons les 6 étapes essentielles pour accélérer votre ordinateur. Pour chacune, nous expliquons à la fois la méthode manuelle et la solution automatisée que proposent des outils professionnels comme Disk Mop. Passons tout de suite à la pratique.",

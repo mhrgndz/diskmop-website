@@ -836,7 +836,7 @@ export const glaryUtilities: Article = {
     it: {
       title: "Disk Mop vs Glary Utilities: il confronto 2026",
       metaDescription:
-        "Disk Mop o Glary Utilities? Pulizia del disco specializzata o suite tutto-in-uno: prezzo, funzioni e facilità d'uso a confronto per scegliere bene nel 2025.",
+        "Disk Mop o Glary Utilities? Pulizia del disco specializzata o suite tutto-in-uno: prezzo, funzioni e facilità d'uso a confronto per scegliere bene nel 2026.",
       subtitle:
         "Glary Utilities raccoglie oltre 20 strumenti in un unico programma. Ma a volte meno è meglio: Disk Mop punta tutto sulla pulizia del disco e offre un'esperienza migliore.",
       intro: [

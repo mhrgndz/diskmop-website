@@ -277,7 +277,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "Shader-Caches verhindern Ruckler im Spiel, deinstallierte Spiele hinterlassen diese Caches jedoch dauerhaft.",
+        "Selbst wenn Spiele auf einer zweiten Festplatte liegen, wächst der Shader-Cache auf Laufwerk C an.",
+        "Sowohl NVIDIA- als auch AMD-Treiber legen zusätzliche Shader-Dumps im Hauptsystem ab.",
         "Das Löschen von Shader-Caches beschädigt weder Spiele noch Spielstände; sie werden beim nächsten Start einfach neu erstellt.",
+        "Disk Mop erkennt verwaiste Spiele-Caches automatisch und gibt mit einem Klick Dutzende Gigabytes frei.",
       ],
       dataTable: {
         caption: "Typische Shader-Größen moderner PC-Spiele",
@@ -344,7 +347,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "Le cache de shaders prévient les saccades, mais les jeux désinstallés laissent leurs fichiers sur le disque.",
+        "Même si vos jeux sont installés sur un disque secondaire, les caches s'accumulent sur le lecteur C:.",
+        "Les pilotes NVIDIA et AMD stockent également leurs propres caches de shaders sur le disque système.",
         "La suppression du cache ne supprime aucune sauvegarde et régénère des fichiers sains au lancement suivant.",
+        "Disk Mop identifie automatiquement les caches orphelins et libère des dizaines de gigaoctets en un clic.",
       ],
       dataTable: {
         caption: "Taille moyenne des shaders de jeux",
@@ -417,7 +423,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "La caché de sombreadores evita tirones en juegos, pero los juegos desinstalados no borran su caché.",
+        "Aunque instales juegos en un disco secundario, los sombreadores se acumulan en la unidad C:.",
+        "Tanto NVIDIA como AMD guardan volcados de caché independientes en la unidad del sistema.",
         "Borrar esta caché es 100% seguro: no pierdes partidas guardadas ni archivos principales.",
+        "Disk Mop detecta automáticamente cachés huérfanas de juegos antiguos y libera gigabytes con un solo clic.",
       ],
       dataTable: {
         caption: "Tamaño de sombreadores en juegos populares",
@@ -489,7 +498,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "I giochi disinstallati lasciano quasi sempre intatte le loro cartelle shadercache.",
+        "Anche se i giochi sono su un disco secondario, le cache dei shader si accumulano sull'unità C:.",
+        "Sia NVIDIA che AMD archiviano cache grafiche indipendenti nella cartella di sistema.",
         "La rimozione della cache è sicura e non cancella i salvataggi né danneggia i giochi.",
+        "Disk Mop individua ed elimina automaticamente le cache orfane dei giochi liberando spazio prezioso.",
       ],
       dataTable: {
         caption: "Dimensioni medie della cache degli shader",
@@ -556,7 +568,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "Jogos desinstalados deixam seus arquivos de cache para trás permanentemente.",
+        "Mesmo com jogos em um disco secundário, o cache de shaders se acumula na unidade principal C:.",
+        "Drivers da NVIDIA e AMD também mantêm caches independentes no disco do sistema.",
         "Limpar o cache de shaders é seguro e não remove jogos nem dados salvos.",
+        "O Disk Mop detecta automaticamente caches órfãos e recupera dezenas de gigabytes com um clique.",
       ],
       dataTable: {
         caption: "Tamanho médio de shaders em jogos modernos",
@@ -628,7 +643,10 @@ export const steamShaderCacheCleanup: Article = {
       ],
       keyTakeaways: [
         "シェーダーキャッシュはゲーム中のカクつきを防ぎますが、アンインストールしたゲームのキャッシュは残り続けます。",
+        "ゲームを別のドライブに保存していても、シェーダーはCドライブ内に蓄積されます。",
+        "NVIDIAやAMDのグラフィックスドライバーも独自のシェーダーキャッシュを蓄積します。",
         "キャッシュを削除してもセーブデータやゲーム本体が消えることはありません。次回起動時に再生成されます。",
+        "Disk Mopを使えば、不要になった過去のゲームキャッシュを安全に検出してワンクリックで一括削除できます。",
       ],
       dataTable: {
         caption: "人気タイトルのシェーダーキャッシュ容量目安",

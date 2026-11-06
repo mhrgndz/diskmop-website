@@ -22,7 +22,7 @@ export const windows1124h2CacheBug: Article = {
         "8.63 GB Windows Update Cleanup verisi, Windows 11 24H2'nin kontrol noktası (checkpoint) dosyalarıdır ve servis yığını tarafından gelecekteki güncellemeler için kilitlenmiştir.",
         'Klasik Disk Temizleme aracı bu dosyaları yanlışlıkla "silinebilir" olarak raporlar; ancak silme komutu verildiğinde işletim sistemi çekirdeği dosyaların kaldırılmasını engeller.',
         "Zorla silmeye çalışmak veya WinSxS klasörünü elle silmek Windows Update hizmetini tamamen bozabilir.",
-        "Gerçek disk alanı kazanmak için SoftwareDistribution indirme önbelleği, teslimat optimizasyonu dosyaları ve [WinSxS bileşen analizi](/blog/winsxs-cleanup) kullanılmalıdır.",
+        "Gerçek disk alanı kazanmak için SoftwareDistribution indirme önbelleği, teslimat optimizasyonu dosyaları ve [WinSxS bileşen analizi](/blog/winsxs-folder-cleanup) kullanılmalıdır.",
         "Disk Mop, kilitli sistem dosyalarını zorlamadan, Windows 11 24H2 üzerinde güvenle silinebilecek diğer gigabaytlarca gizli önbelleği tek tıkla temizler.",
       ],
       dataTable: {
@@ -106,7 +106,7 @@ export const windows1124h2CacheBug: Article = {
           title: "Windows 11 24H2'de Gerçekten Yer Açan 4 Güvenli Alan",
           content: [
             "1. **SoftwareDistribution İndirme Klasörü:** Güncellemeler başarıyla yüklendikten sonra kurulum dosyaları `C:\\Windows\\SoftwareDistribution\\Download` altında boş yere yer kaplar. Burayı temizlemek genellikle 5 ila 15 GB arasında net alan kazandırır.",
-            "2. **Windows.old Klasörü:** 24H2 büyük bir özellik güncellemesi olduğu için eski sisteminiz `Windows.old` klasörüne kopyalanır. Sisteminiz stabil çalışıyorsa, [Windows.old temizleme rehberimizi](/blog/windows-old-folder) izleyerek 20 GB'ın üzerinde yer açabilirsiniz.",
+            "2. **Windows.old Klasörü:** 24H2 büyük bir özellik güncellemesi olduğu için eski sisteminiz `Windows.old` klasörüne kopyalanır. Sisteminiz stabil çalışıyorsa, [Windows.old temizleme rehberimizi](/blog/delete-windows-old-folder) izleyerek 20 GB'ın üzerinde yer açabilirsiniz.",
             "3. **DirectX Gölgelendirici Önbelleği (Shader Cache):** Oyun oynuyorsanız veya grafik programları kullanıyorsanız gölgelendirici önbellekleri hızla 10 GB seviyesine ulaşabilir.",
             "4. **Kullanıcı AppData ve Crash Dumps:** Uygulamaların ürettiği hata dökümleri ve geçici günlükler [C sürücüsünün sebepsiz dolmasına](/blog/c-drive-full-for-no-reason) yol açar.",
           ],
@@ -150,7 +150,7 @@ export const windows1124h2CacheBug: Article = {
         "The 8.63 GB Windows Update Cleanup data represents checkpoint base files locked by the servicing stack for future differential updates.",
         "Legacy Disk Cleanup incorrectly flags checkpoint files as reclaimable, but the Windows kernel prevents their deletion to maintain update integrity.",
         "Forcefully deleting files from the WinSxS directory will cause future cumulative updates to fail with error 0x800f0922.",
-        "Genuine storage recovery is achieved by clearing SoftwareDistribution downloads, Delivery Optimization caches, and [WinSxS component stores](/blog/winsxs-cleanup).",
+        "Genuine storage recovery is achieved by clearing SoftwareDistribution downloads, Delivery Optimization caches, and [WinSxS component stores](/blog/winsxs-folder-cleanup).",
         "Disk Mop safely sweeps away gigabytes of actual junk without endangering locked Windows 11 24H2 system checkpoints.",
       ],
       dataTable: {
@@ -239,7 +239,7 @@ export const windows1124h2CacheBug: Article = {
           title: "4 Proven Ways to Reclaim Actual Space on Windows 11 24H2",
           content: [
             "1. **SoftwareDistribution Download Cache:** Once updates are installed, their raw installers remain in `C:\\Windows\\SoftwareDistribution\\Download`. Purging this folder routinely yields 5 to 15 GB of instant space.",
-            "2. **Windows.old Rollback Folder:** Because 24H2 is a major build upgrade, your previous installation is archived in `Windows.old`. Follow our [Windows.old cleanup guide](/blog/windows-old-folder) to reclaim 20+ GB if your PC is stable.",
+            "2. **Windows.old Rollback Folder:** Because 24H2 is a major build upgrade, your previous installation is archived in `Windows.old`. Follow our [Windows.old cleanup guide](/blog/delete-windows-old-folder) to reclaim 20+ GB if your PC is stable.",
             "3. **DirectX Shader Cache:** Modern games generate massive shader pre-caches that can quietly exceed 10 GB.",
             "4. **AppData Bloat & Crash Dumps:** Uninstalled applications leave behind gigabytes of cached assets that cause [C drive full for no reason](/blog/c-drive-full-for-no-reason) issues.",
           ],
