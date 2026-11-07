@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { appShotSrc } from "@/lib/app-shots";
 import { motion } from "framer-motion";
 import { Check, Download } from "lucide-react";
 
@@ -15,6 +16,7 @@ import { trackDownload } from "@/lib/analytics";
 export function Hero({ versions }: { versions?: Pick<LiveVersions, "windows"> }) {
   const t = useTranslations("hero");
   const tApp = useTranslations("app");
+  const locale = useLocale();
   // iPhone/iPad ziyaretçisine masaüstü ürünü değil iPhone uygulaması anlatılır:
   // metinler `hero.ios.*`'tan gelir, ana düğme doğrudan App Store'a gider ve
   // Windows ekran görüntüsü gösterilmez.
@@ -146,7 +148,7 @@ export function Hero({ versions }: { versions?: Pick<LiveVersions, "windows"> })
             >
               <div className="overflow-hidden rounded-[14px] bg-navy shadow-[0_40px_70px_-28px_rgba(11,27,51,0.5),0_0_0_1px_rgba(11,27,51,0.14)]">
                 <Image
-                  src="/brand/app-overview.png"
+                  src={appShotSrc("overview", locale)}
                   alt={tApp("screenshotAlt")}
                   width={1076}
                   height={759}

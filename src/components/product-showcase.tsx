@@ -29,13 +29,13 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ExpandableVideo } from "@/components/expandable-video";
+import { ExpandableImage } from "@/components/expandable-image";
 import {
-  SHOWCASE_VIDEO_W as VIDEO_W,
-  SHOWCASE_VIDEO_H as VIDEO_H,
-  showcaseVideoSrc as videoSrc,
-  showcasePosterSrc as posterSrc,
-} from "@/components/showcase-video";
+  APP_SHOT_W,
+  APP_SHOT_H,
+  appShotSrc,
+  shotForFeature,
+} from "@/lib/app-shots";
 
 interface ShowcaseTab {
   /** public/videos/<id>/<dil>.mp4 + <dil>.webp kapak */
@@ -99,9 +99,13 @@ export function ProductShowcase() {
         if (!girisler.some((g) => g.isIntersecting)) return;
         gozlemci.disconnect();
 
-        const kuyruk = showcaseTabs
-          .slice(1)
-          .map((tab) => posterSrc(tab.id, locale));
+        const kuyruk = Array.from(
+          new Set(
+            showcaseTabs
+              .slice(1)
+              .map((tab) => appShotSrc(shotForFeature(tab.id), locale)),
+          ),
+        );
         const sirala = (fn: () => void) => {
           const ric = (
             window as {
@@ -184,12 +188,11 @@ export function ProductShowcase() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="rounded-2xl border overflow-hidden shadow-2xl max-w-5xl mx-auto">
-                      <ExpandableVideo
-                        src={videoSrc(tab.id, locale)}
-                        poster={posterSrc(tab.id, locale)}
+                      <ExpandableImage
+                        src={appShotSrc(shotForFeature(tab.id), locale)}
                         title={t(`tabs.${tab.nameKey}.name`)}
-                        width={VIDEO_W}
-                        height={VIDEO_H}
+                        width={APP_SHOT_W}
+                        height={APP_SHOT_H}
                       />
                     </div>
                     <p className="mt-4 text-center text-muted-foreground max-w-lg mx-auto">

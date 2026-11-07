@@ -5,13 +5,13 @@ import { Download, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
 import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
-import { ExpandableVideo } from "@/components/expandable-video";
+import { ExpandableImage } from "@/components/expandable-image";
 import {
-  SHOWCASE_VIDEO_W,
-  SHOWCASE_VIDEO_H,
-  showcaseVideoSrc,
-  showcasePosterSrc,
-} from "@/components/showcase-video";
+  APP_SHOT_W,
+  APP_SHOT_H,
+  appShotSrc,
+  shotForFeature,
+} from "@/lib/app-shots";
 
 interface FeatureInfo {
   id: string;
@@ -145,8 +145,7 @@ export function BlogScreenshotShowcase({
   const osLabel = isMac ? "macOS" : "Windows";
   const downloadPlatform: DownloadPlatform = isMac ? "mac" : "windows";
 
-  const videoSrc = showcaseVideoSrc(feature.id, locale);
-  const posterSrc = showcasePosterSrc(feature.id, locale);
+  const shotSrc = appShotSrc(shotForFeature(feature.id), locale);
 
   return (
     <div className="my-10 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-b from-card to-card/50 shadow-xl shadow-brand-500/5 ring-1 ring-border/50">
@@ -168,12 +167,11 @@ export function BlogScreenshotShowcase({
 
       {/* Ekran Goruntusu / Video Vitrini */}
       <div className="relative bg-black/40">
-        <ExpandableVideo
-          src={videoSrc}
-          poster={posterSrc}
+        <ExpandableImage
+          src={shotSrc}
           title={`Disk Mop - ${featureName}`}
-          width={SHOWCASE_VIDEO_W}
-          height={SHOWCASE_VIDEO_H}
+          width={APP_SHOT_W}
+          height={APP_SHOT_H}
           lazy={true}
         />
       </div>

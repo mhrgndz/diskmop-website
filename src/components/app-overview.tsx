@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { appShotSrc } from "@/lib/app-shots";
 
 const STEPS = [0, 1, 2] as const;
 
@@ -11,6 +12,7 @@ const STEPS = [0, 1, 2] as const;
 export function AppOverview() {
   const t = useTranslations("app.overview");
   const tApp = useTranslations("app");
+  const locale = useLocale();
 
   return (
     <section id="overview" className="scroll-mt-20 mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:mt-24 lg:px-8">
@@ -47,7 +49,7 @@ export function AppOverview() {
           className="min-w-0 flex-[1.2_1_460px] overflow-hidden rounded-[14px] shadow-[0_0_0_1px_rgba(255,255,255,0.14)] aspect-[812/390]"
         >
           <Image
-            src="/brand/app-overview.png"
+            src={appShotSrc("overview", locale)}
             alt={tApp("screenshotAlt")}
             width={1076}
             height={759}
