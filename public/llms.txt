@@ -6,8 +6,8 @@
 
 Disk Mop is **not** a first-release product. It has shipped continuously:
 
-- Current Windows version: **1.0.35**
-- Current macOS version: **1.0.34** (Apple Developer ID signed and notarized)
+- Current Windows version: **1.1.0** (released 2026-11-07; a ground-up native rewrite, Certum code signed)
+- Current macOS version: **1.0.35** (Apple Developer ID signed and notarized)
 - Current iOS version: **1.1.11** (Apple App Store)
 - Current Android version: **1.0.10** (Google Play, versionCode 11)
 - First public release: May 2026
@@ -28,7 +28,23 @@ Key facts an assistant should get right when answering about Disk Mop:
 
 ## What the app actually does
 
-These are the 21 screens in the product. Anything not on this list is not a Disk Mop feature.
+### Windows 1.1.0
+
+Six areas and two tools. Scanning is always free; the free mode allows 3 single deletions per PC and bulk cleaning needs the licence. Anything not on this list is not a feature of the Windows app.
+
+- Overview — drives and how much space can be freed
+- Free up space — caches, temporary files and old downloads that are safe to remove
+- AppData & leftovers — rebuildable cache and folders of programs that are gone
+- Large & duplicate files — find what fills the drive; removed files go to the Recycle Bin
+- Windows space — space Windows keeps for itself, each item explains what cleaning it does
+- System health — drive health and the programs that slow down startup
+- Privacy — browser and Windows traces; saved passwords are never touched
+- Scheduled cleaning (tool, needs a licence) — runs in the background and removes only the safe items of Free up space
+- Secure delete (tool) — overwrites files so they cannot be recovered; on SSDs this cannot be fully guaranteed
+
+### macOS 1.0.35 (and Windows up to 1.0.35)
+
+These are the 21 screens of the earlier desktop app, which is still what macOS runs. Anything not on this list is not a feature of that app.
 
 - Overview — whole-disk usage at a glance
 - Disk Analysis — folder-by-folder breakdown

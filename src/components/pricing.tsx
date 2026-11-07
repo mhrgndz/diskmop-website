@@ -23,13 +23,13 @@ export function Pricing() {
   const locale = useLocale();
 
   const [pricing, setPricing] = useState({
-    discountedPrice: 14.9,
+    discountedPrice: 19.9,
     originalPrice: 19.9,
-    discountPercent: 25,
-    hasDiscount: true,
+    discountPercent: 0,
+    hasDiscount: false,
     currencySymbol: "$",
     checkoutUrl:
-      "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq?discount_code=WELCOME25",
+      "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq",
   });
 
   useEffect(() => {
@@ -56,91 +56,82 @@ export function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="pricing" className="scroll-mt-20 mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:mt-28 lg:px-8">
+      {/* Başlık görsel olarak yok (fiyat zaten başlık gibi); sayfa yapısı ve ekran okuyucu için duruyor. */}
+      <h2 className="sr-only">{t("title")}</h2>
+
+      <div className="flex flex-wrap gap-5">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="min-w-0 flex-[1_1_420px] rounded-3xl bg-navy p-8 text-[#EAF0FA] sm:p-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            {t("title")}
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">{t("subtitle")}</p>
+          <p className="font-mono text-[13px] uppercase tracking-[0.08em] text-[#7FE0D2]">
+            {t("plan.name")}
+          </p>
+          <div className="mt-2.5 flex flex-wrap items-baseline gap-x-4">
+            <span className="text-[clamp(72px,9vw,120px)] font-extrabold leading-none tracking-[-0.04em] text-white">
+              {pricing.currencySymbol}
+              {pricing.discountedPrice.toFixed(2)}
+            </span>
+            <span className="text-xl font-medium text-[#A9B8D0]">
+              {t("plan.period")}
+            </span>
+            {pricing.hasDiscount && (
+              <>
+                <span className="text-2xl font-semibold text-[#A9B8D0] line-through">
+                  {pricing.currencySymbol}
+                  {pricing.originalPrice.toFixed(2)}
+                </span>
+                <span className="rounded-full border border-aqua/40 bg-aqua/15 px-2.5 py-1 text-xs font-bold text-[#7FE0D2]">
+                  {pricing.discountPercent}% OFF
+                </span>
+              </>
+            )}
+          </div>
+          <p className="mb-8 mt-3 text-lg text-[#A9B8D0]">
+            {t("subtitle")}
+          </p>
+          <a
+            href={`/buy?lang=${locale}`}
+            onClick={() => trackCheckout("pricing")}
+            className="inline-flex min-h-[54px] items-center rounded-xl bg-white px-8 text-[17px] font-bold text-navy transition hover:brightness-95"
+          >
+            {t("plan.cta")}
+          </a>
+          <p className="mt-[18px] font-mono text-[12.5px] text-[#A9B8D0]">
+            {t("plan.paymentTrust")}
+          </p>
         </motion.div>
 
-        {/* Card Container */}
-        <div className="flex justify-center">
-          {/* Main Pricing Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative w-full max-w-lg bg-card rounded-3xl p-8 border-2 border-brand-500 shadow-2xl shadow-brand-500/10 overflow-hidden"
-          >
-            {/* Popular Badge */}
-            <div className="absolute -end-8 top-6 rotate-45 rtl:-rotate-45 bg-brand-600 text-white text-xs px-8 py-1 font-medium">
-              {t("plan.badge")}
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold text-foreground">
-              {t("plan.name")}
-            </h3>
-
-            {/* Price */}
-            <div className="mt-6">
-              <div className="flex items-baseline gap-3">
-                <span className="text-5xl font-black text-foreground">
-                  {pricing.currencySymbol}
-                  {pricing.discountedPrice.toFixed(2)}
-                </span>
-                {pricing.hasDiscount && (
-                  <span className="text-xl text-muted-foreground line-through font-semibold">
-                    {pricing.currencySymbol}
-                    {pricing.originalPrice.toFixed(2)}
-                  </span>
-                )}
-                {pricing.hasDiscount && (
-                  <span className="text-xs font-bold bg-green-500/15 text-green-600 dark:text-green-400 border border-green-500/30 px-2.5 py-1 rounded-full">
-                    {pricing.discountPercent}% OFF
-                  </span>
-                )}
-              </div>
-              <p className="mt-2 text-muted-foreground text-sm">
-                {t("plan.period")}
-              </p>
-            </div>
-
-            {/* Features */}
-            <ul className="mt-8 space-y-3">
-              {features.map((key) => (
-                <li key={key} className="flex items-center gap-3">
-                  <Check className="h-5 w-5 text-green-500 shrink-0" />
-                  <span className="text-sm text-foreground">{t(key)}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA */}
-            <a
-              href={`/buy?lang=${locale}`}
-              onClick={() => trackCheckout("pricing")}
-              className="mt-8 block w-full bg-brand-600 hover:bg-brand-700 text-white rounded-xl py-4 text-lg font-semibold shadow-lg shadow-brand-600/25 text-center transition-colors"
+        <motion.ul
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="min-w-0 flex-[1_1_360px] rounded-3xl border border-border bg-card p-8 sm:px-12 sm:py-10"
+        >
+          {features.map((key, i) => (
+            <li
+              key={key}
+              className={
+                "flex items-center gap-3.5 py-3 font-medium text-foreground" +
+                (i < features.length - 1 ? " border-b border-border" : "")
+              }
             >
-              {t("plan.cta")}
-            </a>
-
-            {/* Payment Trust */}
-            <p className="mt-4 text-center text-xs text-muted-foreground">
-              {t("plan.paymentTrust")}
-            </p>
-          </motion.div>
-        </div>
+              <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-aqua-soft">
+                <Check
+                  className="h-3.5 w-3.5 text-aqua-ink"
+                  strokeWidth={3}
+                  aria-hidden="true"
+                />
+              </span>
+              {t(key)}
+            </li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );

@@ -802,5 +802,64 @@
     "statusPaid": "Payé",
     "statusRefunded": "Remboursé",
     "homeLink": "Accueil"
+  },
+  "app": {
+    "screenshotAlt": "Écran Aperçu de DiskMop sous Windows : espace libérable, utilisation des lecteurs C: et D:, et les endroits où se trouve l'espace",
+    "overview": {
+      "eyebrow": "L'écran d'accueil",
+      "title": "Voyez ce que vous pouvez libérer avant de nettoyer quoi que ce soit.",
+      "steps": [
+        {
+          "title": "Un coup d'œil rapide",
+          "description": "Trouve ce qui peut être supprimé sans risque et affiche le total. Rien n'est supprimé sans votre accord."
+        },
+        {
+          "title": "Chaque lecteur",
+          "description": "Espace utilisé et libre pour chacun de vos lecteurs."
+        },
+        {
+          "title": "Où est l'espace",
+          "description": "Libérer de l'espace, AppData et gros fichiers, chacun avec sa taille et un bouton « Voir »."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Ce que DiskMop examine",
+      "title": "Six zones et deux outils. L'analyse est toujours gratuite.",
+      "items": {
+        "clean": {
+          "title": "Libérer de l'espace",
+          "description": "Caches, fichiers temporaires et anciens téléchargements qu'on peut supprimer sans risque."
+        },
+        "appdata": {
+          "title": "AppData et restes",
+          "description": "Ce que vos programmes gardent dans AppData : cache reconstructible et dossiers de programmes disparus."
+        },
+        "files": {
+          "title": "Gros fichiers et doublons",
+          "description": "Trouvez ce qui remplit votre disque. Les fichiers supprimés vont à la Corbeille."
+        },
+        "windows": {
+          "title": "Espace Windows",
+          "description": "Espace que Windows se réserve. Chaque élément explique ce qui se passe si vous le nettoyez."
+        },
+        "health": {
+          "title": "État du système",
+          "description": "Santé des disques et programmes qui ralentissent le démarrage."
+        },
+        "privacy": {
+          "title": "Confidentialité",
+          "description": "Traces du navigateur et de Windows. Les mots de passe enregistrés ne sont jamais touchés."
+        },
+        "schedule": {
+          "title": "Nettoyage planifié",
+          "description": "S'exécute en arrière-plan sans ouvrir DiskMop et ne supprime que les éléments sûrs de « Libérer de l'espace ». Licence requise."
+        },
+        "shred": {
+          "title": "Suppression sécurisée",
+          "description": "Écrase les fichiers pour qu'ils soient irrécupérables. Sur SSD, ce n'est pas garanti à 100 %."
+        }
+      }
+    }
   }
 }

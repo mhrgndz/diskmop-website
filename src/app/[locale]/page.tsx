@@ -3,13 +3,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/hero";
-import { TrustBar } from "@/components/trust-bar";
+import { AppOverview } from "@/components/app-overview";
 import { PlatformSelector } from "@/components/platform-selector";
 import { FeaturesGrid } from "@/components/features-grid";
 import { HowItWorks } from "@/components/how-it-works";
-import { ProductShowcase } from "@/components/product-showcase";
-import { Stats } from "@/components/stats";
-import { Testimonials } from "@/components/testimonials";
 import { Pricing } from "@/components/pricing";
 import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
@@ -126,7 +123,7 @@ async function buildJsonLd(locale: string) {
         dateModified: LATEST_RELEASE_DATE,
         releaseNotes: RELEASE_NOTES_URL,
         image: `${SITE_URL}/brand/icon.png`,
-        screenshot: `${SITE_URL}/videos/overview/${locale}.webp`,
+        screenshot: `${SITE_URL}/brand/app-overview.png`,
         downloadUrl: "https://api.diskmop.com/download/windows",
         installUrl: `${localeUrl(locale)}#platforms`,
         publisher: { "@id": kurulusId },
@@ -171,13 +168,10 @@ export default async function HomePage({
       <Navigation />
       <main>
         <Hero />
-        <TrustBar />
-        <PlatformSelector />
+        <AppOverview />
         <FeaturesGrid />
         <HowItWorks />
-        <ProductShowcase />
-        <Stats />
-        <Testimonials />
+        <PlatformSelector />
         <Pricing />
         <FAQ />
         <FinalCTA />

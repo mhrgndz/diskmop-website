@@ -24,7 +24,10 @@ interface SeriesDay {
   // Gerçek indirme (windows/mac). İstemci türü kaydedilmeden önceki günlerde null.
   realDownloads?: Counts | null;
   newInstalls: Counts;
+  // O gün uygulamayı açan farklı cihaz (işletim sistemine göre).
   active: Counts | null;
+  // O gün toplam açılış sayısı (aynı cihaz birden çok kez açabilir).
+  opens?: Counts | null;
 }
 
 interface GithubStats {
@@ -50,6 +53,7 @@ interface Stats {
     active30: number;
     versions: Record<string, Counts>;
     activeTrackedSince: string | null;
+    opens?: { trackedSince: string | null; today: number; last7: number; last30: number };
   };
   series: SeriesDay[];
   funnel?: { minVersion: string; windows: FunnelOs | null; mac: FunnelOs | null };
@@ -126,6 +130,11 @@ const newMac = (d: SeriesDay) => d.newInstalls.darwin ?? 0;
 const newAndroid = (d: SeriesDay) => d.newInstalls.Android ?? 0;
 const activeTotal = (d: SeriesDay) =>
   d.active ? Object.values(d.active).reduce((s, n) => s + n, 0) : null;
+const actWin = (d: SeriesDay) => d.active?.win32 ?? 0;
+const actMac = (d: SeriesDay) => d.active?.darwin ?? 0;
+const actAndroid = (d: SeriesDay) => d.active?.Android ?? 0;
+const opensTotal = (d: SeriesDay) =>
+  d.opens ? Object.values(d.opens).reduce((s, n) => s + n, 0) : null;
 
 const fmt = (n: number) => n.toLocaleString("tr-TR");
 const pct = (a: number, b: number) =>
@@ -335,6 +344,26 @@ function Dashboard({ stats }: { stats: Stats }) {
           { label: "Windows", color: COLORS.windows, value: newWin },
           { label: "Mac", color: COLORS.mac, value: newMac },
           { label: "Android", color: COLORS.android, value: newAndroid },
+        ]}
+      />
+
+      <DailyChart
+        title="Günlük açan cihaz"
+        hint="O gün uygulamayı en az bir kez açan farklı cihaz sayısı. Kurulumdan sonra uygulamayı gerçekten kullananları gösterir; yeni kurulum grafiğinden farklı olarak eski kullanıcıların dönüşü de burada görünür."
+        days={s}
+        segments={[
+          { label: "Windows", color: COLORS.windows, value: actWin },
+          { label: "Mac", color: COLORS.mac, value: actMac },
+          { label: "Android", color: COLORS.android, value: actAndroid },
+        ]}
+      />
+
+      <DailyChart
+        title="Günlük açılış"
+        hint="Uygulamanın o gün toplam kaç kez açıldığı (aynı cihaz birden çok sayılır; Windows'ta tepsideki uygulamayı yeniden açmak da dahil). Kayıt 7 Kasım 2026'da başladı."
+        days={s}
+        segments={[
+          { label: "Açılış", color: COLORS.windows, value: (d: SeriesDay) => opensTotal(d) ?? 0 },
         ]}
       />
 
@@ -715,8 +744,8 @@ function DailyTable({
         <p className="mt-1 text-xs text-zinc-500">
           En yeni gün üstte.{" "}
           {activeSince
-            ? `"Etkin cihaz" (o gün uygulamayı açan cihaz sayısı) ${dayLabel(activeSince, { day: "numeric", month: "long" })}'den beri tutuluyor.`
-            : '"Etkin cihaz" sayımı ilk pingle başlayacak.'}
+            ? `"Açan cihaz" (o gün uygulamayı açan farklı cihaz) ${dayLabel(activeSince, { day: "numeric", month: "long" })}'den beri, "Açılış" (toplam açılış sayısı) 7 Kasım'dan beri tutuluyor.`
+            : '"Açan cihaz" sayımı ilk pingle başlayacak.'}
         </p>
       </div>
       <div className="mt-3 max-h-[28rem] overflow-auto">
@@ -738,8 +767,14 @@ function DailyTable({
               >
                 Yeni kurulum
               </th>
+              <th
+                className="px-3 pt-2 text-center font-medium text-sky-400"
+                colSpan={3}
+              >
+                Açan cihaz
+              </th>
               <th className="px-3 py-2 text-right font-medium" rowSpan={2}>
-                Etkin cihaz
+                Açılış
               </th>
             </tr>
             <tr className="border-b border-zinc-800">
@@ -751,13 +786,16 @@ function DailyTable({
               <th className="px-3 pb-2 text-right font-medium">Windows</th>
               <th className="px-3 pb-2 text-right font-medium">Mac</th>
               <th className="px-3 pb-2 text-right font-medium">Android</th>
+              <th className="px-3 pb-2 text-right font-medium">Windows</th>
+              <th className="px-3 pb-2 text-right font-medium">Mac</th>
+              <th className="px-3 pb-2 text-right font-medium">Android</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((d, i) => {
               const win = dlWin(d);
               const mac = dlMac(d);
-              const act = activeTotal(d);
+              const opn = opensTotal(d);
               const weekday = new Date(`${d.date}T00:00:00Z`).getUTCDay();
               return (
                 <tr
@@ -788,7 +826,16 @@ function DailyTable({
                   <td className={`${td} text-emerald-300`}>
                     {newAndroid(d) || <Dim />}
                   </td>
-                  <td className={td}>{act ?? <Dim />}</td>
+                  <td className={`${td} text-sky-300`}>
+                    {actWin(d) || <Dim />}
+                  </td>
+                  <td className={`${td} text-sky-300`}>
+                    {actMac(d) || <Dim />}
+                  </td>
+                  <td className={`${td} text-sky-300`}>
+                    {actAndroid(d) || <Dim />}
+                  </td>
+                  <td className={td}>{opn ?? <Dim />}</td>
                 </tr>
               );
             })}
@@ -963,8 +1010,8 @@ function DevicesSummary({ stats }: { stats: Stats }) {
       <div className="mt-3 grid grid-cols-3 gap-3 text-center">
         {[
           ["Toplam", inst.total],
-          ["Son 30 gün etkin", inst.active30],
-          ["Son 7 gün etkin", inst.active7],
+          ["Son 30 gün açan", inst.active30],
+          ["Son 7 gün açan", inst.active7],
         ].map(([label, n]) => (
           <div key={label as string} className="rounded-lg bg-zinc-950/60 p-3">
             <p className="text-2xl font-bold tabular-nums">

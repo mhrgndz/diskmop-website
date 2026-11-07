@@ -16,7 +16,7 @@ export function FAQ() {
   const t = useTranslations("faq");
 
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="scroll-mt-16 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

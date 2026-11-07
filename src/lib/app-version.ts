@@ -12,7 +12,7 @@
  * ucu yok; elle yazılan numara bayatlıyordu). Yedekler yine de zaman zaman güncellenmeli.
  */
 export const APP_VERSIONS = {
-  windows: "1.0.35",
+  windows: "1.1.0",
   mac: "1.0.35",
   ios: "1.1.11",
 } as const;
@@ -60,7 +60,7 @@ export const LATEST_VERSION = APP_VERSIONS.windows;
 export const FIRST_RELEASE_DATE = "2026-05-15";
 
 /** Güncel sürümün yayın tarihi. */
-export const LATEST_RELEASE_DATE = "2026-11-02";
+export const LATEST_RELEASE_DATE = "2026-11-07";
 
 export const RELEASE_NOTES_URL =
   "https://github.com/mhrgndz/diskmop-releases/releases";

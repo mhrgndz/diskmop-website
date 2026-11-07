@@ -802,5 +802,64 @@
     "statusPaid": "Pagado",
     "statusRefunded": "Reembolsado",
     "homeLink": "Inicio"
+  },
+  "app": {
+    "screenshotAlt": "Pantalla Resumen de DiskMop en Windows: espacio que se puede liberar, uso de las unidades C: y D: y los lugares donde está el espacio",
+    "overview": {
+      "eyebrow": "La pantalla de inicio",
+      "title": "Descubre cuánto puedes liberar antes de limpiar nada.",
+      "steps": [
+        {
+          "title": "Un vistazo rápido",
+          "description": "Encuentra lo que se puede quitar sin riesgo y muestra el total. No se borra nada sin tu confirmación."
+        },
+        {
+          "title": "Cada unidad",
+          "description": "Espacio usado y libre de cada una de tus unidades."
+        },
+        {
+          "title": "Dónde está el espacio",
+          "description": "Liberar espacio, AppData y archivos grandes, cada uno con su tamaño y un botón «Revisar»."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Qué revisa DiskMop",
+      "title": "Seis áreas y dos herramientas. Analizar siempre es gratis.",
+      "items": {
+        "clean": {
+          "title": "Liberar espacio",
+          "description": "Cachés, archivos temporales y descargas antiguas que se pueden borrar sin riesgo."
+        },
+        "appdata": {
+          "title": "AppData y restos",
+          "description": "Lo que guardan tus programas en AppData: caché recreable y carpetas de programas ya eliminados."
+        },
+        "files": {
+          "title": "Grandes y duplicados",
+          "description": "Encuentra lo que llena tu disco. Lo borrado va a la Papelera."
+        },
+        "windows": {
+          "title": "Espacio de Windows",
+          "description": "Espacio que Windows se reserva. Cada elemento explica qué ocurre al limpiarlo."
+        },
+        "health": {
+          "title": "Estado del sistema",
+          "description": "Salud de los discos y programas que ralentizan el inicio."
+        },
+        "privacy": {
+          "title": "Privacidad",
+          "description": "Rastros del navegador y de Windows. Las contraseñas guardadas nunca se tocan."
+        },
+        "schedule": {
+          "title": "Limpieza programada",
+          "description": "Se ejecuta en segundo plano sin abrir DiskMop y solo quita los elementos seguros de «Liberar espacio». Requiere licencia."
+        },
+        "shred": {
+          "title": "Borrado seguro",
+          "description": "Sobrescribe los archivos para que no se puedan recuperar. En SSD no se puede garantizar del todo."
+        }
+      }
+    }
   }
 }

@@ -802,5 +802,64 @@
     "statusPaid": "支払い済み",
     "statusRefunded": "返金済み",
     "homeLink": "ホーム"
+  },
+  "app": {
+    "screenshotAlt": "WindowsのDiskMop概要画面：空けられる容量、CドライブとDドライブの使用状況、容量の行き先",
+    "overview": {
+      "eyebrow": "ホーム画面",
+      "title": "何かを削除する前に、空けられる容量がわかります。",
+      "steps": [
+        {
+          "title": "ざっと確認",
+          "description": "安全に削除できるものを見つけて合計を表示します。確認するまで何も削除されません。"
+        },
+        {
+          "title": "すべてのドライブ",
+          "description": "各ドライブの使用済み容量と空き容量。"
+        },
+        {
+          "title": "容量の行き先",
+          "description": "空き容量を増やす、AppData、大きなファイル。それぞれサイズと「確認」ボタン付き。"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "DiskMopが確認する場所",
+      "title": "6つの領域と2つのツール。スキャンはいつでも無料。",
+      "items": {
+        "clean": {
+          "title": "空き容量を増やす",
+          "description": "安全に削除できるキャッシュ、一時ファイル、古いダウンロード。"
+        },
+        "appdata": {
+          "title": "AppDataと残骸",
+          "description": "プログラムがAppDataに保存しているもの：再生成できるキャッシュと、削除済みプログラムのフォルダー。"
+        },
+        "files": {
+          "title": "大きなファイルと重複",
+          "description": "ドライブを埋めているものを探します。削除したファイルはごみ箱に移動します。"
+        },
+        "windows": {
+          "title": "Windowsの使用領域",
+          "description": "Windowsが自分用に確保している領域。各項目に、削除した場合の影響を説明しています。"
+        },
+        "health": {
+          "title": "システムの状態",
+          "description": "ドライブの状態と、起動を遅くするプログラム。"
+        },
+        "privacy": {
+          "title": "プライバシー",
+          "description": "ブラウザーとWindowsの履歴。保存したパスワードには触れません。"
+        },
+        "schedule": {
+          "title": "スケジュールされたクリーンアップ",
+          "description": "DiskMopを開かずにバックグラウンドで実行し、「空き容量を増やす」の安全な項目だけを削除します。ライセンスが必要です。"
+        },
+        "shred": {
+          "title": "完全削除",
+          "description": "ファイルを上書きして復元できなくします。SSDでは完全には保証できません。"
+        }
+      }
+    }
   }
 }

@@ -32,16 +32,37 @@ const config: Config = {
           200: '#bfdbfe',
           300: '#93c5fd',
           400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
+          500: '#2f63e6',
+          600: '#1d4ed8',
+          700: '#1a43c0',
           800: '#1e3a8a',
           900: '#152e6e',
           950: '#0c1a2e',
         },
+        // Köpük (kurumsal) paleti: lacivert metin, mavi ana renk, turkuaz "temiz" vurgusu.
+        navy: '#0b1b33',
+        // "teal" adı Tailwind'in kendi paletinde (blog bileşenleri teal-500/600 kullanıyor); ezmemek için "aqua".
+        aqua: {
+          DEFAULT: '#14b8a6',
+          ink: '#087f71',
+          soft: '#d4f3ee',
+        },
       },
+      // Onest Latin/Kiril/Latin-ext'i karşılar; Vietnamca gibi eksik glifler Inter'e düşer.
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: [
+          'var(--font-onest)',
+          'var(--font-inter)',
+          'system-ui',
+          'sans-serif',
+        ],
+        mono: [
+          'var(--font-plex-mono)',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'monospace',
+        ],
       },
       borderRadius: {
         '2xl': '16px',

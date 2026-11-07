@@ -105,7 +105,7 @@ export function PlatformSelector() {
   };
 
   return (
-    <section id="platforms" className="py-24">
+    <section id="platforms" className="scroll-mt-16 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -3,34 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  /* Köpük (kurumsal) paleti. Metin/zemin çiftleri 4.5:1'i geçer; --muted-foreground
+     açık zeminde #44566F (≈6.9:1), koyu zeminde #A9B8D0 (≈8.9:1). */
   :root {
-    --background: #ffffff;
-    --foreground: #0f172a;
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
-    --border: #e2e8f0;
-    --ring: #3b82f6;
-    --primary: #2563eb;
+    --background: #f4f7fb;
+    --foreground: #0b1b33;
+    --muted: #e9eff7;
+    --muted-foreground: #44566f;
+    --border: #d9e2ee;
+    --ring: #1d4ed8;
+    --primary: #1d4ed8;
     --primary-foreground: #ffffff;
-    --secondary: #f1f5f9;
-    --secondary-foreground: #0f172a;
+    --secondary: #e9eff7;
+    --secondary-foreground: #0b1b33;
     --card: #ffffff;
-    --card-foreground: #0f172a;
+    --card-foreground: #0b1b33;
   }
 
   .dark {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --muted: #18181b;
-    --muted-foreground: #a1a1aa;
-    --border: #27272a;
-    --ring: #3b82f6;
-    --primary: #3b82f6;
+    --background: #08111f;
+    --foreground: #eaf0fa;
+    --muted: #101c30;
+    --muted-foreground: #a9b8d0;
+    --border: #1c2b45;
+    --ring: #6b95ff;
+    --primary: #3b6ff0;
     --primary-foreground: #ffffff;
-    --secondary: #27272a;
-    --secondary-foreground: #fafafa;
-    --card: #111113;
-    --card-foreground: #fafafa;
+    --secondary: #162439;
+    --secondary-foreground: #eaf0fa;
+    --card: #0e1a2e;
+    --card-foreground: #eaf0fa;
   }
 
   * {

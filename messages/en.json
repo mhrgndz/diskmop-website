@@ -802,5 +802,64 @@
     "statusPaid": "Paid",
     "statusRefunded": "Refunded",
     "homeLink": "Home"
+  },
+  "app": {
+    "screenshotAlt": "DiskMop Overview screen on Windows: how much space you can free, drive usage for C: and D:, and the places where the space is found",
+    "overview": {
+      "eyebrow": "The home screen",
+      "title": "Know what you can free before you clean anything.",
+      "steps": [
+        {
+          "title": "A quick look",
+          "description": "Finds what is safe to remove and shows the total. Nothing is deleted until you confirm."
+        },
+        {
+          "title": "Every drive",
+          "description": "Used and free space for each of your drives."
+        },
+        {
+          "title": "Where the space is",
+          "description": "Free up space, AppData and large files, each with its size and a Review button."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "What DiskMop looks at",
+      "title": "Six areas and two tools. Scanning is always free.",
+      "items": {
+        "clean": {
+          "title": "Free up space",
+          "description": "Caches, temporary files and old downloads that are safe to remove."
+        },
+        "appdata": {
+          "title": "AppData & leftovers",
+          "description": "What your programs keep in AppData: rebuildable cache, and folders of programs that are gone."
+        },
+        "files": {
+          "title": "Large & duplicate files",
+          "description": "Find what fills your drive. Removed files go to the Recycle Bin."
+        },
+        "windows": {
+          "title": "Windows space",
+          "description": "Space Windows keeps for itself. Each item explains what happens if you clean it."
+        },
+        "health": {
+          "title": "System health",
+          "description": "Drive health and the programs that slow down startup."
+        },
+        "privacy": {
+          "title": "Privacy",
+          "description": "Browser and Windows traces. Saved passwords are never touched."
+        },
+        "schedule": {
+          "title": "Scheduled cleaning",
+          "description": "Runs in the background without opening DiskMop and removes only the safe items of “Free up space”. Requires a license."
+        },
+        "shred": {
+          "title": "Secure delete",
+          "description": "Overwrites files so they cannot be recovered. On SSDs this cannot be fully guaranteed."
+        }
+      }
+    }
   }
 }

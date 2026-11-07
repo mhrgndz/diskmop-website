@@ -6,54 +6,50 @@ import { motion } from "framer-motion";
 export function FinalCTA() {
   const t = useTranslations("finalCta");
 
+  // Mesajlarda emoji'li tek satır var ("🔒 Safe Download • ✓ Virus-free • 💰 …"): emojiler atılır, maddeler noktayla ayrılır.
+  const trust = t("trust")
+    // Emoji: yedek çiftli (🔒 💰) + dingbat/işaret blokları (✓ ✔); derleme hedefi `u` bayrağına izin vermiyor.
+    .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[☀-➿️]/g, "")
+    .split(/\s*[•·]\s*/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .join(" · ");
+
   return (
-    <section className="py-24">
-      <div className="bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 dark:from-brand-950 dark:via-gray-900 dark:to-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
-          >
-            {t("title")}
-          </motion.h2>
+    <section className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:mt-28 lg:px-8">
+      <div className="relative overflow-hidden rounded-[28px] bg-brand-600 px-7 py-14 text-white sm:px-14 sm:py-16">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 400 400"
+          className="pointer-events-none absolute -end-24 -top-16 h-[400px] w-[400px]"
+        >
+          <g fill="none" stroke="#FFFFFF" strokeOpacity=".22" strokeWidth="1.5">
+            <circle cx="200" cy="200" r="190" />
+            <circle cx="200" cy="200" r="140" />
+            <circle cx="200" cy="200" r="90" />
+          </g>
+        </svg>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-4 text-lg text-brand-100"
-          >
-            {t("subtitle")}
-          </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative max-w-[11em] text-[clamp(36px,5.6vw,72px)] font-extrabold leading-[1.04] tracking-[-0.03em]"
+        >
+          {t("title")}
+        </motion.h2>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-8"
-          >
-            <a
-              href="#platforms"
-              className="inline-flex items-center justify-center bg-white text-brand-700 hover:bg-gray-100 rounded-xl px-8 py-4 text-lg font-semibold transition-colors shadow-lg"
-            >
-              {t("cta")}
-            </a>
-          </motion.div>
+        <p className="relative mt-5 text-xl text-[#DCE6FF]">{t("subtitle")}</p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-6 text-brand-200 text-sm"
+        <div className="relative mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a
+            href="#platforms"
+            className="inline-flex min-h-[54px] items-center rounded-xl bg-white px-8 text-[17px] font-bold text-navy transition hover:brightness-95"
           >
-            {t("trust")}
-          </motion.p>
+            {t("cta")}
+          </a>
+          <span className="font-mono text-[13px] text-[#DCE6FF]">{trust}</span>
         </div>
       </div>
     </section>

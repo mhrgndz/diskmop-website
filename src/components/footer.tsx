@@ -1,12 +1,12 @@
 "use client";
 
 import { POLICY_LOCALES } from "@/lib/locales";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Twitter, Instagram, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { localeHref } from "@/lib/locale-path";
+import { BrandMark } from "@/components/brand-mark";
 
 interface FooterLink {
   labelKey: string;
@@ -113,20 +113,17 @@ export function Footer() {
   const productLinks = getProductLinks(locale);
 
   return (
-    <footer className="bg-gray-950 dark:bg-black text-gray-400">
+    <footer className="mt-24 bg-navy text-gray-400 dark:bg-[#050b14] lg:mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Top Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <Image
-                src="/brand/icon.svg"
-                alt="Disk Mop"
-                width={40}
-                height={40}
-              />
-              <span className="text-white font-bold text-lg">Disk Mop</span>
+              <BrandMark className="h-10 w-10" />
+              <span className="text-white font-extrabold text-xl tracking-tight">
+                DiskMop
+              </span>
             </div>
             <p className="text-sm text-gray-500 mt-2">{t("slogan")}</p>
           </div>

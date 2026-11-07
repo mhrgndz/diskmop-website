@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Onest, IBM_Plex_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/google-analytics";
@@ -13,6 +13,20 @@ import "./globals.css";
 // yazı tipine düşer. Latin-ext/Kiril/Vietnamca alt kümeleri Inter'de var.
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "vietnamese"],
+  variable: "--font-inter",
+});
+
+// Başlık ve gövde yazı tipi Onest; Inter yalnız Onest'te olmayan glifler (Vietnamca) için yedek.
+const onest = Onest({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  variable: "--font-onest",
+});
+
+// Sürüm numarası, etiketler ve küçük başlıklar için tek aralıklı yazı tipi.
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
 });
 
 /**
@@ -39,7 +53,7 @@ export const metadata: Metadata = {
   itunes: { appId: IOS_APP_ID },
   icons: {
     icon: "/favicon.ico",
-    apple: "/brand/icon.png",
+    apple: "/brand/apple-touch-icon.png",
   },
   alternates: {
     types: {
@@ -62,7 +76,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={localeDir(locale)} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body
+        className={`${onest.className} ${onest.variable} ${inter.variable} ${plexMono.variable}`}
+      >
         <GoogleAnalytics />
         <DownloadLinkTagger />
         <ThemeProvider>{children}</ThemeProvider>

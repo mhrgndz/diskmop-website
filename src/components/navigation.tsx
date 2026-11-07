@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { localeHref } from "@/lib/locale-path";
+import { BrandMark } from "@/components/brand-mark";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DownloadDropdown } from "@/components/download-dropdown";
@@ -57,7 +57,7 @@ export function Navigation() {
     <>
       <nav
         className={cn(
-          "fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 transition-shadow duration-300",
+          "fixed top-0 w-full z-50 bg-[color-mix(in_srgb,var(--background)_88%,transparent)] backdrop-blur-xl border-b border-border transition-shadow duration-300",
           isScrolled && "shadow-sm",
         )}
       >
@@ -67,16 +67,11 @@ export function Navigation() {
             <a
               href={localeHref(locale, "/")}
               className="flex items-center gap-2.5 shrink-0"
+              aria-label="DiskMop"
             >
-              <Image
-                src="/brand/icon.svg"
-                alt="Disk Mop"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
-              <span className="font-bold text-lg text-foreground">
-                Disk Mop
+              <BrandMark className="h-9 w-9" />
+              <span className="font-extrabold text-[22px] tracking-tight text-foreground">
+                DiskMop
               </span>
             </a>
 
@@ -86,7 +81,7 @@ export function Navigation() {
                 <a
                   key={link.key}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-muted"
+                  className="text-[15px] font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-muted"
                 >
                   {t(link.key)}
                 </a>

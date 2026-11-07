@@ -802,5 +802,64 @@
     "statusPaid": "Ödendi",
     "statusRefunded": "İade edildi",
     "homeLink": "Ana Sayfa"
+  },
+  "app": {
+    "screenshotAlt": "DiskMop'un Windows'taki Genel bakış ekranı: ne kadar yer açabileceğiniz, C: ve D: sürücü kullanımı ve alanın bulunduğu yerler",
+    "overview": {
+      "eyebrow": "Ana ekran",
+      "title": "Hiçbir şeyi temizlemeden önce neyi boşaltabileceğinizi görün.",
+      "steps": [
+        {
+          "title": "Hızlı bir bakış",
+          "description": "Güvenle silinebilecekleri bulur ve toplamı gösterir. Siz onaylamadan hiçbir şey silinmez."
+        },
+        {
+          "title": "Her disk",
+          "description": "Disklerinizin her biri için kullanılan ve boş alan."
+        },
+        {
+          "title": "Alanın bulunduğu yerler",
+          "description": "Yer aç, AppData ve büyük dosyalar; her birinin boyutu ve bir “İncele” düğmesi var."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "DiskMop nelere bakar",
+      "title": "Altı alan, iki araç. Tarama her zaman ücretsiz.",
+      "items": {
+        "clean": {
+          "title": "Yer aç",
+          "description": "Güvenle silinebilen önbellekler, geçici dosyalar ve eski indirmeler."
+        },
+        "appdata": {
+          "title": "AppData ve artıklar",
+          "description": "Programların AppData'da tuttukları: yeniden oluşan önbellek ve kaldırılmış programların klasörleri."
+        },
+        "files": {
+          "title": "Büyük ve kopya dosyalar",
+          "description": "Diskinizi dolduranı bulun. Silinenler Geri Dönüşüm Kutusu'na gider."
+        },
+        "windows": {
+          "title": "Windows alanı",
+          "description": "Windows'un kendine ayırdığı alan. Her kalem, temizlenirse ne olacağını açıklar."
+        },
+        "health": {
+          "title": "Sistem sağlığı",
+          "description": "Disk sağlığı ve açılışı yavaşlatan programlar."
+        },
+        "privacy": {
+          "title": "Gizlilik",
+          "description": "Tarayıcı ve Windows izleri. Kayıtlı parolalara asla dokunulmaz."
+        },
+        "schedule": {
+          "title": "Zamanlanmış temizlik",
+          "description": "DiskMop'u açmadan arka planda çalışır ve yalnızca “Yer aç” içindeki güvenli kalemleri temizler. Lisans gerektirir."
+        },
+        "shred": {
+          "title": "Güvenli sil",
+          "description": "Dosyaların üzerine yazar, kurtarılamaz hâle getirir. SSD'lerde tam garanti verilemez."
+        }
+      }
+    }
   }
 }

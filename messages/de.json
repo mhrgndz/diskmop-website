@@ -802,5 +802,64 @@
     "statusPaid": "Bezahlt",
     "statusRefunded": "Erstattet",
     "homeLink": "Startseite"
+  },
+  "app": {
+    "screenshotAlt": "Übersichtsbildschirm von DiskMop unter Windows: freigebbarer Speicher, Belegung der Laufwerke C: und D: und die Orte, an denen Speicher gefunden wird",
+    "overview": {
+      "eyebrow": "Die Startseite",
+      "title": "Sehen Sie, was sich freigeben lässt, bevor Sie etwas bereinigen.",
+      "steps": [
+        {
+          "title": "Ein schneller Blick",
+          "description": "Findet, was sich sicher entfernen lässt, und zeigt die Summe. Nichts wird ohne Ihre Bestätigung gelöscht."
+        },
+        {
+          "title": "Jedes Laufwerk",
+          "description": "Belegter und freier Speicher für jedes Ihrer Laufwerke."
+        },
+        {
+          "title": "Wo der Speicher steckt",
+          "description": "Speicher freigeben, AppData und große Dateien, jeweils mit Größe und einer Schaltfläche „Ansehen“."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Worauf DiskMop schaut",
+      "title": "Sechs Bereiche und zwei Werkzeuge. Das Scannen ist immer kostenlos.",
+      "items": {
+        "clean": {
+          "title": "Speicher freigeben",
+          "description": "Caches, temporäre Dateien und alte Downloads, die sich gefahrlos entfernen lassen."
+        },
+        "appdata": {
+          "title": "AppData & Reste",
+          "description": "Was Ihre Programme in AppData ablegen: neu erzeugbarer Cache und Ordner entfernter Programme."
+        },
+        "files": {
+          "title": "Große & doppelte Dateien",
+          "description": "Finden Sie, was Ihr Laufwerk füllt. Gelöschtes landet im Papierkorb."
+        },
+        "windows": {
+          "title": "Windows-Speicher",
+          "description": "Speicher, den Windows für sich reserviert. Jeder Eintrag erklärt, was beim Bereinigen passiert."
+        },
+        "health": {
+          "title": "Systemzustand",
+          "description": "Laufwerkszustand und Programme, die den Start verlangsamen."
+        },
+        "privacy": {
+          "title": "Datenschutz",
+          "description": "Browser- und Windows-Spuren. Gespeicherte Passwörter bleiben unberührt."
+        },
+        "schedule": {
+          "title": "Geplante Bereinigung",
+          "description": "Läuft im Hintergrund, ohne DiskMop zu öffnen, und entfernt nur die sicheren Einträge aus „Speicher freigeben“. Lizenz erforderlich."
+        },
+        "shred": {
+          "title": "Sicher löschen",
+          "description": "Überschreibt Dateien, damit sie nicht wiederhergestellt werden können. Auf SSDs ist das nicht vollständig garantiert."
+        }
+      }
+    }
   }
 }
