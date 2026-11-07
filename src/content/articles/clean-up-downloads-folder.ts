@@ -1353,5 +1353,1258 @@ export const cleanUpDownloadsFolder: Article = {
       ],
       ctaText: "Disk Mopでダウンロードフォルダーを整理する",
     },
+    ar: {
+      title: "تنظيف مجلد التنزيلات: دليل شامل لويندوز وماك",
+      metaDescription:
+        "دليل عملي لتنظيف مجلد التنزيلات (Downloads): فرز الملفات حسب التاريخ والحجم وحذف المكررات والمثبتات القديمة لتوفير مساحة كبيرة فوراً.",
+      subtitle: "صنّف، واحذف، وتجنب التراكم مجدداً: خطوات تنظيف مجلد التحميلات",
+      intro: [
+        "لتنظيف مجلد التنزيلات بكفاءة، افتح المجلد في مستكشف الملفات أو Finder، ورتّب الملفات بحسب التاريخ والحجم، وتخلص من حزم التثبيت المؤقتة والملفات القديمة التي لم تعد بحاجة إليها، ثم أفرغ سلة المحذوفات لتطبيق الحذف الفعلي.",
+        "نظراً لأن أغلب محتويات مجلد التنزيلات هي مجرد نسخ تم تحميلها من الإنترنت أو البريد الإلكتروني، فإن هذا المجلد يعد من أكثر الأماكن أماناً لتحرير مساحة تخزينية ضخمة على جهازك.",
+      ],
+      keyTakeaways: [
+        "تنظيف مجلد التنزيلات آمن بنسبة 100% لأن الملفات المخزنة هي نسخ ثانوية مستلمة من الإنترنت أو البريد.",
+        "حزم التثبيت (.exe, .msi, .dmg, .pkg) والأرشيفات المضغوطة تفقد فائدتها بمجرد إتمام التثبيت وتشغل غيغابايتات دون داعٍ.",
+        "تتراكم الملفات المحملة بشكل متكرر وتنتج نسخاً مطابقة تحمل لاحقة '(1)'، ويمكن كشفها ومسحها بخوارزمية SHA-256.",
+        "لن تستعيد المساحة التخزينية إلا بعد إفراغ سلة المحذوفات (Recycle Bin أو Trash) بشكل كامل.",
+        "يصنف DiskMop Downloads Cleaner التنزيلات تلقائياً إلى برامج وأرشيفات ووسائط لتنظيفها بدفعة واحدة.",
+      ],
+      dataTable: {
+        caption: "أبرز أنواع الملفات في مجلد التنزيلات وإرشادات التعامل معها",
+        columns: [
+          "نوع الملف",
+          "الامتدادات الشائعة",
+          "الحجم التقديري",
+          "درجة الأمان في الحذف",
+        ],
+        rows: [
+          [
+            "ملفات التثبيت",
+            ".exe, .msi, .dmg, .pkg",
+            "10 - 40 جيجابايت",
+            "آمن جداً بعد اكتمال التثبيت",
+          ],
+          [
+            "الملفات المضغوطة",
+            ".zip, .rar, .7z, .tar.gz",
+            "5 - 25 جيجابايت",
+            "آمن بعد فك الضغط ونقل المحتوى",
+          ],
+          [
+            "تنزيلات مكررة",
+            "اسم (1).pdf, ملف (2).iso",
+            "5 - 15 جيجابايت",
+            "آمن تماماً (حذف النسخ المكررة)",
+          ],
+          [
+            "مستندات PDF وفواتير قديمة",
+            ".pdf, .docx, .xlsx",
+            "2 - 10 جيجابايت",
+            "يتطلب المراجعة قبل الحذف",
+          ],
+          [
+            "فيديوهات ووسائط مؤقتة",
+            ".mp4, .mov, .mkv",
+            "10 - 50 جيجابايت",
+            "آمن بعد المشاهدة أو النقل",
+          ],
+        ],
+      },
+      howTo: {
+        name: "خطوات الترتيب والتنظيف لمجلد التنزيلات",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "فرز الملفات حسب الحجم والتاريخ",
+            text: "رتّب محتويات المجلد تنازلياً حسب الحجم لاكتشاف الملفات الضخمة وحزم التثبيت القديمة أولاً.",
+          },
+          {
+            name: "حذف ملفات التثبيت والأرشيفات القديمة",
+            text: "حدد جميع ملفات .exe و .dmg والمجلدات المضغوطة التي تم استخراجها بالفعل وقم بحذفها.",
+          },
+          {
+            name: "إزالة النسخ المحملة المكررة",
+            text: "استخدم أداة فحص التكرارات في DiskMop لمسح النسخ المتطابقة المتكررة بضغطة واحدة.",
+          },
+          {
+            name: "إفراغ سلة المحذوفات نهائياً",
+            text: "انقر بالزر الأيمن على سلة المحذوفات واختر إفراغها لتطبيق التغيير واستعادة السعة التخزينية.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "لماذا يتضخم مجلد التنزيلات بسرعة هائلة؟",
+          content: [
+            "يعمل مجلد التنزيلات كوجهة افتراضية لكافة المتصفحات وتطبيقات التراسل مثل Slack وWhatsApp، مما يجعله مستودعاً فوضوياً تتكدس فيه المستندات ومقاطع الفيديو والبرامج دون أدنى تنظيم.",
+            "كثير من المستخدمين يقومون بتحميل الملف ذاته عدة مرات عندما يفشلون في العثور عليه، فتتراكم ملفات متطابقة تسحب عشرات الجيجابايت دون وعي.",
+          ],
+        },
+        {
+          title: "التصنيف الذكي قبل الحذف العشوائي",
+          content: [
+            "بدلاً من فحص آلاف الملفات واحداً تلو الآخر، يفضل تجميع الملفات بحسب النوع: فئة البرامج والمثبتات، فئة الأرشيفات المضغوطة، فئة الوسائط المتعددة، وفئة المستندات.",
+            "يتيح هذا التصنيف التخلص من فئة البرامج والأرشيفات كاملة بأمان تام، إذ لا توجد حاجة للاحتفاظ بملف تثبيت تم تشغيله سابقاً.",
+          ],
+        },
+        {
+          title: "أتمتة التنظيف الدوري لمنع التراكم مستقبلاً",
+          content: [
+            "يوفر نظاما ويندوز وماك أدوات مجدولة لتنظيف الملفات التي مر عليها أكثر من 30 يوماً داخل مجلد التنزيلات.",
+            "كما يتيح DiskMop ميزة الجدولة الأوتوماتيكية لفحص المجلد دورياً وتنبيهك عند تجاوزه لسقف محدد من المساحة.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "هل يمكنني حذف مجلد التنزيلات نفسه بالكامل؟",
+          answer:
+            "لا تحذف المجلد النظامي 'Downloads' نفسه، بل قم بحذف محتوياته من ملفات ومجلدات فرعية فقط.",
+        },
+        {
+          question: "لماذا لم تزد المساحة الفارغة بعد حذف الملفات؟",
+          answer:
+            "لأن الملفات تنتقل أولاً إلى سلة المحذوفات؛ يجب إفراغ سلة المحذوفات بالكامل لتسجيل المساحة المحررة.",
+        },
+        {
+          question: "كيف أضمن عدم حذف ملفات عمل مهمة من التنزيلات؟",
+          answer:
+            "قم بفرز الملفات حسب النوع وانقل المستندات إلى مجلد Documents، ثم احذف مثبتات البرامج والأرشيفات فقط.",
+        },
+      ],
+      verdict: [
+        "مجلد التنزيلات هو أسهل مكان لكسب مساحة تخزين سريعة على جهازك. من خلال الفرز المنطقي واستئصال حزم التثبيت والملفات المكررة، ستحصل على قرص نظيف ومساحة حرة كبيرة.",
+        "يجعل DiskMop إدارة التنزيلات أمراً تلقائياً من خلال أدوات الفرز الذكي والتخلص من النسخ المكررة برخصة أبدية واحدة.",
+      ],
+      ctaText: "نظّف مجلد التنزيلات ووفر المساحة الآن عبر DiskMop",
+    },
+    he: {
+      title: "ניקוי תיקיית ההורדות: מדריך לווינדוס ולמק",
+      metaDescription:
+        "מדריך מקיף לניקוי תיקיית ההורדות (Downloads): סדרו לפי גודל ותאריך, מחקו קבצי התקנה ישנים וכפילויות, ופנו שטח אחסון אדיר במחשב מיד.",
+      subtitle:
+        "מיינו, מחקו ומנעו הצטברות מחדש: צעד אחר צעד לניקוי תיקיית ההורדות",
+      intro: [
+        "כדי לנקות את תיקיית ההורדות ביעילות, פתחו אותה בסייר הקבצים או ב-Finder, סדרו את הקבצים לפי גודל ותאריך, מחקו קובצי התקנה שכבר אינם דרושים, ורוקנו את סל המחזור כדי להחזיר את השטח בפועל.",
+        'מכיוון שמרבית הקבצים בהורדות הם עותקים משניים שהורדו מהרשת או מתיבת הדוא"ל, זוהי אחת התיקיות הבטוחות ביותר לפינוי נפח אחסון במחשב שלכם.',
+      ],
+      keyTakeaways: [
+        "מחיקת תוכן תיקיית ההורדות בטוחה לחלוטין מכיוון שרוב הקבצים הם עותקים שהורדו ממקורות חיצוניים.",
+        "קובצי התקנה (.exe, .dmg) וארכיוני ZIP תופסים שטח רב לאחר שהתוכנה כבר הותקנה במחשב.",
+        "הורדות חוזרות של אותו קובץ יוצרות עותקים כפולים עם סיומות '(1)', הניתנים לאיתור באמצעות אלגוריתם SHA-256.",
+        "חובה לרוקן את סל המחזור כדי שהשטח הפנוי יתעדכן בפועל במערכת ההפעלה.",
+        "כלי Downloads Cleaner של DiskMop מקבץ קבצים לקטגוריות התקנה, מדיה ומסמכים לניקוי מרוכז.",
+      ],
+      dataTable: {
+        caption: "סוגי הקבצים הנפוצים בתיקיית ההורדות ומידת הבטיחות למחיקתם",
+        columns: ["סוג קובץ", "סיומות נפוצות", "גודל טיפוסי", "בטיחות מחיקה"],
+        rows: [
+          [
+            "קובצי התקנה",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40GB",
+            "בטוח לחלוטין לאחר ההתקנה",
+          ],
+          [
+            "ארכיונים דחוסים",
+            ".zip, .rar, .7z",
+            "5 – 25GB",
+            "בטוח לאחר חילוץ הקבצים",
+          ],
+          [
+            "הורדות כפולות",
+            "קובץ (1).pdf, סרט (2).mp4",
+            "5 – 15GB",
+            "בטוח לחלוטין (מחיקת עותקים)",
+          ],
+          [
+            "מסמכים וטפסים",
+            ".pdf, .docx, .xlsx",
+            "2 – 10GB",
+            "מומלץ לבדוק לפני מחיקה",
+          ],
+          [
+            "קובצי וידאו ומדיה",
+            ".mp4, .mov, .mkv",
+            "10 – 50GB",
+            "בטוח לאחר צפייה או גיבוי",
+          ],
+        ],
+      },
+      howTo: {
+        name: "שלבים לניקוי וארגון תיקיית ההורדות",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "מיינו לפי גודל ותאריך",
+            text: "סדרו את הקבצים בסדר יורד מהגדול לקטן כדי לזהות מיד קובצי וידאו והתקנות כבדים.",
+          },
+          {
+            name: "מחקו קובצי התקנה ישנים",
+            text: "אתרו קובצי .exe, .dmg וארכיונים שכבר חולצו ומחקו אותם ללא היסוס.",
+          },
+          {
+            name: "אתרו ומחקו קבצים כפולים",
+            text: "הפעילו את DiskMop לזיהוי מהיר של עותקים כפולים זהים בתיקייה.",
+          },
+          {
+            name: "רוקנו את סל המחזור",
+            text: "לחצו קליק ימני על סל המחזור ובחרו בריקון מלא כדי לשחרר את נפח האחסון.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "מדוע תיקיית ההורדות צוברת אשפה דיגיטלית במהירות?",
+          content: [
+            "דפדפנים ואפליקציות מסרים כמו וואטסאפ מורידים אליה אוטומטית מסמכים וקבצי מולטימדיה ללא סינון.",
+            "משתמשים רבים נוטים להוריד קובץ שוב ושוב במקום לחפש אותו, וכך נוצרים עותקים מיותרים רבים.",
+          ],
+        },
+        {
+          title: "מיון יעיל לפי קבוצות קבצים",
+          content: [
+            "הדרך המהירה ביותר היא לחלק את הקבצים לקבוצות: התקנות, קבצים דחוסים, תמונות ומסמכים.",
+            "קטגוריות ההתקנות והארכיונים ניתנות למחיקה גורפת כמעט ללא בדיקה, דבר החוסך זמן ניכר.",
+          ],
+        },
+        {
+          title: "אוטומציה למניעת עומס עתידי",
+          content: [
+            "ניתן להגדיר בווינדוס ובמק מחיקה אוטומטית לקבצים שעברו מעל 30 יום בתיקייה.",
+            "DiskMop מספקת לוח זמנים מותאם אישית לתחזוקה תקופתית שקטה ויעילה.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "האם מותר למחוק את תיקיית ההורדות עצמה?",
+          answer:
+            "לא, אין למחוק את תיקיית המערכת עצמה, אלא רק את הקבצים ותתי-התיקיות שבתוכה.",
+        },
+        {
+          question: "מדוע המקום הפנוי לא גדל מיד לאחר המחיקה?",
+          answer: "הקבצים ממתינים בסל המחזור עד לריקון סופי ומלא שלו.",
+        },
+        {
+          question: "כיצד אמנע מחיקה של מסמכים אישיים חשובים?",
+          answer:
+            "העבירו תחילה קבצי עבודה לתיקיית המסמכים (Documents) לפני ביצוע מחיקה מרוכזת של ההורדות.",
+        },
+      ],
+      verdict: [
+        "תיקיית ההורדות היא המקום הטוב ביותר להתחיל בו כשנגמר המקום במחשב. בעזרת סידור נכון ומחיקת כפילויות, תרוויחו שטח אחסון ניכר.",
+        "DiskMop הופכת את תהליך הניקוי לקל ומהיר עם כלים ייעודיים לזיהוי כפילויות והתקנות ישנות.",
+      ],
+      ctaText: "נקו את תיקיית ההורדות עכשיו עם DiskMop",
+    },
+    id: {
+      title: "Cara Membersihkan Folder Downloads di Windows & Mac",
+      metaDescription:
+        "Panduan praktis membersihkan folder Downloads: urutkan berdasarkan ukuran dan tanggal, hapus installer dan file duplikat, serta pulihkan ruang disk Anda.",
+      subtitle:
+        "Kategorikan, hapus, dan cegah penumpukan: langkah demi langkah membersihkan folder unduhan",
+      intro: [
+        "Untuk membersihkan folder Downloads secara efisien, buka folder tersebut di File Explorer atau Finder, urutkan berkas berdasarkan ukuran dan tanggal, hapus file installer lama dan arsip yang tak lagi dipakai, lalu kosongkan Recycle Bin untuk memulihkan kapasitas penyimpanan secara nyata.",
+        "Karena sebagian besar isi folder Downloads merupakan salinan kedua dari file yang diunduh dari peramban atau lampiran email, folder ini merupakan area paling aman untuk dibersihkan di komputer Anda.",
+      ],
+      keyTakeaways: [
+        "Menghapus isi folder Downloads 100% aman karena sebagian besar merupakan berkas salinan dari internet.",
+        "File instalasi (.exe, .msi, .dmg) dan arsip ZIP yang sudah diekstrak tidak lagi diperlukan setelah aplikasi terpasang.",
+        "File yang diunduh berkali-kali menciptakan salinan duplikat ('file (1).pdf') yang bisa dideteksi dengan algoritma SHA-256.",
+        "Mengosongkan Recycle Bin atau Trash adalah langkah mutlak agar kapasitas penyimpanan benar-benar bertambah.",
+        "Fitur Downloads Cleaner di DiskMop mengelompokkan unduhan ke dalam kategori installer, arsip, dan media untuk pembersihan instan.",
+      ],
+      dataTable: {
+        caption:
+          "Jenis file umum di folder Downloads dan panduan pembersihannya",
+        columns: [
+          "Jenis File",
+          "Ekstensi Umum",
+          "Ukuran Tipikal",
+          "Tingkat Keamanan Hapus",
+        ],
+        rows: [
+          [
+            "File Installer Program",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "Sangat Aman setelah instalasi selesai",
+          ],
+          [
+            "Arsip Terkompresi",
+            ".zip, .rar, .7z, .tar.gz",
+            "5 – 25 GB",
+            "Aman jika isi file sudah diekstrak",
+          ],
+          [
+            "Unduhan Duplikat",
+            "nama (1).pdf, file (2).iso",
+            "5 – 15 GB",
+            "Sangat Aman (hapus salinan kedua)",
+          ],
+          [
+            "Dokumen & Spreadsheet",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "Perlu diperiksa sebelum dihapus",
+          ],
+          [
+            "File Video & Media",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "Aman setelah ditonton atau dipindahkan",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Langkah Membersihkan dan Merapikan Folder Downloads",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Urutkan berdasarkan ukuran dan tanggal",
+            text: "Urutkan berkas dari yang terbesar ke terkecil untuk mengidentifikasi installer raksasa dan video lama.",
+          },
+          {
+            name: "Hapus file installer dan arsip ZIP",
+            text: "Pilih file .exe, .dmg, dan paket instalasi yang sudah digunakan lalu hapus sekaligus.",
+          },
+          {
+            name: "Cari dan bersihkan file duplikat",
+            text: "Jalankan pemindaian duplikat di DiskMop untuk menemukan salinan kembar yang membuang ruang.",
+          },
+          {
+            name: "Kosongkan Recycle Bin atau Trash",
+            text: "Klik kanan tempat sampah dan pilih kosongkan untuk menerapkan penghapusan secara permanen.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Penyebab Folder Downloads Cepat Membengkak",
+          content: [
+            "Secara default, browser web dan aplikasi pesan seperti Telegram atau WhatsApp menyimpan setiap unduhan ke satu folder ini tanpa penyortiran otomatis.",
+            "Pengguna sering kali mengunduh ulang dokumen yang sama saat tidak dapat menemukannya dengan cepat, sehingga folder penuh dengan berkas salinan bernomor.",
+          ],
+        },
+        {
+          title: "Metode Kategorisasi Cepat Sebelum Penghapusan",
+          content: [
+            "Alih-alih memeriksa berkas satu demi satu, kelompokkan berdasarkan ekstensi atau tipe file: installer, arsip, media, dan dokumen.",
+            "Kategori installer dan arsip terkompresi hampir selalu bisa langsung dihapus tanpa perlu ragu, menghemat waktu pemilahan Anda.",
+          ],
+        },
+        {
+          title: "Mencegah Penumpukan Sampah Unduhan di Masa Depan",
+          content: [
+            "Manfaatkan fitur Storage Sense di Windows atau pengaturan cerdas di Mac untuk menghapus file unduhan yang berumur lebih dari 30 hari secara berkala.",
+            "DiskMop juga menawarkan jadwal pembersihan otomatis untuk menjaga folder Downloads tetap ramping setiap minggu.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Bolehkah saya menghapus seluruh folder Downloads?",
+          answer:
+            "Jangan menghapus folder sistem 'Downloads' itu sendiri; cukup bersihkan berkas-berkas yang ada di dalamnya.",
+        },
+        {
+          question:
+            "Mengapa ruang disk belum bertambah setelah menghapus file?",
+          answer:
+            "File yang dihapus masih tertampung di Recycle Bin (Windows) atau Trash (Mac). Anda harus mengosongkannya terlebih dahulu.",
+        },
+        {
+          question: "Bagaimana cara agar dokumen kerja penting tidak terhapus?",
+          answer:
+            "Pindahkan berkas dokumen penting ke folder Documents sebelum melakukan pembersihan massal terhadap folder Downloads.",
+        },
+      ],
+      verdict: [
+        "Membersihkan folder Downloads adalah cara tercepat dan termudah untuk mendapatkan ruang disk baru tanpa mengganggu stabilitas sistem komputer.",
+        "DiskMop menyederhanakan alur kerja ini dengan fitur deteksi duplikat berbasis SHA-256 dan pembersih unduhan otomatis.",
+      ],
+      ctaText: "Bersihkan Folder Downloads Anda Sekarang dengan DiskMop",
+    },
+    ko: {
+      title: "다운로드 폴더 정리 가이드: 윈도우 및 Mac 디스크 용량 확보",
+      metaDescription:
+        "다운로드 폴더 정리 완벽 가이드: 날짜 및 크기별 정렬, 구형 설치 파일과 중복 다운로드 제거로 윈도우와 Mac에서 즉각적인 디스크 용량을 확보하세요.",
+      subtitle:
+        "분류하고, 삭제하고, 재발을 방지하는 다운로드 폴더 체계적 정리법",
+      intro: [
+        "다운로드 폴더를 효율적으로 청소하려면 파일 탐색기 또는 Finder에서 폴더를 열고 날짜와 크기순으로 정렬한 뒤, 사용이 끝난 설치 파일과 압축 파일을 삭제하고 휴지통을 비워 실제 여유 공간을 확보해야 합니다.",
+        "다운로드 폴더의 파일들은 대부분 인터넷이나 이메일에서 내려받은 복사본이므로, 운영체제 안정성을 해치지 않고 가장 안심하고 대용량 공간을 비울 수 있는 최적의 장소입니다.",
+      ],
+      keyTakeaways: [
+        "다운로드 폴더 내부 파일은 웹이나 메일에서 가져온 2차 복사본이므로 삭제해도 시스템에 무해합니다.",
+        "프로그램 설치 후 남겨진 설치 파일(.exe, .dmg)과 압축 해제된 ZIP 파일은 불필요한 용량만 낭비합니다.",
+        "반복 다운로드로 생성된 '파일명 (1).pdf' 형태의 중복 파일은 SHA-256 해시 검사로 안전하게 솎아낼 수 있습니다.",
+        "파일을 지운 후에는 반드시 윈도우 휴지통이나 Mac 휴지통을 비워야 실제 디스크 공간으로 환원됩니다.",
+        "DiskMop Downloads Cleaner는 설치 파일, 압축 파일, 미디어 등을 자동 분류하여 일괄 청소를 지원합니다.",
+      ],
+      dataTable: {
+        caption: "다운로드 폴더 내 주요 파일 유형 및 안전한 정리 기준",
+        columns: ["파일 유형", "대표 확장자", "일반적인 크기", "삭제 안전도"],
+        rows: [
+          [
+            "설치 프로그램",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40GB",
+            "설치 완료 후 매우 안전",
+          ],
+          [
+            "압축 아카이브",
+            ".zip, .rar, .7z",
+            "5 – 25GB",
+            "내용물 압축 해제 후 안전",
+          ],
+          [
+            "중복 다운로드 파일",
+            "파일명 (1).pdf, 영상 (2).mp4",
+            "5 – 15GB",
+            "매우 안전 (사본 삭제)",
+          ],
+          [
+            "문서 및 시트",
+            ".pdf, .docx, .xlsx",
+            "2 – 10GB",
+            "삭제 전 확인 권장",
+          ],
+          [
+            "영상 및 미디어",
+            ".mp4, .mov, .mkv",
+            "10 – 50GB",
+            "시청 완료 또는 백업 후 안전",
+          ],
+        ],
+      },
+      howTo: {
+        name: "다운로드 폴더 정리 및 용량 확보 순서",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "크기 및 수정한 날짜순 정렬",
+            text: "파일 크기를 내림차순으로 정렬하여 기가바이트 단위의 구형 설치 프로그램과 영상을 우선 선별합니다.",
+          },
+          {
+            name: "더 이상 쓰지 않는 설치 파일 삭제",
+            text: ".exe 및 .dmg 확장자를 가진 설치 패키지와 이미 푼 ZIP 압축 파일을 선택하여 삭제합니다.",
+          },
+          {
+            name: "중복 다운로드 파일 일괄 제거",
+            text: "DiskMop의 중복 파일 검색기를 구동하여 동일한 내용의 사본 파일을 단번에 걸러냅니다.",
+          },
+          {
+            name: "휴지통 완전히 비우기",
+            text: "휴지통을 우클릭하고 완전히 비우기를 실행하여 실제 물리 저장 공간을 환원받습니다.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "다운로드 폴더가 순식간에 불어나는 이유",
+          content: [
+            "웹 브라우저와 카카오톡, 슬랙 같은 메신저는 모든 수신 파일을 기본적으로 다운로드 폴더에 몰아넣도록 설계되어 있습니다.",
+            "이전에 내려받은 파일을 찾기 귀찮아 여러 번 다시 받는 습관 때문에 동일한 파일의 사본이 부지불식간에 쌓이게 됩니다.",
+          ],
+        },
+        {
+          title: "유형별 일괄 분류를 통한 신속한 정리",
+          content: [
+            "수백 개의 파일을 개별 확인하기보다 확장자별로 그룹화하여 설치 프로그램과 임시 압축 파일을 한 묶음으로 처리하는 것이 효율적입니다.",
+            "프로그램 셋업 파일은 이미 시스템에 설치되었거나 언제든 다시 받을 수 있으므로 주저 없이 지워도 무방합니다.",
+          ],
+        },
+        {
+          title: "주기적인 자동 정리로 쾌적함 유지하기",
+          content: [
+            "윈도우의 저장소 센스(Storage Sense) 또는 macOS 설정을 통해 30일 이상 지난 다운로드 파일을 자동 삭제하도록 지정할 수 있습니다.",
+            "DiskMop을 활용하면 매주 자동으로 다운로드 폴더의 불필요한 사본을 스캔하고 정리 알림을 받을 수 있습니다.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "다운로드 폴더 자체를 통째로 지워도 되나요?",
+          answer:
+            "아니요, 시스템 기본 'Downloads' 폴더 자체는 절대 삭제하지 마시고 내부 파일들만 선택하여 삭제해야 합니다.",
+        },
+        {
+          question: "파일을 지웠는데도 사용 가능 공간이 늘어나지 않아요.",
+          answer:
+            "삭제된 파일이 휴지통에 보관되어 있기 때문입니다. 휴지통 비우기를 완료해야 실제 여유 공간이 증가합니다.",
+        },
+        {
+          question: "중요한 개인 문서를 실수로 지우지 않으려면 어떻게 하나요?",
+          answer:
+            "일괄 청소 전에 중요 업무 문서를 '문서(Documents)' 폴더로 미리 이동해 둔 뒤 설치 파일 위주로 정리하세요.",
+        },
+      ],
+      verdict: [
+        "다운로드 폴더는 PC나 Mac에서 가장 안전하고 빠르게 대용량 공간을 회수할 수 있는 일순위 청소 대상입니다.",
+        "DiskMop은 전용 다운로드 클리너와 정밀 중복 검색 엔진을 통해 복잡한 폴더를 클릭 한 번으로 가볍게 만들어 드립니다.",
+      ],
+      ctaText: "DiskMop으로 다운로드 폴더 지금 정리하기",
+    },
+    pl: {
+      title: "Jak wyczyścić folder Pobrane w Windows i na Macu",
+      metaDescription:
+        "Przewodnik po czyszczeniu folderu Pobrane (Downloads): sortuj według rozmiaru i daty, usuń stare instalatory i duplikaty, zyskując mnóstwo miejsca.",
+      subtitle:
+        "Kategoryzuj, usuwaj i zapobiegaj bałaganowi: czyszczenie folderu Pobrane krok po kroku",
+      intro: [
+        "Aby sprawnie wyczyścić folder Pobrane, otwórz go w Eksploratorze plików lub Finderze, posortuj pliki według rozmiaru i daty, usuń niepotrzebne pliki instalacyjne oraz archiwa, a na koniec opróżnij Kosz, aby faktycznie odzyskać miejsce.",
+        "Ponieważ niemal każdy plik w folderze Pobrane to wtórna kopia pobrana z sieci lub poczty, jest to jedno z najbezpieczniejszych miejsc do zwolnienia pamięci na dysku.",
+      ],
+      keyTakeaways: [
+        "Czyszczenie folderu Pobrane jest w 100% bezpieczne, gdyż pliki to kopie pobrane z zewnętrznych źródeł.",
+        "Instalatory programów (.exe, .dmg) i rozpakowane archiwa ZIP stają się bezużyteczne po zainstalowaniu aplikacji.",
+        "Kilkukrotne pobranie tego samego pliku tworzy duplikaty z dopiskiem '(1)', które łatwo wykryć algorytmem SHA-256.",
+        "Opróżnienie Kosza jest niezbędne, aby system operacyjny zaliczył usunięte pliki jako wolną przestrzeń.",
+        "Narzędzie Downloads Cleaner w DiskMop automatycznie grupuje pobrane pliki na instalatory, archiwa i multimedia.",
+      ],
+      dataTable: {
+        caption:
+          "Typowe pliki w folderze Pobrane i zasady ich bezpiecznego usuwania",
+        columns: [
+          "Kategoria pliku",
+          "Typowe rozszerzenia",
+          "Średni rozmiar",
+          "Bezpieczeństwo usunięcia",
+        ],
+        rows: [
+          [
+            "Instalatory programów",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "Całkowicie bezpieczne po instalacji",
+          ],
+          [
+            "Archiwa skompresowane",
+            ".zip, .rar, .7z",
+            "5 – 25 GB",
+            "Bezpieczne po rozpakowaniu",
+          ],
+          [
+            "Zduplikowane pobrania",
+            "plik (1).pdf, wideo (2).mp4",
+            "5 – 15 GB",
+            "Bardzo bezpieczne (usuń duplikaty)",
+          ],
+          [
+            "Dokumenty i arkusze",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "Wymaga weryfikacji przed usunięciem",
+          ],
+          [
+            "Filmy i multimedia",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "Bezpieczne po obejrzeniu lub archiwizacji",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Kroki organizacji i czyszczenia folderu Pobrane",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Posortuj pliki według rozmiaru i daty",
+            text: "Ułóż pliki malejąco według rozmiaru, aby od razu wyłapać największe zapomniane instalatory.",
+          },
+          {
+            name: "Usuń stare pakiety instalacyjne",
+            text: "Zaznacz i usuń zbędne pliki .exe, .dmg oraz wypakowane archiwa ZIP.",
+          },
+          {
+            name: "Wykryj i skasuj duplikaty",
+            text: "Skorzystaj z DiskMop, aby błyskawicznie zidentyfikować identyczne pliki pobrane wielokrotnie.",
+          },
+          {
+            name: "Opróżnij Kosz systemowy",
+            text: "Kliknij prawym przyciskiem myszy na Kosz i wybierz opróżnianie, aby odzyskać przestrzeń dyskową.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Dlaczego folder Pobrane tak szybko się zapełnia?",
+          content: [
+            "Przeglądarki i komunikatory domyślnie kierują wszystkie pobierane pliki do jednego wspólnego folderu bez automatycznej segregacji.",
+            "Gdy użytkownik nie może znaleźć pobranego dokumentu, często ściąga go ponownie, generując kolejne kopie.",
+          ],
+        },
+        {
+          title: "Szybka segregacja według typów plików",
+          content: [
+            "Zamiast przeglądać każdy plik osobno, podziel je na kategorie: instalatory, archiwa, media i dokumenty.",
+            "Instalatory i archiwa można usunąć niemal natychmiast bez obaw o utratę cennych danych.",
+          ],
+        },
+        {
+          title: "Automatyzacja czyszczenia folderu",
+          content: [
+            "Funkcja Czujnik pamięci w Windows lub reguły na Macu pozwalają na automatyczne usuwanie plików starszych niż 30 dni.",
+            "DiskMop oferuje harmonogram cyklicznego sprzątania, który przypomni o porządkach w folderze.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Czy mogę usunąć sam folder Pobrane?",
+          answer:
+            "Nie, nie należy usuwać głównego folderu systemowego 'Pobrane', a jedynie znajdujące się w nim pliki.",
+        },
+        {
+          question:
+            "Dlaczego po usunięciu plików nie przybyło wolnego miejsca?",
+          answer:
+            "Skasowane pliki trafiły do Kosza. Wolne miejsce zostanie zaktualizowane dopiero po jego opróżnieniu.",
+        },
+        {
+          question:
+            "Jak zabezpieczyć ważne dokumenty przed przypadkowym skasowaniem?",
+          answer:
+            "Przed czyszczeniem przenieś potrzebne pliki do folderu Dokumenty, a w Pobranych kasuj głównie instalatory.",
+        },
+      ],
+      verdict: [
+        "Folder Pobrane to pierwsze miejsce, do którego warto zajrzeć, gdy brakuje wolnego miejsca na dysku. Prosta segregacja pozwala szybko odzyskać cenne gigabajty.",
+        "DiskMop wyposażono w dedykowany moduł Downloads Cleaner i precyzyjną wyszukiwarkę duplikatów w ramach dożywotniej licencji.",
+      ],
+      ctaText: "Uporządkuj folder Pobrane z DiskMop",
+    },
+    ro: {
+      title: "Cum să cureți folderul Descărcări pe Windows și Mac",
+      metaDescription:
+        "Ghid practic pentru curățarea folderului Descărcări (Downloads): sortează după dată și dimensiune, șterge kiturile vechi și eliberează spațiul pe disc.",
+      subtitle:
+        "Clasifică, șterge și previne aglomerarea: pași simpli pentru curățarea folderului Downloads",
+      intro: [
+        "Pentru a curăța eficient folderul Descărcări, deschide-l în File Explorer sau Finder, sortează fișierele după dimensiune și dată, șterge kiturile vechi de instalare și arhivele de care nu mai ai nevoie, apoi golește Coșul de reciclare.",
+        "Deoarece aproape orice fișier din Descărcări este o copie provenită din internet sau email, acesta este cel mai sigur folder din calculator pentru a elibera spațiu.",
+      ],
+      keyTakeaways: [
+        "Ștergerea conținutului folderului Descărcări este 100% sigură, fiind vorba de fișiere descărcate din exterior.",
+        "Kiturile de instalare (.exe, .dmg) și arhivele ZIP dezarhivate devin inutile după instalarea programului.",
+        "Descărcările repetate generează fișiere duplicate ('fișier (1).pdf') ce pot fi depistate prin algoritmul SHA-256.",
+        "Golirea Coșului de reciclare (Trash) este obligatorie pentru a transforma fișierele șterse în spațiu liber real.",
+        "Modulul Downloads Cleaner din DiskMop grupează automat fișierele pe categorii pentru curățare dintr-un singur clic.",
+      ],
+      dataTable: {
+        caption:
+          "Fișiere frecvente din folderul Descărcări și gradul de siguranță la ștergere",
+        columns: [
+          "Tip fișier",
+          "Extensii comune",
+          "Dimensiune tipică",
+          "Siguranță la ștergere",
+        ],
+        rows: [
+          [
+            "Kituri de instalare",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "Complet sigur după instalare",
+          ],
+          [
+            "Arhive comprimate",
+            ".zip, .rar, .7z",
+            "5 – 25 GB",
+            "Sigur după dezarhivare",
+          ],
+          [
+            "Descărcări duplicate",
+            "nume (1).pdf, video (2).mp4",
+            "5 – 15 GB",
+            "Complet sigur (ștergeți copiile)",
+          ],
+          [
+            "Documente și tabele",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "Necesită verificare prealabilă",
+          ],
+          [
+            "Fișiere video și media",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "Sigur după vizionare sau mutare",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Pași pentru organizarea și curățarea folderului Descărcări",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Sortează fișierele după dimensiune și dată",
+            text: "Ordonează fișierele descrescător după mărime pentru a depista imediat kiturile voluminoase.",
+          },
+          {
+            name: "Șterge fișierele de instalare vechi",
+            text: "Selectează și elimină fișierele .exe, .dmg și arhivele ZIP dezarhivate deja.",
+          },
+          {
+            name: "Identifică și elimină duplicatele",
+            text: "Folosește funcția de scanare a duplicatelor din DiskMop pentru a șterge copiile identice.",
+          },
+          {
+            name: "Golește Coșul de reciclare",
+            text: "Dă clic dreapta pe Recycle Bin sau Trash și alege golirea completă pentru a recupera spațiul.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "De ce se aglomerează folderul Descărcări atât de repede?",
+          content: [
+            "Browserele și aplicațiile de mesagerie direcționează toate fișierele salvate către această locație unică fără o sortare preliminară.",
+            "Utilizatorii descarcă frecvent același document de mai multe ori când nu îl găsesc repede, acumulând copii inutile.",
+          ],
+        },
+        {
+          title: "Gruparea pe categorii pentru curățare rapidă",
+          content: [
+            "În loc să analizezi fișierele unul câte unul, împarte-le pe tipuri: instalatoare, arhive, fișiere media și documente.",
+            "Instalatoarele de programe pot fi șterse masiv fără nicio grijă, salvând mult timp.",
+          ],
+        },
+        {
+          title: "Automatizarea întreținerii folderului",
+          content: [
+            "Poți activa funcția Stocare inteligentă în Windows pentru a șterge automat fișierele mai vechi de 30 de zile.",
+            "DiskMop oferă un modul de curățare programată care te ajută să menții folderul curat pe termen lung.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Pot șterge folderul Descărcări în sine?",
+          answer:
+            "Nu, nu ștergeți folderul de sistem 'Descărcări', ci doar fișierele și subfolderele din interiorul său.",
+        },
+        {
+          question:
+            "De ce nu a crescut spațiul liber după ștergerea fișierelor?",
+          answer:
+            "Fișierele șterse ajung în Coșul de reciclare. Spațiul devine liber doar după golirea definitivă a acestuia.",
+        },
+        {
+          question: "Cum evit ștergerea documentelor importante de muncă?",
+          answer:
+            "Mută documentele personale în folderul Documente înainte de a efectua curățarea fișierelor de instalare.",
+        },
+      ],
+      verdict: [
+        "Folderul Descărcări este primul loc unde poți câștiga spațiu masiv fără a risca stabilitatea computerului. O curățare periodică menține sistemul rapid.",
+        "DiskMop oferă instrumente dedicate pentru curățarea descărcărilor și găsirea fișierelor duplicate cu licență pe viață.",
+      ],
+      ctaText: "Curăță folderul Descărcări acum cu DiskMop",
+    },
+    ru: {
+      title: "Как очистить папку Загрузки на Windows и Mac: инструкция",
+      metaDescription:
+        "Пошаговое руководство по очистке папки 'Загрузки' (Downloads): сортировка по размеру, удаление старых инсталляторов, дубликатов и освобождение диска.",
+      subtitle:
+        "Классифицируйте, удаляйте и предотвращайте повторное захламление папки загрузок",
+      intro: [
+        "Чтобы быстро и безопасно очистить папку 'Загрузки', откройте её в Проводнике или Finder, отсортируйте файлы по размеру и дате, удалите ненужные установочные файлы и архивы, а затем очистите Корзину для физического освобождения пространства.",
+        "Поскольку почти каждый файл в этой папке является вторичной копией из интернета или почты, папка Загрузки — самое безопасное место на компьютере для масштабной очистки.",
+      ],
+      keyTakeaways: [
+        "Удаление файлов из папки Загрузки абсолютно безопасно, так как это вторичные копии данных из сети.",
+        "Установочные пакеты программ (.exe, .dmg) и распакованные ZIP-архивы не нужны после успешной инсталляции.",
+        "Повторные загрузки создают точные копии файлов с суффиксом '(1)', легко выявляемые по хэшу SHA-256.",
+        "Обязательно очищайте Корзину (Recycle Bin / Trash), иначе удаленные файлы продолжат занимать место на SSD.",
+        "Модуль Downloads Cleaner в DiskMop группирует файлы по категориям для мгновенной очистки в один клик.",
+      ],
+      dataTable: {
+        caption:
+          "Распространенные типы файлов в Загрузках и рекомендации по их удалению",
+        columns: [
+          "Тип файлов",
+          "Расширения",
+          "Типичный объем",
+          "Безопасность удаления",
+        ],
+        rows: [
+          [
+            "Установочные пакеты",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 ГБ",
+            "Полностью безопасно после установки",
+          ],
+          [
+            "Архивы",
+            ".zip, .rar, .7z, .tar.gz",
+            "5 – 25 ГБ",
+            "Безопасно после распаковки содержимого",
+          ],
+          [
+            "Дубликаты загрузок",
+            "файл (1).pdf, видео (2).mp4",
+            "5 – 15 ГБ",
+            "Полностью безопасно (удаление дубликатов)",
+          ],
+          [
+            "Документы и таблицы",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 ГБ",
+            "Рекомендуется проверить перед удалением",
+          ],
+          [
+            "Видео и медиафайлы",
+            ".mp4, .mov, .mkv",
+            "10 – 50 ГБ",
+            "Безопасно после просмотра или копирования",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Порядок действий по наведению порядка в Загрузках",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Сортировка по размеру и дате",
+            text: "Расположите файлы по убыванию размера, чтобы сразу обнаружить огромные забытые инсталляторы.",
+          },
+          {
+            name: "Удаление отработанных установщиков",
+            text: "Выделите файлы .exe, .dmg и распакованные архивы и смело отправьте их в корзину.",
+          },
+          {
+            name: "Поиск и удаление одинаковых файлов",
+            text: "Запустите сканер дубликатов в DiskMop, чтобы стереть идентичные повторные загрузки.",
+          },
+          {
+            name: "Окончательная очистка Корзины",
+            text: "Нажмите правой кнопкой мыши по Корзине и выберите её полную очистку для освобождения гигабайт.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Почему папка 'Загрузки' так быстро захламляется?",
+          content: [
+            "Браузеры, мессенджеры и почтовые клиенты по умолчанию складывают все входящие файлы в одну общую папку без какой-либо структуры.",
+            "Пользователи часто скачивают один и тот же файл по нескольку раз, когда не могут сразу найти его на диске.",
+          ],
+        },
+        {
+          title: "Быстрая сортировка по типам файлов",
+          content: [
+            "Вместо просмотра тысяч файлов по отдельности, сгруппируйте их по типам: программы, архивы, медиа и документы.",
+            "Установочные файлы и архивы можно удалять целыми пачками без риска потерять важную информацию.",
+          ],
+        },
+        {
+          title: "Автоматизация регулярной очистки",
+          content: [
+            "Функция 'Контроль памяти' в Windows позволяет автоматически удалять файлы из Загрузок старше 30 дней.",
+            "DiskMop предоставляет удобный встроенный планировщик, который будет следить за чистотой этой папки в фоновом режиме.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Можно ли удалить саму системную папку 'Загрузки'?",
+          answer:
+            "Нет, саму папку удалять нельзя. Следует удалять только файлы и подпапки, находящиеся внутри неё.",
+        },
+        {
+          question:
+            "Почему после удаления файлов место на диске не освободилось?",
+          answer:
+            "Файлы переместились в Корзину. Реальное свободное место появится только после полной очистки Корзины.",
+        },
+        {
+          question: "Как не удалить важные рабочие документы?",
+          answer:
+            "Перед массовой чисткой переместите нужные рабочие файлы в папку 'Документы' и удаляйте только инсталляторы.",
+        },
+      ],
+      verdict: [
+        "Папка Загрузки — первое место, куда стоит заглянуть при нехватке памяти на компьютере. Избавившись от устаревших установщиков и дубликатов, вы мгновенно вернете гигабайты памяти.",
+        "DiskMop включает удобный инструмент Downloads Cleaner и точный поиск дубликатов по алгоритму SHA-256 с бессрочной лицензией.",
+      ],
+      ctaText: "Очистите папку Загрузки с DiskMop прямо сейчас",
+    },
+    th: {
+      title: "วิธีล้างโฟลเดอร์ดาวน์โหลดบน Windows และ Mac ให้ได้พื้นที่คืน",
+      metaDescription:
+        "คู่มือการจัดระเบียบและล้างโฟลเดอร์ Downloads: เรียงตามขนาดและวันที่ ลบตัวติดตั้งเก่าและไฟล์ซ้ำ ทวงคืนพื้นที่ว่างบน Windows และ Mac อย่างรวดเร็ว",
+      subtitle:
+        "จัดหมวดหมู่ ลบ และป้องกันไม่ให้สะสมซ้ำ: ขั้นตอนล้างโฟลเดอร์ดาวน์โหลดอย่างเป็นระบบ",
+      intro: [
+        "ในการทำความสะอาดโฟลเดอร์ดาวน์โหลดอย่างมีประสิทธิภาพ ให้เปิดโฟลเดอร์ใน File Explorer หรือ Finder เรียงลำดับไฟล์ตามขนาดและวันที่ ลบไฟล์ตัวติดตั้งที่ไม่ได้ใช้แล้วและไฟล์ ZIP จากนั้นล้างถังขยะเพื่อกู้คืนพื้นที่ว่างอย่างแท้จริง",
+        "เนื่องจากไฟล์เกือบทั้งหมดในโฟลเดอร์ดาวน์โหลดเป็นไฟล์สำเนาที่ดาวน์โหลดมาจากอินเทอร์เน็ต โฟลเดอร์นี้จึงเป็นตำแหน่งที่ปลอดภัยที่สุดในการเพิ่มพื้นที่ว่างบนคอมพิวเตอร์ของคุณ",
+      ],
+      keyTakeaways: [
+        "การลบไฟล์ในโฟลเดอร์ดาวน์โหลดปลอดภัย 100% เพราะเป็นไฟล์สำเนาที่ได้รับมาจากภายนอก",
+        "ไฟล์ตัวติดตั้งโปรแกรม (.exe, .dmg) และไฟล์ ZIP ที่แตกแล้วไม่มีความจำเป็นต้องเก็บไว้หลังจากติดตั้งเสร็จ",
+        "การดาวน์โหลดซ้ำจะสร้างไฟล์ที่มีชื่อลงท้ายด้วย '(1)' ซึ่งสามารถตรวจจับได้ด้วยอัลกอริทึม SHA-256",
+        "จำเป็นต้องล้างถังขยะ (Recycle Bin หรือ Trash) เสมอเพื่อให้ระบบคืนพื้นที่ว่างบนดิสก์อย่างสมบูรณ์",
+        "ฟีเจอร์ Downloads Cleaner ใน DiskMop ช่วยจัดกลุ่มไฟล์ตัวติดตั้งและสื่อบันเทิงเพื่อล้างได้ในคลิกเดียว",
+      ],
+      dataTable: {
+        caption:
+          "ประเภทไฟล์ที่พบบ่อยในโฟลเดอร์ดาวน์โหลดและแนวทางการลบอย่างปลอดภัย",
+        columns: [
+          "ประเภทไฟล์",
+          "นามสกุลทั่วไป",
+          "ขนาดทั่วไป",
+          "ความปลอดภัยในการลบ",
+        ],
+        rows: [
+          [
+            "ไฟล์ตัวติดตั้งโปรแกรม",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "ปลอดภัยอย่างยิ่งหลังติดตั้งเสร็จ",
+          ],
+          [
+            "ไฟล์บีบอัดและอาร์ไคฟ์",
+            ".zip, .rar, .7z",
+            "5 – 25 GB",
+            "ปลอดภัยหลังจากแตกไฟล์แล้ว",
+          ],
+          [
+            "ไฟล์ดาวน์โหลดซ้ำ",
+            "เอกสาร (1).pdf, วิดีโอ (2).mp4",
+            "5 – 15 GB",
+            "ปลอดภัยอย่างยิ่ง (ลบเฉพาะไฟล์ซ้ำ)",
+          ],
+          [
+            "เอกสารและตารางงาน",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "ควรตรวจสอบก่อนลบ",
+          ],
+          [
+            "ไฟล์วิดีโอและมีเดีย",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "ปลอดภัยหลังจากรับชมหรือย้ายที่เก็บ",
+          ],
+        ],
+      },
+      howTo: {
+        name: "ขั้นตอนการจัดระเบียบและล้างโฟลเดอร์ดาวน์โหลด",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "เรียงตามขนาดและวันที่แก้ไข",
+            text: "จัดเรียงไฟล์จากขนาดใหญ่ไปเล็กเพื่อค้นหาไฟล์ตัวติดตั้งและวิดีโอที่กินพื้นที่มากที่สุดก่อน",
+          },
+          {
+            name: "ลบไฟล์ตัวติดตั้งที่หมดความจำเป็น",
+            text: "เลือกไฟล์ .exe, .dmg และไฟล์ ZIP ที่แตกเนื้อหาออกไปแล้วและลบทิ้งทันที",
+          },
+          {
+            name: "ตรวจหาและลบไฟล์ที่ดาวน์โหลดซ้ำ",
+            text: "ใช้ฟังก์ชันค้นหาไฟล์ซ้ำของ DiskMop เพื่อลบสำเนาไฟล์ที่มีข้อมูลตรงกันออกไป",
+          },
+          {
+            name: "ล้างข้อมูลในถังขยะให้หมดสิ้น",
+            text: "คลิกขวาที่ถังขยะแล้วเลือก Empty Recycle Bin หรือ Empty Trash เพื่อเรียกคืนพื้นที่ว่าง",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "ทำไมโฟลเดอร์ดาวน์โหลดจึงเต็มอย่างรวดเร็ว?",
+          content: [
+            "เว็บเบราว์เซอร์และแอปพลิเคชันอย่าง LINE หรือ Slack จะบันทึกไฟล์ทั้งหมดลงในโฟลเดอร์นี้โดยไม่มีการแยกประเภทอัตโนมัติ",
+            "ผู้ใช้มักจะดาวน์โหลดไฟล์เดิมซ้ำหลายครั้งเมื่อหาไฟล์ไม่เจอ ทำให้เกิดไฟล์สำเนาจำนวนมากที่กินพื้นที่โดยไม่รู้ตัว",
+          ],
+        },
+        {
+          title: "จัดหมวดหมู่เพื่อการล้างที่รวดเร็ว",
+          content: [
+            "แทนที่จะเปิดดูทีละไฟล์ ให้จัดกลุ่มตามนามสกุล: ตัวติดตั้ง ไฟล์บีบอัด มีเดีย และเอกสาร",
+            "ไฟล์ตัวติดตั้งโปรแกรมสามารถลบออกได้เกือบทั้งหมดทันทีโดยไม่ต้องกังวลเรื่องข้อมูลสูญหาย",
+          ],
+        },
+        {
+          title: "ตั้งค่าทำความสะอาดอัตโนมัติเพื่อป้องกันการสะสม",
+          content: [
+            "เปิดใช้งาน Storage Sense ใน Windows เพื่อให้ระบบลบไฟล์ในโฟลเดอร์ดาวน์โหลดที่เก่ากว่า 30 วันโดยอัตโนมัติ",
+            "DiskMop มีเครื่องมือตั้งเวลาทำความสะอาดตามกำหนดการ ช่วยให้โฟลเดอร์ของคุณสะอาดอยู่เสมอ",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "สามารถลบโฟลเดอร์ Downloads ทิ้งไปเลยได้หรือไม่?",
+          answer:
+            "ไม่ได้เด็ดขาด ห้ามลบโฟลเดอร์ระบบ 'Downloads' ให้เลือกลบเฉพาะไฟล์และโฟลเดอร์ย่อยที่อยู่ข้างในเท่านั้น",
+        },
+        {
+          question: "ทำไมลบไฟล์แล้วพื้นที่ว่างยังไม่เพิ่มขึ้น?",
+          answer:
+            "เพราะไฟล์ยังคงค้างอยู่ในถังขยะ คุณต้องกดล้างถังขยะให้หมดจึงจะได้พื้นที่ว่างกลับคืนมา",
+        },
+        {
+          question: "จะป้องกันไม่ให้เผลอลบเอกสารสำคัญได้อย่างไร?",
+          answer:
+            "ควรย้ายเอกสารการทำงานที่สำคัญไปยังโฟลเดอร์ Documents ก่อนเริ่มล้างไฟล์ตัวติดตั้งใน Downloads",
+        },
+      ],
+      verdict: [
+        "โฟลเดอร์ดาวน์โหลดเป็นจุดแรกที่คุณควรตรวจสอบเมื่อพื้นที่ดิสก์เริ่มเหลือน้อย การคัดแยกและลบไฟล์ขยะช่วยเพิ่มพื้นที่ได้หลายสิบกิกะไบต์อย่างง่ายดาย",
+        "DiskMop มอบเครื่องมือล้างโฟลเดอร์ดาวน์โหลดโดยเฉพาะพร้อมการค้นหาไฟล์ซ้ำด้วยสิทธิ์การใช้งานตลอดชีพ",
+      ],
+      ctaText: "จัดระเบียบโฟลเดอร์ดาวน์โหลดด้วย DiskMop ทันที",
+    },
+    vi: {
+      title: "Cách dọn dẹp thư mục Downloads trên Windows và Mac",
+      metaDescription:
+        "Hướng dẫn dọn dẹp thư mục Downloads: phân loại theo kích thước và ngày tháng, xóa các bộ cài đặt cũ và tệp trùng lặp để lấy lại dung lượng đĩa nhanh chóng.",
+      subtitle:
+        "Phân loại, xóa bỏ và ngăn ngừa tích tụ: từng bước làm sạch thư mục tải về",
+      intro: [
+        "Để dọn dẹp thư mục Downloads một cách hiệu quả, hãy mở thư mục trong File Explorer hoặc Finder, sắp xếp các tệp theo kích thước và ngày tháng, xóa các tệp cài đặt không còn dùng đến và giải phóng Thùng rác để lấy lại dung lượng thực tế.",
+        "Vì hầu hết các tệp trong Downloads chỉ là bản sao thứ hai được tải về từ internet hoặc email, đây là một trong những thư mục an toàn nhất để bạn làm sạch máy tính của mình.",
+      ],
+      keyTakeaways: [
+        "Dọn dẹp thư mục Downloads an toàn 100% vì đây là các bản sao dữ liệu tải về từ bên ngoài.",
+        "Các bộ cài đặt (.exe, .dmg) và tệp nén ZIP đã giải nén không còn cần thiết sau khi ứng dụng đã cài đặt xong.",
+        "Việc tải về nhiều lần tạo ra các bản sao có đuôi '(1)' dễ dàng được nhận diện bằng thuật toán SHA-256.",
+        "Bắt buộc phải dọn sạch Thùng rác (Recycle Bin / Trash) để hệ điều hành chuyển đổi tệp đã xóa thành dung lượng trống.",
+        "Công cụ Downloads Cleaner trong DiskMop tự động phân loại tệp thành nhóm cài đặt, tài liệu và media để dọn nhanh.",
+      ],
+      dataTable: {
+        caption:
+          "Các loại tệp thường gặp trong thư mục Downloads và mức độ an toàn khi xóa",
+        columns: [
+          "Loại tệp",
+          "Phần mở rộng phổ biến",
+          "Dung lượng thông thường",
+          "Độ an toàn khi xóa",
+        ],
+        rows: [
+          [
+            "Bộ cài đặt phần mềm",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "Rất an toàn sau khi đã cài đặt",
+          ],
+          [
+            "Tệp nén lưu trữ",
+            ".zip, .rar, .7z",
+            "5 – 25 GB",
+            "An toàn sau khi đã giải nén xong",
+          ],
+          [
+            "Tệp tải về trùng lặp",
+            "tên (1).pdf, video (2).mp4",
+            "5 – 15 GB",
+            "Rất an toàn (xóa các bản sao)",
+          ],
+          [
+            "Tài liệu văn phòng",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "Nên kiểm tra kỹ trước khi xóa",
+          ],
+          [
+            "Tệp video và phương tiện",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "An toàn sau khi đã xem hoặc chuyển chỗ",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Các bước sắp xếp và dọn dẹp thư mục Downloads",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Sắp xếp theo kích thước và thời gian",
+            text: "Xếp thứ tự tệp giảm dần theo dung lượng để nhanh chóng tìm thấy các bộ cài đặt khổng lồ bị quên lãng.",
+          },
+          {
+            name: "Xóa các tệp cài đặt không còn dùng",
+            text: "Chọn các tệp .exe, .dmg và các tệp nén ZIP đã bung nội dung để xóa bỏ.",
+          },
+          {
+            name: "Phát hiện và xóa các tệp trùng lặp",
+            text: "Khởi chạy tính năng quét tệp trùng trong DiskMop để loại bỏ các bản sao thừa thãi.",
+          },
+          {
+            name: "Dọn sạch Thùng rác hoàn toàn",
+            text: "Nhấp chuột phải vào Thùng rác và chọn Empty Trash để giải phóng không gian lưu trữ thực tế.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Tại sao thư mục Downloads lại phình to nhanh chóng?",
+          content: [
+            "Trình duyệt web và các phần mềm nhắn tin như Zalo hay Telegram mặc định lưu mọi tài liệu gửi đến vào thư mục này mà không có sự chọn lọc.",
+            "Nhiều người dùng có thói quen tải lại một tệp nhiều lần khi không tìm thấy tệp cũ, dẫn đến hàng loạt bản sao chiếm dụng dung lượng.",
+          ],
+        },
+        {
+          title: "Phân loại thông minh trước khi dọn dẹp",
+          content: [
+            "Thay vì xem xét từng tệp đơn lẻ, hãy nhóm chúng theo đuôi mở rộng: bộ cài đặt, tệp nén, media và tài liệu văn phòng.",
+            "Các tệp cài đặt chương trình và tệp nén có thể xóa hàng loạt mà không sợ làm mất dữ liệu quan trọng.",
+          ],
+        },
+        {
+          title: "Tự động hóa dọn dẹp định kỳ",
+          content: [
+            "Bạn có thể bật tính năng Storage Sense trên Windows để tự động dọn sạch các tệp trong Downloads quá 30 ngày.",
+            "DiskMop cung cấp lịch quét định kỳ giúp thư mục Downloads của bạn luôn ngăn nắp và sạch sẽ.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Có được xóa cả thư mục Downloads không?",
+          answer:
+            "Không, đừng xóa thư mục hệ thống 'Downloads', chỉ nên xóa các tệp và thư mục con nằm bên trong nó.",
+        },
+        {
+          question: "Tại sao sau khi xóa tệp dung lượng trống vẫn chưa tăng?",
+          answer:
+            "Do các tệp mới chỉ chuyển vào Thùng rác. Bạn cần dọn sạch Thùng rác thì dung lượng ổ đĩa mới được giải phóng.",
+        },
+        {
+          question: "Làm sao để không xóa nhầm tài liệu quan trọng?",
+          answer:
+            "Hãy chuyển các tài liệu công việc cần thiết sang thư mục Documents trước khi tiến hành xóa hàng loạt trong Downloads.",
+        },
+      ],
+      verdict: [
+        "Thư mục Downloads là nơi thuận tiện nhất để thu hồi nhanh chóng hàng chục gigabyte bộ nhớ mà không ảnh hưởng đến hệ thống máy tính.",
+        "DiskMop hỗ trợ công cụ Downloads Cleaner chuyên nghiệp và quét trùng lặp SHA-256 với giấy phép trọn đời tiện lợi.",
+      ],
+      ctaText: "Dọn dẹp thư mục Downloads ngay cùng DiskMop",
+    },
+    "zh-Hans": {
+      title: "如何彻底清理下载文件夹：Win和Mac实用指南",
+      metaDescription:
+        "彻底清理下载文件夹（Downloads）全攻略：按大小和日期排序，一键清除陈旧安装包、解压残留与重复下载，迅速释放数十G宝贵硬盘空间。",
+      subtitle: "分类、清理并防止二次堆积：下载文件夹深度整理实战指南",
+      intro: [
+        "要高效彻底地清理'下载'（Downloads）文件夹，请在文件资源管理器或访达中打开该目录，按文件体积和修改日期排序，删除早已失效的软件安装包和已解压的压缩文件，最后清空回收站即可完成实质性的空间回收。",
+        "由于下载文件夹中的绝大多数文件都是来自网络或邮件附件的二次副本，因此这里是整台电脑中最安全、最容易找回大量可用空间的区域。",
+      ],
+      keyTakeaways: [
+        "清理下载文件夹的内容安全度达100%，因为这些文件均是从外部下载的临时或次要副本。",
+        "软件安装包（.exe, .msi, .dmg）和已解压的ZIP压缩包在安装完毕后便失去了保留价值，只会白白占用空间。",
+        "反复下载相同文件会产生带有'(1)'后缀的重复副本，可通过 SHA-256 哈希算法精准识别并剔除。",
+        "删除文件后必须手动清空回收站（Recycle Bin 或 废纸篓），所释放的空间才会真正计入硬盘可用容量。",
+        "DiskMop 下载清理工具能将文件自动归类为安装包、压缩包、媒体与文档，实现批量一键瘦身。",
+      ],
+      dataTable: {
+        caption: "下载文件夹常见文件类型及安全清理指南",
+        columns: ["文件类型", "常见扩展名", "常见占用大小", "删除安全级别"],
+        rows: [
+          [
+            "软件安装包",
+            ".exe, .msi, .dmg, .pkg",
+            "10 – 40 GB",
+            "安装完毕后极其安全",
+          ],
+          [
+            "压缩文件",
+            ".zip, .rar, .7z, .tar.gz",
+            "5 – 25 GB",
+            "解压确认内容后安全",
+          ],
+          [
+            "重复下载副本",
+            "文件名 (1).pdf, 视频 (2).mp4",
+            "5 – 15 GB",
+            "极其安全（仅保留原件）",
+          ],
+          [
+            "办公文档与表格",
+            ".pdf, .docx, .xlsx",
+            "2 – 10 GB",
+            "删除前建议快速过目",
+          ],
+          [
+            "音视频媒体文件",
+            ".mp4, .mov, .mkv",
+            "10 – 50 GB",
+            "观看完毕或移走后安全",
+          ],
+        ],
+      },
+      howTo: {
+        name: "整理与深度清理下载文件夹的步骤",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "按体积大小降序排序",
+            text: "将文件夹内的项目按从大到小排列，优先挑出几个G大小的陈旧大型安装包和视频文件。",
+          },
+          {
+            name: "一键清除废弃的安装包与压缩包",
+            text: "批量选中所有 .exe、.dmg 和已解压完成的 ZIP 压缩文件并直接删除。",
+          },
+          {
+            name: "利用 DiskMop 查找并删除重复下载",
+            text: "运行 DiskMop 重复文件查找器，一键过滤掉因多次点击下载而生成的冗余副本。",
+          },
+          {
+            name: "彻底清空回收站或废纸篓",
+            text: "右键点击回收站图标并选择清空，让被占用的磁盘物理扇区真正变为空闲可用。",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "为什么下载文件夹总是会沦为数字垃圾场？",
+          content: [
+            "现代网页浏览器和各类即时通讯工具默认把所有接收的文件统统塞进这一个文件夹，缺乏自动分类和过期清理机制。",
+            "许多用户在临时找不到某个文件时，往往会选择随手再次下载，日积月累形成了大量带编号的完全一致的文件副本。",
+          ],
+        },
+        {
+          title: "按类型批量规整的高效清理法",
+          content: [
+            "逐个双击查看文件效率极低。最聪明的做法是按文件类型归类：安装程序、压缩档案、影音媒体和文档文稿。",
+            "安装包与压缩档案通常占用了 80% 以上的体积，这两类几乎可以直接全选删除而无需担心数据丢失。",
+          ],
+        },
+        {
+          title: "设置自动化规则以杜绝二次堆积",
+          content: [
+            "Windows 11 用户可以在'存储感知'中开启自动清理下载文件夹中超过 30 天未打开文件的功能。",
+            "Mac 用户也可以借助 DiskMop 的周期性智能维护功能，每周自动扫描并提示清理多余的大文件。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "可以直接删除整个 Downloads 文件夹吗？",
+          answer:
+            "绝对不要删除系统预设的'下载'文件夹本身，只能删除其内部存放的文件及子文件夹。",
+        },
+        {
+          question: "为什么我删除了好几个大文件，C盘空间没有增加？",
+          answer:
+            "因为文件只是被移动到了回收站（或废纸篓）。必须执行清空回收站操作，空间才会真正释放出来。",
+        },
+        {
+          question: "如何避免误删重要的工作文件？",
+          answer:
+            "在大扫除之前，先把近期的重要工作文档移动到'文稿'（Documents）目录，再集中清理下载目录中的安装包。",
+        },
+      ],
+      verdict: [
+        "下载文件夹是每台电脑上最具性价比的清理切入点。只要掌握分类剔除与排查重复项的规律，几分钟内就能腾出数十G空间。",
+        "DiskMop 提供了专业的下载清理与基于 SHA-256 的精准查重能力，一次买断终身享用，让你的电脑持久轻快。",
+      ],
+      ctaText: "立即使用 DiskMop 整理下载文件夹",
+    },
   },
 };

@@ -1322,5 +1322,1256 @@ export const cDriveFullForNoReason: Article = {
       ],
       ctaText: "Disk MopでCドライブの空き容量を増やしましょう",
     },
+    ar: {
+      title: "امتلاء قرص C بدون سبب؟ 8 حلول فعالة في ويندوز",
+      metaDescription:
+        "هل يمتلئ قرص C تلقائياً؟ اكتشف الملفات المخفية مثل hiberfil.sys ونقاط الاستعادة وذاكرة AppData المؤقتة واستعد مساحتك خطوة بخطوة الآن.",
+      subtitle:
+        "دليل تشخيص وتنظيف الملفات المخفية التي تستهلك قرص النظام بأمان",
+      intro: [
+        "إذا كان محرك الأقراص C يبدو ممتلئاً بدون سبب واضح، فإن المساحة تكون مشغولة تقريباً بملفات يخفيها ويندوز عنك: ملف الإسبات hiberfil.sys، وملف ترحيل الصفحات pagefile.sys، ونقاط استعادة النظام، وملفات التخزين المؤقت في AppData. لا يعرض مستكشف الملفات هذه الملفات المحمية افتراضياً، لذلك يكون إجمالي حجم المجلدات المرئية أقل بكثير من المساحة المستخدمة الفعلية.",
+        "الحل هو التشخيص أولاً: معرفة ما يشغل القرص بدقة قبل البدء في الحذف العشوائي. في هذا الدليل، ستجد 8 حلول عملية تبدأ بإظهار الملفات المخفية، وتحليل المساحة بصرياً، وتعطيل الإسبات غير الضروري، وإدارة الذاكرة الافتراضية ونقاط الاستعادة، وصولاً إلى أتمتة الصيانة الدورية.",
+      ],
+      keyTakeaways: [
+        "لا يمتلئ قرص C دون سبب؛ الجناة عادة هم hiberfil.sys وpagefile.sys ونقاط الاستعادة وذاكرة AppData المؤقتة.",
+        "تعطيل الإسبات عبر أمر 'powercfg /h off' يستعيد فوراً مساحة بحجم ذاكرة RAM (بين 8 إلى 32 جيجابايت).",
+        "لا تحذف ملف pagefile.sys نهائياً لأنه ضروري لاستقرار النظام؛ اضبطه على خيار الإدارة التلقائية من ويندوز.",
+        "نقاط استعادة النظام القديمة يمكن أن تستهلك عشرات الجيجابايت؛ تنظيف النسخ السابقة يحرر مساحة ضخمة بضغطة زر.",
+        "يقوم DiskMop بتحليل القرص عبر خريطة شجرية بصرية لكشف المجلدات المتضخمة المخفية خلال ثوانٍ معدودة.",
+      ],
+      dataTable: {
+        caption: "أبرز مستهلكي المساحة المخفيين في قرص C وطرق معالجتهم بأمان",
+        columns: [
+          "العنصر المخفي",
+          "الحجم التقديري",
+          "مستوى الأمان",
+          "طريقة التنظيف",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (الإسبات)",
+            "8 - 32 جيجابايت",
+            "آمن (إذا لم يُستخدم)",
+            "تشغيل 'powercfg /h off' في موجه الأوامر",
+          ],
+          [
+            "نقاط استعادة النظام",
+            "5 - 25 جيجابايت",
+            "آمن (باستثناء أحدث نقطة)",
+            "تنظيف القرص > تنظيف ملفات النظام > خيارات إضافية",
+          ],
+          [
+            "مؤقتات AppData وTemp",
+            "5 - 30 جيجابايت",
+            "آمن تماماً",
+            "تفريغ %temp% واستخدام منظف الذاكرة المؤقتة في DiskMop",
+          ],
+          [
+            "مخلفات Windows Update",
+            "2 - 10 جيجابايت",
+            "آمن تماماً",
+            "الإعدادات > النظام > التخزين > الملفات المؤقتة",
+          ],
+          [
+            "pagefile.sys (الذاكرة الظاهرية)",
+            "4 - 16 جيجابايت",
+            "يجب إدارته لا حذفه",
+            "ضبط الحجم ليكون مداراً تلقائياً من قبل النظام",
+          ],
+        ],
+      },
+      howTo: {
+        name: "خطوات تحرير المساحة في قرص C الممتلئ",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "إظهار الملفات المخفية وملفات النظام",
+            text: "افتح مستكشف الملفات وانتقل إلى خيارات العرض، ثم فعّل إظهار العناصر المخفية وتراجع عن إخفاء ملفات نظام التشغيل المحمية.",
+          },
+          {
+            name: "تعطيل الإسبات لاستعادة مساحة فورية",
+            text: "افتح موجه الأوامر كمسؤول واكتب 'powercfg /h off' واضغط Enter لحذف hiberfil.sys واستعادة عدة جيجابايت فوراً.",
+          },
+          {
+            name: "تنظيف نقاط استعادة النظام القديمة",
+            text: "افتح أداة تنظيف القرص (Disk Cleanup)، واضغط على تنظيف ملفات النظام، ثم من علامة تبويب خيارات إضافية احذف نقاط الاستعادة السابقة.",
+          },
+          {
+            name: "تفريغ الملفات المؤقتة وبيانات AppData",
+            text: "استخدم أداة DiskMop لفحص ذاكرة التخزين المؤقت وحذف المخلفات الرقمية ومجلدات التنزيلات الزائدة بأمان.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "كشف الملفات المخفية ومجلدات النظام المحمية",
+          content: [
+            "السبب الرئيسي لغموض امتلاء قرص C هو أن أدوات العرض العادية تخفي ملفات النظام الحيوية لحمايتها من الحذف غير المقصود. عند فحص القرص في مستكشف الملفات، قد تظن أن البرامج والمجلدات المرئية تشغل 100 جيجابايت فقط بينما يظهر القرص أنه مستهلك بالكامل بمساحة 250 جيجابايت.",
+            "لإظهار الحقيقة، توجّه إلى خيارات المجلد في مستكشف الملفات وقم بإلغاء تحديد خيار إخفاء ملفات نظام التشغيل المحمية. ستظهر ملفات في جذر محرك الأقراص C مثل hiberfil.sys وpagefile.sys، بالإضافة إلى مجلد System Volume Information الذي يحتوي على نقاط الاستعادة.",
+          ],
+        },
+        {
+          title: "التخلص من ملف الإسبات hiberfil.sys",
+          content: [
+            "يحفظ ملف hiberfil.sys حالة الذاكرة النشطة على القرص الصلب عند الدخول في وضع الإسبات أو بدء التشغيل السريع. إذا كان جهازك يحتوي على 16 أو 32 جيجابايت من الذاكرة العشوائية RAM، فإن هذا الملف يستقطع حجماً مساوياً له تقريباً من القرص C طوال الوقت.",
+            "إذا كنت لا تستخدم وضع الإسبات وتفضل إيقاف التشغيل الكامل، يمكنك إيقافه بلمح البصر: افتح موجه الأوامر (CMD) بصلاحيات المسؤول واكتب الأمر 'powercfg /h off'. سيختفي الملف فوراً وتعود المساحة إلى قرصك دون الحاجة لإعادة التشغيل.",
+          ],
+        },
+        {
+          title: "تنظيف التخزين المؤقت وتراكمات AppData",
+          content: [
+            "يعد مجلد AppData المنزلق الأكبر لاستهلاك المساحة بمرور الوقت؛ فكل برنامج أو متصفح أو منصة ألعاب مثل Steam وChrome وDiscord تخزن غيغابايتات من البيانات المؤقتة التي لا تحذف تلقائياً. كما تترك تحديثات ويندوز القديمة حزم تثبيت مهملة في مجلد SoftwareDistribution.",
+            "يوفر DiskMop وحدة فحص متخصصة لقراءة وتحليل AppData والملفات المؤقتة، مما يمكنك من مسح البيانات الزائدة بضغطة زر واحدة دون لمس إعدادات البرامج أو ملفاتك الشخصية.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "هل حذف ملف hiberfil.sys آمن لنظام ويندوز؟",
+          answer:
+            "نعم، حذف hiberfil.sys آمن تماماً طالما أنك لا تعتمد على وضع الإسبات (Hibernate). تنفيذ أمر 'powercfg /h off' يغلق الميزة ويحذف الملف رسمياً دون أي مشاكل بالنظام.",
+        },
+        {
+          question: "كم يجب أن أترك من مساحة فارغة في قرص C؟",
+          answer:
+            "يُوصى دائماً بترك ما بين 15% إلى 20% مساحة فارغة (على الأقل 25-30 جيجابايت) لضمان عمل تحديثات النظام وتجنب تدهور أداء أقراص SSD.",
+        },
+        {
+          question: "لماذا لا تظهر بعض الملفات الضخمة في مستكشف الملفات؟",
+          answer:
+            "يقوم ويندوز بإخفاء ملفات النظام الحساسة وملفات الذاكرة الافتراضية لمنع العبث بها، ولا يمكن قياس حجمها بدقة إلا عبر أدوات التحليل الشجري مثل DiskMop.",
+        },
+      ],
+      verdict: [
+        "امتلاء قرص C دون سبب ظاهر ليس لغزاً لا يمكن حله؛ إنه نتيجة طبيعية لتراكم مخلفات النظام والملفات المحمية بمرور الوقت. باتباع خطوات الفحص والتعطيل المدروس، يمكنك استعادة عشرات الجيجابايت في دقائق معدودة.",
+        "يوفر DiskMop حلاً متكاملاً يجمع بين تحليل المساحة البصري وتنظيف الملفات المؤقتة والمكررة بكفاءة عالية ورخصة مدى الحياة.",
+      ],
+      ctaText: "نظّف قرص C واستعد مساحتك باستخدام DiskMop",
+    },
+    he: {
+      title: "כונן C מלא ללא סיבה? 8 פתרונות לווינדוס 10/11",
+      metaDescription:
+        "כונן C מלא ללא סיבה נראית לעין? גלו כיצד קבצים מוסתרים כמו hiberfil.sys, נקודות שחזור ומטמון AppData גוזלים מקום, ופנו שטח שלב אחר שלב.",
+      subtitle:
+        "מדריך לאבחון ופינוי קבצים מוסתרים התופסים מקום בכונן המערכת בבטחה",
+      intro: [
+        "כאשר כונן C מציג שהוא מלא ללא סיבה ברורה, השטח תפוס כמעט תמיד על ידי קבצים שווינדוס מסתיר כברירת מחדל: קובץ מצב השינה hiberfil.sys, זיכרון וירטואלי pagefile.sys, נקודות שחזור ומטמון אפליקציות ב-AppData.",
+        "במדריך זה תלמדו כיצד לאבחן את השימוש האמיתי בדיסק, להציג קבצים מוגנים, לצמצם או לבטל קבצי מערכת תפוחים ולפנות עשרות גיגה-בייט במהירות ובבטחה.",
+      ],
+      keyTakeaways: [
+        "כונן C לא מתמלא מעצמו; האשמים העיקריים הם hiberfil.sys, נקודות שחזור ומטמון בתיקיית AppData.",
+        "כיבוי מצב שינה באמצעות 'powercfg /h off' מחזיר מיד שטח בגודל זיכרון ה-RAM (בין 8 ל-32GB).",
+        "אין למחוק את pagefile.sys לחלוטין; מומלץ להשאירו במצב ניהול אוטומטי של המערכת.",
+        "מחיקת נקודות שחזור מערכת ישנות מפנה שטח אחסון ניכר בפעולה אחת.",
+        "DiskMop ממפה את השימוש בכונן בתרשים עץ ויזואלי ומזהה תיקיות ענק תוך שניות.",
+      ],
+      dataTable: {
+        caption: "צרכני שטח מוסתרים בכונן C ופתרונות בטוחים לטיפול בהם",
+        columns: ["רכיב מוסתר", "גודל טיפוסי", "רמת בטיחות", "כיצד לפנות?"],
+        rows: [
+          [
+            "hiberfil.sys (מצב שינה)",
+            "8GB - 32GB",
+            "בטוח (אם לא בשימוש)",
+            "הרצת 'powercfg /h off' בשורת הפקודה",
+          ],
+          [
+            "נקודות שחזור מערכת",
+            "5GB - 25GB",
+            "בטוח (למעט נקודה אחרונה)",
+            "ניקוי דיסק > נקה קבצי מערכת > אפשרויות נוספות",
+          ],
+          [
+            "מטמון AppData וקבצי Temp",
+            "5GB - 30GB",
+            "בטוח לחלוטין",
+            "ריקון %temp% וסריקת מטמון באמצעות DiskMop",
+          ],
+          [
+            "שאריות Windows Update",
+            "2GB - 10GB",
+            "בטוח לחלוטין",
+            "הגדרות > מערכת > אחסון > קבצים זמניים",
+          ],
+          [
+            "pagefile.sys (זיכרון וירטואלי)",
+            "4GB - 16GB",
+            "לנהל ולא למחוק",
+            "הגדרה כ'מנוהל על ידי המערכת'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "צעדים לפינוי מהיר של כונן C מלא",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "הצגת קבצים מוסתרים",
+            text: "בסייר הקבצים עברו לתצוגה וסמנו פריטים מוסתרים וביטול הסתרת קבצי מערכת הפעלה מוגנים.",
+          },
+          {
+            name: "ביטול מצב שינה במידת הצורך",
+            text: "פתחו שורת פקודה כמנהל והריצו 'powercfg /h off' למחיקה מידית של hiberfil.sys.",
+          },
+          {
+            name: "ניקוי נקודות שחזור ישנות",
+            text: "הפעילו ניקוי דיסק כמנהל, ובחרו באפשרויות נוספות כדי למחוק נקודות שחזור ישנות.",
+          },
+          {
+            name: "פינוי מטמון ושאריות עם DiskMop",
+            text: "השתמשו ב-DiskMop כדי לסרוק ולמחוק קבצי מטמון והורדות מיותרות בצורה מאובטחת.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "חשיפת קבצי מערכת מוגנים",
+          content: [
+            "הסיבה לכך שסך גודל התיקיות בסייר הקבצים אינו תואם לשטח התפוס היא שווינדוס מגנה על קבצי ליבה ומסתירה אותם מעיני המשתמש.",
+            "הגדרת הצגת קבצי מערכת תאפשר לכם לראות את גודלם האמיתי של hiberfil.sys ו-pagefile.sys בשורש הכונן.",
+          ],
+        },
+        {
+          title: "השבתת קובץ ההשבתה hiberfil.sys",
+          content: [
+            "עבור משתמשי מחשב נייח או נייד שאינם משתמשים במצב שינה עמוק, קובץ זה תופס שטח מיותר השווה לגודל ה-RAM.",
+            "הרצת פקודה קצרה כמנהל מבטלת את הקובץ ומשחררת מיד גיגה-בייטים רבים.",
+          ],
+        },
+        {
+          title: "ניקוי תיקיות AppData וקבצים זמניים",
+          content: [
+            "תוכנות כמו דפדפנים ומשחקים אוגרות מידע זמני רב בתיקיית AppData שאינו נמחק מעצמו.",
+            "סריקה עם כלי ייעודי כמו DiskMop מנקה את הנתונים העודפים ללא סיכון להגדרות התוכנה.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "האם מחיקת hiberfil.sys בטוחה?",
+          answer:
+            "כן, מחיקת הקובץ באמצעות הפקודה הרשמית בטוחה לחלוטין אם אינכם משתמשים במצב שינה.",
+        },
+        {
+          question: "כמה מקום פנוי חובה להשאיר בכונן C?",
+          answer:
+            "מומלץ להשאיר לפחות 15%-20% (כ-25 עד 30 גיגה-בייט) לשמירה על ביצועי SSD ותקינות עדכונים.",
+        },
+        {
+          question: "האם כדאי לבטל את pagefile.sys?",
+          answer:
+            "לא, ביטולו עלול לגרום לקריסות של אפליקציות הדורשות זיכרון נוסף.",
+        },
+      ],
+      verdict: [
+        "כונן C מלא אינו תעלומה בלתי פתירה, אלא תוצאה של הצטברות קבצים נסתרים. נקיטת פעולות פשוטות מחזירה את השטח במהירות.",
+        "DiskMop מציעה פתרון קל ומקיף לאיתור וניקוי קבצים מוסתרים ברישיון לכל החיים.",
+      ],
+      ctaText: "פנו שטח בכונן C עכשיו עם DiskMop",
+    },
+    id: {
+      title: "Drive C Penuh Tanpa Sebab? 8 Solusi di Windows 10/11",
+      metaDescription:
+        "Drive C penuh tanpa sebab yang jelas? Temukan file tersembunyi seperti hiberfil.sys, titik pemulihan, dan cache AppData, lalu kosongkan ruang langkah demi langkah.",
+      subtitle:
+        "Panduan mendiagnosis dan membersihkan file tersembunyi yang menyedot disk sistem secara aman",
+      intro: [
+        "Jika drive C Anda tampak penuh tanpa sebab yang jelas, ruang disk tersebut hampir selalu diisi oleh file-file yang disembunyikan Windows: file hibernasi hiberfil.sys, pagefile.sys, titik pemulihan sistem (System Restore points), dan gigabyte cache aplikasi di AppData.",
+        "File Explorer tidak menampilkan file sistem yang dilindungi ini secara default. Melalui panduan ini, Anda akan mempelajari 8 solusi praktis untuk memetakan kapasitas disk secara visual, mengurangi file sistem yang membengkak, dan memulihkan ruang penyimpanan berharga Anda.",
+      ],
+      keyTakeaways: [
+        "Drive C tidak pernah penuh tanpa alasan; pelakunya sering kali hiberfil.sys, pagefile.sys, titik pemulihan, dan cache AppData.",
+        "Menonaktifkan hibernasi dengan perintah 'powercfg /h off' langsung membebaskan ruang sebesar kapasitas RAM (8–32 GB).",
+        "Jangan hapus pagefile.sys; cukup atur ukurannya agar dikelola secara otomatis oleh Windows untuk stabilitas sistem.",
+        "Menghapus titik System Restore lama bisa mengembalikan ruang puluhan gigabyte dalam hitungan detik.",
+        "Analisis disk visual di DiskMop menampilkan folder tersembunyi berukuran raksasa secara instan melalui peta treemap.",
+      ],
+      dataTable: {
+        caption:
+          "Konsumen ruang tersembunyi utama di drive C dan metode pembersihan amannya",
+        columns: [
+          "Elemen Tersembunyi",
+          "Ukuran Tipikal",
+          "Tingkat Keamanan",
+          "Cara Membersihkan",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Hibernasi)",
+            "8 GB – 32 GB",
+            "Aman (Bila tidak dipakai)",
+            "Jalankan 'powercfg /h off' di Command Prompt Administrator",
+          ],
+          [
+            "System Restore Points",
+            "5 GB – 25 GB",
+            "Aman (Kecuali titik terbaru)",
+            "Disk Cleanup > Clean up system files > More Options",
+          ],
+          [
+            "Cache AppData & Temp",
+            "5 GB – 30 GB",
+            "Sangat Aman",
+            "Kosongkan %temp% dan gunakan Cache Cleaner di DiskMop",
+          ],
+          [
+            "Sisa Windows Update",
+            "2 GB – 10 GB",
+            "Sangat Aman",
+            "Settings > System > Storage > Temporary files",
+          ],
+          [
+            "pagefile.sys (Virtual Memory)",
+            "4 GB – 16 GB",
+            "Perlu Dikelola, Bukan Dihapus",
+            "Atur ukuran ke 'Automatically manage paging file size'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Langkah Cepat Mengosongkan Drive C yang Penuh",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Tampilkan file tersembunyi dan file sistem",
+            text: "Buka File Explorer > View > centang Hidden items dan buka Folder Options untuk melihat file sistem yang dilindungi.",
+          },
+          {
+            name: "Matikan fitur hibernasi jika tidak dibutuhkan",
+            text: "Buka Command Prompt sebagai Administrator, ketik 'powercfg /h off', lalu tekan Enter untuk menghapus file hiberfil.sys seketika.",
+          },
+          {
+            name: "Bersihkan titik pemulihan sistem yang usang",
+            text: "Jalankan Disk Cleanup sebagai admin, klik Clean up system files, lalu pada tab More Options hapus salinan bayangan lama.",
+          },
+          {
+            name: "Hapus cache dan file sisa dengan DiskMop",
+            text: "Jalankan pemindaian DiskMop untuk membersihkan cache AppData dan file unduhan duplikat secara aman.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Mengungkap File Tersembunyi dan File Sistem yang Dilindungi",
+          content: [
+            "Banyak pengguna bingung saat menjumlahkan ukuran folder di C: dan mendapati angkanya jauh di bawah kapasitas total yang terpakai. Windows sengaja mengunci dan menyembunyikan file sistem tertentu agar tidak terhapus secara tidak sengaja.",
+            "Dengan mengaktifkan opsi penampilan file tersembunyi di Folder Options, Anda dapat melihat secara jelas berkas hiberfil.sys dan folder sistem lainnya di direktori utama drive C:.",
+          ],
+        },
+        {
+          title: "Menonaktifkan File Hibernasi hiberfil.sys",
+          content: [
+            "File hiberfil.sys menyimpan data RAM saat komputer beralih ke mode hibernate atau fast startup. Pada komputer dengan RAM 16 GB atau 32 GB, file ini akan memakan ruang penyimpanan dalam jumlah yang sama secara permanen.",
+            "Jika Anda jarang menggunakan hibernate, cukup jalankan 'powercfg /h off' di Command Prompt (Admin). Berkas ini akan terhapus seketika tanpa memerlukan reboot.",
+          ],
+        },
+        {
+          title: "Membersihkan Cache dan Sisa Pembaruan",
+          content: [
+            "Aplikasi modern dan browser terus menumpuk data cache di dalam folder AppData. Di samping itu, file instalasi pembaruan Windows lama sering kali tertinggal di folder SoftwareDistribution.",
+            "Menggunakan DiskMop membantu Anda menemukan dan menyapu bersih tumpukan sampah digital ini tanpa merusak konfigurasi atau dokumen penting.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Apakah aman menghapus hiberfil.sys?",
+          answer:
+            "Sangat aman asalkan Anda tidak memerlukan mode hibernate. Menonaktifkannya lewat perintah resmi 'powercfg /h off' tidak akan merusak sistem operasi.",
+        },
+        {
+          question: "Berapa sisa ruang minimal yang harus ada di drive C?",
+          answer:
+            "Disarankan untuk selalu menyisakan minimal 15% hingga 20% (sekitar 20–30 GB) agar Windows Update dan SSD dapat bekerja dengan optimal.",
+        },
+        {
+          question:
+            "Mengapa Folder Explorer tidak menampilkan semua penggunaan disk?",
+          answer:
+            "File Explorer menyembunyikan file virtual memory dan restore points demi keamanan. Gunakan software analisis disk visual seperti DiskMop untuk melihat semuanya.",
+        },
+      ],
+      verdict: [
+        "Drive C yang penuh tanpa sebab sebenarnya dipicu oleh berkas sistem tersembunyi yang terus membengkak. Dengan diagnosis yang cermat, Anda bisa membebaskan puluhan gigabyte dengan cepat.",
+        "DiskMop menyediakan perkakas lengkap mulai dari peta visual disk hingga pembersih cache dalam lisensi seumur hidup yang praktis.",
+      ],
+      ctaText: "Bersihkan Drive C Anda Sekarang dengan DiskMop",
+    },
+    ko: {
+      title: "C 드라이브 용량 부족 이유와 해결법: 윈도우 10/11 8가지 팁",
+      metaDescription:
+        "C 드라이브 용량이 이유 없이 꽉 찼나요? hiberfil.sys, 복원 지점, AppData 캐시 등 숨겨진 대용량 파일을 찾아 안전하게 용량을 확보하세요.",
+      subtitle:
+        "시스템 디스크를 차지하는 숨겨진 파일을 진단하고 안전하게 정리하는 가이드",
+      intro: [
+        "C 드라이브가 특별한 설치 없이도 가득 찬다면, Windows가 기본적으로 숨겨둔 시스템 파일 때문일 가능성이 큽니다. 대표적으로 최대 절전 모드 파일(hiberfil.sys), 가상 메모리(pagefile.sys), 시스템 복원 지점, 그리고 AppData에 쌓인 수십 기가바이트의 응용 프로그램 캐시가 있습니다.",
+        "파일 탐색기에서는 이 보호된 파일들이 보이지 않아 용량 합계가 맞지 않습니다. 이 가이드에서는 원인을 시각적으로 파악하고, 불필요한 시스템 파일을 축소하거나 제거하여 C 드라이브 여유 공간을 안전하게 되찾는 8가지 방법을 안내합니다.",
+      ],
+      keyTakeaways: [
+        "C 드라이브는 이유 없이 차지 않으며, 주범은 hiberfil.sys, pagefile.sys, 시스템 복원 지점 및 AppData 캐시입니다.",
+        "최대 절전 모드를 쓰지 않는다면 'powercfg /h off' 명령어로 설치된 RAM 용량(8~32GB)만큼 즉시 공간을 확보할 수 있습니다.",
+        "pagefile.sys는 시스템 안정성에 필수적이므로 삭제하지 말고 '시스템이 관리하는 크기'로 설정하세요.",
+        "이전 시스템 복원 지점을 정리하면 단 한 번의 클릭으로 수십 기가바이트를 회수할 수 있습니다.",
+        "DiskMop의 디스크 시각화 트리맵은 숨겨진 대용량 폴더를 단 몇 초 만에 식별해 냅니다.",
+      ],
+      dataTable: {
+        caption: "C 드라이브 숨은 용량 차지 요소와 안전한 해결 방법",
+        columns: ["숨은 항목", "일반적인 크기", "안전도", "정리 방법"],
+        rows: [
+          [
+            "hiberfil.sys (최대 절전 모드)",
+            "8GB – 32GB (RAM 비례)",
+            "안전 (미사용 시)",
+            "관리자 명령 프롬프트에서 'powercfg /h off' 실행",
+          ],
+          [
+            "시스템 복원 지점",
+            "5GB – 25GB",
+            "안전 (최신 지점 제외)",
+            "디스크 정리 > 시스템 파일 정리 > 기타 옵션",
+          ],
+          [
+            "AppData 및 임시 캐시",
+            "5GB – 30GB",
+            "매우 안전",
+            "%temp% 비우기 및 DiskMop 캐시 클리너 활용",
+          ],
+          [
+            "Windows Update 잔여 파일",
+            "2GB – 10GB",
+            "매우 안전",
+            "설정 > 시스템 > 저장소 > 임시 파일 정리",
+          ],
+          [
+            "pagefile.sys (가상 메모리)",
+            "4GB – 16GB",
+            "관리 필요 (삭제 금지)",
+            "페이징 파일 크기를 '시스템 관리'로 지정",
+          ],
+        ],
+      },
+      howTo: {
+        name: "가득 찬 C 드라이브 용량 빠르게 비우는 순서",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "숨김 파일 및 보호된 시스템 파일 표시",
+            text: "파일 탐색기 보기 메뉴에서 '숨긴 항목'에 체크하고, 폴더 옵션에서 보호된 운영 체제 파일 숨기기를 해제합니다.",
+          },
+          {
+            name: "불필요한 최대 절전 모드 해제",
+            text: "명령 프롬프트를 관리자 권한으로 실행한 뒤 'powercfg /h off'를 입력해 hiberfil.sys를 즉시 제거합니다.",
+          },
+          {
+            name: "오래된 복원 지점 및 섀도 복사본 정리",
+            text: "디스크 정리를 실행하여 시스템 파일 정리로 이동한 뒤, 기타 옵션 탭에서 이전 복원 지점을 삭제합니다.",
+          },
+          {
+            name: "DiskMop으로 앱 캐시 및 다운로드 폴더 청소",
+            text: "DiskMop을 구동하여 축적된 AppData 캐시와 불필요한 대용량 다운로드 파일을 일괄 정리합니다.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "숨겨진 시스템 파일과 실제 사용 공간 확인하기",
+          content: [
+            "보이는 폴더 용량을 모두 더해도 C 드라이브의 실제 사용량에 한참 못 미치는 이유는 Windows가 핵심 보호 파일을 감추어 두었기 때문입니다.",
+            "폴더 옵션에서 숨김 해제를 적용하면 루트 드라이브에 상주하는 hiberfil.sys와 System Volume Information 등의 실질적 점유 크기를 파악할 수 있습니다.",
+          ],
+        },
+        {
+          title: "hiberfil.sys(최대 절전 모드) 파일 제거하기",
+          content: [
+            "hiberfil.sys는 컴퓨터를 최대 절전 모드로 전환할 때 RAM 상태를 디스크에 저장합니다. RAM이 16GB나 32GB인 PC에서는 그만큼의 용량이 항시 묶여 있게 됩니다.",
+            "최대 절전 모드를 쓰지 않는다면 관리자 CMD에서 'powercfg /h off'를 실행하는 것만으로 재부팅 없이 즉시 수십 GB가 환원됩니다.",
+          ],
+        },
+        {
+          title: "AppData 캐시 및 업데이트 잔여물 청소",
+          content: [
+            "웹 브라우저와 게임 런처, 메신저 등은 AppData 폴더에 방대한 캐시 데이터를 남깁니다. Windows Update 역시 구버전 설치 파일을 백업해 두어 공간을 낭비합니다.",
+            "DiskMop을 사용하면 중요한 개인 설정은 보존하면서 잉여 캐시 데이터만 정확하게 골라내어 디스크를 청소할 수 있습니다.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "hiberfil.sys를 삭제해도 윈도우 동작에 문제가 없나요?",
+          answer:
+            "네, 최대 절전 모드를 사용하지 않는다면 전혀 문제되지 않습니다. 공식 명령어로 비활성화하면 안전하게 용량을 확보할 수 있습니다.",
+        },
+        {
+          question: "C 드라이브 여유 공간은 최소 얼마를 유지해야 하나요?",
+          answer:
+            "원활한 업데이트와 SSD 수명(웨어 레벨링) 유지를 위해 전체 용량의 15~20%(최소 20~30GB 이상)를 비워두는 것이 권장됩니다.",
+        },
+        {
+          question: "pagefile.sys를 완전히 삭제해도 되나요?",
+          answer:
+            "아니요, 물리 메모리가 부족하거나 시스템 오류 덤프를 생성할 때 충돌이 발생할 수 있으므로 삭제하지 않는 것이 안전합니다.",
+        },
+      ],
+      verdict: [
+        "이유 없이 찬 C 드라이브의 미스터리는 사실 숨겨진 시스템 파일들의 누적 때문입니다. 진단과 적절한 설정만으로 단 몇 분 만에 대용량 공간을 확보할 수 있습니다.",
+        "DiskMop은 시각적 디스크 분석과 캐시 정리를 한 번에 지원하는 평생 라이선스 유틸리티입니다.",
+      ],
+      ctaText: "DiskMop으로 C 드라이브 공간 지금 확보하기",
+    },
+    pl: {
+      title: "Dysk C zapełnia się sam? 8 rozwiązań dla Windows 10/11",
+      metaDescription:
+        "Dysk C zapełnia się bez powodu? Dowiedz się, jak ukryte pliki hiberfil.sys, punkty przywracania i pamięć podręczna AppData zabierają miejsce i jak je odzyskać.",
+      subtitle:
+        "Przewodnik po bezpiecznym diagnozowaniu i oczyszczaniu ukrytych plików pożerających dysk",
+      intro: [
+        "Jeśli Twój dysk C zapełnia się pozornie bez powodu, miejsce jest niemal zawsze pochłaniane przez pliki, które system Windows domyślnie ukrywa: plik hibernacji hiberfil.sys, plik stronicowania pagefile.sys, punkty przywracania systemu oraz gigabajty pamięci podręcznej w katalogu AppData.",
+        "W tym przewodniku przedstawiamy 8 sprawdzonych sposobów na zlokalizowanie ukrytych pożeraczy miejsca, bezpieczne zmniejszenie plików systemowych i odzyskanie cennej przestrzeni dyskowej.",
+      ],
+      keyTakeaways: [
+        "Dysk C nigdy nie zapełnia się bez przyczyny; winowajcami są najczęściej hiberfil.sys, punkty przywracania oraz cache AppData.",
+        "Wyłączenie hibernacji poleceniem 'powercfg /h off' natychmiast uwalnia tyle miejsca, ile wynosi pamięć RAM (od 8 do 32 GB).",
+        "Nie usuwaj pliku pagefile.sys – jest potrzebny do stabilności; pozostaw jego rozmiar pod kontrolą systemu Windows.",
+        "Usunięcie starych punktów przywracania systemu pozwala odzyskać dziesiątki gigabajtów jednym kliknięciem.",
+        "Analizator DiskMop za pomocą mapy drzewa (treemap) błyskawicznie lokalizuje olbrzymie ukryte foldery.",
+      ],
+      dataTable: {
+        caption:
+          "Główni ukryci pożeracze miejsca na dysku C i metody ich bezpiecznego usuwania",
+        columns: [
+          "Ukryty element",
+          "Typowy rozmiar",
+          "Poziom bezpieczeństwa",
+          "Jak wyczyścić?",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Hibernacja)",
+            "8 GB – 32 GB",
+            "Bezpieczne (gdy nieużywane)",
+            "Uruchom 'powercfg /h off' w Wierszu polecenia jako admin",
+          ],
+          [
+            "Punkty przywracania",
+            "5 GB – 25 GB",
+            "Bezpieczne (oprócz najnowszego)",
+            "Oczyszczanie dysku > Pliki systemowe > Więcej opcji",
+          ],
+          [
+            "Pamięć podręczna AppData",
+            "5 GB – 30 GB",
+            "Całkowicie bezpieczne",
+            "Opróżnij %temp% i użyj narzędzia Cache Cleaner w DiskMop",
+          ],
+          [
+            "Pozostałości Windows Update",
+            "2 GB – 10 GB",
+            "Całkowicie bezpieczne",
+            "Ustawienia > System > Pamięć > Pliki tymczasowe",
+          ],
+          [
+            "pagefile.sys (Pamięć wirtualna)",
+            "4 GB – 16 GB",
+            "Zarządzaj, nie usuwaj",
+            "Ustaw rozmiar na 'Zarządzany przez system'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Kroki szybkiego zwalniania miejsca na dysku C",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Włącz pokazywanie ukrytych plików",
+            text: "W Eksploratorze plików zaznacz opcję 'Ukryte elementy' i wyłącz ukrywanie chronionych plików systemu operacyjnego.",
+          },
+          {
+            name: "Wyłącz zbędny plik hibernacji",
+            text: "Uruchom Wiersz polecenia jako administrator i wpisz 'powercfg /h off', aby od razu usunąć hiberfil.sys.",
+          },
+          {
+            name: "Wyczyść stare punkty przywracania",
+            text: "Uruchom Oczyszczanie dysku z uprawnieniami administratora i usuń kopie w tle w zakładce Więcej opcji.",
+          },
+          {
+            name: "Oczyść pamięć podręczną z DiskMop",
+            text: "Przeskanuj system programem DiskMop, aby bezpiecznie usunąć zbędne pliki tymczasowe i duplikaty.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Odkrywanie niewidocznych plików systemowych",
+          content: [
+            "Gdy zaznaczysz wszystkie widoczne foldery na dysku C, ich łączny rozmiar jest często o dziesiątki gigabajtów mniejszy niż zajęte miejsce raportowane przez Windows. Wynika to z blokady widoczności plików systemowych.",
+            "Włączenie widoku chronionych plików pozwala zobaczyć olbrzymie pliki hiberfil.sys i zawartość ukrytych folderów systemowych.",
+          ],
+        },
+        {
+          title: "Wyłączanie pliku hiberfil.sys",
+          content: [
+            "Plik ten przechowuje stan pamięci RAM przy wchodzeniu w stan hibernacji. Na komputerach z 16 lub 32 GB RAM zajmuje on na stałe równorzędną ilość cennego miejsca na dysku SSD.",
+            "Jeśli nie korzystasz z hibernacji, polecenie 'powercfg /h off' trwale usuwa plik bez konieczności restartu komputera.",
+          ],
+        },
+        {
+          title: "Czyszczenie pamięci podręcznej i folderu AppData",
+          content: [
+            "Katalog AppData przechowuje gigabajty danych tymczasowych z przeglądarek, Discorda czy platform gier. Z kolei aktualizacje systemu gromadzą archiwa w folderze SoftwareDistribution.",
+            "DiskMop ułatwia selektywne usunięcie tych śmieci bez ryzyka uszkodzenia ważnych ustawień czy programów.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Czy wyłączenie pliku hiberfil.sys jest bezpieczne?",
+          answer:
+            "Tak, jeśli nie używasz trybu hibernacji, usunięcie pliku za pomocą oficjalnego polecenia jest w 100% bezpieczne dla systemu.",
+        },
+        {
+          question: "Ile wolnego miejsca powinno pozostać na dysku C?",
+          answer:
+            "Zaleca się utrzymywanie co najmniej 15–20% (minimum 25–30 GB) wolnej przestrzeni, aby Windows i dysk SSD mogły działać z optymalną prędkością.",
+        },
+        {
+          question: "Czy mogę skasować plik pagefile.sys?",
+          answer:
+            "Nie należy usuwać ani wyłączać pliku wymiany, gdyż może to powodować awarie aplikacji wymagających pamięci wirtualnej.",
+        },
+      ],
+      verdict: [
+        "Samoczynnie kurczące się miejsce na dysku C to typowy objaw rozrostu plików systemowych i pamięci podręcznej. Odpowiednie kroki pozwalają szybko odzyskać kontrolę nad dyskiem.",
+        "DiskMop oferuje kompleksowe narzędzia do analizy wizualnej i oczyszczania komputera w formule dożywotniej licencji.",
+      ],
+      ctaText: "Odzyskaj miejsce na dysku C z programem DiskMop",
+    },
+    ro: {
+      title: "Se umple discul C fără motiv? 8 soluții pentru Windows 10/11",
+      metaDescription:
+        "Discul C se umple fără motiv aparent? Află cum fișierele ascunse hiberfil.sys, punctele de restaurare și cache-ul AppData ocupă spațiu și eliberează-l pas cu pas.",
+      subtitle:
+        "Ghid pentru diagnosticarea și curățarea în siguranță a fișierelor ascunse care consumă spațiul de sistem",
+      intro: [
+        "Dacă discul C pare că se umple fără niciun motiv evident, spațiul este aproape întotdeauna ocupat de fișiere pe care Windows le ascunde în mod prestabilit: fișierul de hibernare hiberfil.sys, memoria virtuală pagefile.sys, punctele de restaurare și cache-ul acumulat în AppData.",
+        "În acest ghid, vei găsi 8 soluții practice pentru a mapa vizual spațiul ocupat, a reduce fișierele de sistem supradimensionate și a elibera gigaocteți de spațiu prețios în deplină siguranță.",
+      ],
+      keyTakeaways: [
+        "Discul C nu se umple niciodată fără motiv; principalii vinovați sunt hiberfil.sys, pagefile.sys, punctele de restaurare și cache-ul AppData.",
+        "Dezactivarea hibernării cu comanda 'powercfg /h off' eliberează instantaneu un spațiu egal cu memoria RAM (8–32 GB).",
+        "Nu ștergeți pagefile.sys; lăsați dimensiunea acestuia să fie gestionată automat de Windows pentru stabilitate.",
+        "Ștergerea punctelor vechi de restaurare a sistemului eliberează zeci de gigaocteți printr-un singur clic.",
+        "DiskMop mapează vizual discul într-o diagramă treemap, evidențiind folderele ascunse gigantice în câteva secunde.",
+      ],
+      dataTable: {
+        caption:
+          "Principalii consumatori ascunși de spațiu de pe discul C și metode sigure de curățare",
+        columns: [
+          "Element ascuns",
+          "Dimensiune tipică",
+          "Nivel de siguranță",
+          "Cum se curăță?",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Hibernare)",
+            "8 GB – 32 GB",
+            "Sigur (dacă nu e folosit)",
+            "Rulați 'powercfg /h off' în Command Prompt ca admin",
+          ],
+          [
+            "Puncte de restaurare sistem",
+            "5 GB – 25 GB",
+            "Sigur (cu excepția ultimului)",
+            "Disk Cleanup > Clean up system files > More Options",
+          ],
+          [
+            "Cache AppData și Temp",
+            "5 GB – 30 GB",
+            "Complet sigur",
+            "Goliți %temp% și folosiți Cache Cleaner din DiskMop",
+          ],
+          [
+            "Reziduuri Windows Update",
+            "2 GB – 10 GB",
+            "Complet sigur",
+            "Settings > System > Storage > Temporary files",
+          ],
+          [
+            "pagefile.sys (Memorie virtuală)",
+            "4 GB – 16 GB",
+            "Trebuie gestionat, nu șters",
+            "Setați dimensiunea pe 'Gestionat de sistem'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Pași pentru eliberarea rapidă a spațiului de pe discul C",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Afișați fișierele ascunse și de sistem",
+            text: "În File Explorer bifați 'Hidden items' și debifați ascunderea fișierelor protejate de sistem din Folder Options.",
+          },
+          {
+            name: "Dezactivați hibernarea dacă nu o utilizați",
+            text: "Deschideți Command Prompt ca administrator și rulați 'powercfg /h off' pentru a șterge instant hiberfil.sys.",
+          },
+          {
+            name: "Curățați punctele vechi de restaurare",
+            text: "Rulați Disk Cleanup ca administrator și ștergeți punctele de restaurare anterioare din fila More Options.",
+          },
+          {
+            name: "Eliminați fișierele temporare cu DiskMop",
+            text: "Utilizați DiskMop pentru a analiza și șterge în siguranță datele reziduale din cache și fișierele descărcate duplicate.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Vizualizarea fișierelor protejate de sistem",
+          content: [
+            "Diferența dintre suma folderelor vizibile și spațiul total ocupat raportat de Windows este cauzată de fișierele de sistem protejate pe care Explorer le ascunde.",
+            "Debifarea opțiunii de ascundere a fișierelor protejate vă permite să vedeți exact cât spațiu ocupă hiberfil.sys și folderul System Volume Information.",
+          ],
+        },
+        {
+          title: "Dezactivarea fișierului hiberfil.sys",
+          content: [
+            "Acest fișier stochează conținutul memoriei RAM pentru pornire rapidă sau hibernare. Pe un computer cu 16 sau 32 GB RAM, el reține permanent o cantitate echivalentă de spațiu pe SSD.",
+            "Dacă nu folosiți hibernarea, comanda 'powercfg /h off' elimină fișierul imediat, fără a necesita repornirea computerului.",
+          ],
+        },
+        {
+          title: "Curățarea memoriei cache din AppData",
+          content: [
+            "Aplicațiile și browserele stochează continuu date temporare în folderul AppData, iar actualizările Windows lasă în urmă fișiere voluminoase de instalare.",
+            "DiskMop identifică precis aceste depuneri digitale și le curăță fără a atinge documentele personale sau preferințele importante.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Este sigură ștergerea fișierului hiberfil.sys?",
+          answer:
+            "Da, dacă nu folosiți modul de hibernare, dezactivarea acestuia prin comanda oficială este 100% sigură.",
+        },
+        {
+          question: "Cât spațiu liber trebuie păstrat pe discul C?",
+          answer:
+            "Este recomandat să păstrați liber cel puțin 15–20% din capacitate (aproximativ 25–30 GB) pentru funcționarea optimă a SSD-ului.",
+        },
+        {
+          question: "Pot șterge pagefile.sys pentru a câștiga spațiu?",
+          answer:
+            "Nu este recomandat să ștergeți sau să dezactivați pagefile.sys, deoarece sistemul are nevoie de memoria virtuală pentru a preveni erorile de tip crash.",
+        },
+      ],
+      verdict: [
+        "Umplerea discului C fără motiv este de fapt o consecință a fișierelor de sistem ascunse și a memoriei cache necurățate. Urmând acești pași, puteți recăpăta zeci de gigaocteți rapid.",
+        "DiskMop oferă un pachet complet de analiză vizuală și curățare sigură cu licență pe viață.",
+      ],
+      ctaText: "Eliberați spațiu pe discul C acum cu DiskMop",
+    },
+    ru: {
+      title: "Диск C заполняется сам по себе? 8 решений для Windows 10/11",
+      metaDescription:
+        "Диск C переполнен без видимой причины? Узнайте, как скрытые файлы hiberfil.sys, точки восстановления и кэш AppData съедают место, и освободите память шаг за шагом.",
+      subtitle:
+        "Руководство по безопасной диагностике и очистке скрытых файлов системного диска",
+      intro: [
+        "Если системный диск C заполняется сам по себе, свободное место почти всегда отнимают файлы, которые Windows скрывает по умолчанию: файл гибернации hiberfil.sys, файл подкачки pagefile.sys, теневые копии точек восстановления и гигабайты кэша приложений в папке AppData.",
+        "Проводник Windows не показывает эти защищенные файлы в общем списке. В этой статье вы найдете 8 проверенных решений: от визуального анализа занятого пространства до безопасного отключения громоздких системных компонентов.",
+      ],
+      keyTakeaways: [
+        "Диск C никогда не заполняется без причины; главные виновники — hiberfil.sys, точки восстановления и кэш в папке AppData.",
+        "Отключение гибернации командой 'powercfg /h off' мгновенно освобождает объем памяти, равный размеру вашей RAM (от 8 до 32 ГБ).",
+        "Не удаляйте pagefile.sys полностью — оставьте размер под управлением системы для стабильности Windows.",
+        "Удаление старых точек восстановления освобождает десятки гигабайт за один клик.",
+        "Визуальный анализ DiskMop с помощью древовидной карты (treemap) выявляет гигантские скрытые папки за считанные секунды.",
+      ],
+      dataTable: {
+        caption:
+          "Основные скрытые потребители памяти на диске C и безопасные методы их очистки",
+        columns: [
+          "Скрытый элемент",
+          "Типичный размер",
+          "Уровень безопасности",
+          "Как очистить?",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Гибернация)",
+            "8 ГБ – 32 ГБ (соразмерно RAM)",
+            "Безопасно (если не используется)",
+            "Выполнить 'powercfg /h off' в командной строке от имени администратора",
+          ],
+          [
+            "Точки восстановления системы",
+            "5 ГБ – 25 ГБ",
+            "Безопасно (кроме последней точки)",
+            "Очистка диска > Очистить системные файлы > Дополнительно",
+          ],
+          [
+            "Кэш AppData и папка Temp",
+            "5 ГБ – 30 ГБ",
+            "Полностью безопасно",
+            "Очистить %temp% и запустить очистку кэша в DiskMop",
+          ],
+          [
+            "Остатки Windows Update",
+            "2 ГБ – 10 ГБ",
+            "Полностью безопасно",
+            "Параметры > Система > Память > Временные файлы",
+          ],
+          [
+            "pagefile.sys (Файл подкачки)",
+            "4 ГБ – 16 ГБ",
+            "Требует настройки, не удаления",
+            "Установить размер 'По выбору системы'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Порядок действий для быстрой очистки диска C",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Включите отображение скрытых и системных файлов",
+            text: "В Проводнике перейдите во вкладку 'Вид', включите 'Скрытые элементы' и отключите скрытие защищенных системных файлов в параметрах папок.",
+          },
+          {
+            name: "Отключите ненужный режим гибернации",
+            text: "Откройте командную строку от имени администратора и введите 'powercfg /h off', чтобы мгновенно удалить файл hiberfil.sys.",
+          },
+          {
+            name: "Удалите старые контрольные точки восстановления",
+            text: "Запустите 'Очистку диска' от администратора и во вкладке 'Дополнительно' удалите предыдущие теневые копии.",
+          },
+          {
+            name: "Очистите кэш и дубликаты с помощью DiskMop",
+            text: "Запустите сканирование в DiskMop для безопасного удаления накопленного кэша приложений и ненужных загрузок.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Отображение скрытых системных файлов",
+          content: [
+            "Пользователи часто удивляются, когда сумма объемов видимых папок в корне диска C оказывается значительно меньше занятого места. Причина кроется в защищенных системных файлах, которые скрыты от случайного вмешательства.",
+            "Включение показа защищенных файлов в параметрах папок позволит воочию увидеть hiberfil.sys и папку System Volume Information.",
+          ],
+        },
+        {
+          title: "Удаление файла гибернации hiberfil.sys",
+          content: [
+            "Файл hiberfil.sys сохраняет содержимое оперативной памяти при переходе в спящий режим или при быстрой загрузке. Если на компьютере установлено 16 или 32 ГБ RAM, этот файл занимает ровно столько же места на диске.",
+            "Если вы не пользуетесь гибернацией, команда 'powercfg /h off' освобождает эти гигабайты моментально без перезагрузки системы.",
+          ],
+        },
+        {
+          title: "Очистка кэша AppData и временных файлов",
+          content: [
+            "Папка AppData быстро разрастается из-за кэша веб-браузеров, мессенджеров и игровых клиентов, а обновления Windows сохраняют объемные резервные копии.",
+            "DiskMop находит и безопасно удаляет эти временные данные, не затрагивая важные пользовательские настройки.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Безопасно ли удалять hiberfil.sys?",
+          answer:
+            "Да, если вам не нужна гибернация, отключение этой функции штатной командой Windows абсолютно безопасно для системы.",
+        },
+        {
+          question: "Сколько свободного места должно оставаться на диске C?",
+          answer:
+            "Рекомендуется держать свободными не менее 15–20% (около 25–30 ГБ) для стабильной работы обновлений и поддержания скорости SSD.",
+        },
+        {
+          question: "Можно ли полностью удалить файл pagefile.sys?",
+          answer:
+            "Нет, полное отключение файла подкачки может приводить к сбоям программ при нехватке физической оперативной памяти.",
+        },
+      ],
+      verdict: [
+        "Самопроизвольное заполнение диска C — это результат накопления скрытых системных файлов и временных кэшей. Выполнив простые шаги, вы легко освободите десятки гигабайт.",
+        "DiskMop сочетает наглядный анализ занятого пространства и глубокую очистку диска в рамках бессрочной лицензии.",
+      ],
+      ctaText: "Освободите место на диске C с DiskMop",
+    },
+    th: {
+      title: "ไดรฟ์ C เต็มโดยไม่ทราบสาเหตุ? 8 วิธีแก้บน Windows 10/11",
+      metaDescription:
+        "ไดรฟ์ C เต็มโดยไม่มีสาเหตุชัดเจน? ค้นพบไฟล์ที่ซ่อนอยู่ เช่น hiberfil.sys, จุดคืนค่าระบบ และแคช AppData พร้อมวิธีเพิ่มพื้นที่ว่างทีละขั้นตอนอย่างปลอดภัย",
+      subtitle:
+        "คู่มือการวินิจฉัยและลบไฟล์ระบบที่ซ่อนอยู่ซึ่งกินพื้นที่ดิสก์อย่างปลอดภัย",
+      intro: [
+        "หากไดรฟ์ C ของคุณเต็มขึ้นมาเรื่อยๆ โดยหาสาเหตุไม่ได้ พื้นที่ส่วนใหญ่มักถูกใช้ไปกับไฟล์ที่ Windows ซ่อนไว้ตามค่าเริ่มต้น เช่น ไฟล์ไฮเบอร์เนต hiberfil.sys, หน่วยความจำเสมือน pagefile.sys, จุดคืนค่าระบบ (System Restore) และแคชแอปพลิเคชันจำนวนมากใน AppData",
+        "ในคู่มือนี้ คุณจะได้พบกับ 8 วิธีการแก้ไขที่มีประสิทธิภาพ ตั้งแต่การแสดงไฟล์ที่ซ่อนอยู่ การวิเคราะห์ไดรฟ์แบบภาพ แผนผัง ไปจนถึงการล้างแคชเพื่อทวงคืนพื้นที่ว่างหลายสิบกิกะไบต์อย่างปลอดภัย",
+      ],
+      keyTakeaways: [
+        "ไดรฟ์ C ไม่มีวันเต็มโดยไร้สาเหตุ ตัวการหลักคือไฟล์ hiberfil.sys, จุดคืนค่าระบบ และแคชใน AppData",
+        "การปิดโหมดไฮเบอร์เนตด้วยคำสั่ง 'powercfg /h off' จะคืนพื้นที่เท่ากับขนาด RAM ทันที (8–32 GB)",
+        "ไม่ควรลบ pagefile.sys ทิ้ง ให้ตั้งค่าเป็น 'System managed size' เพื่อความเสถียรของระบบ",
+        "การลบจุดคืนค่าระบบที่ล้าสมัยช่วยเพิ่มพื้นที่ว่างได้มหาศาลในการคลิกเพียงครั้งเดียว",
+        "การวิเคราะห์ดิสก์ของ DiskMop ช่วยแสดงโฟลเดอร์ขนาดใหญ่ที่ซ่อนอยู่ได้ในเวลาไม่กี่วินาที",
+      ],
+      dataTable: {
+        caption:
+          "รายการไฟล์ที่ซ่อนอยู่ซึ่งกินพื้นที่ไดรฟ์ C และวิธีจัดการอย่างปลอดภัย",
+        columns: [
+          "รายการที่ซ่อนอยู่",
+          "ขนาดทั่วไป",
+          "ระดับความปลอดภัย",
+          "วิธีทำความสะอาด",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (ไฮเบอร์เนต)",
+            "8 GB – 32 GB",
+            "ปลอดภัย (หากไม่ได้ใช้งาน)",
+            "รันคำสั่ง 'powercfg /h off' ใน Command Prompt",
+          ],
+          [
+            "จุดคืนค่าระบบ (System Restore)",
+            "5 GB – 25 GB",
+            "ปลอดภัย (ยกเว้นจุดล่าสุด)",
+            "Disk Cleanup > Clean up system files > More Options",
+          ],
+          [
+            "แคช AppData และไฟล์ Temp",
+            "5 GB – 30 GB",
+            "ปลอดภัยอย่างยิ่ง",
+            "ล้างโฟลเดอร์ %temp% และใช้ Cache Cleaner ใน DiskMop",
+          ],
+          [
+            "ไฟล์ตกค้างจาก Windows Update",
+            "2 GB – 10 GB",
+            "ปลอดภัยอย่างยิ่ง",
+            "Settings > System > Storage > Temporary files",
+          ],
+          [
+            "pagefile.sys (หน่วยความจำเสมือน)",
+            "4 GB – 16 GB",
+            "ควรจัดการ ไม่ควรลบ",
+            "ตั้งค่าขนาดเป็น 'ให้ระบบจัดการอัตโนมัติ'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "ขั้นตอนการเพิ่มพื้นที่ว่างในไดรฟ์ C อย่างรวดเร็ว",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "เปิดการแสดงไฟล์ที่ซ่อนอยู่และไฟล์ระบบ",
+            text: "เปิด File Explorer ไปที่แถบ View แล้วเลือก Hidden items รวมถึงยกเลิกการซ่อนไฟล์ระบบปฏิบัติการใน Folder Options",
+          },
+          {
+            name: "ปิดการทำงานของโหมดไฮเบอร์เนต",
+            text: "เปิด Command Prompt ในฐานะผู้ดูแลระบบ แล้วพิมพ์ 'powercfg /h off' เพื่อลบ hiberfil.sys ทันที",
+          },
+          {
+            name: "ลบจุดคืนค่าระบบที่เก่าแล้ว",
+            text: "เปิด Disk Cleanup ในโหมดผู้ดูแลระบบ แล้วไปที่แท็บ More Options เพื่อลบจุดกู้คืนเก่าออก",
+          },
+          {
+            name: "ทำความสะอาดแคชสะสมด้วย DiskMop",
+            text: "ใช้ DiskMop สแกนและลบไฟล์แคช AppData รวมถึงไฟล์ดาวน์โหลดที่ซ้ำซ้อนอย่างปลอดภัย",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "เปิดเผยไฟล์ระบบที่ถูกซ่อนอยู่",
+          content: [
+            "หลายคนสงสัยว่าทำไมขนาดของโฟลเดอร์ทั้งหมดที่มองเห็นได้จึงรวมกันได้น้อยกว่าพื้นที่ที่ระบบแจ้งเตือนว่าใช้งานไป นั่นเป็นเพราะ Windows ซ่อนไฟล์ระบบที่สำคัญเอาไว้",
+            "การเปิดให้แสดงไฟล์ระบบจะช่วยให้คุณมองเห็นไฟล์ขนาดใหญ่อย่าง hiberfil.sys และ System Volume Information ได้อย่างชัดเจน",
+          ],
+        },
+        {
+          title: "ปิดการใช้งานไฟล์ hiberfil.sys",
+          content: [
+            "ไฟล์นี้ทำหน้าที่เก็บข้อมูล RAM เมื่อเข้าสู่โหมด Hibernate หรือ Fast Startup หากเครื่องมี RAM 16 หรือ 32 GB ไฟล์นี้ก็จะกินพื้นที่บน SSD ไปตามขนาดนั้นตลอดเวลา",
+            "หากคุณไม่ได้ใช้โหมดนี้ คำสั่ง 'powercfg /h off' จะช่วยคืนพื้นที่ไดรฟ์กลับมาทันทีโดยไม่ต้องรีสตาร์ตเครื่อง",
+          ],
+        },
+        {
+          title: "ล้างแคชสะสมในโฟลเดอร์ AppData",
+          content: [
+            "แอปพลิเคชันอย่างเบราว์เซอร์และเกมมักเก็บไฟล์แคชสะสมไว้ใน AppData เป็นจำนวนมากโดยไม่มีการลบออกเอง",
+            "DiskMop จะช่วยค้นหาและล้างไฟล์ขยะดิจิทัลเหล่านี้ได้อย่างแม่นยำโดยไม่กระทบต่อการตั้งค่าสำคัญของคุณ",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "การลบ hiberfil.sys ปลอดภัยหรือไม่?",
+          answer:
+            "ปลอดภัยแน่นอน หากคุณไม่จำเป็นต้องใช้โหมด Hibernate การปิดด้วยคำสั่งอย่างเป็นทางการจะไม่ส่งผลเสียต่อระบบ",
+        },
+        {
+          question: "ควรเหลือพื้นที่ว่างในไดรฟ์ C ไว้อย่างน้อยเท่าไร?",
+          answer:
+            "แนะนำให้เหลือพื้นที่ว่างไว้อย่างน้อย 15–20% (ประมาณ 25–30 GB) เพื่อให้ Windows และ SSD ทำงานได้อย่างเต็มประสิทธิภาพ",
+        },
+        {
+          question: "สามารถลบ pagefile.sys ได้หรือไม่?",
+          answer:
+            "ไม่แนะนำให้ลบ เนื่องจากระบบจำเป็นต้องใช้หน่วยความจำเสมือนเมื่อแรมจริงไม่เพียงพอ เพื่อป้องกันโปรแกรมแครช",
+        },
+      ],
+      verdict: [
+        "ไดรฟ์ C ที่เต็มโดยหาสาเหตุไม่ได้มักเกิดจากไฟล์ระบบและแคชที่ถูกซ่อนไว้ การทำตามขั้นตอนข้างต้นจะช่วยกู้คืนพื้นที่ว่างหลายสิบกิกะไบต์ได้อย่างง่ายดาย",
+        "DiskMop นำเสนอเครื่องมือวิเคราะห์ดิสก์แบบเห็นภาพและตัวทำความสะอาดแคชครบวงจรในสิทธิ์การใช้งานตลอดชีพ",
+      ],
+      ctaText: "เพิ่มพื้นที่ว่างให้ไดรฟ์ C ของคุณวันนี้ด้วย DiskMop",
+    },
+    vi: {
+      title: "Ổ C bị đầy không rõ nguyên nhân? 8 cách xử lý trên Windows",
+      metaDescription:
+        "Ổ C đầy bất thường không rõ nguyên nhân? Tìm hiểu cách các tệp ẩn hiberfil.sys, điểm khôi phục và bộ nhớ đệm AppData chiếm dụng dung lượng và cách giải phóng.",
+      subtitle:
+        "Hướng dẫn chẩn đoán và dọn dẹp an toàn các tệp ẩn đang làm đầy ổ đĩa hệ thống",
+      intro: [
+        "Nếu ổ đĩa C của bạn dường như bị đầy mà không rõ nguyên nhân, dung lượng gần như luôn bị chiếm giữ bởi các tệp mà Windows ẩn đi theo mặc định: tệp ngủ đông hiberfil.sys, tệp bộ nhớ ảo pagefile.sys, các điểm khôi phục hệ thống (System Restore) và hàng gigabyte bộ nhớ đệm ứng dụng trong AppData.",
+        "File Explorer không hiển thị các tệp được bảo vệ này theo mặc định. Trong bài viết này, bạn sẽ nắm được 8 giải pháp thực tế để lập bản đồ trực quan dung lượng ổ đĩa, thu nhỏ các tệp hệ thống phình to và lấy lại không gian lưu trữ an toàn.",
+      ],
+      keyTakeaways: [
+        "Ổ C không bao giờ đầy vô cớ; thủ phạm chính là hiberfil.sys, pagefile.sys, điểm khôi phục và bộ nhớ đệm AppData.",
+        "Tắt chế độ ngủ đông bằng lệnh 'powercfg /h off' giúp giải phóng ngay dung lượng tương đương kích thước RAM (8–32 GB).",
+        "Không nên xóa tệp pagefile.sys; hãy để Windows tự động quản lý kích thước để đảm bảo tính ổn định của hệ thống.",
+        "Xóa các điểm khôi phục hệ thống cũ giúp lấy lại hàng chục gigabyte chỉ với một cú nhấp chuột.",
+        "Tính năng phân tích trực quan của DiskMop giúp phát hiện các thư mục khổng lồ bị ẩn chỉ trong vài giây.",
+      ],
+      dataTable: {
+        caption:
+          "Các thành phần ẩn chiếm nhiều dung lượng trên ổ C và cách dọn dẹp an toàn",
+        columns: [
+          "Thành phần ẩn",
+          "Dung lượng thông thường",
+          "Mức độ an toàn",
+          "Cách làm sạch",
+        ],
+        rows: [
+          [
+            "hiberfil.sys (Chế độ ngủ đông)",
+            "8 GB – 32 GB",
+            "An toàn (Nếu không dùng)",
+            "Chạy 'powercfg /h off' trong Command Prompt quản trị",
+          ],
+          [
+            "Điểm khôi phục hệ thống",
+            "5 GB – 25 GB",
+            "An toàn (Trừ điểm mới nhất)",
+            "Disk Cleanup > Clean up system files > More Options",
+          ],
+          [
+            "Bộ nhớ đệm AppData & Temp",
+            "5 GB – 30 GB",
+            "Hoàn toàn an toàn",
+            "Dọn %temp% và dùng tính năng Cache Cleaner của DiskMop",
+          ],
+          [
+            "Dữ liệu thừa Windows Update",
+            "2 GB – 10 GB",
+            "Hoàn toàn an toàn",
+            "Settings > System > Storage > Temporary files",
+          ],
+          [
+            "pagefile.sys (Bộ nhớ ảo)",
+            "4 GB – 16 GB",
+            "Cần quản lý, không xóa",
+            "Đặt kích thước thành 'Do hệ thống tự động quản lý'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "Các bước giải phóng nhanh không gian ổ C bị đầy",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "Hiển thị các tệp ẩn và tệp hệ thống",
+            text: "Trong File Explorer, mở tab View, đánh dấu vào 'Hidden items' và tắt tùy chọn ẩn các tệp hệ điều hành được bảo vệ.",
+          },
+          {
+            name: "Tắt chế độ ngủ đông nếu không cần thiết",
+            text: "Mở Command Prompt với quyền quản trị viên, nhập lệnh 'powercfg /h off' và nhấn Enter để xóa tệp hiberfil.sys ngay lập tức.",
+          },
+          {
+            name: "Dọn dẹp các điểm khôi phục hệ thống cũ",
+            text: "Khởi chạy công cụ Disk Cleanup với tư cách admin và xóa các bản sao lưu trước đó trong tab More Options.",
+          },
+          {
+            name: "Quét dọn bộ nhớ đệm với DiskMop",
+            text: "Sử dụng DiskMop để phân tích và dọn sạch các tệp đệm AppData cũng như tệp tải về trùng lặp an toàn.",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "Hiển thị các tệp hệ thống được bảo vệ",
+          content: [
+            "Nhiều người dùng nhận thấy tổng dung lượng các thư mục nhìn thấy trên ổ C nhỏ hơn nhiều so với dung lượng đã sử dụng. Điều này là do Windows ẩn các tệp hệ thống quan trọng để tránh bị xóa nhầm.",
+            "Việc bật hiển thị tệp ẩn trong Folder Options sẽ cho phép bạn nhìn thấy các tệp lớn như hiberfil.sys và thư mục System Volume Information.",
+          ],
+        },
+        {
+          title: "Xóa tệp ngủ đông hiberfil.sys",
+          content: [
+            "Tệp hiberfil.sys lưu trữ trạng thái của RAM khi máy tính vào chế độ ngủ đông. Trên các máy tính có 16 hoặc 32 GB RAM, tệp này luôn chiếm một dung lượng tương đương trên ổ SSD.",
+            "Nếu không sử dụng tính năng ngủ đông, lệnh 'powercfg /h off' sẽ giải phóng dung lượng này ngay lập tức mà không cần khởi động lại máy.",
+          ],
+        },
+        {
+          title: "Dọn dẹp bộ nhớ đệm và tệp tạm trong AppData",
+          content: [
+            "Các ứng dụng và trình duyệt liên tục tích lũy dữ liệu đệm trong thư mục AppData, trong khi Windows Update cũng để lại các tệp cài đặt cũ.",
+            "DiskMop giúp bạn phát hiện và làm sạch các dữ liệu dư thừa này một cách chính xác mà không làm ảnh hưởng đến cấu hình cá nhân.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Xóa tệp hiberfil.sys có an toàn không?",
+          answer:
+            "Rất an toàn nếu bạn không sử dụng chế độ ngủ đông. Vô hiệu hóa tính năng này bằng lệnh chính thức không gây hại cho Windows.",
+        },
+        {
+          question: "Nên để trống bao nhiêu dung lượng trên ổ C?",
+          answer:
+            "Nên giữ trống ít nhất 15% đến 20% dung lượng (khoảng 25–30 GB) để đảm bảo cập nhật hệ thống và hiệu suất ổ SSD.",
+        },
+        {
+          question: "Có nên xóa tệp pagefile.sys không?",
+          answer:
+            "Không nên xóa hay tắt tệp bộ nhớ ảo này vì nó cần thiết cho sự ổn định của hệ thống khi chạy các tác vụ nặng.",
+        },
+      ],
+      verdict: [
+        "Ổ C bị đầy không rõ nguyên nhân thực chất là do sự tích tụ của các tệp hệ thống ẩn và bộ nhớ đệm. Bằng các bước xử lý đơn giản, bạn có thể giải phóng hàng chục GB nhanh chóng.",
+        "DiskMop mang đến giải pháp toàn diện kết hợp phân tích trực quan và dọn dẹp thông minh với giấy phép trọn đời.",
+      ],
+      ctaText: "Giải phóng dung lượng ổ C ngay với DiskMop",
+    },
+    "zh-Hans": {
+      title: "C盘莫名其妙满了？Win10/11深度清理的8个解决方法",
+      metaDescription:
+        "C盘空间莫名其妙变红变满？深入剖析休眠文件hiberfil.sys、虚拟内存、系统还原点及AppData缓存，带你一步步安全释放几十G空间。",
+      subtitle: "诊断并安全清理蚕食系统盘空间的隐藏文件实用指南",
+      intro: [
+        "如果你的C盘在没有安装大型软件的情况下莫名其妙变满，空间通常被Windows默认隐藏的系统文件占用了：休眠文件 hiberfil.sys、虚拟内存 pagefile.sys、系统还原点以及 AppData 目录下数以十G计的应用程序缓存。",
+        "由于文件资源管理器默认隐藏这些受保护的文件，所有可见文件夹的大小相加往往远小于系统显示的已用空间。本指南将介绍8个行之有效的解决方案，帮助你安全找出并清理这些隐藏的空间杀手。",
+      ],
+      keyTakeaways: [
+        "C盘不会无缘无故变满；罪魁祸首往往是 hiberfil.sys、pagefile.sys、还原点和 AppData 缓存。",
+        "若不使用休眠功能，通过管理员命令 'powercfg /h off' 可瞬间释放等同于内存大小（8–32 GB）的空间。",
+        "切勿强行删除 pagefile.sys；建议保持系统自动管理大小，以确保系统在极端负载下的稳定性。",
+        "清理旧版本的系统还原点与卷影副本，只需一次点击即可释放数十吉字节的空间。",
+        "DiskMop 采用直观的树状图（Treemap）可视化分析，几秒钟内揪出所有隐藏的超大文件夹。",
+      ],
+      dataTable: {
+        caption: "C盘主要隐藏空间占用项目及安全清理方案",
+        columns: ["隐藏项目", "常见占用大小", "安全级别", "清理方法"],
+        rows: [
+          [
+            "hiberfil.sys (休眠文件)",
+            "8 GB – 32 GB",
+            "安全 (不使用休眠时)",
+            "以管理员身份在CMD中运行 'powercfg /h off'",
+          ],
+          [
+            "系统还原点",
+            "5 GB – 25 GB",
+            "安全 (保留最新一点)",
+            "磁盘清理 > 清理系统文件 > 其他选项 > 清理卷影副本",
+          ],
+          [
+            "AppData及Temp缓存",
+            "5 GB – 30 GB",
+            "极其安全",
+            "清空 %temp% 并使用 DiskMop 缓存清理功能",
+          ],
+          [
+            "Windows Update更新残留",
+            "2 GB – 10 GB",
+            "极其安全",
+            "设置 > 系统 > 存储 > 临时文件 > Windows更新清理",
+          ],
+          [
+            "pagefile.sys (虚拟内存)",
+            "4 GB – 16 GB",
+            "建议管理而非删除",
+            "在高级系统设置中将分页文件设为'系统管理的大小'",
+          ],
+        ],
+      },
+      howTo: {
+        name: "快速腾出爆满C盘空间的步骤",
+        totalTime: "PT15M",
+        steps: [
+          {
+            name: "显示隐藏及受保护的系统文件",
+            text: "在文件资源管理器中勾选'隐藏的项目'，并在文件夹选项中取消勾选'隐藏受保护的操作系统文件'。",
+          },
+          {
+            name: "禁用不需要的系统休眠功能",
+            text: "以管理员身份打开命令提示符，输入 'powercfg /h off' 并回车，即可瞬间删除 hiberfil.sys 释放数G空间。",
+          },
+          {
+            name: "清除多余的历史还原点",
+            text: "以管理员身份运行磁盘清理，进入清理系统文件，在'其他选项'中删除以往的还原点。",
+          },
+          {
+            name: "使用 DiskMop 深度清理缓存与冗余文件",
+            text: "运行 DiskMop 扫描 AppData 中的臃肿缓存和下载目录中的重复文件，一键安全瘦身。",
+          },
+        ],
+      },
+      sections: [
+        {
+          title: "揭秘隐藏在C盘根目录的受保护文件",
+          content: [
+            "许多用户在计算C盘中所有可见文件夹的总合后，会困惑地发现总容量远远对不上已用空间。这是因为Windows为了防止误删，默认对核心系统文件进行了高级隐藏保护。",
+            "通过在文件夹选项中显示受保护的操作系统文件，你便能在C盘根目录下看到巨大的 hiberfil.sys 和 System Volume Information 目录。",
+          ],
+        },
+        {
+          title: "安全移除休眠文件 hiberfil.sys",
+          content: [
+            "hiberfil.sys 用于在进入休眠模式时保存内存状态。如果你的电脑拥有 16GB 或 32GB 内存，该文件就会在SSD上常驻同等大小的空间。",
+            "如果你习惯于常规关机或睡眠，无需休眠功能，只需运行 'powercfg /h off' 命令即可在不重启的情况下瞬间回收几十GB硬盘空间。",
+          ],
+        },
+        {
+          title: "清理 AppData 缓存与更新垃圾",
+          content: [
+            "各类浏览器、社交软件和游戏客户端会在 AppData 中日积月累留下庞大的缓存与日志，而 Windows Update 也会保留过往的安装包。",
+            "借助 DiskMop 的专业缓存清理工具，你可以精准剔除这些数字垃圾，绝不损坏任何个人文档或软件配置。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "删除 hiberfil.sys 会影响电脑正常运行吗？",
+          answer:
+            "完全不会。只要你不使用休眠（Hibernate）功能，通过官方命令关闭它对日常开机和软件运行没有任何不良影响。",
+        },
+        {
+          question: "C盘应该预留多少可用空间最合适？",
+          answer:
+            "建议始终保持至少 15%–20%（约 20–30 GB）的可用空间，以保证系统补丁顺利安装以及固态硬盘（SSD）磨损均衡算法正常运转。",
+        },
+        {
+          question: "可以直接删除 pagefile.sys 吗？",
+          answer:
+            "不建议禁用或删除虚拟内存，否则在运行高内存消耗软件或游戏时可能会直接崩溃或报错。",
+        },
+      ],
+      verdict: [
+        "C盘无故变满从来都不是无法破解的谜团，而是隐藏系统文件与应用程序缓存自然膨胀的结果。只需几个简单的清理步骤，就能迅速恢复宽裕的磁盘空间。",
+        "DiskMop 将可视化空间分析、缓存清理与重复文件查找集成于一体，一次性买断终身授权，轻松守护电脑健康。",
+      ],
+      ctaText: "立即使用 DiskMop 释放C盘可用空间",
+    },
   },
 };
