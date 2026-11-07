@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { IOS_APP_ID } from "@/lib/app-version";
 
 interface AppInfo {
+  /** Windows sürümü kurulum dosyasının adından (etiket değil): yalnız-Mac bir yayın yanıltmasın. */
+  windowsVersion: string;
   version: string;
   downloadCounts: { windows: number; mac: number; total: number };
   assets: Record<string, { size: number }>;
@@ -11,7 +13,7 @@ interface AppInfo {
   iosVersion: string;
 }
 
-const CACHE_KEY = "diskmop-app-info-v2";
+const CACHE_KEY = "diskmop-app-info-v3";
 // Apple'ın herkese açık arama ucu: App Store'da YAYINDA olan sürümü verir (incelemedeki sürümü değil), CORS açık.
 const IOS_LOOKUP_URL = `https://itunes.apple.com/lookup?id=${IOS_APP_ID}`;
 const CACHE_TTL = 5 * 60 * 1000;
@@ -43,7 +45,9 @@ export function useAppInfo() {
       const assets: AppInfo["assets"] = data.assets || {};
       // macOS sürümü DMG adından okunur (DiskMop-1.0.31-arm64.dmg): etiket (v1.0.33) Windows'a aittir.
       const macAsset = Object.keys(assets).find((n) => n.endsWith(".dmg"));
+      const winAsset = Object.keys(assets).find((n) => /^DiskMop-Setup-\d/.test(n));
       const parsed: AppInfo = {
+        windowsVersion: winAsset?.match(/(\d+\.\d+\.\d+)/)?.[1] ?? "",
         version: data.version || "",
         downloadCounts: data.downloadCounts || {
           windows: 0,
@@ -78,6 +82,7 @@ export function useAppInfo() {
   };
 
   return {
+    windowsVersion: info?.windowsVersion || "",
     version: info?.version || "",
     macVersion: info?.macVersion || "",
     iosVersion: info?.iosVersion || "",

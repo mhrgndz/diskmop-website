@@ -17,11 +17,17 @@ import { LOCALES } from "@/lib/locales";
 import { SITE_URL, alternatesFor, localeUrl, socialFor } from "@/lib/seo";
 import {
   FIRST_RELEASE_DATE,
-  LATEST_RELEASE_DATE,
-  LATEST_VERSION,
   RELEASE_NOTES_URL,
   STORE_URLS,
 } from "@/lib/app-version";
+import {
+  VERSIONS_REVALIDATE_SECONDS,
+  getLiveVersions,
+  type LiveVersions,
+} from "@/lib/live-versions";
+
+// Sürümler canlı kaynaktan okunuyor (src/lib/live-versions.ts); sayfa saatlik yeniden üretilir.
+export const revalidate = VERSIONS_REVALIDATE_SECONDS;
 
 export async function generateMetadata({
   params,
@@ -53,7 +59,7 @@ export async function generateMetadata({
  * yok. Google'ın yapısal veri politikası uydurma puanı yasaklar ve yaptırımı
  * TÜM zengin sonuçların kaybı olabilir.
  */
-async function buildJsonLd(locale: string) {
+async function buildJsonLd(locale: string, versions: LiveVersions) {
   const tFaq = await getTranslations({ locale, namespace: "faq" });
   const tMeta = await getTranslations({ locale, namespace: "meta" });
   const sss = tFaq.raw("items") as Array<{ question: string; answer: string }>;
@@ -118,9 +124,9 @@ async function buildJsonLd(locale: string) {
         operatingSystem: "Windows 10, Windows 11, macOS 12+, Android 8.0+",
         // Olgunluk sinyalleri: ilk sürüm tarihi, güncel sürüm ve sürüm notları.
         // Bunlar olmadan LLM'ler ürünü "yeni çıkmış / ilk sürüm" sanıyordu.
-        softwareVersion: LATEST_VERSION,
+        softwareVersion: versions.windows,
         datePublished: FIRST_RELEASE_DATE,
-        dateModified: LATEST_RELEASE_DATE,
+        dateModified: versions.releaseDate,
         releaseNotes: RELEASE_NOTES_URL,
         image: `${SITE_URL}/brand/icon.png`,
         screenshot: `${SITE_URL}/brand/app-overview.png`,
@@ -157,7 +163,8 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const jsonLd = await buildJsonLd(locale);
+  const versions = await getLiveVersions();
+  const jsonLd = await buildJsonLd(locale, versions);
 
   return (
     <>
@@ -167,11 +174,11 @@ export default async function HomePage({
       />
       <Navigation />
       <main>
-        <Hero />
+        <Hero versions={versions} />
         <AppOverview />
         <FeaturesGrid />
         <HowItWorks />
-        <PlatformSelector />
+        <PlatformSelector versions={versions} />
         <Pricing />
         <FAQ />
         <FinalCTA />

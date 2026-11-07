@@ -7,16 +7,21 @@ import { Check, Download } from "lucide-react";
 
 import { DownloadDropdown } from "@/components/download-dropdown";
 import { useOSDetection } from "@/hooks/use-os-detection";
-import { STORE_URLS, versionFor } from "@/lib/app-version";
+import { APP_VERSIONS, STORE_URLS } from "@/lib/app-version";
+import { useAppInfo } from "@/hooks/use-app-info";
+import type { LiveVersions } from "@/lib/live-versions";
 import { trackDownload } from "@/lib/analytics";
 
-export function Hero() {
+export function Hero({ versions }: { versions?: Pick<LiveVersions, "windows"> }) {
   const t = useTranslations("hero");
   const tApp = useTranslations("app");
   // iPhone/iPad ziyaretçisine masaüstü ürünü değil iPhone uygulaması anlatılır:
   // metinler `hero.ios.*`'tan gelir, ana düğme doğrudan App Store'a gider ve
   // Windows ekran görüntüsü gösterilmez.
   const isIOS = useOSDetection() === "ios";
+  // Sunucunun canlı değeri ilk çıktıda basılır; tarayıcıda API yeniden okunur (sabit sayı yalnız yedek).
+  const { windowsVersion } = useAppInfo();
+  const winVersion = windowsVersion || versions?.windows || APP_VERSIONS.windows;
   const text = (key: string) => (isIOS ? t(`ios.${key}`) : t(key));
 
   // "Windows 10/11 & macOS 12+ • Virus-free • Signed & Notarized" → üç ayrı madde
@@ -151,7 +156,7 @@ export function Hero() {
                 />
               </div>
               <figcaption className="mt-3.5 font-mono text-[12.5px] text-muted-foreground">
-                DiskMop {versionFor("windows")} · Windows
+                DiskMop {winVersion} · Windows
               </figcaption>
             </motion.figure>
           )}

@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
 import { useAppInfo } from "@/hooks/use-app-info";
 import { APP_VERSIONS, STORE_URLS } from "@/lib/app-version";
+import type { LiveVersions } from "@/lib/live-versions";
 import { trackDownload } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 
@@ -79,10 +80,10 @@ const platforms: PlatformCard[] = [
 
 // Canlı indirme sayaçları KAPALI (kullanıcı kararı, 2026-09-04). API'den gelen
 // downloadCounts artık gösterilmiyor; useAppInfo yalnız sürüm ve dosya boyutu için.
-export function PlatformSelector() {
+export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
   const t = useTranslations("platformSelector");
   const detectedOS = useOSDetection();
-  const { version, macVersion, iosVersion, windowsSize, macSize } =
+  const { windowsVersion, macVersion, iosVersion, windowsSize, macSize } =
     useAppInfo();
 
   const getSize = (key: string) =>
@@ -98,10 +99,11 @@ export function PlatformSelector() {
    */
   const getVersion = (key: PlatformCard["key"]) => {
     if (key === "android") return "";
-    if (key === "windows") return version || `v${APP_VERSIONS.windows}`;
+    if (key === "windows")
+      return `v${windowsVersion || versions?.windows || APP_VERSIONS.windows}`;
     if (key === "mac")
-      return macVersion ? `v${macVersion}` : `v${APP_VERSIONS.mac}`;
-    return `v${iosVersion || APP_VERSIONS.ios}`;
+      return `v${macVersion || versions?.mac || APP_VERSIONS.mac}`;
+    return `v${iosVersion || versions?.ios || APP_VERSIONS.ios}`;
   };
 
   return (
