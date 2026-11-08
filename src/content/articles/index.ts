@@ -1,3 +1,4 @@
+import { microsoftPcManager } from "./microsoft-pc-manager";
 import type { Article } from "../types";
 import { LOCALES } from "@/lib/locales";
 import { ccleaner } from "./ccleaner";
@@ -77,6 +78,7 @@ import { iphonePhotoCleanupGuide } from "./iphone-photo-cleanup-guide";
 import { howToCleanIphoneStorage } from "./how-to-clean-iphone-storage";
 
 export const articles: Article[] = [
+  microsoftPcManager,
   // 2026-11-03 eklenenler — iOS GEO SEO uyumlu Sistem Verileri, Fotoğraf Temizleme Haritası ve Telefon Temizleme rehberleri. 8 dil.
   clearSystemDataIphone,
   iphonePhotoCleanupGuide,
