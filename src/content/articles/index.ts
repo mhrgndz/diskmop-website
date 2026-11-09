@@ -76,9 +76,22 @@ import { searchPhotosByContentIphone } from "./search-photos-by-content-iphone";
 import { clearSystemDataIphone } from "./clear-system-data-iphone";
 import { iphonePhotoCleanupGuide } from "./iphone-photo-cleanup-guide";
 import { howToCleanIphoneStorage } from "./how-to-clean-iphone-storage";
+import { findDuplicateFilesMac } from "./find-duplicate-files-mac";
+import { findLargeFilesMac } from "./find-large-files-mac";
+import { removeStartupItemsMac } from "./remove-startup-items-mac";
+import { deleteAppLeftoversMac } from "./delete-app-leftovers-mac";
+import { xcodeDockerStorageMac } from "./xcode-docker-storage-mac";
 
 export const articles: Article[] = [
   microsoftPcManager,
+  // 2026-11-09 eklenenler — Mac için beş rehber (kopya dosya, büyük dosya, açılış öğeleri, uygulama artıkları, Xcode/Docker).
+  // Her biri mevcut Mac makaleleriyle çakışmayan ayrı bir arama niyetini karşılar; uygulama özellikleri Mac kaynak koduyla
+  // doğrulandı. 8 dil, keyTakeaways + FAQ + HowTo + tablo.
+  findDuplicateFilesMac,
+  findLargeFilesMac,
+  removeStartupItemsMac,
+  deleteAppLeftoversMac,
+  xcodeDockerStorageMac,
   // 2026-11-03 eklenenler — iOS GEO SEO uyumlu Sistem Verileri, Fotoğraf Temizleme Haritası ve Telefon Temizleme rehberleri. 8 dil.
   clearSystemDataIphone,
   iphonePhotoCleanupGuide,
