@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "Télécharger dans l’App Store",
+    "macAppStoreBadge": "Télécharger dans le Mac App Store",
+    "microsoftStoreBadge": "Télécharger depuis Microsoft Store",
+    "googlePlayBadge": "Disponible sur Google Play"
+  },
+  "otherApps": {
+    "title": "Nos autres applications",
+    "fileacture": "Outils PDF, photo et archives qui restent sur votre appareil",
+    "offerlime": "Devis et PDF en une minute",
+    "inviteroll": "Invitations en ligne avec réponse des invités"
   }
 }

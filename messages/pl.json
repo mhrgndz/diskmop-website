@@ -740,5 +740,17 @@
     "statusPaid": "Opłacone",
     "statusRefunded": "Zwrócone",
     "homeLink": "Strona główna"
+  },
+  "stores": {
+    "appStoreBadge": "Pobierz z App Store",
+    "macAppStoreBadge": "Pobierz z Mac App Store",
+    "microsoftStoreBadge": "Pobierz z Microsoft Store",
+    "googlePlayBadge": "Pobierz z Google Play"
+  },
+  "otherApps": {
+    "title": "Nasze inne aplikacje",
+    "fileacture": "Narzędzia do PDF, zdjęć i archiwów, które zostają na Twoim urządzeniu",
+    "offerlime": "Wyceny i PDF w minutę",
+    "inviteroll": "Zaproszenia online z potwierdzeniem obecności"
   }
 }

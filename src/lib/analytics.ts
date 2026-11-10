@@ -17,7 +17,7 @@
  */
 
 export type DownloadPlatform =
-  "windows" | "mac" | "mac-intel" | "android" | "ios";
+  "windows" | "mac" | "mac-intel" | "android" | "ios" | "windows-store" | "mac-store";
 
 /** CTA'nın sayfadaki yeri — aynı platform birden çok yerden indirilebiliyor. */
 export type CtaLocation =
@@ -32,7 +32,8 @@ export type CtaLocation =
   | "blog_showcase"
   | "calculator"
   | "pricing"
-  | "success";
+  | "success"
+  | "final_cta";
 
 declare global {
   interface Window {
@@ -67,6 +68,8 @@ const EVENT_SUFFIX: Record<DownloadPlatform, string> = {
   "mac-intel": "mac_intel",
   android: "android",
   ios: "ios",
+  "windows-store": "windows_store",
+  "mac-store": "mac_store",
 };
 
 /**

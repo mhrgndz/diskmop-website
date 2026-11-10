@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "Laden im App Store",
+    "macAppStoreBadge": "Laden im Mac App Store",
+    "microsoftStoreBadge": "Im Microsoft Store herunterladen",
+    "googlePlayBadge": "Jetzt bei Google Play"
+  },
+  "otherApps": {
+    "title": "Unsere weiteren Apps",
+    "fileacture": "PDF-, Foto- und Archiv-Werkzeuge, die auf Ihrem Gerät bleiben",
+    "offerlime": "Angebote und PDFs in einer Minute",
+    "inviteroll": "Online-Einladungen mit Zu- und Absage"
   }
 }

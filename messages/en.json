@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "Download on the App Store",
+    "macAppStoreBadge": "Download on the Mac App Store",
+    "microsoftStoreBadge": "Get it from Microsoft Store",
+    "googlePlayBadge": "Get it on Google Play"
+  },
+  "otherApps": {
+    "title": "Our other apps",
+    "fileacture": "PDF, photo and archive tools that stay on your device",
+    "offerlime": "Quotes and PDF offers in a minute",
+    "inviteroll": "Online invitations with RSVP"
   }
 }

@@ -736,5 +736,17 @@
     "statusPaid": "مدفوع",
     "statusRefunded": "مسترد",
     "homeLink": "الرئيسية"
+  },
+  "stores": {
+    "appStoreBadge": "نزّل من App Store",
+    "macAppStoreBadge": "نزّل من Mac App Store",
+    "microsoftStoreBadge": "احصل عليه من Microsoft Store",
+    "googlePlayBadge": "احصل عليه من Google Play"
+  },
+  "otherApps": {
+    "title": "تطبيقاتنا الأخرى",
+    "fileacture": "أدوات PDF والصور والأرشيف تبقى على جهازك",
+    "offerlime": "عروض أسعار وملفات PDF في دقيقة",
+    "inviteroll": "دعوات إلكترونية مع تأكيد الحضور"
   }
 }

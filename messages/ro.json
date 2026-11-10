@@ -736,5 +736,17 @@
     "statusPaid": "Plătită",
     "statusRefunded": "Rambursată",
     "homeLink": "Acasă"
+  },
+  "stores": {
+    "appStoreBadge": "Descarcă din App Store",
+    "macAppStoreBadge": "Descarcă din Mac App Store",
+    "microsoftStoreBadge": "Obține din Microsoft Store",
+    "googlePlayBadge": "Disponibil pe Google Play"
+  },
+  "otherApps": {
+    "title": "Celelalte aplicații ale noastre",
+    "fileacture": "Instrumente pentru PDF, fotografii și arhive care rămân pe dispozitivul tău",
+    "offerlime": "Oferte și PDF-uri într-un minut",
+    "inviteroll": "Invitații online cu confirmare de participare"
   }
 }

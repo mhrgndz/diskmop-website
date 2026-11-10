@@ -736,5 +736,17 @@
     "statusPaid": "Оплачен",
     "statusRefunded": "Возвращён",
     "homeLink": "Главная"
+  },
+  "stores": {
+    "appStoreBadge": "Загрузите в App Store",
+    "macAppStoreBadge": "Загрузите в Mac App Store",
+    "microsoftStoreBadge": "Загрузите в Microsoft Store",
+    "googlePlayBadge": "Доступно в Google Play"
+  },
+  "otherApps": {
+    "title": "Другие наши приложения",
+    "fileacture": "Инструменты для PDF, фото и архивов, которые работают на вашем устройстве",
+    "offerlime": "Коммерческие предложения и PDF за минуту",
+    "inviteroll": "Онлайн-приглашения с подтверждением участия"
   }
 }

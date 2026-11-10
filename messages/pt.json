@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "Baixar na App Store",
+    "macAppStoreBadge": "Baixar na Mac App Store",
+    "microsoftStoreBadge": "Baixar na Microsoft Store",
+    "googlePlayBadge": "Disponível no Google Play"
+  },
+  "otherApps": {
+    "title": "Nossos outros apps",
+    "fileacture": "Ferramentas de PDF, fotos e arquivos que ficam no seu dispositivo",
+    "offerlime": "Orçamentos e PDFs em um minuto",
+    "inviteroll": "Convites online com confirmação de presença"
   }
 }

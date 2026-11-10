@@ -736,5 +736,17 @@
     "statusPaid": "ชำระแล้ว",
     "statusRefunded": "คืนเงินแล้ว",
     "homeLink": "หน้าหลัก"
+  },
+  "stores": {
+    "appStoreBadge": "ดาวน์โหลดบน App Store",
+    "macAppStoreBadge": "ดาวน์โหลดบน Mac App Store",
+    "microsoftStoreBadge": "ดาวน์โหลดจาก Microsoft Store",
+    "googlePlayBadge": "ดาวน์โหลดบน Google Play"
+  },
+  "otherApps": {
+    "title": "แอปอื่น ๆ ของเรา",
+    "fileacture": "เครื่องมือ PDF รูปภาพ และไฟล์บีบอัดที่อยู่บนอุปกรณ์ของคุณ",
+    "offerlime": "ใบเสนอราคาและ PDF ในหนึ่งนาที",
+    "inviteroll": "บัตรเชิญออนไลน์พร้อมระบบตอบรับ"
   }
 }

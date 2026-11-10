@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "App Store’dan indirin",
+    "macAppStoreBadge": "Mac App Store’dan indirin",
+    "microsoftStoreBadge": "Microsoft Store’dan edinin",
+    "googlePlayBadge": "Google Play’den alın"
+  },
+  "otherApps": {
+    "title": "Diğer uygulamalarımız",
+    "fileacture": "PDF, fotoğraf ve arşiv araçları, cihazınızdan çıkmaz",
+    "offerlime": "Bir dakikada teklif ve PDF",
+    "inviteroll": "LCV’li online davetiyeler"
   }
 }

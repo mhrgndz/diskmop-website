@@ -736,5 +736,17 @@
     "statusPaid": "שולם",
     "statusRefunded": "הוחזר",
     "homeLink": "דף הבית"
+  },
+  "stores": {
+    "appStoreBadge": "הורדה מ-App Store",
+    "macAppStoreBadge": "הורדה מ-Mac App Store",
+    "microsoftStoreBadge": "הורדה מ-Microsoft Store",
+    "googlePlayBadge": "זמין ב-Google Play"
+  },
+  "otherApps": {
+    "title": "האפליקציות האחרות שלנו",
+    "fileacture": "כלי PDF, תמונות וארכיונים שנשארים במכשיר שלך",
+    "offerlime": "הצעות מחיר ו-PDF בדקה",
+    "inviteroll": "הזמנות אונליין עם אישורי הגעה"
   }
 }

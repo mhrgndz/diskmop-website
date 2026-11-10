@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
+import { StoreBadges } from "@/components/store-badges";
+
 export function FinalCTA() {
   const t = useTranslations("finalCta");
 
@@ -51,6 +53,8 @@ export function FinalCTA() {
           </a>
           <span className="font-mono text-[13px] text-[#DCE6FF]">{trust}</span>
         </div>
+
+        <StoreBadges location="final_cta" onDark className="relative mt-6" />
       </div>
     </section>
   );

@@ -740,5 +740,17 @@
     "statusPaid": "Dibayar",
     "statusRefunded": "Dikembalikan",
     "homeLink": "Beranda"
+  },
+  "stores": {
+    "appStoreBadge": "Unduh di App Store",
+    "macAppStoreBadge": "Unduh di Mac App Store",
+    "microsoftStoreBadge": "Dapatkan di Microsoft Store",
+    "googlePlayBadge": "Dapatkan di Google Play"
+  },
+  "otherApps": {
+    "title": "Aplikasi kami lainnya",
+    "fileacture": "Alat PDF, foto, dan arsip yang tetap di perangkat Anda",
+    "offerlime": "Penawaran harga dan PDF dalam semenit",
+    "inviteroll": "Undangan online dengan RSVP"
   }
 }

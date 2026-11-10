@@ -26,9 +26,19 @@ export const APP_VERSIONS = {
 export const IOS_APP_ID = "6811601108";
 
 export const STORE_URLS = {
+  /** Disk Mop, Microsoft Store (Store ID XPFCDV640VV7DP; 1.0.33 2026-10-30'dan beri yayında). */
+  windows: "https://apps.microsoft.com/detail/xpfcdv640vv7dp",
+  /** Disk Mop: Mac Cleaner, Mac App Store (app 6832346012). Henüz YAYINDA DEĞİL: aşağıdaki bayrağa bak. */
+  mac: "https://apps.apple.com/app/id6832346012?mt=12",
   android: "https://play.google.com/store/apps/details?id=com.diskmop.android",
   ios: `https://apps.apple.com/app/diskmop-photo-video-cleaner/id${IOS_APP_ID}`,
 } as const;
+
+/**
+ * Mac App Store sayfası herkese açık olunca true yap (App Review 1.1.3'ü onaylayınca). Doğrulama:
+ * `curl "https://itunes.apple.com/lookup?id=6832346012&country=us"` → `resultCount: 1`. Kapalıyken rozet gizlenir.
+ */
+export const MAC_APP_STORE_LIVE = false;
 
 /**
  * App Store özel ürün sayfaları (Custom Product Pages, 2026-10-27'de onaylandı). Makale konusuna uyan sayfa

@@ -740,5 +740,17 @@
     "statusPaid": "Đã thanh toán",
     "statusRefunded": "Đã hoàn tiền",
     "homeLink": "Trang chủ"
+  },
+  "stores": {
+    "appStoreBadge": "Tải trên App Store",
+    "macAppStoreBadge": "Tải trên Mac App Store",
+    "microsoftStoreBadge": "Tải từ Microsoft Store",
+    "googlePlayBadge": "Tải trên Google Play"
+  },
+  "otherApps": {
+    "title": "Các ứng dụng khác của chúng tôi",
+    "fileacture": "Công cụ PDF, ảnh và tệp nén chạy ngay trên thiết bị của bạn",
+    "offerlime": "Báo giá và PDF trong một phút",
+    "inviteroll": "Thiệp mời trực tuyến có xác nhận tham dự"
   }
 }

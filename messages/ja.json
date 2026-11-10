@@ -861,5 +861,17 @@
         }
       }
     }
+  },
+  "stores": {
+    "appStoreBadge": "App Storeからダウンロード",
+    "macAppStoreBadge": "Mac App Storeからダウンロード",
+    "microsoftStoreBadge": "Microsoft Storeで入手",
+    "googlePlayBadge": "Google Playで手に入れよう"
+  },
+  "otherApps": {
+    "title": "ほかのアプリ",
+    "fileacture": "PDF・写真・アーカイブのツール。ファイルは端末の外に出ません",
+    "offerlime": "見積書とPDFを1分で",
+    "inviteroll": "出欠確認つきのオンライン招待状"
   }
 }

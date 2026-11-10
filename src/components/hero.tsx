@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Check, Download } from "lucide-react";
 
 import { DownloadDropdown } from "@/components/download-dropdown";
+import { StoreBadges } from "@/components/store-badges";
 import { useOSDetection } from "@/hooks/use-os-detection";
 import { APP_VERSIONS, STORE_URLS } from "@/lib/app-version";
 import { useAppInfo } from "@/hooks/use-app-info";
@@ -116,6 +117,15 @@ export function Hero({ versions }: { versions?: Pick<LiveVersions, "windows"> })
                   </a>
                 </>
               )}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="mt-5"
+            >
+              <StoreBadges location="hero" />
             </motion.div>
 
             <motion.ul
