@@ -3,14 +3,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 /**
- * İndirme + kurulum paneli. Tek kaynak: api.diskmop.com/api/stats (günlük seri,
- * cihazlar, GitHub sayaçları). Günler İstanbul saatine göre.
+ * Yönetim paneli (diskmop.com/admin). Giriş: kullanıcı adı + şifre → api.diskmop.com/api/admin/login
+ * imzalı jeton verir (12 saat); panel verisi jetonla api.diskmop.com/api/stats'tan gelir. Günler İstanbul saatine göre.
  *
- * Üst bölümlerdeki indirme sayısı GERÇEK indirmedir (API ayıklar): bot, telefon, dosyanın
- * sistemiyle uyuşmayan bilgisayar ve yarıda kesilen indirme girmez. Ham sayaçlar en altta,
- * kapalı bölümde:
- *   - Site sayacı: İndir düğmesiyle dosyanın gönderilmeye başladığı her istek.
- *   - GitHub: dosyanın her indirilişi (site + otomatik güncelleme + doğrudan bağlantı).
+ * Yalnız GERÇEK veri gösterilir (API ayıklar): bot, telefon, dosyanın sistemiyle uyuşmayan bilgisayar ve
+ * yarıda kesilen indirme girmez; ham sayaçlar API yanıtında da yoktur.
  *   - Kurulum: uygulamanın bir cihazda İLK açılışı (ping). Gerçek kullanıcıya en yakın sayı.
  */
 
@@ -20,7 +17,6 @@ type Counts = Record<string, number>;
 
 interface SeriesDay {
   date: string;
-  downloads: Counts;
   // Gerçek indirme (windows/mac). İstemci türü kaydedilmeden önceki günlerde null.
   realDownloads?: Counts | null;
   newInstalls: Counts;
@@ -30,22 +26,9 @@ interface SeriesDay {
   opens?: Counts | null;
 }
 
-interface GithubStats {
-  fetchedAt: string;
-  totals: Counts;
-  releases: Array<{ tag: string; published: string } & Counts>;
-}
-
 interface Stats {
   generatedAt: string;
-  downloads: {
-    counts: Counts;
-    logEntries: number;
-    logSince: string | null;
-    clientTrackedSince: string | null;
-    clientMix30: Record<string, Counts>;
-    flow30?: DownloadFlow;
-  };
+  downloads: { flow30?: DownloadFlow };
   installs: {
     total: number;
     byOs: Counts;
@@ -53,12 +36,20 @@ interface Stats {
     active30: number;
     versions: Record<string, Counts>;
     activeTrackedSince: string | null;
-    opens?: { trackedSince: string | null; today: number; last7: number; last30: number };
+    opens?: {
+      trackedSince: string | null;
+      today: number;
+      last7: number;
+      last30: number;
+    };
   };
   series: SeriesDay[];
-  funnel?: { minVersion: string; windows: FunnelOs | null; mac: FunnelOs | null };
+  funnel?: {
+    minVersion: string;
+    windows: FunnelOs | null;
+    mac: FunnelOs | null;
+  };
   appStore?: AppStoreStats;
-  github: GithubStats | { error: string };
 }
 
 // Son 30 gün indirme akışı (API 2026-10-29'dan beri kaydeder; öncesi "başladı" sayılmaz).
@@ -115,16 +106,9 @@ interface Device {
 
 // ---------- yardımcılar ----------
 
-const isWin = (k: string) => k === "windows" || k.startsWith("windows-");
-const isMac = (k: string) => k === "mac" || k.startsWith("mac-");
-const sumWhere = (c: Counts | null | undefined, pred: (k: string) => boolean) =>
-  Object.entries(c ?? {}).reduce((s, [k, n]) => (pred(k) ? s + n : s), 0);
-
-// Gerçek indirme; ayrıştırılamayan eski günlerde ham sayaç (bot hariç).
-const dlWin = (d: SeriesDay) =>
-  d.realDownloads ? (d.realDownloads.windows ?? 0) : sumWhere(d.downloads, isWin);
-const dlMac = (d: SeriesDay) =>
-  d.realDownloads ? (d.realDownloads.mac ?? 0) : sumWhere(d.downloads, isMac);
+// Gerçek indirme (API ayıklar). İstemci türü kaydedilmeden önceki günlerde bilinmez: 0 sayılır.
+const dlWin = (d: SeriesDay) => d.realDownloads?.windows ?? 0;
+const dlMac = (d: SeriesDay) => d.realDownloads?.mac ?? 0;
 const newWin = (d: SeriesDay) => d.newInstalls.win32 ?? 0;
 const newMac = (d: SeriesDay) => d.newInstalls.darwin ?? 0;
 const newAndroid = (d: SeriesDay) => d.newInstalls.Android ?? 0;
@@ -194,32 +178,42 @@ const COLORS = {
   mac: "#a78bfa",
   android: "#34d399",
   ios: "#f472b6",
-  bot: "#52525b",
 };
 
 // ---------- sayfa ----------
 
-export default function StatsPage() {
+function StatsPanel({
+  token,
+  onLogout,
+}: {
+  token: string;
+  onLogout: () => void;
+}) {
   const [days, setDays] = useState(30);
   const [stats, setStats] = useState<Stats | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const load = useCallback(async (range: number) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const r = await fetch(`${API}/api/stats?days=${range}`, {
-        cache: "no-store",
-      });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      setStats(await r.json());
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e));
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  const load = useCallback(
+    async (range: number) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const r = await fetch(`${API}/api/stats?days=${range}`, {
+          cache: "no-store",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (r.status === 401) return onLogout();
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        setStats(await r.json());
+      } catch (e) {
+        setError(e instanceof Error ? e.message : String(e));
+      } finally {
+        setLoading(false);
+      }
+    },
+    [token, onLogout],
+  );
 
   useEffect(() => {
     load(days);
@@ -260,6 +254,12 @@ export default function StatsPage() {
             >
               Yenile
             </button>
+            <button
+              onClick={onLogout}
+              className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-zinc-400 hover:bg-zinc-800"
+            >
+              Çıkış
+            </button>
           </div>
         </header>
 
@@ -269,13 +269,21 @@ export default function StatsPage() {
           </div>
         )}
         {loading && !stats && <p className="text-zinc-500">Yükleniyor…</p>}
-        {stats && <Dashboard stats={stats} />}
+        {stats && <Dashboard stats={stats} token={token} onLogout={onLogout} />}
       </div>
     </div>
   );
 }
 
-function Dashboard({ stats }: { stats: Stats }) {
+function Dashboard({
+  stats,
+  token,
+  onLogout,
+}: {
+  stats: Stats;
+  token: string;
+  onLogout: () => void;
+}) {
   const s = stats.series;
   const today = s[s.length - 1];
   const yesterday = s[s.length - 2];
@@ -328,7 +336,7 @@ function Dashboard({ stats }: { stats: Stats }) {
 
       <DailyChart
         title="Günlük indirme"
-        hint="Gerçek indirmeler: dosyanın kendi sistemindeki bir tarayıcıdan başlayıp yarıda kesilmeyenler. Bot, telefon ve uyuşmayan sistem ayıklanır (20 Eylül öncesi ayrıştırılamıyor)."
+        hint="Gerçek indirmeler: dosyanın kendi sistemindeki bir tarayıcıdan başlayıp yarıda kesilenler hariç. 20 Eylül öncesi ayrıştırılamadığı için gösterilmez."
         days={s}
         segments={[
           { label: "Windows", color: COLORS.windows, value: dlWin },
@@ -363,7 +371,11 @@ function Dashboard({ stats }: { stats: Stats }) {
         hint="Uygulamanın o gün toplam kaç kez açıldığı (aynı cihaz birden çok sayılır; Windows'ta tepsideki uygulamayı yeniden açmak da dahil). Kayıt 7 Kasım 2026'da başladı."
         days={s}
         segments={[
-          { label: "Açılış", color: COLORS.windows, value: (d: SeriesDay) => opensTotal(d) ?? 0 },
+          {
+            label: "Açılış",
+            color: COLORS.windows,
+            value: (d: SeriesDay) => opensTotal(d) ?? 0,
+          },
         ]}
       />
 
@@ -375,20 +387,7 @@ function Dashboard({ stats }: { stats: Stats }) {
 
       <DevicesSummary stats={stats} />
 
-      <DeviceList />
-
-      <details className="rounded-xl border border-zinc-800 bg-zinc-900">
-        <summary className="cursor-pointer px-5 py-4 font-semibold">
-          Ham sayaçlar{" "}
-          <span className="text-sm font-normal text-zinc-500">
-            · botlar ve ayıklanan istekler dahil
-          </span>
-        </summary>
-        <div className="space-y-6 border-t border-zinc-800 p-4">
-          <Reliability stats={stats} />
-          <GithubReleases github={stats.github} />
-        </div>
-      </details>
+      <DeviceList token={token} onLogout={onLogout} />
     </>
   );
 }
@@ -540,7 +539,8 @@ function FunnelSection({
       <h2 className="font-semibold">Satış hunisi</h2>
       <p className="mt-1 text-xs text-zinc-500">
         Windows, uygulama içi olaylar (1.0.32 ve üstü, cihaz başına bir kez).
-        Eski sürümler olay göndermez; sayılar yeni sürüm yayılınca anlam kazanır.
+        Eski sürümler olay göndermez; sayılar yeni sürüm yayılınca anlam
+        kazanır.
       </p>
       {win && (
         <div className="mt-3 grid grid-cols-2 gap-3 text-center sm:grid-cols-5">
@@ -549,9 +549,7 @@ function FunnelSection({
               <p className="text-2xl font-bold tabular-nums">{fmt(n)}</p>
               <p className="text-xs text-zinc-500">{label}</p>
               {i > 0 && (
-                <p className="text-xs text-zinc-600">
-                  {pct(n, steps[0][1])}
-                </p>
+                <p className="text-xs text-zinc-600">{pct(n, steps[0][1])}</p>
               )}
             </div>
           ))}
@@ -643,7 +641,9 @@ function AppStoreSection({
             {appStore.latestDate
               ? dayLabel(appStore.latestDate, { day: "numeric", month: "long" })
               : "—"}
-            {appStore.lastSyncAt && <> · eşitlendi {timeAgo(appStore.lastSyncAt)}</>}
+            {appStore.lastSyncAt && (
+              <> · eşitlendi {timeAgo(appStore.lastSyncAt)}</>
+            )}
           </p>
         </div>
         <p className="mt-1 text-xs text-zinc-500">
@@ -848,158 +848,6 @@ function DailyTable({
 
 const Dim = () => <span className="text-zinc-700">·</span>;
 
-// ---------- sayılar nasıl okunmalı ----------
-
-function Reliability({ stats }: { stats: Stats }) {
-  const c = stats.downloads.counts;
-  const siteWin = sumWhere(c, isWin);
-  const siteMac = sumWhere(c, isMac);
-  const gh = "error" in stats.github ? null : stats.github.totals;
-  const ghWin = gh ? (gh.winSetup ?? 0) + (gh.winPortable ?? 0) : null;
-  const ghMac = gh
-    ? (gh.macDmgArm ?? 0) +
-      (gh.macDmgIntel ?? 0) +
-      (gh.macZipArm ?? 0) +
-      (gh.macZipIntel ?? 0)
-    : null;
-  const instWin = stats.installs.byOs.win32 ?? 0;
-  const instMac = stats.installs.byOs.darwin ?? 0;
-  const instAnd = stats.installs.byOs.Android ?? 0;
-  const mix = stats.downloads.clientMix30;
-  const since = stats.downloads.logSince;
-
-  const cell = "px-4 py-3 text-right tabular-nums";
-  return (
-    <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
-      <h2 className="font-semibold">Sayılar nasıl okunmalı?</h2>
-      <p className="mt-1 text-sm text-zinc-400">
-        Üç kaynak farklı şeyleri sayar; hepsi tüm zamanlar içindir. Gerçek
-        kullanıcıya en yakın olan
-        <span className="text-emerald-400"> kurulum</span> sayısıdır.
-      </p>
-
-      <div className="mt-4 overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead className="text-xs text-zinc-500">
-            <tr className="border-b border-zinc-800">
-              <th className="px-4 py-2 text-left font-medium">Kaynak</th>
-              <th className="px-4 py-2 text-right font-medium">Windows</th>
-              <th className="px-4 py-2 text-right font-medium">Mac</th>
-              <th className="px-4 py-2 text-left font-medium">Ne sayıyor</th>
-            </tr>
-          </thead>
-          <tbody className="align-top">
-            <tr className="border-b border-zinc-800/60">
-              <td className="px-4 py-3 font-medium">Site indirme sayacı</td>
-              <td className={cell}>{fmt(siteWin)}</td>
-              <td className={cell}>{fmt(siteMac)}</td>
-              <td className="px-4 py-3 text-zinc-400">
-                İndir düğmesiyle dosyanın gönderilmeye başladığı her istek. Aynı
-                kişinin tekrar denemesi ve botlar da girer (botlar 19 Eylül'den
-                beri ayrılıyor).
-                {since && (
-                  <>
-                    {" "}
-                    Günlük kayıt{" "}
-                    {dayLabel(since.slice(0, 10), {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                    'den beri.
-                  </>
-                )}
-              </td>
-            </tr>
-            <tr className="border-b border-zinc-800/60">
-              <td className="px-4 py-3 font-medium">
-                GitHub dosya indirmeleri
-              </td>
-              <td className={cell}>{ghWin == null ? "—" : fmt(ghWin)}</td>
-              <td className={cell}>{ghMac == null ? "—" : fmt(ghMac)}</td>
-              <td className="px-4 py-3 text-zinc-400">
-                Dosyanın her indirilişi: site +{" "}
-                <b className="font-medium text-zinc-300">
-                  otomatik güncellemeler
-                </b>{" "}
-                + doğrudan GitHub bağlantıları. Güncelleme denetimi (latest.yml)
-                ayrıca {gh ? fmt(gh.latestYml ?? 0) : "—"} kez.
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 py-3 font-medium text-emerald-400">
-                Uygulamayı açan cihaz
-              </td>
-              <td className={`${cell} text-emerald-300`}>{fmt(instWin)}</td>
-              <td className={`${cell} text-emerald-300`}>{fmt(instMac)}</td>
-              <td className="px-4 py-3 text-zinc-400">
-                Her cihaz ilk açılışta bir kez sayılır. Android (Google Play)
-                ayrıca {fmt(instAnd)}.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-lg bg-zinc-950/60 p-4 text-sm">
-          <p className="text-zinc-400">
-            İndirmeden kuruluma (site sayacına göre)
-          </p>
-          <p className="mt-1">
-            Windows <b className="tabular-nums">{pct(instWin, siteWin)}</b> ·
-            Mac <b className="tabular-nums">{pct(instMac, siteMac)}</b>
-          </p>
-          <p className="mt-2 text-xs text-zinc-500">
-            Mac oranı çok düşükse Mac dosyası çoğunlukla açılmadan kalıyor
-            demektir: botlar, telefondan basılan Mac bağlantısı ya da Gatekeeper
-            uyarısı.
-          </p>
-        </div>
-        <div className="rounded-lg bg-zinc-950/60 p-4 text-sm">
-          <p className="text-zinc-400">Son 30 günde indirmeyi kim başlattı?</p>
-          {Object.keys(mix).length === 0 ? (
-            <p className="mt-1 text-xs text-zinc-500">
-              İstemci türü 19 Eylül'den beri kaydediliyor; ilk indirmelerle
-              burada görünecek.
-            </p>
-          ) : (
-            Object.entries(mix).map(([file, byClient]) => (
-              <p key={file} className="mt-1">
-                <span className="text-zinc-300">
-                  {file === "mac"
-                    ? "Mac dosyası"
-                    : file === "windows"
-                      ? "Windows dosyası"
-                      : file}
-                  :
-                </span>{" "}
-                <span className="text-zinc-400">
-                  {Object.entries(byClient)
-                    .sort(([, a], [, b]) => b - a)
-                    .map(([k, n]) => `${clientLabel(k)} ${fmt(n)}`)
-                    .join(" · ")}
-                </span>
-              </p>
-            ))
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const clientLabel = (k: string) =>
-  ({
-    bot: "bot",
-    ios: "iPhone/iPad",
-    android: "Android",
-    mac: "Mac",
-    windows: "Windows",
-    linux: "Linux",
-    other: "diğer",
-  })[k] ?? k;
-
 // ---------- cihazlar ve sürümler ----------
 
 function DevicesSummary({ stats }: { stats: Stats }) {
@@ -1066,77 +914,34 @@ function DevicesSummary({ stats }: { stats: Stats }) {
   );
 }
 
-function GithubReleases({ github }: { github: Stats["github"] }) {
-  if ("error" in github) {
-    return (
-      <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5 text-sm text-zinc-400">
-        GitHub sayaçları alınamadı ({github.error}).
-      </section>
-    );
-  }
-  const td = "px-2 py-1.5 text-right tabular-nums";
-  return (
-    <section className="rounded-xl border border-zinc-800 bg-zinc-900 p-5">
-      <h2 className="font-semibold">Sürüm başına GitHub indirmeleri</h2>
-      <p className="mt-1 text-xs text-zinc-500">
-        Otomatik güncellemeler dahil · {dateTime(github.fetchedAt)} itibarıyla
-      </p>
-      <div className="mt-3 max-h-80 overflow-auto">
-        <table className="w-full text-xs">
-          <thead className="sticky top-0 bg-zinc-900 text-zinc-500">
-            <tr className="border-b border-zinc-800">
-              <th className="px-2 py-1.5 text-left font-medium">Sürüm</th>
-              <th className="px-2 py-1.5 text-right font-medium">
-                Win kurulum
-              </th>
-              <th className="px-2 py-1.5 text-right font-medium">Portable</th>
-              <th className="px-2 py-1.5 text-right font-medium">Mac dmg</th>
-              <th className="px-2 py-1.5 text-right font-medium">Mac zip</th>
-              <th className="px-2 py-1.5 text-right font-medium">Denetim</th>
-            </tr>
-          </thead>
-          <tbody>
-            {github.releases.map((r) => (
-              <tr key={r.tag} className="border-t border-zinc-800/60">
-                <td className="px-2 py-1.5 text-left">
-                  <span className="font-mono text-zinc-300">{r.tag}</span>{" "}
-                  <span className="text-zinc-600">
-                    {r.published.slice(0, 10)}
-                  </span>
-                </td>
-                <td className={td}>{r.winSetup ?? 0}</td>
-                <td className={td}>{r.winPortable ?? 0}</td>
-                <td className={td}>
-                  {(r.macDmgArm ?? 0) + (r.macDmgIntel ?? 0)}
-                </td>
-                <td className={td}>
-                  {(r.macZipArm ?? 0) + (r.macZipIntel ?? 0)}
-                </td>
-                <td className={`${td} text-zinc-500`}>
-                  {(r.latestYml ?? 0) + (r.latestMacYml ?? 0)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  );
-}
-
 // ---------- cihaz listesi (açılınca yüklenir) ----------
 
-function DeviceList() {
+function DeviceList({
+  token,
+  onLogout,
+}: {
+  token: string;
+  onLogout: () => void;
+}) {
   const [devices, setDevices] = useState<Device[] | null>(null);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (!open || devices) return;
-    fetch(`${API}/api/installations`, { cache: "no-store" })
-      .then((r) => r.json())
+    fetch(`${API}/api/installations`, {
+      cache: "no-store",
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((r) => {
+        if (r.status === 401) {
+          onLogout();
+          throw new Error("unauthorized");
+        }
+        return r.json();
+      })
       .then((j) => setDevices(j.devices ?? []))
       .catch(() => setDevices([]));
-  }, [open, devices]);
+  }, [open, devices, token, onLogout]);
 
   const sorted = useMemo(() => devices ?? [], [devices]);
 
@@ -1199,4 +1004,129 @@ function DeviceList() {
       </div>
     </details>
   );
+}
+
+// ---------- giriş ----------
+
+const TOKEN_KEY = "diskmop-admin-token";
+
+function readToken(): string | null {
+  try {
+    const raw = sessionStorage.getItem(TOKEN_KEY);
+    if (!raw) return null;
+    const { token, expiresAt } = JSON.parse(raw) as {
+      token: string;
+      expiresAt: number;
+    };
+    return token && expiresAt > Date.now() ? token : null;
+  } catch {
+    return null;
+  }
+}
+
+function LoginForm({ onLogin }: { onLogin: (token: string) => void }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setBusy(true);
+    setError(null);
+    try {
+      const r = await fetch(`${API}/api/admin/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.token) {
+        try {
+          sessionStorage.setItem(
+            TOKEN_KEY,
+            JSON.stringify({ token: j.token, expiresAt: j.expiresAt }),
+          );
+        } catch {
+          /* depolama kapalıysa oturum yalnız bu sayfada yaşar */
+        }
+        onLogin(j.token);
+      } else if (r.status === 429) {
+        setError(
+          `Çok fazla hatalı deneme. ${Math.ceil((j.retryAfter ?? 900) / 60)} dakika sonra tekrar deneyin.`,
+        );
+      } else if (r.status === 401) {
+        setError("Kullanıcı adı veya şifre hatalı.");
+      } else {
+        setError("Giriş şu anda yapılamıyor.");
+      }
+    } catch {
+      setError("Sunucuya ulaşılamadı.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-zinc-950 px-4">
+      <form
+        onSubmit={submit}
+        className="w-full max-w-sm space-y-4 rounded-xl border border-zinc-800 bg-zinc-900 p-6"
+      >
+        <h1 className="text-lg font-semibold text-zinc-100">Yönetim paneli</h1>
+        <label className="block text-sm text-zinc-400">
+          Kullanıcı adı
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            autoComplete="username"
+            autoFocus
+            required
+            className="mt-1 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-zinc-100 outline-none focus:border-zinc-500"
+          />
+        </label>
+        <label className="block text-sm text-zinc-400">
+          Şifre
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+            required
+            className="mt-1 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-zinc-100 outline-none focus:border-zinc-500"
+          />
+        </label>
+        {error && <p className="text-sm text-red-400">{error}</p>}
+        <button
+          type="submit"
+          disabled={busy}
+          className="w-full rounded-lg bg-zinc-100 px-3 py-2 text-sm font-medium text-zinc-900 hover:bg-white disabled:opacity-60"
+        >
+          {busy ? "Giriş yapılıyor…" : "Giriş yap"}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default function AdminPage() {
+  // undefined: sessionStorage henüz okunmadı (sunucuda ve ilk çizimde giriş formu çakışmasın).
+  const [token, setToken] = useState<string | null | undefined>(undefined);
+
+  useEffect(() => {
+    setToken(readToken());
+  }, []);
+
+  const logout = useCallback(() => {
+    try {
+      sessionStorage.removeItem(TOKEN_KEY);
+    } catch {
+      /* yoksay */
+    }
+    setToken(null);
+  }, []);
+
+  if (token === undefined) return <div className="min-h-screen bg-zinc-950" />;
+  if (!token) return <LoginForm onLogin={setToken} />;
+  return <StatsPanel token={token} onLogout={logout} />;
 }

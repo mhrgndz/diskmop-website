@@ -8,6 +8,13 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  // Yönetim paneli /myadmin/stats'tan /admin'e taşındı; eski adres yeni adrese gider.
+  async redirects() {
+    return [
+      { source: '/myadmin', destination: '/admin', permanent: false },
+      { source: '/myadmin/:path*', destination: '/admin', permanent: false },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

@@ -7,8 +7,8 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export function GoogleAnalytics() {
   const pathname = usePathname();
-  // Yönetim paneli (/myadmin) ziyaretçi değil: Analytics'e girmesin.
-  if (!GA_ID || pathname?.startsWith("/myadmin")) return null;
+  // Yönetim paneli (/admin) ziyaretçi değil: Analytics'e girmesin.
+  if (!GA_ID || pathname?.startsWith("/admin") || pathname?.startsWith("/myadmin")) return null;
 
   return (
     <>

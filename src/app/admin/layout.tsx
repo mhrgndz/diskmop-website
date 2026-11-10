@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 /**
- * İndirme/kurulum istatistikleri paneli. Sayfanın kendisi client bileşeni
- * olduğu için metadata'yı buradan veriyoruz. robots.ts ayrıca /myadmin/ yolunu
+ * Yönetim paneli (indirme/kurulum istatistikleri). Sayfanın kendisi client bileşeni
+ * olduğu için metadata'yı buradan veriyoruz. robots.ts ayrıca /admin yolunu
  * taramaya kapatıyor; bu da zaten dizine girmişse çıkması içindir
  * (Disallow taranmayı durdurur, dizinden düşürmeyi garanti etmez).
  */

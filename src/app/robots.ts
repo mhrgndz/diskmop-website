@@ -25,7 +25,7 @@ const AI_TARAYICILAR = [
 ];
 
 export default function robots(): MetadataRoute.Robots {
-  const yasak = ["/myadmin/", "/api/", "/success"];
+  const yasak = ["/admin", "/myadmin/", "/api/", "/success"];
 
   return {
     rules: [
