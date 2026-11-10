@@ -81,8 +81,18 @@ import { findLargeFilesMac } from "./find-large-files-mac";
 import { removeStartupItemsMac } from "./remove-startup-items-mac";
 import { deleteAppLeftoversMac } from "./delete-app-leftovers-mac";
 import { xcodeDockerStorageMac } from "./xcode-docker-storage-mac";
+import { howToFreeUpRamWindows11 } from "./how-to-free-up-ram-windows-11";
+import { cleanTempFilesCommandLineWindows } from "./clean-temp-files-command-line-windows";
+import { ssdOverprovisioningGuide } from "./ssd-overprovisioning-guide";
+import { systemVolumeInformationHugeFix } from "./system-volume-information-huge-fix";
+import { browserCacheVsCookiesCleanup } from "./browser-cache-vs-cookies-cleanup";
 
 export const articles: Article[] = [
+  howToFreeUpRamWindows11,
+  cleanTempFilesCommandLineWindows,
+  ssdOverprovisioningGuide,
+  systemVolumeInformationHugeFix,
+  browserCacheVsCookiesCleanup,
   microsoftPcManager,
   // 2026-11-09 eklenenler — Mac için beş rehber (kopya dosya, büyük dosya, açılış öğeleri, uygulama artıkları, Xcode/Docker).
   // Her biri mevcut Mac makaleleriyle çakışmayan ayrı bir arama niyetini karşılar; uygulama özellikleri Mac kaynak koduyla
