@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 const APPS = [
   { key: "fileacture", name: "File Acture", href: "https://fileacture.com/" },
   { key: "offerlime", name: "Offerlime", href: "https://offerlime.com/" },
+  { key: "diskmend", name: "DiskMend", href: "https://diskmend.com/" },
   { key: "inviteroll", name: "Inviteroll", href: "https://inviteroll.com/" },
 ] as const;
 
@@ -17,7 +18,7 @@ export function OtherApps() {
   return (
     <div className="mt-12">
       <h3 className="text-white font-semibold text-sm mb-5">{t("title")}</h3>
-      <ul className="grid gap-5 sm:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {APPS.map((app) => (
           <li key={app.key}>
             <a
