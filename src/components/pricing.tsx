@@ -27,25 +27,29 @@ export function Pricing() {
     originalPrice: 19.9,
     discountPercent: 0,
     hasDiscount: false,
-    currencySymbol: "$",
+    // Fiyat ziyaretçinin ülkesinin parasında gelir (API, Polar ödeme sayfasıyla aynı kuralı uygular)
+    price: "$19.90",
+    original: "$19.90",
     checkoutUrl:
       "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq",
   });
 
   useEffect(() => {
-    fetch("https://api.diskmop.com/api/pricing")
+    fetch(`https://api.diskmop.com/api/pricing?lang=${encodeURIComponent(locale)}`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (data && (data.checkoutUrl || data.originalPrice)) {
           const original = data.originalPrice ?? 19.9;
           const discounted = data.discountedPrice ?? original;
           const percent = data.discountPercent ?? 0;
+          const symbol = data.currencySymbol ?? "$";
           setPricing({
             discountedPrice: discounted,
             originalPrice: original,
             discountPercent: percent,
             hasDiscount: discounted < original && percent > 0,
-            currencySymbol: data.currencySymbol ?? "$",
+            price: data.formattedPrice ?? `${symbol}${discounted.toFixed(2)}`,
+            original: data.formattedOriginalPrice ?? `${symbol}${original.toFixed(2)}`,
             checkoutUrl:
               data.checkoutUrl ||
               "https://buy.polar.sh/polar_cl_wou91uXU3RSe6IFmESbfYGBKDyReZ3ZsK7k2r31u2Fq",
@@ -53,7 +57,7 @@ export function Pricing() {
         }
       })
       .catch(() => {});
-  }, []);
+  }, [locale]);
 
   return (
     <section id="pricing" className="scroll-mt-20 mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:mt-28 lg:px-8">
@@ -73,8 +77,7 @@ export function Pricing() {
           </p>
           <div className="mt-2.5 flex flex-wrap items-baseline gap-x-4">
             <span className="text-[clamp(72px,9vw,120px)] font-extrabold leading-none tracking-[-0.04em] text-white">
-              {pricing.currencySymbol}
-              {pricing.discountedPrice.toFixed(2)}
+              {pricing.price}
             </span>
             <span className="text-xl font-medium text-[#A9B8D0]">
               {t("plan.period")}
@@ -82,8 +85,7 @@ export function Pricing() {
             {pricing.hasDiscount && (
               <>
                 <span className="text-2xl font-semibold text-[#A9B8D0] line-through">
-                  {pricing.currencySymbol}
-                  {pricing.originalPrice.toFixed(2)}
+                  {pricing.original}
                 </span>
                 <span className="rounded-full border border-aqua/40 bg-aqua/15 px-2.5 py-1 text-xs font-bold text-[#7FE0D2]">
                   {pricing.discountPercent}% OFF
