@@ -74,7 +74,11 @@ export async function apiCall<T>(
   if (options.token) headers.set("Authorization", `Bearer ${options.token}`);
   if (options.userAgent)
     headers.set("User-Agent", options.userAgent.slice(0, 300));
-  if (options.clientIp) headers.set("x-forwarded-for", options.clientIp);
+  if (options.clientIp) {
+    headers.set("x-forwarded-for", options.clientIp);
+    // Traefik sunucudan sunucuya çağrıda x-forwarded-for'u sıfırlar; ziyaretçi adresi ayrı başlıkla ulaşır
+    headers.set("x-diskmop-client-ip", options.clientIp);
+  }
 
   let response: Response;
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
