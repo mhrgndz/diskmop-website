@@ -32,7 +32,11 @@ const MOBILE_SLUGS = new Set([
 
 const SLUG_FEATURE_MAP: Record<string, FeatureInfo> = {
   // En cok okunan 5 makale ve diger populer yazilar
-  "appdata-folder-cleanup": { id: "appdata", tabIndex: -1, blogKey: "appdataMap" },
+  "appdata-folder-cleanup": {
+    id: "appdata",
+    tabIndex: -1,
+    blogKey: "appdataMap",
+  },
   "delete-old-user-profiles-windows": { id: "large-files", tabIndex: 2 },
   "how-much-free-disk-space-do-i-need": { id: "disk-treemap", tabIndex: 13 },
   "steam-shader-cache-cleanup": { id: "cache", tabIndex: 6 },
@@ -122,12 +126,8 @@ export function BlogScreenshotShowcase({
     return null;
   }
 
-  // Ingilizce AppData makalesinde GSC baslik deneyi suruyor (olcum 2026-11-10): o tarihe
-  // kadar sayfa degismesin diye eski (genel bakis) videosunda kalir. Olcumden sonra sil.
-  const frozen = slug === "appdata-folder-cleanup" && locale === "en";
-
   // Ozellik tespiti (tanimli degilse varsayilan genel bakis)
-  const feature = (!frozen && SLUG_FEATURE_MAP[slug]) || { id: "overview", tabIndex: 0 };
+  const feature = SLUG_FEATURE_MAP[slug] || { id: "overview", tabIndex: 0 };
   const featureName = feature.blogKey
     ? tBlog(`${feature.blogKey}Name`)
     : tShowcase(`tabs.${feature.tabIndex}.name`);
@@ -204,15 +204,15 @@ export function BlogScreenshotShowcase({
 
         <div className="shrink-0 flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2">
           <ClickHint className="flex">
-          <a
-            href={downloadHref}
-            download
-            onClick={() => trackDownload(downloadPlatform, "blog_showcase")}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition-all hover:from-brand-500 hover:to-teal-500 hover:shadow-lg hover:shadow-brand-500/30 active:scale-[0.98]"
-          >
-            <Download className="h-4 w-4" />
-            <span>{tBlog("downloadFor", { os: osLabel })}</span>
-          </a>
+            <a
+              href={downloadHref}
+              download
+              onClick={() => trackDownload(downloadPlatform, "blog_showcase")}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition-all hover:from-brand-500 hover:to-teal-500 hover:shadow-lg hover:shadow-brand-500/30 active:scale-[0.98]"
+            >
+              <Download className="h-4 w-4" />
+              <span>{tBlog("downloadFor", { os: osLabel })}</span>
+            </a>
           </ClickHint>
           <span className="text-[11px] text-center md:text-right text-muted-foreground/75">
             {tBlog("trustNoCard")}
