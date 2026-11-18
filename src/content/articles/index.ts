@@ -1,4 +1,9 @@
 import { microsoftPcManager } from "./microsoft-pc-manager";
+import { clearWindowsErrorReportingCrashDumps } from "./clear-windows-error-reporting-crash-dumps";
+import { clearDiscordTeamsSpotifyCacheWindows } from "./clear-discord-teams-spotify-cache-windows";
+import { deliveryOptimizationCacheWindows } from "./delivery-optimization-cache-windows";
+import { clearDeveloperCachesWindows } from "./clear-developer-caches-windows";
+import { clearThumbnailCacheWindows } from "./clear-thumbnail-cache-windows";
 import type { Article } from "../types";
 import { LOCALES } from "@/lib/locales";
 import { ccleaner } from "./ccleaner";
@@ -94,6 +99,13 @@ export const articles: Article[] = [
   systemVolumeInformationHugeFix,
   browserCacheVsCookiesCleanup,
   microsoftPcManager,
+  // 2026-11-18 eklenenler — Windows için beş rehber (hata raporları ve çökme dökümleri, Discord/Teams/Spotify/VS Code önbelleği,
+  // Teslim Optimizasyonu, geliştirici paket önbellekleri, küçük resim önbelleği). 18 dil; uygulama özellikleri Rust kaynak koduyla doğrulandı.
+  clearWindowsErrorReportingCrashDumps,
+  clearDiscordTeamsSpotifyCacheWindows,
+  deliveryOptimizationCacheWindows,
+  clearDeveloperCachesWindows,
+  clearThumbnailCacheWindows,
   // 2026-11-09 eklenenler — Mac için beş rehber (kopya dosya, büyük dosya, açılış öğeleri, uygulama artıkları, Xcode/Docker).
   // Her biri mevcut Mac makaleleriyle çakışmayan ayrı bir arama niyetini karşılar; uygulama özellikleri Mac kaynak koduyla
   // doğrulandı. 8 dil, keyTakeaways + FAQ + HowTo + tablo.
