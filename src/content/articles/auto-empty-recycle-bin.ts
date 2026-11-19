@@ -149,6 +149,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows, geri dönüşüm kutusunu tamamen devre dışı bırakmanıza da izin verir. Bir dosyayı Shift+Delete ile silerseniz kutuya uğramadan doğrudan silinir. Kalıcı olarak da Geri Dönüşüm Kutusu Özellikler penceresinde, dosyaların kutuya taşınmadan hemen silinmesini sağlayan bir seçenek vardır.",
             "Bunu önermiyoruz. Kutu, yanlışlıkla silmelere karşı tek yerleşik güvenlik ağınızdır. Kutuyu atlayan bir dosyanın geri getirilmesi özel kurtarma yazılımı gerektirir, sonuç garantili değildir ve TRIM özellikli SSD'lerde veriler çok kısa sürede gerçekten yok olur. Yanlış bir seçim, tek tuşla dönüşü olmayan bir kayba dönüşebilir.",
             "Daha akıllı yol, kutuyu güvenlik ağı olarak tutup boşaltmayı otomatiğe bağlamaktır. 14 günlük bir Depolama Alanı Algılayıcısı süresi veya Disk Mop'un haftalık zamanlanmış temizliği, alan kazancının neredeyse tamamını riskin hiçbiri olmadan sağlar.",
+            "Hâlâ ihtiyaç duyduğunuz bir dosya boşaltılmış kutudan çoktan gittiyse, sürücüye o zamandan beri pek yazılmadıysa çoğu zaman hâlâ bulunabilir: [Geri Dönüşüm Kutusu boşaltıldıktan sonra dosyalar nasıl kurtarılır?](https://diskmend.com/tr/blog/recover-emptied-recycle-bin)",
           ],
         },
         {
@@ -307,6 +308,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows also lets you skip the Recycle Bin altogether. Pressing Shift+Delete removes a file immediately without it ever entering the bin, and the Recycle Bin Properties window has an option that makes every deletion permanent by removing files instead of moving them to the bin.",
             "We do not recommend it. The bin is your only built-in safety net against accidental deletion. Recovering a file that bypassed the bin requires specialized recovery software, the result is never guaranteed, and on SSDs with TRIM the data is often genuinely gone within minutes. One wrong selection turns into an irreversible loss.",
             "The smarter play is keeping the bin as a safety net and automating the emptying instead. A 14-day Storage Sense window, or Disk Mop's weekly Scheduled Cleanup, delivers nearly all of the space savings with none of the risk.",
+            "If a file you still needed is already gone from an emptied bin, it can often still be found as long as the drive has not been written to much since: [How to recover files after emptying the Recycle Bin](https://diskmend.com/en/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -378,6 +380,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows erlaubt es auch, den Papierkorb ganz zu überspringen. Mit Umschalt+Entf wird eine Datei sofort gelöscht, ohne im Papierkorb zu landen, und in den Papierkorb-Eigenschaften gibt es eine Option, die jede Löschung dauerhaft macht.",
             "Davon raten wir ab. Der Papierkorb ist Ihr einziges eingebautes Sicherheitsnetz gegen versehentliches Löschen. Eine Datei, die daran vorbeigeht, lässt sich nur mit spezieller Wiederherstellungssoftware und ohne Garantie retten — auf SSDs mit TRIM sind die Daten oft binnen Minuten endgültig verloren.",
             "Klüger ist es, den Papierkorb als Sicherheitsnetz zu behalten und das Leeren zu automatisieren. Eine 14-Tage-Frist in der Speicheroptimierung oder Disk Mops wöchentliche geplante Bereinigung bringt fast den gesamten Platzgewinn — ohne das Risiko.",
+            "Ist eine Datei, die Sie noch brauchen, mit dem geleerten Papierkorb bereits verschwunden, lässt sie sich oft noch finden, solange seitdem wenig auf das Laufwerk geschrieben wurde: [Geleerten Papierkorb wiederherstellen: Dateien zurückholen](https://diskmend.com/de/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -542,6 +545,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows vous permet aussi d'ignorer totalement la Corbeille. La combinaison Maj+Suppr efface un fichier immédiatement, sans qu'il passe par la Corbeille, et la fenêtre Propriétés de la Corbeille propose une option qui rend chaque suppression définitive en effaçant les fichiers au lieu de les déplacer.",
             "Nous le déconseillons. La Corbeille est votre seul filet de sécurité intégré contre les suppressions accidentelles. Récupérer un fichier qui l'a contournée exige un logiciel de récupération spécialisé, le résultat n'est jamais garanti, et sur les SSD équipés de TRIM les données ont souvent réellement disparu en quelques minutes. Une mauvaise sélection se transforme alors en perte irréversible.",
             "La stratégie la plus fine consiste à garder la Corbeille comme filet de sécurité et à automatiser son vidage. Un délai de 14 jours dans l'Assistant Stockage, ou le nettoyage programmé hebdomadaire de Disk Mop, apporte la quasi-totalité de l'espace gagné sans aucun des risques.",
+            "Si un fichier dont vous aviez encore besoin a disparu avec la Corbeille vidée, il peut souvent encore être retrouvé tant que le disque n'a pas beaucoup été réécrit depuis : [Récupérer des fichiers après avoir vidé la Corbeille](https://diskmend.com/fr/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -704,6 +708,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows también te deja saltarte la Papelera de reciclaje del todo. Al pulsar Mayús+Supr, el archivo se elimina de inmediato sin pasar por la Papelera, y la ventana Propiedades de la Papelera incluye una opción que hace permanente cada borrado: los archivos se eliminan en lugar de moverse a la Papelera.",
             "No lo recomendamos. La Papelera es tu única red de seguridad integrada frente a los borrados accidentales. Recuperar un archivo que se la ha saltado exige software de recuperación especializado, el resultado nunca está garantizado y, en los SSD con TRIM, los datos suelen desaparecer de verdad en cuestión de minutos. Una selección equivocada se convierte en una pérdida irreversible.",
             "Lo más inteligente es mantener la Papelera como red de seguridad y automatizar el vaciado. Un plazo de 14 días en el Sensor de almacenamiento, o la limpieza programada semanal de Disk Mop, te da prácticamente todo el espacio ganado sin ninguno de los riesgos.",
+            "Si un archivo que aún necesitabas ya desapareció con la papelera vaciada, a menudo todavía se puede encontrar mientras no se haya escrito mucho en la unidad desde entonces: [Cómo recuperar archivos después de vaciar la Papelera de reciclaje](https://diskmend.com/es/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -865,6 +870,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windows ti permette anche di aggirare completamente il Cestino. Premendo Maiusc+Canc il file viene rimosso subito senza passare dal Cestino, e nella finestra Proprietà del Cestino esiste un'opzione che rende definitiva ogni eliminazione: i file vengono cancellati invece di essere spostati.",
             "Non lo consigliamo. Il Cestino è la tua unica rete di sicurezza integrata contro le cancellazioni accidentali. Recuperare un file che l'ha aggirata richiede software di recupero specializzato, il risultato non è mai garantito e sugli SSD con TRIM i dati spesso spariscono davvero nel giro di pochi minuti. Una selezione sbagliata si trasforma in una perdita irreversibile.",
             "La mossa più intelligente è tenere il Cestino come rete di sicurezza e automatizzarne lo svuotamento. Una soglia di 14 giorni in Sensore memoria, oppure la pulizia programmata settimanale di Disk Mop, porta quasi tutto lo spazio recuperato senza nessuno dei rischi.",
+            "Se un file che ti serviva è già sparito con il Cestino svuotato, spesso si può ancora ritrovare finché sull'unità non si è scritto molto da allora: [Come recuperare file dopo aver svuotato il Cestino](https://diskmend.com/it/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -1025,6 +1031,7 @@ export const autoEmptyRecycleBin: Article = {
             "O Windows também deixa você pular a Lixeira totalmente. Ao pressionar Shift+Delete, o arquivo é removido na hora sem passar pela Lixeira, e a janela Propriedades da Lixeira tem uma opção que torna toda exclusão permanente, apagando os arquivos em vez de movê-los.",
             "Não recomendamos. A Lixeira é a sua única rede de segurança nativa contra exclusões acidentais. Recuperar um arquivo que passou por fora dela exige software de recuperação especializado, o resultado nunca é garantido e, em SSDs com TRIM, os dados costumam sumir de verdade em poucos minutos. Uma seleção errada vira uma perda irreversível.",
             "A jogada mais inteligente é manter a Lixeira como rede de segurança e automatizar o esvaziamento. Um prazo de 14 dias no Sensor de Armazenamento, ou a limpeza agendada semanal do Disk Mop, entrega quase todo o ganho de espaço sem nenhum dos riscos.",
+            "Se um arquivo de que você ainda precisava já sumiu com a Lixeira esvaziada, muitas vezes ele ainda pode ser encontrado, desde que pouco tenha sido gravado na unidade desde então: [Como recuperar arquivos depois de esvaziar a Lixeira](https://diskmend.com/pt/blog/recover-emptied-recycle-bin).",
           ],
         },
         {
@@ -1185,6 +1192,7 @@ export const autoEmptyRecycleBin: Article = {
             "Windowsでは、ごみ箱を完全に経由しない設定も選べます。Shift+Deleteで削除すればごみ箱に入らずその場で消えますし、ごみ箱のプロパティには、ファイルをごみ箱へ移動せずにすぐ削除する、つまりすべての削除を恒久的なものにするオプションもあります。",
             "ただし、おすすめはしません。ごみ箱は、うっかり削除してしまったときに頼れる唯一の標準的な安全網だからです。ごみ箱を経由せずに消えたファイルを取り戻すには専用の復元ソフトが必要で、成功する保証はありません。TRIMが有効なSSDでは、数分のうちにデータが本当に失われてしまうことも珍しくないのです。選択を一度間違えるだけで、取り返しのつかない損失になります。",
             "賢いのは、ごみ箱は安全網として残したまま、空にする作業のほうを自動化することです。ストレージ センサーで14日を指定するか、Disk Mopの週次の定期クリーンアップを使えば、リスクを負わずに空き容量のほとんどを取り戻せます。",
+            "まだ必要だったファイルを空にしたごみ箱ごと失った場合でも、その後ドライブにあまり書き込んでいなければ見つかることがよくあります。詳しくは[ごみ箱を空にした後のファイルを復元する方法](https://diskmend.com/ja/blog/recover-emptied-recycle-bin)をご覧ください。",
           ],
         },
         {

@@ -82,6 +82,7 @@ export const ssdHealthCheckWindows: Article = {
             "SSD'ler sabit diskler gibi ses çıkararak uyarı vermez, bu yüzden belirtiler yazılım tarafında görünür. En sık rastlanan ilk işaret, dosya kopyalama hızının kalıcı olarak düşmesi ve büyük dosyaların kaydedilmesinin uzamasıdır.",
             'Daha ciddi aşamada dosyalar bozulmaya başlar: açılmayan belgeler, hata veren oyun kurulumları, tekrarlayan mavi ekranlar. Bazı sürücüler kritik aşamada kendilerini salt okunur moda alır — mevcut verileri okuyabilirsiniz ama hiçbir şey yazamazsınız. Bu, üreticinin bilinçli tasarladığı son savunma hattıdır ve "hemen yedek al" anlamına gelir.',
             "En sert belirti sürücünün BIOS'ta veya Disk Yönetimi'nde hiç görünmemesidir. Bu noktada veri kurtarma genellikle profesyonel hizmet gerektirir ve sonuç garantili değildir. Bu yüzden S.M.A.R.T. değerlerinde Warning görür görmez yedek almak, kaybı önlemenin tek güvenilir yoludur.",
+            "Sürücü hâlâ görünüyor ama dosya kaybettiyse hızlı davranın; SSD'lerde TRIM silinen blokları kısa sürede temizler: [SSD'den silinen dosyalar kurtarılabilir mi? TRIM kurtarmayı nasıl etkiler?](https://diskmend.com/tr/blog/ssd-data-recovery-trim)",
           ],
         },
         {
@@ -254,6 +255,7 @@ export const ssdHealthCheckWindows: Article = {
             "SSDs give no audible warning the way hard drives do, so the symptoms appear on the software side. The most common first sign is file copy speed dropping permanently and large saves taking noticeably longer.",
             "At a more serious stage, files begin to corrupt: documents that will not open, game installs that fail verification, recurring blue screens. Some drives put themselves into read-only mode at the critical point — you can read existing data but write nothing. That is a deliberate last line of defence by the manufacturer, and it means back up now.",
             "The bluntest symptom is the drive not appearing in the BIOS or in Disk Management at all. At that stage, data recovery usually requires a professional service with no guaranteed outcome. This is exactly why backing up the moment S.M.A.R.T. reports Warning is the only reliable way to avoid loss.",
+            "If the drive still shows up but files have already gone missing, act quickly: on SSDs, TRIM clears deleted blocks soon after deletion. See [Can you recover deleted files from an SSD? How TRIM affects recovery](https://diskmend.com/en/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -427,6 +429,7 @@ export const ssdHealthCheckWindows: Article = {
             "SSDs warnen nicht akustisch wie Festplatten, die Symptome zeigen sich daher auf der Softwareseite. Das häufigste erste Anzeichen ist eine dauerhaft gesunkene Kopiergeschwindigkeit und spürbar längeres Speichern großer Dateien.",
             "In einem ernsteren Stadium beginnen Dateien zu korrumpieren: Dokumente lassen sich nicht mehr öffnen, Spielinstallationen scheitern an der Prüfung, blaue Bildschirme häufen sich. Manche Laufwerke schalten am kritischen Punkt in den Schreibschutz — vorhandene Daten lassen sich lesen, aber nichts mehr schreiben. Das ist eine bewusst eingebaute letzte Verteidigungslinie und bedeutet: sofort sichern.",
             "Das deutlichste Symptom ist ein Laufwerk, das im BIOS oder in der Datenträgerverwaltung gar nicht mehr erscheint. Dann erfordert die Datenrettung in der Regel professionelle Hilfe ohne Erfolgsgarantie. Genau deshalb ist eine Sicherung beim ersten Warning im S.M.A.R.T.-Status der einzig verlässliche Schutz vor Verlust.",
+            "Wird das Laufwerk noch erkannt, aber Dateien fehlen bereits, handeln Sie schnell: Bei SSDs leert TRIM gelöschte Blöcke kurz nach dem Löschen. Mehr dazu: [Gelöschte Dateien von SSD wiederherstellen? Was TRIM damit zu tun hat](https://diskmend.com/de/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -601,6 +604,7 @@ export const ssdHealthCheckWindows: Article = {
             "Un SSD n'émet aucun avertissement sonore, contrairement à un disque dur : les symptômes apparaissent donc du côté logiciel. Le premier signe le plus courant est une vitesse de copie qui chute durablement et des enregistrements de gros fichiers qui prennent visiblement plus de temps.",
             "À un stade plus avancé, les fichiers commencent à se corrompre : documents qui ne s'ouvrent plus, installations de jeux qui échouent à la vérification, écrans bleus à répétition. Certains disques se placent d'eux-mêmes en lecture seule au moment critique — vous pouvez lire les données existantes, mais plus rien écrire. C'est une dernière ligne de défense volontairement prévue par le fabricant, et elle signifie : sauvegardez maintenant.",
             "Le symptôme le plus brutal est un disque qui n'apparaît plus du tout dans le BIOS ni dans la Gestion des disques. À ce stade, la récupération de données passe généralement par un service professionnel, sans garantie de résultat. C'est exactement pour cela que sauvegarder dès que S.M.A.R.T. affiche Warning reste le seul moyen fiable d'éviter la perte.",
+            "Si le disque est encore détecté mais que des fichiers ont déjà disparu, agissez vite : sur un SSD, TRIM efface les blocs supprimés peu après la suppression. Voir [Récupérer des fichiers supprimés sur un SSD : ce que change TRIM](https://diskmend.com/fr/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -776,6 +780,7 @@ export const ssdHealthCheckWindows: Article = {
             "Los SSD no avisan con ruido como los discos duros, así que los síntomas aparecen en el lado del software. La primera señal más habitual es que la velocidad de copia baja de forma permanente y guardar archivos grandes tarda mucho más.",
             "En una fase más grave los archivos empiezan a corromperse: documentos que no abren, instalaciones de juegos que fallan la verificación, pantallazos azules recurrentes. Algunas unidades se ponen solas en modo de solo lectura al llegar al punto crítico: puedes leer los datos existentes, pero no escribir nada. Es una última línea de defensa que el fabricante ha diseñado a propósito y significa hacer copia de seguridad ahora mismo.",
             "El síntoma más rotundo es que la unidad no aparezca en la BIOS ni en Administración de discos. A esas alturas, la recuperación de datos suele requerir un servicio profesional y sin resultado garantizado. Justo por eso, hacer una copia en cuanto S.M.A.R.T. informa de Warning es la única forma fiable de evitar la pérdida.",
+            "Si la unidad todavía aparece pero ya faltan archivos, actúa rápido: en los SSD, TRIM limpia los bloques borrados poco después del borrado. Consulta [¿Se pueden recuperar archivos borrados de un SSD? Cómo afecta TRIM](https://diskmend.com/es/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -950,6 +955,7 @@ export const ssdHealthCheckWindows: Article = {
             "Gli SSD non danno alcun avviso sonoro come fanno i dischi rigidi, quindi i sintomi compaiono dal lato software. Il primo segnale più comune è una velocità di copia che cala in modo permanente e il salvataggio dei file di grandi dimensioni che diventa visibilmente più lento.",
             "In una fase più seria i file iniziano a corrompersi: documenti che non si aprono, installazioni di giochi che non superano la verifica, schermate blu ricorrenti. Alcune unità, arrivate al punto critico, si mettono da sole in sola lettura: i dati esistenti si leggono ancora, ma non è più possibile scrivere nulla. È un'ultima linea di difesa voluta dal produttore e significa fare subito un backup.",
             "Il sintomo più netto è l'unità che non compare più nel BIOS né in Gestione disco. A quel punto il recupero dei dati richiede di norma un servizio professionale, senza garanzia di risultato. È esattamente per questo che fare un backup non appena S.M.A.R.T. segnala Warning è l'unico modo affidabile per evitare la perdita.",
+            "Se l'unità è ancora visibile ma alcuni file sono già spariti, agisci in fretta: sugli SSD, TRIM azzera i blocchi cancellati poco dopo la cancellazione. Vedi [Si possono recuperare file cancellati da un SSD? Come influisce TRIM](https://diskmend.com/it/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -1122,6 +1128,7 @@ export const ssdHealthCheckWindows: Article = {
             "SSDs não dão aviso sonoro como os discos rígidos, então os sintomas aparecem do lado do software. O primeiro sinal mais comum é a velocidade de cópia cair de forma permanente e o salvamento de arquivos grandes demorar bem mais.",
             "Em um estágio mais sério os arquivos começam a corromper: documentos que não abrem, instalações de jogos que falham na verificação, telas azuis recorrentes. Algumas unidades entram sozinhas em modo somente leitura no ponto crítico — você consegue ler os dados existentes, mas não gravar nada. Essa é uma última linha de defesa colocada de propósito pelo fabricante e significa fazer backup agora.",
             "O sintoma mais duro é a unidade não aparecer na BIOS nem no Gerenciamento de Disco. Nesse estágio, a recuperação de dados costuma exigir um serviço profissional e sem garantia de resultado. É exatamente por isso que fazer backup assim que o S.M.A.R.T. mostra Warning é a única forma confiável de evitar a perda.",
+            "Se a unidade ainda aparece, mas arquivos já sumiram, aja rápido: em SSDs, o TRIM limpa os blocos apagados pouco depois da exclusão. Veja [Dá para recuperar arquivos apagados de um SSD? Como o TRIM afeta a recuperação](https://diskmend.com/pt/blog/ssd-data-recovery-trim).",
           ],
         },
         {
@@ -1294,6 +1301,7 @@ export const ssdHealthCheckWindows: Article = {
             "SSDはハードディスクのように音で警告してくれないため、症状はソフトウェア側に現れます。最もよくある最初のサインは、ファイルのコピー速度が元に戻らないまま落ちること、そして大きなファイルの保存に明らかに時間がかかるようになることです。",
             "さらに進行すると、ファイルの破損が始まります。開けなくなった書類、検証に失敗するゲームのインストール、繰り返し発生するブルースクリーンなどです。一部のドライブは危険な段階に達すると、自ら読み取り専用モードに切り替わります。既存のデータは読めますが、何も書き込めません。これはメーカーが意図的に用意した最後の防衛線であり、「今すぐバックアップを取れ」という意味です。",
             "最も厳しい症状は、ドライブがBIOSにもディスクの管理にもまったく表示されなくなることです。この段階になるとデータ復旧は専門業者に頼ることが多く、成功する保証もありません。だからこそ、S.M.A.R.T.がWarningを示した時点でバックアップを取ることが、データ損失を防ぐ唯一確実な方法なのです。",
+            "ドライブはまだ認識されるのにファイルが消えている場合は、すぐに対処してください。SSDではTRIMが削除後まもなくブロックを消去します。詳しくは[SSDで削除したファイルは復元できる？TRIMが復元に与える影響](https://diskmend.com/ja/blog/ssd-data-recovery-trim)をご覧ください。",
           ],
         },
         {
