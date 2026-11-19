@@ -12,8 +12,8 @@
  * ucu yok; elle yazılan numara bayatlıyordu). Yedekler yine de zaman zaman güncellenmeli.
  */
 export const APP_VERSIONS = {
-  windows: "1.1.11",
-  mac: "1.1.8",
+  windows: "1.1.12",
+  mac: "1.1.9",
   ios: "1.1.11",
 } as const;
 
