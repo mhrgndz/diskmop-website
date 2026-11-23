@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { EventsPanel } from "./events-panel";
 
 /**
  * Yönetim paneli (diskmop.com/admin). Giriş: kullanıcı adı + şifre → api.diskmop.com/api/admin/login
@@ -11,7 +12,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
  *   - Kurulum: uygulamanın bir cihazda İLK açılışı (ping). Gerçek kullanıcıya en yakın sayı.
  */
 
-const API = "https://api.diskmop.com";
+// Yerel denemede NEXT_PUBLIC_ADMIN_API ile yerel API'ye bağlanabilir.
+const API = process.env.NEXT_PUBLIC_ADMIN_API || "https://api.diskmop.com";
 
 type Counts = Record<string, number>;
 
@@ -189,6 +191,7 @@ function StatsPanel({
   token: string;
   onLogout: () => void;
 }) {
+  const [view, setView] = useState<"stats" | "events">("stats");
   const [days, setDays] = useState(30);
   const [stats, setStats] = useState<Stats | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -225,35 +228,60 @@ function StatsPanel({
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
-              DiskMop — İstatistikler
+              DiskMop —{" "}
+              {view === "stats" ? "İstatistikler" : "Olaylar ve hatalar"}
             </h1>
             <p className="mt-1 text-sm text-zinc-500">
               Günler İstanbul saatine göre
               {stats && <> · güncellendi {dateTime(stats.generatedAt)}</>}
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="flex rounded-lg bg-zinc-900 p-1">
-              {[30, 90, 180].map((d) => (
+              {(
+                [
+                  ["stats", "İstatistikler"],
+                  ["events", "Olaylar ve hatalar"],
+                ] as const
+              ).map(([v, label]) => (
                 <button
-                  key={d}
-                  onClick={() => setDays(d)}
+                  key={v}
+                  onClick={() => setView(v)}
                   className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
-                    days === d
+                    view === v
                       ? "bg-zinc-800 text-white"
                       : "text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
-                  {d} gün
+                  {label}
                 </button>
               ))}
             </div>
-            <button
-              onClick={() => load(days)}
-              className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-zinc-300 hover:bg-zinc-800"
-            >
-              Yenile
-            </button>
+            {view === "stats" && (
+              <div className="flex rounded-lg bg-zinc-900 p-1">
+                {[30, 90, 180].map((d) => (
+                  <button
+                    key={d}
+                    onClick={() => setDays(d)}
+                    className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                      days === d
+                        ? "bg-zinc-800 text-white"
+                        : "text-zinc-400 hover:text-zinc-200"
+                    }`}
+                  >
+                    {d} gün
+                  </button>
+                ))}
+              </div>
+            )}
+            {view === "stats" && (
+              <button
+                onClick={() => load(days)}
+                className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-zinc-300 hover:bg-zinc-800"
+              >
+                Yenile
+              </button>
+            )}
             <button
               onClick={onLogout}
               className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-zinc-400 hover:bg-zinc-800"
@@ -263,13 +291,18 @@ function StatsPanel({
           </div>
         </header>
 
-        {error && (
+        {view === "events" && <EventsPanel token={token} onLogout={onLogout} />}
+        {view === "stats" && error && (
           <div className="rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-400">
             API'ye ulaşılamadı: {error}
           </div>
         )}
-        {loading && !stats && <p className="text-zinc-500">Yükleniyor…</p>}
-        {stats && <Dashboard stats={stats} token={token} onLogout={onLogout} />}
+        {view === "stats" && loading && !stats && (
+          <p className="text-zinc-500">Yükleniyor…</p>
+        )}
+        {view === "stats" && stats && (
+          <Dashboard stats={stats} token={token} onLogout={onLogout} />
+        )}
       </div>
     </div>
   );
