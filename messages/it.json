@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64-bit)",
+      "reqs": "Windows 10 (32/64-bit) / 11 (64-bit)",
       "recommended": "Consigliato per te",
       "download": "Scarica per Windows",
       "signed": "Firmato — editore verificato",
@@ -453,7 +453,7 @@
       },
       {
         "question": "Quali sistemi operativi sono supportati?",
-        "answer": "Disk Mop funziona su Windows 10/11 (64-bit) e macOS 12+ (Apple Silicon e Intel) come applicazione nativa. Ci sono anche app mobili native: Disk Mop per Android 8.0+ su Google Play e DiskMop: Photo & Video Cleaner per iPhone (iOS 18+) su App Store."
+        "answer": "Disk Mop funziona su Windows 10 (32/64-bit) / 11 (64-bit) e macOS 12+ (Apple Silicon e Intel) come applicazione nativa. Ci sono anche app mobili native: Disk Mop per Android 8.0+ su Google Play e DiskMop: Photo & Video Cleaner per iPhone (iOS 18+) su App Store."
       },
       {
         "question": "Come funziona la licenza?",

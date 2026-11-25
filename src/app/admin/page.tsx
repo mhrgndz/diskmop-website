@@ -109,7 +109,9 @@ interface Device {
 // ---------- yardımcılar ----------
 
 // Gerçek indirme (API ayıklar). İstemci türü kaydedilmeden önceki günlerde bilinmez: 0 sayılır.
-const dlWin = (d: SeriesDay) => d.realDownloads?.windows ?? 0;
+// `windows` 32 bit kurucuyu da içerir; `windows32` yalnız 32 bit olanlar (API sonradan ekledi).
+const dlWin32 = (d: SeriesDay) => d.realDownloads?.windows32 ?? 0;
+const dlWin = (d: SeriesDay) => (d.realDownloads?.windows ?? 0) - dlWin32(d);
 const dlMac = (d: SeriesDay) => d.realDownloads?.mac ?? 0;
 const newWin = (d: SeriesDay) => d.newInstalls.win32 ?? 0;
 const newMac = (d: SeriesDay) => d.newInstalls.darwin ?? 0;
@@ -177,6 +179,7 @@ function timeAgo(iso: string) {
 
 const COLORS = {
   windows: "#3b82f6",
+  windows32: "#06b6d4",
   mac: "#a78bfa",
   android: "#34d399",
   ios: "#f472b6",
@@ -373,6 +376,7 @@ function Dashboard({
         days={s}
         segments={[
           { label: "Windows", color: COLORS.windows, value: dlWin },
+          { label: "Windows 32-bit", color: COLORS.windows32, value: dlWin32 },
           { label: "Mac", color: COLORS.mac, value: dlMac },
         ]}
       />

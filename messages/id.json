@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64-bit)",
+      "reqs": "Windows 10 (32/64-bit) / 11 (64-bit)",
       "recommended": "Direkomendasikan untuk Anda",
       "download": "Unduh untuk Windows",
       "signed": "Tanda tangan kode & penerbit terverifikasi",
@@ -441,7 +441,7 @@
       },
       {
         "question": "Sistem operasi apa yang didukung?",
-        "answer": "Disk Mop berjalan di Windows 10/11 (64-bit) dan macOS 12+ (Apple Silicon dan Intel) sebagai aplikasi native. Tersedia juga aplikasi seluler native: Disk Mop untuk Android 8.0+ di Google Play, dan DiskMop: Photo & Video Cleaner untuk iPhone (iOS 18+) di App Store."
+        "answer": "Disk Mop berjalan di Windows 10 (32/64-bit) / 11 (64-bit) dan macOS 12+ (Apple Silicon dan Intel) sebagai aplikasi native. Tersedia juga aplikasi seluler native: Disk Mop untuk Android 8.0+ di Google Play, dan DiskMop: Photo & Video Cleaner untuk iPhone (iOS 18+) di App Store."
       },
       {
         "question": "Bagaimana cara kerja lisensinya?",

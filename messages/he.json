@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (‏64 סיביות)",
+      "reqs": "Windows 10 (‏32/64 סיביות) / 11 (‏64 סיביות)",
       "recommended": "מומלץ בשבילכם",
       "download": "הורדה ל-Windows",
       "signed": "חתום דיגיטלית, מפרסם מאומת",
@@ -437,7 +437,7 @@
       },
       {
         "question": "אילו מערכות הפעלה נתמכות?",
-        "answer": "Disk Mop פועל כאפליקציה מקורית ב-Windows 10/11 (‏64 סיביות) וב-macOS 12+ (‏Apple Silicon ו-Intel). קיימות גם אפליקציות מקוריות לנייד: Disk Mop ל-Android 8.0+ ב-Google Play, ו-DiskMop: Photo & Video Cleaner ל-iPhone (‏iOS 18+) ב-App Store."
+        "answer": "Disk Mop פועל כאפליקציה מקורית ב-Windows 10 (‏32/64 סיביות) / 11 (‏64 סיביות) וב-macOS 12+ (‏Apple Silicon ו-Intel). קיימות גם אפליקציות מקוריות לנייד: Disk Mop ל-Android 8.0+ ב-Google Play, ו-DiskMop: Photo & Video Cleaner ל-iPhone (‏iOS 18+) ב-App Store."
       },
       {
         "question": "איך הרישיון עובד?",

@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "約80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64-bit)",
+      "reqs": "Windows 10 (32/64-bit) / 11 (64-bit)",
       "recommended": "あなたにおすすめ",
       "download": "Windows版をダウンロード",
       "signed": "コード署名済み・発行元を検証",
@@ -453,7 +453,7 @@
       },
       {
         "question": "対応しているOSは何ですか？",
-        "answer": "Disk MopはWindows 10/11（64-bit）とmacOS 12+（Apple SiliconおよびIntel）でネイティブアプリケーションとして動作します。モバイル向けのネイティブアプリもあります：Android 8.0+向けのDisk MopはGoogle Playで、iPhone（iOS 18+）向けのDiskMop: Photo & Video CleanerはApp Storeで入手できます。"
+        "answer": "Disk MopはWindows 10（32/64-bit）/ 11（64-bit）とmacOS 12+（Apple SiliconおよびIntel）でネイティブアプリケーションとして動作します。モバイル向けのネイティブアプリもあります：Android 8.0+向けのDisk MopはGoogle Playで、iPhone（iOS 18+）向けのDiskMop: Photo & Video CleanerはApp Storeで入手できます。"
       },
       {
         "question": "ライセンスはどのように機能しますか？",

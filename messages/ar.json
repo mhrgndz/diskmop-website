@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (‏64 بت)",
+      "reqs": "Windows 10 (‏32/64 بت) / 11 (‏64 بت)",
       "recommended": "موصى به لك",
       "download": "نزّل لنظام Windows",
       "signed": "موقّع برمجيًا وناشر موثّق",
@@ -437,7 +437,7 @@
       },
       {
         "question": "ما أنظمة التشغيل المدعومة؟",
-        "answer": "يعمل Disk Mop كتطبيق أصلي على Windows 10/11 (‏64 بت) وmacOS 12+ (‏Apple Silicon وIntel). وتتوفر أيضًا تطبيقات أصلية للجوال: Disk Mop لنظام Android 8.0+ على Google Play، وDiskMop: Photo & Video Cleaner لجهاز iPhone (‏iOS 18+) على App Store."
+        "answer": "يعمل Disk Mop كتطبيق أصلي على Windows 10 (‏32/64 بت) / 11 (‏64 بت) وmacOS 12+ (‏Apple Silicon وIntel). وتتوفر أيضًا تطبيقات أصلية للجوال: Disk Mop لنظام Android 8.0+ على Google Play، وDiskMop: Photo & Video Cleaner لجهاز iPhone (‏iOS 18+) على App Store."
       },
       {
         "question": "كيف يعمل الترخيص؟",

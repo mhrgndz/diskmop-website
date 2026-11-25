@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64비트)",
+      "reqs": "Windows 10 (32/64비트) / 11 (64비트)",
       "recommended": "회원님께 추천",
       "download": "Windows용 다운로드",
       "signed": "코드 서명 및 게시자 확인 완료",
@@ -437,7 +437,7 @@
       },
       {
         "question": "어떤 운영 체제를 지원하나요?",
-        "answer": "Disk Mop은 Windows 10/11(64비트)과 macOS 12+(Apple Silicon 및 Intel)에서 네이티브 앱으로 실행됩니다. 모바일 네이티브 앱도 있습니다. Google Play의 Android 8.0+용 Disk Mop, App Store의 iPhone(iOS 18+)용 DiskMop: Photo & Video Cleaner입니다."
+        "answer": "Disk Mop은 Windows 10(32/64비트) / 11(64비트)과 macOS 12+(Apple Silicon 및 Intel)에서 네이티브 앱으로 실행됩니다. 모바일 네이티브 앱도 있습니다. Google Play의 Android 8.0+용 Disk Mop, App Store의 iPhone(iOS 18+)용 DiskMop: Photo & Video Cleaner입니다."
       },
       {
         "question": "라이선스는 어떻게 작동하나요?",

@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64 de biți)",
+      "reqs": "Windows 10 (32/64 de biți) / 11 (64 de biți)",
       "recommended": "Recomandat pentru tine",
       "download": "Descarcă pentru Windows",
       "signed": "Semnat digital și editor verificat",
@@ -437,7 +437,7 @@
       },
       {
         "question": "Ce sisteme de operare sunt acceptate?",
-        "answer": "Disk Mop rulează ca aplicație nativă pe Windows 10/11 (64 de biți) și macOS 12+ (Apple Silicon și Intel). Există și aplicații mobile native: Disk Mop pentru Android 8.0+ în Google Play și DiskMop: Photo & Video Cleaner pentru iPhone (iOS 18+) în App Store."
+        "answer": "Disk Mop rulează ca aplicație nativă pe Windows 10 (32/64 de biți) / 11 (64 de biți) și macOS 12+ (Apple Silicon și Intel). Există și aplicații mobile native: Disk Mop pentru Android 8.0+ în Google Play și DiskMop: Photo & Video Cleaner pentru iPhone (iOS 18+) în App Store."
       },
       {
         "question": "Cum funcționează licența?",

@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64-bit)",
+      "reqs": "Windows 10 (32/64-bit) / 11 (64-bit)",
       "recommended": "Senin için önerilen",
       "download": "Windows İçin İndir",
       "signed": "Kod İmzalı — Doğrulanmış Yayıncı",
@@ -453,7 +453,7 @@
       },
       {
         "question": "Hangi işletim sistemlerini destekliyor?",
-        "answer": "Disk Mop, Windows 10/11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) üzerinde native uygulama olarak çalışır. Mobil için de native uygulamalar var: Android 8.0+ için Disk Mop Google Play'de, iPhone (iOS 18+) için DiskMop: Photo & Video Cleaner App Store'da."
+        "answer": "Disk Mop, Windows 10 (32/64-bit) / 11 (64-bit) ve macOS 12+ (Apple Silicon ve Intel) üzerinde native uygulama olarak çalışır. Mobil için de native uygulamalar var: Android 8.0+ için Disk Mop Google Play'de, iPhone (iOS 18+) için DiskMop: Photo & Video Cleaner App Store'da."
       },
       {
         "question": "Lisans nasıl çalışıyor?",

@@ -43,7 +43,7 @@ const platforms: PlatformCard[] = [
     icon: Monitor,
     name: "Windows",
     ext: ".exe",
-    systemReq: "Windows 10/11 (64-bit)",
+    systemReq: "Windows 10 (32/64-bit) / 11 (64-bit)",
     href: "https://api.diskmop.com/download/windows",
     signed: true,
   },

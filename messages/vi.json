@@ -111,7 +111,7 @@
       "version": "v1.1.0",
       "size": "~80 MB",
       "format": ".exe",
-      "reqs": "Windows 10/11 (64-bit)",
+      "reqs": "Windows 10 (32/64-bit) / 11 (64-bit)",
       "recommended": "Đề xuất cho bạn",
       "download": "Tải xuống cho Windows",
       "signed": "Đã ký mã và nhà phát hành đã xác minh",
@@ -441,7 +441,7 @@
       },
       {
         "question": "Hỗ trợ những hệ điều hành nào?",
-        "answer": "Disk Mop chạy dưới dạng ứng dụng gốc trên Windows 10/11 (64-bit) và macOS 12+ (Apple Silicon và Intel). Ngoài ra còn có các ứng dụng di động gốc: Disk Mop cho Android 8.0+ trên Google Play và DiskMop: Photo & Video Cleaner cho iPhone (iOS 18+) trên App Store."
+        "answer": "Disk Mop chạy dưới dạng ứng dụng gốc trên Windows 10 (32/64-bit) / 11 (64-bit) và macOS 12+ (Apple Silicon và Intel). Ngoài ra còn có các ứng dụng di động gốc: Disk Mop cho Android 8.0+ trên Google Play và DiskMop: Photo & Video Cleaner cho iPhone (iOS 18+) trên App Store."
       },
       {
         "question": "Giấy phép hoạt động thế nào?",
