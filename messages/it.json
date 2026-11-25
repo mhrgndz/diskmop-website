@@ -115,7 +115,9 @@
       "recommended": "Consigliato per te",
       "download": "Scarica per Windows",
       "signed": "Firmato — editore verificato",
-      "signedNote": "Windows mostra un editore verificato, non «Autore sconosciuto»"
+      "signedNote": "Windows mostra un editore verificato, non «Autore sconosciuto»",
+      "x86Link": "Usi Windows a 32 bit? Scarica la versione a 32 bit",
+      "x64Link": "Usi Windows a 64 bit? Scarica la versione a 64 bit"
     },
     "android": {
       "title": "Android",

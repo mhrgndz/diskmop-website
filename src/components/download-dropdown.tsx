@@ -12,6 +12,8 @@ import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { useOSDetection } from "@/hooks/use-os-detection";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { useAppInfo } from "@/hooks/use-app-info";
 import { STORE_URLS } from "@/lib/app-version";
 import {
@@ -55,13 +57,14 @@ const downloadOptions: DownloadOption[] = [
     os: "windows",
     platform: "windows",
     label: "Windows",
-    sublabel: ".exe",
+    sublabel: "64-bit",
     href: "https://api.diskmop.com/download/windows",
     icon: Monitor,
     signed: true,
   },
-  // 32 bit Windows 10 için ayrı kurucu (64 bit Windows'ta 32 bit sürümü indirmenin anlamı yok: "önerilen" rozeti
-  // almaz). Tarayıcı kullanıcının Windows'unun kaç bit olduğunu güvenilir söylemediği için ayrı satır olarak durur.
+  // 32 bit Windows 10 için ayrı kurucu. İki satır da bit sayısını açıkça yazar; "önerilen" rozeti ziyaretçinin
+  // Windows'una uyan satıra verilir (tarayıcı bit sayısını bildirmezse 64 bit önerilir), yanlış tahmine karşı
+  // her zaman iki seçenek de menüde durur.
   {
     os: "windows",
     platform: "windows-x86",
@@ -124,8 +127,16 @@ export function DownloadDropdown({
     option.store ??
     ((option.os === "windows" ? windowsSize : macSize) || "~80 MB");
 
+  const bitness = useWindowsBitness();
+
   const isRecommended = (option: DownloadOption): boolean => {
     if (detectedOS === "unknown") return false;
+    // İki Windows satırından yalnızca ziyaretçinin Windows'una uyanı rozet alır.
+    if (option.os === "windows")
+      return (
+        detectedOS === "windows" &&
+        option.platform === windowsDownload(bitness).platform
+      );
     // İki macOS satırından yalnızca ilki (Apple Silicon) rozet alır; User-Agent
     // Apple Silicon ile Intel'i ayırt edemediği için Intel'i biz seçemeyiz.
     if (option.altArch) return false;

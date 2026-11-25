@@ -18,6 +18,8 @@ import {
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useAppInfo } from "@/hooks/use-app-info";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { trackDownload } from "@/lib/analytics";
 
 function Confetti() {
@@ -119,6 +121,7 @@ function SuccessContent() {
   const searchParams = useSearchParams();
   const checkoutId = searchParams.get("checkout_id");
   const { windowsSize, macSize } = useAppInfo();
+  const win = windowsDownload(useWindowsBitness());
 
   const [data, setData] = useState<CheckoutData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -293,13 +296,13 @@ function SuccessContent() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
-                href="https://api.diskmop.com/download/windows"
-                onClick={() => trackDownload("windows", "success")}
+                href={win.href}
+                onClick={() => trackDownload(win.platform, "success")}
                 className="flex items-center gap-3 bg-card border rounded-xl p-4 hover:border-brand-500/50 hover:shadow-md transition-all"
               >
                 <Monitor className="w-8 h-8 text-brand-500" />
                 <div className="text-left">
-                  <p className="font-semibold text-sm">Windows</p>
+                  <p className="font-semibold text-sm">{win.label}</p>
                   <p className="text-xs text-muted-foreground">
                     Setup • {windowsSize || "~80 MB"}
                   </p>

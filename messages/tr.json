@@ -115,7 +115,9 @@
       "recommended": "Senin için önerilen",
       "download": "Windows İçin İndir",
       "signed": "Kod İmzalı — Doğrulanmış Yayıncı",
-      "signedNote": "Windows “Bilinmeyen yayıncı” yerine doğrulanmış yayıncıyı gösterir"
+      "signedNote": "Windows “Bilinmeyen yayıncı” yerine doğrulanmış yayıncıyı gösterir",
+      "x86Link": "32 bit Windows mu kullanıyorsunuz? 32 bit sürümü indirin",
+      "x64Link": "64 bit Windows mu kullanıyorsunuz? 64 bit sürümü indirin"
     },
     "android": {
       "title": "Android",

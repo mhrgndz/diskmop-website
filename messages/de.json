@@ -115,7 +115,9 @@
       "recommended": "Empfohlen für Sie",
       "download": "Für Windows herunterladen",
       "signed": "Signiert & verifizierter Herausgeber",
-      "signedNote": "Windows zeigt einen verifizierten Herausgeber statt „Unbekannter Herausgeber“"
+      "signedNote": "Windows zeigt einen verifizierten Herausgeber statt „Unbekannter Herausgeber“",
+      "x86Link": "32-Bit-Windows? Hier die 32-Bit-Version herunterladen",
+      "x64Link": "64-Bit-Windows? Hier die 64-Bit-Version herunterladen"
     },
     "android": {
       "title": "Android",

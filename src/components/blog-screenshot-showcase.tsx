@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 import { Download, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
 import { ExpandableImage } from "@/components/expandable-image";
@@ -116,6 +118,7 @@ export function BlogScreenshotShowcase({
   const tBlog = useTranslations("blog");
   const tShowcase = useTranslations("showcase");
   const detectedOS = useOSDetection();
+  const bitness = useWindowsBitness();
 
   // Mobil makaleler icin masaustu arayuzu gosterilmez
   if (
@@ -139,11 +142,10 @@ export function BlogScreenshotShowcase({
   const targetOS = articlePlatform || detectedOS;
   const isMac = targetOS === "mac";
 
-  const downloadHref = isMac
-    ? "https://api.diskmop.com/download/mac"
-    : "https://api.diskmop.com/download/windows";
-  const osLabel = isMac ? "macOS" : "Windows";
-  const downloadPlatform: DownloadPlatform = isMac ? "mac" : "windows";
+  const win = windowsDownload(bitness);
+  const downloadHref = isMac ? "https://api.diskmop.com/download/mac" : win.href;
+  const osLabel = isMac ? "macOS" : win.label;
+  const downloadPlatform: DownloadPlatform = isMac ? "mac" : win.platform;
 
   const shotSrc = appShotSrc(shotForFeature(feature.id), locale);
 

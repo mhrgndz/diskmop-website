@@ -12,6 +12,8 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { STORE_URLS, iosStoreUrl } from "@/lib/app-version";
 import { ClickHint } from "@/components/click-hint";
 import {
@@ -54,6 +56,8 @@ export function BlogCtaCard({
 }: BlogCtaCardProps) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
+  // Windows kurucusu ziyaretçinin Windows'una göre (64 veya 32 bit) seçilir ve bit sayısı yazılır.
+  const win = windowsDownload(useWindowsBitness());
 
   // Kart iki yerde kullanılıyor: yazının başında (erken dönüşüm) ve sonunda.
   // Hangisinin çevirdiğini ayırt edebilmek için yerleşim adı olayla gider.
@@ -67,9 +71,10 @@ export function BlogCtaCard({
 
   // Hedef OS yapılandırması
   let primaryLabel = "Windows";
-  let primaryPlatform: DownloadPlatform = "windows";
-  let primaryHref = "https://api.diskmop.com/download/windows";
-  let primarySublabel = "Windows 10 / 11";
+  let primaryPlatform: DownloadPlatform = win.platform;
+  let primaryHref = win.href;
+  let primarySublabel =
+    win.bits === "32-bit" ? "Windows 10 · 32-bit" : "Windows 10 / 11 · 64-bit";
   let isStore = false;
   let PrimaryIcon = Monitor;
 
@@ -98,11 +103,11 @@ export function BlogCtaCard({
   const allPlatforms: CtaPlatform[] = [
     {
       label: "Windows",
-      sub: ".exe (Win 10/11)",
-      href: "https://api.diskmop.com/download/windows",
-      platform: "windows",
+      sub: `.exe (${win.bits})`,
+      href: win.href,
+      platform: win.platform,
       icon: Monitor,
-      show: primaryPlatform !== "windows",
+      show: primaryPlatform !== win.platform,
     },
     {
       label: "macOS (Apple Silicon)",

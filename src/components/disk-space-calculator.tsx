@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { STORE_URLS } from "@/lib/app-version";
 import { trackDownload } from "@/lib/analytics";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 
 interface CalculatorLabels {
   platformLabel: string;
@@ -112,14 +114,14 @@ export function DiskSpaceCalculator({
     Math.round((capacity - usedGb + breakdown.total) * 10) / 10;
   const isSsdAtRisk = usagePercent >= 80;
 
-  // Platform specific download links
+  // Platform specific download links (Windows: ziyaretçinin Windows'una uyan 64 veya 32 bit kurucu)
+  const win = windowsDownload(useWindowsBitness());
   const downloadUrl = useMemo(() => {
-    if (platform === "windows")
-      return "https://api.diskmop.com/download/windows";
+    if (platform === "windows") return win.href;
     if (platform === "mac") return "https://api.diskmop.com/download/mac";
     if (platform === "ios") return STORE_URLS.ios;
     return STORE_URLS.android;
-  }, [platform]);
+  }, [platform, win.href]);
 
   return (
     <div className="rounded-3xl border border-border bg-card/80 backdrop-blur-md p-6 sm:p-8 lg:p-10 shadow-xl transition-all">
@@ -402,7 +404,12 @@ export function DiskSpaceCalculator({
           <div>
             <a
               href={downloadUrl}
-              onClick={() => trackDownload(platform, "calculator")}
+              onClick={() =>
+                trackDownload(
+                  platform === "windows" ? win.platform : platform,
+                  "calculator",
+                )
+              }
               className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all"
             >
               <Download className="h-4 w-4" />

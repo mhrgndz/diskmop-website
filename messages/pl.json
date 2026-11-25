@@ -115,7 +115,9 @@
       "recommended": "Polecane dla Ciebie",
       "download": "Pobierz dla Windows",
       "signed": "Podpisany kodem, zweryfikowany wydawca",
-      "signedNote": "Windows pokazuje zweryfikowanego wydawcę, a nie „Nieznanego wydawcę”"
+      "signedNote": "Windows pokazuje zweryfikowanego wydawcę, a nie „Nieznanego wydawcę”",
+      "x86Link": "Masz 32-bitowy Windows? Pobierz wersję 32-bitową",
+      "x64Link": "Masz 64-bitowy Windows? Pobierz wersję 64-bitową"
     },
     "android": {
       "title": "Android",

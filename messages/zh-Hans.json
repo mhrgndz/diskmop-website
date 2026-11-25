@@ -115,7 +115,9 @@
       "recommended": "为你推荐",
       "download": "下载 Windows 版",
       "signed": "已代码签名，发布者已验证",
-      "signedNote": "Windows 会显示已验证的发布者，而不是“未知发布者”"
+      "signedNote": "Windows 会显示已验证的发布者，而不是“未知发布者”",
+      "x86Link": "使用的是 32 位 Windows？下载 32 位版本",
+      "x64Link": "使用的是 64 位 Windows？下载 64 位版本"
     },
     "android": {
       "title": "Android",

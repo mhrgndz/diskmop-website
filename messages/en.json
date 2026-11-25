@@ -115,7 +115,9 @@
       "recommended": "Recommended for you",
       "download": "Download for Windows",
       "signed": "Code Signed & Verified Publisher",
-      "signedNote": "Windows shows a verified publisher, not “Unknown publisher”"
+      "signedNote": "Windows shows a verified publisher, not “Unknown publisher”",
+      "x86Link": "Using 32-bit Windows? Get the 32-bit build",
+      "x64Link": "Using 64-bit Windows? Get the 64-bit build"
     },
     "android": {
       "title": "Android",

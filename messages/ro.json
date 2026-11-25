@@ -115,7 +115,9 @@
       "recommended": "Recomandat pentru tine",
       "download": "Descarcă pentru Windows",
       "signed": "Semnat digital și editor verificat",
-      "signedNote": "Windows afișează un editor verificat, nu „Editor necunoscut”"
+      "signedNote": "Windows afișează un editor verificat, nu „Editor necunoscut”",
+      "x86Link": "Folosiți Windows pe 32 de biți? Descărcați versiunea pe 32 de biți",
+      "x64Link": "Folosiți Windows pe 64 de biți? Descărcați versiunea pe 64 de biți"
     },
     "android": {
       "title": "Android",

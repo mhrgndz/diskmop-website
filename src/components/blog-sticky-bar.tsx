@@ -12,6 +12,8 @@ import {
   Smartphone,
 } from "lucide-react";
 import { useOSDetection } from "@/hooks/use-os-detection";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { STORE_URLS, iosStoreUrl } from "@/lib/app-version";
 import { ClickHint } from "@/components/click-hint";
 import { trackDownload, type DownloadPlatform } from "@/lib/analytics";
@@ -31,6 +33,7 @@ export function BlogStickyBar({
 }: BlogStickyBarProps = {}) {
   const t = useTranslations("blog");
   const detectedOS = useOSDetection();
+  const win = windowsDownload(useWindowsBitness());
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(true);
 
@@ -75,9 +78,10 @@ export function BlogStickyBar({
     : customSubtitle || t("stickyBarSubtitle");
   const isStore = targetOS === "ios" || targetOS === "android";
 
-  let osName = "Windows";
-  let platform: DownloadPlatform = "windows";
-  let downloadHref = "https://api.diskmop.com/download/windows";
+  // "Windows 64-bit" / "Windows 32-bit": ziyaretçi hangi sürümü indireceğini görür
+  let osName = win.label;
+  let platform: DownloadPlatform = win.platform;
+  let downloadHref = win.href;
 
   if (targetOS === "mac") {
     osName = "macOS";

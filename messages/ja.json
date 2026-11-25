@@ -115,7 +115,9 @@
       "recommended": "あなたにおすすめ",
       "download": "Windows版をダウンロード",
       "signed": "コード署名済み・発行元を検証",
-      "signedNote": "Windows に「不明な発行元」ではなく検証済みの発行元が表示されます"
+      "signedNote": "Windows に「不明な発行元」ではなく検証済みの発行元が表示されます",
+      "x86Link": "32ビット版Windowsをお使いですか？32ビット版をダウンロード",
+      "x64Link": "64ビット版Windowsをお使いですか？64ビット版をダウンロード"
     },
     "android": {
       "title": "Android",

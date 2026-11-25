@@ -115,7 +115,9 @@
       "recommended": "موصى به لك",
       "download": "نزّل لنظام Windows",
       "signed": "موقّع برمجيًا وناشر موثّق",
-      "signedNote": "يعرض Windows ناشرًا موثّقًا بدلًا من «ناشر غير معروف»"
+      "signedNote": "يعرض Windows ناشرًا موثّقًا بدلًا من «ناشر غير معروف»",
+      "x86Link": "هل تستخدم نظام Windows 32 بت؟ نزّل إصدار 32 بت",
+      "x64Link": "هل تستخدم نظام Windows 64 بت؟ نزّل إصدار 64 بت"
     },
     "android": {
       "title": "Android",

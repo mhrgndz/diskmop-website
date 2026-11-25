@@ -14,6 +14,8 @@ import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useOSDetection, type OSType } from "@/hooks/use-os-detection";
 import { useAppInfo } from "@/hooks/use-app-info";
+import { useWindowsBitness } from "@/hooks/use-windows-bitness";
+import { windowsDownload } from "@/lib/windows-bitness";
 import { APP_VERSIONS, STORE_URLS } from "@/lib/app-version";
 import type { LiveVersions } from "@/lib/live-versions";
 import { trackDownload } from "@/lib/analytics";
@@ -83,6 +85,7 @@ const platforms: PlatformCard[] = [
 export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
   const t = useTranslations("platformSelector");
   const detectedOS = useOSDetection();
+  const bitness = useWindowsBitness();
   const { windowsVersion, macVersion, iosVersion, windowsSize, macSize } =
     useAppInfo();
 
@@ -128,6 +131,22 @@ export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             const isHighlighted = detectedOS === platform.matchOS;
+            // Windows kartı ziyaretçinin Windows'una uyan kurucuyu (64 veya 32 bit) gösterir ve bit sayısını açıkça
+            // yazar; diğer sürüme geçiş bağlantısı kartın altında durur (tahmin yanlışsa kullanıcı kendi düzeltir).
+            const win =
+              platform.key === "windows" ? windowsDownload(bitness) : null;
+            const otherWin =
+              platform.key === "windows"
+                ? windowsDownload(bitness === "x86" ? "x64" : "x86")
+                : null;
+            const cardHref = win ? win.href : platform.href;
+            const cardPlatform = win ? win.platform : platform.key;
+            const cardExt = win ? `${win.bits} ${platform.ext}` : platform.ext;
+            const cardReq = win
+              ? bitness === "x86"
+                ? "Windows 10 (32-bit)"
+                : "Windows 10/11 (64-bit)"
+              : platform.systemReq;
 
             return (
               <motion.div
@@ -183,7 +202,7 @@ export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
                   ) : (
                     <>
                       {getVersion(platform.key)} &bull; {getSize(platform.key)}{" "}
-                      &bull; {platform.ext}
+                      &bull; {cardExt}
                     </>
                   )}
                 </p>
@@ -198,7 +217,7 @@ export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
                 )}
 
                 <p className="text-xs text-muted-foreground text-center mt-3 bg-muted rounded-lg px-3 py-2">
-                  {platform.systemReq}
+                  {cardReq}
                 </p>
 
                 {platform.signed && (
@@ -226,15 +245,16 @@ export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
                     className="w-full gap-2 h-auto min-h-12 whitespace-normal px-3 py-3 xl:text-sm"
                   >
                     <a
-                      href={platform.href}
+                      href={cardHref}
                       onClick={() =>
-                        trackDownload(platform.key, "platform_cards")
+                        trackDownload(cardPlatform, "platform_cards")
                       }
                       target={platform.store ? "_blank" : undefined}
                       rel={platform.store ? "noopener noreferrer" : undefined}
                     >
                       <Download className="h-4 w-4 shrink-0" />
                       {t(`${platform.key}.download`)}
+                      {win ? ` (${win.bits})` : ""}
                     </a>
                   </Button>
                 </div>
@@ -245,6 +265,24 @@ export function PlatformSelector({ versions }: { versions?: LiveVersions }) {
                   ayırt etmiyor (Safari her ikisinde de "Intel Mac OS X" diyor).
                   Yanlış tahmin, çalışmayan bir indirme demek.
                 */}
+                {otherWin && (
+                  <p className="mt-3 text-center">
+                    <a
+                      href={otherWin.href}
+                      onClick={() =>
+                        trackDownload(otherWin.platform, "platform_cards")
+                      }
+                      className="text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+                    >
+                      {t(
+                        bitness === "x86"
+                          ? "windows.x64Link"
+                          : "windows.x86Link",
+                      )}
+                    </a>
+                  </p>
+                )}
+
                 {platform.altArchHref && (
                   <p className="mt-3 text-center">
                     <a

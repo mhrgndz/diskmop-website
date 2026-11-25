@@ -115,7 +115,9 @@
       "recommended": "Recommandé pour vous",
       "download": "Télécharger pour Windows",
       "signed": "Signé — éditeur vérifié",
-      "signedNote": "Windows affiche un éditeur vérifié, et non « Éditeur inconnu »"
+      "signedNote": "Windows affiche un éditeur vérifié, et non « Éditeur inconnu »",
+      "x86Link": "Windows 32 bits ? Téléchargez la version 32 bits",
+      "x64Link": "Windows 64 bits ? Téléchargez la version 64 bits"
     },
     "android": {
       "title": "Android",

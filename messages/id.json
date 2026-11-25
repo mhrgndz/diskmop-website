@@ -115,7 +115,9 @@
       "recommended": "Direkomendasikan untuk Anda",
       "download": "Unduh untuk Windows",
       "signed": "Tanda tangan kode & penerbit terverifikasi",
-      "signedNote": "Windows menampilkan penerbit terverifikasi, bukan “Penerbit tidak dikenal”"
+      "signedNote": "Windows menampilkan penerbit terverifikasi, bukan “Penerbit tidak dikenal”",
+      "x86Link": "Memakai Windows 32-bit? Unduh versi 32-bit",
+      "x64Link": "Memakai Windows 64-bit? Unduh versi 64-bit"
     },
     "android": {
       "title": "Android",
