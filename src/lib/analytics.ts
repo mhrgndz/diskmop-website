@@ -17,7 +17,7 @@
  */
 
 export type DownloadPlatform =
-  "windows" | "mac" | "mac-intel" | "android" | "ios" | "windows-store" | "mac-store";
+  "windows" | "windows-x86" | "mac" | "mac-intel" | "android" | "ios" | "windows-store" | "mac-store";
 
 /** CTA'nın sayfadaki yeri — aynı platform birden çok yerden indirilebiliyor. */
 export type CtaLocation =
@@ -64,6 +64,7 @@ function sendEvent(name: string, params: Record<string, unknown>): void {
 /** Olay adında kullanılabilecek biçim: `mac-intel` → `mac_intel`. */
 const EVENT_SUFFIX: Record<DownloadPlatform, string> = {
   windows: "windows",
+  "windows-x86": "windows_x86",
   mac: "mac",
   "mac-intel": "mac_intel",
   android: "android",

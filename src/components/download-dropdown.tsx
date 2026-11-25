@@ -60,6 +60,18 @@ const downloadOptions: DownloadOption[] = [
     icon: Monitor,
     signed: true,
   },
+  // 32 bit Windows 10 için ayrı kurucu (64 bit Windows'ta 32 bit sürümü indirmenin anlamı yok: "önerilen" rozeti
+  // almaz). Tarayıcı kullanıcının Windows'unun kaç bit olduğunu güvenilir söylemediği için ayrı satır olarak durur.
+  {
+    os: "windows",
+    platform: "windows-x86",
+    label: "Windows",
+    sublabel: "32-bit",
+    href: "https://api.diskmop.com/download/windows-x86",
+    icon: Monitor,
+    signed: true,
+    altArch: true,
+  },
   // Burada "Universal (.dmg)" yazıyordu ama dosya universal DEĞİL: yayınlanan dmg
   // arm64-only (lipo -archs → arm64). Intel kullanıcısı indirdiğini açamıyordu.
   {
