@@ -16,6 +16,8 @@
  * (hero / blog / hesaplayıcı ...) da açılır.
  */
 
+import { capturePosthog } from "@/lib/posthog";
+
 export type DownloadPlatform =
   "windows" | "windows-x86" | "mac" | "mac-intel" | "android" | "ios" | "windows-store" | "mac-store";
 
@@ -48,6 +50,8 @@ declare global {
  */
 function sendEvent(name: string, params: Record<string, unknown>): void {
   if (typeof window === "undefined") return;
+  // aynı olay PostHog'a da (uygulama olaylarıyla tek huni: indirme → kurulum → satın alma)
+  capturePosthog(name, params);
   try {
     if (typeof window.gtag === "function") {
       window.gtag("event", name, params);

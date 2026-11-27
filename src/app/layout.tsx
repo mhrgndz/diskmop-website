@@ -3,6 +3,7 @@ import { Inter, Onest, IBM_Plex_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { PosthogAnalytics } from "@/components/posthog-analytics";
 import { DownloadLinkTagger } from "@/components/download-link-tagger";
 import { SITE_URL } from "@/lib/seo";
 import { localeDir } from "@/lib/locales";
@@ -80,6 +81,7 @@ export default async function RootLayout({
         className={`${onest.className} ${onest.variable} ${inter.variable} ${plexMono.variable}`}
       >
         <GoogleAnalytics />
+        <PosthogAnalytics />
         <DownloadLinkTagger />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
